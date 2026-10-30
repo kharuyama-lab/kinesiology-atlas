@@ -18,7 +18,7 @@ Node.jsを用意し、フォルダー内で `npm run serve` を実行して http
 
 ## 関節運動の検証
 
-関節・半月板の確認は `http://127.0.0.1:8080/?review=knee&axis=condyle`。Auto/Pauseで往復・停止できます。骨軌道とScrew-homeを維持し、半月板は根を保持して脛骨の支持曲面に沿って移動、膝蓋骨は滑車部を遠位へたどります。検証域は0〜120°。関節面・軟骨の適合性は未承認。[骨配置](docs/MESH_CONTACT_CORRECTION.md)・[曲面追従](docs/SURFACE_TRACKING_REVIEW.md) を参照。筋・靭帯の追加調整は後続です。
+関節の確認は `http://127.0.0.1:8080/?review=knee&axis=condyle`。半月板は根を保持し、屈伸・回旋・内外反の推定接触点へ荷重支持部が追従。閉じる側に暫定的な高さ縮小を加えます。膝蓋骨は滑車部をたどり、左の「膝蓋骨」または3DフロートでON/Fade/OFFを選べます。Auto/Pauseで往復可能。検証域は0〜120°。荷重・軟骨接触は未承認。[骨配置](docs/MESH_CONTACT_CORRECTION.md)・[曲面追従](docs/SURFACE_TRACKING_REVIEW.md)・[接触中心拘束](docs/CONTACT_CENTRE_MENISCI.md) を参照。
 
 ## 検証
 

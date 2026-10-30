@@ -1,7 +1,4 @@
-// Schematic excursion based on the supplied teaching illustration, not a
-// subject-specific measured trajectory. Roots stay in the tibial support frame.
+// Geometry-driven support-centre constraint, not a measured force/strain law.
 export const MENISCI={status:'SCHEMATIC — CONTACT/ROOTS NOT VALIDATED',
- excursionThroughDeg:120,rootRadius:.020,
- medial:{posteriorExcursion:.006},
- lateral:{posteriorExcursion:.012},
+ rootRadius:.020,maxCentreTravel:.013,maxCompression:.20,loadPatchRadius:.007,
 };
