@@ -1,0 +1,25 @@
+/** Knee v0.1 PRE-VALIDATION parameters. Do not use for quantitative clinical/biomechanical inference. */
+export const KNEE = Object.freeze({
+  status:'PRE-VALIDATION',
+  startingHipFlexionDeg:90,
+  startingKneeFlexionDeg:90,
+  flexionRange:[0,140],
+  axialRotationRange:[-15,30], // IR -15°, ER +30° at 90° flexion
+  stressRange:[-3,3], // illustrative angular deviation, not a clinical gapping measurement
+  stressFlexionDeg:30,
+  screwHomeMaxExternalRotationDeg:9, // provisional illustrative value
+  screwHomeWindowDeg:20,
+  anatomicalNames:{
+    femur:'Femur.r',tibia:'Tibia.r',fibula:'Fibula.r',patella:'Patella.r',
+    medialMeniscus:'Medial meniscus.r',lateralMeniscus:'Lateral meniscus.r',
+    acl:'Anterior cruciate ligament.r',pcl:'Posterior cruciate ligament.r',
+    mcl:'Superficial part of tibial collateral ligament.r',
+    mclDeep:'Deep part of tibial collateral ligament.r',
+    lcl:'Fibular collateral ligament.r'
+  }
+});
+export const PRESETS=Object.freeze({
+  flex:{hip:90,knee:90,rot:0,stress:0},
+  rot:{hip:90,knee:90,rot:0,stress:0},
+  stress:{hip:90,knee:30,rot:0,stress:0}
+});

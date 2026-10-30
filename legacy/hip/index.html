@@ -1,0 +1,1546 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+<title>Hip Kinesiology｜股関節運動学 3D教材</title>
+<!-- v1.0.1 rendering repair: remove stale canvases; preserve instructor-calibrated hip center. -->
+<style>
+:root{color-scheme:dark;--bg:#0b1220;--panel:#111e32f2;--edge:#33465e;--text:#e7eefb;--muted:#a5b6d1;--accent:#5aa8fd}
+*{box-sizing:border-box}html,body{width:100%;height:100%;margin:0;overflow:hidden;font:13px/1.5 system-ui,-apple-system,"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;background:var(--bg);color:var(--text)}
+#view{position:absolute;inset:0}canvas{display:block}#ui{position:absolute;top:12px;left:12px;width:min(370px,calc(100vw - 24px));max-height:calc(100dvh - 24px);overflow:auto;padding:15px;background:var(--panel);border:1px solid var(--edge);border-radius:14px;box-shadow:0 18px 45px #0005;backdrop-filter:blur(13px)}
+h1{font-size:17px;line-height:1.2;margin:0 0 4px}.sub{color:var(--muted);font-size:11px;margin-bottom:10px}.section{margin-top:11px;padding-top:11px;border-top:1px solid var(--edge)}.section-title{font-size:12px;font-weight:750;letter-spacing:.025em;color:#c0dcff;margin-bottom:7px}.btn-row{display:flex;flex-wrap:wrap;gap:5px}.btn,button{font:inherit;color:var(--text);background:#1b2d47;border:1px solid #405772;border-radius:7px;padding:5px 8px;cursor:pointer}button:hover{background:#294360}button.active{background:#244c7b;border-color:var(--accent)}button:disabled{opacity:.4;cursor:not-allowed}.line{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:6px}.line span{font-size:12px}.line input[type=checkbox]{width:16px;height:16px;accent-color:var(--accent)}label{cursor:pointer}.status{font-size:10px;padding:8px 10px;line-height:1.5;border-radius:8px;background:#1d3149;color:#bfdefd;white-space:pre-wrap;margin-top:8px;overflow-wrap:anywhere}.warn{color:#ffd0a0}.small{font-size:11px;color:var(--muted)}.angle{font-weight:800;font-variant-numeric:tabular-nums;color:#95d6ff}input[type=range]{accent-color:var(--accent);width:100%}.hidden{display:none!important}.pill{font-size:10px;border:1px solid #526784;border-radius:50px;padding:1px 6px;color:#c3d1e3}details{margin-top:8px}summary{cursor:pointer;color:#b8d7fa;font-size:11px}a{color:#9bcbff}.right-note{position:absolute;right:15px;bottom:13px;background:#0b1528de;border:1px solid #31465d;border-radius:10px;padding:9px 12px;max-width:390px;font-size:11px;color:#b5c7df;pointer-events:none}#mask{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#dde9fa;background:#0b1220;z-index:2}#mask.hidden{display:none}.tension{display:grid;grid-template-columns:1fr auto;column-gap:12px;align-items:center;padding:4px 0;border-bottom:1px solid #243750;font-size:11px}.tension:last-child{border:none}.tension [data-tone="high"]{color:#ff8b85;font-weight:700}.tension [data-tone="mid"]{color:#ffe19a}.tension [data-tone="low"]{color:#9bb3d0}.beacon{width:10px;height:10px;border-radius:50%;display:inline-block;margin-right:5px}.meter-note{font-size:10px;color:#a0b2cb;line-height:1.45;margin-top:8px}.focus{color:#fff1bd;font-size:11px}.scroll-group{display:grid;grid-template-columns:1fr 1fr;column-gap:12px}.scroll-group .line{margin-top:4px}.muscle-row{gap:4px}.muscle-row span{min-width:0}.mini-toggle{font-size:10px;padding:1px 5px;line-height:1.5;border-radius:5px;color:#bacfe9;flex:none}.mini-toggle.active{background:#2a5373;border-color:#80cbfa;color:#e7f7ff}.group-current{background:#265d73!important;border-color:#79dbe9!important}.group-details{background:#12253b;border:1px solid #334e65;border-radius:8px;padding:8px;line-height:1.5}.group-details>div+div{margin-top:5px}.group-details strong{color:#e3edff}
+.structure-block{background:#15263d;border:1px solid #334e65;border-radius:9px;padding:9px 10px;margin-top:7px}
+.structure-heading{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-bottom:5px}
+.structure-heading strong{font-size:12px;min-width:41px;color:#d5e9ff}
+.structure-heading button{padding:3px 7px;font-size:11px}
+.structure-heading .preset-active{border-color:#8bd4ff;background:#2d5b86;color:#ffffff}
+.structure-items{display:grid;grid-template-columns:1fr 1fr;gap:0 10px}
+.structure-items .line{min-height:24px;gap:4px;margin-top:2px}
+.structure-items label span{font-size:11px}
+.structure-items .mini-toggle{font-size:10px}
+#boneItems{grid-template-columns:1fr 1fr}
+#ligItems{grid-template-columns:1fr}
+#muscleItems{grid-template-columns:1fr 1fr}
+#muscleItems .muscle-row{min-width:0}
+.structure-guide{font-size:10px;color:#a0b9d5;margin-top:4px}
+@media(max-width:660px){#ui{top:7px;left:7px;width:calc(100vw - 14px);max-height:52dvh;padding:11px}h1{font-size:15px}.right-note{right:7px;bottom:7px;left:7px;max-width:none;font-size:10px}}
+
+/* Beta 11: teaching-first control hierarchy */
+#ui{width:min(386px,calc(100vw - 24px));padding:14px 15px;}
+.structure-block{padding:7px 9px;margin-top:5px;background:#122139}
+.structure-heading{display:flex;align-items:center;gap:6px;margin:0}
+.structure-heading strong{min-width:44px;font-size:13px}
+.structure-heading .group-controls{display:flex;flex-wrap:wrap;gap:4px;margin-left:auto}
+.structure-heading button{font-size:11px;padding:3px 9px}
+.structure-items{grid-template-columns:1fr 1fr;gap:4px 8px}
+#muscleItems{display:grid;grid-template-columns:1fr 1fr;gap:5px 7px;margin-top:7px}
+.muscle-entry{display:flex;justify-content:space-between;align-items:center;min-width:0;min-height:29px;border:1px solid #273e5b;background:#111e31;border-radius:6px;padding:2px 4px 2px 6px;gap:3px}
+.muscle-entry span{font-size:11px;line-height:1.15;flex:1;min-width:0}
+.muscle-entry.missing{opacity:.5}
+.muscle-state{min-width:43px;padding:2px 4px;font-size:10px;border-radius:5px;border:1px solid #42546c;line-height:1.6;flex:none}
+.muscle-state[data-state="off"]{color:#a8b5c9;background:#17263a}
+.muscle-state[data-state="on"]{background:#27568b;border-color:#77befe;color:#fff}
+.muscle-state[data-state="transparent"]{background:#274d59;border-color:#74c8c9;color:#d7fcff}
+.muscle-state:disabled{opacity:.4;cursor:not-allowed}
+.state-storage{display:none!important}
+.group-shortcuts{margin-top:8px;display:flex;gap:5px;flex-wrap:wrap}
+.group-shortcuts button{font-size:11px;padding:5px 8px;flex:0 0 auto}
+.soft-note{font-size:10px;color:#8eabc9;margin-top:5px}
+#viewToolbar{position:absolute;z-index:4;top:14px;right:16px;display:flex;flex-direction:column;align-items:flex-end;gap:5px;pointer-events:none}
+#viewToolbar .toolbar-row{display:flex;flex-wrap:wrap;gap:4px;padding:5px;border:1px solid #425671;border-radius:9px;background:#102039df;backdrop-filter:blur(8px);pointer-events:auto}
+#viewToolbar button{font-size:11px;padding:5px 9px}
+#viewToolbar button.active{background:#28527e;border-color:#79bdff}
+#movementPanel .btn-row button{flex:1}
+.pose-presets{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:9px}
+.pose-presets button{width:100%;font-size:12px}
+.pose-presets .pose-hint{font-size:10px;color:#a6c1dc;padding-top:3px;text-align:center}
+#tensionPanel>summary{color:#bddaff}
+#tensionPanel[open]{padding-bottom:7px}
+#muscleExtras[open]{padding-bottom:8px}
+#muscleExtras .line{justify-content:flex-start}
+#footnote{display:none}
+@media(max-width:700px){#viewToolbar{top:auto;bottom:8px;right:8px;left:8px;align-items:flex-end}#ui{max-height:62dvh;top:7px;left:7px;width:calc(100vw - 14px)}#viewToolbar .toolbar-row{background:#0d1d31f4} }
+
+/* Beta 12: single-screen teaching console. Desktop controls use width rather
+   than vertical scroll. Smaller laptop displays retain overflow as fallback. */
+@media(min-width:1080px){
+ #ui{width:min(752px,calc(100vw - 480px));padding:10px 13px;
+     top:9px;left:9px;max-height:calc(100dvh - 18px)}
+ #muscleItems{grid-template-columns:repeat(3,minmax(0,1fr));gap:3px 6px;margin-top:5px}
+ .muscle-entry{min-height:25px;padding:1px 4px 1px 6px}
+ .muscle-entry span{font-size:11px}
+ .muscle-state{min-width:41px;line-height:1.35}
+ .section{margin-top:7px;padding-top:7px}
+ .structure-block{padding:5px 9px;margin-top:4px}
+ .structure-heading strong{min-width:42px}
+ .group-shortcuts{margin-top:5px;gap:4px}
+ .group-shortcuts button{padding:3px 7px;font-size:11px}
+ #movementPanel .btn-row button{padding:4px 6px}
+ .pose-presets{margin-top:5px;gap:6px}
+ .pose-presets button{padding:3px 6px;font-size:11px}
+ .pose-presets .pose-hint{padding-top:0;line-height:1.25;font-size:9px}
+ h1{font-size:17px;margin:0 0 1px}.sub{margin-bottom:4px}
+ details{margin-top:4px}#movementPanel .section-title{margin-bottom:4px}
+}
+@media(min-width:1080px) and (max-height:840px){
+ #ui{width:min(820px,calc(100vw - 440px));padding:7px 10px}
+ .muscle-entry{min-height:23px}#muscleItems{gap:2px 5px}
+ .section{margin-top:5px;padding-top:5px}
+ .pose-presets .pose-hint{display:none}
+}
+@media(min-width:700px) and (max-width:1079px){
+ #ui{width:min(600px,calc(100vw - 280px))}
+ #muscleItems{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+
+/* Beta 13: compact two-column teaching controls, model-focused viewport. */
+@media(min-width:1080px){
+ #ui{width:min(610px,calc(100vw - 540px));padding:9px 12px}
+ #muscleItems{grid-template-columns:repeat(2,minmax(0,1fr));gap:3px 6px}
+ .muscle-entry{min-height:23px;padding:1px 4px 1px 6px}
+ .muscle-entry span{font-size:11px}
+ .muscle-state{line-height:1.3}
+}
+@media(min-width:700px) and (max-width:1079px){
+ #ui{width:min(485px,calc(100vw - 330px));padding:9px 10px}
+ #muscleItems{grid-template-columns:repeat(2,minmax(0,1fr));gap:3px 5px}
+}
+@media(min-width:1080px) and (max-height:950px){
+ #ui{padding:7px 10px}
+ #muscleItems{gap:1px 5px;margin-top:4px}
+ .muscle-entry{min-height:21px;padding:0 4px}
+ .muscle-state{padding:0 4px;line-height:1.3}
+ .section{margin-top:4px;padding-top:4px}
+ .structure-block{padding:3px 7px;margin-top:3px}
+ .group-shortcuts{margin-top:3px;gap:3px}
+ .group-shortcuts button{padding:2px 6px}
+ .pose-presets{margin-top:3px}
+ .pose-presets .pose-hint{display:none}
+ h1{font-size:15px}.sub{margin-bottom:3px}
+ details{margin-top:3px}
+}
+@media(min-width:1080px) and (max-height:810px){
+ .sub{display:none}
+ .structure-heading strong{font-size:12px}
+ .section{margin-top:2px;padding-top:2px}
+ .muscle-entry{min-height:19px}
+ .muscle-entry span{font-size:10px}
+ .group-shortcuts button{font-size:10px;padding:1px 5px}
+ .structure-block{padding:2px 6px;margin-top:2px}
+ .pose-presets{margin-top:2px}
+ #movementPanel .btn-row button{padding:2px 5px}
+}
+@media(max-width:699px){#muscleItems{grid-template-columns:repeat(2,minmax(0,1fr))}}
+#tissueHover{position:fixed;z-index:6;pointer-events:none;display:none;
+ padding:7px 11px;background:#0b1b30f0;border:1px solid #8db8e2b0;
+ color:#f4f8ff;border-radius:8px;font-size:13px;font-weight:650;
+ box-shadow:0 5px 16px #0009;max-width:240px;white-space:nowrap}
+#tissueHover .tissue-category{display:block;font-size:10px;font-weight:450;color:#afc7df}
+#tissueHover .tissue-ja{display:block;font-size:13px;font-weight:650;color:#f1f5fd;line-height:1.45}
+#tissueHover .tissue-en{display:block;font-size:11px;font-weight:450;color:#bed1e6;letter-spacing:.005em;line-height:1.35;margin-top:2px;white-space:normal}
+#tissueHover{max-width:min(320px,calc(100vw - 18px));white-space:normal}
+
+/* Student release: touch-first panel for phones and portrait tablets. */
+#mobilePanelToggle{display:none}
+@media(max-width:880px){
+  #mobilePanelToggle{display:block;position:fixed;top:9px;left:9px;z-index:9;
+    background:#18375a;border:1px solid #7aa5cc;border-radius:9px;
+    padding:10px 14px;font-size:13px;font-weight:700;box-shadow:0 3px 13px #0008}
+  #ui{position:fixed;z-index:8;top:57px;left:9px;width:min(470px,calc(100vw - 18px));
+    max-height:calc(100dvh - 66px);overflow-y:auto;padding:10px 12px}
+  body.mobile-panel-collapsed #ui{display:none}
+  #viewToolbar{top:8px;right:8px;left:auto;bottom:auto;align-items:flex-end;
+    max-width:calc(100vw - 132px)}
+  #viewToolbar .toolbar-row{justify-content:flex-end;flex-wrap:wrap}
+  #viewToolbar button{padding:5px 7px;font-size:10px}
+}
+@media(max-width:400px){#viewToolbar{max-width:calc(100vw - 124px)}
+  #viewToolbar .toolbar-row{padding:3px;gap:2px}
+  #viewToolbar button{font-size:10px;padding:3px 5px}
+}
+</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
+</head>
+<body>
+<div id="view"></div><button type="button" id="mobilePanelToggle" aria-expanded="false" aria-controls="ui">操作パネル</button><div id="tissueHover" role="status" aria-live="off"></div><div id="mask">3D解剖モデルを読み込み中…</div>
+<nav id="viewToolbar" aria-label="3D視点操作">
+ <div class="toolbar-row" aria-label="視点"><button type="button" data-view="front">前面</button><button type="button" data-view="back">後面</button><button type="button" data-view="lateral">外側</button><button type="button" data-view="iso" class="active">斜め3D</button></div>
+ <div class="toolbar-row"><button type="button" id="frameHip">股関節</button><button type="button" id="frameSkeleton">全体</button></div>
+</nav>
+<aside id="ui">
+ <h1>Hip Kinesiology <span class="pill">v1.0</span></h1>
+ <div class="sub">右股関節 ｜ 骨運動・靭帯緊張傾向・筋作用</div>
+ <div class="section-title">① 学習モード</div>
+ <div class="btn-row">
+  <button class="active" data-mode="atlas">静止解剖</button>
+  <button data-mode="lig">関節運動・靭帯・筋作用</button>
+ </div>
+ <div class="section">
+  <div class="section-title">② 表示する組織</div>
+  <div id="boneSection" class="structure-block"><div class="structure-heading"><strong>骨</strong><div class="group-controls" role="group" aria-label="骨の一括表示">
+   <button type="button" data-master="bones" data-preset-state="on">ON</button><button type="button" data-master="bones" data-preset-state="transparent">透過30%</button><button type="button" data-master="bones" data-preset-state="off">OFF</button>
+  </div></div><div id="boneItems" class="hidden"><input id="pelvis" type="checkbox" checked><input id="pelvisLeft" type="checkbox" checked><input id="sacrum" type="checkbox" checked><input id="coccyx" type="checkbox" checked><input id="lumbar1" type="checkbox" checked><input id="lumbar2" type="checkbox" checked><input id="lumbar3" type="checkbox" checked><input id="lumbar4" type="checkbox" checked><input id="lumbar5" type="checkbox" checked><input id="femur" type="checkbox" checked><input id="tibiaRight" type="checkbox" checked><input id="fibulaRight" type="checkbox" checked></div></div>
+  <div id="ligSection" class="structure-block"><div class="structure-heading"><strong>靭帯</strong><div class="group-controls" role="group" aria-label="靭帯の一括表示">
+   <button type="button" data-master="ligaments" data-preset-state="on">ON</button><button type="button" data-master="ligaments" data-preset-state="off">OFF</button>
+  </div></div><div id="ligItems" class="hidden"><input id="ilio" type="checkbox" checked><input id="pubo" type="checkbox" checked><input id="ischio" type="checkbox" checked></div>
+  <div class="pose-presets">
+   <div><button data-preset="cpp">しまりの肢位</button><div class="pose-hint">伸展＋外転＋内旋</div></div>
+   <div><button data-preset="lpp">ゆるみの肢位</button><div class="pose-hint">屈曲＋外転＋外旋</div></div>
+  </div></div>
+  <div id="muscleSection" class="structure-block"><div class="structure-heading"><strong>筋</strong><div class="group-controls" role="group" aria-label="筋の一括表示">
+   <button type="button" data-master="muscles" data-preset-state="on">すべてON</button><button type="button" data-master="muscles" data-preset-state="transparent">透過30%</button><button type="button" data-master="muscles" data-preset-state="off">すべてOFF</button>
+  </div></div>
+  <input id="itBand" type="checkbox" class="hidden" aria-hidden="true" tabindex="-1" />
+  <div id="groupButtons" class="group-shortcuts" role="group" aria-label="協働筋群のプリセット">
+   <button type="button" data-group="flex">屈曲筋群</button><button type="button" data-group="ext">伸展筋群</button><button type="button" data-group="abd">外転筋群</button><button type="button" data-group="add">内転筋群</button><button type="button" data-group="er">外旋筋群</button><button type="button" data-group="ir">内旋筋群</button>
+  </div>
+  
+  <div class="hidden" id="groupDescription"></div>
+  <div id="muscleItems" class="structure-items"></div>
+  <details id="muscleExtras"><summary>その他の筋操作</summary>
+   <label class="line"><input id="autoMuscles" type="checkbox">運動方向に合わせて筋群を自動選択</label>
+   <div class="small" style="margin:9px 0 5px">個別筋の運動例</div>
+   <select id="muscleSelect" style="width:100%;background:#1b2d47;color:#e7eefb;padding:7px;border:1px solid #405772;border-radius:6px"></select>
+   <div style="margin-top:6px"><button id="musclePlay">選択した筋の運動を再生</button></div>
+   <div id="muscleInfo" class="small hidden"></div>
+  </details>
+  </div>
+ </div>
+ <div id="movementPanel" class="section hidden">
+  <div class="section-title">③ 関節運動</div>
+  <div class="btn-row"><button class="active" data-axis="flex">屈曲・伸展</button><button data-axis="abd">外転・内転</button><button data-axis="rot">外旋・内旋</button></div>
+  <div class="line"><span id="negative">伸展</span><span class="angle" id="angle">中間位</span><span id="positive">屈曲</span></div>
+  <input id="motionInput" type="range" min="-20" max="110" step="1" value="0" />
+  <div class="btn-row"><button id="play">自動往復</button><button id="reset">中間位</button></div>
+
+ </div>
+ <span id="poseText" class="hidden" aria-hidden="true"></span>
+ <details id="tensionPanel" class="section hidden"><summary>靭帯の緊張判定を表示</summary>
+  <div class="tension"><span><i class="beacon" style="background:#508efa"></i>腸骨大腿・上部</span><span id="tIlioSup" data-tone="low">―</span></div>
+  <div class="tension"><span><i class="beacon" style="background:#508efa"></i>腸骨大腿・下部</span><span id="tIlioInf" data-tone="low">―</span></div>
+  <div class="tension"><span><i class="beacon" style="background:#36c98c"></i>恥骨大腿</span><span id="tPubo" data-tone="low">―</span></div>
+  <div class="tension"><span><i class="beacon" style="background:#fc9d55"></i>坐骨大腿</span><span id="tIschio" data-tone="low">―</span></div>
+ </details>
+ <details class="section" id="calibrationPanel">
+  <summary>教員用：回転中心の確認・微調整（通常操作は不要）</summary>
+  <div class="small" style="margin-top:6px">骨頭中心はモデル形状から起動時に自動推定し、同一ブラウザ内に記録します。通常は6点選択不要です。推定できない場合は警告を表示します。</div>
+  <div class="section-title" style="margin-top:12px">坐骨大腿靭帯の付着部（教員確認用）</div>
+  <button id="anchorMarkers" type="button">推定した両端の位置を表示</button>
+  <div class="small" id="anchorStatus">運動モードに切り替えると元モデルから両端を推定します。</div>
+  <div class="small">橙：坐骨・寛骨臼後下縁側（骨盤固定）／黄：大腿骨頸部・大転子基部側（大腿骨に追従）。表示点は3Dメッシュからの自動推定で、検証済みの付着座標ではありません。</div>
+  <div class="focus" id="calibrationResult" style="margin-top:6px">骨頭中心を自動設定中…</div>
+  <div class="btn-row"><button id="calibrateBtn">6点指定を開始（任意）</button><button id="clearCenter">保存した中心を解除・再推定</button></div>
+  <div class="btn-row" style="margin-top:7px"><button id="exportShared">現在の中心を固定した配布用HTMLを生成</button></div>
+  <p class="small" id="sharedCenterInfo">教員が中心を確定後にこのボタンを押すと、全利用者共通の中心座標をHTML内に埋め込んだ配布版を作れます。ブラウザごとの再校正は不要です。</p>
+  <p class="small">6点指定中は「点を指定」ボタンを押してからクリックします。ドラッグ中の視点操作は記録しません。</p>
+  <div id="pointCaptureWrap" class="hidden"><button id="capturePoint">点を指定（0/6）</button><button id="undoPoint">直前を取り消す</button></div>
+  <details><summary>手動微調整（必要時のみ）</summary>
+   <div class="small">大腿骨Bounding Box内の相対位置（0–100%）</div>
+   <div>左右 X <span id="vx">0%</span><input type="range" id="px" min="0" max="100" step="0.1" value="50"></div>
+   <div>上下 Y <span id="vy">0%</span><input type="range" id="py" min="0" max="100" step="0.1" value="94"></div>
+   <div>前後 Z <span id="vz">0%</span><input type="range" id="pz" min="0" max="100" step="0.1" value="50"></div>
+  </details>
+ </details>
+ <details class="section"><summary>読み込み状況・手動GLB読み込み</summary>
+  <div id="status" class="status">読み込み中…</div>
+  <div class="small">3Dモデルを外部から自動取得。失敗時はローカルGLBを選択できます。</div>
+  <div class="btn-row"><button id="retryOnline">オンライン再試行</button><a href="https://nqwrc.github.io/3d-anatomy/" target="_blank" rel="noopener">元のアトラス</a></div>
+  <input id="localGLB" type="file" accept=".glb" multiple style="font-size:11px;margin-top:5px;max-width:100%" />
+  <details><summary>GLB入手先</summary>
+   <a target="_blank" rel="noopener" href="https://github.com/nqwrc/3d-anatomy/blob/master/public/models/skeletal.glb">skeletal.glb</a> /
+   <a target="_blank" rel="noopener" href="https://github.com/nqwrc/3d-anatomy/blob/master/public/models/joints.glb">joints.glb</a> /
+   <a target="_blank" rel="noopener" href="https://github.com/nqwrc/3d-anatomy/blob/master/public/models/muscular.glb">muscular.glb</a>
+  </details>
+ </details>
+ <details class="section"><summary>研究文献・出典・制約</summary>
+  <p class="small">骨・靭帯・筋の形状：Z-Anatomy派生モデル（nqwrc/3d-anatomy公開GLB）。各モデルと配布元のライセンス・原著者表示を維持してください。全アトラスにはCC BY-NC系構造が含まれます。使用範囲と配布方法に応じて原典LICENSE/NOTICEを確認してください。</p>
+  <p class="small">靭帯緊張の方向と＋／＋＋表示は、授業用に提供されたNeumann DAのスライド表に合わせた<strong>教科書的な定性ルール</strong>です。Hidaka et al. Clinical Anatomy 2014 (DOI:10.1002/ca.22425)等の計測結果と完全な定量的一致を保証するものではありません。実際のひずみは複合肢位・荷重・個体差に依存します。</p>
+  <p class="small"><strong>大腰筋と腸脛靭帯：</strong>大腰筋上部を腰椎に固定し、末梢を大腿骨に追従させます。腸脛靭帯は大殿筋または大腿筋膜張筋の表示と連動し、股関節運動時は近位側を固定し遠位側が右下肢に追従します。筋・筋膜の隣接部は運動変形を近似的に同期します（メッシュが完全に融合した物理モデルではありません）。腸骨稜からGerdy結節に至る大腿筋膜の肥厚部であり、両筋から筋膜性の付着・移行を受けます。元データで別オブジェクトになった接合部は実際の組織連続性を保証しません。遠位の帯状部を細くし、近位の筋膜移行部の幅を保持した灰色・常時30%不透明度の模式表現です。実際の筋膜の厚さ・幅を定量化したものではありません。</p>
+  <p class="small"><strong>制約：</strong>骨形状は既存3Dモデルです。軟部組織は回転補間による模式的変形で、実際の付着点の拘束、靭帯巻き付き、組織ひずみを再現するものではありません。筋の協働筋群は代表的作用の一覧であり、EMG由来の活動割合ではありません。中・小殿筋の前後部、大内転筋の部分別作用は全筋メッシュで代用しており、線維ごとの作用差は可視化できません。骨頭中心は自動推定のため、授業使用前の一度の目視検証を推奨します。</p>
+  <p class="small"><a target="_blank" rel="noopener" href="https://github.com/nqwrc/3d-anatomy">3Dモデル実装・ライセンス</a> /
+  <a target="_blank" rel="noopener" href="https://pubmed.ncbi.nlm.nih.gov/24913440/">Hidaka et al.</a></p>
+ </details>
+</aside>
+<div id="footnote" class="right-note">静止解剖標本：元の形状と配置を保持しています。</div>
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
+const $=id=>document.getElementById(id);
+const touchPanelQuery=window.matchMedia('(max-width:880px)');
+function syncTouchPanel(){
+ if(!touchPanelQuery.matches){document.body.classList.remove('mobile-panel-collapsed');
+  $('mobilePanelToggle').setAttribute('aria-expanded','true');return;}
+ document.body.classList.add('mobile-panel-collapsed');
+ $('mobilePanelToggle').setAttribute('aria-expanded','false');
+ $('mobilePanelToggle').textContent='操作パネル';
+}
+syncTouchPanel();
+touchPanelQuery.addEventListener('change',syncTouchPanel);
+$('mobilePanelToggle').addEventListener('click',()=>{
+ const collapsed=document.body.classList.toggle('mobile-panel-collapsed');
+ $('mobilePanelToggle').textContent=collapsed?'操作パネル':'閉じる ×';
+ $('mobilePanelToggle').setAttribute('aria-expanded',String(!collapsed));
+});
+
+const scene=new THREE.Scene();scene.background=new THREE.Color('#0b1220');
+const camera=new THREE.PerspectiveCamera(39,innerWidth/innerHeight,0.001,100000);
+const renderer=new THREE.WebGLRenderer({antialias:true,powerPreference:'high-performance'});
+renderer.setSize(innerWidth,innerHeight);renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+renderer.outputColorSpace=THREE.SRGBColorSpace;
+$('view').replaceChildren(renderer.domElement); // Remove stale canvas, then insert active renderer
+const controls=new OrbitControls(camera,renderer.domElement);controls.enableDamping=true;controls.dampingFactor=.08;
+scene.add(new THREE.HemisphereLight(0xd5e8ff,0x41536d,2.1));
+for(const [p,i] of [[[3,6,6],2.0],[[-4,1,-5],1.15]]){const l=new THREE.DirectionalLight(0xffffff,i);l.position.set(...p);scene.add(l)}
+const keyGroups={
+ pelvis:['Hip bone.r'],pelvisLeft:['Hip bone.l'],sacrum:['Sacrum'],coccyx:['Coccyx'],
+ lumbar1:['Vertebra L1'],lumbar2:['Vertebra L2'],lumbar3:['Vertebra L3'],lumbar4:['Vertebra L4'],lumbar5:['Vertebra L5'],
+ femur:['Femur.r'],tibiaRight:['Tibia.r'],fibulaRight:['Fibula.r'],
+ ilio:['Descending part of iliofemoral ligament.r','Transverse part of iliofemoral ligament.r'],
+ pubo:['Pubofemoral ligament.r'],ischio:['Ischiofemoral ligament.r'],
+ glutMax:['Gluteus maximus muscle.r'],glutMed:['Gluteus medius muscle.r'],glutMin:['Gluteus minimus muscle.r'],
+ iliacus:['Iliacus muscle.r'],adductor:['Adductor magnus.r'],addMin:['Adductor minimus.r','Adductor minimus muscle.r'],
+ psoas:['Psoas major.r'],rectus:['Rectus femoris muscle.r'],sartorius:['Sartorius muscle.r'],tfl:['Tensor fasciae latae.r'],
+ pectineus:['Pectineus muscle.r'],addLong:['Adductor longus.r'],addBrevis:['Adductor brevis.r'],gracilis:['Gracilis muscle.r'],
+ semiten:['Semitendinosus muscle.r'],semimem:['Semimembranosus muscle.r'],bicepsLong:['Long head of biceps femoris.r'],
+ piriformis:['Piriformis muscle.r'],obturatorIn:['Obturator internus.r'],obturatorEx:['Obturator externus.r'],
+ quadratus:['Quadratus femoris muscle.r'], gemSup:['Superior gemellus muscle.r'],gemInf:['Inferior gemellus muscle.r'],
+ itBand:['Iliotibial tract.r']
+};
+const colors={pelvis:0xe8dcc6,pelvisLeft:0xe8dcc6,sacrum:0xe3d2be,
+ coccyx:0xd9c4b2,lumbar1:0xd5c8b6,lumbar2:0xd5c8b6,lumbar3:0xd5c8b6,lumbar4:0xd5c8b6,lumbar5:0xd5c8b6,
+ femur:0xecf1f7,tibiaRight:0xe0eaf3,fibulaRight:0xe0eaf3,ilio:0x508efa,pubo:0x36c98c,ischio:0xfc9d55,
+ glutMax:0xc45382,glutMed:0xdc7197,glutMin:0xff97b3,iliacus:0xeda75d,adductor:0xc7a4f0,psoas:0xeeb85d,rectus:0xf2bc72,sartorius:0xd9b55d,tfl:0xeab38f,
+ pectineus:0x9db7d7,addLong:0xb98cd9,addBrevis:0x9c84d3,addMin:0xa48acb,gracilis:0xcbb2db,
+ semiten:0xd47d91,semimem:0xd08388,bicepsLong:0xe98a8d,piriformis:0xd7a57c,
+ itBand:0xa7aaa8,obturatorIn:0xe29c7c,obturatorEx:0xd89077,quadratus:0xc98e7a,gemSup:0xd6a088,gemInf:0xe0af99};
+const ligNames={
+ 'Descending part of iliofemoral ligament.r':'下行部',
+ 'Transverse part of iliofemoral ligament.r':'横走部',
+ 'Pubofemoral ligament.r':'恥骨大腿',
+ 'Ischiofemoral ligament.r':'坐骨大腿'
+};
+const entries=new Map(),inventoryBySystem=new Map(),loadedSystems=new Set(),failures=new Map();
+const sources=['skeletal','joints','muscular'];
+const materials=new Map();const prepared=new Map();const ligamentAnchors=new Map();
+const loader=new GLTFLoader();const draco=new DRACOLoader();
+draco.setDecoderPath('https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/libs/draco/');loader.setDRACOLoader(draco);
+const ASSET_BASES=['https://nqwrc.github.io/3d-anatomy/models/','https://raw.githubusercontent.com/nqwrc/3d-anatomy/master/public/models/'];
+let mode='atlas', axis='flex',play=false,frameTime=performance.now(),bodyBox=null,bbox=null,movingFemur=null;
+let calibrated=false,calibrating=false,sideSign=1,calibrationPoints=[],calibrationMarkers=[],captureArmed=false,pointerDown=null;
+const CENTER_STORAGE='hip-kinesiology-05-center-v1'; // Preserve saved Beta 05–07 calibration
+// The instructor export action replaces exactly this marker in a distributed HTML.
+const SHARED_CENTER_CONFIG = {"signature":"0.116590:0.454439:0.0781115","xyz":[0.564,0.9490000000000002,0.6900000000000001],"source":"teacher-fixed"};
+const muscleLabels={glutMax:'大殿筋',glutMed:'中殿筋',glutMin:'小殿筋',iliacus:'腸骨筋',adductor:'大内転筋',
+ psoas:'大腰筋',rectus:'大腿直筋',sartorius:'縫工筋',tfl:'大腿筋膜張筋',pectineus:'恥骨筋',
+ addLong:'長内転筋',addBrevis:'短内転筋',gracilis:'薄筋',semiten:'半腱様筋',semimem:'半膜様筋',
+ bicepsLong:'大腿二頭筋長頭',addMin:'小内転筋',piriformis:'梨状筋',obturatorIn:'内閉鎖筋',obturatorEx:'外閉鎖筋',
+ quadratus:'大腿方形筋',gemSup:'上双子筋',gemInf:'下双子筋'};
+const muscleKeys=Object.keys(muscleLabels),transparentMuscles=new Set();
+const FIXED_ALPHA=.30;
+// The iliotibial tract remains gently visible at a fixed 30% opacity,
+// independently of whether TFL / gluteus maximus is solid or translucent.
+const ITB_OPACITY=.30;
+let transparentBones=false;
+const boneKeys=['pelvis','pelvisLeft','sacrum','coccyx','lumbar1','lumbar2','lumbar3','lumbar4','lumbar5','femur','tibiaRight','fibulaRight'];
+const ligamentKeys=['ilio','pubo','ischio'];
+const visibilityGroups={bones:boneKeys,ligaments:ligamentKeys,muscles:muscleKeys};
+function updateMuscleButtons(){
+ for(const key of muscleKeys){
+  const el=$(key),btn=document.querySelector(`[data-muscle-cycle="${key}"]`);
+  if(!el||!btn)continue;
+  const state=!el.checked?'off':transparentMuscles.has(key)?'transparent':'on';
+  btn.dataset.state=state;btn.textContent=state==='on'?'ON':state==='transparent'?'透過':'OFF';
+  btn.disabled=el.disabled;
+  btn.setAttribute('aria-label',`${muscleLabels[key]}：${state==='on'?'表示':state==='transparent'?'30%透過':'非表示'}。クリックして次へ`);
+  btn.title='OFF → ON → 30%透過 → OFF';
+ }
+}
+function updateMasterButtons(){
+ for(const [group,keys] of Object.entries(visibilityGroups)){
+  const available=keys.filter(k=>$(k)&&!$(k).disabled);
+  const active=available.filter(k=>$(k).checked);
+  const allOn=available.length>0&&active.length===available.length;
+  const allOff=active.length===0;
+  const allTransparent=group==='muscles'&&allOn&&active.every(k=>transparentMuscles.has(k));
+  for(const btn of document.querySelectorAll(`[data-master="${group}"]`)){
+   const s=btn.dataset.presetState;
+   const isActive=(s==='off'&&allOff)||(s==='transparent'&&(
+    (group==='muscles'&&allTransparent)||(group==='bones'&&allOn&&transparentBones)))||
+    (s==='on'&&allOn&&(group==='bones'?!transparentBones:group==='muscles'?!allTransparent:true));
+   btn.classList.toggle('preset-active',isActive);btn.setAttribute('aria-pressed',String(isActive));
+  }
+ }
+ updateMuscleButtons();
+}
+function clearActiveMuscleGroup(){
+ $('autoMuscles').checked=false;lastGroupShown=null;
+ for(const b of document.querySelectorAll('[data-group]'))b.classList.remove('group-current');
+}
+function applyGroupPreset(group,state){
+ const keys=visibilityGroups[group];if(!keys)return;
+ if(group==='bones')transparentBones=state==='transparent';
+ for(const key of keys){const el=$(key);if(!el||el.disabled)continue;
+  el.checked=state!=='off';
+  if(group==='muscles'){
+   if(state==='transparent')transparentMuscles.add(key);
+   else transparentMuscles.delete(key);
+  }
+ }
+ if(group==='muscles')clearActiveMuscleGroup();
+ applyVisibility();
+}
+
+// Qualitative principal actions used ONLY for a teaching visualization of
+// shortening/lengthening tendency.  +flex=flexion, +abd=abduction, +rot=external rotation.
+// For gluteal fibers, adductor magnus, deep rotators etc. whole-muscle meshes
+// cannot resolve head/fiber-dependent actions; do not interpret this as true length.
+const MUSCLE_ACTIONS={
+ glutMax:{flex:-1,rot:.40},glutMed:{abd:1,rot:-.20},glutMin:{abd:1,rot:-.40},
+ iliacus:{flex:1,rot:.2},adductor:{abd:-1,flex:-.15},addMin:{abd:-1},psoas:{flex:1,rot:.2},rectus:{flex:1},
+ sartorius:{flex:1,abd:.20,rot:.30},tfl:{abd:1,flex:.35,rot:-.35},
+ pectineus:{abd:-1,flex:.35},addLong:{abd:-1,flex:.20},addBrevis:{abd:-1,flex:.20},
+ gracilis:{abd:-1},semiten:{flex:-1},semimem:{flex:-1},bicepsLong:{flex:-1},
+ piriformis:{rot:1,abd:.15},obturatorIn:{rot:1},obturatorEx:{rot:1},
+ quadratus:{rot:1},gemSup:{rot:1},gemInf:{rot:1}
+};
+// Class notes supplied by the instructor: bold terms => principal, other terms => supplementary.
+// A named whole-muscle mesh cannot anatomically separate anterior/posterior fiber regions.
+const MUSCLE_GROUPS={
+ flex:{label:'屈曲筋群',primary:['iliacus','psoas','rectus','sartorius','tfl','pectineus','addLong'],secondary:['glutMed','glutMin'],note:'中・小殿筋は前部線維が関与（全筋メッシュによる代用）'},
+ ext:{label:'伸展筋群',primary:['glutMax','bicepsLong','semiten','semimem'],secondary:['glutMed','glutMin','adductor'],note:'中・小殿筋は後部線維、大内転筋は後部が関与（全筋メッシュによる代用）'},
+ abd:{label:'外転筋群',primary:['glutMed','glutMin','tfl'],secondary:['glutMax','sartorius','piriformis'],note:'大殿筋・梨状筋の作用は部位や肢位に依存'},
+ add:{label:'内転筋群',primary:['adductor','addMin','addLong','addBrevis','gracilis','pectineus'],secondary:['glutMax','semiten'],note:'小内転筋の独立モデルは収録状況を確認。大殿筋・半腱様筋は補助'},
+ er:{label:'外旋筋群',primary:['glutMax','piriformis','quadratus','obturatorIn','obturatorEx','gemSup','gemInf','iliacus','psoas','sartorius'],secondary:['glutMed','glutMin'],note:'中・小殿筋は後部線維が関与（全筋メッシュによる代用）'},
+ ir:{label:'内旋筋群',primary:['glutMed','glutMin','tfl'],secondary:[],note:'中・小殿筋は主に前部線維（全筋メッシュによる代用）'}
+};
+const groupGoal={flex:{flex:55,abd:0,rot:0},ext:{flex:-20,abd:0,rot:0},abd:{flex:0,abd:30,rot:0},add:{flex:0,abd:-20,rot:0},er:{flex:0,abd:0,rot:30},ir:{flex:0,abd:0,rot:-30}};
+const preferredGroup={glutMax:'ext',glutMed:'abd',glutMin:'abd',iliacus:'flex',psoas:'flex',rectus:'flex',sartorius:'flex',tfl:'abd',pectineus:'add',addLong:'add',addBrevis:'add',addMin:'add',adductor:'add',gracilis:'add',bicepsLong:'ext',semiten:'ext',semimem:'ext',piriformis:'er',quadratus:'er',obturatorIn:'er',obturatorEx:'er',gemSup:'er',gemInf:'er'};
+const groupActionLabel={flex:'屈曲',ext:'伸展',abd:'外転',add:'内転',er:'外旋',ir:'内旋'};
+for(const key of muscleKeys){
+ const opt=document.createElement('option');opt.value=key;
+ opt.textContent=muscleLabels[key]+' → '+groupActionLabel[preferredGroup[key]];
+ $('muscleSelect').append(opt);
+}
+$('muscleSelect').value='glutMed';
+for(const k of muscleKeys){
+ const row=document.createElement('div');row.className='muscle-entry';
+ const label=document.createElement('span');label.textContent=muscleLabels[k];
+ const control=document.createElement('button');control.type='button';control.className='muscle-state';
+ control.dataset.muscleCycle=k;control.dataset.state='off';control.textContent='OFF';
+ const check=document.createElement('input');check.type='checkbox';check.id=k;check.className='state-storage';
+ control.addEventListener('click',()=>{
+  if(check.disabled)return;
+  const prev=!check.checked?'off':transparentMuscles.has(k)?'transparent':'on';
+  if(prev==='off'){check.checked=true;transparentMuscles.delete(k)}
+  else if(prev==='on'){check.checked=true;transparentMuscles.add(k)}
+  else{check.checked=false;transparentMuscles.delete(k)}
+  clearActiveMuscleGroup();applyVisibility();
+ });
+ row.append(label,control,check);$('muscleItems').append(row);
+}
+let lastGroupShown=null,playType='axis',motionPreset='neutral';
+function showMuscleGroup(group,{manual=false}={}){
+ const g=MUSCLE_GROUPS[group];if(!g||lastGroupShown===group&&!manual)return;
+ lastGroupShown=group;
+ const primary=new Set(g.primary),secondary=new Set(g.secondary);
+ for(const id of muscleKeys){
+  $(id).checked=!$(id).disabled&&(primary.has(id)||secondary.has(id));
+  if(secondary.has(id)&&!$(id).disabled)transparentMuscles.add(id);
+  else transparentMuscles.delete(id);
+ }
+ for(const b of document.querySelectorAll('[data-group]'))b.classList.toggle('group-current',b.dataset.group===group);
+ if(manual)$('autoMuscles').checked=false;
+ applyVisibility();
+}
+
+function autoMuscleForPose(p){
+ if(!$('autoMuscles').checked||mode==='atlas')return;
+ const major=[['flex',p.flex],['abd',p.abd],['rot',p.rot]].sort((a,b)=>Math.abs(b[1])-Math.abs(a[1]))[0];
+ if(!major||Math.abs(major[1])<3)return;
+ const g=major[0]==='flex'?(major[1]>0?'flex':'ext'):major[0]==='abd'?(major[1]>0?'abd':'add'):(major[1]>0?'er':'ir');
+ if(g!==lastGroupShown)showMuscleGroup(g);
+}
+let centerSource='未設定',sharedCenterValid=false;
+let tensionStatus='',tissuesPrepared=false,prepareError='',poseDirty=true,bootBusy=false;
+let femtreeCache=null,peltreeCache=null;
+let currentPose={flex:0,abd:0,rot:0},motionValue=0,loopDir=1,muscleKey='glutMed',cycleStarted=performance.now();
+const pivot=new THREE.Group();scene.add(pivot);
+const movingLowerBones=[]; // tibia/fibula follow the thigh as a fixed-knee demonstration
+const pin=new THREE.Mesh(new THREE.SphereGeometry(1,14,12),new THREE.MeshBasicMaterial({color:0xffe18e,depthTest:false}));
+scene.add(pin);pin.visible=false;pin.renderOrder=1000;
+function setStatus(s,err=false){$('status').textContent=s;$('status').style.color=err?'#ffc29c':'#bfdefd'}
+function getNodeName(n){return (typeof n.userData?.za_name==='string'?n.userData.za_name:'').trim()}
+function registerNodes(root,system){
+ const found=new Set();let count=0;
+ root.traverse(node=>{
+  if(node.isMesh){node.visible=false;count++}
+  const name=getNodeName(node);if(!name||found.has(name))return;
+  found.add(name);
+  if(Object.values(keyGroups).flat().includes(name)&&!entries.has(name)){
+   let drawable=false;node.traverse(o=>{if(o.isMesh)drawable=true});
+   if(drawable)entries.set(name,node);
+  }
+ });
+ inventoryBySystem.set(system,`${found.size}名称・${count}メッシュ`);
+}
+function detachmentDepth(o){let n=0;for(let p=o.parent;p;p=p.parent)n++;return n}
+function attachNamedNodes(){
+ const all=[...entries.values()].sort((a,b)=>detachmentDepth(b)-detachmentDepth(a));
+ scene.updateMatrixWorld(true);
+ for(const obj of all){if(obj.parent!==scene&&obj.parent!==pivot)scene.attach(obj)}
+ scene.updateMatrixWorld(true);
+}
+function nearestAnatomicalOwner(mesh){
+ for(let node=mesh;node;node=node.parent){
+  const name=getNodeName(node);if(name)return name;
+ }
+ return '';
+}
+function materialFor(name,key){
+ if(!materials.has(name))materials.set(name,new THREE.MeshStandardMaterial({color:colors[key],roughness:key==='itBand'?.96:.81,
+ metalness:0,side:THREE.DoubleSide,transparent:key==='itBand'||key==='ilio'||key==='pubo'||key==='ischio',
+ opacity:key==='itBand'?ITB_OPACITY:((key==='ilio'||key==='pubo'||key==='ischio')?.94:1),
+ depthWrite:key!=='itBand'}));
+ return materials.get(name);
+}
+// Reduce the exaggerated broad, muscle-like silhouette of the source iliotibial
+// tract while preserving its ORIGINAL 3D course and both longitudinal ends.
+// Each slice is uniformly contracted about the source's X/Z centreline; this
+// is an intentionally schematic fascia ribbon, not a measured band width.
+let itBandRefined=false;
+function refineITBandGeometry(){
+ if(itBandRefined)return;
+ const root=entries.get('Iliotibial tract.r');if(!root)return;
+ scene.updateMatrixWorld(true);
+ const meshes=[];let yMin=Infinity,yMax=-Infinity;
+ root.traverse(mesh=>{
+  if(!mesh.isMesh||nearestAnatomicalOwner(mesh)!=='Iliotibial tract.r')return;
+  const a=mesh.geometry?.attributes?.position;if(!a)return;
+  mesh.updateMatrixWorld(true);meshes.push(mesh);
+  const v=new THREE.Vector3();for(let i=0;i<a.count;i++){
+   v.fromBufferAttribute(a,i).applyMatrix4(mesh.matrixWorld);
+   yMin=Math.min(yMin,v.y);yMax=Math.max(yMax,v.y);
+  }
+ });
+ const span=yMax-yMin;if(!meshes.length||!(span>1e-7))return;
+ const bins=32,sumX=new Float64Array(bins),sumZ=new Float64Array(bins),count=new Uint32Array(bins);
+ const toBin=y=>Math.max(0,Math.min(bins-1,Math.floor((y-yMin)/span*bins)));
+ for(const mesh of meshes){const a=mesh.geometry.attributes.position,v=new THREE.Vector3();
+  for(let i=0;i<a.count;i++){v.fromBufferAttribute(a,i).applyMatrix4(mesh.matrixWorld);
+   const k=toBin(v.y);sumX[k]+=v.x;sumZ[k]+=v.z;count[k]++;}
+ }
+ const centers=[];for(let k=0;k<bins;k++)centers.push(count[k]
+  ?[sumX[k]/count[k],sumZ[k]/count[k]]:null);
+ for(let k=0;k<bins;k++)if(!centers[k]){
+  let left=k-1,right=k+1;
+  while(left>=0&&!centers[left])left--;
+  while(right<bins&&!centers[right])right++;
+  centers[k]=left>=0&&right<bins
+   ?centers[left].map((x,j)=>x+(centers[right][j]-x)*(k-left)/(right-left))
+   :(left>=0?centers[left]:right<bins?centers[right]:[0,0]);
+ }
+ const smooth=centers.map((_,k)=>{
+  let x=0,z=0,w=0;for(let d=-2;d<=2;d++){
+   const i=Math.min(bins-1,Math.max(0,k+d));const a=3-Math.abs(d);
+   x+=centers[i][0]*a;z+=centers[i][1]*a;w+=a;
+  }return [x/w,z/w];
+ });
+ for(const mesh of meshes){
+  mesh.geometry=mesh.geometry.clone();const geom=mesh.geometry,a=geom.attributes.position;
+  const inv=new THREE.Matrix4().copy(mesh.matrixWorld).invert(),p=new THREE.Vector3();
+  for(let i=0;i<a.count;i++){
+   p.fromBufferAttribute(a,i).applyMatrix4(mesh.matrixWorld);
+   const t=Math.max(0,Math.min(.999,(p.y-yMin)/span)),index=t*(bins-1);
+   const k=Math.floor(index),f=index-k;
+   const cx=smooth[k][0]*(1-f)+smooth[Math.min(k+1,bins-1)][0]*f;
+   const cz=smooth[k][1]*(1-f)+smooth[Math.min(k+1,bins-1)][1]*f;
+   // Preserve the native proximal fascial breadth around the iliac crest,
+   // tensor fasciae latae and gluteus maximus junctions. Beta 13 uniformly
+   // shrank these attachments and made the tissues appear detached.
+   // The distal tract stays slender and grey (pedagogical—not measured).
+   const u=Math.max(0,Math.min(1,(t-.38)/.28));
+   const smoothstep=u*u*(3-2*u);
+   const width=.43+(.94-.43)*smoothstep;
+   p.x=cx+(p.x-cx)*width;p.z=cz+(p.z-cz)*width;
+   p.applyMatrix4(inv);a.setXYZ(i,p.x,p.y,p.z);
+  }
+  a.needsUpdate=true;geom.computeVertexNormals();geom.computeBoundingSphere();geom.computeBoundingBox();
+ }
+ itBandRefined=true;
+ console.info('Beta 15: distal fascia narrowed; proximal fascial attachments preserved');
+}
+// The atlas contains a separately named iliotibial tract. Display it when either
+// contributing muscle is visible; hide it when both are hidden. No extra UI is added.
+function syncITBand(){
+ const contributors=['tfl','glutMax'].filter(k=>$(k)?.checked);
+ $('itBand').checked=contributors.length>0;
+ return contributors.length && contributors.every(k=>transparentMuscles.has(k));
+}
+function applyVisibility(){
+ syncITBand();
+ for(const [key,names] of Object.entries(keyGroups)){
+  const requested=$(key)?.checked??false;
+  const visible=!!requested && !calibrating;
+  for(const name of names){const o=entries.get(name);if(!o)continue;
+   const selected=calibrating?key==='femur':visible;
+   o.visible=selected;
+   o.traverse(child=>{if(!child.isMesh)return;
+    // Z-Anatomy structures may be nested: descendants belonging to another za_name
+    // must remain hidden even when their anatomical parent is shown.
+    const owned=nearestAnatomicalOwner(child)===name;
+    child.visible=selected&&owned;
+    if(selected&&owned){
+    const material=materialFor(name,key);child.material=material;
+    // Genuine depth test for the posterior ligament: no forced all-bone overlay.
+    if(key==='ischio')child.renderOrder=0;
+    if(muscleKeys.includes(key)||boneKeys.includes(key)||key==='itBand'){
+     const alpha=key==='itBand'?ITB_OPACITY:
+       boneKeys.includes(key)?(transparentBones?FIXED_ALPHA:1):
+       (transparentMuscles.has(key)?FIXED_ALPHA:1);
+     material.transparent=alpha<.999;material.opacity=alpha;material.depthWrite=alpha>.98;
+    }
+   }});
+  }
+ }
+ if(mode!=='atlas'){updateLigamentPresentation();updateMusclePresentation();if(tissuesPrepared)prepareTissues();}
+ updateMasterButtons();
+}
+// Move the camera's optical centre to the MIDDLE OF THE ACTUAL 3D AREA
+// (screen width minus the left overlay), while OrbitControls still rotates
+// around the anatomical focus. No geometry or world-space joint is shifted.
+function updateViewportPrincipalPoint(){
+ const rect=$('ui').getBoundingClientRect();
+ const safeLeft=innerWidth>700?Math.min(innerWidth*.72,rect.right+10):0;
+ camera.filmOffset=-camera.getFilmWidth()*(safeLeft/(2*innerWidth));
+ camera.updateProjectionMatrix();
+}
+let focusCenter=new THREE.Vector3(),focusDistance=50,currentView='iso';
+function aimAt(center,distance){
+ focusCenter.copy(center);focusDistance=Math.max(.001,distance);
+ const dir={front:[0,0,1],back:[0,0,-1],lateral:[sideSign,0,0],iso:[sideSign,.35,1]}[currentView]||[sideSign,.35,1];
+ camera.position.copy(center).add(new THREE.Vector3(...dir).normalize().multiplyScalar(focusDistance));
+ controls.target.copy(center);
+ camera.near=Math.max(.001,focusDistance/7000);camera.far=focusDistance*80;
+ updateViewportPrincipalPoint();controls.update();
+}
+function frameVisibleBones(){
+ const b=new THREE.Box3();
+ for(const k of boneKeys){if(!$(k)?.checked)continue;
+  for(const n of keyGroups[k]){const o=entries.get(n);if(o)b.expandByObject(o)}
+ }
+ if(b.isEmpty())return;
+ bodyBox=b.clone();
+ const size=b.getSize(new THREE.Vector3()),c=b.getCenter(new THREE.Vector3());
+ const r=Math.max(size.x,size.y,size.z);
+ aimAt(c,r*1.95);
+}
+function frameObjects(){
+ const pelvis=entries.get('Hip bone.r'),femur=entries.get('Femur.r');
+ if(!pelvis||!femur)return;
+ // The hip button focuses on the calibrated femoral HEAD, not the midpoint
+ // of the whole thigh (which is below the actual joint).
+ const pbox=new THREE.Box3().setFromObject(pelvis),fbox=new THREE.Box3().setFromObject(femur);
+ bodyBox=new THREE.Box3().union(pbox).union(fbox);
+ const ps=pbox.getSize(new THREE.Vector3()),fs=fbox.getSize(new THREE.Vector3());
+ const r=Math.max(ps.x,ps.y,ps.z,fs.y*.43);
+ aimAt(calibrated?pivot.position:pbox.getCenter(new THREE.Vector3()),r*1.68);
+}
+function setView(which){if(!bodyBox)return;
+ currentView=which;
+ aimAt(focusCenter,focusDistance);
+ for(const b of document.querySelectorAll('[data-view]'))b.classList.toggle('active',b.dataset.view===which);
+}
+function updateCenter(center){
+ if(!movingFemur)return;
+ // Preserve the femur's neutral world-space transform while assigning a new true pivot.
+ pivot.quaternion.identity();pivot.updateMatrixWorld(true);
+ scene.attach(movingFemur);
+ for(const lower of movingLowerBones)scene.attach(lower);
+ scene.updateMatrixWorld(true);
+ pivot.position.copy(center);pivot.updateMatrixWorld(true);pivot.attach(movingFemur);
+ for(const lower of movingLowerBones)pivot.attach(lower);
+ calibrated=true;positionPin();setPose({flex:0,abd:0,rot:0});
+}
+function positionPin(){if(!bbox||!movingFemur)return;
+ const r=Math.max(bbox.getSize(new THREE.Vector3()).length()*.008,.01);
+ pin.scale.setScalar(r);pin.position.copy(pivot.position);
+ pin.visible=mode!=='atlas';
+}
+function centerFromSliders(){if(!bbox||sharedCenterValid)return;
+ const center=new THREE.Vector3(...['x','y','z'].map((d,i)=>{
+  return bbox.min[d]+(bbox.max[d]-bbox.min[d])*+$( ['px','py','pz'][i] ).value/100;
+ }));updateCenter(center);
+ for(const id of ['px','py','pz'])$('v'+id[1]).textContent=$(id).value+'%';
+ centerSource='教員の手動調整';saveCenter();$('calibrationResult').textContent='回転中心：手動調整値を保存しました。';
+}
+function setSlidersFor(center){
+ if(!bbox)return;
+ const sz=bbox.getSize(new THREE.Vector3());
+ for(const [i,d] of ['x','y','z'].entries()){
+  const v=sz[d]?Math.max(0,Math.min(100,(center[d]-bbox.min[d])/sz[d]*100)):50;
+  const id=['px','py','pz'][i];$(id).value=v.toFixed(1);$('v'+d).textContent=v.toFixed(1)+'%';
+ }
+}
+function estimateSide(){
+ const fem=entries.get('Femur.r');if(!fem||!bbox)return;
+ fem.updateMatrixWorld(true);let sx=0,n=0;
+ const threshold=bbox.min.y+bbox.getSize(new THREE.Vector3()).y*.30;
+ fem.traverse(mesh=>{if(!mesh.isMesh)return;const a=mesh.geometry?.attributes?.position;if(!a)return;
+  for(let i=0;i<a.count;i+=Math.max(1,Math.floor(a.count/1200))){
+   const p=new THREE.Vector3().fromBufferAttribute(a,i).applyMatrix4(mesh.matrixWorld);
+   if(p.y<threshold){sx+=p.x;n++}
+  }
+ });
+ if(n){const shaftX=sx/n;sideSign=Math.sign(shaftX-pivot.position.x)||1;}
+}
+const ranges={flex:[-20,110,'伸展','屈曲'],abd:[-25,45,'内転','外転'],rot:[-45,45,'内旋','外旋']};
+function setAxis(value){axis=value;play=false;playType='axis';$('play').textContent='自動往復';
+ for(const b of document.querySelectorAll('[data-axis]'))b.classList.toggle('active',b.dataset.axis===axis);
+ const q=ranges[axis];$('motionInput').min=q[0];$('motionInput').max=q[1];$('negative').textContent=q[2];$('positive').textContent=q[3];
+ setAxisValue(0);
+}
+function setAxisValue(value){motionValue=+value;
+ const p={flex:0,abd:0,rot:0};p[axis]=motionValue;setPose(p);
+ $('motionInput').value=motionValue;
+ $('angle').textContent=motionValue===0?'中間位':`${motionValue<0?ranges[axis][2]:ranges[axis][3]} ${Math.round(Math.abs(motionValue))}°`;
+ autoMuscleForPose(currentPose);
+}
+const deg=THREE.MathUtils.degToRad;
+// Beta 07: signs of the two axes corrected after instructor visual review.
+// Keep the semantic pose (+abd=abduction, +rot=external rotation) unchanged;
+// the atlas geometry requires the opposite transform sign from Beta 06.
+const AXIS_SIGN={abd:-1,rot:-1};
+const fxAxis=new THREE.Vector3(1,0,0),abAxis=new THREE.Vector3(0,0,1),rotationAxis=new THREE.Vector3(0,1,0);
+const qA=new THREE.Quaternion(),qB=new THREE.Quaternion(),qC=new THREE.Quaternion();
+function setPose(p){if(!movingFemur)return;
+ currentPose={flex:+p.flex||0,abd:+p.abd||0,rot:+p.rot||0};
+ // Flexion follows anterior (+Z). Abduction sign derives from shaft lateral offset.
+ qA.setFromAxisAngle(fxAxis,deg(-currentPose.flex));
+ qB.setFromAxisAngle(abAxis,deg(AXIS_SIGN.abd*sideSign*currentPose.abd));
+ qC.setFromAxisAngle(rotationAxis,deg(AXIS_SIGN.rot*sideSign*currentPose.rot));
+ pivot.quaternion.copy(qA).multiply(qB).multiply(qC);pivot.updateMatrixWorld(true);
+ poseDirty=true;positionPin();updateLigamentPresentation();updateMusclePresentation();updatePoseText();
+}
+function updatePoseText(){
+ $('poseText').textContent=`屈曲 ${fmt(currentPose.flex)} / 外転 ${fmt(currentPose.abd)} / 外旋 ${fmt(currentPose.rot)}`;
+}
+function fmt(x){return (x>=0?'+':'')+Math.round(x)+'°'}
+function muscleDescription(key){
+ return [muscleLabels[key],groupActionLabel[preferredGroup[key]]+'の代表的作用',
+ '筋頭・筋束ごとの作用差や、筋活動／実測筋長を再現したものではありません。'];
+}
+const muscleTarget=Object.fromEntries(muscleKeys.map(key=>[key,groupGoal[preferredGroup[key]]]));
+function startMuscle(key){if(!movingFemur)return;
+ if(mode==='atlas')setMode('lig');
+ muscleKey=key;$('muscleSelect').value=key;
+ $('pelvis').checked=true;$('femur').checked=true;
+ $('autoMuscles').checked=false;
+ for(const mk of muscleKeys){$(mk).checked=mk===key;transparentMuscles.delete(mk);}
+ lastGroupShown=null;for(const b of document.querySelectorAll('[data-group]'))b.classList.remove('group-current');
+ cycleStarted=performance.now();play=true;playType='muscle';
+ $('play').textContent='停止';applyVisibility();prepareTissues();
+ $('muscleInfo').textContent=muscleDescription(key).join(' — ');
+}
+function setMode(m){clearTissueHover();if(calibrating)finishCalibration(false);
+ mode=m;play=false;for(const b of document.querySelectorAll('[data-mode]'))b.classList.toggle('active',b.dataset.mode===mode);
+ $('movementPanel').classList.toggle('hidden',mode==='atlas');
+ $('tensionPanel').classList.toggle('hidden',mode==='atlas');
+ $('calibrationPanel').classList.toggle('hidden',mode==='atlas');
+ $('play').textContent='自動往復';
+ // One integrated movement mode: both ligament and muscle controls remain visible.
+ if(movingFemur)setPose({flex:0,abd:0,rot:0});
+ pin.visible=mode!=='atlas';
+ if(mode!=='atlas'){try{prepareTissues()}catch(err){prepareError=err?.message||String(err);console.error(err);setStatus('軟部組織の追従変形準備に失敗: '+prepareError,true)}}
+ if(mode==='atlas'){resetColor();updateTissues();}
+ applyVisibility();updateFooter();
+}
+function resetColor(){for(const [name,m] of materials){const key=Object.entries(keyGroups).find(([,names])=>names.includes(name))?.[0];
+ if(key){m.color.setHex(colors[key]);
+  const alpha=key==='itBand'?ITB_OPACITY:muscleKeys.includes(key)?(transparentMuscles.has(key)?FIXED_ALPHA:1):(boneKeys.includes(key)?(transparentBones?FIXED_ALPHA:1):(['ilio','pubo','ischio'].includes(key)? .94:1));
+  m.transparent=alpha<1;m.opacity=alpha;m.emissive.setHex(0x000000);m.emissiveIntensity=0;m.depthWrite=alpha>.98; if(key==='ischio')m.depthTest=true;}}}
+function updateFooter(){ $('footnote').textContent=''; }
+// Muscle and ligament deformation: neutral atlas meshes are skinned by proximity
+// to pelvis vs femur. No new anatomical shapes or unverified attachments are invented.
+function boneSamples(root,max=5500){
+ const meshes=[];let count=0;root.traverse(o=>{if(o.isMesh&&o.geometry?.attributes?.position){meshes.push(o);count+=o.geometry.attributes.position.count}});
+ const stride=Math.max(1,Math.ceil(count/max));const coords=[];
+ for(const m of meshes){const a=m.geometry.attributes.position;
+  for(let i=0;i<a.count;i+=stride){const p=new THREE.Vector3().fromBufferAttribute(a,i).applyMatrix4(m.matrixWorld);
+   coords.push([p.x,p.y,p.z]);}
+ }
+ return coords;
+}
+function kdBuild(pts,depth=0){if(!pts.length)return null;
+ const a=depth%3;pts.sort((x,y)=>x[a]-y[a]);const mid=Math.floor(pts.length/2);
+ return {p:pts[mid],a,l:kdBuild(pts.slice(0,mid),depth+1),r:kdBuild(pts.slice(mid+1),depth+1)};
+}
+function kdDistance2(node,p,best=Infinity){
+ if(!node)return best;
+ const dx=p[0]-node.p[0],dy=p[1]-node.p[1],dz=p[2]-node.p[2];
+ best=Math.min(best,dx*dx+dy*dy+dz*dz);
+ const d=p[node.a]-node.p[node.a];
+ best=kdDistance2(d<0?node.l:node.r,p,best);
+ if(d*d<best)best=kdDistance2(d<0?node.r:node.l,p,best);
+ return best;
+}
+function tissueNodes(){return [...new Set(['ilio','pubo','ischio','itBand',...muscleKeys].flatMap(k=>keyGroups[k]))]}
+function smoothTissueWeights(geometry,weights){
+ const idx=geometry.index;if(!idx)return weights;
+ let w=weights;
+ // Two rounds of topological averaging preserve transition bands on the continuous mesh.
+ for(let pass=0;pass<2;pass++){
+  const sums=new Float32Array(w.length),counts=new Uint32Array(w.length);
+  for(let k=0;k+2<idx.count;k+=3){
+   const a=idx.getX(k),b=idx.getX(k+1),c=idx.getX(k+2);
+   sums[a]+=w[b]+w[c];counts[a]+=2;
+   sums[b]+=w[a]+w[c];counts[b]+=2;
+   sums[c]+=w[a]+w[b];counts[c]+=2;
+  }
+  const next=new Float32Array(w.length);
+  for(let j=0;j<w.length;j++)next[j]=counts[j] ? .65*w[j]+.35*sums[j]/counts[j] : w[j];
+  w=next;
+ }
+ return w;
+}
+// A dedicated two-ended longitudinal deformation for tissues which originate
+// ABOVE the hip on fixed bones (psoas from lumbar vertebrae; IT band from ilium).
+// Nearest-bone weights are unsuitable: the lumbar origin of psoas is far from
+// the hip bone, and may be classified as moving femur instead of fixed spine.
+function pinLongitudinalTissue(name,lockedUpperFraction,rigidLowerFraction,description){
+ const root=entries.get(name);if(!root)return;
+ const parts=[];root.traverse(mesh=>{const o=prepared.get(mesh);if(mesh.isMesh&&o)parts.push(o)});
+ if(!parts.length)return;
+ let minY=Infinity,maxY=-Infinity;
+ for(const o of parts){for(let i=1;i<o.world.length;i+=3){const y=o.world[i];minY=Math.min(minY,y);maxY=Math.max(maxY,y)}}
+ const span=maxY-minY;if(!(span>1e-8))return;
+ for(const o of parts){
+  const weights=new Float32Array(o.weight.length);
+  const positionRatio=new Float32Array(o.weight.length);
+  for(let i=0;i<o.weight.length;i++){
+   const t=(maxY-o.world[i*3+1])/span;
+   positionRatio[i]=t;
+   const f=bound((t-lockedUpperFraction)/(rigidLowerFraction-lockedUpperFraction));
+   weights[i]=f*f*(3-2*f);
+  }
+  // Smooth only the transition between the two rigid end regions.
+  o.weight=smoothTissueWeights(o.mesh.geometry,weights);
+  for(let i=0;i<o.weight.length;i++){
+   if(positionRatio[i]<=lockedUpperFraction)o.weight[i]=0;
+   if(positionRatio[i]>=rigidLowerFraction)o.weight[i]=1;
+  }
+  o.longitudinalPin=description;
+ }
+}
+// An additional local registration of the iliotibial tract against the
+// tendon/aponeurotic junctions of TFL and gluteus maximus.  This does not weld
+// unrelated atlas meshes, nor assert quantitative muscle-fascia strains.
+// It gives neighbouring original surface points one continuous motion field
+// at the superior-to-mid thigh, while leaving the pelvic origins fixed.
+let itbSynchronisedKeys=new Set();
+function kdClosest(node,p,best=null,d2=Infinity){
+ if(!node)return {best,d2};
+ const u=node.p,dx=p[0]-u[0],dy=p[1]-u[1],dz=p[2]-u[2];
+ const dist=dx*dx+dy*dy+dz*dz;
+ if(dist<d2){best=u;d2=dist;}
+ const delta=p[node.a]-u[node.a],first=delta<0?node.l:node.r,second=delta<0?node.r:node.l;
+ ({best,d2}=kdClosest(first,p,best,d2));
+ if(delta*delta<d2)({best,d2}=kdClosest(second,p,best,d2));
+ return {best,d2};
+}
+function synchronizeITBInsertions(){
+ const root=entries.get('Iliotibial tract.r');if(!root)return;
+ const fascial=[];let minY=Infinity,maxY=-Infinity;
+ root.traverse(mesh=>{
+  if(!mesh.isMesh||nearestAnatomicalOwner(mesh)!=='Iliotibial tract.r')return;
+  const o=prepared.get(mesh);if(!o)return;
+  const step=Math.max(1,Math.ceil(o.weight.length/2300));
+  for(let i=0;i<o.weight.length;i+=step){
+   const j=3*i,pt=[o.world[j],o.world[j+1],o.world[j+2]];
+   minY=Math.min(minY,pt[1]);maxY=Math.max(maxY,pt[1]);
+   pt.itbWeight=o.weight[i];fascial.push(pt);
+  }
+ });
+ const span=maxY-minY;if(fascial.length<20||!(span>0))return;
+ // Use the ORIGINAL atlas source coordinates; changes in visibility do not
+ // change the reference field.  Only alter local insertions (not muscle origins).
+ const tree=kdBuild(fascial);
+ for(const key of ['tfl','glutMax']){
+  for(const name of keyGroups[key]){
+   const m=entries.get(name);if(!m)continue;
+   m.traverse(mesh=>{
+    const o=prepared.get(mesh);if(!o||o.itbSynced)return;
+    const w=new Float32Array(o.weight);
+    for(let i=0;i<w.length;i++){
+     const j=i*3,p=[o.world[j],o.world[j+1],o.world[j+2]];
+     const y=(maxY-p[1])/span;
+     // Exclude the iliac origins (uppermost 10%) and the remote lower thigh.
+     if(y<.10||y>.46)continue;
+     const closest=kdClosest(tree,p);
+     // The near-surface zone spans at most 8% of the tract's length.
+     const dist=Math.sqrt(closest.d2),proximity=bound((.08*span-dist)/(.06*span));
+     const insertion=bound((y-.10)/.13)*bound((.46-y)/.15);
+     const blend=.80*proximity*insertion;
+     if(blend>0)w[i]=w[i]*(1-blend)+closest.best.itbWeight*blend;
+    }
+    o.weight=smoothTissueWeights(mesh.geometry,w);
+    o.itbSynced=true;
+    itbSynchronisedKeys.add(name);
+   });
+  }
+ }
+}
+
+// Beta 09: isolate the two bony attachment ZONES of each ligament in the original
+// neutral atlas geometry. Nearest-bone weighting across the whole mesh (Beta 08)
+// allowed the ischial attachment to rotate with the femur and peel off its bone.
+// These pin constraints do not displace the supplied atlas endpoints or invent
+// a new ligament origin; they ONLY specify which bone carries each end.
+function pinLigamentAttachments(name){
+ if(ligamentAnchors.has(name))return;
+ const root=entries.get(name);if(!root)return;
+ const parts=[];root.traverse(mesh=>{const o=prepared.get(mesh);if(mesh.isMesh&&o?.dp&&o?.df)parts.push(o)});
+ if(!parts.length)return;
+ const allCount=parts.reduce((s,o)=>s+o.weight.length,0),stride=Math.max(1,Math.ceil(allCount/7000)),candidates=[];
+ let sampleIndex=0;
+ for(const o of parts){
+  for(let i=0;i<o.weight.length;i++){
+   if((sampleIndex++%stride)!==0)continue;
+   const j=i*3;
+   candidates.push({xyz:[o.world[j],o.world[j+1],o.world[j+2]],pelScore:o.df[i]-o.dp[i]});
+  }
+ }
+ if(candidates.length<8)return;
+ // The strongest pelvis-vs-femur proximity contrast on the static anatomical
+ // ligament identifies the broad attachment zones; use a robust mean, not one
+ // isolated extremal point that may be a mesh artefact.
+ const topN=Math.max(5,Math.min(80,Math.floor(candidates.length*.035)));
+ const centroid=arr=>{
+  const v=new THREE.Vector3();for(const a of arr)v.add(new THREE.Vector3(...a.xyz));
+  return v.multiplyScalar(1/arr.length);
+ };
+ candidates.sort((a,b)=>b.pelScore-a.pelScore);
+ const pelvicEnd=centroid(candidates.slice(0,topN));
+ const femoralEnd=centroid(candidates.slice(-topN));
+ const span=pelvicEnd.distanceTo(femoralEnd);
+ const box=new THREE.Box3().setFromPoints(candidates.map(x=>new THREE.Vector3(...x.xyz)));
+ if(span<box.getSize(new THREE.Vector3()).length()*.16){
+  console.warn('Cannot confidently separate ligament attachments',name);return;
+ }
+ // End zones remain EXACTLY on their original neutral mesh. A smooth slerp
+ // drives only the body of the ligament between the two rigid zones.
+ for(const o of parts){
+  o.ligament=name;
+  const weights=new Float32Array(o.weight.length),tValues=new Float32Array(o.weight.length);
+  for(let i=0;i<o.weight.length;i++){
+   const j=3*i,p=new THREE.Vector3(o.world[j],o.world[j+1],o.world[j+2]);
+   const dp=p.distanceTo(pelvicEnd),df=p.distanceTo(femoralEnd);
+   const t=dp/(dp+df+1e-12);tValues[i]=t;
+   // 0-18% rigid pelvic footprint; 82-100% rigid femoral footprint.
+   const f=bound((t-.18)/.64);
+   weights[i]=f*f*(3-2*f);
+  }
+  o.weight=smoothTissueWeights(o.mesh.geometry,weights);
+  // Reapply strict endpoint pins AFTER topological smoothing. Never allow an
+  // averaged weight to move a vertex in either rigid attachment zone.
+  for(let i=0;i<o.weight.length;i++){
+   if(tValues[i]<=.22)o.weight[i]=0;
+   else if(tValues[i]>=.78)o.weight[i]=1;
+  }
+  o.arcT=tValues;o.anchorSpan=span;
+ }
+ ligamentAnchors.set(name,{pelvicEnd,femoralEnd,span,count:allCount});
+ console.info('Pinned ligament attachment zones',name,{span,vertices:allCount});
+ if(name==='Ischiofemoral ligament.r'){
+  $('anchorStatus').textContent='坐骨大腿靭帯：元モデルの骨盤側・大腿骨側の端部をそれぞれ固定しました（'+allCount+'頂点）。';
+  updateAnchorMarkers();
+ }
+}
+const markerMaterialPel=new THREE.MeshBasicMaterial({color:0xff8650,depthTest:false});
+const markerMaterialFem=new THREE.MeshBasicMaterial({color:0xffe47a,depthTest:false});
+const anchorMarkerObjects=[markerMaterialPel,markerMaterialFem].map(m=>{
+ const obj=new THREE.Mesh(new THREE.SphereGeometry(1,18,12),m);scene.add(obj);obj.visible=false;obj.renderOrder=1001;return obj;
+});
+let anchorMarkersOn=false;
+function updateAnchorMarkers(){
+ const a=ligamentAnchors.get('Ischiofemoral ligament.r');
+ for(const marker of anchorMarkerObjects)marker.visible=anchorMarkersOn&&!!a;
+ if(!a||!anchorMarkersOn)return;
+ const scale=Math.max(.001,(bbox?.getSize(new THREE.Vector3()).length()||a.span)*.009);
+ for(const marker of anchorMarkerObjects)marker.scale.setScalar(scale);
+ anchorMarkerObjects[0].position.copy(a.pelvicEnd); // fixed to pelvis
+ anchorMarkerObjects[1].position.copy(a.femoralEnd).sub(pivot.position).applyQuaternion(pivot.quaternion).add(pivot.position);
+}
+$('anchorMarkers').addEventListener('click',()=>{
+ anchorMarkersOn=!anchorMarkersOn;
+ $('anchorMarkers').textContent=anchorMarkersOn?'推定した両端の位置を隠す':'推定した両端の位置を表示';
+ updateAnchorMarkers();
+});
+
+function prepareTissues(){
+ if(!entries.has('Femur.r')||!entries.has('Hip bone.r'))return;
+ scene.updateMatrixWorld(true);
+ if(!femtreeCache)femtreeCache=kdBuild(boneSamples(entries.get('Femur.r')));
+ if(!peltreeCache)peltreeCache=kdBuild(boneSamples(entries.get('Hip bone.r')));
+ const femtree=femtreeCache,peltree=peltreeCache;
+ if(!femtree||!peltree)throw new Error('骨の表面点群を取得できません');
+ for(const name of tissueNodes()){
+  const obj=entries.get(name);if(!obj)continue;
+  const key=Object.entries(keyGroups).find(([,names])=>names.includes(name))?.[0];
+  if(muscleKeys.includes(key)&&!$(key).checked)continue;
+  obj.traverse(mesh=>{
+   if(!mesh.isMesh||!mesh.geometry?.attributes?.position||prepared.has(mesh))return;
+   mesh.geometry=mesh.geometry.clone(); // avoid altering shared Z-Anatomy mesh geometry
+   const at=mesh.geometry.attributes.position,source=new Float32Array(at.array),count=at.count;
+   const world=new Float64Array(count*3),weight=new Float32Array(count);
+   const lig=key==='ilio'||key==='pubo'||key==='ischio';
+   const dpArr=lig?new Float32Array(count):null,dfArr=lig?new Float32Array(count):null;
+   const v=new THREE.Vector3();
+   mesh.updateMatrixWorld(true);
+   for(let i=0;i<count;i++){
+    v.set(source[3*i],source[3*i+1],source[3*i+2]).applyMatrix4(mesh.matrixWorld);
+    world.set([v.x,v.y,v.z],3*i);
+    const p=[v.x,v.y,v.z], df=Math.sqrt(kdDistance2(femtree,p)),dp=Math.sqrt(kdDistance2(peltree,p));
+    if(lig){dpArr[i]=dp;dfArr[i]=df;}
+    const t=Math.max(0,Math.min(1,dp/(df+dp+1e-9)));
+    weight[i]=t*t*(3-2*t);
+   }
+   prepared.set(mesh,{mesh,source,world,weight:smoothTissueWeights(mesh.geometry,weight),inv:new THREE.Matrix4().copy(mesh.matrixWorld).invert(),dp:dpArr,df:dfArr});
+  });
+ }
+ // Psoas major: lumbar (superior) region is anatomically fixed to the spine,
+ // while its distal tendon is allowed to follow the lesser-trochanter region.
+ // The source atlas geometry remains unchanged in the static mode.
+ pinLongitudinalTissue('Psoas major.r',.34,.86,'lumbar-fixed');
+ // ITB: a short pelvic attachment remains fixed at the iliac crest.
+ // By the upper thigh the fascial tract must travel WITH the femur and tibia.
+ // The old .16-.84 interpolation caused most of the tract to hang near the pelvis
+ // and diverge from TFL / gluteus maximus during hip movement.
+ pinLongitudinalTissue('Iliotibial tract.r',.07,.32,'iliac-crest-to-tibia');
+ synchronizeITBInsertions();
+ for(const name of Object.keys(LIGAMENT_TABLE))pinLigamentAttachments(name);
+ tissuesPrepared=true;poseDirty=true;updateTissues();
+}
+function updateTissues(){if(!tissuesPrepared||!poseDirty)return;
+ const c=pivot.position;const q=pivot.quaternion;
+ const oquat=new THREE.Quaternion();const v=new THREE.Vector3();
+ // Incremental spherical rotation interpolation reduces the collapse/twisting caused by
+ // linearly blending pelvis-fixed and femur-attached transforms. Still schematic.
+ for(const [mesh,o] of prepared){
+  if(!mesh.visible)continue; // Hidden muscles never consume per-frame deformation time.
+  const at=mesh.geometry.attributes.position,dst=at.array,im=o.inv;
+  for(let i=0;i<o.weight.length;i++){
+   const j=i*3,w=o.weight[i];if(w<.0001){dst[j]=o.source[j];dst[j+1]=o.source[j+1];dst[j+2]=o.source[j+2];continue}
+   oquat.identity().slerp(q,w);
+   v.set(o.world[j]-c.x,o.world[j+1]-c.y,o.world[j+2]-c.z).applyQuaternion(oquat).add(c);
+   // In flexion the central region may bow slightly outward, but BOTH
+   // footprints remain strictly fixed to their bones. This is visual only.
+   if(o.ligament&&o.arcT){
+    const t=o.arcT[i],relax=bound(Math.max(0,currentPose.flex)/70);
+    const envelope=Math.pow(Math.sin(Math.PI*bound((t-.22)/.56)),2);
+    if(relax>0&&t>.22&&t<.78){
+     const radial=new THREE.Vector3(o.world[j]-c.x,o.world[j+1]-c.y,o.world[j+2]-c.z);
+     if(radial.lengthSq()>1e-12)v.addScaledVector(radial.normalize(),o.anchorSpan*.045*relax*envelope);
+    }
+   }
+   v.applyMatrix4(im);
+   dst[j]=v.x;dst[j+1]=v.y;dst[j+2]=v.z;
+  }
+  at.needsUpdate=true;
+  mesh.geometry.computeVertexNormals();mesh.geometry.computeBoundingSphere();
+ }
+ updateAnchorMarkers();
+ poseDirty=false;
+}
+// Dynamic muscle display: conceptual shortening = stronger original hue and opacity;
+// conceptual lengthening = paler and more transparent, but NEVER disappears.
+// No numerical muscle length or force is computed from the schematic mesh.
+function muscleTendency(key,p){
+ const a=MUSCLE_ACTIONS[key];if(!a)return 0;
+ const x={
+  flex:p.flex>=0?bound(p.flex/80):-bound(-p.flex/20),
+  abd:p.abd>=0?bound(p.abd/45):-bound(-p.abd/25),
+  rot:p.rot>=0?bound(p.rot/45):-bound(-p.rot/45)
+ };
+ return Math.max(-1,Math.min(1,Object.keys(a).reduce((s,k)=>s+a[k]*x[k],0)));
+}
+function updateMusclePresentation(){
+ if(mode==='atlas')return;
+ const pale=new THREE.Color(0xf1f1ef);
+ for(const key of muscleKeys){
+  const a=muscleTendency(key,currentPose),shortening=Math.max(0,a),lengthening=Math.max(0,-a);
+  const userTransparent=transparentMuscles.has(key);
+  // "透過" is always 30%. Full visibility still encodes shortening/lengthening.
+  const alpha=userTransparent?FIXED_ALPHA:Math.max(.62,Math.min(1,1-.36*lengthening));
+  for(const name of keyGroups[key]){
+   const m=materials.get(name);if(!m)continue;
+   m.color.setHex(colors[key]).lerp(pale,.38*lengthening);
+   m.color.multiplyScalar(1-.18*shortening);
+   m.opacity=alpha;m.transparent=alpha<.999;m.depthWrite=alpha>.98;
+   m.emissive.setHex(colors[key]);m.emissiveIntensity=(userTransparent?.025:.13)*shortening;
+  }
+ }
+}
+// Teaching-specific qualitative table transcribed from the three supplied lecture slides.
+// Order: flexion/extension, abduction/adduction, external/internal rotation.
+// No claim of measured strain or force. Flexion reduces capsular engagement.
+const bound=(x)=>Math.max(0,Math.min(1,x));
+const LIGAMENT_TABLE={
+ 'Transverse part of iliofemoral ligament.r':{ext:1,abd:0,add:2,er:1,ir:0},
+ 'Descending part of iliofemoral ligament.r':{ext:2,abd:1,add:1,er:1,ir:0},
+ 'Pubofemoral ligament.r':{ext:1,abd:2,add:0,er:1,ir:0},
+ 'Ischiofemoral ligament.r':{ext:1,abd:1,add:0,er:0,ir:1}
+};
+const LIGAMENT_ROWS=[
+ ['tIlioSup','Transverse part of iliofemoral ligament.r'],
+ ['tIlioInf','Descending part of iliofemoral ligament.r'],
+ ['tPubo','Pubofemoral ligament.r'],
+ ['tIschio','Ischiofemoral ligament.r']
+];
+function scoresFor(p){
+ const fractions={ext:bound(-p.flex/20),abd:bound(p.abd/45),add:bound(-p.abd/25),er:bound(p.rot/45),ir:bound(-p.rot/45)};
+ const flexionRelax=bound(1-Math.max(0,p.flex)/30);
+ const scores={};
+ for(const [name,table] of Object.entries(LIGAMENT_TABLE)){
+  // We take the strongest directional contribution: no artificial double-counting.
+  scores[name]=flexionRelax*Math.max(...Object.keys(table).map(k=>table[k]*fractions[k]));
+ }
+ return scores;
+}
+// Three conspicuous visual grades, directly driven by the lecture-table score:
+// slack >= 22%; '+' ~65%; '++' ~99%, with saturation and pulsating emissive hue.
+// The original atlas colors are kept as anatomical identity cues.
+function updateLigamentPresentation(){
+ const scores=scoresFor(currentPose);
+ const minOpacity=.28;
+ const flexSlack=bound(Math.max(0,currentPose.flex)/30);
+ const pale=new THREE.Color(0xe0e7ed);
+ for(const [id,name] of LIGAMENT_ROWS){
+  const grade=scores[name]||0;const tone=grade>=1.45?'++':grade>=.30?'+':'−';
+  const el=$(id);el.textContent=tone;el.dataset.tone=grade>=1.45?'high':grade>=.30?'mid':'low';
+  const m=materials.get(name);if(!m)continue;
+  const key=Object.entries(keyGroups).find(([,names])=>names.includes(name))?.[0];
+  const base=new THREE.Color(colors[key]);
+  if(mode==='atlas'){
+   m.color.copy(base);m.opacity=.94;m.transparent=true;
+   m.emissive.setRGB(0,0,0);m.emissiveIntensity=0;m.depthWrite=false;
+   if(name==='Ischiofemoral ligament.r')m.depthTest=true;
+  }else{
+   const fraction=bound(grade/2); // 0 = slack, .5 = '+', 1 = '++'
+   const contrast=Math.pow(fraction,1.03);
+   // Stable outlines: even flexion never erases the anatomical structure.
+   m.opacity=Math.min(.99,Math.max(.22,minOpacity+(.99-minOpacity)*contrast-.015*flexSlack*(1-contrast)));
+   m.transparent=m.opacity<.995;
+   m.color.copy(base).lerp(pale,.46*(1-contrast));
+   m.emissive.copy(base);
+   m.emissiveIntensity=.06*contrast+.69*Math.pow(contrast,2.3);
+   m.depthWrite=m.opacity>.96;
+   // Keep original anatomical occlusion; avoid showing the posterior ligament
+   // in front of unrelated bones (Beta 10 overlay removed at instructor request).
+   if(name==='Ischiofemoral ligament.r'){m.depthTest=true;m.depthWrite=false;}
+  }
+ }
+}
+// Slow pulse only for noticeably engaged bands; never suggests measured force.
+function animateLigamentHighlight(now){
+ if(mode==='atlas')return;
+ const scores=scoresFor(currentPose);
+ for(const [,name] of LIGAMENT_ROWS){
+  const m=materials.get(name);if(!m)continue;
+  const g=bound((scores[name]||0)/2);
+  const pulse=.85+.15*Math.sin(now*.004);
+  m.emissiveIntensity=(.06*g+.69*Math.pow(g,2.3))*pulse;
+ }
+}
+
+function posePreset(which){if(mode==='atlas')setMode('lig');play=false;
+ if(which==='cpp')setPose({flex:-20,abd:10,rot:-15});
+ else if(which==='lpp')setPose({flex:30,abd:30,rot:10});
+ else setPose({flex:0,abd:0,rot:0});
+ motionValue=0;$('motionInput').value=0;loopDir=1;autoMuscleForPose(currentPose);
+ $('angle').textContent=which==='cpp'?'しまりの肢位':which==='lpp'?'ゆるみの肢位':'中間位';
+}
+// Deterministic head-center estimation from proximal FEMUR geometry;
+// cached per browser/model so repeated sessions need no calibration.
+function proximalFemurPoints(root,box,max=4500){
+ const L=box.getSize(new THREE.Vector3()).y;
+ const all=boneSamples(root,max*2);const upper=all.filter(p=>p[1]>box.min.y+.76*L);
+ const shaft=all.filter(p=>p[1]<box.min.y+.3*L && p[1]>box.min.y+.07*L);
+ const sx=shaft.length?shaft.reduce((a,p)=>a+p[0],0)/shaft.length:box.getCenter(new THREE.Vector3()).x;
+ const cPel=new THREE.Box3().setFromObject(entries.get('Hip bone.r')).getCenter(new THREE.Vector3());
+ const med=Math.sign(sx-cPel.x)||1;
+ let pts=upper.filter(p=>(p[0]-sx)*med < box.getSize(new THREE.Vector3()).x*.16);
+ if(pts.length<70)pts=upper;
+ return {pts:pts.filter((_,i)=>i%Math.max(1,Math.floor(pts.length/max))===0), shaftX:sx, medial:med};
+}
+function estimateHeadCenter(){
+ if(!movingFemur||!bbox||!entries.has('Hip bone.r'))return null;
+ const {pts,shaftX,medial}=proximalFemurPoints(movingFemur,bbox);
+ if(pts.length<50)return null;
+ const length=bbox.getSize(new THREE.Vector3()).y;
+ const radiusMin=.024*length,radiusMax=.15*length;
+ let seed=0x1543ab51;const rand=()=>{seed=(Math.imul(1664525,seed)+1013904223)>>>0;return seed/4294967296};
+ let best=null;
+ for(let iter=0;iter<320;iter++){
+  const ps=Array.from({length:4},()=>pts[Math.floor(rand()*pts.length)]);
+  const base=ps[0],A=[],b=[];for(let k=1;k<4;k++){
+   const p=ps[k];A.push(p.map((v,i)=>2*(v-base[i])));
+   b.push(p.reduce((x,y)=>x+y*y,0)-base.reduce((x,y)=>x+y*y,0));
+  }
+  const c=solve3(A,b);if(!c)continue;
+  const r=Math.hypot(c[0]-base[0],c[1]-base[1],c[2]-base[2]);
+  if(r<radiusMin||r>radiusMax||c[1]<bbox.min.y+.73*length||c[1]>bbox.max.y+.10*length)continue;
+  if((c[0]-shaftX)*medial>0)continue; // head is medial to femoral shaft
+  let inliers=0,err=0;
+  for(const p of pts){const distance=Math.hypot(p[0]-c[0],p[1]-c[1],p[2]-c[2]);const residual=Math.abs(distance-r);
+   if(residual<r*.095){inliers++;err+=residual*residual;}
+  }
+  if(!best||inliers>best.inliers){best={center:c,inliers,r,err:Math.sqrt(err/Math.max(1,inliers)),n:pts.length}}
+ }
+ if(!best||best.inliers<Math.max(38,pts.length*.09))return null;
+ return {center:new THREE.Vector3(...best.center),coverage:best.inliers/best.n,radius:best.r,rms:best.err};
+}
+function cacheSignature(){if(!bbox)return '';const v=bbox.getSize(new THREE.Vector3());
+ return [v.x,v.y,v.z].map(x=>x.toPrecision(6)).join(':');
+}
+function saveCenter(){if(!bbox)return;try{
+ const sz=bbox.getSize(new THREE.Vector3());const c=pivot.position;
+ localStorage.setItem(CENTER_STORAGE,JSON.stringify({signature:cacheSignature(),xyz:['x','y','z'].map(d=>(c[d]-bbox.min[d])/sz[d])}));
+ }catch(err){console.warn('Local center storage unavailable',err)}
+}
+function cachedCenter(){if(!bbox)return null;try{
+ const j=JSON.parse(localStorage.getItem(CENTER_STORAGE)||'null');if(!j||j.signature!==cacheSignature()||!Array.isArray(j.xyz)||j.xyz.some(x=>!Number.isFinite(x)||x<-.2||x>1.2))return null;
+ const v=bbox.getSize(new THREE.Vector3());return new THREE.Vector3(...['x','y','z'].map((d,i)=>bbox.min[d]+v[d]*j.xyz[i]));
+ }catch{return null}
+}
+function configureCenter(forceAuto=false){
+ if(!movingFemur||!bbox)return;
+ let center=null,centerSourceLocal='';
+ if(SHARED_CENTER_CONFIG){
+  if(SHARED_CENTER_CONFIG.signature===cacheSignature()&&Array.isArray(SHARED_CENTER_CONFIG.xyz)&&SHARED_CENTER_CONFIG.xyz.length===3){
+   sharedCenterValid=true;
+   const v=bbox.getSize(new THREE.Vector3());
+   center=new THREE.Vector3(...['x','y','z'].map((d,i)=>bbox.min[d]+v[d]*SHARED_CENTER_CONFIG.xyz[i]));
+   centerSourceLocal='教員確定済み・全員共通の固定座標';
+  }else{
+   sharedCenterValid=false;
+   console.error('配布版のモデルが変化しました。安全のため固定座標を適用しません。');
+   $('sharedCenterInfo').textContent='警告：固定中心とモデルのバージョンが一致しません。教員に確認してください。';
+  }
+ }
+ if(!center){const saved=forceAuto?null:cachedCenter();center=saved;centerSourceLocal=saved?'ブラウザに保存した位置':'';}
+ centerSource=centerSourceLocal;
+ if(!center){const fit=estimateHeadCenter();if(fit){center=fit.center;centerSource=`自動球面推定（表面一致 ${Math.round(fit.coverage*100)}%）`}
+  else{const side=Math.abs(bbox.min.x)<Math.abs(bbox.max.x)?16:84;
+   center=new THREE.Vector3(bbox.min.x+bbox.getSize(new THREE.Vector3()).x*side/100,bbox.min.y+bbox.getSize(new THREE.Vector3()).y*.94,bbox.getCenter(new THREE.Vector3()).z);
+   centerSource='暫定中心（自動推定できず）';
+  }
+ }
+ updateCenter(center);setSlidersFor(center);estimateSide();if(!SHARED_CENTER_CONFIG)saveCenter();
+ if(sharedCenterValid){
+  for(const id of ['px','py','pz','calibrateBtn','clearCenter','exportShared'])$(id).disabled=true;
+  $('sharedCenterInfo').textContent='この配布版の回転中心は教員が固定済みです。使用者は再校正できません。';
+ }
+ $('calibrationResult').textContent=`${centerSource}。必要時のみ微調整してください。`;
+ if(centerSource.startsWith('暫定'))$('calibrationResult').style.color='#ffbaa0';
+}
+// Sphere center from >=6 clicks on true femoral HEAD surface (not the trochanter).
+function solve3(A,b){
+ const m=A.map((row,i)=>[...row,b[i]]);
+ for(let i=0;i<3;i++){
+  let p=i;for(let j=i+1;j<3;j++)if(Math.abs(m[j][i])>Math.abs(m[p][i]))p=j;
+  if(Math.abs(m[p][i])<1e-11)return null;
+  [m[i],m[p]]=[m[p],m[i]];
+  const f=m[i][i];for(let k=i;k<4;k++)m[i][k]/=f;
+  for(let j=0;j<3;j++){if(j===i)continue;const q=m[j][i];for(let k=i;k<4;k++)m[j][k]-=q*m[i][k]}
+ }
+ return m.map(row=>row[3]);
+}
+function fitSphere(points){
+ const avg=new THREE.Vector3();points.forEach(p=>avg.add(p));avg.multiplyScalar(1/points.length);
+ const A=[[0,0,0],[0,0,0],[0,0,0]],B=[0,0,0];
+ for(const pt of points){const x=pt.x-avg.x,y=pt.y-avg.y,z=pt.z-avg.z;
+  const r=[2*x,2*y,2*z],t=x*x+y*y+z*z;
+  for(let i=0;i<3;i++){B[i]+=r[i]*t;for(let j=0;j<3;j++)A[i][j]+=r[i]*r[j]}
+ }
+ const solution=solve3(A,B);if(!solution)return null;
+ const center=new THREE.Vector3(...solution).add(avg);
+ let radius=0;for(const p of points)radius+=p.distanceTo(center);radius/=points.length;
+ let sq=0;for(const p of points)sq+=(p.distanceTo(center)-radius)**2;
+ return {center,radius,rms:Math.sqrt(sq/points.length)};
+}
+function startCalibration(){if(!movingFemur||sharedCenterValid)return;
+ if(mode==='atlas')setMode('lig');play=false;setPose({flex:0,abd:0,rot:0});
+ calibrating=true;calibrationPoints=[];clearMarkers();pin.visible=false;applyVisibility();
+ $('pointCaptureWrap').classList.remove('hidden');captureArmed=false;
+ $('capturePoint').textContent='点を指定（0/6）';
+ $('calibrationResult').textContent='視点は自由にドラッグで変更できます。各点は「点を指定」ボタンを押してから、ドラッグせずに骨頭表面をクリックします。';
+ $('calibrateBtn').textContent='選択をキャンセル';
+}
+function clearMarkers(){for(const m of calibrationMarkers)scene.remove(m);calibrationMarkers=[]}
+function finishCalibration(ok){calibrating=false;captureArmed=false;clearMarkers();$('pointCaptureWrap').classList.add('hidden');$('calibrateBtn').textContent='6点指定を開始（任意）';pin.visible=mode!=='atlas';
+ applyVisibility();if(!ok)$('calibrationResult').textContent='指定を中止しました。元の回転中心を維持しています。';
+}
+function onCanvasClick(ev){if(!calibrating||!movingFemur||!captureArmed||ev.button!==0)return;
+ if(!pointerDown||Math.hypot(ev.clientX-pointerDown.x,ev.clientY-pointerDown.y)>4||performance.now()-pointerDown.t>850)return;
+ captureArmed=false;
+ const rect=renderer.domElement.getBoundingClientRect();const mouse=new THREE.Vector2((ev.clientX-rect.left)/rect.width*2-1,-(ev.clientY-rect.top)/rect.height*2+1);
+ const rc=new THREE.Raycaster();rc.setFromCamera(mouse,camera);
+ const hits=rc.intersectObject(movingFemur,true);if(!hits.length)return;
+ const p=hits[0].point.clone();calibrationPoints.push(p);$('capturePoint').textContent=`点を指定（${calibrationPoints.length}/6）`;
+ const rr=Math.max(.01,bbox.getSize(new THREE.Vector3()).length()*.005);
+ const m=new THREE.Mesh(new THREE.SphereGeometry(rr,12,8),new THREE.MeshBasicMaterial({color:0xffe18e,depthTest:false}));
+ m.position.copy(p);m.renderOrder=1000;scene.add(m);calibrationMarkers.push(m);
+ $('calibrationResult').textContent=`骨頭表面：${calibrationPoints.length}/6 点。別の角度からも選択してください。`;
+ if(calibrationPoints.length===6){const fit=fitSphere(calibrationPoints);
+  if(!fit||fit.radius<=0||fit.rms/fit.radius>.15){
+   const err=fit?Math.round(fit.rms/fit.radius*100)+'%':'解なし';
+   finishCalibration(false);$('calibrationResult').textContent='球面推定失敗（相対誤差 '+err+'）。骨頭の球面だけを選び直してください。';return;
+  }
+  finishCalibration(true);
+  setSlidersFor(fit.center);updateCenter(fit.center);estimateSide();centerSource='6点指定した中心';saveCenter();
+  $('calibrationResult').textContent=`球面フィット成功：推定半径 ${fit.radius.toPrecision(3)}（モデル座標）・残差 ${Math.round(fit.rms/fit.radius*100)}%。授業前に回転を目視確認してください。`;
+ }
+}
+renderer.domElement.addEventListener('pointerdown',e=>{pointerDown=e.button===0?{x:e.clientX,y:e.clientY,t:performance.now()}:null});
+renderer.domElement.addEventListener('click',onCanvasClick);
+$('capturePoint').addEventListener('click',()=>{captureArmed=true;$('calibrationResult').textContent='カメラの向きを決めた後、骨頭表面を短くクリックしてください。ドラッグは無効です。'});
+$('undoPoint').addEventListener('click',()=>{if(!calibrating)return;calibrationPoints.pop();const marker=calibrationMarkers.pop();if(marker)scene.remove(marker);captureArmed=false;$('capturePoint').textContent=`点を指定（${calibrationPoints.length}/6）`;});
+$('clearCenter').addEventListener('click',()=>{try{localStorage.removeItem(CENTER_STORAGE)}catch{}setPose({flex:0,abd:0,rot:0});configureCenter(true)});
+for(const b of document.querySelectorAll('[data-master]'))b.addEventListener('click',()=>applyGroupPreset(b.dataset.master,b.dataset.presetState));
+for(const key of Object.keys(keyGroups))$(key).addEventListener('change',()=>{
+ if(muscleKeys.includes(key)){$('autoMuscles').checked=false;lastGroupShown=null;for(const b of document.querySelectorAll('[data-group]'))b.classList.remove('group-current');}
+ applyVisibility();updateMasterButtons();
+});
+for(const b of document.querySelectorAll('[data-group]'))b.addEventListener('click',()=>showMuscleGroup(b.dataset.group,{manual:true}));
+$('autoMuscles').addEventListener('change',e=>{if(e.target.checked){lastGroupShown=null;autoMuscleForPose(currentPose)}});
+for(const b of document.querySelectorAll('[data-mode]'))b.addEventListener('click',()=>setMode(b.dataset.mode));
+for(const b of document.querySelectorAll('[data-axis]'))b.addEventListener('click',()=>setAxis(b.dataset.axis));
+for(const b of document.querySelectorAll('[data-view]'))b.addEventListener('click',()=>setView(b.dataset.view));
+$('frameHip').addEventListener('click',frameObjects);
+$('frameSkeleton').addEventListener('click',frameVisibleBones);
+for(const b of document.querySelectorAll('[data-preset]'))b.addEventListener('click',()=>posePreset(b.dataset.preset));
+$('motionInput').addEventListener('input',e=>{play=false;playType='axis';$('play').textContent='自動往復';setAxisValue(+e.target.value)});
+$('play').addEventListener('click',()=>{if(mode==='atlas')setMode('lig');if(!play){setAxisValue(0);loopDir=1;play=true;playType='axis';}else play=false;$('play').textContent=play?'停止':'自動往復'});
+$('reset').addEventListener('click',()=>posePreset('neutral'));
+$('muscleSelect').addEventListener('change',e=>{muscleKey=e.target.value;startMuscle(muscleKey)});
+$('musclePlay').addEventListener('click',()=>{startMuscle($('muscleSelect').value)});
+$('exportShared').addEventListener('click',()=>{
+ if(!bbox||!movingFemur||sharedCenterValid)return;
+ const sz=bbox.getSize(new THREE.Vector3()),p=pivot.position;
+ const config={signature:cacheSignature(),xyz:['x','y','z'].map(d=>(p[d]-bbox.min[d])/sz[d]),source:'teacher-fixed'};
+ // Strip runtime-created controls before serialising, otherwise they would duplicate on next load.
+   const clean=document.documentElement.cloneNode(true);
+  // Never embed the live WebGL canvas into a distributed copy.
+  // Otherwise the next renderer may be placed below a stale, blank canvas.
+  clean.querySelector('#view')?.replaceChildren();
+  const hoverClone=clean.querySelector('#tissueHover');
+  if(hoverClone){hoverClone.replaceChildren();hoverClone.style.display='none';}
+ clean.querySelector('body')?.classList.remove('mobile-panel-collapsed');
+ clean.querySelector('#muscleItems')?.replaceChildren();
+ clean.querySelectorAll('[data-transparent]').forEach(el=>el.remove());
+ clean.querySelectorAll('.group-current').forEach(el=>el.classList.remove('group-current'));
+ clean.querySelectorAll('.muscle-row').forEach(el=>el.classList.remove('muscle-row'));
+ const maskEl=clean.querySelector('#mask');if(maskEl)maskEl.classList.remove('hidden');
+ const statusEl=clean.querySelector('#status');if(statusEl)statusEl.textContent='読み込み中…';
+ const html='<!doctype html>\n'+clean.outerHTML;
+ const marker='const SHARED_CENTER_CONFIG = '+'null;';
+ const n=html.split(marker).length-1;
+ if(n!==1){alert('配布用HTMLの生成に失敗しました。設定用コードの位置が見つかりません。');return;}
+ const stamped=html.replace(marker,'const SHARED_CENTER_CONFIG = '+JSON.stringify(config)+';');
+ const blob=new Blob([stamped],{type:'text/html;charset=utf-8'});
+ const url=URL.createObjectURL(blob),a=document.createElement('a');
+ a.href=url;a.download='HipKinesiology_v1_0_FixedCenter.html';
+ document.body.append(a);a.click();a.remove();URL.revokeObjectURL(url);
+ $('sharedCenterInfo').textContent='全員共通の固定中心を埋め込んだHTMLを生成しました。必ず別ブラウザでも動作を確認してから配布してください。';
+});
+$('calibrateBtn').addEventListener('click',()=>{if(calibrating)finishCalibration(false);else startCalibration()});
+for(const id of ['px','py','pz'])$(id).addEventListener('input',centerFromSliders);
+function finalise(){
+ attachNamedNodes();refineITBandGeometry();buildHoverTargets();const missing=Object.entries(keyGroups).filter(([,names])=>!names.some(n=>entries.has(n))).map(([key,names])=>muscleLabels[key]||names[0]);
+ const fem=entries.get('Femur.r');
+ if(fem){
+  // Save reference bounding box at neutral before attaching to pivot.
+  pivot.quaternion.identity();pivot.updateMatrixWorld(true);scene.attach(fem);scene.updateMatrixWorld(true);
+  movingFemur=fem;bbox=new THREE.Box3().setFromObject(fem);
+  configureCenter();
+  for(const key of ['tibiaRight','fibulaRight']){
+   const obj=entries.get(keyGroups[key][0]);
+   if(obj&&!movingLowerBones.includes(obj)){
+    scene.updateMatrixWorld(true);pivot.attach(obj);movingLowerBones.push(obj);
+   }
+  }
+ }
+ const ok=entries.has('Hip bone.r')&&!!movingFemur;
+ if(ok){$('mask').classList.add('hidden');setMode('atlas');frameVisibleBones()}else{$('mask').classList.add('hidden')}
+ // Disable only truly unavailable muscle meshes and identify them in the UI.
+ for(const key of muscleKeys){
+  const available=keyGroups[key].some(name=>entries.has(name));
+  const el=$(key);el.disabled=!available;
+  const title=el.closest('.muscle-entry')?.querySelector('span');
+  if(title){title.textContent=muscleLabels[key]+(available?'':'（未収録）');el.closest('.muscle-entry')?.classList.toggle('missing',!available);}
+  if(!available)el.checked=false;
+  const option=$('muscleSelect').querySelector('option[value="'+key+'"]');
+  if(option)option.disabled=!available;
+ }
+ for(const key of boneKeys){if(!$(key))continue;const okBone=keyGroups[key].some(name=>entries.has(name));$(key).disabled=!okBone;if(!okBone)$(key).checked=false;}
+ updateMasterButtons();
+ const got=[...loadedSystems].map(x=>x+'.glb').join(', ');
+ const failed=[...failures].map(([k,v])=>k+': '+v).join('\n');
+ setStatus((ok?'骨・靭帯・筋のデータを読み込みました。':'骨の必要データが不足しています。')+
+  '\n取得：'+(got||'なし')+'\n構造：'+[...inventoryBySystem].map(([a,b])=>a+' '+b).join(' / ')+
+  (missing.length?'\n未検出：'+missing.join(' / '):'\n対象構造はすべて検出')+
+  (failed?'\n失敗：'+failed:'')+
+  '\n動態：幾何学的な追従変形と文献準拠の定性的傾向。実測張力ではありません。',!ok);
+ for(const b of document.querySelectorAll('[data-mode]'))b.disabled=!ok&&b.dataset.mode!=='atlas';
+}
+async function tryOnline(name){
+ if(loadedSystems.has(name))return;
+ const messages=[];
+ for(const base of ASSET_BASES){
+  try{const gltf=await loader.loadAsync(base+name+'.glb');scene.add(gltf.scene);registerNodes(gltf.scene,name);
+    loadedSystems.add(name);failures.delete(name);return;
+  }catch(err){messages.push(new URL(base).hostname+': '+(err?.message||String(err)))}
+ }
+ failures.set(name,messages.join(' / '));
+}
+async function boot(){if(bootBusy)return;bootBusy=true;$('retryOnline').disabled=true;
+ setStatus('解剖モデルを読み込んでいます…');
+ try{await Promise.all(sources.map(tryOnline));finalise()}catch(err){failures.set('初期化',String(err));console.error(err);finalise()}
+ finally{bootBusy=false;$('retryOnline').disabled=false}
+}
+$('retryOnline').addEventListener('click',boot);
+$('localGLB').addEventListener('change',async e=>{
+ for(const file of [...(e.target.files||[])]){
+  const name=file.name.toLowerCase().replace(/\.glb$/,'');
+  if(!sources.includes(name)){failures.set(file.name,'skeletal / joints / muscular.glb のみ対応');continue}
+  if(loadedSystems.has(name))continue;
+  try{const gltf=await loader.parseAsync(await file.arrayBuffer(),'');scene.add(gltf.scene);registerNodes(gltf.scene,name);
+   loadedSystems.add(name);failures.delete(name)}catch(err){failures.set(name,err?.message||String(err));console.error(err)}
+ }
+ finalise();e.target.value='';
+});
+// One-step mouseover inspection. Only visible registered structures are
+// interactive; orbit dragging and calibration are deliberately excluded.
+const HOVER_LABELS={
+ pelvis:'右寛骨',pelvisLeft:'左寛骨',sacrum:'仙骨',coccyx:'尾骨',
+ lumbar1:'第1腰椎',lumbar2:'第2腰椎',lumbar3:'第3腰椎',lumbar4:'第4腰椎',lumbar5:'第5腰椎',
+ femur:'右大腿骨',tibiaRight:'右脛骨',fibulaRight:'右腓骨',
+ 'Transverse part of iliofemoral ligament.r':'腸骨大腿靭帯（上部束）',
+ 'Descending part of iliofemoral ligament.r':'腸骨大腿靭帯（下部束）',
+ 'Pubofemoral ligament.r':'恥骨大腿靭帯',
+ 'Ischiofemoral ligament.r':'坐骨大腿靭帯',itBand:'腸脛靭帯（大腿筋膜）'
+};
+let hoverTargets=[],hovered=null,hoverDown=false,lastHoverAt=0,lastHoverX=-1,lastHoverY=-1;
+const hoverRay=new THREE.Raycaster(),hoverPointer=new THREE.Vector2(),hoverOwners=new WeakMap();
+function buildHoverTargets(){
+ hoverTargets=[];const seen=new Set();
+ for(const [key,names] of Object.entries(keyGroups))for(const name of names){
+  const root=entries.get(name);if(!root)continue;
+  root.traverse(mesh=>{if(!mesh.isMesh||seen.has(mesh)||nearestAnatomicalOwner(mesh)!==name)return;
+   seen.add(mesh);hoverTargets.push(mesh);hoverOwners.set(mesh,{key,name});});
+ }
+}
+function meshReallyVisible(node){
+ for(let p=node;p;p=p.parent)if(!p.visible)return false;
+ return true;
+}
+function clearTissueHover(){hovered=null;$('tissueHover').style.display='none';}
+function moveTissueTooltip(x,y){
+ const tip=$('tissueHover');if(!hovered)return;
+ tip.style.display='block';
+ const r=tip.getBoundingClientRect();
+ tip.style.left=Math.max(8,Math.min(innerWidth-r.width-8,x+16))+'px';
+ tip.style.top=Math.max(8,Math.min(innerHeight-r.height-8,y+16))+'px';
+}
+function inspectTissueAt(x,y){
+ if(calibrating||hoverDown||!hoverTargets.length){clearTissueHover();return;}
+ const rect=renderer.domElement.getBoundingClientRect();
+ if(x<rect.left||x>rect.right||y<rect.top||y>rect.bottom){clearTissueHover();return;}
+ scene.updateMatrixWorld(true);
+ hoverPointer.set((x-rect.left)/rect.width*2-1,-(y-rect.top)/rect.height*2+1);
+ hoverRay.setFromCamera(hoverPointer,camera);
+ const hits=hoverRay.intersectObjects(hoverTargets,false).filter(h=>meshReallyVisible(h.object));
+ // When bones are 30% transparent, a real muscle behind them should remain
+ // selectable; otherwise prefer the foremost anatomical surface.
+ let hit=hits[0];
+ if(hit){const o=hoverOwners.get(hit.object),m=hit.object.material;
+  if(boneKeys.includes(o?.key)&&m?.opacity<.5){
+   const deeper=hits.find(h=>!boneKeys.includes(hoverOwners.get(h.object)?.key));
+   if(deeper)hit=deeper;
+  }
+ }
+ if(!hit){clearTissueHover();return;}
+ const owner=hoverOwners.get(hit.object);if(!owner){clearTissueHover();return;}
+ hovered=owner;
+ const text=HOVER_LABELS[owner.name]||HOVER_LABELS[owner.key]||muscleLabels[owner.key]||owner.name;
+ const category=boneKeys.includes(owner.key)?'骨':owner.key==='itBand'?'大腿筋膜':ligamentKeys.includes(owner.key)?'靭帯':'筋';
+ $('tissueHover').replaceChildren();
+ const type=document.createElement('span');type.className='tissue-category';type.textContent=category;
+ const label=document.createElement('span');label.className='tissue-ja';label.textContent=text;
+ const english=document.createElement('span');english.className='tissue-en';
+ // Retain the original English anatomical label used by the atlas dataset.
+ english.textContent=owner.name.replace(/\.[rl]$/i, ''); // Anatomical source ID suffix only; leave internal IDs unchanged
+ $('tissueHover').append(type,label,english);moveTissueTooltip(x,y);
+}
+let touchPoint=null;
+renderer.domElement.addEventListener('pointerdown',e=>{
+ touchPoint=e.pointerType==='touch'?{x:e.clientX,y:e.clientY}:null;
+ hoverDown=true;clearTissueHover();
+});
+window.addEventListener('pointerup',e=>{
+ hoverDown=false;lastHoverAt=0;
+ // A brief tap is the touch-screen equivalent of mouse hover;
+ // dragging/orbiting does not select a tissue.
+ if(touchPoint&&e.pointerType==='touch'&&Math.hypot(e.clientX-touchPoint.x,e.clientY-touchPoint.y)<9){
+  requestAnimationFrame(()=>inspectTissueAt(e.clientX,e.clientY));
+ }
+ touchPoint=null;
+});
+renderer.domElement.addEventListener('pointerleave',clearTissueHover);
+renderer.domElement.addEventListener('pointermove',e=>{
+ if(hoverDown||e.buttons){clearTissueHover();return;}
+ lastHoverX=e.clientX;lastHoverY=e.clientY;
+ // Limited to ~12 raycasts/s; keeps interactive orbiting fluid with large GLBs.
+ const t=performance.now();if(t-lastHoverAt<85)return;
+ lastHoverAt=t;inspectTissueAt(lastHoverX,lastHoverY);
+});
+function renderWithHoverHighlight(){
+ const o=hovered,mat=o?materials.get(o.name):null;
+ if(!mat){renderer.render(scene,camera);return;}
+ const color=mat.color.clone(),emissive=mat.emissive.clone();
+ const intensity=mat.emissiveIntensity,opacity=mat.opacity,transparent=mat.transparent;
+ // Soft color-preserving hover highlight. Do not turn the tissue pure white
+ // or override the ligand's educational tension glow.
+ mat.color.lerp(new THREE.Color(0xe5e5df),.105);
+ mat.emissive.copy(emissive).lerp(new THREE.Color(0xb1bac2),.12);
+ mat.emissiveIntensity=intensity+.065;
+ mat.opacity=o.key==='itBand'?ITB_OPACITY:Math.min(1,Math.max(mat.opacity,.48));mat.transparent=mat.opacity<.999;
+ renderer.render(scene,camera);
+ mat.color.copy(color);mat.emissive.copy(emissive);
+ mat.emissiveIntensity=intensity;mat.opacity=opacity;mat.transparent=transparent;
+}
+function tick(now){const dt=Math.min((now-frameTime)/1000,.1);frameTime=now;
+ if(play&&movingFemur&&mode==='lig'&&playType==='axis'){
+  const q=ranges[axis];let next=motionValue+loopDir*42*dt;
+  if(next>=q[1]){next=q[1];loopDir=-1}else if(next<=q[0]){next=q[0];loopDir=1}
+  setAxisValue(next);
+ }else if(play&&movingFemur&&mode==='lig'&&playType==='muscle'){
+  const duration=3000;const t=((now-cycleStarted)%duration)/duration;
+  const k=.5-.5*Math.cos(t*2*Math.PI);const goal=muscleTarget[muscleKey];
+  setPose({flex:goal.flex*k,abd:goal.abd*k,rot:goal.rot*k});
+  autoMuscleForPose(currentPose);
+ }
+ if(mode!=='atlas'){updateTissues();animateLigamentHighlight(now)}
+ if(anchorMarkersOn)updateAnchorMarkers();
+ controls.update();renderWithHoverHighlight();requestAnimationFrame(tick);
+}
+requestAnimationFrame(tick);
+addEventListener('resize',()=>{camera.aspect=innerWidth/innerHeight;renderer.setSize(innerWidth,innerHeight);updateViewportPrincipalPoint()});
+new ResizeObserver(updateViewportPrincipalPoint).observe($('ui'));
+boot();
+
+</script>
+</body></html>
