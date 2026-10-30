@@ -1,24 +1,26 @@
-# Interactive 3D Kinesiology Atlas — Foundation / Knee v0.1
+# Kinesiology Atlas — Anatomy v0.2
 
-膝関節運動学の**検証用プロトタイプ**。既存のHip公開ページは変更しません。
+Anatomy優先の改修版と、同一3DシーンでJoint Kinesiologyへ切り替える基盤です。既存の `kharuyama-lab/hip-kinesiology` は変更していません。
 
 ## 起動
-ZIP解凍後、フォルダ全体を新しいGitHubリポジトリ `kinesiology-atlas` にアップロードし、GitHub Pagesをmain/(root)で公開します。
-ローカル確認はフォルダ内で `python -m http.server 8080` を起動し `http://localhost:8080/` にアクセス。`file://` での直接起動は避けてください。
-3Dモデルはオンライン取得（Z-Anatomy派生モデルのGLB）。通信環境が制限される場合は教材画面の診断欄からGLBを手動読み込みできます。
 
-## 学習画面
-- Mode 1：全身静止解剖。全身→右膝へフォーカス、右膝主要筋とACL/PCL/MCL/LCL・内外側半月板の表示。モデル上の組織をクリックして名前や表示を切替。
-- Mode 2：膝屈伸、屈曲位の下腿内外旋、軽度内外反。骨格運動は**校正前の試作**。正式授業配布前に大腿骨と脛骨の解剖学的整合を確認。
-- Hip 完成版：`legacy/hip/index.html`を独立して表示。
+Node.jsを用意し、フォルダー内で `npm run serve` を実行して http://127.0.0.1:8080/ を開きます。静的ホスティングにも配置可能です。GLBとThree.jsは外部から取得します。GLB取得に失敗した場合はDiagnosticsから `skeletal.glb / joints.glb / muscular.glb` を読み込めます。ライセンスはCREDITS_AND_LICENSES.mdを保持してください。
 
-## 次期開発（今回は実装しない）
-- 膝動態：靭帯の変形・線維束ごとの緊張、半月板・膝蓋骨の連動軌道。
-- Mode 1：Z-Anatomy 3Dメッシュの水平断面。
-- Mode 3：二関節筋限定表示、股・膝等の個別角度と筋腱長変化。
-- CKC / reverse action。
+## 操作
 
-詳しくは `docs/ARCHITECTURE.md` と `docs/RELEASE_AND_QC.md` を参照してください。
+- Mode 1 = Anatomy、Mode 2 = Joint Kinesiology。
+- Focus = Whole Body / Hip / Knee。Whole Bodyは意図的なホーム操作で、全身の標準表示・肢位・カメラへ戻ります。選択中のModeは維持します。
+- Focus変更で関係する筋・靭帯をON、それ以外をOFFにします。両側の骨格は常時保持します。
+- 筋・靭帯はON → Fade（30%不透明）→ OFFの1クリック循環。3Dクリックのフローティング操作と左パネルが同期します。
+- 左骨格は右骨格を手前から隠す投影範囲で自動Fade。Lateral / Medialは右外側 / 右内側です。
+- Mode切替はFocus、表示状態、視線方向、ズーム、選択、共通UIを維持。膝の肢位変化中はカメラ中心も追従します。
 
-## データ・出典
-3Dモデル：Z-Anatomy/BodyParts3D由来、`nqwrc/3d-anatomy` 公開GLBを使用。アセットは本ZIPに同梱していません。ライセンス等は`CREDITS_AND_LICENSES.md`を参照してください。
+## 検証
+
+`npm ci` → `npm run check` → `npm test`。
+
+実GLBを使うUIテストは、3ファイルを `.cache/` に取得し `npm run test:ui` を実行します。Windows版Edgeを使用します。詳細と取得先はdocs/RELEASE_AND_QC.mdを参照してください。
+
+## 今回の到達点
+
+Anatomyの表示・FocusとMode切替基盤を確認済み。Mode 2の既存膝運動は未校正の試作を維持しています。筋は静止形状で、曲がった肢位への変形は未実装です。関節中心・軸の検証FIX → カメラ最終FIX → 関節運動 → 靭帯動態の順で進めます。Hip運動の統合、断面、二関節筋、CKC reverse actionは保留です。

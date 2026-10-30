@@ -1,6 +1,9 @@
 /** Knee v0.1 PRE-VALIDATION parameters. Do not use for quantitative clinical/biomechanical inference. */
 export const KNEE = Object.freeze({
   status:'PRE-VALIDATION',
+  // Shape-derived estimates only. Replace after joint center/axis validation.
+  centerEstimate:{distalFemurFraction:.11,proximalTibiaFraction:.11,tibiaBlend:.45},
+  hipEstimateFractions:[.564,.949,.690],
   startingHipFlexionDeg:90,
   startingKneeFlexionDeg:90,
   flexionRange:[0,140],

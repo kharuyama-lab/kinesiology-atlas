@@ -1,1 +1,17 @@
-{"name":"kinesiology-atlas","private":true,"version":"0.1.0","type":"module","description":"Static anatomy and knee joint kinematics validation prototype","scripts":{"test":"node tests/kinematics.test.mjs","check":"node --check src/main.js && node --check src/kinematics.js && node --check config/knee.js","serve":"python3 -m http.server 8080"}}
+{
+  "name": "kinesiology-atlas",
+  "private": true,
+  "version": "0.2.0",
+  "type": "module",
+  "description": "Static anatomy and knee joint kinematics validation prototype",
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "check": "node --check src/main.js && node --check src/anatomy.js && node --check src/kinematics.js && node --check config/knee.js",
+    "serve": "node tests/server.mjs",
+    "test:ui": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.1",
+    "three": "0.160.0"
+  }
+}
