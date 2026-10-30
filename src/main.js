@@ -2,8 +2,10 @@ import * as THREE from 'three';
 import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
 import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
 import {DRACOLoader} from 'three/addons/loaders/DRACOLoader.js';
-import {KNEE,PRESETS} from '../config/knee.js';
-import {screwHomeExternalRotationDeg,teachingLigamentTendency} from './kinematics.js';
+import {KNEE} from '../config/knee.js';
+import {teachingLigamentTendency} from './kinematics.js';
+import {muscleColors,hipLigamentColors} from './palette.js';
+import {kneePose} from './joint-motion.js';
 
 import {tissues,tissueByName,nextVisibility,relevant,focusStates,englishName,japaneseName} from './anatomy.js';
 
@@ -21,8 +23,8 @@ const BASES=[...(new URLSearchParams(location.search).has('localModels')?['.cach
 const assets=['skeletal','joints','muscular'];const modelSources=new Map(),liveRoots=[];const registered=new Map(),originalMaterials=new Map(),category=new Map(),meshInfo=new Map(),visibleStates=new Map();
 let poseTarget=null;
 let mode='anatomy',focus='body',motion='flex',motionValue=90,activeSelection=null;
+const motionValues={flex:90,rot:0,stress:0};
 let hipWorldPoint=null,kneeWorldPoint=null,kneeModelReady=false,sideSign=1,fullBox=null,kneeScale=1,modelLoaded=false,patellaBasePosition=new THREE.Vector3();
-const DEG=Math.PI/180;
 const tissueStates=focusStates('body');
 const materialPalette={bone:0xe6e0d5,patella:0xe3ecf1,acl:0xec739b,pcl:0xb88add,mcl:0x53c9a3,lcl:0xf1b96b,meniscus:0x79b6df,muscle:0xc98283};
 const rig={hip:new THREE.Group(),knee:new THREE.Group(),patella:new THREE.Group()};
@@ -39,7 +41,8 @@ function ancestryDepth(n){let k=0;for(let p=n.parent;p;p=p.parent)k++;return k}
 function flatten(){scene.updateMatrixWorld(true);for(let obj of [...registered.values()].sort((a,b)=>ancestryDepth(b)-ancestryDepth(a))){if(obj.parent!==scene)scene.attach(obj)}scene.updateMatrixWorld(true)}
 function getMeshes(name){const root=registered.get(name),meshes=[];if(!root)return meshes;root.traverse(o=>{if(o.isMesh&&nearestNamed(o)===name)meshes.push(o)});return meshes;}
 function baseMaterial(name){const kind=category.get(name);let color=materialPalette.bone;if(name==='Patella.r')color=materialPalette.patella;
- if(kind==='muscle')color=materialPalette.muscle;if(kind==='meniscus')color=materialPalette.meniscus;
+ if(kind==='muscle')color=muscleColors[name];if(kind==='meniscus')color=materialPalette.meniscus;
+ if(hipLigamentColors[name])color=hipLigamentColors[name];
  if(name.includes('Anterior cruciate'))color=materialPalette.acl;
  if(name.includes('Posterior cruciate'))color=materialPalette.pcl;
  if(name.includes('tibial collateral'))color=materialPalette.mcl;
@@ -62,7 +65,7 @@ function updateVisibility(){
 function cycleTissue(name){tissueStates.set(name,nextVisibility(tissueStates.get(name)));updateVisibility();if(activeSelection)selectStructure(activeSelection,{showFloating:!$('floatingSelection').hidden});}
 function syncTissueUI(){for(const row of document.querySelectorAll('[data-tissue]')){
  const name=row.dataset.tissue;row.hidden=!relevant(name,focus);row.dataset.state=tissueStates.get(name)||'off';
- row.querySelector('small').textContent=registered.has(name)?(row.dataset.state==='fade'?'Fade 30%':row.dataset.state.toUpperCase()):'Unavailable';
+ row.querySelector('small').textContent=registered.has(name)?(row.dataset.state==='fade'?'Fade':row.dataset.state.toUpperCase()):'Unavailable';
  row.disabled=!registered.has(name);
 }}
 // Fade only when left geometry overlaps the right skeleton in screen space and is nearer.
@@ -122,20 +125,11 @@ function buildAxis(){axisGroup.clear();const l=Math.max(kneeScale*1.35,.001);
  axisGroup.traverse(o=>{o.renderOrder=50});}
 function updatePose(){if(!kneeModelReady)return;
  const moving=mode==='kinesiology'&&focus==='knee';
- const flex=!moving?0:motion==='flex'?motionValue:motion==='rot'?90:30;
- const rot=moving&&motion==='rot'?motionValue:0;
- const valgus=moving&&motion==='stress'?motionValue:0;
- // Femur follows a fixed educational hip flexion posture; knee axes remain in the femoral local frame.
- const hipQ=new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(1,0,0),-(moving?KNEE.startingHipFlexionDeg:0)*DEG);
- const screw=!moving?0:screwHomeExternalRotationDeg(flex,KNEE.screwHomeMaxExternalRotationDeg,KNEE.screwHomeWindowDeg);
- const qFlex=new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(1,0,0),flex*DEG);
- const qRotation=new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(0,1,0),sideSign*(rot+screw)*DEG);
- const qStress=new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(0,0,1),-sideSign*valgus*DEG);
- const kneeQ=qFlex.multiply(qRotation).multiply(qStress);
+ const pose=kneePose(motion,motionValue,sideSign,{anatomy:!moving});const flex=pose.angles.flex;
  // Small, illustrative proximal/distal patellar glide; not a measured patellofemoral trajectory.
  const patellaPosition=patellaBasePosition.clone();
  patellaPosition.y-=(flex/140)*kneeScale*.10;
- poseTarget={hip:hipQ,knee:kneeQ,patella:patellaPosition};
+ poseTarget={hip:pose.hip,knee:pose.knee,patella:patellaPosition};
  axisGroup.visible=$('axisToggle').checked&&moving;
  const p=teachingLigamentTendency(motion,motionValue);
  $('ligamentStatus').innerHTML=['mcl','lcl','acl','pcl'].map(key=>`<div class="ligItem"><strong>${key.toUpperCase()}</strong><span>${({'強調':'Emphasized','通常':'Baseline','角度依存':'Angle dependent','弛緩傾向':'Reduced restraint'})[p[key]]||'Baseline'}</span></div>`).join('');
@@ -151,16 +145,16 @@ function frameFocus(f=focus){if(!modelLoaded)return;
 function setFocus(f){focus=f;activeSelection=null;$('selectedStructure').textContent='Click a structure';$('floatingSelection').hidden=true;
  for(const el of document.querySelectorAll('[data-focus]'))el.classList.toggle('selected',el.dataset.focus===f);
  for(const [name,state] of focusStates(f))tissueStates.set(name,state);
- if(f==='body'){motion='flex';motionValue=90;for(const b of document.querySelectorAll('[data-motion]'))b.classList.toggle('selected',b.dataset.motion==='flex');$('motionSlider').min=0;$('motionSlider').max=140;$('motionSlider').value=90;}
+ if(f==='body'){Object.assign(motionValues,{flex:90,rot:0,stress:0});setMotion('flex');}
  updateModeUI();updatePose();updateVisibility();
  // Focus is an intentional framing operation; frame the target pose rather than an intermediate tween.
  if(poseTarget){rig.hip.quaternion.copy(poseTarget.hip);rig.knee.quaternion.copy(poseTarget.knee);rig.patella.position.copy(poseTarget.patella);scene.updateMatrixWorld(true);}
  frameFocus(f);
 }
-function setMotion(m){motion=m;motionValue=PRESETS[m].knee===90?90:0;if(m==='rot'||m==='stress')motionValue=0;
+function setMotion(m){motion=m;motionValue=motionValues[m];
  for(const el of document.querySelectorAll('[data-motion]'))el.classList.toggle('selected',el.dataset.motion===m);
  const sl=$('motionSlider');const ranges={flex:[0,140,90,'伸展 / Extension 0°','屈曲 / Flexion 140°'],rot:[-15,30,0,'内旋 / Internal 15°','外旋 / External 30°'],stress:[-3,3,0,'内反 / Varus 3°','外反 / Valgus 3°']};
- const v=ranges[m];sl.min=v[0];sl.max=v[1];sl.value=v[2];motionValue=v[2];$('negativeLabel').textContent=v[3];$('positiveLabel').textContent=v[4];updatePose()}
+ const v=ranges[m];sl.min=v[0];sl.max=v[1];sl.value=motionValue;$('negativeLabel').textContent=v[3];$('positiveLabel').textContent=v[4];updatePose()}
 function updateModeUI(){
  const moving=mode==='kinesiology';
  $('motionSection').hidden=!(moving&&focus==='knee');
@@ -177,7 +171,8 @@ function setView(v){if(!modelLoaded)return;const target=controls.target.clone(),
  const dirs={front:[0,0,1],back:[0,0,-1],lateral:[sideSign,0,0],medial:[-sideSign,0,0],iso:[sideSign*.8,.4,1]};camera.position.copy(target).add(new THREE.Vector3(...dirs[v]).normalize().multiplyScalar(d));camera.up.set(0,1,0);controls.update();}
 function uiMuscleList(){for(const [name,jp,kind] of tissues){
  const b=document.createElement('button');b.type='button';b.dataset.tissue=name;
- const title=document.createElement('span');title.textContent=kind==='muscle'?jp:jp+' / '+englishName(name);const state=document.createElement('small');b.append(title,state);
+ const title=document.createElement('span');title.textContent=jp;const state=document.createElement('small');b.append(title,state);
+ const color=muscleColors[name]||hipLigamentColors[name];if(color)b.style.setProperty('--tissue-color','#'+color.toString(16).padStart(6,'0'));
  b.addEventListener('click',()=>cycleTissue(name));$(kind==='muscle'?'muscleList':'ligamentList').append(b);
 }}
 function highlightSelected(name){for(const [k,m] of originalMaterials){const picked=k===name&&visibleStates.get(k)!=='off';m.emissive.setHex(picked?0x2e7baa:0x000000);m.emissiveIntensity=picked?.12:0;}}
@@ -196,7 +191,7 @@ function selectStructure(name,{point=null,showFloating=true}={}){activeSelection
  for(const id of ['selectedStructure','floatingSelection']){const el=$(id);el.replaceChildren();
   const title=document.createElement('div');title.className='selectedName';title.textContent=japaneseName(name)||englishName(name);el.append(title);
   if(id==='floatingSelection'){const en=document.createElement('div');en.className='selectedEnglish';en.textContent=englishName(name);el.append(en);}
-  if(category.get(name)!=='bone'){const button=document.createElement('button');const state=tissueStates.get(name)||'off';button.textContent=state==='fade'?'Fade 30%':state.toUpperCase();button.addEventListener('click',()=>cycleTissue(name));el.append(button);}
+  if(category.get(name)!=='bone'){const button=document.createElement('button');const state=tissueStates.get(name)||'off';button.textContent=state==='fade'?'Fade':state.toUpperCase();button.addEventListener('click',()=>cycleTissue(name));el.append(button);}
   else {const label=document.createElement('small');label.textContent='Skeleton · ON';el.append(label);}
  }
  $('floatingSelection').hidden=!showFloating;positionSelection();
@@ -222,8 +217,8 @@ for(const b of document.querySelectorAll('[data-focus]'))b.addEventListener('cli
 for(const b of document.querySelectorAll('[data-view]'))b.addEventListener('click',()=>setView(b.dataset.view));
 for(const b of document.querySelectorAll('[data-motion]'))b.addEventListener('click',()=>setMotion(b.dataset.motion));
 $('axisToggle').addEventListener('change',updatePose);
-$('motionSlider').addEventListener('input',e=>{motionValue=+e.target.value;updatePose()});
-$('resetPose').addEventListener('click',()=>setMotion(motion));
+$('motionSlider').addEventListener('input',e=>{motionValue=+e.target.value;motionValues[motion]=motionValue;updatePose()});
+$('resetPose').addEventListener('click',()=>{motionValues[motion]=motion==='flex'?90:0;setMotion(motion)});
 $('mobilePanel').addEventListener('click',()=>{$('sidebar').classList.toggle('collapsed');size()});
 if(matchMedia('(max-width:740px)').matches)$('sidebar').classList.add('collapsed');
 async function loadOne(name){const errs=[];for(const base of BASES){try{
@@ -270,4 +265,4 @@ function tick(now=performance.now()){requestAnimationFrame(tick);const dt=Math.m
  controls.update();scene.updateMatrixWorld(true);fadeLeftSkeleton();renderer.render(scene,camera);
 }tick();boot();
 // Read-only QA snapshot, opt in locally with ?qa; no remote controls.
-if(new URLSearchParams(location.search).has('qa'))window.atlasQA=()=>({mode,focus,camera:camera.position.toArray(),target:controls.target.toArray(),states:Object.fromEntries(tissueStates),tissueMeshes:tissues.map(([n])=>({name:n,count:getMeshes(n).length,visible:getMeshes(n).every(m=>m.visible),opacity:originalMaterials.get(n)?.opacity})),focusNDC:(focus==='knee'?rig.knee.getWorldPosition(new THREE.Vector3()):hipWorldPoint?.clone())?.project(camera).toArray(),bones:[...category].filter(([,k])=>k==='bone').map(([n])=>({name:n,visible:getMeshes(n).every(m=>m.visible),opacity:originalMaterials.get(n).opacity})),registered:[...registered.keys()],hip:rig.hip.quaternion.toArray(),knee:rig.knee.quaternion.toArray()});
+if(new URLSearchParams(location.search).has('qa'))window.atlasQA=()=>({mode,focus,motion,motionValue,motionValues:{...motionValues},calibration:{status:KNEE.status,hipCenter:hipWorldPoint?.toArray(),kneeCenter:kneeWorldPoint?.toArray(),axes:{flex:[1,0,0],axial:[0,1,0],stress:[0,0,1]},sideSign},camera:camera.position.toArray(),target:controls.target.toArray(),states:Object.fromEntries(tissueStates),tissueMeshes:tissues.map(([n])=>({name:n,color:originalMaterials.get(n)?.color.getHex(),count:getMeshes(n).length,visible:getMeshes(n).every(m=>m.visible),opacity:originalMaterials.get(n)?.opacity})),focusNDC:(focus==='knee'?rig.knee.getWorldPosition(new THREE.Vector3()):hipWorldPoint?.clone())?.project(camera).toArray(),bones:[...category].filter(([,k])=>k==='bone').map(([n])=>({name:n,visible:getMeshes(n).every(m=>m.visible),opacity:originalMaterials.get(n).opacity})),registered:[...registered.keys()],hip:rig.hip.quaternion.toArray(),knee:rig.knee.quaternion.toArray()});

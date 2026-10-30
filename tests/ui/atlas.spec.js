@@ -9,6 +9,11 @@ test('actual GLBs: Anatomy focus, display cycle, mode continuity and home',async
  const snap=()=>page.evaluate(()=>window.atlasQA());
  const initial=await snap();expect(initial.bones.length).toBeGreaterThan(150);expect(initial.bones.every(b=>b.visible)).toBeTruthy();
  expect(initial.tissueMeshes.every(t=>t.count>0&&t.visible)).toBeTruthy();
+ const muscles=initial.tissueMeshes.filter(t=>t.name.includes('Vastus')||t.name.includes('Gluteus')||t.name.includes('Rectus femoris'));
+ expect(new Set(muscles.map(t=>t.color)).size).toBe(muscles.length);
+ expect(await page.locator('#muscleList').evaluate(el=>getComputedStyle(el).gridTemplateColumns.split(' ').length)).toBe(2);
+ expect(await page.locator('#sidebar').evaluate(el=>el.scrollHeight-el.clientHeight)).toBeLessThanOrEqual(1);
+ expect(await page.locator('#sidebar').textContent()).not.toContain('30%');
  writeFileSync('test-results/model-summary.json',JSON.stringify({bones:initial.bones.length,registered:initial.registered.length},null,2));
  for(const f of ['hip','knee']){await page.locator(`[data-focus="${f}"]`).click();const s=await snap();expect(s.focus).toBe(f);expect(s.bones.length).toBe(initial.bones.length);expect(s.bones.every(b=>b.visible)).toBeTruthy();expect(Math.abs(s.focusNDC[0])).toBeLessThan(.001);expect(Math.abs(s.focusNDC[1])).toBeLessThan(.001);}
  const quad=page.locator('[data-tissue="Vastus medialis muscle.r"]');await expect(quad).toBeEnabled();
@@ -33,7 +38,7 @@ test('actual GLBs: Anatomy focus, display cycle, mode continuity and home',async
  const box=await page.locator('canvas').boundingBox();let picked=false,clickPoint;
  for(let dy=-.12;dy<=.12&&!picked;dy+=.06)for(let dx=-.12;dx<=.12&&!picked;dx+=.06){clickPoint={x:box.x+box.width*(.5+dx),y:box.y+box.height*(.5+dy)};await page.mouse.move(clickPoint.x,clickPoint.y);await page.mouse.click(clickPoint.x,clickPoint.y);picked=await page.locator('#floatingSelection button').isVisible();}
  expect(picked).toBeTruthy();const title=await page.locator('#floatingSelection .selectedName').textContent();
- const old=await page.locator('#floatingSelection button').textContent();const next=({'ON':'Fade 30%','Fade 30%':'OFF','OFF':'ON'})[old];
+ const old=await page.locator('#floatingSelection button').textContent();const next=({'ON':'Fade','Fade':'OFF','OFF':'ON'})[old];
  await page.locator('#floatingSelection button').click();await expect(page.locator('#selectedStructure button')).toHaveText(next);await expect(page.locator('#floatingSelection .selectedName')).toHaveText(title);
  const popup=await page.locator('#floatingSelection').boundingBox();expect(Math.abs(popup.x-clickPoint.x)).toBeLessThan(300);expect(Math.abs(popup.y-clickPoint.y)).toBeLessThan(160);
  await expect(page.locator('#floatingSelection .selectedEnglish')).not.toHaveText('');
