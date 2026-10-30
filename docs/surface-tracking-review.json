@@ -1,0 +1,816 @@
+{
+  "status": "GEOMETRIC TRACKING — NOT ANATOMICAL APPROVAL",
+  "reports": [
+    {
+      "angle": 0,
+      "maxSurfaceOffsetError": 7.28583859910259e-17,
+      "flatHeightNegativeControl": 5.898059818321144e-17,
+      "tracking": {
+        "status": "SURFACE TRACK REVIEW — NOT FIXED",
+        "center": [
+          -0.010814456159421093,
+          -0.009729726738818655,
+          0.043905466937013825
+        ],
+        "groove": [
+          -0.010673246176139175,
+          -0.007976546673584666,
+          0.036416530346962364
+        ],
+        "minimumRayGap": 0.0024009605311468758,
+        "supportSamples": 47
+      },
+      "patellaAudit": {
+        "insideVertices": 0,
+        "nearestVertexDistance": 0.0022622626024004795
+      },
+      "menisci": [
+        {
+          "name": "Medial meniscus.r",
+          "status": "SCHEMATIC — CONTACT/ROOTS NOT VALIDATED",
+          "displacement": [
+            0,
+            0,
+            0
+          ],
+          "centroidDisplacement": [
+            0,
+            0,
+            0
+          ],
+          "maxHeightChange": 0,
+          "roots": [
+            [
+              0.008237696628696223,
+              -0.021088914120761748,
+              0.013546917729564865
+            ],
+            [
+              0.006262499283677836,
+              -0.028918769782600995,
+              -0.01968768224816684
+            ]
+          ],
+          "maxWeight": 1
+        },
+        {
+          "name": "Lateral meniscus.r",
+          "status": "SCHEMATIC — CONTACT/ROOTS NOT VALIDATED",
+          "displacement": [
+            0,
+            0,
+            0
+          ],
+          "centroidDisplacement": [
+            0,
+            0,
+            0
+          ],
+          "maxHeightChange": 0,
+          "roots": [
+            [
+              -0.0032992387156421943,
+              -0.025675851492403146,
+              0.016711350672432145
+            ],
+            [
+              -0.01041408497499774,
+              -0.02079000800308406,
+              -0.0025270998920119206
+            ]
+          ],
+          "maxWeight": 1
+        }
+      ]
+    },
+    {
+      "angle": 20,
+      "maxSurfaceOffsetError": 1.2576722545343255e-9,
+      "flatHeightNegativeControl": 0.0012548527218543895,
+      "tracking": {
+        "status": "SURFACE TRACK REVIEW — NOT FIXED",
+        "center": [
+          -0.0014179638104056481,
+          -0.021240499059843352,
+          0.0391866748066184
+        ],
+        "groove": [
+          -0.0010191649597922209,
+          -0.015266660694322705,
+          0.028165518443134877
+        ],
+        "minimumRayGap": 0.0009999999999999996,
+        "supportSamples": 51
+      },
+      "patellaAudit": null,
+      "menisci": [
+        {
+          "name": "Medial meniscus.r",
+          "status": "SCHEMATIC — CONTACT/ROOTS NOT VALIDATED",
+          "displacement": [
+            0,
+            0,
+            -0.0004444444444444444
+          ],
+          "centroidDisplacement": [
+            0,
+            -0.00007940893715844286,
+            -0.0003063027602472068
+          ],
+          "maxHeightChange": 0.00028049748262767155,
+          "roots": [
+            [
+              0.008237696628696223,
+              -0.021088914120761748,
+              0.013546917729564865
+            ],
+            [
+              0.006262499283677836,
+              -0.028918769782600995,
+              -0.01968768224816684
+            ]
+          ],
+          "maxWeight": 1
+        },
+        {
+          "name": "Lateral meniscus.r",
+          "status": "SCHEMATIC — CONTACT/ROOTS NOT VALIDATED",
+          "displacement": [
+            0,
+            0,
+            -0.0008888888888888888
+          ],
+          "centroidDisplacement": [
+            0,
+            -0.00006989564117967719,
+            -0.0006272170334264764
+          ],
+          "maxHeightChange": 0.0012548516396644095,
+          "roots": [
+            [
+              -0.0032992387156421943,
+              -0.025675851492403146,
+              0.016711350672432145
+            ],
+            [
+              -0.01041408497499774,
+              -0.02079000800308406,
+              -0.0025270998920119206
+            ]
+          ],
+          "maxWeight": 1
+        }
+      ]
+    },
+    {
+      "angle": 30,
+      "maxSurfaceOffsetError": 5.759360904855626e-10,
+      "flatHeightNegativeControl": 0.0030442527731979474,
+      "tracking": {
+        "status": "SURFACE TRACK REVIEW — NOT FIXED",
+        "center": [
+          -0.0016386931238330403,
+          -0.02557839109206229,
+          0.035070069583099384
+        ],
+        "groove": [
+          -0.0011004629609371978,
+          -0.017177146585774287,
+          0.02355127513040277
+        ],
+        "minimumRayGap": 0.0010000000000000009,
+        "supportSamples": 49
+      },
+      "patellaAudit": {
+        "insideVertices": 0,
+        "nearestVertexDistance": 0.0008979442214772953
+      },
+      "menisci": [
+        {
+          "name": "Medial meniscus.r",
+          "status": "SCHEMATIC — CONTACT/ROOTS NOT VALIDATED",
+          "displacement": [
+            0,
+            0,
+            -0.0009375
+          ],
+          "centroidDisplacement": [
+            0,
+            -0.00017099445405238052,
+            -0.0006461073848964512
+          ],
+          "maxHeightChange": 0.0005916743774177363,
+          "roots": [
+            [
+              0.008237696628696223,
+              -0.021088914120761748,
+              0.013546917729564865
+            ],
+            [
+              0.006262499283677836,
+              -0.028918769782600995,
+              -0.01968768224816684
+            ]
+          ],
+          "maxWeight": 1
+        },
+        {
+          "name": "Lateral meniscus.r",
+          "status": "SCHEMATIC — CONTACT/ROOTS NOT VALIDATED",
+          "displacement": [
+            0,
+            0,
+            -0.001875
+          ],
+          "centroidDisplacement": [
+            0,
+            -0.00018797153432748367,
+            -0.001323035929883972
+          ],
+          "maxHeightChange": 0.0030442526238441125,
+          "roots": [
+            [
+              -0.0032992387156421943,
+              -0.025675851492403146,
+              0.016711350672432145
+            ],
+            [
+              -0.01041408497499774,
+              -0.02079000800308406,
+              -0.0025270998920119206
+            ]
+          ],
+          "maxWeight": 1
+        }
+      ]
+    },
+    {
+      "angle": 45,
+      "maxSurfaceOffsetError": 1.3719221106378576e-9,
+      "flatHeightNegativeControl": 0.006307585559251927,
+      "tracking": {
+        "status": "SURFACE TRACK REVIEW — NOT FIXED",
+        "center": [
+          -0.0018436579673087794,
+          -0.029993880366494512,
+          0.027410169006639357
+        ],
+        "groove": [
+          -0.0011755318442801263,
+          -0.019124169930031902,
+          0.0174787449177254
+        ],
+        "minimumRayGap": 0.001000000000000003,
+        "supportSamples": 46
+      },
+      "patellaAudit": null,
+      "menisci": [
+        {
+          "name": "Medial meniscus.r",
+          "status": "SCHEMATIC — CONTACT/ROOTS NOT VALIDATED",
+          "displacement": [
+            0,
+            0,
+            -0.0018984375
+          ],
+          "centroidDisplacement": [
+            0,
+            -0.0003597606470373265,
+            -0.0013083674544153128
+          ],
+          "maxHeightChange": 0.0012213367884520224,
+          "roots": [
+            [
+              0.008237696628696223,
+              -0.021088914120761748,
+              0.013546917729564865
+            ],
+            [
+              0.006262499283677836,
+              -0.028918769782600995,
+              -0.01968768224816684
+            ]
+          ],
+          "maxWeight": 1
+        },
+        {
+          "name": "Lateral meniscus.r",
+          "status": "SCHEMATIC — CONTACT/ROOTS NOT VALIDATED",
+          "displacement": [
+            0,
+            0,
+            -0.003796875
+          ],
+          "centroidDisplacement": [
+            0,
+            -0.0005576076816684358,
+            -0.0026728472936777443
+          ],
+          "maxHeightChange": 0.006307584827582952,
+          "roots": [
+            [
+              -0.0032992387156421943,
+              -0.025675851492403146,
+              0.016711350672432145
+            ],
+            [
+              -0.01041408497499774,
+              -0.02079000800308406,
+              -0.0025270998920119206
+            ]
+          ],
+          "maxWeight": 1
+        }
+      ]
+    },
+    {
+      "angle": 60,
+      "maxSurfaceOffsetError": 1.5726203464461186e-9,
+      "flatHeightNegativeControl": 0.008912722532758245,
+      "tracking": {
+        "status": "SURFACE TRACK REVIEW — NOT FIXED",
+        "center": [
+          -0.0018854574802168698,
+          -0.03159219798484242,
+          0.018935867918733817
+        ],
+        "groove": [
+          -0.0011949470218806293,
+          -0.020022197950763897,
+          0.012000991384654967
+        ],
+        "minimumRayGap": 0.0009999999999999996,
+        "supportSamples": 44
+      },
+      "patellaAudit": {
+        "insideVertices": 0,
+        "nearestVertexDistance": 0.0009163259712235573
+      },
+      "menisci": [
+        {
+          "name": "Medial meniscus.r",
+          "status": "SCHEMATIC — CONTACT/ROOTS NOT VALIDATED",
+          "displacement": [
+            0,
+            0,
+            -0.003
+          ],
+          "centroidDisplacement": [
+            0,
+            -0.0005946406650985368,
+            -0.002067543631668643
+          ],
+          "maxHeightChange": 0.0021060013758565574,
+          "roots": [
+            [
+              0.008237696628696223,
+              -0.021088914120761748,
+              0.013546917729564865
+            ],
+            [
+              0.006262499283677836,
+              -0.028918769782600995,
+              -0.01968768224816684
+            ]
+          ],
+          "maxWeight": 1
+        },
+        {
+          "name": "Lateral meniscus.r",
+          "status": "SCHEMATIC — CONTACT/ROOTS NOT VALIDATED",
+          "displacement": [
+            0,
+            0,
+            -0.006
+          ],
+          "centroidDisplacement": [
+            0,
+            -0.001048370773084965,
+            -0.004161335051189611
+          ],
+          "maxHeightChange": 0.00891272280364181,
+          "roots": [
+            [
+              -0.0032992387156421943,
+              -0.025675851492403146,
+              0.016711350672432145
+            ],
+            [
+              -0.01041408497499774,
+              -0.02079000800308406,
+              -0.0025270998920119206
+            ]
+          ],
+          "maxWeight": 1
+        }
+      ]
+    },
+    {
+      "angle": 75,
+      "maxSurfaceOffsetError": 1.3751481203749805e-9,
+      "flatHeightNegativeControl": 0.0089121596028904,
+      "tracking": {
+        "status": "SURFACE TRACK REVIEW — NOT FIXED",
+        "center": [
+          -0.0018205134853765967,
+          -0.03123595018991881,
+          0.011033776552271581
+        ],
+        "groove": [
+          -0.0011866117023323066,
+          -0.020359661530147052,
+          0.007191308384637855
+        ],
+        "minimumRayGap": 0.0010000000000000022,
+        "supportSamples": 45
+      },
+      "patellaAudit": null,
+      "menisci": [
+        {
+          "name": "Medial meniscus.r",
+          "status": "SCHEMATIC — CONTACT/ROOTS NOT VALIDATED",
+          "displacement": [
+            0,
+            0,
+            -0.0041015625
+          ],
+          "centroidDisplacement": [
+            0,
+            -0.0008389058533219421,
+            -0.002820808289874271
+          ],
+          "maxHeightChange": 0.0023192184419152245,
+          "roots": [
+            [
+              0.008237696628696223,
+              -0.021088914120761748,
+              0.013546917729564865
+            ],
+            [
+              0.006262499283677836,
+              -0.028918769782600995,
+              -0.01968768224816684
+            ]
+          ],
+          "maxWeight": 1
+        },
+        {
+          "name": "Lateral meniscus.r",
+          "status": "SCHEMATIC — CONTACT/ROOTS NOT VALIDATED",
+          "displacement": [
+            0,
+            0,
+            -0.008203125
+          ],
+          "centroidDisplacement": [
+            0,
+            -0.0014263346259576928,
+            -0.005517129528606495
+          ],
+          "maxHeightChange": 0.0089121593658672,
+          "roots": [
+            [
+              -0.0032992387156421943,
+              -0.025675851492403146,
+              0.016711350672432145
+            ],
+            [
+              -0.01041408497499774,
+              -0.02079000800308406,
+              -0.0025270998920119206
+            ]
+          ],
+          "maxWeight": 1
+        }
+      ]
+    },
+    {
+      "angle": 90,
+      "maxSurfaceOffsetError": 1.9099342454809154e-9,
+      "flatHeightNegativeControl": 0.009759728019961358,
+      "tracking": {
+        "status": "SURFACE TRACK REVIEW — NOT FIXED",
+        "center": [
+          -0.001759208200569805,
+          -0.030825406035466178,
+          0.004309939189191506
+        ],
+        "groove": [
+          -0.0011519576162830406,
+          -0.020184968013490942,
+          0.002822216991199674
+        ],
+        "minimumRayGap": 0.0010000000000000035,
+        "supportSamples": 47
+      },
+      "patellaAudit": {
+        "insideVertices": 0,
+        "nearestVertexDistance": 0.0009221454717069507
+      },
+      "menisci": [
+        {
+          "name": "Medial meniscus.r",
+          "status": "SCHEMATIC — CONTACT/ROOTS NOT VALIDATED",
+          "displacement": [
+            0,
+            0,
+            -0.0050625
+          ],
+          "centroidDisplacement": [
+            0,
+            -0.0010553973402102855,
+            -0.003465865980783218
+          ],
+          "maxHeightChange": 0.002822827454609645,
+          "roots": [
+            [
+              0.008237696628696223,
+              -0.021088914120761748,
+              0.013546917729564865
+            ],
+            [
+              0.006262499283677836,
+              -0.028918769782600995,
+              -0.01968768224816684
+            ]
+          ],
+          "maxWeight": 1
+        },
+        {
+          "name": "Lateral meniscus.r",
+          "status": "SCHEMATIC — CONTACT/ROOTS NOT VALIDATED",
+          "displacement": [
+            0,
+            0,
+            -0.010125
+          ],
+          "centroidDisplacement": [
+            0,
+            -0.0017973314362768034,
+            -0.0066596286708687485
+          ],
+          "maxHeightChange": 0.00975972772250126,
+          "roots": [
+            [
+              -0.0032992387156421943,
+              -0.025675851492403146,
+              0.016711350672432145
+            ],
+            [
+              -0.01041408497499774,
+              -0.02079000800308406,
+              -0.0025270998920119206
+            ]
+          ],
+          "maxWeight": 1
+        }
+      ]
+    },
+    {
+      "angle": 120,
+      "maxSurfaceOffsetError": 1.8151859459969444e-9,
+      "flatHeightNegativeControl": 0.010199925581544502,
+      "tracking": {
+        "status": "SURFACE TRACK REVIEW — NOT FIXED",
+        "center": [
+          -0.001475684522689454,
+          -0.02695260861521609,
+          -0.007232621415210578
+        ],
+        "groove": [
+          -0.0010252553011996113,
+          -0.0187257536682343,
+          -0.0050249788037351195
+        ],
+        "minimumRayGap": 0.0009999999999999998,
+        "supportSamples": 47
+      },
+      "patellaAudit": {
+        "insideVertices": 0,
+        "nearestVertexDistance": 0.0008508584052608093
+      },
+      "menisci": [
+        {
+          "name": "Medial meniscus.r",
+          "status": "SCHEMATIC — CONTACT/ROOTS NOT VALIDATED",
+          "displacement": [
+            0,
+            0,
+            -0.006
+          ],
+          "centroidDisplacement": [
+            0,
+            -0.0012651182101053788,
+            -0.004079998713595169
+          ],
+          "maxHeightChange": 0.0032940604992015947,
+          "roots": [
+            [
+              0.008237696628696223,
+              -0.021088914120761748,
+              0.013546917729564865
+            ],
+            [
+              0.006262499283677836,
+              -0.028918769782600995,
+              -0.01968768224816684
+            ]
+          ],
+          "maxWeight": 1
+        },
+        {
+          "name": "Lateral meniscus.r",
+          "status": "SCHEMATIC — CONTACT/ROOTS NOT VALIDATED",
+          "displacement": [
+            0,
+            0,
+            -0.012
+          ],
+          "centroidDisplacement": [
+            0,
+            -0.0020673860963832326,
+            -0.007702280752201345
+          ],
+          "maxHeightChange": 0.010199924532649857,
+          "roots": [
+            [
+              -0.0032992387156421943,
+              -0.025675851492403146,
+              0.016711350672432145
+            ],
+            [
+              -0.01041408497499774,
+              -0.02079000800308406,
+              -0.0025270998920119206
+            ]
+          ],
+          "maxWeight": 1
+        }
+      ]
+    },
+    {
+      "angle": 90,
+      "maxSurfaceOffsetError": 1.9099342454809154e-9,
+      "flatHeightNegativeControl": 0.009759728019961358,
+      "tracking": {
+        "status": "SURFACE TRACK REVIEW — NOT FIXED",
+        "center": [
+          -0.001759208200569805,
+          -0.030825406035466178,
+          0.004309939189191506
+        ],
+        "groove": [
+          -0.0011519576162830406,
+          -0.020184968013490942,
+          0.002822216991199674
+        ],
+        "minimumRayGap": 0.0010000000000000035,
+        "supportSamples": 47
+      },
+      "patellaAudit": {
+        "insideVertices": 0,
+        "nearestVertexDistance": 0.0009221454717069507
+      },
+      "menisci": [
+        {
+          "name": "Medial meniscus.r",
+          "status": "SCHEMATIC — CONTACT/ROOTS NOT VALIDATED",
+          "displacement": [
+            0,
+            0,
+            -0.0050625
+          ],
+          "centroidDisplacement": [
+            0,
+            -0.0010553973402102855,
+            -0.003465865980783218
+          ],
+          "maxHeightChange": 0.002822827454609645,
+          "roots": [
+            [
+              0.008237696628696223,
+              -0.021088914120761748,
+              0.013546917729564865
+            ],
+            [
+              0.006262499283677836,
+              -0.028918769782600995,
+              -0.01968768224816684
+            ]
+          ],
+          "maxWeight": 1
+        },
+        {
+          "name": "Lateral meniscus.r",
+          "status": "SCHEMATIC — CONTACT/ROOTS NOT VALIDATED",
+          "displacement": [
+            0,
+            0,
+            -0.010125
+          ],
+          "centroidDisplacement": [
+            0,
+            -0.0017973314362768034,
+            -0.0066596286708687485
+          ],
+          "maxHeightChange": 0.00975972772250126,
+          "roots": [
+            [
+              -0.0032992387156421943,
+              -0.025675851492403146,
+              0.016711350672432145
+            ],
+            [
+              -0.01041408497499774,
+              -0.02079000800308406,
+              -0.0025270998920119206
+            ]
+          ],
+          "maxWeight": 1
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "maxSurfaceOffsetError": 7.28583859910259e-17,
+      "flatHeightNegativeControl": 5.898059818321144e-17,
+      "tracking": {
+        "status": "SURFACE TRACK REVIEW — NOT FIXED",
+        "center": [
+          -0.010814456159421093,
+          -0.009729726738818655,
+          0.043905466937013825
+        ],
+        "groove": [
+          -0.010673246176139175,
+          -0.007976546673584666,
+          0.036416530346962364
+        ],
+        "minimumRayGap": 0.0024009605311468758,
+        "supportSamples": 47
+      },
+      "patellaAudit": {
+        "insideVertices": 0,
+        "nearestVertexDistance": 0.0022622626024004795
+      },
+      "menisci": [
+        {
+          "name": "Medial meniscus.r",
+          "status": "SCHEMATIC — CONTACT/ROOTS NOT VALIDATED",
+          "displacement": [
+            0,
+            0,
+            0
+          ],
+          "centroidDisplacement": [
+            0,
+            0,
+            0
+          ],
+          "maxHeightChange": 0,
+          "roots": [
+            [
+              0.008237696628696223,
+              -0.021088914120761748,
+              0.013546917729564865
+            ],
+            [
+              0.006262499283677836,
+              -0.028918769782600995,
+              -0.01968768224816684
+            ]
+          ],
+          "maxWeight": 1
+        },
+        {
+          "name": "Lateral meniscus.r",
+          "status": "SCHEMATIC — CONTACT/ROOTS NOT VALIDATED",
+          "displacement": [
+            0,
+            0,
+            0
+          ],
+          "centroidDisplacement": [
+            0,
+            0,
+            0
+          ],
+          "maxHeightChange": 0,
+          "roots": [
+            [
+              -0.0032992387156421943,
+              -0.025675851492403146,
+              0.016711350672432145
+            ],
+            [
+              -0.01041408497499774,
+              -0.02079000800308406,
+              -0.0025270998920119206
+            ]
+          ],
+          "maxWeight": 1
+        }
+      ]
+    }
+  ]
+}

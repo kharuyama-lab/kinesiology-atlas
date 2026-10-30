@@ -1,0 +1,32 @@
+[
+  {
+    "angle": 0,
+    "nearestVertexDistance": 0.0022622626024004795,
+    "insideVertices": 0,
+    "maxInsideDepth": 0
+  },
+  {
+    "angle": 30,
+    "nearestVertexDistance": 0.0008979442214772953,
+    "insideVertices": 0,
+    "maxInsideDepth": 0
+  },
+  {
+    "angle": 60,
+    "nearestVertexDistance": 0.0009163259712235573,
+    "insideVertices": 0,
+    "maxInsideDepth": 0
+  },
+  {
+    "angle": 90,
+    "nearestVertexDistance": 0.0009221454717069507,
+    "insideVertices": 0,
+    "maxInsideDepth": 0
+  },
+  {
+    "angle": 120,
+    "nearestVertexDistance": 0.0008508584052608093,
+    "insideVertices": 0,
+    "maxInsideDepth": 0
+  }
+]

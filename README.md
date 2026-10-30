@@ -18,7 +18,7 @@ Node.jsを用意し、フォルダー内で `npm run serve` を実行して http
 
 ## 関節運動の検証
 
-関節・半月板の確認は `http://127.0.0.1:8080/?review=knee&axis=condyle`。Auto/Pauseで往復・停止できます。メッシュの顆形状から骨の回転・並進を計算し、Screw-homeを連成。半月板本体は根を保持しつつ脛骨上を後方へ移動し、伸展で戻ります。外側を内側より大きく動かす暫定モデルです。検証域は0〜120°。関節面・半月板の適合性は未承認。[骨配置](docs/MESH_CONTACT_CORRECTION.md)・[半月板の移動](docs/MENISCAL_EXCURSION_REVIEW.md) を参照。筋・靭帯の追加調整は後続です。
+関節・半月板の確認は `http://127.0.0.1:8080/?review=knee&axis=condyle`。Auto/Pauseで往復・停止できます。骨軌道とScrew-homeを維持し、半月板は根を保持して脛骨の支持曲面に沿って移動、膝蓋骨は滑車部を遠位へたどります。検証域は0〜120°。関節面・軟骨の適合性は未承認。[骨配置](docs/MESH_CONTACT_CORRECTION.md)・[曲面追従](docs/SURFACE_TRACKING_REVIEW.md) を参照。筋・靭帯の追加調整は後続です。
 
 ## 検証
 

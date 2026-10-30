@@ -16,7 +16,7 @@ test('meniscal bodies glide on tibia with roots retained; reverse, Auto and Anat
    const local=current[entry.name].map(v=>new Vector3(...v).sub(hip).applyQuaternion(h).add(hip).sub(k).sub(d).applyQuaternion(q));
    for(const root of entry.roots)expect(Math.min(...local.map(p=>p.distanceTo(new Vector3(...root))))).toBeLessThan(.000002);
    const deltas=local.map((p,i)=>p.clone().sub(new Vector3(...rest[entry.name][i]).sub(k)));
-   expect(Math.max(...deltas.map(p=>Math.abs(p.x)))).toBeLessThan(.000002);expect(Math.max(...deltas.map(p=>Math.abs(p.y)))).toBeLessThan(.000002);
+   expect(Math.max(...deltas.map(p=>Math.abs(p.x)))).toBeLessThan(.000002);expect(deltas.every(p=>Number.isFinite(p.y))).toBeTruthy();
    expect(Math.max(...deltas.map(p=>p.z))).toBeLessThan(.000002);expect(Math.min(...deltas.map(p=>p.z))).toBeGreaterThan(-.012002);
    if(angle>=60)expect(Math.min(...deltas.map(p=>p.z))).toBeLessThan(-.0005);
   }

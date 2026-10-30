@@ -8,6 +8,7 @@ import {muscleColors,hipLigamentColors} from './palette.js';
 import {kneePose} from './joint-motion.js';
 import {TissueFollower} from './tissue-follow.js';
 import {MeniscusFollower} from './meniscus-follow.js';
+import {PatellaTracker} from './patella-track.js';
 import {buildKneeContact} from './knee-contact.js';
 import {advancePlayback,playbackSpeed} from './playback.js';
 import {estimateCondyleAxis} from './knee-calibration.js';
@@ -50,6 +51,7 @@ const materialPalette={bone:0xe6e0d5,patella:0xe3ecf1,acl:0xec739b,pcl:0xb88add,
 const rig={hip:new THREE.Group(),knee:new THREE.Group(),patella:new THREE.Group()};
 const tissueFollower=new TissueFollower();
 const meniscusFollower=new MeniscusFollower();
+const patellaTracker=new PatellaTracker();
 scene.add(rig.hip);
 const axisGroup=new THREE.Group();scene.add(axisGroup);axisGroup.visible=false;
 const flexAxisGroup=new THREE.Group();scene.add(flexAxisGroup);flexAxisGroup.visible=false;
@@ -176,6 +178,7 @@ function prepareRig(){
   scene.add(rig.patella);rig.patella.position.copy(k);rig.hip.attach(rig.patella);
   if(registered.get('Patella.r'))rig.patella.attach(registered.get('Patella.r'));
   patellaBasePosition.copy(rig.patella.position);
+  patellaTracker.prepare({getMeshes,knee:rig.knee,flexAxis:activeFlexAxis});
   scene.add(axisGroup);axisGroup.position.copy(k);rig.hip.attach(axisGroup);
   scene.add(flexAxisGroup);flexAxisGroup.position.copy(k);rig.hip.attach(flexAxisGroup);
   meniscusFollower.prepare({getMeshes,knee:rig.knee});
@@ -195,11 +198,9 @@ function updatePose(){if(!kneeModelReady)return;
  const moving=mode==='kinesiology'&&focus==='knee';
  const pose=kneePose(motion,motionValue,sideSign,{anatomy:!moving,flexAxis:activeFlexAxis,coupled:coupledMotion,contactModel:kneeContactModel});const flex=pose.angles.flex;
  if(moving&&!patellaTrial)$('stageBadge').textContent=coupledMotion?'Mesh contact · Under review':'Fixed axis · Comparison';
- // Small, illustrative proximal/distal patellar glide; not a measured patellofemoral trajectory.
- const patellaPosition=patellaBasePosition.clone();
- const patellaRotation=new THREE.Quaternion();
- if(patellaTrial)patellaRotation.setFromAxisAngle(new THREE.Vector3(...activeFlexAxis),flex*KNEE_REVIEW.patellaArcFraction*Math.PI/180);
- else patellaPosition.y-=(flex/140)*kneeScale*.10;
+ const patellar=patellaTracker.pose(flex),patellaPosition=patellaBasePosition.clone().add(patellar.translation);
+ const patellaRotation=patellar.rotation;
+ if(patellaTrial){patellaPosition.copy(patellaBasePosition);patellaRotation.setFromAxisAngle(new THREE.Vector3(...activeFlexAxis),flex*KNEE_REVIEW.patellaArcFraction*Math.PI/180);}
  poseTarget={hip:pose.hip,knee:pose.knee,kneePosition:kneeBasePosition.clone().add(pose.translation),angles:pose.angles,screw:pose.coupledAxial,instantaneous:pose.instantaneous,extrapolated:pose.extrapolated,patella:patellaPosition,patellaRotation};
  axisGroup.visible=$('axisToggle').checked&&moving;
  flexAxisGroup.visible=$('axisToggle').checked&&moving&&boneReview&&motion==='flex';
@@ -351,7 +352,7 @@ function tick(now=performance.now()){requestAnimationFrame(tick);const dt=Math.m
   const drawn=kneePose(motion,motionValue,sideSign,{flexAxis:activeFlexAxis,coupled:coupledMotion,anglesOverride:renderedAngles,coupledRotationOverride:renderedScrew,contactModel:kneeContactModel});renderedContact=drawn;
   rig.knee.quaternion.copy(drawn.knee);rig.knee.position.copy(kneeBasePosition).add(drawn.translation);
   meniscusFollower.update(renderedAngles.flex);
-  rig.patella.position.lerp(poseTarget.patella,t);rig.patella.quaternion.slerp(poseTarget.patellaRotation,t);axisGroup.position.copy(rig.knee.position);axisGroup.quaternion.copy(rig.knee.quaternion);
+  if(!patellaTrial){const p=patellaTracker.pose(renderedAngles.flex);rig.patella.position.copy(patellaBasePosition).add(p.translation);rig.patella.quaternion.copy(p.rotation);}else{rig.patella.position.lerp(poseTarget.patella,t);rig.patella.quaternion.slerp(poseTarget.patellaRotation,t);}axisGroup.position.copy(rig.knee.position);axisGroup.quaternion.copy(rig.knee.quaternion);
   if(drawn.instantaneous){flexAxisGroup.position.copy(kneeBasePosition).add(drawn.instantaneous.point);flexAxisGroup.quaternion.setFromUnitVectors(new THREE.Vector3(...activeFlexAxis),drawn.instantaneous.direction);}
   // Follow the moving right knee without changing the user's viewing direction, zoom or pan offset.
   if(modelLoaded&&focus==='knee'){const delta=kneeObservation().sub(before);camera.position.add(delta);controls.target.add(delta);}
@@ -369,3 +370,5 @@ if(new URLSearchParams(location.search).has('qa'))window.atlasMeshQA=name=>{
 };
 
 if(new URLSearchParams(location.search).has('qa'))window.atlasContactQA=()=>kneeContactModel;
+if(new URLSearchParams(location.search).has('qa'))window.atlasTrackingQA=()=>patellaTracker.snapshot();
+if(new URLSearchParams(location.search).has('qa'))window.atlasMeniscusSupportQA=()=>({surface:meniscusFollower.surface,entries:meniscusFollower.entries.map(e=>({name:e.name,points:e.points.map(p=>p.toArray()),offsets:e.offsets}))});
