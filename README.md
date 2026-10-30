@@ -18,7 +18,7 @@ Node.jsを用意し、フォルダー内で `npm run serve` を実行して http
 
 ## 関節運動の検証
 
-骨格だけの確認は `http://127.0.0.1:8080/?review=knee`。3D画面のAuto/Pauseで往復・停止できます。関節の妥当性は未承認で、詳細はdocs/BONE_MOTION_VALIDATION.md。順序は関節 → 靭帯・半月板 → 筋肉です。
+関節・半月板の確認は `http://127.0.0.1:8080/?review=knee&axis=condyle`。3D画面のAuto/Pauseで往復・停止できます。屈曲に前後・上下並進とScrew-homeの軸回旋を連成し、内外側半月板を骨の三次元配置へ追従させています。関節面・半月板の適合性は未承認です。[回転・並進の記録](docs/ROLL_SLIDE_REVIEW.md)、[半月板と三次元連成の記録](docs/MENISCI_3D_REVIEW.md) を参照。筋・靭帯の追加調整は後続です。
 
 ## 検証
 

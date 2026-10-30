@@ -8,6 +8,6 @@ test('sphere fitting recovers a known surface; degenerate inputs are rejected',(
  assert.equal(fitSphere([[0,0,0]]),null);assert.equal(fitSphere(Array.from({length:8},(_,i)=>[i,0,0])),null);
 });
 test('the trial flexion axis remains invariant under flexion-only rotation',()=>{
- const axis=new Vector3(.99,-.06,.02).normalize();const pose=kneePose('flex',90,-1,{flexAxis:axis.toArray()});
+ const axis=new Vector3(.99,-.06,.02).normalize();const pose=kneePose('flex',90,-1,{flexAxis:axis.toArray(),coupledRotationOverride:0});
  assert.ok(axis.clone().applyQuaternion(pose.knee).distanceTo(axis)<1e-10);
 });
