@@ -1,7 +1,7 @@
 import {test,expect} from '@playwright/test';
 import {Vector3,Quaternion} from 'three';
 import {writeFileSync} from 'node:fs';
-test('menisci retain tibial support and roots while bone contact is reviewed; Anatomy restores vertices',async({page})=>{
+test('meniscal bodies glide on tibia with roots retained; reverse, Auto and Anatomy restore correctly',async({page})=>{
  await page.goto('http://127.0.0.1:8080/?review=knee&axis=condyle&qa');await expect(page.locator('#modelStatus')).toHaveText('Ready');
  const snap=()=>page.evaluate(()=>window.atlasQA()),meshes=()=>page.evaluate(()=>Object.fromEntries(['Medial meniscus.r','Lateral meniscus.r'].map(n=>[n,window.atlasMeshQA(n)[0].positions])));
  await page.locator('[data-mode="anatomy"]').click();await page.locator('[data-focus="knee"]').click();
@@ -15,12 +15,16 @@ test('menisci retain tibial support and roots while bone contact is reviewed; An
   for(const entry of s.menisci){
    const local=current[entry.name].map(v=>new Vector3(...v).sub(hip).applyQuaternion(h).add(hip).sub(k).sub(d).applyQuaternion(q));
    for(const root of entry.roots)expect(Math.min(...local.map(p=>p.distanceTo(new Vector3(...root))))).toBeLessThan(.000002);
-   expect(Math.max(...local.map((p,i)=>p.distanceTo(new Vector3(...rest[entry.name][i]).sub(k))))).toBeLessThan(.000002);
+   const deltas=local.map((p,i)=>p.clone().sub(new Vector3(...rest[entry.name][i]).sub(k)));
+   expect(Math.max(...deltas.map(p=>Math.abs(p.x)))).toBeLessThan(.000002);expect(Math.max(...deltas.map(p=>Math.abs(p.y)))).toBeLessThan(.000002);
+   expect(Math.max(...deltas.map(p=>p.z))).toBeLessThan(.000002);expect(Math.min(...deltas.map(p=>p.z))).toBeGreaterThan(-.012002);
+   if(angle>=60)expect(Math.min(...deltas.map(p=>p.z))).toBeLessThan(-.0005);
   }
   reports.push({angle,coupledAxial:s.coupledAxial,menisci:s.menisci});
-  if(angle===90){expect(Math.max(...s.menisci.map(e=>Math.hypot(...e.displacement)))).toBe(0);await page.locator('[data-view="lateral"]').click();await page.locator('#viewport').screenshot({path:'test-results/menisci-90.png'});}
+  if(angle===90){expect(Math.abs(s.menisci.find(e=>e.name.startsWith('Lateral')).centroidDisplacement[2])).toBeGreaterThan(Math.abs(s.menisci.find(e=>e.name.startsWith('Medial')).centroidDisplacement[2]));await page.locator('[data-view="lateral"]').click();await page.locator('#viewport').screenshot({path:'test-results/menisci-90.png'});}
  }
+ await page.locator('#playMotion').click();await expect.poll(async()=>Math.max(...(await snap()).menisci.map(e=>Math.abs(e.centroidDisplacement[2])))).toBeGreaterThan(.00002);await page.locator('#playMotion').click();
  await page.locator('[data-mode="anatomy"]').click();await page.locator('[data-focus="knee"]').click();
  await expect.poll(async()=>{const actual=await meshes();return Math.max(...Object.entries(rest).flatMap(([name,points])=>points.map((v,i)=>new Vector3(...v).distanceTo(new Vector3(...actual[name][i])))));}).toBeLessThan(.000002);
- writeFileSync('test-results/menisci-review.json',JSON.stringify({status:'SCHEMATIC — ROOTS/CONTACT NOT VALIDATED',reports},null,2));
+ writeFileSync('test-results/menisci-review.json',JSON.stringify({status:'SCHEMATIC EXCURSION — ROOTS/CONTACT NOT VALIDATED',reports},null,2));
 });

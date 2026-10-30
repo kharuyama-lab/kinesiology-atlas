@@ -1,0 +1,485 @@
+{
+  "status": "SCHEMATIC EXCURSION — ROOTS/CONTACT NOT VALIDATED",
+  "reports": [
+    {
+      "angle": 0,
+      "coupledAxial": -9.632516793745125e-7,
+      "menisci": [
+        {
+          "name": "Medial meniscus.r",
+          "status": "SCHEMATIC — CONTACT/ROOTS NOT VALIDATED",
+          "displacement": [
+            0,
+            0,
+            -1.1598171852058327e-16
+          ],
+          "centroidDisplacement": [
+            0,
+            0,
+            -7.993242117240568e-17
+          ],
+          "roots": [
+            [
+              0.008237696628696223,
+              -0.021088914120761748,
+              0.013546917729564865
+            ],
+            [
+              0.006262499283677836,
+              -0.028918769782600995,
+              -0.01968768224816684
+            ]
+          ],
+          "maxWeight": 1
+        },
+        {
+          "name": "Lateral meniscus.r",
+          "status": "SCHEMATIC — CONTACT/ROOTS NOT VALIDATED",
+          "displacement": [
+            0,
+            0,
+            -2.3196343704116655e-16
+          ],
+          "centroidDisplacement": [
+            0,
+            0,
+            -1.6367784619991579e-16
+          ],
+          "roots": [
+            [
+              -0.0032992387156421943,
+              -0.025675851492403146,
+              0.016711350672432145
+            ],
+            [
+              -0.01041408497499774,
+              -0.02079000800308406,
+              -0.0025270998920119206
+            ]
+          ],
+          "maxWeight": 1
+        }
+      ]
+    },
+    {
+      "angle": 10,
+      "coupledAxial": -4.49998982851899,
+      "menisci": [
+        {
+          "name": "Medial meniscus.r",
+          "status": "SCHEMATIC — CONTACT/ROOTS NOT VALIDATED",
+          "displacement": [
+            0,
+            0,
+            -0.0001180550375642346
+          ],
+          "centroidDisplacement": [
+            0,
+            0,
+            -0.00008136131370077855
+          ],
+          "roots": [
+            [
+              0.008237696628696223,
+              -0.021088914120761748,
+              0.013546917729564865
+            ],
+            [
+              0.006262499283677836,
+              -0.028918769782600995,
+              -0.01968768224816684
+            ]
+          ],
+          "maxWeight": 1
+        },
+        {
+          "name": "Lateral meniscus.r",
+          "status": "SCHEMATIC — CONTACT/ROOTS NOT VALIDATED",
+          "displacement": [
+            0,
+            0,
+            -0.0002361100751284692
+          ],
+          "centroidDisplacement": [
+            0,
+            0,
+            -0.00016660379349470338
+          ],
+          "roots": [
+            [
+              -0.0032992387156421943,
+              -0.025675851492403146,
+              0.016711350672432145
+            ],
+            [
+              -0.01041408497499774,
+              -0.02079000800308406,
+              -0.0025270998920119206
+            ]
+          ],
+          "maxWeight": 1
+        }
+      ]
+    },
+    {
+      "angle": 20,
+      "coupledAxial": -8.999989828503724,
+      "menisci": [
+        {
+          "name": "Medial meniscus.r",
+          "status": "SCHEMATIC — CONTACT/ROOTS NOT VALIDATED",
+          "displacement": [
+            0,
+            0,
+            -0.00044444350263965954
+          ],
+          "centroidDisplacement": [
+            0,
+            0,
+            -0.00030630211117304456
+          ],
+          "roots": [
+            [
+              0.008237696628696223,
+              -0.021088914120761748,
+              0.013546917729564865
+            ],
+            [
+              0.006262499283677836,
+              -0.028918769782600995,
+              -0.01968768224816684
+            ]
+          ],
+          "maxWeight": 1
+        },
+        {
+          "name": "Lateral meniscus.r",
+          "status": "SCHEMATIC — CONTACT/ROOTS NOT VALIDATED",
+          "displacement": [
+            0,
+            0,
+            -0.0008888870052793191
+          ],
+          "centroidDisplacement": [
+            0,
+            0,
+            -0.0006272157043154684
+          ],
+          "roots": [
+            [
+              -0.0032992387156421943,
+              -0.025675851492403146,
+              0.016711350672432145
+            ],
+            [
+              -0.01041408497499774,
+              -0.02079000800308406,
+              -0.0025270998920119206
+            ]
+          ],
+          "maxWeight": 1
+        }
+      ]
+    },
+    {
+      "angle": 60,
+      "coupledAxial": -8.99999999999487,
+      "menisci": [
+        {
+          "name": "Medial meniscus.r",
+          "status": "SCHEMATIC — CONTACT/ROOTS NOT VALIDATED",
+          "displacement": [
+            0,
+            0,
+            -0.0029999975054129883
+          ],
+          "centroidDisplacement": [
+            0,
+            0,
+            -0.0020675419124461464
+          ],
+          "roots": [
+            [
+              0.008237696628696223,
+              -0.021088914120761748,
+              0.013546917729564865
+            ],
+            [
+              0.006262499283677836,
+              -0.028918769782600995,
+              -0.01968768224816684
+            ]
+          ],
+          "maxWeight": 1
+        },
+        {
+          "name": "Lateral meniscus.r",
+          "status": "SCHEMATIC — CONTACT/ROOTS NOT VALIDATED",
+          "displacement": [
+            0,
+            0,
+            -0.0059999950108259766
+          ],
+          "centroidDisplacement": [
+            0,
+            0,
+            -0.004233711455171915
+          ],
+          "roots": [
+            [
+              -0.0032992387156421943,
+              -0.025675851492403146,
+              0.016711350672432145
+            ],
+            [
+              -0.01041408497499774,
+              -0.02079000800308406,
+              -0.0025270998920119206
+            ]
+          ],
+          "maxWeight": 1
+        }
+      ]
+    },
+    {
+      "angle": 90,
+      "coupledAxial": -8.999999999999998,
+      "menisci": [
+        {
+          "name": "Medial meniscus.r",
+          "status": "SCHEMATIC — CONTACT/ROOTS NOT VALIDATED",
+          "displacement": [
+            0,
+            0,
+            -0.005062499148912232
+          ],
+          "centroidDisplacement": [
+            0,
+            0,
+            -0.0034889792918871365
+          ],
+          "roots": [
+            [
+              0.008237696628696223,
+              -0.021088914120761748,
+              0.013546917729564865
+            ],
+            [
+              0.006262499283677836,
+              -0.028918769782600995,
+              -0.01968768224816684
+            ]
+          ],
+          "maxWeight": 1
+        },
+        {
+          "name": "Lateral meniscus.r",
+          "status": "SCHEMATIC — CONTACT/ROOTS NOT VALIDATED",
+          "displacement": [
+            0,
+            0,
+            -0.010124998297824464
+          ],
+          "centroidDisplacement": [
+            0,
+            0,
+            -0.007144392820285775
+          ],
+          "roots": [
+            [
+              -0.0032992387156421943,
+              -0.025675851492403146,
+              0.016711350672432145
+            ],
+            [
+              -0.01041408497499774,
+              -0.02079000800308406,
+              -0.0025270998920119206
+            ]
+          ],
+          "maxWeight": 1
+        }
+      ]
+    },
+    {
+      "angle": 120,
+      "coupledAxial": -8.999999999999998,
+      "menisci": [
+        {
+          "name": "Medial meniscus.r",
+          "status": "SCHEMATIC — CONTACT/ROOTS NOT VALIDATED",
+          "displacement": [
+            0,
+            0,
+            -0.006
+          ],
+          "centroidDisplacement": [
+            0,
+            0,
+            -0.004135087263337286
+          ],
+          "roots": [
+            [
+              0.008237696628696223,
+              -0.021088914120761748,
+              0.013546917729564865
+            ],
+            [
+              0.006262499283677836,
+              -0.028918769782600995,
+              -0.01968768224816684
+            ]
+          ],
+          "maxWeight": 1
+        },
+        {
+          "name": "Lateral meniscus.r",
+          "status": "SCHEMATIC — CONTACT/ROOTS NOT VALIDATED",
+          "displacement": [
+            0,
+            0,
+            -0.012
+          ],
+          "centroidDisplacement": [
+            0,
+            0,
+            -0.008467429951257424
+          ],
+          "roots": [
+            [
+              -0.0032992387156421943,
+              -0.025675851492403146,
+              0.016711350672432145
+            ],
+            [
+              -0.01041408497499774,
+              -0.02079000800308406,
+              -0.0025270998920119206
+            ]
+          ],
+          "maxWeight": 1
+        }
+      ]
+    },
+    {
+      "angle": 90,
+      "coupledAxial": -8.999999999999998,
+      "menisci": [
+        {
+          "name": "Medial meniscus.r",
+          "status": "SCHEMATIC — CONTACT/ROOTS NOT VALIDATED",
+          "displacement": [
+            0,
+            0,
+            -0.0050625000080809866
+          ],
+          "centroidDisplacement": [
+            0,
+            0,
+            -0.0034889798840100988
+          ],
+          "roots": [
+            [
+              0.008237696628696223,
+              -0.021088914120761748,
+              0.013546917729564865
+            ],
+            [
+              0.006262499283677836,
+              -0.028918769782600995,
+              -0.01968768224816684
+            ]
+          ],
+          "maxWeight": 1
+        },
+        {
+          "name": "Lateral meniscus.r",
+          "status": "SCHEMATIC — CONTACT/ROOTS NOT VALIDATED",
+          "displacement": [
+            0,
+            0,
+            -0.010125000016161973
+          ],
+          "centroidDisplacement": [
+            0,
+            0,
+            -0.007144394032777649
+          ],
+          "roots": [
+            [
+              -0.0032992387156421943,
+              -0.025675851492403146,
+              0.016711350672432145
+            ],
+            [
+              -0.01041408497499774,
+              -0.02079000800308406,
+              -0.0025270998920119206
+            ]
+          ],
+          "maxWeight": 1
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "coupledAxial": -1.3789470880726875e-7,
+      "menisci": [
+        {
+          "name": "Medial meniscus.r",
+          "status": "SCHEMATIC — CONTACT/ROOTS NOT VALIDATED",
+          "displacement": [
+            0,
+            0,
+            -2.376868821458075e-18
+          ],
+          "centroidDisplacement": [
+            0,
+            0,
+            -1.6380933317057983e-18
+          ],
+          "roots": [
+            [
+              0.008237696628696223,
+              -0.021088914120761748,
+              0.013546917729564865
+            ],
+            [
+              0.006262499283677836,
+              -0.028918769782600995,
+              -0.01968768224816684
+            ]
+          ],
+          "maxWeight": 1
+        },
+        {
+          "name": "Lateral meniscus.r",
+          "status": "SCHEMATIC — CONTACT/ROOTS NOT VALIDATED",
+          "displacement": [
+            0,
+            0,
+            -4.75373764291615e-18
+          ],
+          "centroidDisplacement": [
+            0,
+            0,
+            -3.3543283748373396e-18
+          ],
+          "roots": [
+            [
+              -0.0032992387156421943,
+              -0.025675851492403146,
+              0.016711350672432145
+            ],
+            [
+              -0.01041408497499774,
+              -0.02079000800308406,
+              -0.0025270998920119206
+            ]
+          ],
+          "maxWeight": 1
+        }
+      ]
+    }
+  ]
+}

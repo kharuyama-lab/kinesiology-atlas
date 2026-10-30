@@ -178,7 +178,7 @@ function prepareRig(){
   patellaBasePosition.copy(rig.patella.position);
   scene.add(axisGroup);axisGroup.position.copy(k);rig.hip.attach(axisGroup);
   scene.add(flexAxisGroup);flexAxisGroup.position.copy(k);rig.hip.attach(flexAxisGroup);
-  meniscusFollower.prepare({getMeshes,femurPoints:points,knee:rig.knee,kneeCenter:k});
+  meniscusFollower.prepare({getMeshes,knee:rig.knee});
   buildAxis();kneeModelReady=true;updatePose();
   diagnostics('Provisional hip and knee centers. Tissue motion is uncalibrated.');
 }
@@ -350,7 +350,7 @@ function tick(now=performance.now()){requestAnimationFrame(tick);const dt=Math.m
   renderedScrew+=(poseTarget.screw-renderedScrew)*(advancing?1:t);
   const drawn=kneePose(motion,motionValue,sideSign,{flexAxis:activeFlexAxis,coupled:coupledMotion,anglesOverride:renderedAngles,coupledRotationOverride:renderedScrew,contactModel:kneeContactModel});renderedContact=drawn;
   rig.knee.quaternion.copy(drawn.knee);rig.knee.position.copy(kneeBasePosition).add(drawn.translation);
-  meniscusFollower.update(drawn.knee,drawn.translation);
+  meniscusFollower.update(renderedAngles.flex);
   rig.patella.position.lerp(poseTarget.patella,t);rig.patella.quaternion.slerp(poseTarget.patellaRotation,t);axisGroup.position.copy(rig.knee.position);axisGroup.quaternion.copy(rig.knee.quaternion);
   if(drawn.instantaneous){flexAxisGroup.position.copy(kneeBasePosition).add(drawn.instantaneous.point);flexAxisGroup.quaternion.setFromUnitVectors(new THREE.Vector3(...activeFlexAxis),drawn.instantaneous.direction);}
   // Follow the moving right knee without changing the user's viewing direction, zoom or pan offset.
