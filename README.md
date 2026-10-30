@@ -16,6 +16,10 @@ Node.jsを用意し、フォルダー内で `npm run serve` を実行して http
 - 左骨格は右骨格を手前から隠す投影範囲で自動Fade。Lateral / Medialは右外側 / 右内側です。
 - Mode切替はFocus、表示状態、視線方向、ズーム、選択、共通UIを維持。膝の肢位変化中はカメラ中心も追従します。
 
+## 関節運動の検証
+
+骨格だけの確認は `http://127.0.0.1:8080/?review=knee`。3D画面のAuto/Pauseで往復・停止できます。関節の妥当性は未承認で、詳細はdocs/BONE_MOTION_VALIDATION.md。順序は関節 → 靭帯・半月板 → 筋肉です。
+
 ## 検証
 
 `npm ci` → `npm run check` → `npm test`。

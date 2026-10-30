@@ -20,3 +20,4 @@
  .tissueList{gap:3px}.tissueList button{min-height:24px;padding:2px 5px}
  details.group{padding:3px 0;margin:0}.sidebar>.smallprint{display:none}
 }
+#canvasHost canvas{width:100%;height:100%}
