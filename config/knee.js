@@ -26,3 +26,9 @@ export const PRESETS=Object.freeze({
   rot:{hip:90,knee:90,rot:0,stress:0},
   stress:{hip:90,knee:30,rot:0,stress:0}
 });
+// Comparison experiments only. These are not instructor-fixed calibration values.
+export const KNEE_REVIEW=Object.freeze({
+ status:'EXPERIMENTAL — NOT FIXED',
+ distalFraction:.10,posteriorFraction:.4,notchExclusionFraction:.12,
+ patellaArcFraction:.7,patellaArcStatus:'REJECTED — persistent separation'
+});
