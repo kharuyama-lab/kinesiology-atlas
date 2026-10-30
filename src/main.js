@@ -59,7 +59,7 @@ function updateVisibility(){
  syncTissueUI();
  if(activeSelection)highlightSelected(activeSelection);
 }
-function cycleTissue(name){tissueStates.set(name,nextVisibility(tissueStates.get(name)));updateVisibility();if(activeSelection)selectStructure(activeSelection);}
+function cycleTissue(name){tissueStates.set(name,nextVisibility(tissueStates.get(name)));updateVisibility();if(activeSelection)selectStructure(activeSelection,{showFloating:!$('floatingSelection').hidden});}
 function syncTissueUI(){for(const row of document.querySelectorAll('[data-tissue]')){
  const name=row.dataset.tissue;row.hidden=!relevant(name,focus);row.dataset.state=tissueStates.get(name)||'off';
  row.querySelector('small').textContent=registered.has(name)?(row.dataset.state==='fade'?'Fade 30%':row.dataset.state.toUpperCase()):'Unavailable';
@@ -177,17 +177,29 @@ function setView(v){if(!modelLoaded)return;const target=controls.target.clone(),
  const dirs={front:[0,0,1],back:[0,0,-1],lateral:[sideSign,0,0],medial:[-sideSign,0,0],iso:[sideSign*.8,.4,1]};camera.position.copy(target).add(new THREE.Vector3(...dirs[v]).normalize().multiplyScalar(d));camera.up.set(0,1,0);controls.update();}
 function uiMuscleList(){for(const [name,jp,kind] of tissues){
  const b=document.createElement('button');b.type='button';b.dataset.tissue=name;
- const title=document.createElement('span');title.textContent=jp+' / '+englishName(name);const state=document.createElement('small');b.append(title,state);
+ const title=document.createElement('span');title.textContent=kind==='muscle'?jp:jp+' / '+englishName(name);const state=document.createElement('small');b.append(title,state);
  b.addEventListener('click',()=>cycleTissue(name));$(kind==='muscle'?'muscleList':'ligamentList').append(b);
 }}
 function highlightSelected(name){for(const [k,m] of originalMaterials){const picked=k===name&&visibleStates.get(k)!=='off';m.emissive.setHex(picked?0x2e7baa:0x000000);m.emissiveIntensity=picked?.12:0;}}
-function selectStructure(name){activeSelection=name;highlightSelected(name);
+let selectionPoint=null;
+function positionSelection(){const el=$('floatingSelection');if(el.hidden||!selectionPoint)return;
+ const viewport=$('viewport').getBoundingClientRect(),gap=14,pad=8;
+ let x=selectionPoint.x+gap,y=selectionPoint.y+gap;
+ if(x+el.offsetWidth>viewport.width-pad)x=selectionPoint.x-el.offsetWidth-gap;
+ if(y+el.offsetHeight>viewport.height-pad)y=selectionPoint.y-el.offsetHeight-gap;
+ el.style.left=Math.max(pad,Math.min(x,viewport.width-el.offsetWidth-pad))+'px';
+ el.style.top=Math.max(pad,Math.min(y,viewport.height-el.offsetHeight-pad))+'px';
+}
+function selectStructure(name,{point=null,showFloating=true}={}){activeSelection=name;highlightSelected(name);
+ if(point){const rect=$('viewport').getBoundingClientRect();selectionPoint={x:point.x-rect.left,y:point.y-rect.top};}
+ $('hoverPopup').hidden=true;
  for(const id of ['selectedStructure','floatingSelection']){const el=$(id);el.replaceChildren();
-  const title=document.createElement('div');title.className='selectedName';title.textContent=(japaneseName(name)||englishName(name))+' / '+englishName(name);el.append(title);
+  const title=document.createElement('div');title.className='selectedName';title.textContent=japaneseName(name)||englishName(name);el.append(title);
+  if(id==='floatingSelection'){const en=document.createElement('div');en.className='selectedEnglish';en.textContent=englishName(name);el.append(en);}
   if(category.get(name)!=='bone'){const button=document.createElement('button');const state=tissueStates.get(name)||'off';button.textContent=state==='fade'?'Fade 30%':state.toUpperCase();button.addEventListener('click',()=>cycleTissue(name));el.append(button);}
   else {const label=document.createElement('small');label.textContent='Skeleton · ON';el.append(label);}
  }
- $('floatingSelection').hidden=false;
+ $('floatingSelection').hidden=!showFloating;positionSelection();
 }
 const raycaster=new THREE.Raycaster(),pointer=new THREE.Vector2();let mouseDown=null;
 function hitAt(x,y){const r=renderer.domElement.getBoundingClientRect();pointer.set((x-r.left)/r.width*2-1,-(y-r.top)/r.height*2+1);
@@ -195,14 +207,14 @@ function hitAt(x,y){const r=renderer.domElement.getBoundingClientRect();pointer.
  for(const hit of hits){const o=hit.object;if(meshInfo.has(o)&&o.visible)return meshInfo.get(o)}return null;
 }
 renderer.domElement.addEventListener('pointerdown',e=>{mouseDown={x:e.clientX,y:e.clientY,t:performance.now()}});
-renderer.domElement.addEventListener('pointerup',e=>{if(!mouseDown)return;const dist=Math.hypot(e.clientX-mouseDown.x,e.clientY-mouseDown.y);if(dist<9&&performance.now()-mouseDown.t<550){const name=hitAt(e.clientX,e.clientY);if(name)selectStructure(name)}mouseDown=null});
-renderer.domElement.addEventListener('pointermove',e=>{if(e.buttons){$('hoverPopup').hidden=true;return}
- const name=hitAt(e.clientX,e.clientY),tip=$('hoverPopup');if(!name){tip.hidden=true;return}
+renderer.domElement.addEventListener('pointerup',e=>{if(!mouseDown)return;const dist=Math.hypot(e.clientX-mouseDown.x,e.clientY-mouseDown.y);if(dist<9&&performance.now()-mouseDown.t<550){const name=hitAt(e.clientX,e.clientY);if(name)selectStructure(name,{point:{x:e.clientX,y:e.clientY}});else $('floatingSelection').hidden=true;}mouseDown=null});
+renderer.domElement.addEventListener('pointermove',e=>{if(e.buttons){$('hoverPopup').hidden=true;if(mouseDown&&Math.hypot(e.clientX-mouseDown.x,e.clientY-mouseDown.y)>=9)$('floatingSelection').hidden=true;return}
+ const name=hitAt(e.clientX,e.clientY),tip=$('hoverPopup');if(!name||(! $('floatingSelection').hidden&&name===activeSelection)){tip.hidden=true;return}
  tip.hidden=false;tip.replaceChildren();let strong=document.createElement('strong');strong.textContent=japaneseName(name)||englishName(name);let sub=document.createElement('small');sub.textContent=name.replace(/\.[rl]$/,'');tip.append(strong,sub);
  const b=$('viewport').getBoundingClientRect();tip.style.left=Math.min(e.clientX-b.left+12,b.width-220)+'px';tip.style.top=Math.max(10,e.clientY-b.top-48)+'px';
 });
 renderer.domElement.addEventListener('pointerleave',()=>{$('hoverPopup').hidden=true});
-function size(){const w=host.clientWidth,h=host.clientHeight;if(w<1||h<1)return;camera.aspect=w/h;camera.updateProjectionMatrix();renderer.setSize(w,h,false)}
+function size(){const w=host.clientWidth,h=host.clientHeight;if(w<1||h<1)return;camera.aspect=w/h;camera.updateProjectionMatrix();renderer.setSize(w,h,false);positionSelection()}
 new ResizeObserver(size).observe(host);size();
 uiMuscleList();
 for(const b of document.querySelectorAll('[data-mode]'))b.addEventListener('click',()=>setMode(b.dataset.mode));
