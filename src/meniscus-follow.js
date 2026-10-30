@@ -50,7 +50,7 @@ export class MeniscusFollower{
  }
  update(rotation,translation){
   for(const e of this.entries){
-   const support=surfaceSupport(e.surface,rotation,translation),delta=meniscalDisplacement(support,e.restSupport,e.kind);e.displacement.copy(delta);
+   const delta=MENISCI.relativeExcursionEnabled?meniscalDisplacement(surfaceSupport(e.surface,rotation,translation),e.restSupport,e.kind):new Vector3();e.displacement.copy(delta);
    const a=e.geometry.attributes.position;
    for(let i=0;i<a.count;i++){const p=e.points[i].clone().addScaledVector(delta,e.weights[i]).applyMatrix4(e.back);a.setXYZ(i,p.x,p.y,p.z);}
    a.needsUpdate=true;e.geometry.computeVertexNormals();e.geometry.computeBoundingSphere();

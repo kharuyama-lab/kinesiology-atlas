@@ -8,6 +8,7 @@ import {muscleColors,hipLigamentColors} from './palette.js';
 import {kneePose} from './joint-motion.js';
 import {TissueFollower} from './tissue-follow.js';
 import {MeniscusFollower} from './meniscus-follow.js';
+import {buildKneeContact} from './knee-contact.js';
 import {advancePlayback,playbackSpeed} from './playback.js';
 import {estimateCondyleAxis} from './knee-calibration.js';
 
@@ -41,6 +42,7 @@ let playing=false,playDirection=1,modeTransition=false;
 let hipWorldPoint=null,kneeWorldPoint=null,kneeModelReady=false,sideSign=1,fullBox=null,kneeScale=1,modelLoaded=false,patellaBasePosition=new THREE.Vector3();
 let landmarkReview=null;
 let condyleReview=null,activeFlexAxis=[1,0,0];
+let kneeContactModel=null,renderedContact=null;
 const tissueStates=focusStates('body');
 const bulkStates={bone:'on',connective:'on',muscle:'on'};
 const bodyStates=new Map();
@@ -153,6 +155,8 @@ function prepareRig(){
   const points=[];for(const mesh of getMeshes('Femur.r')){const a=mesh.geometry.attributes.position;mesh.updateWorldMatrix(true,false);for(let i=0;i<a.count;i++)points.push(new THREE.Vector3().fromBufferAttribute(a,i).applyMatrix4(mesh.matrixWorld).toArray());}
   condyleReview=estimateCondyleAxis(points);activeFlexAxis=[1,0,0];if(condyleReview)condyleReview.previousCenter=k.toArray();
   if(axisTrial){if(!condyleReview)throw Error('Condyle trial could not be estimated');k.fromArray(condyleReview.center);activeFlexAxis=[...condyleReview.flexAxis];}
+  if(!condyleReview)throw Error('Condylar geometry unavailable for contact review');
+  kneeContactModel=buildKneeContact(points,k,activeFlexAxis,condyleReview);
   hipWorldPoint=h.clone();kneeWorldPoint=k.clone();sideSign=Math.sign(fem.getCenter(new THREE.Vector3()).x-(worldBox('Femur.l')?.getCenter(new THREE.Vector3()).x||0))||1;
   const bsize=fem.getSize(new THREE.Vector3());kneeScale=Math.max(bsize.x,bsize.y*.20,bsize.z);
   rig.hip.position.copy(h);rig.hip.quaternion.identity();rig.hip.updateWorldMatrix(true,true);
@@ -189,8 +193,8 @@ function buildAxis(){axisGroup.clear();flexAxisGroup.clear();const l=Math.max(kn
 }
 function updatePose(){if(!kneeModelReady)return;
  const moving=mode==='kinesiology'&&focus==='knee';
- const pose=kneePose(motion,motionValue,sideSign,{anatomy:!moving,flexAxis:activeFlexAxis,coupled:coupledMotion});const flex=pose.angles.flex;
- if(moving&&!patellaTrial)$('stageBadge').textContent=coupledMotion?(pose.extrapolated?'Roll + slide · Extrapolated >120°':'Roll + slide · Reference trajectory'):'Fixed axis · Comparison';
+ const pose=kneePose(motion,motionValue,sideSign,{anatomy:!moving,flexAxis:activeFlexAxis,coupled:coupledMotion,contactModel:kneeContactModel});const flex=pose.angles.flex;
+ if(moving&&!patellaTrial)$('stageBadge').textContent=coupledMotion?'Mesh contact · Under review':'Fixed axis · Comparison';
  // Small, illustrative proximal/distal patellar glide; not a measured patellofemoral trajectory.
  const patellaPosition=patellaBasePosition.clone();
  const patellaRotation=new THREE.Quaternion();
@@ -223,7 +227,7 @@ function setFocus(f){focus=f;activeSelection=null;$('selectedStructure').textCon
 function setPlaying(value){playing=value;if(value&&poseTarget&&(rig.hip.quaternion.angleTo(poseTarget.hip)>.001||rig.knee.quaternion.angleTo(poseTarget.knee)>.001))modeTransition=true;$('playMotion').textContent=value?'Pause':'Auto';$('playMotion').setAttribute('aria-pressed',String(value));}
 function setMotion(m){setPlaying(false);playDirection=1;motion=m;motionValue=motionValues[m];
  for(const el of document.querySelectorAll('[data-motion]'))el.classList.toggle('selected',el.dataset.motion===m);
- const sl=$('motionSlider');const ranges={flex:[0,140,90,'伸展 / Extension 0°','屈曲 / Flexion 140°'],rot:[-15,30,0,'内旋 / Internal 15°','外旋 / External 30°'],stress:[-3,3,0,'内反 / Varus 3°','外反 / Valgus 3°']};
+ const sl=$('motionSlider');const ranges={flex:[...KNEE.flexionRange,90,'伸展 / Extension 0°',`屈曲 / Flexion ${KNEE.flexionRange[1]}°`],rot:[-15,30,0,'内旋 / Internal 15°','外旋 / External 30°'],stress:[-3,3,0,'内反 / Varus 3°','外反 / Valgus 3°']};
  const v=ranges[m];sl.min=v[0];sl.max=v[1];sl.step='.1';sl.value=motionValue;$('negativeLabel').textContent=v[3];$('positiveLabel').textContent=v[4];updatePose()}
 function updateModeUI(){
  const moving=mode==='kinesiology';
@@ -344,7 +348,7 @@ function tick(now=performance.now()){requestAnimationFrame(tick);const dt=Math.m
   // translations independently of rotation or show a target axis on a lagging bone.
   for(const key of ['flex','rot','valgus'])renderedAngles[key]+= (poseTarget.angles[key]-renderedAngles[key])*(advancing?1:t);
   renderedScrew+=(poseTarget.screw-renderedScrew)*(advancing?1:t);
-  const drawn=kneePose(motion,motionValue,sideSign,{flexAxis:activeFlexAxis,coupled:coupledMotion,anglesOverride:renderedAngles,coupledRotationOverride:renderedScrew});
+  const drawn=kneePose(motion,motionValue,sideSign,{flexAxis:activeFlexAxis,coupled:coupledMotion,anglesOverride:renderedAngles,coupledRotationOverride:renderedScrew,contactModel:kneeContactModel});renderedContact=drawn;
   rig.knee.quaternion.copy(drawn.knee);rig.knee.position.copy(kneeBasePosition).add(drawn.translation);
   meniscusFollower.update(drawn.knee,drawn.translation);
   rig.patella.position.lerp(poseTarget.patella,t);rig.patella.quaternion.slerp(poseTarget.patellaRotation,t);axisGroup.position.copy(rig.knee.position);axisGroup.quaternion.copy(rig.knee.quaternion);
@@ -356,10 +360,12 @@ function tick(now=performance.now()){requestAnimationFrame(tick);const dt=Math.m
  tissueFollower.update(rig.hip.quaternion,rig.knee.quaternion,now);controls.update();scene.updateMatrixWorld(true);fadeLeftSkeleton();renderer.render(scene,camera);
 }tick();boot();
 // Read-only QA snapshot, opt in locally with ?qa; no remote controls.
-if(new URLSearchParams(location.search).has('qa'))window.atlasQA=()=>({mode,focus,menisci:meniscusFollower.snapshot(),coupledAxial:renderedScrew,renderedAngles:{...renderedAngles},coupledMotion,kneeTranslation:rig.knee.position.clone().sub(kneeBasePosition).toArray(),instantaneous:poseTarget?.instantaneous,extrapolated:poseTarget?.extrapolated,axisTrial,patellaTrial,condyleReview,activeFlexAxis:[...activeFlexAxis],patellaRotation:rig.patella.quaternion.toArray(),patellaCenter:worldBox('Patella.r')?.getCenter(new THREE.Vector3()).toArray(),playing,playDirection,followers:tissueFollower.snapshot(),bodyStates:Object.fromEntries(bodyStates),bulkStates:{...bulkStates},landmarkReview,landmarkNDC:landmarkReview?new THREE.Vector3(...landmarkReview.center).sub(hipWorldPoint).applyQuaternion(rig.hip.quaternion).add(hipWorldPoint).project(camera).toArray():null,motion,motionValue,motionValues:{...motionValues},calibration:{status:KNEE.status,hipCenter:hipWorldPoint?.toArray(),kneeCenter:kneeWorldPoint?.toArray(),axes:{flex:[...activeFlexAxis],axial:[0,1,0],stress:[0,0,1]},sideSign},camera:camera.position.toArray(),target:controls.target.toArray(),states:Object.fromEntries(tissueStates),tissueMeshes:tissues.map(([n])=>({name:n,group:bulkGroup(n,category.get(n)),color:originalMaterials.get(n)?.color.getHex(),count:getMeshes(n).length,visible:getMeshes(n).every(m=>m.visible),opacity:originalMaterials.get(n)?.opacity})),focusNDC:(focus==='knee'?kneeObservation():hipWorldPoint?.clone())?.project(camera).toArray(),bones:[...category].filter(([,k])=>k==='bone').map(([n])=>({name:n,group:bulkGroup(n,category.get(n)),visible:getMeshes(n).every(m=>m.visible),opacity:originalMaterials.get(n).opacity})),registered:[...registered.keys()],hip:rig.hip.quaternion.toArray(),knee:rig.knee.quaternion.toArray()});
+if(new URLSearchParams(location.search).has('qa'))window.atlasQA=()=>({mode,focus,contactStatus:kneeContactModel?.status,contacts:renderedContact?.contacts,menisci:meniscusFollower.snapshot(),coupledAxial:renderedScrew,renderedAngles:{...renderedAngles},coupledMotion,kneeTranslation:rig.knee.position.clone().sub(kneeBasePosition).toArray(),instantaneous:renderedContact?.instantaneous,extrapolated:poseTarget?.extrapolated,axisTrial,patellaTrial,condyleReview,activeFlexAxis:[...activeFlexAxis],patellaRotation:rig.patella.quaternion.toArray(),patellaCenter:worldBox('Patella.r')?.getCenter(new THREE.Vector3()).toArray(),playing,playDirection,followers:tissueFollower.snapshot(),bodyStates:Object.fromEntries(bodyStates),bulkStates:{...bulkStates},landmarkReview,landmarkNDC:landmarkReview?new THREE.Vector3(...landmarkReview.center).sub(hipWorldPoint).applyQuaternion(rig.hip.quaternion).add(hipWorldPoint).project(camera).toArray():null,motion,motionValue,motionValues:{...motionValues},calibration:{status:KNEE.status,hipCenter:hipWorldPoint?.toArray(),kneeCenter:kneeWorldPoint?.toArray(),axes:{flex:[...activeFlexAxis],axial:[0,1,0],stress:[0,0,1]},sideSign},camera:camera.position.toArray(),target:controls.target.toArray(),states:Object.fromEntries(tissueStates),tissueMeshes:tissues.map(([n])=>({name:n,group:bulkGroup(n,category.get(n)),color:originalMaterials.get(n)?.color.getHex(),count:getMeshes(n).length,visible:getMeshes(n).every(m=>m.visible),opacity:originalMaterials.get(n)?.opacity})),focusNDC:(focus==='knee'?kneeObservation():hipWorldPoint?.clone())?.project(camera).toArray(),bones:[...category].filter(([,k])=>k==='bone').map(([n])=>({name:n,group:bulkGroup(n,category.get(n)),visible:getMeshes(n).every(m=>m.visible),opacity:originalMaterials.get(n).opacity})),registered:[...registered.keys()],hip:rig.hip.quaternion.toArray(),knee:rig.knee.quaternion.toArray()});
 
 if(new URLSearchParams(location.search).has('qa'))window.atlasSurfaceQA=()=>Object.fromEntries(Object.entries(jointSurfaces).map(([key,vertices])=>[key,vertices.map(({mesh,index})=>new THREE.Vector3().fromBufferAttribute(mesh.geometry.attributes.position,index).applyMatrix4(mesh.matrixWorld).toArray())]));
 if(new URLSearchParams(location.search).has('qa'))window.atlasMeshQA=name=>{
  if(!['Femur.r','Tibia.r','Patella.r','Medial meniscus.r','Lateral meniscus.r'].includes(name))return null;
  return getMeshes(name).map(mesh=>{mesh.updateWorldMatrix(true,false);const positions=[],a=mesh.geometry.attributes.position;for(let i=0;i<a.count;i++)positions.push(new THREE.Vector3().fromBufferAttribute(a,i).applyMatrix4(mesh.matrixWorld).toArray());return {positions,indices:mesh.geometry.index?Array.from(mesh.geometry.index.array):null};});
 };
+
+if(new URLSearchParams(location.search).has('qa'))window.atlasContactQA=()=>kneeContactModel;

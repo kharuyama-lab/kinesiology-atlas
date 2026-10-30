@@ -18,7 +18,7 @@ Node.jsを用意し、フォルダー内で `npm run serve` を実行して http
 
 ## 関節運動の検証
 
-関節・半月板の確認は `http://127.0.0.1:8080/?review=knee&axis=condyle`。3D画面のAuto/Pauseで往復・停止できます。屈曲に前後・上下並進とScrew-homeの軸回旋を連成し、内外側半月板を骨の三次元配置へ追従させています。関節面・半月板の適合性は未承認です。[回転・並進の記録](docs/ROLL_SLIDE_REVIEW.md)、[半月板と三次元連成の記録](docs/MENISCI_3D_REVIEW.md) を参照。筋・靭帯の追加調整は後続です。
+関節・半月板の確認は `http://127.0.0.1:8080/?review=knee&axis=condyle`。Auto/Pauseで往復・停止できます。汎用OpenSim軌道によるずれを修正し、メッシュの顆形状から回転・並進を計算。Screw-homeを連成し、半月板は脛骨上に保持します。現在の検証域は0〜120°。関節面・半月板の適合性は未承認です。[骨配置の修正・検証](docs/MESH_CONTACT_CORRECTION.md) を参照。筋・靭帯の追加調整は後続です。
 
 ## 検証
 

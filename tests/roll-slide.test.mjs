@@ -14,7 +14,7 @@ test('roll-slide is a rest-preserving rigid transform, reversible and angle-depe
  assert.equal(kneeTranslation(0).length(),0);
  const points=[new Vector3(0,-.3,.01),new Vector3(.02,-.05,.03)];
  const centers=[];
- for(const angle of [0,30,60,90,120,140,120,60,0]){
+ for(const angle of [0,30,60,90,120,120,60,0]){
   const p=kneePose('flex',angle,-1),q=kneePose('flex',angle,-1);
   assert.ok(p.translation.distanceTo(q.translation)<1e-14);
   const transformed=points.map(v=>v.clone().applyQuaternion(p.knee).add(p.translation));

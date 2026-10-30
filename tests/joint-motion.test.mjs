@@ -9,7 +9,7 @@ test('Knee starting positions, anatomical identity and angle limits',()=>{
  assert.equal(kneePose('flex',90,-1).angles.flex,90);
  assert.equal(kneePose('rot',0,-1).angles.flex,90);
  assert.equal(kneePose('stress',0,-1).angles.flex,30);
- assert.equal(kneePose('flex',999,-1).angles.flex,140);
+ assert.equal(kneePose('flex',999,-1).angles.flex,120);
  // Hip 90 + knee 90 returns the distal tibial direction to inferior.
  const p=kneePose('flex',90,-1);const distal=new Vector3(0,-1,0).applyQuaternion(p.knee).applyQuaternion(p.hip);
  assert.ok(distal.distanceTo(new Vector3(0,-1,0))<1e-10);

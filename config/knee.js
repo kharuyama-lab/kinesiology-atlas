@@ -6,7 +6,7 @@ export const KNEE = Object.freeze({
   hipEstimateFractions:[.564,.949,.690],
   startingHipFlexionDeg:90,
   startingKneeFlexionDeg:90,
-  flexionRange:[0,140],
+  flexionRange:[0,120], // Contact review limited to fitted articular profile; deep flexion pending.
   axialRotationRange:[-15,30], // IR -15°, ER +30° at 90° flexion
   stressRange:[-3,3], // illustrative angular deviation, not a clinical gapping measurement
   stressFlexionDeg:30,

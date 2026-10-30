@@ -3,6 +3,7 @@ import {KNEE} from '../config/knee.js';
 import {activeKneeAngles,screwHomeExternalRotationDeg,clamp} from './kinematics.js';
 import {simmSpline} from './simm-spline.js';
 import {KNEE_REFERENCE} from '../config/knee-reference.js';
+import {contactTranslation} from './knee-contact.js';
 const ap=simmSpline(KNEE_REFERENCE.ap.x,KNEE_REFERENCE.ap.y);
 const superior=simmSpline(KNEE_REFERENCE.superior.x,KNEE_REFERENCE.superior.y);
 // Parent-frame displacement of the tibial origin, relative to extension.
@@ -17,7 +18,7 @@ export function kneeTranslation(flexDeg,flexAxis=[1,0,0]){
 
 // Right body side is sideSign (negative X in the current GLB).
 // +Z anterior, +Y superior. Axes remain provisional model axes.
-export function kneePose(kind,value,sideSign,{anatomy=false,flexAxis=[1,0,0],coupled=true,diagnostic=true,anglesOverride=null,coupledRotationOverride=null}={}){
+export function kneePose(kind,value,sideSign,{anatomy=false,flexAxis=[1,0,0],coupled=true,diagnostic=true,anglesOverride=null,coupledRotationOverride=null,contactModel=null}={}){
  const ranges={flex:KNEE.flexionRange,rot:KNEE.axialRotationRange,stress:KNEE.stressRange};
  const range=ranges[kind];if(!range)throw Error('Unknown knee motion: '+kind);
  const angles=anatomy?{flex:0,rot:0,valgus:0}:anglesOverride||activeKneeAngles(kind,clamp(value,...range));
@@ -34,14 +35,15 @@ export function kneePose(kind,value,sideSign,{anatomy=false,flexAxis=[1,0,0],cou
  // Positive valgus moves the distal right tibia toward the right lateral side.
  const stress=new Quaternion().setFromAxisAngle(new Vector3(0,0,1),sideSign*angles.valgus*rad);
  const knee=flex.multiply(axial).multiply(stress);
- const translation=anatomy||!coupled?new Vector3():kneeTranslation(angles.flex,flexAxis);
+ const contact=contactModel&&coupled&&!anatomy?contactTranslation(contactModel,knee,angles.flex):null;
+ const translation=anatomy||!coupled?new Vector3():contact?contact.translation:kneeTranslation(angles.flex,flexAxis);
  let instantaneous=null;
  if(diagnostic&&!anatomy&&kind==='flex'){
   // Spatial twist from neighbouring full rigid transforms. This also includes
   // screw-home coupling; a nonzero pitch must not be called a stationary point.
-  const h=.001,lo=Math.max(0,angles.flex-h),hi=Math.min(140,angles.flex+h);
+  const h=.001,lo=Math.max(0,angles.flex-h),hi=Math.min(KNEE.flexionRange[1],angles.flex+h);
   const offset=coupledAxial-(naturalScrew(angles.flex)-KNEE.screwHomeMaxExternalRotationDeg);
-  const at=f=>kneePose('flex',f,sideSign,{flexAxis,coupled,diagnostic:false,anglesOverride:{...angles,flex:f},coupledRotationOverride:naturalScrew(f)-KNEE.screwHomeMaxExternalRotationDeg+offset});
+  const at=f=>kneePose('flex',f,sideSign,{flexAxis,coupled,contactModel,diagnostic:false,anglesOverride:{...angles,flex:f},coupledRotationOverride:naturalScrew(f)-KNEE.screwHomeMaxExternalRotationDeg+offset});
   const a=at(lo),b=at(hi);
   const dq=b.knee.clone().multiply(a.knee.clone().invert());if(dq.w<0)dq.set(-dq.x,-dq.y,-dq.z,-dq.w);
   const vector=new Vector3(dq.x,dq.y,dq.z),s=vector.length(),step=(hi-lo)*Math.PI/180;
@@ -50,5 +52,5 @@ export function kneePose(kind,value,sideSign,{anatomy=false,flexAxis=[1,0,0],cou
   const point=new Vector3().crossVectors(omega,velocity).divideScalar(omega.lengthSq());
   instantaneous={point,direction:omega.clone().normalize(),pitch:omega.dot(velocity)/omega.lengthSq()};
  }
- return {hip,knee,translation,instantaneous,angles,screw,coupledAxial,extrapolated:coupled&&angles.flex>KNEE_REFERENCE.referenceFlexionLimit};
+ return {hip,knee,translation,instantaneous,contacts:contact?.contacts,angles,screw,coupledAxial,extrapolated:coupled&&!contactModel&&angles.flex>KNEE_REFERENCE.referenceFlexionLimit};
 }
