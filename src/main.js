@@ -6,6 +6,7 @@ import {KNEE} from '../config/knee.js';
 import {teachingLigamentTendency} from './kinematics.js';
 import {muscleColors,hipLigamentColors} from './palette.js';
 import {kneePose} from './joint-motion.js';
+import {TissueFollower} from './tissue-follow.js';
 
 import {tissues,tissueByName,nextVisibility,relevant,focusStates,englishName,japaneseName,bulkGroup} from './anatomy.js';
 
@@ -28,8 +29,10 @@ let hipWorldPoint=null,kneeWorldPoint=null,kneeModelReady=false,sideSign=1,fullB
 let landmarkReview=null;
 const tissueStates=focusStates('body');
 const bulkStates={bone:'on',connective:'on',muscle:'on'};
+const bodyStates=new Map();
 const materialPalette={bone:0xe6e0d5,patella:0xe3ecf1,acl:0xec739b,pcl:0xb88add,mcl:0x53c9a3,lcl:0xf1b96b,meniscus:0x79b6df,muscle:0xc98283};
 const rig={hip:new THREE.Group(),knee:new THREE.Group(),patella:new THREE.Group()};
+const tissueFollower=new TissueFollower();
 scene.add(rig.hip);
 const axisGroup=new THREE.Group();scene.add(axisGroup);axisGroup.visible=false;
 function diagnostics(s){$('diagnostics').textContent=s}
@@ -62,17 +65,27 @@ function visibility(name,state){visibleStates.set(name,state);const mat=original
 function updateVisibility(){
  for(const name of registered.keys()){
   const kind=category.get(name);
-  const state=focus==='body'?bulkStates[bulkGroup(name,kind)]:kind==='bone'?'on':relevant(name,focus)?tissueStates.get(name)||'off':'off';
+  const state=focus==='body'?bodyStates.get(name)||'on':kind==='bone'?'on':relevant(name,focus)?tissueStates.get(name)||'off':'off';
   visibility(name,state);
  }
- for(const button of document.querySelectorAll('[data-bulk]')){const state=bulkStates[button.dataset.bulk];button.dataset.state=state;button.querySelector('small').textContent=state==='fade'?'Fade':state.toUpperCase();}
+ for(const button of document.querySelectorAll('[data-bulk]')){const group=button.dataset.bulk,states=new Set([...registered.keys()].filter(n=>bulkGroup(n,category.get(n))===group).map(n=>bodyStates.get(n)||'on'));const state=states.size>1?'mixed':[...states][0]||'on';bulkStates[group]=state;button.dataset.state=state;button.querySelector('small').textContent=state==='fade'?'Fade':state==='mixed'?'Mixed':state.toUpperCase();}
+ for(const row of document.querySelectorAll('[data-body-tissue]')){const state=bodyStates.get(row.dataset.bodyTissue)||'on';row.dataset.state=state;row.querySelector('small').textContent=state==='fade'?'Fade':state.toUpperCase();}
  syncTissueUI();
  if(activeSelection)highlightSelected(activeSelection);
 }
 function cycleTissue(name){tissueStates.set(name,nextVisibility(tissueStates.get(name)));updateVisibility();if(activeSelection)selectStructure(activeSelection,{showFloating:!$('floatingSelection').hidden});}
 function cycleBulk(group){bulkStates[group]=nextVisibility(bulkStates[group]);
+ for(const name of registered.keys())if(bulkGroup(name,category.get(name))===group)bodyStates.set(name,bulkStates[group]);
  for(const [name] of tissues)if(bulkGroup(name,category.get(name))===group)tissueStates.set(name,bulkStates[group]);
  updateVisibility();if(activeSelection)selectStructure(activeSelection,{showFloating:!$('floatingSelection').hidden});
+}
+function uiBodyLists(){for(const id of ['bodyBoneList','bodyConnectiveList','bodyMuscleList'])$(id).replaceChildren();
+ const containers={bone:'bodyBoneList',connective:'bodyConnectiveList',muscle:'bodyMuscleList'};
+ for(const [name,kind] of category){const row=document.createElement('button');row.type='button';row.dataset.bodyTissue=name;
+  const title=document.createElement('span');title.textContent=(japaneseName(name)||englishName(name))+(kind==='bone'&&/\.[rl]$/.test(name)?(name.endsWith('.l')?'（左）':'（右）'):'');const state=document.createElement('small');row.append(title,state);
+  const color=muscleColors[name]||hipLigamentColors[name];if(color)row.style.setProperty('--tissue-color','#'+color.toString(16).padStart(6,'0'));
+  row.addEventListener('click',()=>{const value=nextVisibility(bodyStates.get(name)||'on');bodyStates.set(name,value);if(tissueByName.has(name))tissueStates.set(name,value);updateVisibility();if(activeSelection)selectStructure(activeSelection,{showFloating:!$('floatingSelection').hidden});});$(containers[bulkGroup(name,kind)]).append(row);
+ }
 }
 function syncTissueUI(){for(const row of document.querySelectorAll('[data-tissue]')){
  const name=row.dataset.tissue;row.hidden=!relevant(name,focus);row.dataset.state=tissueStates.get(name)||'off';
@@ -164,7 +177,7 @@ function frameFocus(f=focus){if(!modelLoaded)return;
 function setFocus(f){focus=f;activeSelection=null;$('selectedStructure').textContent='Click a structure';$('floatingSelection').hidden=true;
  for(const el of document.querySelectorAll('[data-focus]'))el.classList.toggle('selected',el.dataset.focus===f);
  for(const [name,state] of focusStates(f))tissueStates.set(name,state);
- if(f==='body'){Object.assign(bulkStates,{bone:'on',connective:'on',muscle:'on'});Object.assign(motionValues,{flex:90,rot:0,stress:0});setMotion('flex');}
+ if(f==='body'){bodyStates.clear();for(const name of registered.keys())bodyStates.set(name,'on');Object.assign(bulkStates,{bone:'on',connective:'on',muscle:'on'});document.querySelectorAll('[data-body-details]').forEach(el=>el.open=false);Object.assign(motionValues,{flex:90,rot:0,stress:0});setMotion('flex');}
  updateModeUI();updatePose();updateVisibility();
  // Focus is an intentional framing operation; frame the target pose rather than an intermediate tween.
  if(poseTarget){rig.hip.quaternion.copy(poseTarget.hip);rig.knee.quaternion.copy(poseTarget.knee);rig.patella.position.copy(poseTarget.patella);scene.updateMatrixWorld(true);}
@@ -248,7 +261,7 @@ async function loadOne(name){const errs=[];for(const base of BASES){try{
  throw Error(`${name}.glb — ${errs.join(' / ')}`)}
 async function afterLoad(){
  // Rebuild from pristine sources so manual retries cannot accumulate rotations or duplicate meshes.
- poseTarget=null;modelLoaded=false;kneeModelReady=false;
+ poseTarget=null;modelLoaded=false;kneeModelReady=false;tissueFollower.clear();
  for(const obj of registered.values())obj.removeFromParent();for(const root of liveRoots)root.removeFromParent();liveRoots.length=0;
  for(const m of originalMaterials.values())m.dispose();
  registered.clear();originalMaterials.clear();category.clear();meshInfo.clear();visibleStates.clear();skeletonBounds.clear();
@@ -256,7 +269,7 @@ async function afterLoad(){
  for(const [sys,source] of modelSources){const root=source.clone(true);root.traverse(o=>{if(o.isMesh)o.visible=false});scene.add(root);liveRoots.push(root);register(root,sys);}
  if(!registered.has('Femur.r')||!registered.has('Tibia.r'))throw Error('Femur.r / Tibia.r not found');
  flatten();assignMaterials();const allBones=[...registered.keys()].filter(n=>category.get(n)==='bone');fullBox=new THREE.Box3();for(const nm of allBones){const b=worldBox(nm);if(b)fullBox.union(b)}
- prepareRig();modelLoaded=true;
+ prepareRig();scene.updateMatrixWorld(true);tissueFollower.prepare({tissues,getMeshes,hipCenter:hipWorldPoint,kneeCenter:kneeWorldPoint});uiBodyLists();modelLoaded=true;
  for(const name of allBones){const root=registered.get(name);root.updateWorldMatrix(true,true);const box=new THREE.Box3();
   for(const mesh of getMeshes(name)){mesh.geometry.computeBoundingBox();const mb=mesh.geometry.boundingBox.clone().applyMatrix4(mesh.matrixWorld);box.union(mb);}
   const inv=root.matrixWorld.clone().invert();const corners=[];for(const x of [box.min.x,box.max.x])for(const y of [box.min.y,box.max.y])for(const z of [box.min.z,box.max.z])corners.push(new THREE.Vector3(x,y,z).applyMatrix4(inv));skeletonBounds.set(name,corners);
@@ -283,7 +296,7 @@ function tick(now=performance.now()){requestAnimationFrame(tick);const dt=Math.m
   // Follow the moving right knee without changing the user's viewing direction, zoom or pan offset.
   if(modelLoaded&&focus==='knee'){const delta=rig.knee.getWorldPosition(new THREE.Vector3()).sub(before);camera.position.add(delta);controls.target.add(delta);}
  }
- controls.update();scene.updateMatrixWorld(true);fadeLeftSkeleton();renderer.render(scene,camera);
+ tissueFollower.update(rig.hip.quaternion,rig.knee.quaternion,now);controls.update();scene.updateMatrixWorld(true);fadeLeftSkeleton();renderer.render(scene,camera);
 }tick();boot();
 // Read-only QA snapshot, opt in locally with ?qa; no remote controls.
-if(new URLSearchParams(location.search).has('qa'))window.atlasQA=()=>({mode,focus,bulkStates:{...bulkStates},landmarkReview,landmarkNDC:landmarkReview?new THREE.Vector3(...landmarkReview.center).sub(hipWorldPoint).applyQuaternion(rig.hip.quaternion).add(hipWorldPoint).project(camera).toArray():null,motion,motionValue,motionValues:{...motionValues},calibration:{status:KNEE.status,hipCenter:hipWorldPoint?.toArray(),kneeCenter:kneeWorldPoint?.toArray(),axes:{flex:[1,0,0],axial:[0,1,0],stress:[0,0,1]},sideSign},camera:camera.position.toArray(),target:controls.target.toArray(),states:Object.fromEntries(tissueStates),tissueMeshes:tissues.map(([n])=>({name:n,group:bulkGroup(n,category.get(n)),color:originalMaterials.get(n)?.color.getHex(),count:getMeshes(n).length,visible:getMeshes(n).every(m=>m.visible),opacity:originalMaterials.get(n)?.opacity})),focusNDC:(focus==='knee'?rig.knee.getWorldPosition(new THREE.Vector3()):hipWorldPoint?.clone())?.project(camera).toArray(),bones:[...category].filter(([,k])=>k==='bone').map(([n])=>({name:n,group:bulkGroup(n,category.get(n)),visible:getMeshes(n).every(m=>m.visible),opacity:originalMaterials.get(n).opacity})),registered:[...registered.keys()],hip:rig.hip.quaternion.toArray(),knee:rig.knee.quaternion.toArray()});
+if(new URLSearchParams(location.search).has('qa'))window.atlasQA=()=>({mode,focus,followers:tissueFollower.snapshot(),bodyStates:Object.fromEntries(bodyStates),bulkStates:{...bulkStates},landmarkReview,landmarkNDC:landmarkReview?new THREE.Vector3(...landmarkReview.center).sub(hipWorldPoint).applyQuaternion(rig.hip.quaternion).add(hipWorldPoint).project(camera).toArray():null,motion,motionValue,motionValues:{...motionValues},calibration:{status:KNEE.status,hipCenter:hipWorldPoint?.toArray(),kneeCenter:kneeWorldPoint?.toArray(),axes:{flex:[1,0,0],axial:[0,1,0],stress:[0,0,1]},sideSign},camera:camera.position.toArray(),target:controls.target.toArray(),states:Object.fromEntries(tissueStates),tissueMeshes:tissues.map(([n])=>({name:n,group:bulkGroup(n,category.get(n)),color:originalMaterials.get(n)?.color.getHex(),count:getMeshes(n).length,visible:getMeshes(n).every(m=>m.visible),opacity:originalMaterials.get(n)?.opacity})),focusNDC:(focus==='knee'?rig.knee.getWorldPosition(new THREE.Vector3()):hipWorldPoint?.clone())?.project(camera).toArray(),bones:[...category].filter(([,k])=>k==='bone').map(([n])=>({name:n,group:bulkGroup(n,category.get(n)),visible:getMeshes(n).every(m=>m.visible),opacity:originalMaterials.get(n).opacity})),registered:[...registered.keys()],hip:rig.hip.quaternion.toArray(),knee:rig.knee.quaternion.toArray()});

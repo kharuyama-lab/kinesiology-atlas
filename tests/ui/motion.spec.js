@@ -10,6 +10,8 @@ test('Knee motion directions, saved angles, mode continuity and compact panel',a
  await page.locator('[data-focus="knee"]').click();await page.locator('[data-mode="kinesiology"]').click();
  await expect.poll(async()=>Math.abs((await snap()).hip[0])).toBeGreaterThan(.706);
  const initial=await snap();writeFileSync('test-results/joint-calibration.json',JSON.stringify(initial.calibration,null,2));writeFileSync('test-results/joint-landmark-review.json',JSON.stringify(initial.landmarkReview,null,2));
+ expect(initial.followers.length).toBeGreaterThanOrEqual(28);
+ await expect.poll(async()=>Math.max(...(await snap()).followers.filter(m=>m.name==='Rectus femoris muscle.r').map(m=>m.maxDisplacement))).toBeGreaterThan(.1);
  const input=async value=>{await page.locator('#motionSlider').evaluate((el,v)=>{el.value=v;el.dispatchEvent(new Event('input',{bubbles:true}));},String(value));};
  await input(65);await expect(page.locator('#angleReadout')).toHaveText('65°');
  await page.locator('[data-motion="rot"]').click();await input(20);await expect(page.locator('#angleReadout')).toContainText('External 20°');
@@ -23,6 +25,9 @@ test('Knee motion directions, saved angles, mode continuity and compact panel',a
  const end=await snap();expect(end.bones.every(b=>b.visible)).toBeTruthy();expect(end.states).toEqual(initial.states);
  await page.setViewportSize({width:1280,height:800});
  await page.screenshot({path:'test-results/knee-motion-compact.png'});
+ await page.locator('[data-mode="anatomy"]').click();
+ await expect.poll(async()=>Math.max(...(await snap()).followers.filter(m=>m.visible).map(m=>m.maxDisplacement))).toBe(0);
+ await page.locator('[data-mode="kinesiology"]').click();await expect.poll(async()=>Math.abs((await snap()).hip[0])).toBeGreaterThan(.706);
  const panel=await page.locator('#sidebar').evaluate(el=>({overflow:el.scrollHeight-el.clientHeight,sections:[...el.children].map(c=>({label:c.textContent.slice(0,35),height:c.getBoundingClientRect().height}))}));
  writeFileSync('test-results/panel-metrics.json',JSON.stringify(panel,null,2));expect(panel.overflow).toBeLessThanOrEqual(1);
  // Review artifacts only: show the existing center candidate at viewport center.

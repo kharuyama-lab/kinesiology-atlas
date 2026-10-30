@@ -47,12 +47,12 @@
 
 終末伸展の外旋連動は模式値9°のままです。一次研究は伸展に伴う連動回旋を示しますが、このアセットの角度や軌道を保証する根拠にはしていません。[Three-dimensional kinematics of the human knee with intracortical pin fixation (1997)](https://pubmed.ncbi.nlm.nih.gov/9345219/)
 
-中心・軸の解剖学的検証FIX → カメラ最終FIX → 運動軌道 → 靭帯動態の順序を維持します。筋の曲がった肢位への変形、靭帯の伸縮、半月板・膝蓋骨の正しい動態は未実装のままです。表示状態を維持するため、模式運動時にも表示中の筋は残りますが、静止座標に留まる制約があります。Hip運動UIの共通シーン統合も後続です。
+中心・軸の解剖学的検証FIX → カメラ最終FIX → 運動軌道 → 靭帯動態の順序を維持します。筋は骨表面距離による模式的な2関節追従に対応し、Anatomyでは元の頂点座標に復帰します。ただし実際の付着面・巻き付き・筋長・ひずみは未検証です。靭帯の伸縮、半月板・膝蓋骨の正しい動態は未実装です。Hip運動UIの共通シーン統合も後続です。
 
 ## 検証
 
 - `npm run check`: PASS。
-- `npm test`: 6/6 PASS。
-- `npm run test:ui`: 2/2 PASS。実GLB、Windows Edge。
+- `npm test`: 7/7 PASS。
+- `npm run test:ui`: 3/3 PASS。実GLB、Windows Edge。
 - 左パネルの通常状態: 1440×1000 Whole Body Anatomy、1280×800 Knee Joint Kinesiologyで縦スクロール超過0px。開いた詳細欄や小型端末ではスクロールが発生する場合があります。[計測値](panel-metrics.json)
 

@@ -7,6 +7,13 @@ test('Whole Body has only three bulk controls; knee contains no unrelated ligame
  await page.goto('http://127.0.0.1:8080/?localModels&qa');await expect(page.locator('#modelStatus')).toHaveText('Ready');
  const snap=()=>page.evaluate(()=>window.atlasQA());const initial=await snap();
  await expect(page.locator('[data-bulk]')).toHaveCount(3);await expect(page.locator('#muscleList')).toBeHidden();await expect(page.locator('#ligamentList')).toBeHidden();
+ await expect(page.locator('[data-body-details][open]')).toHaveCount(0);
+ const detail=page.locator('[data-body-details="muscle"]');await detail.locator('summary').click();
+ const rectus=page.locator('[data-body-tissue="Rectus femoris muscle.r"]');await expect(rectus).toBeVisible();await rectus.click();
+ await expect(page.locator('[data-bulk="muscle"] small')).toHaveText('Mixed');expect((await snap()).tissueMeshes.find(m=>m.name==='Rectus femoris muscle.r').opacity).toBe(.3);
+ await page.locator('[data-mode="kinesiology"]').click();await expect(detail).toHaveAttribute('open','');await expect(rectus).toHaveAttribute('data-state','fade');await page.locator('[data-mode="anatomy"]').click();
+ await page.locator('[data-bulk="muscle"]').click();await expect(page.locator('[data-bulk="muscle"] small')).toHaveText('ON');await expect(rectus).toHaveAttribute('data-state','on');
+ await page.screenshot({path:'test-results/whole-body-accordion.png'});await detail.locator('summary').click();
  const canvas=await page.locator('canvas').boundingBox();let picked=false;
  for(const y of [.5,.6,.7]){if(picked)break;for(const x of [.5,.47,.53]){await page.mouse.click(canvas.x+canvas.width*x,canvas.y+canvas.height*y);if(await page.locator('#floatingSelection button').isVisible()){picked=true;break;}}}
  expect(picked).toBeTruthy();await expect(page.locator('#floatingSelection button')).toHaveText('All · ON');await page.locator('#floatingSelection button').click();
