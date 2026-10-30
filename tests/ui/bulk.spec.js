@@ -1,9 +1,7 @@
 import {test,expect} from '@playwright/test';
-import path from 'node:path';
 
 test('Whole Body has only three bulk controls; knee contains no unrelated ligaments',async({page})=>{
  const errors=[];page.on('pageerror',e=>errors.push(e.message));
- await page.route('https://cdn.jsdelivr.net/npm/three@0.160.0/**',r=>r.fulfill({path:path.resolve('node_modules/three',r.request().url().split('three@0.160.0/')[1])}));
  await page.goto('http://127.0.0.1:8080/?localModels&qa');await expect(page.locator('#modelStatus')).toHaveText('Ready');
  const snap=()=>page.evaluate(()=>window.atlasQA());const initial=await snap();
  await expect(page.locator('[data-bulk]')).toHaveCount(3);await expect(page.locator('#muscleList')).toBeHidden();await expect(page.locator('#ligamentList')).toBeHidden();

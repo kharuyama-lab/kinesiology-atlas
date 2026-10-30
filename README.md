@@ -4,7 +4,7 @@ Anatomy優先の改修版と、同一3DシーンでJoint Kinesiologyへ切り替
 
 ## 起動
 
-Node.jsを用意し、フォルダー内で `npm run serve` を実行して http://127.0.0.1:8080/ を開きます。静的ホスティングにも配置可能です。GLBとThree.jsは外部から取得します。GLB取得に失敗した場合はDiagnosticsから `skeletal.glb / joints.glb / muscular.glb` を読み込めます。ライセンスはCREDITS_AND_LICENSES.mdを保持してください。
+Node.jsを用意し、フォルダー内で `npm run serve` を実行して http://127.0.0.1:8080/ を開きます。静的ホスティングにも配置可能です。Three.jsとDracoは同梱済みです。ローカル確認では保存済みの `.cache/` 内GLBを自動で優先し、公開ホスティングではGLBを外部から取得します。GLB取得に失敗した場合はDiagnosticsから `skeletal.glb / joints.glb / muscular.glb` を読み込めます。ライセンスはCREDITS_AND_LICENSES.mdを保持してください。
 
 ## 操作
 

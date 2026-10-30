@@ -2,7 +2,7 @@
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Kinesiology Atlas — Anatomy v0.2</title>
 <link rel="stylesheet" href="src/style.css">
-<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
+<script type="importmap">{"imports":{"three":"./vendor/three/build/three.module.js","three/addons/":"./vendor/three/addons/"}}</script>
 </head><body>
 <header class="topbar"><div class="brand"><div class="brandmark">K</div><div><strong>Kinesiology Atlas</strong><small>Anatomy v0.2 · Provisional calibration</small></div></div><nav class="modes" aria-label="Mode"><button class="selected" data-mode="anatomy">Mode 1 · Anatomy</button><button data-mode="kinesiology">Mode 2 · Joint Kinesiology</button></nav><button id="mobilePanel" class="mobileOnly">Panel</button></header>
 <div class="layout"><aside class="sidebar" id="sidebar">
@@ -23,5 +23,5 @@
  <div class="smallprint">Centers &amp; axes: provisional · Z-Anatomy</div>
  <details class="diagnostics"><summary>Diagnostics</summary><pre id="diagnostics">Initializing…</pre><label class="fileLabel">Load GLB files<input type="file" id="manualFiles" accept=".glb" multiple></label></details>
 </aside>
-<main id="viewport" class="viewport"><div id="canvasHost"></div><div class="viewTools"><button data-view="front">Front</button><button data-view="back">Back</button><button data-view="lateral" title="Right lateral">Lateral</button><button data-view="medial" title="Right medial">Medial</button><button data-view="iso">3D</button></div><div class="stageBadge" id="stageBadge">Anatomy</div><div id="hoverPopup" class="hoverPopup" hidden></div><div id="floatingSelection" class="floatingSelection selection" hidden></div><div class="loadOverlay" id="loadOverlay"><div class="loader"></div><strong>Loading anatomy models</strong><small>Internet connection required on first load</small></div><div class="stageFoot">Drag to rotate · Scroll or pinch to zoom</div></main></div>
-<script type="module" src="src/main.js"></script></body></html>
+<main id="viewport" class="viewport"><div id="canvasHost"></div><div class="viewTools"><button data-view="front">Front</button><button data-view="back">Back</button><button data-view="lateral" title="Right lateral">Lateral</button><button data-view="medial" title="Right medial">Medial</button><button data-view="iso">3D</button></div><div class="stageBadge" id="stageBadge">Anatomy</div><div id="hoverPopup" class="hoverPopup" hidden></div><div id="floatingSelection" class="floatingSelection selection" hidden></div><div class="loadOverlay" id="loadOverlay"><div class="loader"></div><strong>Loading anatomy models</strong><small>Preparing the 3D view</small></div><div class="stageFoot">Drag to rotate · Scroll or pinch to zoom</div></main></div>
+<script type="module" src="src/boot.js"></script></body></html>

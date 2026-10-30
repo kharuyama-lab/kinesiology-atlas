@@ -1,9 +1,7 @@
 import {test,expect} from '@playwright/test';
-import path from 'node:path';
 import {writeFileSync} from 'node:fs';
 test('actual GLBs: Anatomy focus, display cycle, mode continuity and home',async({page})=>{
  const errors=[];page.on('pageerror',e=>errors.push(e.message));
- await page.route('https://cdn.jsdelivr.net/npm/three@0.160.0/**',r=>r.fulfill({path:path.resolve('node_modules/three',r.request().url().split('three@0.160.0/')[1])}));
  await page.goto('http://127.0.0.1:8080/?localModels&qa');
  await expect(page.locator('#modelStatus')).toHaveText('Ready',{timeout:90000});
  const snap=()=>page.evaluate(()=>window.atlasQA());

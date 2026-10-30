@@ -19,8 +19,9 @@ const controls=new OrbitControls(camera,renderer.domElement);controls.enableDamp
 scene.add(new THREE.HemisphereLight(0xcee5fc,0x425b77,2));
 for(const [pos,intensity] of [[[4,7,8],2.05],[[-5,3,-7],1.2]]){let l=new THREE.DirectionalLight(0xffffff,intensity);l.position.set(...pos);scene.add(l)}
 const loader=new GLTFLoader();const draco=new DRACOLoader();
-draco.setDecoderPath('https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/libs/draco/');loader.setDRACOLoader(draco);
-const BASES=[...(new URLSearchParams(location.search).has('localModels')?['.cache/']:[]),'https://nqwrc.github.io/3d-anatomy/models/','https://raw.githubusercontent.com/nqwrc/3d-anatomy/master/public/models/'];
+draco.setDecoderPath(new URL('../vendor/three/draco/',import.meta.url).href);loader.setDRACOLoader(draco);
+const localPreview=['localhost','127.0.0.1','[::1]'].includes(location.hostname);
+const BASES=[...(localPreview||new URLSearchParams(location.search).has('localModels')?['.cache/']:[]),'https://nqwrc.github.io/3d-anatomy/models/','https://raw.githubusercontent.com/nqwrc/3d-anatomy/master/public/models/'];
 const assets=['skeletal','joints','muscular'];const modelSources=new Map(),liveRoots=[];const registered=new Map(),originalMaterials=new Map(),category=new Map(),meshInfo=new Map(),visibleStates=new Map();
 let poseTarget=null;
 let mode='anatomy',focus='body',motion='flex',motionValue=90,activeSelection=null;
@@ -256,7 +257,10 @@ $('resetPose').addEventListener('click',()=>{motionValues[motion]=motion==='flex
 $('mobilePanel').addEventListener('click',()=>{$('sidebar').classList.toggle('collapsed');size()});
 if(matchMedia('(max-width:740px)').matches)$('sidebar').classList.add('collapsed');
 async function loadOne(name){const errs=[];for(const base of BASES){try{
- const gltf=await loader.loadAsync(base+name+'.glb');modelSources.set(name,gltf.scene);return name+': loaded';
+ const url=new URL(base+name+'.glb',location.href),controller=new AbortController(),timer=setTimeout(()=>controller.abort(),8000);let response;
+ try{response=await fetch(url,{signal:controller.signal});if(!response.ok)throw Error('HTTP '+response.status);var data=await response.arrayBuffer();}finally{clearTimeout(timer);}
+ let decodeTimer;const gltf=await Promise.race([loader.parseAsync(data,new URL('.',url).href),new Promise((_,reject)=>{decodeTimer=setTimeout(()=>reject(Error('Model decoding timed out')),15000);})]).finally(()=>clearTimeout(decodeTimer));
+ modelSources.set(name,gltf.scene);return name+': loaded';
  }catch(err){errs.push((new URL(base,location.href)).hostname+': '+String(err.message||err).slice(0,80))}}
  throw Error(`${name}.glb — ${errs.join(' / ')}`)}
 async function afterLoad(){
