@@ -11,11 +11,12 @@ test('actual GLBs: Anatomy focus, display cycle, mode continuity and home',async
  expect(initial.tissueMeshes.every(t=>t.count>0&&t.visible)).toBeTruthy();
  const muscles=initial.tissueMeshes.filter(t=>t.name.includes('Vastus')||t.name.includes('Gluteus')||t.name.includes('Rectus femoris'));
  expect(new Set(muscles.map(t=>t.color)).size).toBe(muscles.length);
- expect(await page.locator('#muscleList').evaluate(el=>getComputedStyle(el).gridTemplateColumns.split(' ').length)).toBe(2);
+ await expect(page.locator('#muscleList')).toBeHidden();await expect(page.locator('#ligamentList')).toBeHidden();await expect(page.locator('[data-bulk]')).toHaveCount(3);
  expect(await page.locator('#sidebar').evaluate(el=>el.scrollHeight-el.clientHeight)).toBeLessThanOrEqual(1);
  expect(await page.locator('#sidebar').textContent()).not.toContain('30%');
  writeFileSync('test-results/model-summary.json',JSON.stringify({bones:initial.bones.length,registered:initial.registered.length},null,2));
  for(const f of ['hip','knee']){await page.locator(`[data-focus="${f}"]`).click();const s=await snap();expect(s.focus).toBe(f);expect(s.bones.length).toBe(initial.bones.length);expect(s.bones.every(b=>b.visible)).toBeTruthy();expect(Math.abs(s.focusNDC[0])).toBeLessThan(.001);expect(Math.abs(s.focusNDC[1])).toBeLessThan(.001);}
+ expect(await page.locator('#muscleList').evaluate(el=>getComputedStyle(el).gridTemplateColumns.split(' ').length)).toBe(2);
  const quad=page.locator('[data-tissue="Vastus medialis muscle.r"]');await expect(quad).toBeEnabled();
  await expect(quad.locator('span')).toHaveText('内側広筋');
  for(const state of ['fade','off','on']){await quad.click();await expect(quad).toHaveAttribute('data-state',state);}

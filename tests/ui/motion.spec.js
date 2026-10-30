@@ -9,7 +9,7 @@ test('Knee motion directions, saved angles, mode continuity and compact panel',a
  const snap=()=>page.evaluate(()=>window.atlasQA());
  await page.locator('[data-focus="knee"]').click();await page.locator('[data-mode="kinesiology"]').click();
  await expect.poll(async()=>Math.abs((await snap()).hip[0])).toBeGreaterThan(.706);
- const initial=await snap();writeFileSync('test-results/joint-calibration.json',JSON.stringify(initial.calibration,null,2));
+ const initial=await snap();writeFileSync('test-results/joint-calibration.json',JSON.stringify(initial.calibration,null,2));writeFileSync('test-results/joint-landmark-review.json',JSON.stringify(initial.landmarkReview,null,2));
  const input=async value=>{await page.locator('#motionSlider').evaluate((el,v)=>{el.value=v;el.dispatchEvent(new Event('input',{bubbles:true}));},String(value));};
  await input(65);await expect(page.locator('#angleReadout')).toHaveText('65°');
  await page.locator('[data-motion="rot"]').click();await input(20);await expect(page.locator('#angleReadout')).toContainText('External 20°');
@@ -30,7 +30,8 @@ test('Knee motion directions, saved angles, mode continuity and compact panel',a
  await page.setViewportSize({width:1440,height:1000});await page.locator('[data-mode="anatomy"]').click();await page.locator('[data-focus="knee"]').click();
  await page.locator('[data-tissue]').evaluateAll(rows=>{for(const row of rows){if(row.hidden||row.disabled)continue;while(row.dataset.state!=='off')row.click();}});
  const marker=await page.addStyleTag({content:'.viewport::after{content:"";position:absolute;left:calc(50% - 10px);top:calc(50% - 10px);width:20px;height:20px;border:1px solid #ff7474;border-radius:50%;pointer-events:none}'});
- for(const view of ['front','lateral']){await page.locator(`[data-view="${view}"]`).click();await page.screenshot({path:`test-results/knee-center-${view}.png`});}
+ for(const view of ['front','lateral']){await page.locator(`[data-view="${view}"]`).click();await page.screenshot({path:`test-results/knee-center-${view}.png`});
+ const s=await snap();if(s.landmarkNDC){await page.locator('#viewport').evaluate((el,p)=>{const m=document.createElement('div');m.id='reviewCandidate';m.style.cssText='position:absolute;pointer-events:none;width:14px;height:14px;border:2px solid #65caff;left:calc('+((p[0]+1)*50)+'% - 7px);top:calc('+((1-p[1])*50)+'% - 7px)';el.append(m);},s.landmarkNDC);await page.screenshot({path:`test-results/knee-candidate-${view}.png`});await page.locator('#reviewCandidate').evaluate(el=>el.remove());}}
  await page.locator('[data-mode="kinesiology"]').click();await expect.poll(async()=>Math.abs((await snap()).hip[0])).toBeGreaterThan(.706);
  await page.screenshot({path:'test-results/knee-flexion90-review.png'});
  await page.locator('[data-motion="stress"]').click();await input(3);await expect.poll(async()=>(await snap()).knee[2]).toBeLessThan(0);

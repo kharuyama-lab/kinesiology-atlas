@@ -42,6 +42,7 @@ export const tissues = [
 ];
 export const tissueByName=new Map(tissues.map(t=>[t[0],t]));
 export const nextVisibility=state=>({on:'fade',fade:'off',off:'on'})[state]||'on';
+export const bulkGroup=(name,kind)=>/cartilage/i.test(name)||kind==='ligament'||kind==='meniscus'?'connective':kind==='bone'?'bone':'muscle';
 export const relevant=(name,focus)=>focus==='body'||tissueByName.get(name)?.[3].split(' ').includes(focus)||false;
 export function focusStates(focus){return new Map(tissues.map(([name])=>[name,relevant(name,focus)?'on':'off']));}
 export function englishName(name){return name.replace(/\.[rl]$/,'');}

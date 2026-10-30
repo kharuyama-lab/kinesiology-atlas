@@ -10,6 +10,7 @@
 .tissueList button span{font-size:11px;line-height:1.25}.tissueList small{font-size:10px}
 .group .selection{min-height:32px;padding:6px}.ligStatus .ligItem{padding:4px 6px}
 @media(pointer:coarse){.tissueList button{min-height:36px}}
+.bulkList{display:grid;gap:7px}.bulkList button{display:flex;justify-content:space-between;align-items:center;min-height:36px}.bulkList small{color:var(--muted)}.bulkList button[data-state=off]{opacity:.55}
 @media(min-width:741px) and (max-height:850px){
  .sidebar{padding:8px 12px}.sectionhead h1{font-size:17px;margin:3px 0 5px}.eyebrow{font-size:10px}
  .group{padding:5px 0}.group .smallhead{margin-bottom:4px}.choicegrid button,.motionKinds button{padding:5px 3px}
