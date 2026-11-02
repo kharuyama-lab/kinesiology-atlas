@@ -191,13 +191,20 @@ function prepareRig(){
   diagnostics('Provisional hip and knee centers. Tissue motion is uncalibrated.');
 }
 const axisReference=new THREE.Group();rig.hip.add(axisReference);
+// Central shaft bands exclude the femoral head and articular ends.
+function shaftGuide(name,parent){
+ const points=[];for(const mesh of getMeshes(name)){mesh.updateWorldMatrix(true,false);const a=mesh.geometry.attributes.position;for(let i=0;i<a.count;i++)points.push(new THREE.Vector3().fromBufferAttribute(a,i).applyMatrix4(mesh.matrixWorld));}
+ const lo=Math.min(...points.map(p=>p.y)),hi=Math.max(...points.map(p=>p.y)),length=hi-lo;
+ const centroid=f=>{const band=points.filter(p=>Math.abs((p.y-lo)/length-f)<.06);return band.reduce((v,p)=>v.add(p),new THREE.Vector3()).multiplyScalar(1/band.length);};
+ const low=centroid(.32),high=centroid(.68),direction=high.clone().sub(low).normalize();
+ return [parent.worldToLocal(low.clone().addScaledVector(direction,-length*.4)),parent.worldToLocal(high.clone().addScaledVector(direction,length*.28))];
+}
 function buildAxis(){axisReference.clear();axisGroup.clear();flexAxisGroup.clear();const l=Math.max(kneeScale*1.35,.001);
 
  const line=(group,name,points,color,dashed=false)=>{const mat=dashed?new THREE.LineDashedMaterial({color,dashSize:kneeScale*.045,gapSize:kneeScale*.025,depthTest:false,depthWrite:false}):new THREE.LineBasicMaterial({color,depthTest:false,depthWrite:false});const o=new THREE.Line(new THREE.BufferGeometry().setFromPoints(points),mat);o.name=name;o.computeLineDistances();o.renderOrder=60;group.add(o);};
- line(axisGroup,'SI tibia',[new THREE.Vector3(0,-l,0),new THREE.Vector3(0,l*.25,0)],0x75d69c);
+ line(axisGroup,'SI tibia',shaftGuide('Tibia.r',rig.knee),0x75d69c);
  line(axisGroup,'AP tibia',[new THREE.Vector3(0,0,-l*.55),new THREE.Vector3(0,0,l*.55)],0xffbd72);
- line(axisReference,'AP reference',[new THREE.Vector3(0,0,-l*.55),new THREE.Vector3(0,0,l*.55)],0xffbd72,true);
- line(axisReference,'SI femur',[new THREE.Vector3(0,-l*.2,0),new THREE.Vector3(0,l,0)],0x75d69c,true);
+ line(axisReference,'SI femur',shaftGuide('Femur.r',rig.hip),0x75d69c,true);
 
  const v=new THREE.Vector3(...activeFlexAxis).multiplyScalar(l*.7),color=0x65caff;
  flexAxisGroup.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints([v.clone().negate(),v]),new THREE.LineBasicMaterial({color,depthTest:false})));
@@ -211,7 +218,9 @@ function updatePose(){if(!kneeModelReady)return;
  const patellaRotation=patellar.rotation;
  if(patellaTrial){patellaPosition.copy(patellaBasePosition);patellaRotation.setFromAxisAngle(new THREE.Vector3(...activeFlexAxis),flex*KNEE_REVIEW.patellaArcFraction*Math.PI/180);}
  poseTarget={hip:pose.hip,knee:pose.knee,kneePosition:kneeBasePosition.clone().add(pose.translation),angles:pose.angles,screw:pose.coupledAxial,instantaneous:pose.instantaneous,extrapolated:pose.extrapolated,patella:patellaPosition,patellaRotation};
- axisGroup.visible=$('axisToggle').checked&&moving;
+ const axisOn=$('axisToggle').checked;
+ $('axisVisibility').dataset.state=axisOn?'on':'off';$('axisVisibility').querySelector('small').textContent=axisOn?'ON':'OFF';$('axisVisibility').setAttribute('aria-pressed',String(axisOn));
+ axisGroup.visible=axisOn&&moving;
  flexAxisGroup.visible=$('axisToggle').checked&&moving;axisReference.visible=$('axisToggle').checked&&moving;
  if(!boneReview){const p=teachingLigamentTendency(motion,motionValue);
  const markup=['mcl','lcl','acl','pcl'].map(key=>`<div class="ligItem"><strong>${key.toUpperCase()}</strong><span>${({'強調':'Emphasized','通常':'Baseline','角度依存':'Angle dependent','弛緩傾向':'Reduced restraint'})[p[key]]||'Baseline'}</span></div>`).join('');if($('ligamentStatus').innerHTML!==markup)$('ligamentStatus').innerHTML=markup;}
@@ -242,7 +251,7 @@ function setMotion(m){setPlaying(false);playDirection=1;motion=m;motionValue=mot
 function updateModeUI(){
  const moving=mode==='kinesiology';
  $('bodyDisplay').hidden=focus!=='body';$('patellaDisplay').hidden=focus!=='knee';document.querySelectorAll('.jointDisplay').forEach(el=>el.hidden=focus==='body'||boneReview);
- $('ligamentTendency').hidden=boneReview;$('axisLabel').textContent='Axes';$('axisLabel').title='AP: orange; ML: blue; SI: green. Dashed: zero axial rotation / femoral direction. Provisional guides; FTA is not calibrated.';
+ $('ligamentTendency').hidden=boneReview;$('axisLabel').textContent='Axes';$('axisLabel').title='Femoral shaft: fixed dashed green. Tibial shaft: solid green; AP: orange; flexion axis: blue. Shaft estimates; FTA is not calibrated.';
  $('motionSection').hidden=!(moving&&focus==='knee');
  $('playMotion').hidden=!(moving&&focus==='knee');
  $('sectionEyebrow').textContent=moving?'MODE 2':'MODE 1';
@@ -305,6 +314,7 @@ for(const b of document.querySelectorAll('[data-focus]'))b.addEventListener('cli
 for(const b of document.querySelectorAll('[data-view]'))b.addEventListener('click',()=>setView(b.dataset.view));
 for(const b of document.querySelectorAll('[data-motion]'))b.addEventListener('click',()=>setMotion(b.dataset.motion));
 $('axisToggle').addEventListener('change',updatePose);
+$('axisVisibility').addEventListener('click',()=>{$('axisToggle').checked=!$('axisToggle').checked;updatePose();});
 $('motionSlider').addEventListener('input',e=>{setPlaying(false);motionValue=+e.target.value;motionValues[motion]=motionValue;updatePose()});
 $('playMotion').addEventListener('click',()=>setPlaying(!playing));
 $('resetPose').addEventListener('click',()=>{motionValues[motion]=motion==='flex'?90:0;setMotion(motion)});
@@ -365,10 +375,6 @@ function tick(now=performance.now()){requestAnimationFrame(tick);const dt=Math.m
   meniscusFollower.update(renderedAngles.flex,{pose:drawn,neutral,active:renderedMeniscusActive});
   if(!patellaTrial){const p=patellaTracker.pose(renderedAngles.flex);rig.patella.position.copy(patellaBasePosition).add(p.translation);rig.patella.quaternion.copy(p.rotation);}else{rig.patella.position.lerp(poseTarget.patella,t);rig.patella.quaternion.slerp(poseTarget.patellaRotation,t);}axisGroup.position.copy(rig.knee.position);axisGroup.quaternion.copy(rig.knee.quaternion);
 
-  axisReference.position.copy(rig.knee.position);
-  axisReference.getObjectByName('SI femur').position.copy(kneeBasePosition).sub(rig.knee.position);
-  const reference=kneePose('flex',renderedAngles.flex,sideSign,{flexAxis:activeFlexAxis,anglesOverride:{flex:renderedAngles.flex,rot:0,valgus:0},coupledRotationOverride:0,diagnostic:false});
-  axisReference.getObjectByName('AP reference').quaternion.copy(reference.knee);
   // Evaluate the flexion guide separately; never change bone or tissue transforms.
   const guide=drawn.instantaneous?drawn:kneePose('flex',renderedAngles.flex,sideSign,{flexAxis:activeFlexAxis,coupled:coupledMotion,anglesOverride:renderedAngles,coupledRotationOverride:renderedScrew,contactModel:kneeContactModel});
   if(guide.instantaneous){flexAxisGroup.position.copy(kneeBasePosition).add(guide.instantaneous.point);flexAxisGroup.quaternion.setFromUnitVectors(new THREE.Vector3(...activeFlexAxis),guide.instantaneous.direction);}
@@ -392,4 +398,4 @@ if(new URLSearchParams(location.search).has('qa'))window.atlasContactQA=()=>knee
 if(new URLSearchParams(location.search).has('qa'))window.atlasTrackingQA=()=>patellaTracker.snapshot();
 if(new URLSearchParams(location.search).has('qa'))window.atlasMeniscusSupportQA=()=>({surface:meniscusFollower.surface,entries:meniscusFollower.entries.map(e=>({name:e.name,points:e.points.map(p=>p.toArray()),offsets:e.offsets,loadWeights:e.loadWeights}))});
 
-if(new URLSearchParams(location.search).has('qa'))window.atlasAxisQA=()=>({visible:axisGroup.visible&&axisReference.visible&&flexAxisGroup.visible,names:[...axisGroup.children,...axisReference.children].map(o=>o.name),directions:[...axisGroup.children,...axisReference.children].map(o=>{const a=o.geometry.attributes.position;return new THREE.Vector3().fromBufferAttribute(a,1).sub(new THREE.Vector3().fromBufferAttribute(a,0)).normalize().applyQuaternion(o.getWorldQuaternion(new THREE.Quaternion())).toArray()})});
+if(new URLSearchParams(location.search).has('qa'))window.atlasAxisQA=()=>({visible:axisGroup.visible&&axisReference.visible&&flexAxisGroup.visible,names:[...axisGroup.children,...axisReference.children].map(o=>o.name),segments:[...axisGroup.children,...axisReference.children].map(o=>{const a=o.geometry.attributes.position;return [0,1].map(i=>o.localToWorld(new THREE.Vector3().fromBufferAttribute(a,i)).toArray())}),directions:[...axisGroup.children,...axisReference.children].map(o=>{const a=o.geometry.attributes.position;return new THREE.Vector3().fromBufferAttribute(a,1).sub(new THREE.Vector3().fromBufferAttribute(a,0)).normalize().applyQuaternion(o.getWorldQuaternion(new THREE.Quaternion())).toArray()})});
