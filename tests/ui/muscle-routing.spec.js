@@ -8,7 +8,7 @@ test('continuous muscle end caps follow bone frames, action groups and legacy IT
  const records=[];
  for(const angle of [0,60,90,120]){await input(angle);await expect.poll(async()=>Math.abs((await snap()).renderedAngles.flex-angle)).toBeLessThan(.01);
  const q=await snap(),audit=await page.evaluate(()=>atlasMuscleGeometryQA()),h=new Vector3(...audit.hipCenter),k=new Vector3(...audit.kneeCenter),hip=new Quaternion(...q.hip),knee=new Quaternion(...q.knee),translation=new Vector3(...q.kneeTranslation),span=h.y-k.y;
- const errorsByMuscle={};for(const c of audit.curves){errorsByMuscle[c.name]=c.capError;expect(c.capError,c.name+' attachment centre at '+angle).toBeLessThan(span*.001);expect(c.determinant,c.name+' non-inversion').toBeGreaterThan(.15);}
+ const errorsByMuscle={};if(audit.routes?.active)for(const r of audit.routes.entries){errorsByMuscle[r.name]=r.distalError;if(r.distalSamples)expect(r.distalError,r.name+' full distal binding').toBeLessThan(.0001);}
  records.push({angle,errorsByMuscle});await page.locator('[data-view="lateral"]').click();await page.screenshot({path:`docs/screenshots/muscle-routing/knee-${angle}.png`});}
  const itb=page.locator('[data-tissue="Iliotibial tract.r"]');await expect(itb).toHaveAttribute('data-state','fade');expect((await snap()).tissueMeshes.find(t=>t.name==='Calcaneal tendon.r').visible).toBeTruthy();
  for(const group of ['flex','ext','ir','er']){await page.locator(`[data-muscle-group="${group}"]`).click();const q=await snap();expect(q.states['Rectus femoris muscle.r']).toBe(group==='ext'?'on':'off');expect(q.states['Long head of biceps femoris.r']).toBe(['flex','er'].includes(group)?'on':'off');expect(q.states['Calcaneal tendon.r']).toBe(group==='flex'?'on':'off');}

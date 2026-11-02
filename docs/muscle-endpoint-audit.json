@@ -1,70 +1,57 @@
 [
   {
     "angle": 0,
-    "errorsByMuscle": {
-      "Rectus femoris muscle.r": 7.885408385308455e-9,
-      "Vastus medialis muscle.r": 1.149257003945694e-8,
-      "Vastus lateralis muscle.r": 1.341011861064222e-8,
-      "Vastus intermedius muscle.r": 1.0789354892342313e-8,
-      "Long head of biceps femoris.r": 1.16306465516464e-8,
-      "Short head of biceps femoris.r": 1.1906394387375455e-8,
-      "Semitendinosus muscle.r": 2.4504880924739576e-8,
-      "Semimembranosus muscle.r": 9.778989306056235e-9,
-      "Sartorius muscle.r": 7.139030596360879e-9,
-      "Gracilis muscle.r": 6.355149856499859e-9,
-      "Medial head of gastrocnemius.r": 1.4061406889857414e-8,
-      "Lateral head of gastrocnemius.r": 1.5704363324416785e-8
-    }
+    "errorsByMuscle": {}
   },
   {
     "angle": 60,
     "errorsByMuscle": {
-      "Rectus femoris muscle.r": 1.183341041909238e-8,
-      "Vastus medialis muscle.r": 1.2000385532749954e-8,
-      "Vastus lateralis muscle.r": 1.271423119961672e-8,
-      "Vastus intermedius muscle.r": 1.0200486123693164e-8,
-      "Long head of biceps femoris.r": 1.007230294752805e-8,
-      "Short head of biceps femoris.r": 1.4836769972896845e-8,
-      "Semitendinosus muscle.r": 1.2124910597273324e-8,
-      "Semimembranosus muscle.r": 1.3218726103849101e-8,
-      "Sartorius muscle.r": 8.397753037782966e-9,
-      "Gracilis muscle.r": 7.038108925164478e-9,
-      "Medial head of gastrocnemius.r": 1.1288606533439666e-8,
-      "Lateral head of gastrocnemius.r": 1.091639468298379e-8
+      "Rectus femoris muscle.r": 1.4918809563224207e-8,
+      "Vastus medialis muscle.r": 1.5246687894984356e-8,
+      "Vastus lateralis muscle.r": 1.588922316662351e-8,
+      "Vastus intermedius muscle.r": 1.6131137094004863e-8,
+      "Long head of biceps femoris.r": 1.583247429128837e-8,
+      "Short head of biceps femoris.r": 1.9972672929044845e-8,
+      "Semitendinosus muscle.r": 3.0340687706801564e-8,
+      "Semimembranosus muscle.r": 1.6446184015454258e-8,
+      "Sartorius muscle.r": 1.576374236728364e-8,
+      "Gracilis muscle.r": 1.6120563249263283e-8,
+      "Medial head of gastrocnemius.r": 0,
+      "Lateral head of gastrocnemius.r": 0
     }
   },
   {
     "angle": 90,
     "errorsByMuscle": {
-      "Rectus femoris muscle.r": 2.9292966909947357e-9,
-      "Vastus medialis muscle.r": 7.368469708932705e-9,
-      "Vastus lateralis muscle.r": 1.3858808443216667e-8,
-      "Vastus intermedius muscle.r": 1.0200486123693164e-8,
-      "Long head of biceps femoris.r": 5.01499986473633e-9,
-      "Short head of biceps femoris.r": 6.108346975053968e-9,
-      "Semitendinosus muscle.r": 5.292927188655255e-9,
-      "Semimembranosus muscle.r": 5.4630610847161965e-9,
-      "Sartorius muscle.r": 9.09457474673561e-9,
-      "Gracilis muscle.r": 1.3548863512036092e-8,
-      "Medial head of gastrocnemius.r": 1.1288606533439666e-8,
-      "Lateral head of gastrocnemius.r": 1.091639468298379e-8
+      "Rectus femoris muscle.r": 1.466114961147083e-8,
+      "Vastus medialis muscle.r": 1.537051579996884e-8,
+      "Vastus lateralis muscle.r": 1.6247104774919917e-8,
+      "Vastus intermedius muscle.r": 1.5047130914725432e-8,
+      "Long head of biceps femoris.r": 1.6402811306245613e-8,
+      "Short head of biceps femoris.r": 2.008731883556847e-8,
+      "Semitendinosus muscle.r": 1.6376560548294443e-8,
+      "Semimembranosus muscle.r": 1.587040161633513e-8,
+      "Sartorius muscle.r": 1.5456127468646816e-8,
+      "Gracilis muscle.r": 1.6304626345541836e-8,
+      "Medial head of gastrocnemius.r": 0,
+      "Lateral head of gastrocnemius.r": 0
     }
   },
   {
     "angle": 120,
     "errorsByMuscle": {
-      "Rectus femoris muscle.r": 1.28646285726968e-8,
-      "Vastus medialis muscle.r": 1.3212258974279624e-8,
-      "Vastus lateralis muscle.r": 1.2860860014118137e-8,
-      "Vastus intermedius muscle.r": 1.0200486123693164e-8,
-      "Long head of biceps femoris.r": 1.6591536033051422e-8,
-      "Short head of biceps femoris.r": 5.482969392323349e-9,
-      "Semitendinosus muscle.r": 4.444704488771929e-9,
-      "Semimembranosus muscle.r": 1.0599221219223276e-8,
-      "Sartorius muscle.r": 1.4799225730075175e-8,
-      "Gracilis muscle.r": 1.4231871786955926e-8,
-      "Medial head of gastrocnemius.r": 1.1288606533439666e-8,
-      "Lateral head of gastrocnemius.r": 1.515163019973072e-8
+      "Rectus femoris muscle.r": 1.4763593131760462e-8,
+      "Vastus medialis muscle.r": 1.5559754931838994e-8,
+      "Vastus lateralis muscle.r": 1.498829553732341e-8,
+      "Vastus intermedius muscle.r": 1.548333132482591e-8,
+      "Long head of biceps femoris.r": 1.619657245730275e-8,
+      "Short head of biceps femoris.r": 2.0103823532945457e-8,
+      "Semitendinosus muscle.r": 1.6095544893693876e-8,
+      "Semimembranosus muscle.r": 1.5834604401895576e-8,
+      "Sartorius muscle.r": 1.6607304129222518e-8,
+      "Gracilis muscle.r": 1.6094850888964107e-8,
+      "Medial head of gastrocnemius.r": 0,
+      "Lateral head of gastrocnemius.r": 0
     }
   }
 ]
