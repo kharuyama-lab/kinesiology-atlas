@@ -2,7 +2,13 @@ import {test,expect} from '@playwright/test';
 test('femoral shaft stays fixed while tibial guides move; unified compact controls',async({page})=>{
  await page.goto('http://127.0.0.1:8080/?review=knee&axis=condyle&qa');await expect(page.locator('#modelStatus')).toHaveText('Ready');
  const set=async v=>{await page.locator('#motionSlider').evaluate((el,v)=>{el.value=v;el.dispatchEvent(new Event('input',{bubbles:true}));},String(v));await expect.poll(async()=>Math.abs((await page.evaluate(()=>window.atlasQA())).renderedAngles.flex-v)).toBeLessThan(.001);};
- await set(0);const before=await page.evaluate(()=>window.atlasAxisQA());await set(90);const after=await page.evaluate(()=>window.atlasAxisQA());
+ const checkTibialOrigin=async()=>{
+  const data=await page.evaluate(()=>({axes:window.atlasAxisQA(),mesh:window.atlasMeshQA('Tibia.r')}));
+  const pair=data.axes.segments[0],origin=pair[0].map((v,i)=>(v+pair[1][i])/2),si=data.axes.directions[0];
+  const dot=p=>p.reduce((sum,v,i)=>sum+v*si[i],0),projections=data.mesh.flatMap(m=>m.positions.map(dot)),lo=Math.min(...projections),hi=Math.max(...projections),fraction=(dot(origin)-lo)/(hi-lo);
+  expect(fraction).toBeGreaterThan(.91);expect(fraction).toBeLessThan(1);
+ };
+ await set(0);await checkTibialOrigin();const before=await page.evaluate(()=>window.atlasAxisQA());await set(90);await checkTibialOrigin();const after=await page.evaluate(()=>window.atlasAxisQA());
  expect(after.names).toEqual(['SI tibia','ML tibia','AP tibia','SI femur','ML femur']);
  const distance=(a,b)=>Math.hypot(...a.flat().map((v,i)=>v-b.flat()[i]));
  expect(distance(before.segments[3],after.segments[3])).toBeLessThan(.0001);expect(distance(before.segments[0],after.segments[0])).toBeGreaterThan(.01);expect(distance(before.segments[1],after.segments[1])).toBeGreaterThan(.01);

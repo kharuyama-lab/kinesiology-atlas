@@ -208,10 +208,14 @@ function buildAxis(){axisReference.clear();axisGroup.clear();const l=Math.max(kn
  const shaft=shaftGuide('Tibia.r',rig.knee),si=shaft[1].clone().sub(shaft[0]).normalize();
  const tibML=ml.clone().addScaledVector(si,-ml.dot(si)).normalize();
  const ap=new THREE.Vector3().crossVectors(tibML,si).normalize();
+ // The motion pivot lies in the femoral condyles; the display triad belongs
+ // at the proximal tibia, with that offset rotated together with the bone.
+ const tibialOrigin=rig.knee.worldToLocal(nearBoneEnd('Tibia.r',.08,true));
+ const tibialThrough=(direction,extent)=>through(direction,extent).map(p=>p.add(tibialOrigin));
  const through=(direction,extent)=>[direction.clone().multiplyScalar(-extent),direction.clone().multiplyScalar(extent)];
- line(axisGroup,'SI tibia',through(si,l*.85),0x75d69c);
- line(axisGroup,'ML tibia',through(tibML,l*.7),0x65caff);
- line(axisGroup,'AP tibia',through(ap,l*.55),0xffbd72);
+ line(axisGroup,'SI tibia',tibialThrough(si,l*.85),0x75d69c);
+ line(axisGroup,'ML tibia',tibialThrough(tibML,l*.7),0x65caff);
+ line(axisGroup,'AP tibia',tibialThrough(ap,l*.55),0xffbd72);
  line(axisReference,'SI femur',shaftGuide('Femur.r',rig.hip),0x75d69c,true);
  line(axisReference,'ML femur',through(ml,l*.7).map(p=>p.add(kneeBasePosition)),0x65caff,true);
 
