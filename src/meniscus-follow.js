@@ -61,7 +61,7 @@ export class MeniscusFollower{
     local.y=surfaceHeight(this.surface,local.x,local.z).height+e.offsets[i]-Math.max(0,e.offsets[i])*e.compression*e.weights[i];
     const change=local.clone().sub(rest);e.centroidDisplacement.add(change);e.supportCentre.addScaledVector(local,e.loadWeights[i]);e.maxHeightChange=Math.max(e.maxHeightChange,Math.abs(change.y));const p=local.applyMatrix4(e.back);a.setXYZ(i,p.x,p.y,p.z);
    }e.centroidDisplacement.divideScalar(a.count);e.contactResidual=Math.hypot(e.supportCentre.x-target.x,e.supportCentre.z-target.z);
-   a.needsUpdate=true;e.geometry.computeVertexNormals();e.geometry.computeBoundingSphere();
+   a.needsUpdate=true;e.geometry.computeVertexNormals();e.geometry.computeBoundingSphere();e.geometry.computeBoundingBox();
   }
  }
  snapshot(){return this.entries.map(e=>({name:e.name,status:MENISCI.status,displacement:e.displacement.toArray(),centroidDisplacement:e.centroidDisplacement.toArray(),supportCentre:e.supportCentre.toArray(),contactTarget:e.contactTarget.toArray(),contactResidual:e.contactResidual,compression:e.compression,gapChange:e.gapChange,maxHeightChange:e.maxHeightChange,roots:e.roots.map(p=>p.toArray()),maxWeight:Math.max(...e.weights)}));}

@@ -1,0 +1,54 @@
+[
+  {
+    "angle": 0,
+    "errorsByMuscle": {
+      "Long head of biceps femoris.r": 0.0000027787164839187465,
+      "Short head of biceps femoris.r": 0.0000026554534575327078,
+      "Semitendinosus muscle.r": 0.000003418702147104822,
+      "Semimembranosus muscle.r": 0.0000029321173131797593,
+      "Sartorius muscle.r": 0.0000034476147442926464,
+      "Gracilis muscle.r": 0.000003535524077241577,
+      "Medial head of gastrocnemius.r": 0.000005550291295593176,
+      "Lateral head of gastrocnemius.r": 0.000005329468101984393
+    }
+  },
+  {
+    "angle": 60,
+    "errorsByMuscle": {
+      "Long head of biceps femoris.r": 9.63945205920053e-7,
+      "Short head of biceps femoris.r": 8.017922830282289e-7,
+      "Semitendinosus muscle.r": 0.0000018642157145140725,
+      "Semimembranosus muscle.r": 0.000001242415612631826,
+      "Sartorius muscle.r": 0.000001952427195863914,
+      "Gracilis muscle.r": 0.0000020346845078617514,
+      "Medial head of gastrocnemius.r": 0.000004602207869686828,
+      "Lateral head of gastrocnemius.r": 0.0000043051905087399965
+    }
+  },
+  {
+    "angle": 90,
+    "errorsByMuscle": {
+      "Long head of biceps femoris.r": 9.01633749841643e-9,
+      "Short head of biceps femoris.r": 1.1370226180093994e-8,
+      "Semitendinosus muscle.r": 1.1866655092801752e-8,
+      "Semimembranosus muscle.r": 8.09365106073659e-9,
+      "Sartorius muscle.r": 4.192253166025197e-9,
+      "Gracilis muscle.r": 5.844051261423386e-9,
+      "Medial head of gastrocnemius.r": 3.831073673578335e-9,
+      "Lateral head of gastrocnemius.r": 1.6678187106935348e-8
+    }
+  },
+  {
+    "angle": 120,
+    "errorsByMuscle": {
+      "Long head of biceps femoris.r": 4.766356087784676e-9,
+      "Short head of biceps femoris.r": 4.563821600024305e-9,
+      "Semitendinosus muscle.r": 1.1736341858204817e-8,
+      "Semimembranosus muscle.r": 1.393487708702872e-8,
+      "Sartorius muscle.r": 7.614865973103854e-9,
+      "Gracilis muscle.r": 3.086070730646974e-9,
+      "Medial head of gastrocnemius.r": 1.726422750589031e-8,
+      "Lateral head of gastrocnemius.r": 1.6678187106935348e-8
+    }
+  }
+]

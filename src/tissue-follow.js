@@ -1,3 +1,4 @@
+import {MuscleCurve,usesMuscleCurve} from './muscle-curve.js';
 import {Vector3,Quaternion,Matrix4} from 'three';
 
 // Schematic surface-proximity binding, following the existing Hip approach.
@@ -42,6 +43,7 @@ export class TissueFollower{
     this.entries.push({name,mesh,source,world,weights,inverse:new Matrix4().copy(matrix).invert(),version:-1,maxDisplacement:0});
    }
   }
+  this.curves=new Map();for(const name of new Set(this.entries.map(e=>e.name)))if(usesMuscleCurve(name)){const parts=this.entries.filter(e=>e.name===name);if(parts.reduce((n,e)=>n+e.source.length/3,0)>20){const curve=new MuscleCurve(parts);this.curves.set(name,curve);for(const e of parts)e.curve=curve;}}
   // Longitudinal pins must use the whole named structure, never each mesh part.
   const bounds=new Map();for(const e of this.entries){let b=bounds.get(e.name)||[Infinity,-Infinity];for(let i=1;i<e.world.length;i+=3){b[0]=Math.min(b[0],e.world[i]);b[1]=Math.max(b[1],e.world[i]);}bounds.set(e.name,b);}
   for(const e of this.entries){const [lo,hi]=bounds.get(e.name);for(let i=0;i<e.weights.length/2;i++){const y=e.world[3*i+1],t=(hi-y)/Math.max(hi-lo,1e-10);if(/Rectus femoris|Long head of biceps|Semitendinosus|Semimembranosus|Sartorius|Gracilis/.test(e.name))e.weights[2*i]=smooth((t-.02)/.20);if(e.name==='Psoas major.r')e.weights[2*i]=smooth((t-.34)/.52);if(e.name==='Iliotibial tract.r')e.weights[2*i]=smooth((t-.07)/.25);if(/Rectus femoris|Vastus/.test(e.name))e.weights[2*i+1]=smooth((t-.78)/.20);}}
@@ -60,19 +62,24 @@ export class TissueFollower{
   if(changed){if(now-this.lastUpdate<33)return;this.lastUpdate=now;this.translation.copy(translation);this.patellaRotation.copy(patellaRotation);this.patellaTranslation.copy(patellaTranslation);this.hip.copy(hip);this.knee.copy(knee);this.version++;}
   const identity=new Quaternion(),hQ=new Quaternion(),kQ=new Quaternion(),v=new Vector3(),rest=new Vector3();
   const atRest=hip.angleTo(identity)<1e-5&&knee.angleTo(identity)<1e-5&&translation.lengthSq()<1e-16&&patellaTranslation.lengthSq()<1e-16&&patellaRotation.angleTo(identity)<1e-5;
+  const femur={rotation:hip,point:p=>p.sub(this.h).applyQuaternion(hip).add(this.h)},fixed={rotation:identity,point:p=>p},tibia={rotation:hip.clone().multiply(knee),point:p=>p.sub(this.k).applyQuaternion(knee).add(this.k).add(translation).sub(this.h).applyQuaternion(hip).add(this.h)},patella={rotation:hip.clone().multiply(patellaRotation),point:p=>p.sub(this.k).applyQuaternion(patellaRotation).add(this.k).add(patellaTranslation).sub(this.h).applyQuaternion(hip).add(this.h)};
+  for(const [name,curve] of this.curves||[]){if(curve.version===this.version)continue;const proximal=/Short head of biceps|Vastus|gastrocnemius|Popliteus/.test(name)?femur:fixed;const distal=/Rectus femoris|Vastus/.test(name)?patella:name==='Psoas major.r'?femur:tibia;curve.pose({proximal,distal});curve.version=this.version;}
   for(const e of this.entries){if(!e.mesh.visible||e.version===this.version)continue;
    const attr=e.mesh.geometry.attributes.position;e.maxDisplacement=0;
    if(atRest)attr.array.set(e.source);
    else for(let i=0;i<attr.count;i++){
     rest.fromArray(e.world,i*3);v.copy(rest);
+    if(e.curve){e.curve.deform(rest,v);}else{
     const quad=/Rectus femoris|Vastus/.test(e.name),weight=e.weights[i*2+1];
     kQ.copy(identity).slerp(quad?patellaRotation:knee,weight);v.sub(this.k).applyQuaternion(kQ).add(this.k).addScaledVector(quad?patellaTranslation:translation,weight);
     hQ.copy(identity).slerp(hip,e.weights[i*2]);v.sub(this.h).applyQuaternion(hQ).add(this.h);
+    }
     e.maxDisplacement=Math.max(e.maxDisplacement,v.distanceTo(rest));v.applyMatrix4(e.inverse);attr.setXYZ(i,v.x,v.y,v.z);
    }
-   attr.needsUpdate=true;e.mesh.geometry.computeVertexNormals();e.mesh.geometry.computeBoundingSphere();e.version=this.version;
+   attr.needsUpdate=true;e.mesh.geometry.computeVertexNormals();e.mesh.geometry.computeBoundingSphere();e.mesh.geometry.computeBoundingBox();e.version=this.version;
   }
  }
- audit(){const v=new Vector3();return this.entries.map(e=>{const matrix=e.inverse.clone().invert(),a=e.mesh.geometry.attributes.position;const step=Math.max(1,Math.ceil(a.count/300));const points=[];for(let i=0;i<a.count;i+=step)points.push({rest:[...e.world.slice(i*3,i*3+3)],position:v.fromBufferAttribute(a,i).applyMatrix4(matrix).toArray(),hip:e.weights[i*2],knee:e.weights[i*2+1]});return {name:e.name,points};});}
- snapshot(){return this.entries.map(e=>({name:e.name,vertices:e.source.length/3,visible:e.mesh.visible,maxDisplacement:e.maxDisplacement}));}
+ curveAudit(){return [...this.curves||[]].map(([name,c])=>{const chord=c.end.clone().sub(c.start).normalize();let minProgress=Infinity,maxTurn=0;const samples=c.samples;for(let i=1;i<samples.length;i++){const d=samples[i].center.clone().sub(samples[i-1].center);minProgress=Math.min(minProgress,d.dot(chord));if(i>1)maxTurn=Math.max(maxTurn,d.angleTo(samples[i-1].center.clone().sub(samples[i-2].center)));}return {name,minProgress,maxTurn,length:c.length,restLength:c.restLength,scale:c.radialScale};});}
+ audit(){const v=new Vector3();return this.entries.map(e=>{const matrix=e.inverse.clone().invert(),a=e.mesh.geometry.attributes.position;const step=Math.max(1,Math.ceil(a.count/300));const points=[];const indices=new Set();for(let i=0;i<a.count;i+=step)indices.add(i);let lo=0,hi=0;for(let i=1;i<a.count;i++){if(e.world[3*i+1]<e.world[3*lo+1])lo=i;if(e.world[3*i+1]>e.world[3*hi+1])hi=i;}indices.add(lo);indices.add(hi);for(const i of indices)points.push({rest:[...e.world.slice(i*3,i*3+3)],position:v.fromBufferAttribute(a,i).applyMatrix4(matrix).toArray(),hip:e.weights[i*2],knee:e.weights[i*2+1]});return {name:e.name,points};});}
+ snapshot(){return this.entries.map(e=>({name:e.name,representation:e.curve?'continuous-centreline':'source-skinning',vertices:e.source.length/3,visible:e.mesh.visible,maxDisplacement:e.maxDisplacement}));}
 }

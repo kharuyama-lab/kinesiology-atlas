@@ -1,15 +1,15 @@
 import {test,expect} from '@playwright/test';
 import {Vector3,Quaternion} from 'three';
 import {mkdirSync,writeFileSync} from 'node:fs';
-test('muscle bellies follow their bone frames, Achilles continuity, action groups and legacy ITB',async({page})=>{
+test('continuous muscle end caps follow bone frames, action groups and legacy ITB',async({page})=>{
  const errors=[];page.on('pageerror',e=>errors.push(e.message));await page.goto('http://127.0.0.1:8080/?review=muscles&axis=condyle&qa');await expect(page.locator('#modelStatus')).toHaveText('Ready');
  const snap=()=>page.evaluate(()=>atlasQA());const input=async v=>page.locator('#motionSlider').evaluate((el,v)=>{el.value=v;el.dispatchEvent(new Event('input',{bubbles:true}));},v);
  mkdirSync('docs/screenshots/muscle-routing',{recursive:true});
  const records=[];
  for(const angle of [0,60,90,120]){await input(angle);await expect.poll(async()=>Math.abs((await snap()).renderedAngles.flex-angle)).toBeLessThan(.01);
  const q=await snap(),audit=await page.evaluate(()=>atlasMuscleGeometryQA()),h=new Vector3(...audit.hipCenter),k=new Vector3(...audit.kneeCenter),hip=new Quaternion(...q.hip),knee=new Quaternion(...q.knee),translation=new Vector3(...q.kneeTranslation),span=h.y-k.y;
- const errorsByMuscle={};
- for(const e of audit.entries){if(!/gastrocnemius|Calcaneal tendon|Semitendinosus|Semimembranosus|biceps femoris|Sartorius|Gracilis/.test(e.name))continue;const pts=e.points.filter(p=>/gastrocnemius|Calcaneal/.test(e.name)?p.rest[1]<k.y-span*.15:p.rest[1]<h.y-span*.45&&p.rest[1]>k.y+span*.15);if(!pts.length)continue;const delta=Math.max(...pts.map(p=>{const v=new Vector3(...p.rest);if(/gastrocnemius|Calcaneal/.test(e.name))v.sub(k).applyQuaternion(knee).add(k).add(translation);v.sub(h).applyQuaternion(hip).add(h);return v.distanceTo(new Vector3(...p.position));}));errorsByMuscle[e.name]=delta;expect(delta,e.name+' belly at '+angle).toBeLessThan(span*.015);}
+ const errorsByMuscle={};const all=new Map();for(const e of audit.entries){if(!/gastrocnemius|Semitendinosus|Semimembranosus|biceps femoris|Sartorius|Gracilis/.test(e.name))continue;all.set(e.name,[...(all.get(e.name)||[]),...e.points]);}
+ for(const [name,points] of all){const max=Math.max(...points.map(p=>p.rest[1])),min=Math.min(...points.map(p=>p.rest[1]));const caps=points.filter(p=>Math.abs(p.rest[1]-max)<1e-9||Math.abs(p.rest[1]-min)<1e-9);let delta=0;for(const p of caps){const proximal=Math.abs(p.rest[1]-max)<1e-9,v=new Vector3(...p.rest);if(!proximal)v.sub(k).applyQuaternion(knee).add(k).add(translation);if(!proximal||/gastrocnemius|Short head of biceps/.test(name))v.sub(h).applyQuaternion(hip).add(h);delta=Math.max(delta,v.distanceTo(new Vector3(...p.position)));}errorsByMuscle[name]=delta;expect(delta,name+' cap at '+angle).toBeLessThan(span*.001);}
  records.push({angle,errorsByMuscle});await page.locator('[data-view="lateral"]').click();await page.screenshot({path:`docs/screenshots/muscle-routing/knee-${angle}.png`});}
  const itb=page.locator('[data-tissue="Iliotibial tract.r"]');await expect(itb).toHaveAttribute('data-state','fade');expect((await snap()).tissueMeshes.find(t=>t.name==='Calcaneal tendon.r').visible).toBeTruthy();
  for(const group of ['flex','ext','ir','er']){await page.locator(`[data-muscle-group="${group}"]`).click();const q=await snap();expect(q.states['Rectus femoris muscle.r']).toBe(group==='ext'?'on':'off');expect(q.states['Long head of biceps femoris.r']).toBe(['flex','er'].includes(group)?'on':'off');expect(q.states['Calcaneal tendon.r']).toBe(group==='flex'?'on':'off');}
@@ -23,5 +23,5 @@ test('muscle bellies follow their bone frames, Achilles continuity, action group
  await page.locator('[data-view="front"]').click();await page.locator('#boneVisibility').click();await page.screenshot({path:'docs/screenshots/muscle-routing/hip-90-iliopsoas-sartorius.png'});await page.locator('[data-view="lateral"]').click();await page.screenshot({path:'docs/screenshots/muscle-routing/hip-90-iliopsoas-sartorius-lateral.png'});
  await page.locator('[data-tissue]').evaluateAll(rows=>{const keep=new Set(['Iliotibial tract.r','Tensor fasciae latae.r','Gluteus maximus muscle.r']);for(const row of rows){if(row.hidden||row.disabled||!row.closest('#muscleList'))continue;const target=keep.has(row.dataset.tissue)?(row.dataset.tissue==='Iliotibial tract.r'?'fade':'on'):'off';while(row.dataset.state!==target)row.click();}});
  await page.locator('[data-view="lateral"]').click();await page.screenshot({path:'docs/screenshots/muscle-routing/hip-90-itb.png'});
- writeFileSync('docs/muscle-belly-frame-audit.json',JSON.stringify(records,null,2));expect(errors).toEqual([]);
+ writeFileSync('docs/muscle-endpoint-audit.json',JSON.stringify(records,null,2));expect(errors).toEqual([]);
 });

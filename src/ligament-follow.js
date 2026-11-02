@@ -69,7 +69,7 @@ export class LigamentFollower{
     p.applyMatrix4(toMesh);a.setXYZ(i,p.x,p.y,p.z);
    }
    a.needsUpdate=true;e.mesh.geometry.computeVertexNormals();
-   e.mesh.geometry.computeBoundingSphere();
+   e.mesh.geometry.computeBoundingSphere();e.mesh.geometry.computeBoundingBox();
   }
  }
  snapshot(){return this.entries.map(e=>({name:e.name,distalBone:kneeLigamentBones[e.name],vertices:e.rest.length,sourceVertices:e.originalSourceCount||e.rest.length,representation:e.surface?'smooth-source-fitted':'source-mesh',attachmentCentres:e.surface?{proximalIndex:e.surface.capProx,distalIndex:e.surface.capDist}:null,

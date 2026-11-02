@@ -1,0 +1,407 @@
+{
+  "poses": [
+    {
+      "angle": 0,
+      "curves": [
+        {
+          "name": "Rectus femoris muscle.r",
+          "minProgress": 0.0037402122180414245,
+          "maxTurn": 0.004028292309720836,
+          "length": 0.47874716390931127,
+          "restLength": 0.5458933323997615,
+          "scale": 1.0678267295351633
+        },
+        {
+          "name": "Long head of biceps femoris.r",
+          "minProgress": 0.004058794265817216,
+          "maxTurn": 0.001697560388833429,
+          "length": 0.5195256660246104,
+          "restLength": 0.4302333543503928,
+          "scale": 0.9100149652561117
+        },
+        {
+          "name": "Short head of biceps femoris.r",
+          "minProgress": 0.0023704232236854356,
+          "maxTurn": 0.0015552276153047604,
+          "length": 0.3034141726317462,
+          "restLength": 0.3034142034527097,
+          "scale": 1.000000050790249
+        },
+        {
+          "name": "Semitendinosus muscle.r",
+          "minProgress": 0.004319131802843319,
+          "maxTurn": 0.004592193711241323,
+          "length": 0.5528488707639532,
+          "restLength": 0.4606223261888623,
+          "scale": 0.9127866479491407
+        },
+        {
+          "name": "Semimembranosus muscle.r",
+          "minProgress": 0.003971009419043694,
+          "maxTurn": 0.003121260319275931,
+          "length": 0.5082892056376073,
+          "restLength": 0.4179666970864135,
+          "scale": 0.9068081113544163
+        },
+        {
+          "name": "Sartorius muscle.r",
+          "minProgress": 0.003659880210448247,
+          "maxTurn": 0.004963417790401861,
+          "length": 0.46846466693738964,
+          "restLength": 0.6044513125223032,
+          "scale": 1.1359056040650564
+        },
+        {
+          "name": "Gracilis muscle.r",
+          "minProgress": 0.0037895040097559464,
+          "maxTurn": 0.0051073018612465635,
+          "length": 0.4850565132487707,
+          "restLength": 0.497923287862989,
+          "scale": 1.0131763623810106
+        },
+        {
+          "name": "Medial head of gastrocnemius.r",
+          "minProgress": 0.0023726081161735838,
+          "maxTurn": 0.005439185556137498,
+          "length": 0.30369383887023893,
+          "restLength": 0.30369384448316367,
+          "scale": 1.0000000092410908
+        },
+        {
+          "name": "Lateral head of gastrocnemius.r",
+          "minProgress": 0.0021284407851676784,
+          "maxTurn": 0.004202171866187143,
+          "length": 0.2724404205014839,
+          "restLength": 0.2724404642872092,
+          "scale": 1.0000000803583466
+        }
+      ]
+    },
+    {
+      "angle": 30,
+      "curves": [
+        {
+          "name": "Rectus femoris muscle.r",
+          "minProgress": 0.0038574630458839986,
+          "maxTurn": 0.003552795237657828,
+          "length": 0.4937552698731605,
+          "restLength": 0.5458933323997615,
+          "scale": 1.0514727523675396
+        },
+        {
+          "name": "Long head of biceps femoris.r",
+          "minProgress": 0.003973033260061089,
+          "maxTurn": 0.0016262897203326335,
+          "length": 0.5085482572878287,
+          "restLength": 0.4302333543503928,
+          "scale": 0.9197842170737831
+        },
+        {
+          "name": "Short head of biceps femoris.r",
+          "minProgress": 0.002305523940547197,
+          "maxTurn": 0.0016188126813333349,
+          "length": 0.29510706439004997,
+          "restLength": 0.3034142034527097,
+          "scale": 1.0139771087667144
+        },
+        {
+          "name": "Semitendinosus muscle.r",
+          "minProgress": 0.004224688587848222,
+          "maxTurn": 0.003891281143924264,
+          "length": 0.5407601392445822,
+          "restLength": 0.4606223261888623,
+          "scale": 0.9229329613196778
+        },
+        {
+          "name": "Semimembranosus muscle.r",
+          "minProgress": 0.003897077341374843,
+          "maxTurn": 0.0027011912495976246,
+          "length": 0.49882589969598845,
+          "restLength": 0.4179666970864135,
+          "scale": 0.9153692990819458
+        },
+        {
+          "name": "Sartorius muscle.r",
+          "minProgress": 0.003750526168942003,
+          "maxTurn": 0.005051585171631866,
+          "length": 0.4800673496245862,
+          "restLength": 0.6044513125223032,
+          "scale": 1.1220948719718546
+        },
+        {
+          "name": "Gracilis muscle.r",
+          "minProgress": 0.0037323399055064627,
+          "maxTurn": 0.004459689640117321,
+          "length": 0.477739507904842,
+          "restLength": 0.497923287862989,
+          "scale": 1.0209057277421079
+        },
+        {
+          "name": "Medial head of gastrocnemius.r",
+          "minProgress": 0.002327040819650711,
+          "maxTurn": 0.0053200972312122665,
+          "length": 0.297861224915311,
+          "restLength": 0.30369384448316367,
+          "scale": 1.0097433673152458
+        },
+        {
+          "name": "Lateral head of gastrocnemius.r",
+          "minProgress": 0.0020537475103864136,
+          "maxTurn": 0.0038600173287407892,
+          "length": 0.26287968132947814,
+          "restLength": 0.2724404642872092,
+          "scale": 1.0180223108528008
+        }
+      ]
+    },
+    {
+      "angle": 60,
+      "curves": [
+        {
+          "name": "Rectus femoris muscle.r",
+          "minProgress": 0.00385667592830655,
+          "maxTurn": 0.00304966728562707,
+          "length": 0.4936545188232494,
+          "restLength": 0.5458933323997615,
+          "scale": 1.051580045601003
+        },
+        {
+          "name": "Long head of biceps femoris.r",
+          "minProgress": 0.003798848183860235,
+          "maxTurn": 0.001640555518773875,
+          "length": 0.4862525675341202,
+          "restLength": 0.4302333543503928,
+          "scale": 0.9406348920965709
+        },
+        {
+          "name": "Short head of biceps femoris.r",
+          "minProgress": 0.0021703856871925858,
+          "maxTurn": 0.001723673200621552,
+          "length": 0.27780936796065997,
+          "restLength": 0.3034142034527097,
+          "scale": 1.045067905027799
+        },
+        {
+          "name": "Semitendinosus muscle.r",
+          "minProgress": 0.0039832620329448955,
+          "maxTurn": 0.0028947753946454197,
+          "length": 0.5098575402169567,
+          "restLength": 0.4606223261888623,
+          "scale": 0.9504911311626912
+        },
+        {
+          "name": "Semimembranosus muscle.r",
+          "minProgress": 0.003727923826567222,
+          "maxTurn": 0.0020174483314199425,
+          "length": 0.4771742498006118,
+          "restLength": 0.4179666970864135,
+          "scale": 0.9359062336763408
+        },
+        {
+          "name": "Sartorius muscle.r",
+          "minProgress": 0.0036701061679896155,
+          "maxTurn": 0.004925030814350939,
+          "length": 0.4697735895026885,
+          "restLength": 0.6044513125223032,
+          "scale": 1.1343220224991613
+        },
+        {
+          "name": "Gracilis muscle.r",
+          "minProgress": 0.003516908026428409,
+          "maxTurn": 0.0035381416425676105,
+          "length": 0.4501642273828464,
+          "restLength": 0.497923287862989,
+          "scale": 1.0517093358296739
+        },
+        {
+          "name": "Medial head of gastrocnemius.r",
+          "minProgress": 0.0022011157236177126,
+          "maxTurn": 0.004252296805298169,
+          "length": 0.2817428126230915,
+          "restLength": 0.30369384448316367,
+          "scale": 1.0382252139195756
+        },
+        {
+          "name": "Lateral head of gastrocnemius.r",
+          "minProgress": 0.0019463684638225147,
+          "maxTurn": 0.004311180578275907,
+          "length": 0.2491351633693017,
+          "restLength": 0.2724404642872092,
+          "scale": 1.0457269278241068
+        }
+      ]
+    },
+    {
+      "angle": 90,
+      "curves": [
+        {
+          "name": "Rectus femoris muscle.r",
+          "minProgress": 0.003762957966879546,
+          "maxTurn": 0.0031297416653316566,
+          "length": 0.4816586197605922,
+          "restLength": 0.5458933323997615,
+          "scale": 1.06459452045486
+        },
+        {
+          "name": "Long head of biceps femoris.r",
+          "minProgress": 0.0035802189704440927,
+          "maxTurn": 0.0016914403763919614,
+          "length": 0.4582680282168564,
+          "restLength": 0.4302333543503928,
+          "scale": 0.9689296787410551
+        },
+        {
+          "name": "Short head of biceps femoris.r",
+          "minProgress": 0.001992379531803929,
+          "maxTurn": 0.0018883167276834496,
+          "length": 0.2550245800709146,
+          "restLength": 0.3034142034527097,
+          "scale": 1.090754298167799
+        },
+        {
+          "name": "Semitendinosus muscle.r",
+          "minProgress": 0.003639074720113539,
+          "maxTurn": 0.0017643562590601504,
+          "length": 0.46580156417454227,
+          "restLength": 0.4606223261888623,
+          "scale": 0.9944249698309694
+        },
+        {
+          "name": "Semimembranosus muscle.r",
+          "minProgress": 0.003498781330442308,
+          "maxTurn": 0.0018945209462846915,
+          "length": 0.44784401029662513,
+          "restLength": 0.4179666970864135,
+          "scale": 0.9660674612111322
+        },
+        {
+          "name": "Sartorius muscle.r",
+          "minProgress": 0.003444964503514797,
+          "maxTurn": 0.0046947052476116165,
+          "length": 0.4409554564499097,
+          "restLength": 0.6044513125223032,
+          "scale": 1.1708015857583145
+        },
+        {
+          "name": "Gracilis muscle.r",
+          "minProgress": 0.0031770722464030884,
+          "maxTurn": 0.0023748083877275232,
+          "length": 0.4066652475396061,
+          "restLength": 0.497923287862989,
+          "scale": 1.1065287164316397
+        },
+        {
+          "name": "Medial head of gastrocnemius.r",
+          "minProgress": 0.0020131712617991087,
+          "maxTurn": 0.002431767782461932,
+          "length": 0.257685921510309,
+          "restLength": 0.30369384448316367,
+          "scale": 1.0856070344422089
+        },
+        {
+          "name": "Lateral head of gastrocnemius.r",
+          "minProgress": 0.0018157557971909368,
+          "maxTurn": 0.005289566274941394,
+          "length": 0.2324167420404659,
+          "restLength": 0.2724404642872092,
+          "scale": 1.0826849536817271
+        }
+      ]
+    },
+    {
+      "angle": 120,
+      "curves": [
+        {
+          "name": "Rectus femoris muscle.r",
+          "minProgress": 0.0036061112085889707,
+          "maxTurn": 0.0033129246046952805,
+          "length": 0.4615822346994021,
+          "restLength": 0.5458933323997615,
+          "scale": 1.087500216789081
+        },
+        {
+          "name": "Long head of biceps femoris.r",
+          "minProgress": 0.0033475806533998275,
+          "maxTurn": 0.0018033446291240754,
+          "length": 0.42849032363518547,
+          "restLength": 0.4302333543503928,
+          "scale": 1.002031856522972
+        },
+        {
+          "name": "Short head of biceps femoris.r",
+          "minProgress": 0.0017893912461915736,
+          "maxTurn": 0.0021234972048736396,
+          "length": 0.22904207951253383,
+          "restLength": 0.3034142034527097,
+          "scale": 1.1509602224819764
+        },
+        {
+          "name": "Semitendinosus muscle.r",
+          "minProgress": 0.0032409081738041692,
+          "maxTurn": 0.0024988811995983844,
+          "length": 0.4148362462469448,
+          "restLength": 0.4606223261888623,
+          "scale": 1.0537416451175563
+        },
+        {
+          "name": "Semimembranosus muscle.r",
+          "minProgress": 0.0032390828782332434,
+          "maxTurn": 0.0021105235547531354,
+          "length": 0.414602608413864,
+          "restLength": 0.4179666970864135,
+          "scale": 1.004048807327634
+        },
+        {
+          "name": "Sartorius muscle.r",
+          "minProgress": 0.0030931129267055928,
+          "maxTurn": 0.0043489314751230055,
+          "length": 0.3959184546183327,
+          "restLength": 0.6044513125223032,
+          "scale": 1.18
+        },
+        {
+          "name": "Gracilis muscle.r",
+          "minProgress": 0.00275094679577095,
+          "maxTurn": 0.0023721834148297764,
+          "length": 0.3521211898586936,
+          "restLength": 0.497923287862989,
+          "scale": 1.18
+        },
+        {
+          "name": "Medial head of gastrocnemius.r",
+          "minProgress": 0.0017971753509289936,
+          "maxTurn": 0.004030265190538611,
+          "length": 0.23003844491894385,
+          "restLength": 0.30369384448316367,
+          "scale": 1.1489940590673744
+        },
+        {
+          "name": "Lateral head of gastrocnemius.r",
+          "minProgress": 0.0016911192233849343,
+          "maxTurn": 0.006624494539883696,
+          "length": 0.21646326059328955,
+          "restLength": 0.2724404642872092,
+          "scale": 1.1218730306345692
+        }
+      ]
+    }
+  ],
+  "hoverNames": [
+    "Rectus femoris muscle.r",
+    "Vastus medialis muscle.r",
+    "Vastus lateralis muscle.r",
+    "Vastus intermedius muscle.r",
+    "Long head of biceps femoris.r",
+    "Short head of biceps femoris.r",
+    "Semitendinosus muscle.r",
+    "Semimembranosus muscle.r",
+    "Sartorius muscle.r",
+    "Gracilis muscle.r",
+    "Popliteus muscle.r",
+    "Calcaneal tendon.r",
+    "Medial head of gastrocnemius.r",
+    "Lateral head of gastrocnemius.r",
+    "Tensor fasciae latae.r",
+    "Iliotibial tract.r"
+  ]
+}

@@ -463,4 +463,6 @@ function updateMusclePresentation(now){
  }
 }
 
-if(new URLSearchParams(location.search).has('qa'))window.atlasMuscleGeometryQA=()=>({hipCenter:hipWorldPoint.toArray(),kneeCenter:kneeWorldPoint.toArray(),entries:tissueFollower.audit()});
+if(new URLSearchParams(location.search).has('qa'))window.atlasMuscleGeometryQA=()=>({hipCenter:hipWorldPoint.toArray(),kneeCenter:kneeWorldPoint.toArray(),curves:tissueFollower.curveAudit(),entries:tissueFollower.audit()});
+
+if(new URLSearchParams(location.search).has('qa'))window.atlasPickQA=name=>{const r=renderer.domElement.getBoundingClientRect();scene.updateMatrixWorld(true);for(const mesh of getMeshes(name)){if(!mesh.visible)continue;const a=mesh.geometry.attributes.position,idx=mesh.geometry.index,n=idx?idx.count:a.count,p=new THREE.Vector3();for(let i=0;i+2<n;i+=Math.max(3,Math.ceil(n/900/3)*3)){p.set(0,0,0);for(let k=0;k<3;k++)p.add(new THREE.Vector3().fromBufferAttribute(a,idx?idx.getX(i+k):i+k));p.multiplyScalar(1/3).applyMatrix4(mesh.matrixWorld).project(camera);if(Math.abs(p.x)>.98||Math.abs(p.y)>.98||p.z>1)continue;const x=r.left+(p.x+1)*r.width/2,y=r.top+(1-p.y)*r.height/2;if(hitAt(x,y)===name)return {x,y,name};}}return null;};
