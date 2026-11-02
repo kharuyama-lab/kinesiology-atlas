@@ -28,7 +28,7 @@ test('actual GLBs: Anatomy focus, display cycle, mode continuity and home',async
  await expect.poll(async()=>Math.abs((await snap()).hip[0])).toBeGreaterThan(.65);
  const after=await snap();expect(after.focus).toBe('knee');for(let i=0;i<3;i++)expect(after.camera[i]-after.target[i]).toBeCloseTo(before.camera[i]-before.target[i],6);expect(after.states).toEqual(before.states);expect(await canvas.evaluate(n=>n===document.querySelector('canvas'))).toBeTruthy();
  await page.locator('[data-motion="stress"]').click();await expect(page.locator('#motionSlider')).toHaveAttribute('max','3');
- await page.locator('#axisToggle').check();
+ if(!await page.locator('#axisToggle').isChecked())await page.locator('#axisVisibility').click();
  await page.screenshot({path:'test-results/knee-mode2.png'});
  await page.locator('[data-mode="anatomy"]').click();await expect.poll(async()=>Math.abs((await snap()).hip[0])).toBeLessThan(.001);expect(await page.locator('#axisToggle').isChecked()).toBeTruthy();
  await page.screenshot({path:'test-results/knee-anatomy.png'});

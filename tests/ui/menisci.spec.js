@@ -6,12 +6,15 @@ test('meniscal bodies glide on tibia with roots retained; reverse, Auto and Anat
  const snap=()=>page.evaluate(()=>window.atlasQA()),meshes=()=>page.evaluate(()=>Object.fromEntries(['Medial meniscus.r','Lateral meniscus.r'].map(n=>[n,window.atlasMeshQA(n)[0].positions])));
  await page.locator('[data-mode="anatomy"]').click();await page.locator('[data-focus="knee"]').click();
  await expect.poll(async()=>Math.max(...(await snap()).menisci.map(e=>Math.hypot(...e.displacement)))).toBeLessThan(1e-10);
+ await page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))));
  const rest=await meshes(),reports=[];
  await page.locator('[data-mode="kinesiology"]').click();
  for(const angle of [0,10,20,60,90,120,90,0]){
   await page.locator('#motionSlider').evaluate((el,v)=>{el.value=v;el.dispatchEvent(new Event('input',{bubbles:true}));},String(angle));
   await page.locator('[data-focus="knee"]').click();
   await expect.poll(async()=>Math.abs((await snap()).renderedAngles.flex-angle)).toBeLessThan(.001);
+  // Focus snaps bones immediately; soft tissue is updated by the next render tick.
+  await page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))));
   const s=await snap(),current=await meshes(),k=new Vector3(...s.calibration.kneeCenter),hip=new Vector3(...s.calibration.hipCenter),h=new Quaternion(...s.hip).invert(),q=new Quaternion(...s.knee).invert(),d=new Vector3(...s.kneeTranslation);
   for(const entry of s.menisci){
    const local=current[entry.name].map(v=>new Vector3(...v).sub(hip).applyQuaternion(h).add(hip).sub(k).sub(d).applyQuaternion(q));
