@@ -3,44 +3,66 @@
     "angle": 0,
     "active": true,
     "wrapActive": false,
-    "blend": 0.9999996940976795,
+    "blend": 0.9999999047727789,
     "courses": [
       {
+        "name": "Long head of biceps femoris.r",
+        "length": 0.520409117942084,
+        "freeLength": 0.479210981237291,
+        "freeMaxTurnDegrees": 0.42907484749988983,
+        "arcChordRatio": 1.0008857621053044,
+        "freeArcChordRatio": 1.0003717516936197,
+        "maxTurnDegrees": 6.155608622694862
+      },
+      {
+        "name": "Short head of biceps femoris.r",
+        "length": 0.30582177696024515,
+        "freeLength": 0.27554664643657034,
+        "freeMaxTurnDegrees": 0.4260433195920242,
+        "arcChordRatio": 1.0092319703382282,
+        "freeArcChordRatio": 1.0004499781472613,
+        "maxTurnDegrees": 18.098707390107947
+      },
+      {
         "name": "Semitendinosus muscle.r",
-        "length": 0.5662684751291709,
-        "freeLength": 0.45502203219309495,
-        "arcChordRatio": 1.0155970605461513,
-        "freeArcChordRatio": 1.0060212532304385,
-        "maxTurnDegrees": 14.033274892455232
+        "length": 0.5721205414577526,
+        "freeLength": 0.47798467231568464,
+        "freeMaxTurnDegrees": 3.552357587732661,
+        "arcChordRatio": 1.0260926562450294,
+        "freeArcChordRatio": 1.0177177298117048,
+        "maxTurnDegrees": 6.470169197517878
       },
       {
         "name": "Semimembranosus muscle.r",
-        "length": 0.5121038434659423,
-        "freeLength": 0.4437841903789561,
-        "arcChordRatio": 1.019965694982064,
-        "freeArcChordRatio": 1.0132108862545284,
-        "maxTurnDegrees": 22.150075888824933
+        "length": 0.5069236208558748,
+        "freeLength": 0.4496366960575964,
+        "freeMaxTurnDegrees": 1.0813461903593302,
+        "arcChordRatio": 1.0096481232563084,
+        "freeArcChordRatio": 1.002745631319158,
+        "maxTurnDegrees": 8.619264646197847
       },
       {
         "name": "Sartorius muscle.r",
-        "length": 0.4974178390703726,
-        "freeLength": 0.39962231347565974,
-        "arcChordRatio": 1.0733680098823826,
-        "freeArcChordRatio": 1.0547209898275207,
-        "maxTurnDegrees": 9.074968838826626
+        "length": 0.4942304908303186,
+        "freeLength": 0.3890432309646311,
+        "freeMaxTurnDegrees": 5.113072440445682,
+        "arcChordRatio": 1.0664902368635676,
+        "freeArcChordRatio": 1.0442009785187367,
+        "maxTurnDegrees": 5.123093297470899
       },
       {
         "name": "Gracilis muscle.r",
-        "length": 0.49382490827675585,
-        "freeLength": 0.3894734150539048,
-        "arcChordRatio": 1.0450764794277254,
-        "freeArcChordRatio": 1.017594767709072,
-        "maxTurnDegrees": 66.52779169884703
+        "length": 0.4766938935029335,
+        "freeLength": 0.3719044923215348,
+        "freeMaxTurnDegrees": 0.8250964945700137,
+        "arcChordRatio": 1.0088222905359623,
+        "freeArcChordRatio": 1.003136220335171,
+        "maxTurnDegrees": 5.45124987093442
       }
     ],
     "lateralLayer": {
-      "samples": 39,
-      "minGap": -0.0041422107545709685
+      "samples": 34,
+      "minGap": -0.00259087321442128
     },
     "entries": [
       {
@@ -53,9 +75,9 @@
         "attachmentSamples": 0,
         "attachmentError": 0,
         "distalSamples": 33,
-        "distalError": 1.1113017912646995e-8,
+        "distalError": 1.207865083642905e-8,
         "wrapSamples": 1098,
-        "minCorticalGap": 0.0014139133580721164
+        "minCorticalGap": 0.001413926081506825
       },
       {
         "name": "Vastus medialis muscle.r",
@@ -67,9 +89,9 @@
         "attachmentSamples": 0,
         "attachmentError": 0,
         "distalSamples": 39,
-        "distalError": 1.913748293641906e-8,
+        "distalError": 1.8643447968421627e-8,
         "wrapSamples": 1049,
-        "minCorticalGap": -0.005928671313050568
+        "minCorticalGap": -0.005928703761636539
       },
       {
         "name": "Vastus lateralis muscle.r",
@@ -81,9 +103,9 @@
         "attachmentSamples": 0,
         "attachmentError": 0,
         "distalSamples": 63,
-        "distalError": 1.8232971617591752e-8,
+        "distalError": 1.845750117689559e-8,
         "wrapSamples": 756,
-        "minCorticalGap": -0.0006978076137707373
+        "minCorticalGap": -0.0006978046191949902
       },
       {
         "name": "Vastus intermedius muscle.r",
@@ -95,21 +117,21 @@
         "attachmentSamples": 0,
         "attachmentError": 0,
         "distalSamples": 91,
-        "distalError": 1.8663164775358937e-8,
+        "distalError": 1.677908913098848e-8,
         "wrapSamples": 935,
-        "minCorticalGap": -0.0014493211413088153
+        "minCorticalGap": -0.0014493273982143784
       },
       {
         "name": "Long head of biceps femoris.r",
         "family": "biceps",
         "bodySamples": 0,
         "bodyError": 0,
-        "thighSamples": 3338,
-        "thighError": 1.6491071340310384e-8,
+        "thighSamples": 0,
+        "thighError": 0,
         "attachmentSamples": 57,
-        "attachmentError": 2.96276308118056e-8,
-        "distalSamples": 259,
-        "distalError": 3.008708578873082e-8,
+        "attachmentError": 2.985306868375297e-8,
+        "distalSamples": 3,
+        "distalError": 2.830530051053775e-8,
         "wrapSamples": 0,
         "minCorticalGap": null
       },
@@ -118,12 +140,12 @@
         "family": "biceps",
         "bodySamples": 0,
         "bodyError": 0,
-        "thighSamples": 1048,
-        "thighError": 2.0547246337703762e-8,
+        "thighSamples": 0,
+        "thighError": 0,
         "attachmentSamples": 53,
-        "attachmentError": 1.9613738684998183e-8,
-        "distalSamples": 119,
-        "distalError": 2.009623633915581e-8,
+        "attachmentError": 1.7765849609880712e-8,
+        "distalSamples": 3,
+        "distalError": 9.132726439524751e-9,
         "wrapSamples": 0,
         "minCorticalGap": null
       },
@@ -135,9 +157,9 @@
         "thighSamples": 0,
         "thighError": 0,
         "attachmentSamples": 41,
-        "attachmentError": 2.8599720102450804e-8,
-        "distalSamples": 390,
-        "distalError": 3.248238603915686e-8,
+        "attachmentError": 2.6569968752736682e-8,
+        "distalSamples": 2,
+        "distalError": 2.4738903108928837e-8,
         "wrapSamples": 0,
         "minCorticalGap": null
       },
@@ -149,9 +171,9 @@
         "thighSamples": 0,
         "thighError": 0,
         "attachmentSamples": 41,
-        "attachmentError": 2.8114732826415088e-8,
-        "distalSamples": 355,
-        "distalError": 3.104763838176144e-8,
+        "attachmentError": 2.8114239605386444e-8,
+        "distalSamples": 4,
+        "distalError": 2.8114239605386444e-8,
         "wrapSamples": 0,
         "minCorticalGap": null
       },
@@ -164,8 +186,8 @@
         "thighError": 0,
         "attachmentSamples": 0,
         "attachmentError": 0,
-        "distalSamples": 377,
-        "distalError": 1.6307166234180564e-8,
+        "distalSamples": 2,
+        "distalError": 1.3152851139820987e-8,
         "wrapSamples": 0,
         "minCorticalGap": null
       },
@@ -177,9 +199,9 @@
         "thighSamples": 0,
         "thighError": 0,
         "attachmentSamples": 7,
-        "attachmentError": 1.3605108343610854e-8,
-        "distalSamples": 281,
-        "distalError": 2.0785121642371824e-8,
+        "attachmentError": 9.763068805915207e-9,
+        "distalSamples": 1,
+        "distalError": 1.9232842098272634e-8,
         "wrapSamples": 0,
         "minCorticalGap": null
       },
@@ -193,7 +215,7 @@
         "attachmentSamples": 0,
         "attachmentError": 0,
         "distalSamples": 486,
-        "distalError": 3.295316387931797e-8,
+        "distalError": 3.284612350005815e-8,
         "wrapSamples": 0,
         "minCorticalGap": null
       },
@@ -201,11 +223,11 @@
         "name": "Medial head of gastrocnemius.r",
         "family": "calf",
         "bodySamples": 1956,
-        "bodyError": 3.2557532820993145e-8,
+        "bodyError": 3.286524002432547e-8,
         "thighSamples": 0,
         "thighError": 0,
         "attachmentSamples": 333,
-        "attachmentError": 1.975430395978704e-8,
+        "attachmentError": 2.0725740624469653e-8,
         "distalSamples": 0,
         "distalError": 0,
         "wrapSamples": 0,
@@ -215,11 +237,11 @@
         "name": "Lateral head of gastrocnemius.r",
         "family": "calf",
         "bodySamples": 1626,
-        "bodyError": 3.323526897951862e-8,
+        "bodyError": 3.265507190643775e-8,
         "thighSamples": 0,
         "thighError": 0,
         "attachmentSamples": 94,
-        "attachmentError": 2.0534638282898048e-8,
+        "attachmentError": 2.0686267871596747e-8,
         "distalSamples": 0,
         "distalError": 0,
         "wrapSamples": 0,
@@ -234,40 +256,62 @@
     "blend": 0.9999999999999999,
     "courses": [
       {
+        "name": "Long head of biceps femoris.r",
+        "length": 0.5147285240431566,
+        "freeLength": 0.4735984856944173,
+        "freeMaxTurnDegrees": 2.1730711312753423,
+        "arcChordRatio": 1.0142286908649931,
+        "freeArcChordRatio": 1.0059425626908853,
+        "maxTurnDegrees": 6.155608746260901
+      },
+      {
+        "name": "Short head of biceps femoris.r",
+        "length": 0.30015303580673264,
+        "freeLength": 0.2699434638025294,
+        "freeMaxTurnDegrees": 2.116900695558394,
+        "arcChordRatio": 1.0093252734386264,
+        "freeArcChordRatio": 1.0060016125587967,
+        "maxTurnDegrees": 18.098707390113148
+      },
+      {
         "name": "Semitendinosus muscle.r",
-        "length": 0.5473428569641314,
-        "freeLength": 0.45634996010816026,
-        "arcChordRatio": 1.0042669200721053,
-        "freeArcChordRatio": 1.0002815218908028,
-        "maxTurnDegrees": 6.470169296466167
+        "length": 0.5535283662978272,
+        "freeLength": 0.45956310741824863,
+        "freeMaxTurnDegrees": 3.888038570119222,
+        "arcChordRatio": 1.0156161802087873,
+        "freeArcChordRatio": 1.013763304671551,
+        "maxTurnDegrees": 6.470169296466731
       },
       {
         "name": "Semimembranosus muscle.r",
-        "length": 0.49537744032011527,
-        "freeLength": 0.4404391827004938,
-        "arcChordRatio": 1.0055474950124406,
-        "freeArcChordRatio": 1.0005095031704232,
-        "maxTurnDegrees": 8.619264782837062
+        "length": 0.4963238813550936,
+        "freeLength": 0.4390462502071716,
+        "freeMaxTurnDegrees": 1.6089176219664991,
+        "arcChordRatio": 1.0074686898262692,
+        "freeArcChordRatio": 1.0025063253076296,
+        "maxTurnDegrees": 8.61926478283715
       },
       {
         "name": "Sartorius muscle.r",
-        "length": 0.48836991620424763,
-        "freeLength": 0.3969002443716276,
-        "arcChordRatio": 1.0288733437055937,
-        "freeArcChordRatio": 1.012989657903305,
-        "maxTurnDegrees": 10.481848157098943
+        "length": 0.5007747395969593,
+        "freeLength": 0.3954686702152833,
+        "freeMaxTurnDegrees": 4.968063795861326,
+        "arcChordRatio": 1.0550072090250613,
+        "freeArcChordRatio": 1.0425276107315489,
+        "maxTurnDegrees": 5.123093297470401
       },
       {
         "name": "Gracilis muscle.r",
-        "length": 0.470959940909777,
-        "freeLength": 0.3752190807527528,
-        "arcChordRatio": 1.011636669421752,
-        "freeArcChordRatio": 1.0008184884774243,
-        "maxTurnDegrees": 5.451249864490333
+        "length": 0.4742384052026565,
+        "freeLength": 0.3694758858037795,
+        "freeMaxTurnDegrees": 2.6174707171874134,
+        "arcChordRatio": 1.0186789709899544,
+        "freeArcChordRatio": 1.0084993584678579,
+        "maxTurnDegrees": 5.451249864490533
       }
     ],
     "lateralLayer": {
-      "samples": 15,
+      "samples": 22,
       "minGap": 0.003999999324192399
     },
     "entries": [
@@ -281,9 +325,9 @@
         "attachmentSamples": 0,
         "attachmentError": 0,
         "distalSamples": 33,
-        "distalError": 9.409027181430655e-8,
+        "distalError": 4.8924193542584776e-8,
         "wrapSamples": 1037,
-        "minCorticalGap": 0.0025025262813099802
+        "minCorticalGap": 0.00250252163425399
       },
       {
         "name": "Vastus medialis muscle.r",
@@ -295,9 +339,9 @@
         "attachmentSamples": 0,
         "attachmentError": 0,
         "distalSamples": 39,
-        "distalError": 8.527761567565273e-8,
+        "distalError": 4.903512523593522e-8,
         "wrapSamples": 944,
-        "minCorticalGap": 0.0009999848146092297
+        "minCorticalGap": 0.000999987363992219
       },
       {
         "name": "Vastus lateralis muscle.r",
@@ -309,9 +353,9 @@
         "attachmentSamples": 0,
         "attachmentError": 0,
         "distalSamples": 63,
-        "distalError": 8.337915976011263e-8,
+        "distalError": 4.3273258904256094e-8,
         "wrapSamples": 837,
-        "minCorticalGap": 0.0014999507361344588
+        "minCorticalGap": 0.0014999481856474706
       },
       {
         "name": "Vastus intermedius muscle.r",
@@ -323,21 +367,21 @@
         "attachmentSamples": 0,
         "attachmentError": 0,
         "distalSamples": 91,
-        "distalError": 7.37272873877247e-8,
+        "distalError": 4.0236238502079296e-8,
         "wrapSamples": 935,
-        "minCorticalGap": 0.000999988031131438
+        "minCorticalGap": 0.0009999879483367571
       },
       {
         "name": "Long head of biceps femoris.r",
         "family": "biceps",
         "bodySamples": 0,
         "bodyError": 0,
-        "thighSamples": 3338,
-        "thighError": 1.6297312483857748e-8,
+        "thighSamples": 0,
+        "thighError": 0,
         "attachmentSamples": 57,
-        "attachmentError": 5.565992839248283e-8,
-        "distalSamples": 259,
-        "distalError": 6.271363965544956e-8,
+        "attachmentError": 3.443980216945966e-8,
+        "distalSamples": 3,
+        "distalError": 3.493372587560458e-8,
         "wrapSamples": 0,
         "minCorticalGap": null
       },
@@ -346,12 +390,12 @@
         "family": "biceps",
         "bodySamples": 0,
         "bodyError": 0,
-        "thighSamples": 1048,
-        "thighError": 2.035749617267369e-8,
+        "thighSamples": 0,
+        "thighError": 0,
         "attachmentSamples": 53,
-        "attachmentError": 5.42790227034303e-8,
-        "distalSamples": 119,
-        "distalError": 5.42790227034303e-8,
+        "attachmentError": 3.679893429325678e-8,
+        "distalSamples": 3,
+        "distalError": 1.718704601683747e-8,
         "wrapSamples": 0,
         "minCorticalGap": null
       },
@@ -363,9 +407,9 @@
         "thighSamples": 0,
         "thighError": 0,
         "attachmentSamples": 41,
-        "attachmentError": 1.0122715570025205e-7,
-        "distalSamples": 390,
-        "distalError": 1.1909698299788442e-7,
+        "attachmentError": 6.098889068132846e-8,
+        "distalSamples": 2,
+        "distalError": 5.7453443213227816e-8,
         "wrapSamples": 0,
         "minCorticalGap": null
       },
@@ -377,9 +421,9 @@
         "thighSamples": 0,
         "thighError": 0,
         "attachmentSamples": 41,
-        "attachmentError": 9.152127669132734e-8,
-        "distalSamples": 355,
-        "distalError": 9.152127669132734e-8,
+        "attachmentError": 4.67456502482815e-8,
+        "distalSamples": 4,
+        "distalError": 4.362264205214154e-8,
         "wrapSamples": 0,
         "minCorticalGap": null
       },
@@ -392,8 +436,8 @@
         "thighError": 0,
         "attachmentSamples": 0,
         "attachmentError": 0,
-        "distalSamples": 377,
-        "distalError": 1.1513790921587823e-7,
+        "distalSamples": 2,
+        "distalError": 6.107849748171993e-8,
         "wrapSamples": 0,
         "minCorticalGap": null
       },
@@ -405,9 +449,9 @@
         "thighSamples": 0,
         "thighError": 0,
         "attachmentSamples": 7,
-        "attachmentError": 7.751945970671215e-8,
-        "distalSamples": 281,
-        "distalError": 1.2957620166716456e-7,
+        "attachmentError": 3.530282871075963e-8,
+        "distalSamples": 1,
+        "distalError": 5.955606156349519e-8,
         "wrapSamples": 0,
         "minCorticalGap": null
       },
@@ -421,7 +465,7 @@
         "attachmentSamples": 0,
         "attachmentError": 0,
         "distalSamples": 486,
-        "distalError": 1.2867477753494434e-7,
+        "distalError": 7.496342509487572e-8,
         "wrapSamples": 0,
         "minCorticalGap": null
       },
@@ -429,11 +473,11 @@
         "name": "Medial head of gastrocnemius.r",
         "family": "calf",
         "bodySamples": 1956,
-        "bodyError": 2.604650364366508e-7,
+        "bodyError": 1.4082187669904135e-7,
         "thighSamples": 0,
         "thighError": 0,
         "attachmentSamples": 333,
-        "attachmentError": 0.0000024603739731490982,
+        "attachmentError": 0.000003440459693250133,
         "distalSamples": 0,
         "distalError": 0,
         "wrapSamples": 0,
@@ -443,11 +487,11 @@
         "name": "Lateral head of gastrocnemius.r",
         "family": "calf",
         "bodySamples": 1626,
-        "bodyError": 2.439919617611439e-7,
+        "bodyError": 1.2813047751816177e-7,
         "thighSamples": 0,
         "thighError": 0,
         "attachmentSamples": 94,
-        "attachmentError": 0.0000011896151437007512,
+        "attachmentError": 0.0000018916538072745927,
         "distalSamples": 0,
         "distalError": 0,
         "wrapSamples": 0,
@@ -462,40 +506,62 @@
     "blend": 0.9999999999999999,
     "courses": [
       {
+        "name": "Long head of biceps femoris.r",
+        "length": 0.513105069865374,
+        "freeLength": 0.4719967709830828,
+        "freeMaxTurnDegrees": 5.333173643324198,
+        "arcChordRatio": 1.0601187038439919,
+        "freeArcChordRatio": 1.0258843577345873,
+        "maxTurnDegrees": 6.155608746260307
+      },
+      {
+        "name": "Short head of biceps femoris.r",
+        "length": 0.2945249596308701,
+        "freeLength": 0.2643818901939673,
+        "freeMaxTurnDegrees": 5.0562085624291,
+        "arcChordRatio": 1.0429317613041122,
+        "freeArcChordRatio": 1.0251022350779466,
+        "maxTurnDegrees": 18.098707390111716
+      },
+      {
         "name": "Semitendinosus muscle.r",
-        "length": 0.5333407181823541,
-        "freeLength": 0.4424608479856937,
-        "arcChordRatio": 1.0383332015550168,
-        "freeArcChordRatio": 1.0037376507016642,
-        "maxTurnDegrees": 7.12346592183102
+        "length": 0.5453607104553204,
+        "freeLength": 0.45147258714730565,
+        "freeMaxTurnDegrees": 6.151714613504624,
+        "arcChordRatio": 1.0617344431622637,
+        "freeArcChordRatio": 1.0295086724334979,
+        "maxTurnDegrees": 6.470169296466731
       },
       {
         "name": "Semimembranosus muscle.r",
-        "length": 0.48636308135773654,
-        "freeLength": 0.4315230253226627,
-        "arcChordRatio": 1.0327088242400124,
-        "freeArcChordRatio": 1.0043328220168073,
-        "maxTurnDegrees": 8.61926478283685
+        "length": 0.49443789584866277,
+        "freeLength": 0.43716214906792716,
+        "freeMaxTurnDegrees": 4.762246899388874,
+        "arcChordRatio": 1.049854417794343,
+        "freeArcChordRatio": 1.0214402636740076,
+        "maxTurnDegrees": 8.619264782837403
       },
       {
         "name": "Sartorius muscle.r",
-        "length": 0.4926084082770382,
-        "freeLength": 0.4011947866289891,
-        "arcChordRatio": 1.0613608204773417,
-        "freeArcChordRatio": 1.0195756481597635,
-        "maxTurnDegrees": 14.568885049393877
+        "length": 0.5094460429261147,
+        "freeLength": 0.40398369872985934,
+        "freeMaxTurnDegrees": 5.432776768297852,
+        "arcChordRatio": 1.0976388240039898,
+        "freeArcChordRatio": 1.0540378023584471,
+        "maxTurnDegrees": 5.432776768297852
       },
       {
         "name": "Gracilis muscle.r",
-        "length": 0.46560163224590323,
-        "freeLength": 0.3699018404484248,
-        "arcChordRatio": 1.0620173133481534,
-        "freeArcChordRatio": 1.00464590267389,
-        "maxTurnDegrees": 8.67647651271222
+        "length": 0.4823492334872029,
+        "freeLength": 0.3774986053929104,
+        "freeMaxTurnDegrees": 7.325690037890337,
+        "arcChordRatio": 1.1002180363786211,
+        "freeArcChordRatio": 1.0433321314979878,
+        "maxTurnDegrees": 7.325690037890337
       }
     ],
     "lateralLayer": {
-      "samples": 6,
+      "samples": 9,
       "minGap": 0.003999999324192399
     },
     "entries": [
@@ -509,9 +575,9 @@
         "attachmentSamples": 0,
         "attachmentError": 0,
         "distalSamples": 33,
-        "distalError": 1.5290568451647777e-8,
+        "distalError": 2.1961308463009083e-8,
         "wrapSamples": 1052,
-        "minCorticalGap": 0.0027783076222425186
+        "minCorticalGap": 0.0027782990712449766
       },
       {
         "name": "Vastus medialis muscle.r",
@@ -523,9 +589,9 @@
         "attachmentSamples": 0,
         "attachmentError": 0,
         "distalSamples": 39,
-        "distalError": 1.6319185773086562e-8,
+        "distalError": 2.4855057004920065e-8,
         "wrapSamples": 946,
-        "minCorticalGap": 0.000999973720083952
+        "minCorticalGap": 0.0009999807229477166
       },
       {
         "name": "Vastus lateralis muscle.r",
@@ -537,9 +603,9 @@
         "attachmentSamples": 0,
         "attachmentError": 0,
         "distalSamples": 63,
-        "distalError": 1.5183433812640558e-8,
+        "distalError": 2.597056380609584e-8,
         "wrapSamples": 845,
-        "minCorticalGap": 0.001499936256458334
+        "minCorticalGap": 0.0014999445386626453
       },
       {
         "name": "Vastus intermedius muscle.r",
@@ -551,21 +617,21 @@
         "attachmentSamples": 0,
         "attachmentError": 0,
         "distalSamples": 91,
-        "distalError": 1.5173364516429228e-8,
+        "distalError": 2.2872860865082393e-8,
         "wrapSamples": 930,
-        "minCorticalGap": 0.0009999960103293168
+        "minCorticalGap": 0.0009999930861061268
       },
       {
         "name": "Long head of biceps femoris.r",
         "family": "biceps",
         "bodySamples": 0,
         "bodyError": 0,
-        "thighSamples": 3338,
-        "thighError": 1.6451774343315025e-8,
+        "thighSamples": 0,
+        "thighError": 0,
         "attachmentSamples": 57,
-        "attachmentError": 1.516988642118192e-8,
-        "distalSamples": 259,
-        "distalError": 1.6218092837043087e-8,
+        "attachmentError": 2.240241933065394e-8,
+        "distalSamples": 3,
+        "distalError": 1.0957181291768173e-8,
         "wrapSamples": 0,
         "minCorticalGap": null
       },
@@ -574,12 +640,12 @@
         "family": "biceps",
         "bodySamples": 0,
         "bodyError": 0,
-        "thighSamples": 1048,
-        "thighError": 2.0834583498409754e-8,
+        "thighSamples": 0,
+        "thighError": 0,
         "attachmentSamples": 53,
-        "attachmentError": 1.7523378888749114e-8,
-        "distalSamples": 119,
-        "distalError": 1.836384485173678e-8,
+        "attachmentError": 2.485607459560127e-8,
+        "distalSamples": 3,
+        "distalError": 1.8820357187721176e-8,
         "wrapSamples": 0,
         "minCorticalGap": null
       },
@@ -591,9 +657,9 @@
         "thighSamples": 0,
         "thighError": 0,
         "attachmentSamples": 41,
-        "attachmentError": 2.7840960497911955e-8,
-        "distalSamples": 390,
-        "distalError": 2.9786139054197146e-8,
+        "attachmentError": 2.953723923544398e-8,
+        "distalSamples": 2,
+        "distalError": 2.027757166213285e-8,
         "wrapSamples": 0,
         "minCorticalGap": null
       },
@@ -605,9 +671,9 @@
         "thighSamples": 0,
         "thighError": 0,
         "attachmentSamples": 41,
-        "attachmentError": 1.50964142496868e-8,
-        "distalSamples": 355,
-        "distalError": 1.6337996907512912e-8,
+        "attachmentError": 2.065096600385711e-8,
+        "distalSamples": 4,
+        "distalError": 1.9715206476320346e-8,
         "wrapSamples": 0,
         "minCorticalGap": null
       },
@@ -620,8 +686,8 @@
         "thighError": 0,
         "attachmentSamples": 0,
         "attachmentError": 0,
-        "distalSamples": 377,
-        "distalError": 1.5760143930093808e-8,
+        "distalSamples": 2,
+        "distalError": 2.1388863991050783e-8,
         "wrapSamples": 0,
         "minCorticalGap": null
       },
@@ -633,9 +699,9 @@
         "thighSamples": 0,
         "thighError": 0,
         "attachmentSamples": 7,
-        "attachmentError": 1.4133892761229262e-8,
-        "distalSamples": 281,
-        "distalError": 1.5926294174443525e-8,
+        "attachmentError": 1.4682819128380368e-8,
+        "distalSamples": 1,
+        "distalError": 7.662622967180047e-9,
         "wrapSamples": 0,
         "minCorticalGap": null
       },
@@ -649,7 +715,7 @@
         "attachmentSamples": 0,
         "attachmentError": 0,
         "distalSamples": 486,
-        "distalError": 3.280012826416862e-8,
+        "distalError": 4.6352914797960475e-8,
         "wrapSamples": 0,
         "minCorticalGap": null
       },
@@ -657,11 +723,11 @@
         "name": "Medial head of gastrocnemius.r",
         "family": "calf",
         "bodySamples": 1956,
-        "bodyError": 3.2761358670836495e-8,
+        "bodyError": 6.222479994080662e-8,
         "thighSamples": 0,
         "thighError": 0,
         "attachmentSamples": 333,
-        "attachmentError": 0.000003999884050613942,
+        "attachmentError": 0.0000040114526090389635,
         "distalSamples": 0,
         "distalError": 0,
         "wrapSamples": 0,
@@ -671,11 +737,11 @@
         "name": "Lateral head of gastrocnemius.r",
         "family": "calf",
         "bodySamples": 1626,
-        "bodyError": 3.224189260957007e-8,
+        "bodyError": 6.240289125525303e-8,
         "thighSamples": 0,
         "thighError": 0,
         "attachmentSamples": 94,
-        "attachmentError": 0.0000020700679259477006,
+        "attachmentError": 0.0000018116931137107846,
         "distalSamples": 0,
         "distalError": 0,
         "wrapSamples": 0,
@@ -690,36 +756,58 @@
     "blend": 0.9999999999999999,
     "courses": [
       {
+        "name": "Long head of biceps femoris.r",
+        "length": 0.5141931864037352,
+        "freeLength": 0.47307410661265525,
+        "freeMaxTurnDegrees": 10.36880824770972,
+        "arcChordRatio": 1.1290944687095554,
+        "freeArcChordRatio": 1.049411403151348,
+        "maxTurnDegrees": 10.36880824770972
+      },
+      {
+        "name": "Short head of biceps femoris.r",
+        "length": 0.2891552768713647,
+        "freeLength": 0.25907564605722666,
+        "freeMaxTurnDegrees": 9.776386950269119,
+        "arcChordRatio": 1.1074412841651184,
+        "freeArcChordRatio": 1.0487188862796828,
+        "maxTurnDegrees": 18.098707390109215
+      },
+      {
         "name": "Semitendinosus muscle.r",
-        "length": 0.5263581123213221,
-        "freeLength": 0.43562908870245304,
-        "arcChordRatio": 1.1216364419876705,
-        "freeArcChordRatio": 1.0098937094466245,
-        "maxTurnDegrees": 12.161810081816592
+        "length": 0.5479006607196099,
+        "freeLength": 0.45399262687114433,
+        "freeMaxTurnDegrees": 10.58983795080968,
+        "arcChordRatio": 1.1675423033832784,
+        "freeArcChordRatio": 1.0550195769147432,
+        "maxTurnDegrees": 10.58983795080968
       },
       {
         "name": "Semimembranosus muscle.r",
-        "length": 0.48127267370416044,
-        "freeLength": 0.42657196587079454,
-        "arcChordRatio": 1.0900179663657021,
-        "freeArcChordRatio": 1.0104758508324345,
-        "maxTurnDegrees": 11.633620881897608
+        "length": 0.5046568135577745,
+        "freeLength": 0.44737182659904895,
+        "freeMaxTurnDegrees": 10.708241886246205,
+        "arcChordRatio": 1.1429799217435037,
+        "freeArcChordRatio": 1.0610694964807397,
+        "maxTurnDegrees": 10.708241886246205
       },
       {
         "name": "Sartorius muscle.r",
-        "length": 0.49602201188030137,
-        "freeLength": 0.40477193367729675,
-        "arcChordRatio": 1.1398635896003682,
-        "freeArcChordRatio": 1.0311135941002385,
-        "maxTurnDegrees": 16.870576920139467
+        "length": 0.5206879757062339,
+        "freeLength": 0.4150240529497457,
+        "freeMaxTurnDegrees": 8.377288465620087,
+        "arcChordRatio": 1.1965462507819074,
+        "freeArcChordRatio": 1.0715759055360683,
+        "maxTurnDegrees": 8.377288465620087
       },
       {
         "name": "Gracilis muscle.r",
-        "length": 0.46144409543180964,
-        "freeLength": 0.3658044644284218,
-        "arcChordRatio": 1.1673375583402006,
-        "freeArcChordRatio": 1.010748438887789,
-        "maxTurnDegrees": 12.933392817974978
+        "length": 0.4885346875023993,
+        "freeLength": 0.3836169750770257,
+        "freeMaxTurnDegrees": 11.889715909881653,
+        "arcChordRatio": 1.235869983929175,
+        "freeArcChordRatio": 1.0672614712818893,
+        "maxTurnDegrees": 11.889715909881653
       }
     ],
     "lateralLayer": {
@@ -737,9 +825,9 @@
         "attachmentSamples": 0,
         "attachmentError": 0,
         "distalSamples": 33,
-        "distalError": 5.1473973364553004e-8,
+        "distalError": 1.4725320745199136e-8,
         "wrapSamples": 1065,
-        "minCorticalGap": 0.002988342944379302
+        "minCorticalGap": 0.0029883415196425844
       },
       {
         "name": "Vastus medialis muscle.r",
@@ -751,9 +839,9 @@
         "attachmentSamples": 0,
         "attachmentError": 0,
         "distalSamples": 39,
-        "distalError": 4.4721438432601684e-8,
+        "distalError": 1.60264055738084e-8,
         "wrapSamples": 995,
-        "minCorticalGap": 0.0009999789920589197
+        "minCorticalGap": 0.000999974261036346
       },
       {
         "name": "Vastus lateralis muscle.r",
@@ -765,9 +853,9 @@
         "attachmentSamples": 0,
         "attachmentError": 0,
         "distalSamples": 63,
-        "distalError": 4.904881216593723e-8,
+        "distalError": 1.6007236964520885e-8,
         "wrapSamples": 843,
-        "minCorticalGap": 0.0014999607511459595
+        "minCorticalGap": 0.0014999631830598104
       },
       {
         "name": "Vastus intermedius muscle.r",
@@ -779,21 +867,21 @@
         "attachmentSamples": 0,
         "attachmentError": 0,
         "distalSamples": 91,
-        "distalError": 4.430690383314738e-8,
+        "distalError": 1.607256410944348e-8,
         "wrapSamples": 927,
-        "minCorticalGap": 0.000999993645093608
+        "minCorticalGap": 0.0009999916591304434
       },
       {
         "name": "Long head of biceps femoris.r",
         "family": "biceps",
         "bodySamples": 0,
         "bodyError": 0,
-        "thighSamples": 3338,
-        "thighError": 1.61639746778528e-8,
+        "thighSamples": 0,
+        "thighError": 0,
         "attachmentSamples": 57,
-        "attachmentError": 3.848430647969057e-8,
-        "distalSamples": 259,
-        "distalError": 3.873336972428855e-8,
+        "attachmentError": 1.6342094483702564e-8,
+        "distalSamples": 3,
+        "distalError": 1.248182096359374e-8,
         "wrapSamples": 0,
         "minCorticalGap": null
       },
@@ -802,12 +890,12 @@
         "family": "biceps",
         "bodySamples": 0,
         "bodyError": 0,
-        "thighSamples": 1048,
-        "thighError": 2.040835665688533e-8,
+        "thighSamples": 0,
+        "thighError": 0,
         "attachmentSamples": 53,
-        "attachmentError": 3.6911049631810714e-8,
-        "distalSamples": 119,
-        "distalError": 3.6911049631810714e-8,
+        "attachmentError": 1.92841766242519e-8,
+        "distalSamples": 3,
+        "distalError": 1.3712450996039226e-8,
         "wrapSamples": 0,
         "minCorticalGap": null
       },
@@ -819,9 +907,9 @@
         "thighSamples": 0,
         "thighError": 0,
         "attachmentSamples": 41,
-        "attachmentError": 4.9080283605927356e-8,
-        "distalSamples": 390,
-        "distalError": 5.739357292026768e-8,
+        "attachmentError": 1.5250273051103528e-8,
+        "distalSamples": 2,
+        "distalError": 1.159780417699249e-8,
         "wrapSamples": 0,
         "minCorticalGap": null
       },
@@ -833,9 +921,9 @@
         "thighSamples": 0,
         "thighError": 0,
         "attachmentSamples": 41,
-        "attachmentError": 4.0807669862957876e-8,
-        "distalSamples": 355,
-        "distalError": 4.211531804976809e-8,
+        "attachmentError": 1.589498115090602e-8,
+        "distalSamples": 4,
+        "distalError": 1.4727515652716206e-8,
         "wrapSamples": 0,
         "minCorticalGap": null
       },
@@ -848,8 +936,8 @@
         "thighError": 0,
         "attachmentSamples": 0,
         "attachmentError": 0,
-        "distalSamples": 377,
-        "distalError": 5.941593955888964e-8,
+        "distalSamples": 2,
+        "distalError": 1.4820918092595898e-8,
         "wrapSamples": 0,
         "minCorticalGap": null
       },
@@ -861,9 +949,9 @@
         "thighSamples": 0,
         "thighError": 0,
         "attachmentSamples": 7,
-        "attachmentError": 3.2382465993650986e-8,
-        "distalSamples": 281,
-        "distalError": 6.19760100228639e-8,
+        "attachmentError": 1.0667869199491638e-8,
+        "distalSamples": 1,
+        "distalError": 1.1824308111977475e-8,
         "wrapSamples": 0,
         "minCorticalGap": null
       },
@@ -877,7 +965,7 @@
         "attachmentSamples": 0,
         "attachmentError": 0,
         "distalSamples": 486,
-        "distalError": 6.097809475922601e-8,
+        "distalError": 2.082413858286983e-8,
         "wrapSamples": 0,
         "minCorticalGap": null
       },
@@ -885,11 +973,11 @@
         "name": "Medial head of gastrocnemius.r",
         "family": "calf",
         "bodySamples": 1956,
-        "bodyError": 1.2318265931632412e-7,
+        "bodyError": 2.061233075368898e-8,
         "thighSamples": 0,
         "thighError": 0,
         "attachmentSamples": 333,
-        "attachmentError": 0.0000058797353872513676,
+        "attachmentError": 0.000005081354632646108,
         "distalSamples": 0,
         "distalError": 0,
         "wrapSamples": 0,
@@ -899,11 +987,11 @@
         "name": "Lateral head of gastrocnemius.r",
         "family": "calf",
         "bodySamples": 1626,
-        "bodyError": 1.2129029553490666e-7,
+        "bodyError": 2.0821733179563845e-8,
         "thighSamples": 0,
         "thighError": 0,
         "attachmentSamples": 94,
-        "attachmentError": 0.0000030518385905766238,
+        "attachmentError": 0.0000020522905453162763,
         "distalSamples": 0,
         "distalError": 0,
         "wrapSamples": 0,
@@ -918,36 +1006,58 @@
     "blend": 0.9999999999999999,
     "courses": [
       {
+        "name": "Long head of biceps femoris.r",
+        "length": 0.5122474859272691,
+        "freeLength": 0.4711509782567583,
+        "freeMaxTurnDegrees": 21.759951854393652,
+        "arcChordRatio": 1.202845069996956,
+        "freeArcChordRatio": 1.0643097965798685,
+        "maxTurnDegrees": 21.759951854393652
+      },
+      {
+        "name": "Short head of biceps femoris.r",
+        "length": 0.2811510840417574,
+        "freeLength": 0.2511627180481848,
+        "freeMaxTurnDegrees": 20.71906781306797,
+        "arcChordRatio": 1.1953804474238383,
+        "freeArcChordRatio": 1.0649262990311674,
+        "maxTurnDegrees": 20.71906781306797
+      },
+      {
         "name": "Semitendinosus muscle.r",
-        "length": 0.5246624777315352,
-        "freeLength": 0.4340925772392578,
-        "arcChordRatio": 1.2543259850401112,
-        "freeArcChordRatio": 1.014824377001062,
-        "maxTurnDegrees": 16.767845004275806
+        "length": 0.5549639309954667,
+        "freeLength": 0.46099161376979353,
+        "freeMaxTurnDegrees": 19.724252686333326,
+        "arcChordRatio": 1.326768597312605,
+        "freeArcChordRatio": 1.0759271261902628,
+        "maxTurnDegrees": 19.724252686333326
       },
       {
         "name": "Semimembranosus muscle.r",
-        "length": 0.47765111313929,
-        "freeLength": 0.42310518464469593,
-        "arcChordRatio": 1.1703902019988097,
-        "freeArcChordRatio": 1.0152083452292748,
-        "maxTurnDegrees": 15.526656387435484
+        "length": 0.5108413984807402,
+        "freeLength": 0.4535507059171408,
+        "freeMaxTurnDegrees": 18.978978911657876,
+        "arcChordRatio": 1.2517164988488727,
+        "freeArcChordRatio": 1.085927984447357,
+        "maxTurnDegrees": 18.978978911657876
       },
       {
         "name": "Sartorius muscle.r",
-        "length": 0.49387118884849057,
-        "freeLength": 0.40284670784545057,
-        "arcChordRatio": 1.2660948707117963,
-        "freeArcChordRatio": 1.0412165253017696,
-        "maxTurnDegrees": 16.797691072922355
+        "length": 0.5273152242843251,
+        "freeLength": 0.42153373187870924,
+        "freeMaxTurnDegrees": 13.892564261423994,
+        "arcChordRatio": 1.3518324998564542,
+        "freeArcChordRatio": 1.0854260412975918,
+        "maxTurnDegrees": 13.892564261423994
       },
       {
         "name": "Gracilis muscle.r",
-        "length": 0.45593176813570163,
-        "freeLength": 0.3603601748237524,
-        "arcChordRatio": 1.337652411030215,
-        "freeArcChordRatio": 1.0156643044730975,
-        "maxTurnDegrees": 16.612708497560654
+        "length": 0.4929583511504309,
+        "freeLength": 0.38799256866061654,
+        "freeMaxTurnDegrees": 18.52568168940813,
+        "arcChordRatio": 1.4462842914626366,
+        "freeArcChordRatio": 1.0865401015218266,
+        "maxTurnDegrees": 18.52568168940813
       }
     ],
     "lateralLayer": {
@@ -965,9 +1075,9 @@
         "attachmentSamples": 0,
         "attachmentError": 0,
         "distalSamples": 33,
-        "distalError": 2.5647296982610804e-8,
+        "distalError": 3.474691646242146e-8,
         "wrapSamples": 744,
-        "minCorticalGap": 0.0037792137151015336
+        "minCorticalGap": 0.00377921001966626
       },
       {
         "name": "Vastus medialis muscle.r",
@@ -979,9 +1089,9 @@
         "attachmentSamples": 0,
         "attachmentError": 0,
         "distalSamples": 39,
-        "distalError": 2.6234618152390555e-8,
+        "distalError": 3.2397879225273496e-8,
         "wrapSamples": 919,
-        "minCorticalGap": 0.0009999733048784015
+        "minCorticalGap": 0.000999985434528769
       },
       {
         "name": "Vastus lateralis muscle.r",
@@ -993,9 +1103,9 @@
         "attachmentSamples": 0,
         "attachmentError": 0,
         "distalSamples": 63,
-        "distalError": 2.718134187061997e-8,
+        "distalError": 3.3327635330740464e-8,
         "wrapSamples": 779,
-        "minCorticalGap": 0.0009999889922576895
+        "minCorticalGap": 0.000999989292068286
       },
       {
         "name": "Vastus intermedius muscle.r",
@@ -1007,21 +1117,21 @@
         "attachmentSamples": 0,
         "attachmentError": 0,
         "distalSamples": 91,
-        "distalError": 2.651748770272561e-8,
+        "distalError": 3.025193141024201e-8,
         "wrapSamples": 808,
-        "minCorticalGap": 0.0010000104458253792
+        "minCorticalGap": 0.001000009276472421
       },
       {
         "name": "Long head of biceps femoris.r",
         "family": "biceps",
         "bodySamples": 0,
         "bodyError": 0,
-        "thighSamples": 3338,
-        "thighError": 1.64489752120587e-8,
+        "thighSamples": 0,
+        "thighError": 0,
         "attachmentSamples": 57,
-        "attachmentError": 2.351934123321338e-8,
-        "distalSamples": 259,
-        "distalError": 2.3767583975638176e-8,
+        "attachmentError": 2.788845555537624e-8,
+        "distalSamples": 3,
+        "distalError": 1.5460870569514653e-8,
         "wrapSamples": 0,
         "minCorticalGap": null
       },
@@ -1030,12 +1140,12 @@
         "family": "biceps",
         "bodySamples": 0,
         "bodyError": 0,
-        "thighSamples": 1048,
-        "thighError": 2.0360329571660806e-8,
+        "thighSamples": 0,
+        "thighError": 0,
         "attachmentSamples": 53,
-        "attachmentError": 2.6409704994431375e-8,
-        "distalSamples": 119,
-        "distalError": 2.696521475764969e-8,
+        "attachmentError": 2.913637594015323e-8,
+        "distalSamples": 3,
+        "distalError": 2.2252932560848118e-8,
         "wrapSamples": 0,
         "minCorticalGap": null
       },
@@ -1047,9 +1157,9 @@
         "thighSamples": 0,
         "thighError": 0,
         "attachmentSamples": 41,
-        "attachmentError": 2.831420404822243e-8,
-        "distalSamples": 390,
-        "distalError": 3.027426962117002e-8,
+        "attachmentError": 3.0366202983794126e-8,
+        "distalSamples": 2,
+        "distalError": 3.847654654531445e-8,
         "wrapSamples": 0,
         "minCorticalGap": null
       },
@@ -1061,9 +1171,9 @@
         "thighSamples": 0,
         "thighError": 0,
         "attachmentSamples": 41,
-        "attachmentError": 2.434697680899153e-8,
-        "distalSamples": 355,
-        "distalError": 2.5109452318622006e-8,
+        "attachmentError": 3.079547913866164e-8,
+        "distalSamples": 4,
+        "distalError": 1.414408120930359e-8,
         "wrapSamples": 0,
         "minCorticalGap": null
       },
@@ -1076,8 +1186,8 @@
         "thighError": 0,
         "attachmentSamples": 0,
         "attachmentError": 0,
-        "distalSamples": 377,
-        "distalError": 3.231568414159848e-8,
+        "distalSamples": 2,
+        "distalError": 2.7016604785611818e-8,
         "wrapSamples": 0,
         "minCorticalGap": null
       },
@@ -1089,9 +1199,9 @@
         "thighSamples": 0,
         "thighError": 0,
         "attachmentSamples": 7,
-        "attachmentError": 1.9144033245925365e-8,
-        "distalSamples": 281,
-        "distalError": 3.150068580959295e-8,
+        "attachmentError": 2.414108503390004e-8,
+        "distalSamples": 1,
+        "distalError": 3.5287476653379904e-8,
         "wrapSamples": 0,
         "minCorticalGap": null
       },
@@ -1105,7 +1215,7 @@
         "attachmentSamples": 0,
         "attachmentError": 0,
         "distalSamples": 486,
-        "distalError": 3.532481594614532e-8,
+        "distalError": 4.2083456859297296e-8,
         "wrapSamples": 0,
         "minCorticalGap": null
       },
@@ -1113,11 +1223,11 @@
         "name": "Medial head of gastrocnemius.r",
         "family": "calf",
         "bodySamples": 1956,
-        "bodyError": 5.8195791335236036e-8,
+        "bodyError": 7.332769358937183e-8,
         "thighSamples": 0,
         "thighError": 0,
         "attachmentSamples": 333,
-        "attachmentError": 0.00000823783393274981,
+        "attachmentError": 0.00000596022567796006,
         "distalSamples": 0,
         "distalError": 0,
         "wrapSamples": 0,
@@ -1127,11 +1237,11 @@
         "name": "Lateral head of gastrocnemius.r",
         "family": "calf",
         "bodySamples": 1626,
-        "bodyError": 6.038895090163947e-8,
+        "bodyError": 7.276447311385252e-8,
         "thighSamples": 0,
         "thighError": 0,
         "attachmentSamples": 94,
-        "attachmentError": 0.000003925380416461184,
+        "attachmentError": 0.0000026309042921194604,
         "distalSamples": 0,
         "distalError": 0,
         "wrapSamples": 0,
@@ -1147,40 +1257,62 @@
     "blend": 0.9999999999999999,
     "courses": [
       {
+        "name": "Long head of biceps femoris.r",
+        "length": 0.5270129161663062,
+        "freeLength": 0.48574090940267695,
+        "freeMaxTurnDegrees": 10.165534123565445,
+        "arcChordRatio": 1.1258578164333752,
+        "freeArcChordRatio": 1.0487371734597097,
+        "maxTurnDegrees": 10.165534123565445
+      },
+      {
+        "name": "Short head of biceps femoris.r",
+        "length": 0.3015940573541944,
+        "freeLength": 0.27137245365339124,
+        "freeMaxTurnDegrees": 9.688437101766727,
+        "arcChordRatio": 1.1053903856437635,
+        "freeArcChordRatio": 1.0484129555417905,
+        "maxTurnDegrees": 18.098707390109052
+      },
+      {
         "name": "Semitendinosus muscle.r",
-        "length": 0.5191548476405968,
-        "freeLength": 0.4284450545209711,
-        "arcChordRatio": 1.1155155016123273,
-        "freeArcChordRatio": 1.0098880412729485,
-        "maxTurnDegrees": 11.875733140621824
+        "length": 0.5391291889696946,
+        "freeLength": 0.44530306031301836,
+        "freeMaxTurnDegrees": 11.149324107242455,
+        "arcChordRatio": 1.1584344744086965,
+        "freeArcChordRatio": 1.0522273351733664,
+        "maxTurnDegrees": 11.149324107242455
       },
       {
         "name": "Semimembranosus muscle.r",
-        "length": 0.4734105525279384,
-        "freeLength": 0.41873251586455074,
-        "arcChordRatio": 1.0851313385780093,
-        "freeArcChordRatio": 1.010624033512379,
-        "maxTurnDegrees": 11.28319504118377
+        "length": 0.49564415233208325,
+        "freeLength": 0.43836749637959027,
+        "freeMaxTurnDegrees": 11.373122942064388,
+        "arcChordRatio": 1.1360941269328724,
+        "freeArcChordRatio": 1.0593747781644902,
+        "maxTurnDegrees": 11.373122942064388
       },
       {
         "name": "Sartorius muscle.r",
-        "length": 0.48380907054903705,
-        "freeLength": 0.3926519507187039,
-        "arcChordRatio": 1.1179536792522042,
-        "freeArcChordRatio": 1.022107681524843,
-        "maxTurnDegrees": 14.304524653519982
+        "length": 0.510070000930914,
+        "freeLength": 0.40459821713724964,
+        "freeMaxTurnDegrees": 7.945044804690438,
+        "arcChordRatio": 1.1786355310792425,
+        "freeArcChordRatio": 1.069947679339544,
+        "maxTurnDegrees": 7.945044804690438
       },
       {
         "name": "Gracilis muscle.r",
-        "length": 0.4509786088375105,
-        "freeLength": 0.3553488062042163,
-        "arcChordRatio": 1.1538630198427655,
-        "freeArcChordRatio": 1.0101049650841802,
-        "maxTurnDegrees": 12.34750393632798
+        "length": 0.4761570819728322,
+        "freeLength": 0.371384138244435,
+        "freeMaxTurnDegrees": 11.962606089420825,
+        "arcChordRatio": 1.2182838270918404,
+        "freeArcChordRatio": 1.064286726150905,
+        "maxTurnDegrees": 11.962606089420825
       }
     ],
     "lateralLayer": {
-      "samples": 12,
+      "samples": 17,
       "minGap": 0.003999999324192399
     },
     "entries": [
@@ -1194,9 +1326,9 @@
         "attachmentSamples": 0,
         "attachmentError": 0,
         "distalSamples": 33,
-        "distalError": 1.4841787780828018e-8,
+        "distalError": 6.009405757684299e-8,
         "wrapSamples": 1067,
-        "minCorticalGap": 0.0029883301155169475
+        "minCorticalGap": 0.002988335105208958
       },
       {
         "name": "Vastus medialis muscle.r",
@@ -1208,9 +1340,9 @@
         "attachmentSamples": 0,
         "attachmentError": 0,
         "distalSamples": 39,
-        "distalError": 1.5663604795528692e-8,
+        "distalError": 5.1670300475367584e-8,
         "wrapSamples": 995,
-        "minCorticalGap": 0.0009999778539102472
+        "minCorticalGap": 0.0009999733144107625
       },
       {
         "name": "Vastus lateralis muscle.r",
@@ -1222,9 +1354,9 @@
         "attachmentSamples": 0,
         "attachmentError": 0,
         "distalSamples": 63,
-        "distalError": 1.6328018471927608e-8,
+        "distalError": 5.826784750282819e-8,
         "wrapSamples": 843,
-        "minCorticalGap": 0.00149995508589576
+        "minCorticalGap": 0.0014999796501700344
       },
       {
         "name": "Vastus intermedius muscle.r",
@@ -1236,21 +1368,21 @@
         "attachmentSamples": 0,
         "attachmentError": 0,
         "distalSamples": 91,
-        "distalError": 1.630263245538351e-8,
+        "distalError": 5.1903555349390344e-8,
         "wrapSamples": 928,
-        "minCorticalGap": 0.0010000043744156362
+        "minCorticalGap": 0.0010000221246833363
       },
       {
         "name": "Long head of biceps femoris.r",
         "family": "biceps",
         "bodySamples": 0,
         "bodyError": 0,
-        "thighSamples": 3338,
-        "thighError": 1.6546245053830294e-8,
+        "thighSamples": 0,
+        "thighError": 0,
         "attachmentSamples": 57,
-        "attachmentError": 1.5333762283924167e-8,
-        "distalSamples": 259,
-        "distalError": 1.615629594229578e-8,
+        "attachmentError": 5.831046939576387e-8,
+        "distalSamples": 3,
+        "distalError": 4.031754097810048e-8,
         "wrapSamples": 0,
         "minCorticalGap": null
       },
@@ -1259,12 +1391,12 @@
         "family": "biceps",
         "bodySamples": 0,
         "bodyError": 0,
-        "thighSamples": 1048,
-        "thighError": 2.081750894499878e-8,
+        "thighSamples": 0,
+        "thighError": 0,
         "attachmentSamples": 53,
-        "attachmentError": 1.708111153771663e-8,
-        "distalSamples": 119,
-        "distalError": 1.890198507951505e-8,
+        "attachmentError": 5.513566933508136e-8,
+        "distalSamples": 3,
+        "distalError": 5.513566933508136e-8,
         "wrapSamples": 0,
         "minCorticalGap": null
       },
@@ -1276,9 +1408,9 @@
         "thighSamples": 0,
         "thighError": 0,
         "attachmentSamples": 41,
-        "attachmentError": 1.6113270768924595e-8,
-        "distalSamples": 390,
-        "distalError": 1.6165413450870495e-8,
+        "attachmentError": 5.355356822524987e-8,
+        "distalSamples": 2,
+        "distalError": 5.515201610505608e-8,
         "wrapSamples": 0,
         "minCorticalGap": null
       },
@@ -1290,9 +1422,9 @@
         "thighSamples": 0,
         "thighError": 0,
         "attachmentSamples": 41,
-        "attachmentError": 1.5613039877169756e-8,
-        "distalSamples": 355,
-        "distalError": 1.6096115030309877e-8,
+        "attachmentError": 4.1272438220292836e-8,
+        "distalSamples": 4,
+        "distalError": 3.682962131446723e-8,
         "wrapSamples": 0,
         "minCorticalGap": null
       },
@@ -1305,8 +1437,8 @@
         "thighError": 0,
         "attachmentSamples": 0,
         "attachmentError": 0,
-        "distalSamples": 377,
-        "distalError": 1.6030743662294513e-8,
+        "distalSamples": 2,
+        "distalError": 6.622070907424435e-8,
         "wrapSamples": 0,
         "minCorticalGap": null
       },
@@ -1318,9 +1450,9 @@
         "thighSamples": 0,
         "thighError": 0,
         "attachmentSamples": 7,
-        "attachmentError": 1.4530662571554873e-8,
-        "distalSamples": 281,
-        "distalError": 1.599316324150965e-8,
+        "attachmentError": 4.006601361672057e-8,
+        "distalSamples": 1,
+        "distalError": 5.0628145281235994e-8,
         "wrapSamples": 0,
         "minCorticalGap": null
       },
@@ -1334,7 +1466,7 @@
         "attachmentSamples": 0,
         "attachmentError": 0,
         "distalSamples": 486,
-        "distalError": 2.0985382068844335e-8,
+        "distalError": 7.007997553859362e-8,
         "wrapSamples": 0,
         "minCorticalGap": null
       },
@@ -1342,11 +1474,11 @@
         "name": "Medial head of gastrocnemius.r",
         "family": "calf",
         "bodySamples": 1956,
-        "bodyError": 2.0839382984136832e-8,
+        "bodyError": 1.5390289169135864e-7,
         "thighSamples": 0,
         "thighError": 0,
         "attachmentSamples": 333,
-        "attachmentError": 0.00000579354430098867,
+        "attachmentError": 0.000005817554184633236,
         "distalSamples": 0,
         "distalError": 0,
         "wrapSamples": 0,
@@ -1356,11 +1488,11 @@
         "name": "Lateral head of gastrocnemius.r",
         "family": "calf",
         "bodySamples": 1626,
-        "bodyError": 2.070918626522537e-8,
+        "bodyError": 1.5490556641349974e-7,
         "thighSamples": 0,
         "thighError": 0,
         "attachmentSamples": 94,
-        "attachmentError": 0.000003657613535134942,
+        "attachmentError": 0.000002236869002076516,
         "distalSamples": 0,
         "distalError": 0,
         "wrapSamples": 0,
@@ -1376,41 +1508,63 @@
     "blend": 0.9999999999999999,
     "courses": [
       {
+        "name": "Long head of biceps femoris.r",
+        "length": 0.49043360369130745,
+        "freeLength": 0.44959834539266574,
+        "freeMaxTurnDegrees": 11.065888474739488,
+        "arcChordRatio": 1.1372499644094018,
+        "freeArcChordRatio": 1.0515662240663757,
+        "maxTurnDegrees": 11.065888474739488
+      },
+      {
+        "name": "Short head of biceps femoris.r",
+        "length": 0.2660482261126761,
+        "freeLength": 0.23623222280381465,
+        "freeMaxTurnDegrees": 9.876251839074703,
+        "arcChordRatio": 1.1184635703624177,
+        "freeArcChordRatio": 1.0491651379077649,
+        "maxTurnDegrees": 18.09870739011065
+      },
+      {
         "name": "Semitendinosus muscle.r",
-        "length": 0.5450693823194404,
-        "freeLength": 0.4543079855746093,
-        "arcChordRatio": 1.1469008284653284,
-        "freeArcChordRatio": 1.0106880881663034,
-        "maxTurnDegrees": 13.327983293417184
+        "length": 0.5707637906212297,
+        "freeLength": 0.4766452798181919,
+        "freeMaxTurnDegrees": 10.365226387101472,
+        "arcChordRatio": 1.2009653764325414,
+        "freeArcChordRatio": 1.0624091507204954,
+        "maxTurnDegrees": 10.365226387101472
       },
       {
         "name": "Semimembranosus muscle.r",
-        "length": 0.49872704762872505,
-        "freeLength": 0.4439908023276576,
-        "arcChordRatio": 1.1077600533621386,
-        "freeArcChordRatio": 1.0111947536359616,
-        "maxTurnDegrees": 12.71981910596477
+        "length": 0.5254234509837425,
+        "freeLength": 0.4681199039700472,
+        "freeMaxTurnDegrees": 10.079504647995488,
+        "arcChordRatio": 1.1670574129436486,
+        "freeArcChordRatio": 1.0670012523316201,
+        "maxTurnDegrees": 10.079504647995488
       },
       {
         "name": "Sartorius muscle.r",
-        "length": 0.5154184867996766,
-        "freeLength": 0.4239606139048988,
-        "arcChordRatio": 1.1825617555009291,
-        "freeArcChordRatio": 1.0466199386096446,
-        "maxTurnDegrees": 16.99017641330863
+        "length": 0.5364488172630271,
+        "freeLength": 0.4305003473104475,
+        "freeMaxTurnDegrees": 9.566971269277635,
+        "arcChordRatio": 1.230813167248167,
+        "freeArcChordRatio": 1.0727697252552146,
+        "maxTurnDegrees": 9.566971269277635
       },
       {
         "name": "Gracilis muscle.r",
-        "length": 0.48206986460432705,
-        "freeLength": 0.38641651131312554,
-        "arcChordRatio": 1.2016747737047901,
-        "freeArcChordRatio": 1.0128341918574884,
-        "maxTurnDegrees": 14.279712345854259
+        "length": 0.512646040412413,
+        "freeLength": 0.4074491643114315,
+        "freeMaxTurnDegrees": 12.473616000333697,
+        "arcChordRatio": 1.2778932118342459,
+        "freeArcChordRatio": 1.0720589369756668,
+        "maxTurnDegrees": 12.473616000333697
       }
     ],
     "lateralLayer": {
       "samples": 90,
-      "minGap": 0.016110487233198745
+      "minGap": 0.016110470469386642
     },
     "entries": [
       {
@@ -1423,9 +1577,9 @@
         "attachmentSamples": 0,
         "attachmentError": 0,
         "distalSamples": 33,
-        "distalError": 3.8551355379808835e-8,
+        "distalError": 6.650701810329026e-8,
         "wrapSamples": 1065,
-        "minCorticalGap": 0.002988336529944284
+        "minCorticalGap": 0.0029883415196425844
       },
       {
         "name": "Vastus medialis muscle.r",
@@ -1437,9 +1591,9 @@
         "attachmentSamples": 0,
         "attachmentError": 0,
         "distalSamples": 39,
-        "distalError": 4.105743765769957e-8,
+        "distalError": 6.755640004009257e-8,
         "wrapSamples": 995,
-        "minCorticalGap": 0.0009999789376587964
+        "minCorticalGap": 0.000999974261036346
       },
       {
         "name": "Vastus lateralis muscle.r",
@@ -1451,9 +1605,9 @@
         "attachmentSamples": 0,
         "attachmentError": 0,
         "distalSamples": 63,
-        "distalError": 4.109331661262227e-8,
+        "distalError": 6.769958550327422e-8,
         "wrapSamples": 843,
-        "minCorticalGap": 0.0014999879777150525
+        "minCorticalGap": 0.001499983293736365
       },
       {
         "name": "Vastus intermedius muscle.r",
@@ -1465,21 +1619,21 @@
         "attachmentSamples": 0,
         "attachmentError": 0,
         "distalSamples": 91,
-        "distalError": 4.1083159186696007e-8,
+        "distalError": 6.965035451295565e-8,
         "wrapSamples": 922,
-        "minCorticalGap": 0.000999993645093608
+        "minCorticalGap": 0.0009999916591304434
       },
       {
         "name": "Long head of biceps femoris.r",
         "family": "biceps",
         "bodySamples": 0,
         "bodyError": 0,
-        "thighSamples": 3338,
-        "thighError": 1.6287863217311824e-8,
+        "thighSamples": 0,
+        "thighError": 0,
         "attachmentSamples": 57,
-        "attachmentError": 4.7551569671943375e-8,
-        "distalSamples": 259,
-        "distalError": 4.895236986342733e-8,
+        "attachmentError": 8.111099290559285e-8,
+        "distalSamples": 3,
+        "distalError": 7.75346349204552e-8,
         "wrapSamples": 0,
         "minCorticalGap": null
       },
@@ -1488,12 +1642,12 @@
         "family": "biceps",
         "bodySamples": 0,
         "bodyError": 0,
-        "thighSamples": 1048,
-        "thighError": 2.0732916491146162e-8,
+        "thighSamples": 0,
+        "thighError": 0,
         "attachmentSamples": 53,
-        "attachmentError": 4.8997344052349226e-8,
-        "distalSamples": 119,
-        "distalError": 4.8997344052349226e-8,
+        "attachmentError": 8.072256595654893e-8,
+        "distalSamples": 3,
+        "distalError": 7.484268592784644e-8,
         "wrapSamples": 0,
         "minCorticalGap": null
       },
@@ -1505,9 +1659,9 @@
         "thighSamples": 0,
         "thighError": 0,
         "attachmentSamples": 41,
-        "attachmentError": 3.652256720701542e-8,
-        "distalSamples": 390,
-        "distalError": 4.466111937931104e-8,
+        "attachmentError": 5.883534243074021e-8,
+        "distalSamples": 2,
+        "distalError": 2.5778222643554208e-8,
         "wrapSamples": 0,
         "minCorticalGap": null
       },
@@ -1519,9 +1673,9 @@
         "thighSamples": 0,
         "thighError": 0,
         "attachmentSamples": 41,
-        "attachmentError": 4.079884340099132e-8,
-        "distalSamples": 355,
-        "distalError": 4.079884340099132e-8,
+        "attachmentError": 6.631897096855008e-8,
+        "distalSamples": 4,
+        "distalError": 3.577436554258017e-8,
         "wrapSamples": 0,
         "minCorticalGap": null
       },
@@ -1534,8 +1688,8 @@
         "thighError": 0,
         "attachmentSamples": 0,
         "attachmentError": 0,
-        "distalSamples": 377,
-        "distalError": 4.083207770625071e-8,
+        "distalSamples": 2,
+        "distalError": 3.637195591557919e-8,
         "wrapSamples": 0,
         "minCorticalGap": null
       },
@@ -1547,9 +1701,9 @@
         "thighSamples": 0,
         "thighError": 0,
         "attachmentSamples": 7,
-        "attachmentError": 3.1205049041300856e-8,
-        "distalSamples": 281,
-        "distalError": 4.279691619184407e-8,
+        "attachmentError": 5.788200562884007e-8,
+        "distalSamples": 1,
+        "distalError": 3.166309236746235e-8,
         "wrapSamples": 0,
         "minCorticalGap": null
       },
@@ -1563,7 +1717,7 @@
         "attachmentSamples": 0,
         "attachmentError": 0,
         "distalSamples": 486,
-        "distalError": 3.847538606291619e-8,
+        "distalError": 6.5529057612681e-8,
         "wrapSamples": 0,
         "minCorticalGap": null
       },
@@ -1571,11 +1725,11 @@
         "name": "Medial head of gastrocnemius.r",
         "family": "calf",
         "bodySamples": 1956,
-        "bodyError": 6.014971804879416e-8,
+        "bodyError": 1.0677286495799869e-7,
         "thighSamples": 0,
         "thighError": 0,
         "attachmentSamples": 333,
-        "attachmentError": 0.0000067359814365870205,
+        "attachmentError": 0.000004509194297775656,
         "distalSamples": 0,
         "distalError": 0,
         "wrapSamples": 0,
@@ -1585,11 +1739,11 @@
         "name": "Lateral head of gastrocnemius.r",
         "family": "calf",
         "bodySamples": 1626,
-        "bodyError": 6.084383453014062e-8,
+        "bodyError": 1.1235467834969991e-7,
         "thighSamples": 0,
         "thighError": 0,
         "attachmentSamples": 94,
-        "attachmentError": 0.0000032671222100934132,
+        "attachmentError": 0.0000037021032380129547,
         "distalSamples": 0,
         "distalError": 0,
         "wrapSamples": 0,
@@ -1605,265 +1759,58 @@
     "blend": 0.9999999999999999,
     "courses": [
       {
-        "name": "Semitendinosus muscle.r",
-        "length": 0.545767400895944,
-        "freeLength": 0.4547799029631723,
-        "arcChordRatio": 1.0035343032784148,
-        "freeArcChordRatio": 1.0003080872331296,
-        "maxTurnDegrees": 6.470169296467012
-      },
-      {
-        "name": "Semimembranosus muscle.r",
-        "length": 0.49386676486915926,
-        "freeLength": 0.4389353545800495,
-        "arcChordRatio": 1.0050684185632217,
-        "freeArcChordRatio": 1.0006054632824835,
-        "maxTurnDegrees": 8.61926478283753
-      },
-      {
-        "name": "Sartorius muscle.r",
-        "length": 0.4863709139587577,
-        "freeLength": 0.39492743047872375,
-        "arcChordRatio": 1.0251302124743638,
-        "freeArcChordRatio": 1.012507326987794,
-        "maxTurnDegrees": 10.643940912737134
-      },
-      {
-        "name": "Gracilis muscle.r",
-        "length": 0.4690402297916055,
-        "freeLength": 0.37330211829383975,
-        "arcChordRatio": 1.0106916475592804,
-        "freeArcChordRatio": 1.0007308378397017,
-        "maxTurnDegrees": 5.451249864490132
-      }
-    ],
-    "lateralLayer": {
-      "samples": 13,
-      "minGap": 0.003999999324192399
-    },
-    "entries": [
-      {
-        "name": "Rectus femoris muscle.r",
-        "family": "quadriceps",
-        "bodySamples": 0,
-        "bodyError": 0,
-        "thighSamples": 0,
-        "thighError": 0,
-        "attachmentSamples": 0,
-        "attachmentError": 0,
-        "distalSamples": 33,
-        "distalError": 1.5790400039086083e-8,
-        "wrapSamples": 1037,
-        "minCorticalGap": 0.0025025217157192553
-      },
-      {
-        "name": "Vastus medialis muscle.r",
-        "family": "quadriceps",
-        "bodySamples": 0,
-        "bodyError": 0,
-        "thighSamples": 0,
-        "thighError": 0,
-        "attachmentSamples": 0,
-        "attachmentError": 0,
-        "distalSamples": 39,
-        "distalError": 2.0443959082879925e-8,
-        "wrapSamples": 944,
-        "minCorticalGap": 0.0009999864585179055
-      },
-      {
-        "name": "Vastus lateralis muscle.r",
-        "family": "quadriceps",
-        "bodySamples": 0,
-        "bodyError": 0,
-        "thighSamples": 0,
-        "thighError": 0,
-        "attachmentSamples": 0,
-        "attachmentError": 0,
-        "distalSamples": 63,
-        "distalError": 1.5776917165556457e-8,
-        "wrapSamples": 837,
-        "minCorticalGap": 0.0014999843096413154
-      },
-      {
-        "name": "Vastus intermedius muscle.r",
-        "family": "quadriceps",
-        "bodySamples": 0,
-        "bodyError": 0,
-        "thighSamples": 0,
-        "thighError": 0,
-        "attachmentSamples": 0,
-        "attachmentError": 0,
-        "distalSamples": 91,
-        "distalError": 1.5962261556066428e-8,
-        "wrapSamples": 935,
-        "minCorticalGap": 0.0009999965426205001
-      },
-      {
         "name": "Long head of biceps femoris.r",
-        "family": "biceps",
-        "bodySamples": 0,
-        "bodyError": 0,
-        "thighSamples": 3338,
-        "thighError": 1.6403170567118247e-8,
-        "attachmentSamples": 57,
-        "attachmentError": 1.558406417551309e-8,
-        "distalSamples": 259,
-        "distalError": 1.5668155379491858e-8,
-        "wrapSamples": 0,
-        "minCorticalGap": null
+        "length": 0.5168849011498224,
+        "freeLength": 0.47572916086328004,
+        "freeMaxTurnDegrees": 2.251443248090667,
+        "arcChordRatio": 1.0151100380239688,
+        "freeArcChordRatio": 1.006292846566165,
+        "maxTurnDegrees": 6.155608746260545
       },
       {
         "name": "Short head of biceps femoris.r",
-        "family": "biceps",
-        "bodySamples": 0,
-        "bodyError": 0,
-        "thighSamples": 1048,
-        "thighError": 2.0968113777394933e-8,
-        "attachmentSamples": 53,
-        "attachmentError": 1.9867690977192527e-8,
-        "distalSamples": 119,
-        "distalError": 2.02861546254394e-8,
-        "wrapSamples": 0,
-        "minCorticalGap": null
+        "length": 0.3022554812052751,
+        "freeLength": 0.27202193481333925,
+        "freeMaxTurnDegrees": 2.164455222945081,
+        "arcChordRatio": 1.0095658983537725,
+        "freeArcChordRatio": 1.00610120242318,
+        "maxTurnDegrees": 18.098707390111347
       },
       {
         "name": "Semitendinosus muscle.r",
-        "family": "medial",
-        "bodySamples": 0,
-        "bodyError": 0,
-        "thighSamples": 0,
-        "thighError": 0,
-        "attachmentSamples": 41,
-        "attachmentError": 2.985767674928129e-8,
-        "distalSamples": 390,
-        "distalError": 3.01970088455936e-8,
-        "wrapSamples": 0,
-        "minCorticalGap": null
+        "length": 0.5513010441545684,
+        "freeLength": 0.4573567916546756,
+        "freeMaxTurnDegrees": 4.2337121710689605,
+        "arcChordRatio": 1.0137091881236377,
+        "freeArcChordRatio": 1.0124220295875495,
+        "maxTurnDegrees": 6.470169296465884
       },
       {
         "name": "Semimembranosus muscle.r",
-        "family": "medial",
-        "bodySamples": 0,
-        "bodyError": 0,
-        "thighSamples": 0,
-        "thighError": 0,
-        "attachmentSamples": 41,
-        "attachmentError": 2.9764518808072678e-8,
-        "distalSamples": 355,
-        "distalError": 3.0098137674159475e-8,
-        "wrapSamples": 0,
-        "minCorticalGap": null
+        "length": 0.4949963792447718,
+        "freeLength": 0.4377199097193047,
+        "freeMaxTurnDegrees": 1.6820900747162957,
+        "arcChordRatio": 1.0073671943414837,
+        "freeArcChordRatio": 1.0030082490515435,
+        "maxTurnDegrees": 8.619264782837275
       },
       {
         "name": "Sartorius muscle.r",
-        "family": "medial",
-        "bodySamples": 0,
-        "bodyError": 0,
-        "thighSamples": 0,
-        "thighError": 0,
-        "attachmentSamples": 0,
-        "attachmentError": 0,
-        "distalSamples": 377,
-        "distalError": 1.6308056316849936e-8,
-        "wrapSamples": 0,
-        "minCorticalGap": null
+        "length": 0.4975504265244295,
+        "freeLength": 0.3923029187825112,
+        "freeMaxTurnDegrees": 4.840033253967469,
+        "arcChordRatio": 1.0486934130139889,
+        "freeArcChordRatio": 1.0396566858543723,
+        "maxTurnDegrees": 5.12309329747097
       },
       {
         "name": "Gracilis muscle.r",
-        "family": "medial",
-        "bodySamples": 0,
-        "bodyError": 0,
-        "thighSamples": 0,
-        "thighError": 0,
-        "attachmentSamples": 7,
-        "attachmentError": 1.5155832952978776e-8,
-        "distalSamples": 281,
-        "distalError": 3.000337988095953e-8,
-        "wrapSamples": 0,
-        "minCorticalGap": null
-      },
-      {
-        "name": "Popliteus muscle.r",
-        "family": "popliteus",
-        "bodySamples": 0,
-        "bodyError": 0,
-        "thighSamples": 0,
-        "thighError": 0,
-        "attachmentSamples": 0,
-        "attachmentError": 0,
-        "distalSamples": 486,
-        "distalError": 3.201630098084396e-8,
-        "wrapSamples": 0,
-        "minCorticalGap": null
-      },
-      {
-        "name": "Medial head of gastrocnemius.r",
-        "family": "calf",
-        "bodySamples": 1956,
-        "bodyError": 3.23596055181352e-8,
-        "thighSamples": 0,
-        "thighError": 0,
-        "attachmentSamples": 333,
-        "attachmentError": 0.000002614268089941393,
-        "distalSamples": 0,
-        "distalError": 0,
-        "wrapSamples": 0,
-        "minCorticalGap": null
-      },
-      {
-        "name": "Lateral head of gastrocnemius.r",
-        "family": "calf",
-        "bodySamples": 1626,
-        "bodyError": 3.285932834634306e-8,
-        "thighSamples": 0,
-        "thighError": 0,
-        "attachmentSamples": 94,
-        "attachmentError": 0.0000010629601281650478,
-        "distalSamples": 0,
-        "distalError": 0,
-        "wrapSamples": 0,
-        "minCorticalGap": null
-      }
-    ]
-  },
-  {
-    "kind": "stress",
-    "value": 3,
-    "active": true,
-    "wrapActive": true,
-    "blend": 0.9999999999999999,
-    "courses": [
-      {
-        "name": "Semitendinosus muscle.r",
-        "length": 0.5489500423492472,
-        "freeLength": 0.45795235158069403,
-        "arcChordRatio": 1.0053559152462517,
-        "freeArcChordRatio": 1.0003001079932938,
-        "maxTurnDegrees": 6.470169296467239
-      },
-      {
-        "name": "Semimembranosus muscle.r",
-        "length": 0.4969098496637898,
-        "freeLength": 0.44196562330079014,
-        "arcChordRatio": 1.0062639232065926,
-        "freeArcChordRatio": 1.0004318807294168,
-        "maxTurnDegrees": 8.619264782837657
-      },
-      {
-        "name": "Sartorius muscle.r",
-        "length": 0.49035682636190603,
-        "freeLength": 0.39886280698937093,
-        "arcChordRatio": 1.032991229068682,
-        "freeArcChordRatio": 1.0134590076917867,
-        "maxTurnDegrees": 10.237558994668392
-      },
-      {
-        "name": "Gracilis muscle.r",
-        "length": 0.4729143926565021,
-        "freeLength": 0.3771711865768838,
-        "arcChordRatio": 1.0130284993422556,
-        "freeArcChordRatio": 1.0009522597448306,
-        "maxTurnDegrees": 5.4512498644909355
+        "length": 0.4718588110596235,
+        "freeLength": 0.36712404597114767,
+        "freeMaxTurnDegrees": 2.8424526442930516,
+        "arcChordRatio": 1.0167650226896099,
+        "freeArcChordRatio": 1.007273231832886,
+        "maxTurnDegrees": 5.451249864490735
       }
     ],
     "lateralLayer": {
@@ -1881,9 +1828,9 @@
         "attachmentSamples": 0,
         "attachmentError": 0,
         "distalSamples": 33,
-        "distalError": 2.1875138973944013e-8,
+        "distalError": 2.7657577383405747e-8,
         "wrapSamples": 1037,
-        "minCorticalGap": 0.0025025140118230815
+        "minCorticalGap": 0.0025025115968039593
       },
       {
         "name": "Vastus medialis muscle.r",
@@ -1895,9 +1842,9 @@
         "attachmentSamples": 0,
         "attachmentError": 0,
         "distalSamples": 39,
-        "distalError": 2.2475754633187045e-8,
+        "distalError": 3.1153056840508384e-8,
         "wrapSamples": 944,
-        "minCorticalGap": 0.0009999817911944472
+        "minCorticalGap": 0.0009999867529181666
       },
       {
         "name": "Vastus lateralis muscle.r",
@@ -1909,9 +1856,9 @@
         "attachmentSamples": 0,
         "attachmentError": 0,
         "distalSamples": 63,
-        "distalError": 2.272929506214573e-8,
+        "distalError": 2.7495262909293594e-8,
         "wrapSamples": 837,
-        "minCorticalGap": 0.0014999619898818997
+        "minCorticalGap": 0.0014999627378294855
       },
       {
         "name": "Vastus intermedius muscle.r",
@@ -1923,21 +1870,21 @@
         "attachmentSamples": 0,
         "attachmentError": 0,
         "distalSamples": 91,
-        "distalError": 1.8439757436932338e-8,
+        "distalError": 2.626377109060295e-8,
         "wrapSamples": 935,
-        "minCorticalGap": 0.0009999906409650927
+        "minCorticalGap": 0.000999990785499845
       },
       {
         "name": "Long head of biceps femoris.r",
         "family": "biceps",
         "bodySamples": 0,
         "bodyError": 0,
-        "thighSamples": 3338,
-        "thighError": 1.6565083658127778e-8,
+        "thighSamples": 0,
+        "thighError": 0,
         "attachmentSamples": 57,
-        "attachmentError": 2.7105614937291386e-8,
-        "distalSamples": 259,
-        "distalError": 2.886987887856414e-8,
+        "attachmentError": 3.0734841711886196e-8,
+        "distalSamples": 3,
+        "distalError": 2.2421340768546502e-8,
         "wrapSamples": 0,
         "minCorticalGap": null
       },
@@ -1946,12 +1893,12 @@
         "family": "biceps",
         "bodySamples": 0,
         "bodyError": 0,
-        "thighSamples": 1048,
-        "thighError": 2.030445823074717e-8,
+        "thighSamples": 0,
+        "thighError": 0,
         "attachmentSamples": 53,
-        "attachmentError": 2.8518442033614638e-8,
-        "distalSamples": 119,
-        "distalError": 2.8518442033614638e-8,
+        "attachmentError": 3.390848667618368e-8,
+        "distalSamples": 3,
+        "distalError": 2.1204068248363498e-8,
         "wrapSamples": 0,
         "minCorticalGap": null
       },
@@ -1963,9 +1910,9 @@
         "thighSamples": 0,
         "thighError": 0,
         "attachmentSamples": 41,
-        "attachmentError": 3.575321450891825e-8,
-        "distalSamples": 390,
-        "distalError": 3.9180523960045203e-8,
+        "attachmentError": 3.741645431411911e-8,
+        "distalSamples": 2,
+        "distalError": 2.3287180153909086e-8,
         "wrapSamples": 0,
         "minCorticalGap": null
       },
@@ -1977,9 +1924,9 @@
         "thighSamples": 0,
         "thighError": 0,
         "attachmentSamples": 41,
-        "attachmentError": 3.46693728122814e-8,
-        "distalSamples": 355,
-        "distalError": 3.523978260260284e-8,
+        "attachmentError": 3.054530388001393e-8,
+        "distalSamples": 4,
+        "distalError": 3.054530388001393e-8,
         "wrapSamples": 0,
         "minCorticalGap": null
       },
@@ -1992,8 +1939,8 @@
         "thighError": 0,
         "attachmentSamples": 0,
         "attachmentError": 0,
-        "distalSamples": 377,
-        "distalError": 2.682169263710865e-8,
+        "distalSamples": 2,
+        "distalError": 2.471188386460459e-8,
         "wrapSamples": 0,
         "minCorticalGap": null
       },
@@ -2005,9 +1952,9 @@
         "thighSamples": 0,
         "thighError": 0,
         "attachmentSamples": 7,
-        "attachmentError": 2.4006876363536156e-8,
-        "distalSamples": 281,
-        "distalError": 3.967006710389475e-8,
+        "attachmentError": 1.8008781516438336e-8,
+        "distalSamples": 1,
+        "distalError": 1.9843415407125077e-8,
         "wrapSamples": 0,
         "minCorticalGap": null
       },
@@ -2021,7 +1968,7 @@
         "attachmentSamples": 0,
         "attachmentError": 0,
         "distalSamples": 486,
-        "distalError": 4.147825965480023e-8,
+        "distalError": 4.715510473283032e-8,
         "wrapSamples": 0,
         "minCorticalGap": null
       },
@@ -2029,11 +1976,11 @@
         "name": "Medial head of gastrocnemius.r",
         "family": "calf",
         "bodySamples": 1956,
-        "bodyError": 6.392105458626522e-8,
+        "bodyError": 7.450606548962596e-8,
         "thighSamples": 0,
         "thighError": 0,
         "attachmentSamples": 333,
-        "attachmentError": 0.000002306456322395661,
+        "attachmentError": 0.000003549653336686527,
         "distalSamples": 0,
         "distalError": 0,
         "wrapSamples": 0,
@@ -2043,11 +1990,262 @@
         "name": "Lateral head of gastrocnemius.r",
         "family": "calf",
         "bodySamples": 1626,
-        "bodyError": 6.183651028598313e-8,
+        "bodyError": 8.08984935584679e-8,
         "thighSamples": 0,
         "thighError": 0,
         "attachmentSamples": 94,
-        "attachmentError": 0.0000013942450512276322,
+        "attachmentError": 0.000001691515190416655,
+        "distalSamples": 0,
+        "distalError": 0,
+        "wrapSamples": 0,
+        "minCorticalGap": null
+      }
+    ]
+  },
+  {
+    "kind": "stress",
+    "value": 3,
+    "active": true,
+    "wrapActive": true,
+    "blend": 0.9999999999999999,
+    "courses": [
+      {
+        "name": "Long head of biceps femoris.r",
+        "length": 0.512634181417164,
+        "freeLength": 0.4715291252980307,
+        "freeMaxTurnDegrees": 2.125673466668691,
+        "arcChordRatio": 1.0136691204260486,
+        "freeArcChordRatio": 1.005755588623565,
+        "maxTurnDegrees": 6.1556087462590625
+      },
+      {
+        "name": "Short head of biceps femoris.r",
+        "length": 0.29808181181663446,
+        "freeLength": 0.26789587586435615,
+        "freeMaxTurnDegrees": 2.101064108864217,
+        "arcChordRatio": 1.0094503659049134,
+        "freeArcChordRatio": 1.0060775148232244,
+        "maxTurnDegrees": 18.098707390109094
+      },
+      {
+        "name": "Semitendinosus muscle.r",
+        "length": 0.5558485721480152,
+        "freeLength": 0.4618614814061683,
+        "freeMaxTurnDegrees": 3.5477643243697634,
+        "arcChordRatio": 1.017989990849169,
+        "freeArcChordRatio": 1.0152599697755846,
+        "maxTurnDegrees": 6.470169296466335
+      },
+      {
+        "name": "Semimembranosus muscle.r",
+        "length": 0.49775757720370556,
+        "freeLength": 0.4404786919972549,
+        "freeMaxTurnDegrees": 1.5789428277691284,
+        "arcChordRatio": 1.007980604794796,
+        "freeArcChordRatio": 1.0022019563172455,
+        "maxTurnDegrees": 8.619264782837444
+      },
+      {
+        "name": "Sartorius muscle.r",
+        "length": 0.5040688280024762,
+        "freeLength": 0.39870294952557217,
+        "freeMaxTurnDegrees": 5.102287368967031,
+        "arcChordRatio": 1.0618770883693092,
+        "freeArcChordRatio": 1.0454832539336487,
+        "maxTurnDegrees": 5.123093297470401
+      },
+      {
+        "name": "Gracilis muscle.r",
+        "length": 0.47663294343944584,
+        "freeLength": 0.37184252072931434,
+        "freeMaxTurnDegrees": 2.374701041584496,
+        "arcChordRatio": 1.0209939926693574,
+        "freeArcChordRatio": 1.0096486076046574,
+        "maxTurnDegrees": 5.45124986449127
+      }
+    ],
+    "lateralLayer": {
+      "samples": 23,
+      "minGap": 0.003999999324192399
+    },
+    "entries": [
+      {
+        "name": "Rectus femoris muscle.r",
+        "family": "quadriceps",
+        "bodySamples": 0,
+        "bodyError": 0,
+        "thighSamples": 0,
+        "thighError": 0,
+        "attachmentSamples": 0,
+        "attachmentError": 0,
+        "distalSamples": 33,
+        "distalError": 2.429467084729245e-8,
+        "wrapSamples": 1037,
+        "minCorticalGap": 0.0025025115968039593
+      },
+      {
+        "name": "Vastus medialis muscle.r",
+        "family": "quadriceps",
+        "bodySamples": 0,
+        "bodyError": 0,
+        "thighSamples": 0,
+        "thighError": 0,
+        "attachmentSamples": 0,
+        "attachmentError": 0,
+        "distalSamples": 39,
+        "distalError": 2.6979333704504374e-8,
+        "wrapSamples": 944,
+        "minCorticalGap": 0.0009999796697285623
+      },
+      {
+        "name": "Vastus lateralis muscle.r",
+        "family": "quadriceps",
+        "bodySamples": 0,
+        "bodyError": 0,
+        "thighSamples": 0,
+        "thighError": 0,
+        "attachmentSamples": 0,
+        "attachmentError": 0,
+        "distalSamples": 63,
+        "distalError": 2.3284758456631937e-8,
+        "wrapSamples": 837,
+        "minCorticalGap": 0.001499954843865843
+      },
+      {
+        "name": "Vastus intermedius muscle.r",
+        "family": "quadriceps",
+        "bodySamples": 0,
+        "bodyError": 0,
+        "thighSamples": 0,
+        "thighError": 0,
+        "attachmentSamples": 0,
+        "attachmentError": 0,
+        "distalSamples": 91,
+        "distalError": 1.9812974707908846e-8,
+        "wrapSamples": 935,
+        "minCorticalGap": 0.0009999877210279187
+      },
+      {
+        "name": "Long head of biceps femoris.r",
+        "family": "biceps",
+        "bodySamples": 0,
+        "bodyError": 0,
+        "thighSamples": 0,
+        "thighError": 0,
+        "attachmentSamples": 57,
+        "attachmentError": 3.1436070547341104e-8,
+        "distalSamples": 3,
+        "distalError": 2.4382187747137286e-8,
+        "wrapSamples": 0,
+        "minCorticalGap": null
+      },
+      {
+        "name": "Short head of biceps femoris.r",
+        "family": "biceps",
+        "bodySamples": 0,
+        "bodyError": 0,
+        "thighSamples": 0,
+        "thighError": 0,
+        "attachmentSamples": 53,
+        "attachmentError": 3.336714302348516e-8,
+        "distalSamples": 3,
+        "distalError": 2.8805009281304213e-8,
+        "wrapSamples": 0,
+        "minCorticalGap": null
+      },
+      {
+        "name": "Semitendinosus muscle.r",
+        "family": "medial",
+        "bodySamples": 0,
+        "bodyError": 0,
+        "thighSamples": 0,
+        "thighError": 0,
+        "attachmentSamples": 41,
+        "attachmentError": 3.908733592957318e-8,
+        "distalSamples": 2,
+        "distalError": 2.8961545244664847e-8,
+        "wrapSamples": 0,
+        "minCorticalGap": null
+      },
+      {
+        "name": "Semimembranosus muscle.r",
+        "family": "medial",
+        "bodySamples": 0,
+        "bodyError": 0,
+        "thighSamples": 0,
+        "thighError": 0,
+        "attachmentSamples": 41,
+        "attachmentError": 3.673987312327918e-8,
+        "distalSamples": 4,
+        "distalError": 3.3450241396770276e-8,
+        "wrapSamples": 0,
+        "minCorticalGap": null
+      },
+      {
+        "name": "Sartorius muscle.r",
+        "family": "medial",
+        "bodySamples": 0,
+        "bodyError": 0,
+        "thighSamples": 0,
+        "thighError": 0,
+        "attachmentSamples": 0,
+        "attachmentError": 0,
+        "distalSamples": 2,
+        "distalError": 2.8163813756932372e-8,
+        "wrapSamples": 0,
+        "minCorticalGap": null
+      },
+      {
+        "name": "Gracilis muscle.r",
+        "family": "medial",
+        "bodySamples": 0,
+        "bodyError": 0,
+        "thighSamples": 0,
+        "thighError": 0,
+        "attachmentSamples": 7,
+        "attachmentError": 2.550021063413546e-8,
+        "distalSamples": 1,
+        "distalError": 3.1053027203527716e-8,
+        "wrapSamples": 0,
+        "minCorticalGap": null
+      },
+      {
+        "name": "Popliteus muscle.r",
+        "family": "popliteus",
+        "bodySamples": 0,
+        "bodyError": 0,
+        "thighSamples": 0,
+        "thighError": 0,
+        "attachmentSamples": 0,
+        "attachmentError": 0,
+        "distalSamples": 486,
+        "distalError": 4.6690015855127986e-8,
+        "wrapSamples": 0,
+        "minCorticalGap": null
+      },
+      {
+        "name": "Medial head of gastrocnemius.r",
+        "family": "calf",
+        "bodySamples": 1956,
+        "bodyError": 7.577413342383815e-8,
+        "thighSamples": 0,
+        "thighError": 0,
+        "attachmentSamples": 333,
+        "attachmentError": 0.0000033378527981665355,
+        "distalSamples": 0,
+        "distalError": 0,
+        "wrapSamples": 0,
+        "minCorticalGap": null
+      },
+      {
+        "name": "Lateral head of gastrocnemius.r",
+        "family": "calf",
+        "bodySamples": 1626,
+        "bodyError": 7.304976474586827e-8,
+        "thighSamples": 0,
+        "thighError": 0,
+        "attachmentSamples": 94,
+        "attachmentError": 0.00000211630297694649,
         "distalSamples": 0,
         "distalError": 0,
         "wrapSamples": 0,

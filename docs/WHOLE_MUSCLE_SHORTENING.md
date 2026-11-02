@@ -26,3 +26,5 @@ LCLが膝窩筋腱より浅層を通る関係の参照：[解剖学的後外側�
 
 
 今回の関連UI検証は6件成功：bone-muscle-routes、continuous-muscles、whole-muscle-shortening、shared-muscles、playback（2件）。最終の全長短縮テストを再実行して成功。
+
+追記：全筋同時表示で問題が残り再修正。[最新の表面・全長検証](GLOBAL_MUSCLE_SURFACE_REVIEW.md)を優先すること。全長短縮条件に未解決の失敗があり、完成判定ではない。
