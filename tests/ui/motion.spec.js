@@ -12,12 +12,12 @@ test('Knee motion directions, saved angles, mode continuity and compact panel',a
  await expect.poll(async()=>Math.max(...(await snap()).followers.filter(m=>m.name==='Rectus femoris muscle.r').map(m=>m.maxDisplacement))).toBeGreaterThan(.1);
  const input=async value=>{await page.locator('#motionSlider').evaluate((el,v)=>{el.value=v;el.dispatchEvent(new Event('input',{bubbles:true}));},String(value));};
  await input(65);await expect(page.locator('#angleReadout')).toHaveText('65°');
- await page.locator('[data-motion="rot"]').click();await input(20);await expect(page.locator('#angleReadout')).toContainText('External 20°');
+ await page.locator('[data-motion="rot"]').click();await input(20);await expect(page.locator('#angleReadout')).toContainText('外旋 20°');
  await page.locator('[data-motion="flex"]').click();await expect(page.locator('#motionSlider')).toHaveValue('65');
  await page.locator('[data-mode="anatomy"]').click();await page.locator('[data-mode="kinesiology"]').click();await expect(page.locator('#motionSlider')).toHaveValue('65');
- await page.locator('[data-motion="stress"]').click();await input(3);await expect(page.locator('#angleReadout')).toContainText('Valgus 3°');
+ await page.locator('[data-motion="stress"]').click();await input(3);await expect(page.locator('#angleReadout')).toContainText('外反 3°');
  await expect.poll(async()=>(await snap()).knee[2]).toBeLessThan(0);
- await input(-3);await expect(page.locator('#angleReadout')).toContainText('Varus 3°');await expect.poll(async()=>(await snap()).knee[2]).toBeGreaterThan(0);
+ await input(-3);await expect(page.locator('#angleReadout')).toContainText('内反 3°');await expect.poll(async()=>(await snap()).knee[2]).toBeGreaterThan(0);
  await page.locator('#resetPose').click();await expect(page.locator('#motionSlider')).toHaveValue('0');
  await page.locator('[data-motion="flex"]').click();await page.locator('#resetPose').click();await expect(page.locator('#motionSlider')).toHaveValue('90');
  const end=await snap();expect(end.bones.every(b=>b.visible)).toBeTruthy();expect(end.states).toEqual(initial.states);

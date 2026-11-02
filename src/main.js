@@ -247,8 +247,8 @@ function updatePose(){if(!kneeModelReady)return;
  if(!boneReview){const p=teachingLigamentTendency(motion,motionValue);
  const markup=['mcl','lcl','acl','pcl'].map(key=>`<div class="ligItem"><strong>${key.toUpperCase()}</strong><span>${({'強調':'Emphasized','通常':'Baseline','角度依存':'Angle dependent','弛緩傾向':'Reduced restraint'})[p[key]]||'Baseline'}</span></div>`).join('');if($('ligamentStatus').innerHTML!==markup)$('ligamentStatus').innerHTML=markup;}
  const shown=Math.round(motionValue);
- $('angleReadout').textContent=motion==='stress'?(motionValue<0?'内反 / Varus ':motionValue>0?'外反 / Valgus ':'Neutral ')+Math.abs(shown)+'°':
-  motion==='rot'?(motionValue<0?'内旋 / Internal ':motionValue>0?'外旋 / External ':'Neutral ')+Math.abs(shown)+'°':`${Math.round(focus==='hip'?motionValue:flex)}°`;
+ $('angleReadout').textContent=motion==='stress'?(motionValue<0?'内反 ':motionValue>0?'外反 ':'')+Math.abs(shown)+'°':
+  motion==='rot'?(motionValue<0?'内旋 ':motionValue>0?'外旋 ':'')+Math.abs(shown)+'°':`${Math.round(focus==='hip'?motionValue:flex)}°`;
 }
 function frame(target,extent){const d=Math.max(extent,.02);controls.target.copy(target);camera.position.copy(target).add(new THREE.Vector3(d*.5,d*.32,d*2.45));camera.near=Math.max(.0001,d/1500);camera.far=Math.max(1000,d*200);camera.updateProjectionMatrix();controls.update()}
 function frameFocus(f=focus){if(!modelLoaded)return;
@@ -270,7 +270,7 @@ function setPlaying(value){playing=value;if(value&&poseTarget&&(rig.hip.quaterni
 function setMotion(m){setPlaying(false);playDirection=1;motion=m;motionValue=motionValues[m];
  for(const el of document.querySelectorAll('[data-motion]'))el.classList.toggle('selected',el.dataset.motion===m);
  const sl=$('motionSlider');const ranges={flex:[...KNEE.flexionRange,90,'伸展 / Extension 0°',`屈曲 / Flexion ${KNEE.flexionRange[1]}°`],rot:[-15,30,0,'内旋 / Internal 15°','外旋 / External 30°'],stress:[-3,3,0,'内反 / Varus 3°','外反 / Valgus 3°']};
- const v=(focus==='hip'?hipRanges:ranges)[m];sl.min=v[0];sl.max=v[1];sl.step='.1';sl.value=motionValue;$('negativeLabel').textContent=v[3];$('positiveLabel').textContent=v[4];updatePose()}
+ const v=(focus==='hip'?hipRanges:ranges)[m];sl.min=v[0];sl.max=v[1];sl.step='.1';sl.value=motionValue;$('negativeLabel').textContent=v[3].replace(/ \/ [A-Za-z]+ /,' ');$('positiveLabel').textContent=v[4].replace(/ \/ [A-Za-z]+ /,' ');updatePose()}
 function updateModeUI(){
  $('muscleGroups').replaceChildren();for(const [key,group] of Object.entries(muscleGroups[focus]||{})){const b=document.createElement('button');b.type='button';b.dataset.muscleGroup=key;b.classList.toggle('selected',selectedMuscleGroup[focus]===key);b.textContent=group.label;b.title=({flex:'Flexion',ext:'Extension',ir:'Internal rotation',er:'External rotation',abd:'Abduction',add:'Adduction'})[key];b.addEventListener('click',()=>{selectedMuscleGroup[focus]=key;for(const [name,,kind] of tissues)if(kind==='muscle')tissueStates.set(name,relevant(name,focus)&&group.names.includes(name)?'on':'off');if(focus==='hip')tissueStates.set('Iliotibial tract.r','fade');updateVisibility();for(const button of $('muscleGroups').children)button.classList.toggle('selected',button===b);if(activeSelection)selectStructure(activeSelection,{showFloating:!$('floatingSelection').hidden});});$('muscleGroups').append(b);}
 

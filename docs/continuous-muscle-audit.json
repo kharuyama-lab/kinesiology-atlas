@@ -5,75 +5,135 @@
       "curves": [
         {
           "name": "Rectus femoris muscle.r",
-          "minProgress": 0.0037402122180414245,
-          "maxTurn": 0.004028292309720836,
-          "length": 0.47874716390931127,
-          "restLength": 0.5458933323997615,
-          "scale": 1.0678267295351633
+          "capError": 1.0792877991857567e-8,
+          "viaError": 0.000006638775446259866,
+          "determinant": 0.4689586658734034,
+          "minProgress": 0.0019952291002202716,
+          "maxTurn": 0.15015216094412806,
+          "length": 0.4710392918436717,
+          "restLength": 0.5462208874956976,
+          "scale": 1
+        },
+        {
+          "name": "Vastus medialis muscle.r",
+          "capError": 1.0534518898864615e-8,
+          "viaError": 0.000004363027711386061,
+          "determinant": 1.000000000001642,
+          "minProgress": 0.0031280830386229475,
+          "maxTurn": 0.15026336908380042,
+          "length": 0.4082537996315063,
+          "restLength": 0.40825359885725526,
+          "scale": 1
+        },
+        {
+          "name": "Vastus lateralis muscle.r",
+          "capError": 8.636844207304865e-9,
+          "viaError": 4.82703507213368e-7,
+          "determinant": 0.9999999999984124,
+          "minProgress": 0.003413893575338629,
+          "maxTurn": 0.18706968762455803,
+          "length": 0.45787408703545907,
+          "restLength": 0.45787389206389034,
+          "scale": 1
+        },
+        {
+          "name": "Vastus intermedius muscle.r",
+          "capError": 1.0860455071887447e-8,
+          "viaError": 0.0000041832299921964655,
+          "determinant": 0.9999999999967116,
+          "minProgress": 0.003190186512995079,
+          "maxTurn": 0.06793468148020439,
+          "length": 0.40980688226781786,
+          "restLength": 0.40980667524225173,
+          "scale": 1
         },
         {
           "name": "Long head of biceps femoris.r",
-          "minProgress": 0.004058794265817216,
-          "maxTurn": 0.001697560388833429,
-          "length": 0.5195256660246104,
-          "restLength": 0.4302333543503928,
-          "scale": 0.9100149652561117
+          "capError": 2.0180810443281358e-8,
+          "viaError": null,
+          "determinant": 1.2145681341618353,
+          "minProgress": 0.003998956268954645,
+          "maxTurn": 0.07963449821468187,
+          "length": 0.5199484764133835,
+          "restLength": 0.42942747638654827,
+          "scale": 1
         },
         {
           "name": "Short head of biceps femoris.r",
-          "minProgress": 0.0023704232236854356,
-          "maxTurn": 0.0015552276153047604,
-          "length": 0.3034141726317462,
-          "restLength": 0.3034142034527097,
-          "scale": 1.000000050790249
+          "capError": 6.054236714624745e-9,
+          "viaError": null,
+          "determinant": 0.9999998359651007,
+          "minProgress": 0.002246785440449134,
+          "maxTurn": 0.20407960904502775,
+          "length": 0.30302424435614683,
+          "restLength": 0.3030242664814695,
+          "scale": 1
         },
         {
           "name": "Semitendinosus muscle.r",
-          "minProgress": 0.004319131802843319,
-          "maxTurn": 0.004592193711241323,
-          "length": 0.5528488707639532,
-          "restLength": 0.4606223261888623,
-          "scale": 0.9127866479491407
+          "capError": 6.015465835686331e-9,
+          "viaError": null,
+          "determinant": 1.2102086974117703,
+          "minProgress": 0.0043221270247409535,
+          "maxTurn": 0.11189094436911554,
+          "length": 0.5575720029393624,
+          "restLength": 0.46091826019407556,
+          "scale": 1
         },
         {
           "name": "Semimembranosus muscle.r",
-          "minProgress": 0.003971009419043694,
-          "maxTurn": 0.003121260319275931,
-          "length": 0.5082892056376073,
-          "restLength": 0.4179666970864135,
-          "scale": 0.9068081113544163
+          "capError": 4.314463914843206e-9,
+          "viaError": null,
+          "determinant": 1.1970713538087963,
+          "minProgress": 0.0038826686786204013,
+          "maxTurn": 0.2425246405456796,
+          "length": 0.5020794949017302,
+          "restLength": 0.41839931884892495,
+          "scale": 1
         },
         {
           "name": "Sartorius muscle.r",
-          "minProgress": 0.003659880210448247,
-          "maxTurn": 0.004963417790401861,
-          "length": 0.46846466693738964,
-          "restLength": 0.6044513125223032,
-          "scale": 1.1359056040650564
+          "capError": 8.829883122898045e-9,
+          "viaError": null,
+          "determinant": 0.3138896057220349,
+          "minProgress": 0.0006624419538502156,
+          "maxTurn": 0.1186412706156589,
+          "length": 0.46341798063205103,
+          "restLength": 0.6049015051247983,
+          "scale": 1
         },
         {
           "name": "Gracilis muscle.r",
-          "minProgress": 0.0037895040097559464,
-          "maxTurn": 0.0051073018612465635,
-          "length": 0.4850565132487707,
-          "restLength": 0.497923287862989,
-          "scale": 1.0131763623810106
+          "capError": 6.098401315638673e-9,
+          "viaError": null,
+          "determinant": 0.952810264443813,
+          "minProgress": 0.0035485379965345906,
+          "maxTurn": 0.2481211345886512,
+          "length": 0.4725251982567859,
+          "restLength": 0.49904561416761173,
+          "scale": 1
         },
         {
           "name": "Medial head of gastrocnemius.r",
-          "minProgress": 0.0023726081161735838,
-          "maxTurn": 0.005439185556137498,
-          "length": 0.30369383887023893,
-          "restLength": 0.30369384448316367,
-          "scale": 1.0000000092410908
+          "capError": 1.0783871199108517e-8,
+          "viaError": null,
+          "determinant": 1.0000002439238542,
+          "minProgress": 0.0022464319708892368,
+          "maxTurn": 0.17983686331655843,
+          "length": 0.3053077246381291,
+          "restLength": 0.3053076964675547,
+          "scale": 1
         },
         {
           "name": "Lateral head of gastrocnemius.r",
-          "minProgress": 0.0021284407851676784,
-          "maxTurn": 0.004202171866187143,
-          "length": 0.2724404205014839,
-          "restLength": 0.2724404642872092,
-          "scale": 1.0000000803583466
+          "capError": 1.9291305063607498e-8,
+          "viaError": null,
+          "determinant": 1.0000000352333487,
+          "minProgress": 0.0019042714986410036,
+          "maxTurn": 0.18747459847862202,
+          "length": 0.2735503010139023,
+          "restLength": 0.27355031764733156,
+          "scale": 1
         }
       ]
     },
@@ -82,75 +142,135 @@
       "curves": [
         {
           "name": "Rectus femoris muscle.r",
-          "minProgress": 0.0038574630458839986,
-          "maxTurn": 0.003552795237657828,
-          "length": 0.4937552698731605,
-          "restLength": 0.5458933323997615,
-          "scale": 1.0514727523675396
+          "capError": 3.998363213631216e-9,
+          "viaError": 0.000025264490919343606,
+          "determinant": 0.46895859443712923,
+          "minProgress": 0.0019889625614350967,
+          "maxTurn": 0.21819694364499065,
+          "length": 0.4834853506870929,
+          "restLength": 0.5462208874956976,
+          "scale": 1
+        },
+        {
+          "name": "Vastus medialis muscle.r",
+          "capError": 6.574582647700197e-9,
+          "viaError": 0.00003773703666433161,
+          "determinant": 0.9767768310257047,
+          "minProgress": 0.00293526459366409,
+          "maxTurn": 0.1775065647903118,
+          "length": 0.41918377798176887,
+          "restLength": 0.40825359885725526,
+          "scale": 1
+        },
+        {
+          "name": "Vastus lateralis muscle.r",
+          "capError": 9.591902665921707e-9,
+          "viaError": 0.00000829706260622967,
+          "determinant": 0.9654081910568847,
+          "minProgress": 0.0032870175713335323,
+          "maxTurn": 0.18706968762455622,
+          "length": 0.46784533885141066,
+          "restLength": 0.45787389206389034,
+          "scale": 1
+        },
+        {
+          "name": "Vastus intermedius muscle.r",
+          "capError": 1.0820840043368797e-8,
+          "viaError": 0.000023585594867158613,
+          "determinant": 0.9645211850758437,
+          "minProgress": 0.0030175745614506085,
+          "maxTurn": 0.1826801902357095,
+          "length": 0.4224944518006356,
+          "restLength": 0.40980667524225173,
+          "scale": 1
         },
         {
           "name": "Long head of biceps femoris.r",
-          "minProgress": 0.003973033260061089,
-          "maxTurn": 0.0016262897203326335,
-          "length": 0.5085482572878287,
-          "restLength": 0.4302333543503928,
-          "scale": 0.9197842170737831
+          "capError": 1.0721746132654612e-8,
+          "viaError": null,
+          "determinant": 1.1830848950146386,
+          "minProgress": 0.003873591725018467,
+          "maxTurn": 0.0819507985053723,
+          "length": 0.5075074080547493,
+          "restLength": 0.42942747638654827,
+          "scale": 1
         },
         {
           "name": "Short head of biceps femoris.r",
-          "minProgress": 0.002305523940547197,
-          "maxTurn": 0.0016188126813333349,
-          "length": 0.29510706439004997,
-          "restLength": 0.3034142034527097,
-          "scale": 1.0139771087667144
+          "capError": 1.4387391102814723e-8,
+          "viaError": null,
+          "determinant": 0.9719151804118358,
+          "minProgress": 0.0020648524864028965,
+          "maxTurn": 0.21834268626000378,
+          "length": 0.2973799133337426,
+          "restLength": 0.3030242664814695,
+          "scale": 1
         },
         {
           "name": "Semitendinosus muscle.r",
-          "minProgress": 0.004224688587848222,
-          "maxTurn": 0.003891281143924264,
-          "length": 0.5407601392445822,
-          "restLength": 0.4606223261888623,
-          "scale": 0.9229329613196778
+          "capError": 1.4119796445342982e-8,
+          "viaError": null,
+          "determinant": 1.183205493814389,
+          "minProgress": 0.004211402022340122,
+          "maxTurn": 0.11636926879522412,
+          "length": 0.545017354359406,
+          "restLength": 0.46091826019407556,
+          "scale": 1
         },
         {
           "name": "Semimembranosus muscle.r",
-          "minProgress": 0.003897077341374843,
-          "maxTurn": 0.0027011912495976246,
-          "length": 0.49882589969598845,
-          "restLength": 0.4179666970864135,
-          "scale": 0.9153692990819458
+          "capError": 2.5937293358113893e-8,
+          "viaError": null,
+          "determinant": 1.178217109987795,
+          "minProgress": 0.00381510161956176,
+          "maxTurn": 0.23915784027524256,
+          "length": 0.4926445290672282,
+          "restLength": 0.41839931884892495,
+          "scale": 1
         },
         {
           "name": "Sartorius muscle.r",
-          "minProgress": 0.003750526168942003,
-          "maxTurn": 0.005051585171631866,
-          "length": 0.4800673496245862,
-          "restLength": 0.6044513125223032,
-          "scale": 1.1220948719718546
+          "capError": 1.3758752194602959e-8,
+          "viaError": null,
+          "determinant": 0.3138895305801885,
+          "minProgress": 0.0007840698900924621,
+          "maxTurn": 0.11864126839928064,
+          "length": 0.47466475989059403,
+          "restLength": 0.6049015051247983,
+          "scale": 1
         },
         {
           "name": "Gracilis muscle.r",
-          "minProgress": 0.0037323399055064627,
-          "maxTurn": 0.004459689640117321,
-          "length": 0.477739507904842,
-          "restLength": 0.497923287862989,
-          "scale": 1.0209057277421079
+          "capError": 4.991160133809568e-9,
+          "viaError": null,
+          "determinant": 0.934086185252891,
+          "minProgress": 0.0035633482237082065,
+          "maxTurn": 0.22406064513300375,
+          "length": 0.4655426097774206,
+          "restLength": 0.49904561416761173,
+          "scale": 1
         },
         {
           "name": "Medial head of gastrocnemius.r",
-          "minProgress": 0.002327040819650711,
-          "maxTurn": 0.0053200972312122665,
-          "length": 0.297861224915311,
-          "restLength": 0.30369384448316367,
-          "scale": 1.0097433673152458
+          "capError": 7.1736651709924595e-9,
+          "viaError": null,
+          "determinant": 1.0022349294203872,
+          "minProgress": 0.002276065608947989,
+          "maxTurn": 0.19359108426547245,
+          "length": 0.3026726864357549,
+          "restLength": 0.3053076964675547,
+          "scale": 1
         },
         {
           "name": "Lateral head of gastrocnemius.r",
-          "minProgress": 0.0020537475103864136,
-          "maxTurn": 0.0038600173287407892,
-          "length": 0.26287968132947814,
-          "restLength": 0.2724404642872092,
-          "scale": 1.0180223108528008
+          "capError": 1.4407994796634597e-8,
+          "viaError": null,
+          "determinant": 0.9910800644328487,
+          "minProgress": 0.0019507640933930288,
+          "maxTurn": 0.19967694367361338,
+          "length": 0.2685750957512644,
+          "restLength": 0.27355031764733156,
+          "scale": 1
         }
       ]
     },
@@ -159,75 +279,135 @@
       "curves": [
         {
           "name": "Rectus femoris muscle.r",
-          "minProgress": 0.00385667592830655,
-          "maxTurn": 0.00304966728562707,
-          "length": 0.4936545188232494,
-          "restLength": 0.5458933323997615,
-          "scale": 1.051580045601003
+          "capError": 5.7381810458121505e-9,
+          "viaError": 0.00004551458073167823,
+          "determinant": 0.46895859443712923,
+          "minProgress": 0.0019610127285738677,
+          "maxTurn": 0.3732406204566663,
+          "length": 0.47729943607668257,
+          "restLength": 0.5462208874956976,
+          "scale": 1
+        },
+        {
+          "name": "Vastus medialis muscle.r",
+          "capError": 8.630082992511132e-9,
+          "viaError": 0.0000686871311561168,
+          "determinant": 0.9107403187212029,
+          "minProgress": 0.0023419876094135147,
+          "maxTurn": 0.2976687896923533,
+          "length": 0.41421893176559615,
+          "restLength": 0.40825359885725526,
+          "scale": 1
+        },
+        {
+          "name": "Vastus lateralis muscle.r",
+          "capError": 9.591902665921707e-9,
+          "viaError": 0.00001527853738279576,
+          "determinant": 0.9029575881199131,
+          "minProgress": 0.002479076955272383,
+          "maxTurn": 0.3241307246268545,
+          "length": 0.4614651955809792,
+          "restLength": 0.45787389206389034,
+          "scale": 1
+        },
+        {
+          "name": "Vastus intermedius muscle.r",
+          "capError": 1.0820840043368797e-8,
+          "viaError": 0.00004051189031453535,
+          "determinant": 0.914561142607672,
+          "minProgress": 0.0025043700918831683,
+          "maxTurn": 0.34523298428186644,
+          "length": 0.4212131026436825,
+          "restLength": 0.40980667524225173,
+          "scale": 1
         },
         {
           "name": "Long head of biceps femoris.r",
-          "minProgress": 0.003798848183860235,
-          "maxTurn": 0.001640555518773875,
-          "length": 0.4862525675341202,
-          "restLength": 0.4302333543503928,
-          "scale": 0.9406348920965709
+          "capError": 6.281518019775675e-9,
+          "viaError": null,
+          "determinant": 1.1241892978511665,
+          "minProgress": 0.0036641025796187014,
+          "maxTurn": 0.08627252353648149,
+          "length": 0.48400733735846446,
+          "restLength": 0.42942747638654827,
+          "scale": 1
         },
         {
           "name": "Short head of biceps femoris.r",
-          "minProgress": 0.0021703856871925858,
-          "maxTurn": 0.001723673200621552,
-          "length": 0.27780936796065997,
-          "restLength": 0.3034142034527097,
-          "scale": 1.045067905027799
+          "capError": 4.079403936828723e-9,
+          "viaError": null,
+          "determinant": 0.9082808123962348,
+          "minProgress": 0.0018095059790310586,
+          "maxTurn": 0.2394307194087387,
+          "length": 0.28240109358162,
+          "restLength": 0.3030242664814695,
+          "scale": 1
         },
         {
           "name": "Semitendinosus muscle.r",
-          "minProgress": 0.0039832620329448955,
-          "maxTurn": 0.0028947753946454197,
-          "length": 0.5098575402169567,
-          "restLength": 0.4606223261888623,
-          "scale": 0.9504911311626912
+          "capError": 1.1287385803686096e-8,
+          "viaError": null,
+          "determinant": 1.107201933589006,
+          "minProgress": 0.003871176097202672,
+          "maxTurn": 0.12447800864829356,
+          "length": 0.5136509869138167,
+          "restLength": 0.46091826019407556,
+          "scale": 1
         },
         {
           "name": "Semimembranosus muscle.r",
-          "minProgress": 0.003727923826567222,
-          "maxTurn": 0.0020174483314199425,
-          "length": 0.4771742498006118,
-          "restLength": 0.4179666970864135,
-          "scale": 0.9359062336763408
+          "capError": 8.37458898548379e-9,
+          "viaError": null,
+          "determinant": 1.1243489116480438,
+          "minProgress": 0.0036194756716812354,
+          "maxTurn": 0.24218024400594937,
+          "length": 0.47095868064798957,
+          "restLength": 0.41839931884892495,
+          "scale": 1
         },
         {
           "name": "Sartorius muscle.r",
-          "minProgress": 0.0036701061679896155,
-          "maxTurn": 0.004925030814350939,
-          "length": 0.4697735895026885,
-          "restLength": 0.6044513125223032,
-          "scale": 1.1343220224991613
+          "capError": 1.1298994572367445e-8,
+          "viaError": null,
+          "determinant": 0.3138895305801885,
+          "minProgress": 0.0008864887554812604,
+          "maxTurn": 0.11864126839928064,
+          "length": 0.46412914760963386,
+          "restLength": 0.6049015051247983,
+          "scale": 1
         },
         {
           "name": "Gracilis muscle.r",
-          "minProgress": 0.003516908026428409,
-          "maxTurn": 0.0035381416425676105,
-          "length": 0.4501642273828464,
-          "restLength": 0.497923287862989,
-          "scale": 1.0517093358296739
+          "capError": 1.3827649533148226e-8,
+          "viaError": null,
+          "determinant": 0.8636758737193266,
+          "minProgress": 0.0032376293514095765,
+          "maxTurn": 0.20927781530806835,
+          "length": 0.43841260754567507,
+          "restLength": 0.49904561416761173,
+          "scale": 1
         },
         {
           "name": "Medial head of gastrocnemius.r",
-          "minProgress": 0.0022011157236177126,
-          "maxTurn": 0.004252296805298169,
-          "length": 0.2817428126230915,
-          "restLength": 0.30369384448316367,
-          "scale": 1.0382252139195756
+          "capError": 2.5123921972654387e-8,
+          "viaError": null,
+          "determinant": 0.9617717222219947,
+          "minProgress": 0.0022215451320633395,
+          "maxTurn": 0.2111298700465917,
+          "length": 0.28886171609774824,
+          "restLength": 0.3053076964675547,
+          "scale": 1
         },
         {
           "name": "Lateral head of gastrocnemius.r",
-          "minProgress": 0.0019463684638225147,
-          "maxTurn": 0.004311180578275907,
-          "length": 0.2491351633693017,
-          "restLength": 0.2724404642872092,
-          "scale": 1.0457269278241068
+          "capError": 2.8734788024519742e-8,
+          "viaError": null,
+          "determinant": 0.9567327374429642,
+          "minProgress": 0.0019378290003732976,
+          "maxTurn": 0.2096168192573018,
+          "length": 0.2581206806494289,
+          "restLength": 0.27355031764733156,
+          "scale": 1
         }
       ]
     },
@@ -236,75 +416,135 @@
       "curves": [
         {
           "name": "Rectus femoris muscle.r",
-          "minProgress": 0.003762957966879546,
-          "maxTurn": 0.0031297416653316566,
-          "length": 0.4816586197605922,
-          "restLength": 0.5458933323997615,
-          "scale": 1.06459452045486
+          "capError": 6.392190973324235e-9,
+          "viaError": 0.00006571292532407887,
+          "determinant": 0.46895859443712923,
+          "minProgress": 0.0010740227676968937,
+          "maxTurn": 0.5493833406996235,
+          "length": 0.45466759517898575,
+          "restLength": 0.5462208874956976,
+          "scale": 1
+        },
+        {
+          "name": "Vastus medialis muscle.r",
+          "capError": 1.3809514908733722e-8,
+          "viaError": 0.00009805199273147627,
+          "determinant": 0.7947342939387313,
+          "minProgress": 0.001116241235566012,
+          "maxTurn": 0.45123136493472255,
+          "length": 0.3950542191150073,
+          "restLength": 0.40825359885725526,
+          "scale": 1
+        },
+        {
+          "name": "Vastus lateralis muscle.r",
+          "capError": 1.64112177851074e-8,
+          "viaError": 0.000021648995879248665,
+          "determinant": 0.7908835745260145,
+          "minProgress": 0.0009874129967097612,
+          "maxTurn": 0.498830246443004,
+          "length": 0.44075220162190304,
+          "restLength": 0.45787389206389034,
+          "scale": 1
+        },
+        {
+          "name": "Vastus intermedius muscle.r",
+          "capError": 1.0820840043368797e-8,
+          "viaError": 0.0000580620510975563,
+          "determinant": 0.8152047355132659,
+          "minProgress": 0.0013618523209665582,
+          "maxTurn": 0.5721500084830478,
+          "length": 0.4073730773047692,
+          "restLength": 0.40980667524225173,
+          "scale": 1
         },
         {
           "name": "Long head of biceps femoris.r",
-          "minProgress": 0.0035802189704440927,
-          "maxTurn": 0.0016914403763919614,
-          "length": 0.4582680282168564,
-          "restLength": 0.4302333543503928,
-          "scale": 0.9689296787410551
+          "capError": 5.3567588298582915e-9,
+          "viaError": null,
+          "determinant": 1.055410383012681,
+          "minProgress": 0.0034295227916181508,
+          "maxTurn": 0.09181964840772851,
+          "length": 0.45540326002547543,
+          "restLength": 0.42942747638654827,
+          "scale": 1
         },
         {
           "name": "Short head of biceps femoris.r",
-          "minProgress": 0.001992379531803929,
-          "maxTurn": 0.0018883167276834496,
-          "length": 0.2550245800709146,
-          "restLength": 0.3034142034527097,
-          "scale": 1.090754298167799
+          "capError": 8.237548405779465e-9,
+          "viaError": null,
+          "determinant": 0.8286150440155777,
+          "minProgress": 0.0015581578795098383,
+          "maxTurn": 0.2625055013633479,
+          "length": 0.26110221167583475,
+          "restLength": 0.3030242664814695,
+          "scale": 1
         },
         {
           "name": "Semitendinosus muscle.r",
-          "minProgress": 0.003639074720113539,
-          "maxTurn": 0.0017643562590601504,
-          "length": 0.46580156417454227,
-          "restLength": 0.4606223261888623,
-          "scale": 0.9944249698309694
+          "capError": 4.5427834936645296e-9,
+          "viaError": null,
+          "determinant": 1.0041794547319265,
+          "minProgress": 0.003464557185132855,
+          "maxTurn": 0.13674612512381573,
+          "length": 0.4692770925380826,
+          "restLength": 0.46091826019407556,
+          "scale": 1
         },
         {
           "name": "Semimembranosus muscle.r",
-          "minProgress": 0.003498781330442308,
-          "maxTurn": 0.0018945209462846915,
-          "length": 0.44784401029662513,
-          "restLength": 0.4179666970864135,
-          "scale": 0.9660674612111322
+          "capError": 7.644419686442489e-9,
+          "viaError": null,
+          "determinant": 1.0516806909529952,
+          "minProgress": 0.0033612136774940488,
+          "maxTurn": 0.25060834590805775,
+          "length": 0.4415273880806055,
+          "restLength": 0.41839931884892495,
+          "scale": 1
         },
         {
           "name": "Sartorius muscle.r",
-          "minProgress": 0.003444964503514797,
-          "maxTurn": 0.0046947052476116165,
-          "length": 0.4409554564499097,
-          "restLength": 0.6044513125223032,
-          "scale": 1.1708015857583145
+          "capError": 1.1083743092688045e-8,
+          "viaError": null,
+          "determinant": 0.3138895305801885,
+          "minProgress": 0.0009722131661984072,
+          "maxTurn": 0.12321284848617095,
+          "length": 0.4351592207001422,
+          "restLength": 0.6049015051247983,
+          "scale": 1
         },
         {
           "name": "Gracilis muscle.r",
-          "minProgress": 0.0031770722464030884,
-          "maxTurn": 0.0023748083877275232,
-          "length": 0.4066652475396061,
-          "restLength": 0.497923287862989,
-          "scale": 1.1065287164316397
+          "capError": 1.0859877768445348e-8,
+          "viaError": null,
+          "determinant": 0.7619517400404952,
+          "minProgress": 0.0028147081185029735,
+          "maxTurn": 0.20216462949548392,
+          "length": 0.39529635550400405,
+          "restLength": 0.49904561416761173,
+          "scale": 1
         },
         {
           "name": "Medial head of gastrocnemius.r",
-          "minProgress": 0.0020131712617991087,
-          "maxTurn": 0.002431767782461932,
-          "length": 0.257685921510309,
-          "restLength": 0.30369384448316367,
-          "scale": 1.0856070344422089
+          "capError": 7.1736651709924595e-9,
+          "viaError": null,
+          "determinant": 0.8842986096964673,
+          "minProgress": 0.001962367983199803,
+          "maxTurn": 0.22626964146476902,
+          "length": 0.2657825921056304,
+          "restLength": 0.3053076964675547,
+          "scale": 1
         },
         {
           "name": "Lateral head of gastrocnemius.r",
-          "minProgress": 0.0018157557971909368,
-          "maxTurn": 0.005289566274941394,
-          "length": 0.2324167420404659,
-          "restLength": 0.2724404642872092,
-          "scale": 1.0826849536817271
+          "capError": 1.5209361970543702e-8,
+          "viaError": null,
+          "determinant": 0.9004272868886343,
+          "minProgress": 0.0018679403097933993,
+          "maxTurn": 0.2164414259722529,
+          "length": 0.24255374029714893,
+          "restLength": 0.27355031764733156,
+          "scale": 1
         }
       ]
     },
@@ -313,75 +553,135 @@
       "curves": [
         {
           "name": "Rectus femoris muscle.r",
-          "minProgress": 0.0036061112085889707,
-          "maxTurn": 0.0033129246046952805,
-          "length": 0.4615822346994021,
-          "restLength": 0.5458933323997615,
-          "scale": 1.087500216789081
+          "capError": 4.9116150139365616e-9,
+          "viaError": 0.00008782695995407144,
+          "determinant": 0.46895859443712923,
+          "minProgress": -0.0018467544459589437,
+          "maxTurn": 0.7898094079638865,
+          "length": 0.41688882187751547,
+          "restLength": 0.5462208874956976,
+          "scale": 1
+        },
+        {
+          "name": "Vastus medialis muscle.r",
+          "capError": 6.71432375051727e-9,
+          "viaError": 0.00012765759568629525,
+          "determinant": 0.6057408050529194,
+          "minProgress": -0.0010626333327608626,
+          "maxTurn": 0.6630791185398978,
+          "length": 0.3621315556686826,
+          "restLength": 0.40825359885725526,
+          "scale": 1
+        },
+        {
+          "name": "Vastus lateralis muscle.r",
+          "capError": 9.591902665921707e-9,
+          "viaError": 0.000027662926199217497,
+          "determinant": 0.605709356874639,
+          "minProgress": -0.001519100347452871,
+          "maxTurn": 0.737901178157552,
+          "length": 0.40663300561590426,
+          "restLength": 0.45787389206389034,
+          "scale": 1
+        },
+        {
+          "name": "Vastus intermedius muscle.r",
+          "capError": 1.0820840043368797e-8,
+          "viaError": 0.00007849416156722487,
+          "determinant": 0.6225500747100123,
+          "minProgress": -0.0008680224965394471,
+          "maxTurn": 0.9257256880365411,
+          "length": 0.380651432761541,
+          "restLength": 0.40980667524225173,
+          "scale": 1
         },
         {
           "name": "Long head of biceps femoris.r",
-          "minProgress": 0.0033475806533998275,
-          "maxTurn": 0.0018033446291240754,
-          "length": 0.42849032363518547,
-          "restLength": 0.4302333543503928,
-          "scale": 1.002031856522972
+          "capError": 4.2451373347443395e-9,
+          "viaError": null,
+          "determinant": 0.9881349442424636,
+          "minProgress": 0.0032055896045118477,
+          "maxTurn": 0.0979580048088481,
+          "length": 0.4258633264228813,
+          "restLength": 0.42942747638654827,
+          "scale": 1
         },
         {
           "name": "Short head of biceps femoris.r",
-          "minProgress": 0.0017893912461915736,
-          "maxTurn": 0.0021234972048736396,
-          "length": 0.22904207951253383,
-          "restLength": 0.3034142034527097,
-          "scale": 1.1509602224819764
+          "capError": 3.703724711614944e-9,
+          "viaError": null,
+          "determinant": 0.7443224731710829,
+          "minProgress": 0.0013407503350512096,
+          "maxTurn": 0.28370501895817074,
+          "length": 0.23519808960318614,
+          "restLength": 0.3030242664814695,
+          "scale": 1
         },
         {
           "name": "Semitendinosus muscle.r",
-          "minProgress": 0.0032409081738041692,
-          "maxTurn": 0.0024988811995983844,
-          "length": 0.4148362462469448,
-          "restLength": 0.4606223261888623,
-          "scale": 1.0537416451175563
+          "capError": 4.840869255572405e-9,
+          "viaError": null,
+          "determinant": 0.8952293123707084,
+          "minProgress": 0.003063025488758218,
+          "maxTurn": 0.15343073790117814,
+          "length": 0.4182825595667638,
+          "restLength": 0.46091826019407556,
+          "scale": 1
         },
         {
           "name": "Semimembranosus muscle.r",
-          "minProgress": 0.0032390828782332434,
-          "maxTurn": 0.0021105235547531354,
-          "length": 0.414602608413864,
-          "restLength": 0.4179666970864135,
-          "scale": 1.004048807327634
+          "capError": 1.3492441251896796e-8,
+          "viaError": null,
+          "determinant": 0.9725115926683494,
+          "minProgress": 0.003104281934988232,
+          "maxTurn": 0.2647753363814332,
+          "length": 0.40811281393905163,
+          "restLength": 0.41839931884892495,
+          "scale": 1
         },
         {
           "name": "Sartorius muscle.r",
-          "minProgress": 0.0030931129267055928,
-          "maxTurn": 0.0043489314751230055,
-          "length": 0.3959184546183327,
-          "restLength": 0.6044513125223032,
-          "scale": 1.18
+          "capError": 7.886950655093766e-9,
+          "viaError": null,
+          "determinant": 0.3138895305801885,
+          "minProgress": 0.001038748692221888,
+          "maxTurn": 0.1334896286155765,
+          "length": 0.39007456256216316,
+          "restLength": 0.6049015051247983,
+          "scale": 1
         },
         {
           "name": "Gracilis muscle.r",
-          "minProgress": 0.00275094679577095,
-          "maxTurn": 0.0023721834148297764,
-          "length": 0.3521211898586936,
-          "restLength": 0.497923287862989,
-          "scale": 1.18
+          "capError": 3.617084801097705e-9,
+          "viaError": null,
+          "determinant": 0.6501011036621527,
+          "minProgress": 0.002360012206599396,
+          "maxTurn": 0.20515840310215291,
+          "length": 0.34084491062415406,
+          "restLength": 0.49904561416761173,
+          "scale": 1
         },
         {
           "name": "Medial head of gastrocnemius.r",
-          "minProgress": 0.0017971753509289936,
-          "maxTurn": 0.004030265190538611,
-          "length": 0.23003844491894385,
-          "restLength": 0.30369384448316367,
-          "scale": 1.1489940590673744
+          "capError": 1.6634578758976356e-8,
+          "viaError": null,
+          "determinant": 0.7885919329836708,
+          "minProgress": 0.0016756206285337295,
+          "maxTurn": 0.22929186145332967,
+          "length": 0.23730090989570657,
+          "restLength": 0.3053076964675547,
+          "scale": 1
         },
         {
           "name": "Lateral head of gastrocnemius.r",
-          "minProgress": 0.0016911192233849343,
-          "maxTurn": 0.006624494539883696,
-          "length": 0.21646326059328955,
-          "restLength": 0.2724404642872092,
-          "scale": 1.1218730306345692
+          "capError": 1.8611485396513513e-8,
+          "viaError": null,
+          "determinant": 0.8350447795177453,
+          "minProgress": 0.0017328090660540113,
+          "maxTurn": 0.21440325075719469,
+          "length": 0.2249338638417751,
+          "restLength": 0.27355031764733156,
+          "scale": 1
         }
       ]
     }

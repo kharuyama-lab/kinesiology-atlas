@@ -38,3 +38,5 @@
 
 .muscleGroups{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:3px;margin-bottom:4px}.muscleGroups button{font-size:11px;padding:3px 2px}.sidebar[data-joint=hip] .muscleGroups{grid-template-columns:repeat(6,minmax(0,1fr))}
 #sidebar details:has(>#selectedStructure){display:none}
+
+.angleLabels{display:grid;grid-template-columns:minmax(0,1fr) 116px minmax(0,1fr);gap:4px;min-height:32px}.angleLabels>span{white-space:nowrap}.angleLabels>span:last-child{text-align:right}.angleLabels strong{display:block;width:116px;text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;line-height:1.4;padding-right:12px}

@@ -37,3 +37,5 @@ Hipは既存Hip版の3方向の運動・Auto・筋識別色・作用の濃淡・
 筋走行の修正：前回の筋全長への回転配分を見直し、筋腹を対応する骨側へ追従。アキレス腱、腸脛靭帯の初期FadeとTFL/大殿筋との連動、膝4筋群とHip6筋群の一括表示を追加。最新の修正と画像は [docs/MUSCLE_ROUTING_CORRECTION.md](docs/MUSCLE_ROUTING_CORRECTION.md) を参照してください。
 
 筋の起始付近のヘアピン・局所的な折れに対し、長い筋を全長で連続変形させる方式へ変更。変形後の当たり判定用包囲箱も更新し、膝に表示する16筋・腱の実表面でホバーを検査。最新の検証範囲と限界は [docs/CONTINUOUS_MUSCLES_AND_PICKING.md](docs/CONTINUOUS_MUSCLES_AND_PICKING.md)。
+
+最新修正：単純な端点間曲線への変形を撤回し、元の筋走行を基準に変更。四頭筋の元メッシュに含まれる腱部は膝蓋骨経由で脛骨へ追従します。角度欄は日本語・固定幅・等幅数字。詳細は [docs/SOURCE_SURFACE_AND_ANGLE_FIX.md](docs/SOURCE_SURFACE_AND_ANGLE_FIX.md)。
