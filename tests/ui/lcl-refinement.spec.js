@@ -9,7 +9,7 @@ test('extension engages ACL/collaterals; LCL takes up slack; ON never fades',asy
  const ext=await page.evaluate(()=>window.atlasPresentationQA());for(const key of ['acl','mcl','lcl'])expect(ext.scores[key]).toBeGreaterThan(.999);expect(ext.scores.pcl).toBeLessThan(.001);
  expect(Object.values(ext.materials).every(m=>m.opacity===1)).toBeTruthy();await page.screenshot({path:'test-results/lcl-extension.png'});
  await set('flex',90);await expect.poll(takeUp).toBeLessThan(.001);expect(Object.values((await page.evaluate(()=>window.atlasPresentationQA())).materials).every(m=>m.opacity===1)).toBeTruthy();await page.screenshot({path:'test-results/lcl-flexion-slack.png'});
- await set('rot',30);await expect.poll(takeUp).toBeGreaterThan(.999);await page.screenshot({path:'test-results/lcl-external-taut.png'});
+ await set('rot',30);const route=await page.evaluate(()=>window.atlasLigamentQA().entries.find(e=>e.name==='Fibular collateral ligament.r'));expect(route.routeLength).toBeCloseTo(Math.max(route.referenceLength,route.span),6);await page.screenshot({path:'test-results/lcl-external-taut.png'});
  const row=page.locator('[data-tissue="Fibular collateral ligament.r"]');await row.click();await expect.poll(async()=>(await page.evaluate(()=>window.atlasPresentationQA())).materials['Fibular collateral ligament.r'].opacity).toBe(.3);
  await row.click();expect((await page.evaluate(()=>window.atlasPresentationQA())).materials['Fibular collateral ligament.r'].visible).toBeFalsy();
 });

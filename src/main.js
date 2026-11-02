@@ -397,7 +397,7 @@ function tick(now=performance.now()){requestAnimationFrame(tick);const dt=Math.m
   if(modelLoaded&&focus==='knee'){const delta=kneeObservation().sub(before);camera.position.add(delta);controls.target.add(delta);}
   if(modeTransition&&rig.hip.quaternion.angleTo(poseTarget.hip)<.001&&rig.knee.quaternion.angleTo(poseTarget.knee)<.001&&rig.knee.position.distanceTo(poseTarget.kneePosition)<.00001)modeTransition=false;
  }
- tissueFollower.update(rig.hip.quaternion,rig.knee.quaternion,now);controls.update();scene.updateMatrixWorld(true);ligamentFollower.update(mode==='kinesiology'&&focus==='knee'?ligamentEngagement(renderedAngles):{});updateLigamentPresentation(now);fadeLeftSkeleton();renderer.render(scene,camera);
+ tissueFollower.update(rig.hip.quaternion,rig.knee.quaternion,now);controls.update();scene.updateMatrixWorld(true);ligamentFollower.update({active:mode==='kinesiology'&&focus==='knee'});updateLigamentPresentation(now);fadeLeftSkeleton();renderer.render(scene,camera);
 }tick();boot();
 // Read-only QA snapshot, opt in locally with ?qa; no remote controls.
 if(new URLSearchParams(location.search).has('qa'))window.atlasQA=()=>({mode,focus,patellaState,patellaNDC:worldBox('Patella.r')?.getCenter(new THREE.Vector3()).project(camera).toArray(),renderedMeniscusActive,contactStatus:kneeContactModel?.status,contacts:renderedContact?.contacts,menisci:meniscusFollower.snapshot(),coupledAxial:renderedScrew,renderedAngles:{...renderedAngles},coupledMotion,kneeTranslation:rig.knee.position.clone().sub(kneeBasePosition).toArray(),instantaneous:renderedContact?.instantaneous,extrapolated:poseTarget?.extrapolated,axisTrial,patellaTrial,condyleReview,activeFlexAxis:[...activeFlexAxis],patellaRotation:rig.patella.quaternion.toArray(),patellaCenter:worldBox('Patella.r')?.getCenter(new THREE.Vector3()).toArray(),playing,playDirection,followers:tissueFollower.snapshot(),bodyStates:Object.fromEntries(bodyStates),bulkStates:{...bulkStates},landmarkReview,landmarkNDC:landmarkReview?new THREE.Vector3(...landmarkReview.center).sub(hipWorldPoint).applyQuaternion(rig.hip.quaternion).add(hipWorldPoint).project(camera).toArray():null,motion,motionValue,motionValues:{...motionValues},calibration:{status:KNEE.status,hipCenter:hipWorldPoint?.toArray(),kneeCenter:kneeWorldPoint?.toArray(),axes:{flex:[...activeFlexAxis],axial:[0,1,0],stress:[0,0,1]},sideSign},camera:camera.position.toArray(),target:controls.target.toArray(),states:Object.fromEntries(tissueStates),tissueMeshes:tissues.map(([n])=>({name:n,group:bulkGroup(n,category.get(n)),color:originalMaterials.get(n)?.color.getHex(),count:getMeshes(n).length,visible:getMeshes(n).every(m=>m.visible),opacity:originalMaterials.get(n)?.opacity})),focusNDC:(focus==='knee'?kneeObservation():hipWorldPoint?.clone())?.project(camera).toArray(),bones:[...category].filter(([,k])=>k==='bone').map(([n])=>({name:n,group:bulkGroup(n,category.get(n)),visible:getMeshes(n).every(m=>m.visible),opacity:originalMaterials.get(n).opacity})),registered:[...registered.keys()],hip:rig.hip.quaternion.toArray(),knee:rig.knee.quaternion.toArray()});
@@ -423,7 +423,9 @@ function updateLigamentPresentation(now){
   const key=name.startsWith('Anterior')?'acl':name.startsWith('Posterior')?'pcl':name.startsWith('Fibular')?'lcl':'mcl',base=new THREE.Color(materialPalette[key]),state=visibleStates.get(name);
   mat.color.copy(base);mat.emissive.setHex(0);mat.emissiveIntensity=0;
   if(active&&state!=='off'){
-   const appearance=ligamentAppearance(scores[key],now,state);
+   const entry=ligamentFollower.entries.find(e=>e.name===name);
+   const recruitment=(key==='mcl'||key==='lcl')&&entry?Math.max(0,Math.min(1,1-Math.max(0,entry.restSpan-entry.span)/(entry.restSpan*.08))):1;
+   const appearance=ligamentAppearance(Math.min(scores[key],recruitment),now,state);
    mat.color.lerp(new THREE.Color(0xe0e7ed),appearance.paleness);mat.opacity=appearance.opacity;mat.transparent=mat.opacity<.995;mat.depthWrite=mat.opacity>.96;
    mat.emissive.copy(base);mat.emissiveIntensity=appearance.glow;
   }else{mat.opacity=state==='fade'?.3:1;mat.transparent=state==='fade';mat.depthWrite=state!=='fade';}
@@ -431,3 +433,5 @@ function updateLigamentPresentation(now){
  }
 }
 if(new URLSearchParams(location.search).has('qa'))window.atlasPresentationQA=()=>({boneState,scores:ligamentEngagement(renderedAngles),materials:Object.fromEntries(Object.keys(kneeLigamentBones).map(name=>{const m=originalMaterials.get(name);return [name,{opacity:m?.opacity,color:m?.color.toArray(),glow:m?.emissiveIntensity,visible:getMeshes(name).some(mesh=>mesh.visible)}];}))});
+
+if(new URLSearchParams(location.search).has('qa'))window.atlasLigamentGeometryQA=()=>ligamentFollower.entries.map(e=>({name:e.name,proximal:e.proximal.toArray(),distal:e.distalPoint.toArray(),stations:e.stations,rest:e.rest.map(p=>p.toArray()),femRest:e.femRest.toArray(),distalRestInverse:e.distalRestInverse.toArray(),femWorld:e.femur.matrixWorld.toArray(),distalWorld:e.distal.matrixWorld.toArray()}));

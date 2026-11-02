@@ -19,14 +19,14 @@ test('ligament end collars follow full bone translation/rotation and restore wit
  assert.ok(Math.abs(follower.snapshot()[0].spanRatio-1)<1e-6);
 });
 
-test('LCL teaching take-up straightens the body while preserving both attachment collars',()=>{
+test('LCL route does not shorten when a teaching score changes',()=>{
  const root=new Group(),femur=new Group(),fibula=new Group();root.add(femur,fibula);fibula.position.y=-2;
  const source=[-.1,0,0,.1,0,0,-.1,-.1,0,.1,-.1,0,.4,-1,0,.6,-1,0,-.1,-1.9,0,.1,-1.9,0,-.1,-2,0,.1,-2,0];
  const mesh=new Mesh(new BufferGeometry().setAttribute('position',new Float32BufferAttribute(source,3)));femur.add(mesh);root.updateMatrixWorld(true);
  const follower=new LigamentFollower();follower.prepare({getMeshes:name=>name==='Fibular collateral ligament.r'?[mesh]:[],bones:{femur,'Fibula.r':fibula}});
- follower.update({lcl:0});const a=mesh.geometry.attributes.position,slack=(a.getX(4)+a.getX(5))/2;
- follower.update({lcl:1});const taut=(a.getX(4)+a.getX(5))/2;
- assert.ok(slack>.45);assert.ok(Math.abs(taut)<1e-6);
+ follower.update({active:true,lcl:0});const a=mesh.geometry.attributes.position,slack=(a.getX(4)+a.getX(5))/2;
+ follower.update({active:true,lcl:1});const taut=(a.getX(4)+a.getX(5))/2;
+ assert.ok(Math.abs(slack-taut)<1e-6);assert.ok(Math.abs(follower.snapshot()[0].routeLength-follower.snapshot()[0].referenceLength)<1e-6);
  for(const i of [0,1,8,9])assert.ok(new Vector3().fromBufferAttribute(a,i).distanceTo(new Vector3().fromArray(source,i*3))<1e-6);
- follower.update({lcl:0});assert.ok(Math.abs((a.getX(4)+a.getX(5))/2-slack)<1e-6);
+ follower.update({active:true,lcl:0});assert.ok(Math.abs((a.getX(4)+a.getX(5))/2-slack)<1e-6);
 });
