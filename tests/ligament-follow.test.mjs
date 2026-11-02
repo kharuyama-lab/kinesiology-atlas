@@ -1,7 +1,7 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {Group,Mesh,BufferGeometry,Float32BufferAttribute,Vector3} from 'three';
-import {LigamentFollower} from '../src/ligament-follow.js';
+import {LigamentFollower,REVIEWED_CRUCIATE_SOURCE} from '../src/ligament-follow.js';
 
 test('ligament end collars follow full bone translation/rotation and restore without source mutation',()=>{
  const root=new Group(),femur=new Group(),tibia=new Group();root.add(femur,tibia);tibia.position.y=-2;
@@ -17,4 +17,16 @@ test('ligament end collars follow full bone translation/rotation and restore wit
  root.rotation.set(0,0,0);tibia.rotation.set(0,0,0);tibia.position.set(0,-2,0);root.updateMatrixWorld(true);follower.update();
  const restored=Array.from(mesh.geometry.attributes.position.array);restored.forEach((v,i)=>assert.ok(Math.abs(v-source[i])<1e-6));
  assert.ok(Math.abs(follower.snapshot()[0].spanRatio-1)<1e-6);
+});
+
+test('source-specific cruciate correction preserves collars and leaves unknown models untouched',()=>{
+ const source=[-.1,0,0,.1,0,0,-.1,-.1,0,.1,-.1,0,.4,-1,0,.6,-1,0,-.1,-1.9,0,.1,-1.9,0,-.1,-2,0,.1,-2,0];
+ for(const sourceHash of [null,REVIEWED_CRUCIATE_SOURCE]){
+  const root=new Group(),femur=new Group(),tibia=new Group();root.add(femur,tibia);tibia.position.y=-2;
+  const mesh=new Mesh(new BufferGeometry().setAttribute('position',new Float32BufferAttribute(source,3)));femur.add(mesh);root.updateMatrixWorld(true);
+  const follower=new LigamentFollower();follower.prepare({sourceHash,getMeshes:n=>n==='Posterior cruciate ligament.r'?[mesh]:[],bones:{femur,'Tibia.r':tibia}});follower.update();
+  const a=mesh.geometry.attributes.position;
+  for(const i of [0,1,8,9])assert.ok(new Vector3().fromBufferAttribute(a,i).distanceTo(new Vector3().fromArray(source,i*3))<1e-6);
+  if(sourceHash){assert.ok(follower.snapshot()[0].maxRestCorrection>0);assert.ok((a.getX(4)+a.getX(5))/2<.1);}else assert.deepEqual(Array.from(a.array),Array.from(new Float32Array(source)));
+ }
 });

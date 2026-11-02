@@ -338,11 +338,14 @@ $('playMotion').addEventListener('click',()=>setPlaying(!playing));
 $('resetPose').addEventListener('click',()=>{motionValues[motion]=motion==='flex'?90:0;setMotion(motion)});
 $('mobilePanel').addEventListener('click',()=>{$('sidebar').classList.toggle('collapsed');size()});
 if(matchMedia('(max-width:740px)').matches)$('sidebar').classList.add('collapsed');
+async function tagModelSource(name,root,data){
+ if(name==='joints'&&globalThis.crypto?.subtle){const hash=await crypto.subtle.digest('SHA-256',data);root.userData.atlasSourceHash=Array.from(new Uint8Array(hash),b=>b.toString(16).padStart(2,'0')).join('');}
+}
 async function loadOne(name){const errs=[];for(const base of BASES){try{
  const url=new URL(base+name+'.glb',location.href),controller=new AbortController(),timer=setTimeout(()=>controller.abort(),8000);let response;
  try{response=await fetch(url,{signal:controller.signal});if(!response.ok)throw Error('HTTP '+response.status);var data=await response.arrayBuffer();}finally{clearTimeout(timer);}
  let decodeTimer;const gltf=await Promise.race([loader.parseAsync(data,new URL('.',url).href),new Promise((_,reject)=>{decodeTimer=setTimeout(()=>reject(Error('Model decoding timed out')),15000);})]).finally(()=>clearTimeout(decodeTimer));
- modelSources.set(name,gltf.scene);return name+': loaded';
+ await tagModelSource(name,gltf.scene,data);modelSources.set(name,gltf.scene);return name+': loaded';
  }catch(err){errs.push((new URL(base,location.href)).hostname+': '+String(err.message||err).slice(0,80))}}
  throw Error(`${name}.glb — ${errs.join(' / ')}`)}
 async function afterLoad(){
@@ -355,7 +358,7 @@ async function afterLoad(){
  for(const [sys,source] of modelSources){const root=source.clone(true);root.traverse(o=>{if(o.isMesh)o.visible=false});scene.add(root);liveRoots.push(root);register(root,sys);}
  if(!registered.has('Femur.r')||!registered.has('Tibia.r'))throw Error('Femur.r / Tibia.r not found');
  flatten();assignMaterials();const allBones=[...registered.keys()].filter(n=>category.get(n)==='bone');fullBox=new THREE.Box3();for(const nm of allBones){const b=worldBox(nm);if(b)fullBox.union(b)}
- prepareRig();scene.updateMatrixWorld(true);captureJointSurfaces();ligamentFollower.prepare({getMeshes,bones:{femur:registered.get('Femur.r'),'Tibia.r':registered.get('Tibia.r'),'Fibula.r':registered.get('Fibula.r')}});tissueFollower.prepare({tissues,getMeshes,hipCenter:hipWorldPoint,kneeCenter:kneeWorldPoint});uiBodyLists();modelLoaded=true;
+ prepareRig();scene.updateMatrixWorld(true);captureJointSurfaces();ligamentFollower.prepare({getMeshes,sourceHash:modelSources.get('joints')?.userData.atlasSourceHash,bones:{femur:registered.get('Femur.r'),'Tibia.r':registered.get('Tibia.r'),'Fibula.r':registered.get('Fibula.r')}});tissueFollower.prepare({tissues,getMeshes,hipCenter:hipWorldPoint,kneeCenter:kneeWorldPoint});uiBodyLists();modelLoaded=true;
  for(const name of allBones){const root=registered.get(name);root.updateWorldMatrix(true,true);const box=new THREE.Box3();
   for(const mesh of getMeshes(name)){mesh.geometry.computeBoundingBox();const mb=mesh.geometry.boundingBox.clone().applyMatrix4(mesh.matrixWorld);box.union(mb);}
   const inv=root.matrixWorld.clone().invert();const corners=[];for(const x of [box.min.x,box.max.x])for(const y of [box.min.y,box.max.y])for(const z of [box.min.z,box.max.z])corners.push(new THREE.Vector3(x,y,z).applyMatrix4(inv));skeletonBounds.set(name,corners);
@@ -376,7 +379,7 @@ async function boot(){status('Loading');
   diagnostics(errs.join('\n')||'Femur.r / Tibia.r not found');
  }
 }
-$('manualFiles').addEventListener('change',async e=>{try{for(const f of e.target.files){const system=f.name.toLowerCase().replace(/\.glb$/,'');if(!assets.includes(system))continue;const gltf=await loader.parseAsync(await f.arrayBuffer(),'');modelSources.set(system,gltf.scene)}await afterLoad()}catch(err){diagnostics(String(err));console.error(err)}});
+$('manualFiles').addEventListener('change',async e=>{try{for(const f of e.target.files){const system=f.name.toLowerCase().replace(/\.glb$/,'');if(!assets.includes(system))continue;const data=await f.arrayBuffer(),gltf=await loader.parseAsync(data,'');await tagModelSource(system,gltf.scene,data);modelSources.set(system,gltf.scene)}await afterLoad()}catch(err){diagnostics(String(err));console.error(err)}});
 let lastTick=performance.now();
 function tick(now=performance.now()){requestAnimationFrame(tick);const dt=Math.min((now-lastTick)/1000,.05);lastTick=now;
  const advancing=playing&&!modeTransition&&mode==='kinesiology'&&focus==='knee'&&modelLoaded;

@@ -1,0 +1,74 @@
+{
+  "originalSource": {
+    "overlap": 70,
+    "pclAhead": 70,
+    "minGap": -0.005826240260109916
+  },
+  "status": "Anterior surface ordering at body-crossing samples, not full non-penetration validation",
+  "report": [
+    {
+      "mode": "anatomy",
+      "motion": "flex",
+      "value": 0,
+      "overlap": 59,
+      "pclAhead": 0,
+      "minGap": 0.009367272411589855
+    },
+    {
+      "mode": "kinesiology",
+      "motion": "flex",
+      "value": 0,
+      "overlap": 59,
+      "pclAhead": 0,
+      "minGap": 0.009367256994682549
+    },
+    {
+      "mode": "kinesiology",
+      "motion": "flex",
+      "value": 30,
+      "overlap": 54,
+      "pclAhead": 0,
+      "minGap": 0.005257684298537679
+    },
+    {
+      "mode": "kinesiology",
+      "motion": "flex",
+      "value": 60,
+      "overlap": 56,
+      "pclAhead": 0,
+      "minGap": 0.004003399436063093
+    },
+    {
+      "mode": "kinesiology",
+      "motion": "flex",
+      "value": 90,
+      "overlap": 54,
+      "pclAhead": 0,
+      "minGap": 0.004318203357476236
+    },
+    {
+      "mode": "kinesiology",
+      "motion": "flex",
+      "value": 120,
+      "overlap": 52,
+      "pclAhead": 0,
+      "minGap": 0.004863830048603246
+    },
+    {
+      "mode": "kinesiology",
+      "motion": "rot",
+      "value": -15,
+      "overlap": 54,
+      "pclAhead": 0,
+      "minGap": 0.0026752736796806786
+    },
+    {
+      "mode": "kinesiology",
+      "motion": "rot",
+      "value": 30,
+      "overlap": 49,
+      "pclAhead": 0,
+      "minGap": 0.007362913064990595
+    }
+  ]
+}
