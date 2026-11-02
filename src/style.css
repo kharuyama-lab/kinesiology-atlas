@@ -22,3 +22,5 @@
 }
 #canvasHost canvas{width:100%;height:100%}
 #patellaDisplay{padding:3px 0}
+
+.inlineActions{justify-content:flex-start;gap:8px}.inlineActions #resetPose{margin-right:auto}
