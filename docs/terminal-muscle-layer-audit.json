@@ -6,7 +6,7 @@
         "name": "Gracilis muscle.r",
         "peer": "Semitendinosus muscle.r",
         "samples": 494,
-        "minGap": 0.0249356459826231,
+        "minGap": 0.024935079738497734,
         "penetrating": 0,
         "worstT": 0.41172218236805713
       },
@@ -14,73 +14,73 @@
         "name": "Gracilis muscle.r",
         "peer": "Semimembranosus muscle.r",
         "samples": 1189,
-        "minGap": 0.005104150855913758,
+        "minGap": 0.0051039677346125245,
         "penetrating": 0,
         "worstT": 0.7280781747314342
       },
       {
         "name": "Short head of biceps femoris.r",
         "peer": "Long head of biceps femoris.r",
-        "samples": 835,
-        "minGap": 0.013036580290645361,
-        "penetrating": 0,
-        "worstT": 0.5560839727314947
+        "samples": 586,
+        "minGap": -0.039626920195587445,
+        "penetrating": 303,
+        "worstT": 0.13096993035320253
       }
     ],
     "courses": [
       {
         "name": "Long head of biceps femoris.r",
-        "length": 0.5131050150296897,
-        "freeLength": 0.4719967222806028,
-        "freeMaxTurnDegrees": 5.33317788015573,
-        "arcChordRatio": 1.060118745569919,
-        "freeArcChordRatio": 1.025884373191314,
-        "maxTurnDegrees": 6.155608266251421
+        "length": 0.5131032417796716,
+        "freeLength": 0.4719951462964939,
+        "freeMaxTurnDegrees": 5.333259672298772,
+        "arcChordRatio": 1.0601192607955956,
+        "freeArcChordRatio": 1.0258845392460236,
+        "maxTurnDegrees": 6.155592834952361
       },
       {
         "name": "Short head of biceps femoris.r",
-        "length": 0.34433555137359545,
-        "freeLength": 0.314181925540494,
-        "freeMaxTurnDegrees": 35.949949348895785,
-        "arcChordRatio": 1.219314381982786,
-        "freeArcChordRatio": 1.218262800385355,
-        "maxTurnDegrees": 35.949949348895785
+        "length": 0.29946781083731655,
+        "freeLength": 0.2692704721960457,
+        "freeMaxTurnDegrees": 6.826654722871449,
+        "arcChordRatio": 1.0604372845201766,
+        "freeArcChordRatio": 1.0444624022697737,
+        "maxTurnDegrees": 18.098705678207196
       },
       {
         "name": "Semitendinosus muscle.r",
-        "length": 0.5395522631914663,
-        "freeLength": 0.44571614289087175,
-        "freeMaxTurnDegrees": 4.841883582825452,
-        "arcChordRatio": 1.050426464662513,
-        "freeArcChordRatio": 1.0163233574857897,
-        "maxTurnDegrees": 6.470169212191695
+        "length": 0.5395502405697503,
+        "freeLength": 0.44571448591018104,
+        "freeMaxTurnDegrees": 4.841952253089289,
+        "arcChordRatio": 1.0504274112212062,
+        "freeArcChordRatio": 1.0163235655640437,
+        "maxTurnDegrees": 6.47016650369072
       },
       {
         "name": "Semimembranosus muscle.r",
-        "length": 0.49443783818295844,
-        "freeLength": 0.4371620992135869,
-        "freeMaxTurnDegrees": 4.7622502302054865,
-        "arcChordRatio": 1.0498544635091909,
-        "freeArcChordRatio": 1.021440280414378,
-        "maxTurnDegrees": 8.619265750149577
+        "length": 0.4944359416499179,
+        "freeLength": 0.43716045384891733,
+        "freeMaxTurnDegrees": 4.762305889908488,
+        "arcChordRatio": 1.049855044384363,
+        "freeArcChordRatio": 1.0214404558427053,
+        "maxTurnDegrees": 8.619296849464106
       },
       {
         "name": "Sartorius muscle.r",
-        "length": 0.5094461080822257,
-        "freeLength": 0.40398376892310023,
-        "freeMaxTurnDegrees": 5.432773495703645,
-        "arcChordRatio": 1.0976388665298042,
-        "freeArcChordRatio": 1.0540378004679156,
-        "maxTurnDegrees": 5.432773495703645
+        "length": 0.5094480576917098,
+        "freeLength": 0.4039858830819047,
+        "freeMaxTurnDegrees": 5.432674945038635,
+        "arcChordRatio": 1.097639250702465,
+        "freeArcChordRatio": 1.054037513926734,
+        "maxTurnDegrees": 5.432674945038635
       },
       {
         "name": "Gracilis muscle.r",
-        "length": 0.4804698333290322,
-        "freeLength": 0.37566244223526524,
-        "freeMaxTurnDegrees": 6.697341876012832,
-        "arcChordRatio": 1.0959313505863157,
-        "freeArcChordRatio": 1.0382073686949922,
-        "maxTurnDegrees": 6.697341876012832
+        "length": 0.4804680441439462,
+        "freeLength": 0.3756613379531441,
+        "freeMaxTurnDegrees": 6.697333575349952,
+        "arcChordRatio": 1.0959307248085384,
+        "freeArcChordRatio": 1.0382064451216582,
+        "maxTurnDegrees": 6.697333575349952
       }
     ]
   },
@@ -91,7 +91,7 @@
         "name": "Gracilis muscle.r",
         "peer": "Semitendinosus muscle.r",
         "samples": 770,
-        "minGap": 0.028461916372179985,
+        "minGap": 0.028461914509534836,
         "penetrating": 0,
         "worstT": 0.6712941810389722
       },
@@ -99,73 +99,73 @@
         "name": "Gracilis muscle.r",
         "peer": "Semimembranosus muscle.r",
         "samples": 1380,
-        "minGap": 0.008033979684114456,
+        "minGap": 0.008033981546759605,
         "penetrating": 0,
         "worstT": 0.5129276029719285
       },
       {
         "name": "Short head of biceps femoris.r",
         "peer": "Long head of biceps femoris.r",
-        "samples": 629,
-        "minGap": 0.013606543652713299,
-        "penetrating": 0,
-        "worstT": 0.5718270179413885
+        "samples": 402,
+        "minGap": -0.041834360687062144,
+        "penetrating": 238,
+        "worstT": 0.12209842920877345
       }
     ],
     "courses": [
       {
         "name": "Long head of biceps femoris.r",
-        "length": 0.5141931861173469,
-        "freeLength": 0.4730741063290487,
-        "freeMaxTurnDegrees": 10.36880451561277,
-        "arcChordRatio": 1.1290944257678643,
-        "freeArcChordRatio": 1.0494113911650444,
-        "maxTurnDegrees": 10.36880451561277
+        "length": 0.514193184606206,
+        "freeLength": 0.47307410483567025,
+        "freeMaxTurnDegrees": 10.368802408634345,
+        "arcChordRatio": 1.1290944017198783,
+        "freeArcChordRatio": 1.0494113844028325,
+        "maxTurnDegrees": 10.368802408634345
       },
       {
         "name": "Short head of biceps femoris.r",
-        "length": 0.3410891128705503,
-        "freeLength": 0.3110039472311294,
-        "freeMaxTurnDegrees": 36.11509398147579,
-        "arcChordRatio": 1.3063436001280908,
-        "freeArcChordRatio": 1.258999553266952,
-        "maxTurnDegrees": 36.11509398147579
+        "length": 0.29741695939238033,
+        "freeLength": 0.26724665887967647,
+        "freeMaxTurnDegrees": 12.694278004537047,
+        "arcChordRatio": 1.1390827648613018,
+        "freeArcChordRatio": 1.0823818854781946,
+        "maxTurnDegrees": 18.09870739011288
       },
       {
         "name": "Semitendinosus muscle.r",
-        "length": 0.5404943878593744,
-        "freeLength": 0.4466531452704638,
-        "freeMaxTurnDegrees": 10.541525796706477,
-        "arcChordRatio": 1.151759926731961,
-        "freeArcChordRatio": 1.0379769324796448,
-        "maxTurnDegrees": 10.541525796706477
+        "length": 0.5404943875150272,
+        "freeLength": 0.4466531449264677,
+        "freeMaxTurnDegrees": 10.541522420717966,
+        "arcChordRatio": 1.1517598908179132,
+        "freeArcChordRatio": 1.037976931557597,
+        "maxTurnDegrees": 10.541522420717966
       },
       {
         "name": "Semimembranosus muscle.r",
-        "length": 0.498295817949371,
-        "freeLength": 0.4410168308791072,
-        "freeMaxTurnDegrees": 10.251511115093713,
-        "arcChordRatio": 1.1285730737233688,
-        "freeArcChordRatio": 1.0459954523262553,
-        "maxTurnDegrees": 10.251511115093713
+        "length": 0.49829581708310455,
+        "freeLength": 0.44101683001329534,
+        "freeMaxTurnDegrees": 10.251508737966192,
+        "arcChordRatio": 1.1285730495288777,
+        "freeArcChordRatio": 1.0459954508388754,
+        "maxTurnDegrees": 10.251508737966192
       },
       {
         "name": "Sartorius muscle.r",
-        "length": 0.5187109862527126,
-        "freeLength": 0.4130840566261381,
-        "freeMaxTurnDegrees": 8.876205428357139,
-        "arcChordRatio": 1.1920030501654422,
-        "freeArcChordRatio": 1.0666395643451663,
-        "maxTurnDegrees": 8.876205428357139
+        "length": 0.5187109897873236,
+        "freeLength": 0.41308406009320475,
+        "freeMaxTurnDegrees": 8.876202980172172,
+        "arcChordRatio": 1.1920030153160974,
+        "freeArcChordRatio": 1.066639567431403,
+        "maxTurnDegrees": 8.876202980172172
       },
       {
         "name": "Gracilis muscle.r",
-        "length": 0.4900953653744912,
-        "freeLength": 0.3851968311978257,
-        "freeMaxTurnDegrees": 12.644671706657446,
-        "arcChordRatio": 1.2398180173454627,
-        "freeArcChordRatio": 1.0717302597435778,
-        "maxTurnDegrees": 12.644671706657446
+        "length": 0.49009536509451535,
+        "freeLength": 0.3851968309116584,
+        "freeMaxTurnDegrees": 12.644668546217412,
+        "arcChordRatio": 1.239817966064416,
+        "freeArcChordRatio": 1.0717302590120612,
+        "maxTurnDegrees": 12.644668546217412
       }
     ]
   },
@@ -191,66 +191,66 @@
       {
         "name": "Short head of biceps femoris.r",
         "peer": "Long head of biceps femoris.r",
-        "samples": 594,
-        "minGap": 0.013612744398415089,
-        "penetrating": 0,
-        "worstT": 0.5853137666155834
+        "samples": 400,
+        "minGap": -0.04216952878050506,
+        "penetrating": 255,
+        "worstT": 0.12209842920877345
       }
     ],
     "courses": [
       {
         "name": "Long head of biceps femoris.r",
-        "length": 0.5139108837466176,
-        "freeLength": 0.4727955257010916,
-        "freeMaxTurnDegrees": 14.741132418483897,
-        "arcChordRatio": 1.1667710978484493,
-        "freeArcChordRatio": 1.0585327819494328,
-        "maxTurnDegrees": 14.741132418483897
+        "length": 0.5139108823754057,
+        "freeLength": 0.4727955243463311,
+        "freeMaxTurnDegrees": 14.741132503026344,
+        "arcChordRatio": 1.166771098603296,
+        "freeArcChordRatio": 1.0585327820525186,
+        "maxTurnDegrees": 14.741132503026344
       },
       {
         "name": "Short head of biceps femoris.r",
-        "length": 0.3390241230878519,
-        "freeLength": 0.30898248974435566,
-        "freeMaxTurnDegrees": 36.149952102614094,
-        "arcChordRatio": 1.3637273182105232,
-        "freeArcChordRatio": 1.2794007323719707,
-        "maxTurnDegrees": 36.149952102614094
+        "length": 0.29575559270833435,
+        "freeLength": 0.26560498672290633,
+        "freeMaxTurnDegrees": 16.844174391231682,
+        "arcChordRatio": 1.1896792995623637,
+        "freeArcChordRatio": 1.1002677730270345,
+        "maxTurnDegrees": 18.098707390112512
       },
       {
         "name": "Semitendinosus muscle.r",
-        "length": 0.5365803775300259,
-        "freeLength": 0.44278312956092575,
-        "freeMaxTurnDegrees": 18.022554059626774,
-        "arcChordRatio": 1.208303751635866,
-        "freeArcChordRatio": 1.033181006766663,
-        "maxTurnDegrees": 18.022554059626774
+        "length": 0.5365803759577648,
+        "freeLength": 0.4427831280031946,
+        "freeMaxTurnDegrees": 18.022554133329486,
+        "arcChordRatio": 1.208303753062641,
+        "freeArcChordRatio": 1.0331810068390495,
+        "maxTurnDegrees": 18.022554133329486
       },
       {
         "name": "Semimembranosus muscle.r",
-        "length": 0.4942793465177814,
-        "freeLength": 0.43700496084560897,
-        "freeMaxTurnDegrees": 17.69116935270149,
-        "arcChordRatio": 1.1629703241581304,
-        "freeArcChordRatio": 1.041845632243661,
-        "maxTurnDegrees": 17.69116935270149
+        "length": 0.4942793446504012,
+        "freeLength": 0.43700495897995234,
+        "freeMaxTurnDegrees": 17.691169398604487,
+        "arcChordRatio": 1.1629703249808299,
+        "freeArcChordRatio": 1.0418456322982597,
+        "maxTurnDegrees": 17.691169398604487
       },
       {
         "name": "Sartorius muscle.r",
-        "length": 0.5151850010188734,
-        "freeLength": 0.4096350804508796,
-        "freeMaxTurnDegrees": 13.636741461778952,
-        "arcChordRatio": 1.2430869441717476,
-        "freeArcChordRatio": 1.0552758323975455,
-        "maxTurnDegrees": 14.479135520770349
+        "length": 0.5151850042239781,
+        "freeLength": 0.40963508359791834,
+        "freeMaxTurnDegrees": 13.636741445284072,
+        "arcChordRatio": 1.2430869419160069,
+        "freeArcChordRatio": 1.0552758319427848,
+        "maxTurnDegrees": 14.479135474419639
       },
       {
         "name": "Gracilis muscle.r",
-        "length": 0.487136847966017,
-        "freeLength": 0.38229783229047204,
-        "freeMaxTurnDegrees": 19.454294298607476,
-        "arcChordRatio": 1.3198713139566476,
-        "freeArcChordRatio": 1.0671535834988382,
-        "maxTurnDegrees": 19.454294298607476
+        "length": 0.48713684721678446,
+        "freeLength": 0.3822978315499655,
+        "freeMaxTurnDegrees": 19.4542942164139,
+        "arcChordRatio": 1.3198713128007813,
+        "freeArcChordRatio": 1.0671535835181116,
+        "maxTurnDegrees": 19.4542942164139
       }
     ]
   },
@@ -276,66 +276,66 @@
       {
         "name": "Short head of biceps femoris.r",
         "peer": "Long head of biceps femoris.r",
-        "samples": 611,
-        "minGap": 0.014127884060144424,
-        "penetrating": 0,
-        "worstT": 0.32968127076329823
+        "samples": 452,
+        "minGap": -0.042497199261561036,
+        "penetrating": 289,
+        "worstT": 0.12209842920877345
       }
     ],
     "courses": [
       {
         "name": "Long head of biceps femoris.r",
-        "length": 0.512247488020154,
-        "freeLength": 0.4711509803263782,
-        "freeMaxTurnDegrees": 21.759944801097525,
-        "arcChordRatio": 1.2028450408319165,
-        "freeArcChordRatio": 1.0643097933089545,
-        "maxTurnDegrees": 21.759944801097525
+        "length": 0.5122474853045575,
+        "freeLength": 0.471150977642173,
+        "freeMaxTurnDegrees": 21.75994936681716,
+        "arcChordRatio": 1.2028450600710026,
+        "freeArcChordRatio": 1.064309795431343,
+        "maxTurnDegrees": 21.75994936681716
       },
       {
         "name": "Short head of biceps femoris.r",
-        "length": 0.3358972716227306,
-        "freeLength": 0.3059093826326711,
-        "freeMaxTurnDegrees": 36.31883411636572,
-        "arcChordRatio": 1.4281467640803067,
-        "freeArcChordRatio": 1.297140107594953,
-        "maxTurnDegrees": 36.31883411636572
+        "length": 0.29314228479438725,
+        "freeLength": 0.26302071055835996,
+        "freeMaxTurnDegrees": 24.611990602663816,
+        "arcChordRatio": 1.2463638557450496,
+        "freeArcChordRatio": 1.115590909364969,
+        "maxTurnDegrees": 24.611990602663816
       },
       {
         "name": "Semitendinosus muscle.r",
-        "length": 0.5337461027475077,
-        "freeLength": 0.439988326978351,
-        "freeMaxTurnDegrees": 29.8970122407381,
-        "arcChordRatio": 1.2760424444487029,
-        "freeArcChordRatio": 1.0277612586076232,
-        "maxTurnDegrees": 29.8970122407381
+        "length": 0.5337461017777975,
+        "freeLength": 0.43998832601751975,
+        "freeMaxTurnDegrees": 29.897018192028877,
+        "arcChordRatio": 1.276042489792611,
+        "freeArcChordRatio": 1.0277612596061225,
+        "maxTurnDegrees": 29.897018192028877
       },
       {
         "name": "Semimembranosus muscle.r",
-        "length": 0.4906440639101688,
-        "freeLength": 0.4333742843020462,
-        "freeMaxTurnDegrees": 28.104493953360336,
-        "arcChordRatio": 1.2022268557761835,
-        "freeArcChordRatio": 1.0376926174273706,
-        "maxTurnDegrees": 28.104493953360336
+        "length": 0.4906440619929222,
+        "freeLength": 0.4333742823864132,
+        "freeMaxTurnDegrees": 28.10449925167371,
+        "arcChordRatio": 1.2022268833669472,
+        "freeArcChordRatio": 1.0376926195501905,
+        "maxTurnDegrees": 28.10449925167371
       },
       {
         "name": "Sartorius muscle.r",
-        "length": 0.5112611786462081,
-        "freeLength": 0.40581636206936195,
-        "freeMaxTurnDegrees": 18.363828162294503,
-        "arcChordRatio": 1.3106760550438679,
-        "freeArcChordRatio": 1.046937991678513,
-        "maxTurnDegrees": 22.90077109142374
+        "length": 0.5112611813901342,
+        "freeLength": 0.40581636477540456,
+        "freeMaxTurnDegrees": 18.363830707236634,
+        "arcChordRatio": 1.310676097997893,
+        "freeArcChordRatio": 1.0469379916986274,
+        "maxTurnDegrees": 22.900774003248802
       },
       {
         "name": "Gracilis muscle.r",
-        "length": 0.483808222150672,
-        "freeLength": 0.3790502680731913,
-        "freeMaxTurnDegrees": 25.36649551003235,
-        "arcChordRatio": 1.419438740922985,
-        "freeArcChordRatio": 1.0628504367581662,
-        "maxTurnDegrees": 28.063917012705076
+        "length": 0.4838082209340432,
+        "freeLength": 0.3790502668765391,
+        "freeMaxTurnDegrees": 25.36649844978261,
+        "arcChordRatio": 1.4194388030782374,
+        "freeArcChordRatio": 1.06285043818367,
+        "maxTurnDegrees": 28.06391984605345
       }
     ]
   }

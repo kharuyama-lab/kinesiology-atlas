@@ -4,6 +4,8 @@ Anatomy優先の改修版と、同一3DシーンでJoint Kinesiologyへ切り替
 
 Hipの骨・筋・靭帯の一括ON／Fade／OFFと、Focus直前のMode選択を復元しました。検証記録: [HIP_UI_RESTORATION](docs/HIP_UI_RESTORATION.md)。
 
+大腿二頭筋短頭のみの走行修正：[変更・検証記録](docs/SHORT_HEAD_COURSE.md)。
+
 ## 起動
 
 Node.jsを用意し、フォルダー内で `npm run serve` を実行して http://127.0.0.1:8080/ を開きます。静的ホスティングにも配置可能です。Three.jsとDracoは同梱済みです。ローカル確認では保存済みの `.cache/` 内GLBを自動で優先し、公開ホスティングではGLBを外部から取得します。GLB取得に失敗した場合はDiagnosticsから `skeletal.glb / joints.glb / muscular.glb` を読み込めます。ライセンスはCREDITS_AND_LICENSES.mdを保持してください。

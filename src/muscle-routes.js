@@ -30,9 +30,17 @@ export class MuscleRoutes{
  // deformation grafted onto an already displaced body. Sections retain width.
  wholeRoute(name,curve){if(this.medialRoutes.has(name))return this.medialRoutes.get(name);
   const tb=/Popliteus/.test(name)?clamp((curve.hi-(this.k.y-.02))/curve.span):Math.max(.25,(this.attachT.get(name)??1)-.025),sourceEnd=curve.source(tb),start=curve.start.clone(),end=this.world(this.tibial(sourceEnd.clone())),chord=end.clone().sub(start),length=chord.length(),src=sourceEnd.clone().sub(curve.a),rotation=new Quaternion().setFromUnitVectors(src.clone().normalize(),chord.clone().normalize());
+  const shortHead=/Short head of biceps/.test(name);
   const distalTangent=curve.source(tb).sub(curve.source(Math.max(0,tb-.02))).normalize().applyQuaternion(this.tibialRotation),c1=start.clone().addScaledVector(chord,.33),c2=end.clone().addScaledVector(distalTangent,-length*(.25-(routeFamily(name)==='medial'?.09*this.terminalFlex:0))),samples=[];
   for(let i=0;i<=128;i++){const t=i/128,u=1-t,p=start.clone().multiplyScalar(u*u*u).addScaledVector(c1,3*u*u*t).addScaledVector(c2,3*u*t*t).addScaledVector(end,t*t*t),residual=curve.source(t*tb).sub(curve.a.clone().lerp(sourceEnd,t)).applyQuaternion(rotation);p.addScaledVector(residual,.25*(1-(routeFamily(name)==='medial'?.65*this.terminalFlex:0))*Math.sin(Math.PI*t)**2);
 
+   // Keep the femoral source course; distribute distal travel and tangent
+   // change over the free muscle instead of pushing it sideways under the long head.
+   if(shortHead){
+    const original=this.world(curve.source(t*tb)),carriedEnd=this.world(sourceEnd.clone()),h=.0001;
+    const sourceDerivative=curve.source(tb).sub(curve.source(tb-h)).multiplyScalar(tb/h),native=sourceDerivative.clone().applyQuaternion(this.hip),target=sourceDerivative.applyQuaternion(this.tibialRotation);
+    p.copy(original).addScaledVector(end.clone().sub(carriedEnd),smooth(t)).addScaledVector(target.sub(native),.9*(t-1)*smooth((t-.4)/.6)**2);
+   }
    samples.push({p,q:new Quaternion()});}
   // Solve one full-length displacement amplitude, not pointwise pushes.
   // Separation includes the source sections' widths, rather than centre lines.
@@ -51,7 +59,7 @@ export class MuscleRoutes{
   // Uniform arc-length stations distribute shortening along the complete
   // free muscle, rather than compressing just the cubic's terminal span.
   const guide=samples.map(s=>s.p.clone()),arcs=[0];for(let i=1;i<=128;i++)arcs.push(arcs[i-1]+guide[i].distanceTo(guide[i-1]));let station=1;for(let i=1;i<128;i++){const distance=arcs[128]*i/128;while(station<128&&arcs[station]<distance)station++;samples[i].p.copy(guide[station-1]).lerp(guide[station],(distance-arcs[station-1])/Math.max(1e-9,arcs[station]-arcs[station-1]));}
-  const orient=()=>{for(let i=0;i<=128;i++){const t=i/128,ds=curve.source(Math.min(tb,(t+1/128)*tb)).sub(curve.source(Math.max(0,(t-1/128)*tb))).normalize(),dt=samples[Math.min(128,i+1)].p.clone().sub(samples[Math.max(0,i-1)].p).normalize();const frame=new Quaternion().slerp(this.tibialRotation,t);samples[i].q.setFromUnitVectors(ds.applyQuaternion(frame),dt).multiply(frame);}};orient();if(/Short head of biceps|Gracilis/.test(name))for(let pass=0;pass<2;pass++){this.constrainLayer(samples,name,curve,tb);orient();}
+  const orient=()=>{for(let i=0;i<=128;i++){const t=i/128,ds=curve.source(Math.min(tb,(t+1/128)*tb)).sub(curve.source(Math.max(0,(t-1/128)*tb))).normalize(),dt=samples[Math.min(128,i+1)].p.clone().sub(samples[Math.max(0,i-1)].p).normalize();const frame=new Quaternion().slerp(this.tibialRotation,t);samples[i].q.setFromUnitVectors(ds.applyQuaternion(frame),dt).multiply(frame);}};orient();if(/Gracilis/.test(name))for(let pass=0;pass<2;pass++){this.constrainLayer(samples,name,curve,tb);orient();}
   samples.tb=tb;this.medialRoutes.set(name,samples);return samples;
  }
  depthField(kind){let field=this.depthFields.get(kind);if(field)return field;field=new Map();this.depthFields.set(kind,field);const names=kind==='gracilis'?['Semitendinosus muscle.r','Semimembranosus muscle.r']:['Long head of biceps femoris.r'];for(const e of this.entries.filter(e=>names.includes(e.name)&&e.curve))for(let i=0;i<e.world.length/3;i++){const rest=new Vector3().fromArray(e.world,i*3),base=e.curve.deform(rest,new Vector3()),q=this.deform(e,rest,base,new Vector3(),i),key=Math.floor(q.y/.006)+','+Math.floor(q.z/.006);field.set(key,Math.max(field.get(key)??-Infinity,q.x));}return field;

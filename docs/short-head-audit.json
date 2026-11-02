@@ -1,0 +1,52 @@
+[
+  {
+    "angle": 0,
+    "name": "Short head of biceps femoris.r",
+    "length": 0.30686138129984675,
+    "freeLength": 0.2765743725194313,
+    "freeMaxTurnDegrees": 1.5320450513108597,
+    "arcChordRatio": 1.0126627311622725,
+    "freeArcChordRatio": 1.0042265984968146,
+    "maxTurnDegrees": 18.09870739011102
+  },
+  {
+    "angle": 30,
+    "name": "Short head of biceps femoris.r",
+    "length": 0.3025609592795322,
+    "freeLength": 0.2723243246338336,
+    "freeMaxTurnDegrees": 3.291355130896337,
+    "arcChordRatio": 1.0174224169774189,
+    "freeArcChordRatio": 1.015027904681683,
+    "maxTurnDegrees": 18.0987073901102
+  },
+  {
+    "angle": 60,
+    "name": "Short head of biceps femoris.r",
+    "length": 0.299468443206082,
+    "freeLength": 0.2692709119628557,
+    "freeMaxTurnDegrees": 6.826619226639724,
+    "arcChordRatio": 1.0604369829626479,
+    "freeArcChordRatio": 1.0444623123165229,
+    "maxTurnDegrees": 18.098707390113617
+  },
+  {
+    "angle": 90,
+    "name": "Short head of biceps femoris.r",
+    "length": 0.29741695641560784,
+    "freeLength": 0.2672466559400816,
+    "freeMaxTurnDegrees": 12.694291850317153,
+    "arcChordRatio": 1.139082874107986,
+    "freeArcChordRatio": 1.0823819289609227,
+    "maxTurnDegrees": 18.09870739011114
+  },
+  {
+    "angle": 120,
+    "name": "Short head of biceps femoris.r",
+    "length": 0.29314228219770455,
+    "freeLength": 0.26302070798988003,
+    "freeMaxTurnDegrees": 24.61199777976248,
+    "arcChordRatio": 1.246363904557948,
+    "freeArcChordRatio": 1.1155909206171764,
+    "maxTurnDegrees": 24.61199777976248
+  }
+]
