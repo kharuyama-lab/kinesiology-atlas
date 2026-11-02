@@ -2,7 +2,11 @@
 
 実施日: 2026-10-30（日本時間）。Anatomy優先の開発版。関節中心・軸の解剖学的検証FIX前です。
 
-## 靭帯の緊張表現・骨表示（最新）
+## LCL・伸展時の緊張・ON表示（最新）
+
+ONを不透明に統一し、伸展時のACL/MCL/LCL強調と緊張時のLCLのたわみ取りを追加。[変更・検証](LCL_REFINEMENT.md)。
+
+## 靭帯の緊張表現・骨表示
 
 内旋のACL/PCL、外旋のMCL/LCLをHip同様の濃淡・脈動発光で定性強調。骨のON/Fade/OFFを追加し、Modeで保持。[範囲・検証](LIGAMENT_PRESENTATION.md)。
 

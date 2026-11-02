@@ -8,8 +8,8 @@ test('rotation cues, maximum glow and bone display retain user visibility',async
  await set(-15);const ir=await page.evaluate(()=>window.atlasPresentationQA());
  const acl='Anterior cruciate ligament.r',pcl='Posterior cruciate ligament.r',mcl='Superficial part of tibial collateral ligament.r',lcl='Fibular collateral ligament.r';
  for(const name of [acl,pcl]){expect(ir.materials[name].opacity).toBeGreaterThan(.98);expect(ir.materials[name].glow).toBeGreaterThan(.5);}
- expect(ir.materials[mcl].opacity).toBeLessThan(.3);await page.screenshot({path:'test-results/ligament-ir.png'});
- await set(30);const er=await page.evaluate(()=>window.atlasPresentationQA());for(const name of [mcl,lcl]){expect(er.materials[name].opacity).toBeGreaterThan(.98);expect(er.materials[name].glow).toBeGreaterThan(.5);}expect(er.materials[acl].opacity).toBeLessThan(.3);await page.screenshot({path:'test-results/ligament-er.png'});
+ expect(ir.materials[mcl].opacity).toBe(1);expect(ir.materials[mcl].glow).toBeLessThan(.01);await page.screenshot({path:'test-results/ligament-ir.png'});
+ await set(30);const er=await page.evaluate(()=>window.atlasPresentationQA());for(const name of [mcl,lcl]){expect(er.materials[name].opacity).toBeGreaterThan(.98);expect(er.materials[name].glow).toBeGreaterThan(.5);}expect(er.materials[acl].opacity).toBe(1);expect(er.materials[acl].glow).toBeLessThan(.01);await page.screenshot({path:'test-results/ligament-er.png'});
  await page.locator('[data-tissue="'+mcl+'"]').click();expect((await page.evaluate(()=>window.atlasPresentationQA())).materials[mcl].opacity).toBe(.3);await page.locator('[data-tissue="'+mcl+'"]').click();expect((await page.evaluate(()=>window.atlasPresentationQA())).materials[mcl].visible).toBeFalsy();
  await page.locator('#boneVisibility').click();expect((await page.evaluate(()=>window.atlasQA())).bones.every(b=>!b.visible)).toBeTruthy();
  await page.locator('[data-mode="anatomy"]').click();expect((await page.evaluate(()=>window.atlasPresentationQA())).boneState).toBe('off');await page.locator('[data-mode="kinesiology"]').click();expect((await page.evaluate(()=>window.atlasPresentationQA())).boneState).toBe('off');
