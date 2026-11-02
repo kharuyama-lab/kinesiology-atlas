@@ -104,8 +104,12 @@ function updateVisibility(){
  syncTissueUI();
  $('boneVisibility').dataset.state=boneState;$('boneVisibility').querySelector('small').textContent=boneState==='fade'?'Fade':boneState.toUpperCase();
  $('patellaVisibility').dataset.state=patellaState;$('patellaVisibility').querySelector('small').textContent=patellaState==='fade'?'Fade':patellaState.toUpperCase();
- if(activeSelection)highlightSelected(activeSelection);
+ syncJointPresets();if(activeSelection)highlightSelected(activeSelection);
 }
+function jointGroupNames(group){return tissues.filter(([name])=>registered.has(name)&&relevant(name,focus)&&bulkGroup(name,category.get(name))===group).map(([name])=>name);}
+function syncJointPresets(){for(const button of document.querySelectorAll('[data-joint-bulk]')){const group=button.dataset.jointBulk,names=jointGroupNames(group),states=group==='bone'?new Set([boneState,patellaState]):new Set(names.map(name=>tissueStates.get(name)||'off')),active=states.size===1&&states.has(button.dataset.displayState);button.classList.toggle('selected',active);button.setAttribute('aria-pressed',String(active));button.disabled=focus==='body'||group!=='bone'&&!names.length;}}
+function setJointGroup(group,state){if(focus==='body')return;if(group==='bone'){boneState=state;patellaState=state;}else{for(const name of jointGroupNames(group))tissueStates.set(name,state);if(group==='muscle'){selectedMuscleGroup[focus]=null;for(const button of $('muscleGroups').children)button.classList.remove('selected');}}updateVisibility();if(activeSelection)selectStructure(activeSelection,{showFloating:!$('floatingSelection').hidden});}
+for(const button of document.querySelectorAll('[data-joint-bulk]'))button.addEventListener('click',()=>setJointGroup(button.dataset.jointBulk,button.dataset.displayState));
 function cycleTissue(name){if(category.get(name)==='muscle'){selectedMuscleGroup[focus]=null;for(const b of $('muscleGroups').children)b.classList.remove('selected');}tissueStates.set(name,nextVisibility(tissueStates.get(name)));updateVisibility();if(activeSelection)selectStructure(activeSelection,{showFloating:!$('floatingSelection').hidden});}
 function cyclePatella(){patellaState=nextVisibility(focus==='body'?bodyStates.get('Patella.r')||'on':patellaState);bodyStates.set('Patella.r',patellaState);updateVisibility();if(activeSelection)selectStructure(activeSelection,{showFloating:!$('floatingSelection').hidden});}
 $('patellaVisibility').addEventListener('click',cyclePatella);
@@ -278,10 +282,11 @@ function updateModeUI(){
  document.querySelectorAll('[data-motion]').forEach((b,i)=>{b.dataset.motion=kinds[i][0];b.querySelector('span').textContent=kinds[i][1];b.querySelector('small').textContent=kinds[i][2];b.classList.toggle('selected',b.dataset.motion===motion);});
  $('motionSection').querySelector('.smallhead').textContent=focus==='hip'?'股関節運動 / Hip motion':'膝関節運動 / Knee motion';
  $('sidebar').dataset.joint=focus;
- $('ligamentList').parentElement.querySelector('label').textContent=focus==='hip'?'靭帯 / Ligaments':'靭帯・半月板 / Ligaments & menisci';
+ $('jointConnectiveLabel').textContent=focus==='hip'?'靭帯 / Ligaments':'靭帯・半月板 / Ligaments & menisci';
 
  const moving=mode==='kinesiology';
- $('bodyDisplay').hidden=focus!=='body';$('patellaDisplay').hidden=focus==='body';$('patellaVisibility').hidden=focus!=='knee';$('axisVisibility').hidden=focus!=='knee';document.querySelectorAll('.jointDisplay').forEach(el=>el.hidden=focus==='body'||boneReview&&focus==='knee');
+ $('bodyDisplay').hidden=focus!=='body';$('patellaDisplay').hidden=focus!=='knee';$('hipBoneDisplay').hidden=focus!=='hip';$('patellaVisibility').hidden=focus!=='knee';$('axisVisibility').hidden=focus!=='knee';document.querySelectorAll('.jointDisplay').forEach(el=>el.hidden=focus==='body'||boneReview&&focus==='knee');
+ $('hipBoneDisplay').hidden=focus!=='hip';syncJointPresets();
  if(ligamentReview&&focus==='knee')$('ligamentList').parentElement.hidden=false;
  $('ligamentTendency').hidden=boneReview||focus!=='knee';$('axisLabel').textContent='Axes';$('axisLabel').title='Femur: fixed shaft and horizontal condylar reference (dashed). Tibia: three axes sharing one origin (solid). Shaft estimates; FTA is not calibrated.';
  $('motionSection').hidden=!(moving&&focus!=='body');
