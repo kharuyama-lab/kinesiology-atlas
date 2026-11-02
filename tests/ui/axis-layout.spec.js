@@ -1,6 +1,6 @@
 import {test,expect} from '@playwright/test';
 test('femoral shaft stays fixed while tibial guides move; unified compact controls',async({page})=>{
- await page.goto('http://127.0.0.1:8080/?review=knee&axis=condyle&qa');await expect(page.locator('#modelStatus')).toHaveText('Ready');
+ await page.goto('http://127.0.0.1:8080/?review=knee&axis=condyle&qa');await expect(page.locator('#modelStatus')).toHaveText('Ready');await page.locator('#axisVisibility').click();
  const set=async v=>{await page.locator('#motionSlider').evaluate((el,v)=>{el.value=v;el.dispatchEvent(new Event('input',{bubbles:true}));},String(v));await expect.poll(async()=>Math.abs((await page.evaluate(()=>window.atlasQA())).renderedAngles.flex-v)).toBeLessThan(.001);};
  const checkTibialOrigin=async()=>{
   const data=await page.evaluate(()=>({axes:window.atlasAxisQA(),mesh:window.atlasMeshQA('Tibia.r')}));

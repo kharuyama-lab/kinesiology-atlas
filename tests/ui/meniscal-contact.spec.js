@@ -2,7 +2,7 @@ import {test,expect} from '@playwright/test';import {writeFileSync} from 'node:f
 import {Vector3,Quaternion} from 'three';import {surfaceHeight} from '../../src/surface-geometry.js';
 test('Patella cycles in panel and floating selection and retains state across modes',async({page})=>{
  await page.goto('http://127.0.0.1:8080/?review=knee&axis=condyle&qa');await expect(page.locator('#modelStatus')).toHaveText('Ready');const snap=()=>page.evaluate(()=>window.atlasQA()),button=page.locator('#patellaVisibility');
- await button.click();expect((await snap()).bones.find(b=>b.name==='Patella.r').opacity).toBeCloseTo(.3);
+ expect((await snap()).bones.find(b=>b.name==='Patella.r').opacity).toBeCloseTo(.3);
  await page.screenshot({path:'test-results/patella-display-panel.png'});
  await button.click();expect((await snap()).bones.find(b=>b.name==='Patella.r').visible).toBeFalsy();
  await page.locator('[data-mode="anatomy"]').click();expect((await snap()).patellaState).toBe('off');await page.locator('[data-mode="kinesiology"]').click();expect((await snap()).patellaState).toBe('off');
@@ -10,7 +10,7 @@ test('Patella cycles in panel and floating selection and retains state across mo
  await page.evaluate(()=>new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r))));
  const s=await snap(),box=await page.locator('#canvasHost').boundingBox();await page.mouse.click(box.x+(s.patellaNDC[0]+1)*box.width/2,box.y+(1-s.patellaNDC[1])*box.height/2);
  await expect(page.locator('#floatingSelection')).toContainText('膝蓋骨');await page.locator('#floatingSelection button').click();await expect(button).toHaveAttribute('data-state','fade');await page.locator('#floatingSelection button').click();await expect(button).toHaveAttribute('data-state','off');
- await button.click();await page.locator('[data-focus="body"]').click();expect((await snap()).patellaState).toBe('on');
+ await button.click();await page.locator('[data-focus="body"]').click();expect((await snap()).patellaState).toBe('fade');
 });
 test('load-bearing centres follow contacts through rotation and stress with rooted compression',async({page})=>{
  await page.goto('http://127.0.0.1:8080/?review=knee&axis=condyle&qa');await expect(page.locator('#modelStatus')).toHaveText('Ready');const reports=[];

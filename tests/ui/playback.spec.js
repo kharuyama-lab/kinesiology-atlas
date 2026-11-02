@@ -36,7 +36,7 @@ test('Auto reverses, pauses at current angle and retains state across modes; bon
 test('joint-review link starts Knee Mode 2 with skeleton, linked menisci and existing axis control',async({page})=>{
  await page.goto('http://127.0.0.1:8080/?review=knee&qa');await expect(page.locator('#modelStatus')).toHaveText('Ready');
  const state=await page.evaluate(()=>window.atlasQA());expect(state.mode).toBe('kinesiology');expect(state.focus).toBe('knee');expect(state.tissueMeshes.filter(m=>m.visible).map(m=>m.name).sort()).toEqual(['Lateral meniscus.r','Medial meniscus.r']);expect(state.bones.every(m=>m.visible)).toBeTruthy();
- await expect(page.locator('#muscleList')).toBeHidden();await expect(page.locator('#ligamentList')).toBeHidden();await expect(page.locator('#ligamentTendency')).toBeHidden();await expect(page.locator('#axisToggle')).toBeChecked();await expect(page.locator('#playMotion')).toHaveText('Auto');
+ await expect(page.locator('#muscleList')).toBeHidden();await expect(page.locator('#ligamentList')).toBeHidden();await expect(page.locator('#ligamentTendency')).toBeHidden();await expect(page.locator('#axisToggle')).not.toBeChecked();await page.locator('#axisVisibility').click();await expect(page.locator('#playMotion')).toHaveText('Auto');
  await expect(page.locator('.viewTools #playMotion')).toHaveCount(0);
  await expect(page.locator('.inlineActions #playMotion + #resetPose')).toHaveCount(1);
  expect(await page.evaluate(()=>window.atlasAxisQA())).toMatchObject({visible:true,names:['SI tibia','ML tibia','AP tibia','SI femur','ML femur']});

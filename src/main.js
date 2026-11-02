@@ -39,7 +39,7 @@ const patellaTrial=axisTrial&&new URLSearchParams(location.search).get('patella'
 const BASES=[...(localPreview||new URLSearchParams(location.search).has('localModels')?['.cache/']:[]),'https://nqwrc.github.io/3d-anatomy/models/','https://raw.githubusercontent.com/nqwrc/3d-anatomy/master/public/models/'];
 const assets=['skeletal','joints','muscular'];const modelSources=new Map(),liveRoots=[];const registered=new Map(),originalMaterials=new Map(),category=new Map(),meshInfo=new Map(),visibleStates=new Map();
 let poseTarget=null;
-let patellaState='on';
+let patellaState='fade';
 let boneState='on';
 let renderedMeniscusActive=0;
 const renderedAngles={flex:0,rot:0,valgus:0};let renderedScrew=0;
@@ -254,7 +254,7 @@ function frameFocus(f=focus){if(!modelLoaded)return;
 function setFocus(f){focus=f;renderedMeniscusActive=mode==='kinesiology'&&f==='knee'?1:0;activeSelection=null;$('selectedStructure').textContent='Click a structure';$('floatingSelection').hidden=true;
  for(const el of document.querySelectorAll('[data-focus]'))el.classList.toggle('selected',el.dataset.focus===f);
  for(const [name,state] of focusStates(f))tissueStates.set(name,boneReview&&f!=='body'?(category.get(name)==='meniscus'||ligamentReview&&name in kneeLigamentBones?'on':'off'):state);
- if(f==='body'){boneState='on';patellaState='on';bodyStates.clear();for(const name of registered.keys())bodyStates.set(name,'on');Object.assign(bulkStates,{bone:'on',connective:'on',muscle:'on'});document.querySelectorAll('[data-body-details]').forEach(el=>el.open=false);Object.assign(motionValues,{flex:90,rot:0,stress:0});setMotion('flex');}
+ if(f==='body'){boneState='on';patellaState='fade';$('axisToggle').checked=false;bodyStates.clear();for(const name of registered.keys())bodyStates.set(name,'on');Object.assign(bulkStates,{bone:'on',connective:'on',muscle:'on'});document.querySelectorAll('[data-body-details]').forEach(el=>el.open=false);Object.assign(motionValues,{flex:90,rot:0,stress:0});setMotion('flex');}
  updateModeUI();updatePose();updateVisibility();
  // Focus is an intentional framing operation; frame the target pose rather than an intermediate tween.
  if(poseTarget){Object.assign(renderedAngles,poseTarget.angles);renderedScrew=poseTarget.screw;rig.hip.quaternion.copy(poseTarget.hip);rig.knee.quaternion.copy(poseTarget.knee);rig.knee.position.copy(poseTarget.kneePosition);rig.patella.position.copy(poseTarget.patella);rig.patella.quaternion.copy(poseTarget.patellaRotation);modeTransition=false;scene.updateMatrixWorld(true);}
@@ -361,7 +361,7 @@ async function afterLoad(){
   const inv=root.matrixWorld.clone().invert();const corners=[];for(const x of [box.min.x,box.max.x])for(const y of [box.min.y,box.max.y])for(const z of [box.min.z,box.max.z])corners.push(new THREE.Vector3(x,y,z).applyMatrix4(inv));skeletonBounds.set(name,corners);
  }
  updateVisibility();setFocus('body');
- if(boneReview){setFocus('knee');setMode('kinesiology');$('axisToggle').checked=true;updatePose();setView('lateral');}
+ if(boneReview){setFocus('knee');setMode('kinesiology');updatePose();setView('lateral');}
  $('loadOverlay').hidden=true;status('Ready');diagnostics(`Structures: ${registered.size}; bones: ${allBones.length}\nProvisional centers and axes — not calibrated.\nScrew-home and patellar tracking are illustrative.`);
 }
 async function boot(){status('Loading');

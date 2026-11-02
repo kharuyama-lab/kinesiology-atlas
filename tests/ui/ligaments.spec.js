@@ -27,7 +27,7 @@ test('five ligament meshes retain bone attachment collars through all knee motio
  await page.locator('[data-mode="anatomy"]').click();await expect(row).toHaveAttribute('data-state','off');await page.locator('[data-mode="kinesiology"]').click();await expect(row).toHaveAttribute('data-state','off');await row.click();
  await page.locator('[data-motion="flex"]').click();await page.locator('#motionSlider').evaluate(el=>{el.value=90;el.dispatchEvent(new Event('input',{bubbles:true}));});
  await expect.poll(async()=>Math.abs((await page.evaluate(()=>window.atlasQA())).renderedAngles.flex-90)).toBeLessThan(.001);
- await page.locator('#patellaVisibility').click();await page.locator('#patellaVisibility').click();await page.locator('[data-view="iso"]').click();
+ while((await page.evaluate(()=>window.atlasQA())).patellaState!=='off')await page.locator('#patellaVisibility').click();await page.locator('[data-view="iso"]').click();
  await page.screenshot({path:'test-results/ligaments-90.png'});
  await page.setViewportSize({width:1280,height:800});expect(await page.locator('#sidebar').evaluate(el=>el.scrollHeight-el.clientHeight)).toBeLessThanOrEqual(1);
  await page.mouse.move(1000,500);await page.mouse.wheel(0,-700);
