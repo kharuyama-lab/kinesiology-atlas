@@ -1,0 +1,207 @@
+[
+  {
+    "angle": 0,
+    "courses": [
+      {
+        "name": "Semitendinosus muscle.r",
+        "length": 0.566268468504527,
+        "freeLength": 0.4550220236621597,
+        "arcChordRatio": 1.0155970649053336,
+        "freeArcChordRatio": 1.0060212534231225,
+        "maxTurnDegrees": 14.033303340881735
+      },
+      {
+        "name": "Semimembranosus muscle.r",
+        "length": 0.5121038324945751,
+        "freeLength": 0.44378418051023927,
+        "arcChordRatio": 1.019965694866411,
+        "freeArcChordRatio": 1.0132108868808491,
+        "maxTurnDegrees": 22.150076505995408
+      },
+      {
+        "name": "Sartorius muscle.r",
+        "length": 0.49741784913607634,
+        "freeLength": 0.3996223245081455,
+        "arcChordRatio": 1.0733680081779997,
+        "freeArcChordRatio": 1.054720982569435,
+        "maxTurnDegrees": 9.074967918427886
+      },
+      {
+        "name": "Gracilis muscle.r",
+        "length": 0.49382488785941603,
+        "freeLength": 0.3894734089003814,
+        "arcChordRatio": 1.0450764514095592,
+        "freeArcChordRatio": 1.017594768401155,
+        "maxTurnDegrees": 66.52776241497784
+      }
+    ],
+    "lateralLayer": {
+      "samples": 39,
+      "minGap": -0.0041422107545709685
+    }
+  },
+  {
+    "angle": 30,
+    "courses": [
+      {
+        "name": "Semitendinosus muscle.r",
+        "length": 0.5473428317159871,
+        "freeLength": 0.4563499349795635,
+        "arcChordRatio": 1.0042669324861653,
+        "freeArcChordRatio": 1.0002815234313982,
+        "maxTurnDegrees": 6.470169296467747
+      },
+      {
+        "name": "Semimembranosus muscle.r",
+        "length": 0.4953774226066784,
+        "freeLength": 0.4404391650905161,
+        "arcChordRatio": 1.00554750793353,
+        "freeArcChordRatio": 1.0005095054181539,
+        "maxTurnDegrees": 8.619264782837403
+      },
+      {
+        "name": "Sartorius muscle.r",
+        "length": 0.48836991849310735,
+        "freeLength": 0.3969002467358984,
+        "arcChordRatio": 1.0288733486039534,
+        "freeArcChordRatio": 1.0129896547961805,
+        "maxTurnDegrees": 10.48184539042641
+      },
+      {
+        "name": "Gracilis muscle.r",
+        "length": 0.47095992922500485,
+        "freeLength": 0.3752190691084507,
+        "arcChordRatio": 1.0116366985373664,
+        "freeArcChordRatio": 1.0008184904542488,
+        "maxTurnDegrees": 5.4512498644899985
+      }
+    ],
+    "lateralLayer": {
+      "samples": 15,
+      "minGap": 0.003999999324192399
+    }
+  },
+  {
+    "angle": 60,
+    "courses": [
+      {
+        "name": "Semitendinosus muscle.r",
+        "length": 0.5333406993465787,
+        "freeLength": 0.4424608293909567,
+        "arcChordRatio": 1.0383333031982276,
+        "freeArcChordRatio": 1.0037376601321935,
+        "maxTurnDegrees": 7.123475529159247
+      },
+      {
+        "name": "Semimembranosus muscle.r",
+        "length": 0.486363068931297,
+        "freeLength": 0.431523013112553,
+        "arcChordRatio": 1.0327088993274742,
+        "freeArcChordRatio": 1.0043328317744813,
+        "maxTurnDegrees": 8.619264782837105
+      },
+      {
+        "name": "Sartorius muscle.r",
+        "length": 0.4926084151352889,
+        "freeLength": 0.4011947936786487,
+        "arcChordRatio": 1.0613609147233163,
+        "freeArcChordRatio": 1.0195756622907493,
+        "maxTurnDegrees": 14.568887408924406
+      },
+      {
+        "name": "Gracilis muscle.r",
+        "length": 0.46560162414939515,
+        "freeLength": 0.3699018324440172,
+        "arcChordRatio": 1.0620174472457078,
+        "freeArcChordRatio": 1.004645912324904,
+        "maxTurnDegrees": 8.676485096590396
+      }
+    ],
+    "lateralLayer": {
+      "samples": 6,
+      "minGap": 0.003999999324192399
+    }
+  },
+  {
+    "angle": 90,
+    "courses": [
+      {
+        "name": "Semitendinosus muscle.r",
+        "length": 0.5263581103798968,
+        "freeLength": 0.4356290868319096,
+        "arcChordRatio": 1.1216364896760331,
+        "freeArcChordRatio": 1.0098937121713256,
+        "maxTurnDegrees": 12.161811983394875
+      },
+      {
+        "name": "Semimembranosus muscle.r",
+        "length": 0.48127267171064547,
+        "freeLength": 0.4265719639445134,
+        "arcChordRatio": 1.0900179973054616,
+        "freeArcChordRatio": 1.0104758534798108,
+        "maxTurnDegrees": 11.63362260373033
+      },
+      {
+        "name": "Sartorius muscle.r",
+        "length": 0.4960220131817193,
+        "freeLength": 0.4047719350620373,
+        "arcChordRatio": 1.1398636338341148,
+        "freeArcChordRatio": 1.0311135993329879,
+        "maxTurnDegrees": 16.87057789772737
+      },
+      {
+        "name": "Gracilis muscle.r",
+        "length": 0.46144409343013565,
+        "freeLength": 0.36580446245567755,
+        "arcChordRatio": 1.167337617501114,
+        "freeArcChordRatio": 1.0107484415337042,
+        "maxTurnDegrees": 12.933394282732714
+      }
+    ],
+    "lateralLayer": {
+      "samples": 0,
+      "minGap": null
+    }
+  },
+  {
+    "angle": 120,
+    "courses": [
+      {
+        "name": "Semitendinosus muscle.r",
+        "length": 0.5246624774494877,
+        "freeLength": 0.43409257701077086,
+        "arcChordRatio": 1.2543260385920005,
+        "freeArcChordRatio": 1.0148243780654898,
+        "maxTurnDegrees": 16.76784807715581
+      },
+      {
+        "name": "Semimembranosus muscle.r",
+        "length": 0.4776511115067728,
+        "freeLength": 0.42310518306576195,
+        "arcChordRatio": 1.1703902323878914,
+        "freeArcChordRatio": 1.0152083462318282,
+        "maxTurnDegrees": 15.526659061649667
+      },
+      {
+        "name": "Sartorius muscle.r",
+        "length": 0.4938711876203607,
+        "freeLength": 0.40284670670604755,
+        "arcChordRatio": 1.2660949241317396,
+        "freeArcChordRatio": 1.0412165291327806,
+        "maxTurnDegrees": 16.797692625327212
+      },
+      {
+        "name": "Gracilis muscle.r",
+        "length": 0.45593176557958287,
+        "freeLength": 0.3603601722910741,
+        "arcChordRatio": 1.3376524821762354,
+        "freeArcChordRatio": 1.015664305601249,
+        "maxTurnDegrees": 16.6127111627241
+      }
+    ],
+    "lateralLayer": {
+      "samples": 0,
+      "minGap": null
+    }
+  }
+]

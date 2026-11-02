@@ -1,7 +1,7 @@
 import {Vector3,Quaternion} from 'three';
 const clamp=x=>Math.max(0,Math.min(1,x));
 const smooth=x=>{const t=clamp(x);return t*t*(3-2*t);};
-const curved=/Rectus femoris|Vastus|biceps femoris|Semitendinosus|Semimembranosus|Sartorius|Gracilis|gastrocnemius/;
+const curved=/Rectus femoris|Vastus|biceps femoris|Semitendinosus|Semimembranosus|Sartorius|Gracilis|gastrocnemius|Popliteus/;
 export const usesMuscleCurve=name=>curved.test(name);
 // Shared source-shape deformation per named structure. Sampled centres retain
 // the original course; they are not replaced by an endpoint chord.

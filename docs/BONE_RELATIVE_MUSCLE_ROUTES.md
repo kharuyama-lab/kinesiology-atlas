@@ -25,3 +25,5 @@
 [OpenSim Muscle Editor](https://opensimconfluence.atlassian.net/wiki/spaces/OpenSim/pages/53090145/Muscle%20Editor)のvia point・moving point・wrappingによる筋経路の考え方を参考にした。OpenSimの計算を実行した結果ではない。
 
 追加回帰確認：angle-stability、playback（2件）、shared-musclesの計4件成功。
+
+後続修正：内側筋群の局所経路は[全長短縮方式](WHOLE_MUSCLE_SHORTENING.md)へ置換した。腓腹筋・四頭筋の経路は継続使用。
