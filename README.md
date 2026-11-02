@@ -33,3 +33,5 @@ Anatomyの表示・FocusとMode切替基盤を確認済み。Mode 2の膝運動�
 ## Hip復元・膝の筋肉（2026-11-02）
 
 Hipは既存Hip版の3方向の運動・Auto・筋識別色・作用の濃淡・靭帯の緊張表現を共通Sceneへ移植。Hip/Kneeの共通筋は同じメッシュを使います。膝筋の追従は脛骨のすべりと膝蓋骨の移動を含みます。確認用URLは `/?review=muscles&axis=condyle`。形状追従・作用色は教材用近似で、筋力や実測伸張率ではありません。変更・検証の詳細は [docs/SHARED_MUSCLES_AND_HIP.md](docs/SHARED_MUSCLES_AND_HIP.md)。
+
+筋走行の修正：前回の筋全長への回転配分を見直し、筋腹を対応する骨側へ追従。アキレス腱、腸脛靭帯の初期FadeとTFL/大殿筋との連動、膝4筋群とHip6筋群の一括表示を追加。最新の修正と画像は [docs/MUSCLE_ROUTING_CORRECTION.md](docs/MUSCLE_ROUTING_CORRECTION.md) を参照してください。

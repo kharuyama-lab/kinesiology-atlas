@@ -11,6 +11,7 @@ export const tissues = [
  ['Sartorius muscle.r','縫工筋','muscle','hip knee'],
  ['Gracilis muscle.r','薄筋','muscle','hip knee'],
  ['Popliteus muscle.r','膝窩筋','muscle','knee'],
+ ['Calcaneal tendon.r','アキレス腱','muscle','knee'],
  ['Medial head of gastrocnemius.r','腓腹筋内側頭','muscle','knee'],
  ['Lateral head of gastrocnemius.r','腓腹筋外側頭','muscle','knee'],
  ['Gluteus maximus muscle.r','大殿筋','muscle','hip'],

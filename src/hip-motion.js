@@ -39,3 +39,13 @@ export const hipActions=Object.fromEntries(Object.entries(names).map(([key,name]
 export function hipPose(kind,value,side){const p={flex:0,abd:0,rot:0};p[kind]=value;return new Quaternion().setFromAxisAngle(new Vector3(1,0,0),-p.flex*Math.PI/180).multiply(new Quaternion().setFromAxisAngle(new Vector3(0,0,1),-side*p.abd*Math.PI/180)).multiply(new Quaternion().setFromAxisAngle(new Vector3(0,1,0),-side*p.rot*Math.PI/180));}
 export function hipMuscleAction(name,kind,value){const limit=kind==='flex'?(value<0?20:80):kind==='abd'?(value<0?25:45):45;return Math.max(-1,Math.min(1,(hipActions[name]?.[kind]||0)*Math.max(-1,Math.min(1,value/limit))));}
 export function hipLigamentScore(name,kind,value){const table={'Transverse part of iliofemoral ligament.r':{ext:1,abd:0,add:2,er:1,ir:0},'Descending part of iliofemoral ligament.r':{ext:2,abd:1,add:1,er:1,ir:0},'Pubofemoral ligament.r':{ext:1,abd:2,add:0,er:1,ir:0},'Ischiofemoral ligament.r':{ext:1,abd:1,add:0,er:0,ir:1}};const dir=kind==='flex'?'ext':kind==='abd'?(value<0?'add':'abd'):(value<0?'ir':'er');if(kind==='flex'&&value>=0)return 0;const limit={ext:20,abd:45,add:25,er:45,ir:45}[dir];return (table[name]?.[dir]||0)*Math.min(1,Math.abs(value)/limit)/2;}
+
+const legacyHipGroups={
+ flex:{label:'屈曲筋群',primary:['iliacus','psoas','rectus','sartorius','tfl','pectineus','addLong'],secondary:['glutMed','glutMin'],note:'中・小殿筋は前部線維が関与（全筋メッシュによる代用）'},
+ ext:{label:'伸展筋群',primary:['glutMax','bicepsLong','semiten','semimem'],secondary:['glutMed','glutMin','adductor'],note:'中・小殿筋は後部線維、大内転筋は後部が関与（全筋メッシュによる代用）'},
+ abd:{label:'外転筋群',primary:['glutMed','glutMin','tfl'],secondary:['glutMax','sartorius','piriformis'],note:'大殿筋・梨状筋の作用は部位や肢位に依存'},
+ add:{label:'内転筋群',primary:['adductor','addMin','addLong','addBrevis','gracilis','pectineus'],secondary:['glutMax','semiten'],note:'小内転筋の独立モデルは収録状況を確認。大殿筋・半腱様筋は補助'},
+ er:{label:'外旋筋群',primary:['glutMax','piriformis','quadratus','obturatorIn','obturatorEx','gemSup','gemInf','iliacus','psoas','sartorius'],secondary:['glutMed','glutMin'],note:'中・小殿筋は後部線維が関与（全筋メッシュによる代用）'},
+ ir:{label:'内旋筋群',primary:['glutMed','glutMin','tfl'],secondary:[],note:'中・小殿筋は主に前部線維（全筋メッシュによる代用）'}
+};
+export const hipMuscleGroups=Object.fromEntries(Object.entries(legacyHipGroups).map(([key,g])=>[key,{label:g.label.replace('筋群',''),names:[...g.primary,...g.secondary].map(k=>names[k])}]));

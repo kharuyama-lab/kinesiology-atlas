@@ -6,6 +6,7 @@ import {KNEE,KNEE_REVIEW} from '../config/knee.js';
 import {teachingLigamentTendency} from './kinematics.js';
 import {muscleColors,hipLigamentColors} from './palette.js';
 import {hipPose,hipRanges,hipMuscleAction,hipLigamentScore} from './hip-motion.js';
+import {muscleGroups} from './muscle-groups.js';
 import {kneePose} from './joint-motion.js';
 import {ligamentEngagement,ligamentAppearance} from './ligament-presentation.js';
 import {TissueFollower} from './tissue-follow.js';
@@ -47,7 +48,7 @@ let renderedMeniscusActive=0;
 const renderedAngles={flex:0,rot:0,valgus:0};let renderedScrew=0;
 let mode='anatomy',focus='body',motion='flex',motionValue=90,activeSelection=null;
 const kneeValues={flex:90,rot:0,stress:0},hipValues={flex:0,abd:0,rot:0};
-let motionValues=kneeValues;const savedMotion={hip:'flex',knee:'flex'};
+let motionValues=kneeValues;const savedMotion={hip:'flex',knee:'flex'};const selectedMuscleGroup={hip:null,knee:null};
 let playing=false,playDirection=1,modeTransition=false;
 let hipWorldPoint=null,kneeWorldPoint=null,kneeModelReady=false,sideSign=1,fullBox=null,kneeScale=1,modelLoaded=false,patellaBasePosition=new THREE.Vector3();
 let landmarkReview=null;
@@ -105,7 +106,7 @@ function updateVisibility(){
  $('patellaVisibility').dataset.state=patellaState;$('patellaVisibility').querySelector('small').textContent=patellaState==='fade'?'Fade':patellaState.toUpperCase();
  if(activeSelection)highlightSelected(activeSelection);
 }
-function cycleTissue(name){tissueStates.set(name,nextVisibility(tissueStates.get(name)));updateVisibility();if(activeSelection)selectStructure(activeSelection,{showFloating:!$('floatingSelection').hidden});}
+function cycleTissue(name){if(category.get(name)==='muscle'){selectedMuscleGroup[focus]=null;for(const b of $('muscleGroups').children)b.classList.remove('selected');}tissueStates.set(name,nextVisibility(tissueStates.get(name)));updateVisibility();if(activeSelection)selectStructure(activeSelection,{showFloating:!$('floatingSelection').hidden});}
 function cyclePatella(){patellaState=nextVisibility(focus==='body'?bodyStates.get('Patella.r')||'on':patellaState);bodyStates.set('Patella.r',patellaState);updateVisibility();if(activeSelection)selectStructure(activeSelection,{showFloating:!$('floatingSelection').hidden});}
 $('patellaVisibility').addEventListener('click',cyclePatella);
 $('boneVisibility').addEventListener('click',()=>{boneState=nextVisibility(boneState);updateVisibility();});
@@ -255,9 +256,10 @@ function frameFocus(f=focus){if(!modelLoaded)return;
  if(f==='knee'&&kneeWorldPoint){frame(kneeModelReady?kneeObservation():kneeWorldPoint,kneeScale*3.1);return;}
  if(f==='hip'&&hipWorldPoint){frame(hipWorldPoint,kneeScale*4.2);return;}
 }
-function setFocus(f){if(focus!=='body')savedMotion[focus]=motion;focus=f;motionValues=f==='hip'?hipValues:kneeValues;renderedMeniscusActive=mode==='kinesiology'&&f==='knee'?1:0;activeSelection=null;$('selectedStructure').textContent='Click a structure';$('floatingSelection').hidden=true;
+function setFocus(f){if(f!=='body')selectedMuscleGroup[f]=null;if(focus!=='body')savedMotion[focus]=motion;focus=f;motionValues=f==='hip'?hipValues:kneeValues;renderedMeniscusActive=mode==='kinesiology'&&f==='knee'?1:0;activeSelection=null;$('selectedStructure').textContent='Click a structure';$('floatingSelection').hidden=true;
  for(const el of document.querySelectorAll('[data-focus]'))el.classList.toggle('selected',el.dataset.focus===f);
  for(const [name,state] of focusStates(f))tissueStates.set(name,boneReview&&f==='knee'?(category.get(name)==='meniscus'||ligamentReview&&name in kneeLigamentBones?'on':'off'):state);
+ if(f!=='body'&&!(boneReview&&f==='knee'))tissueStates.set('Iliotibial tract.r','fade');
  if(f==='body'){boneState='on';patellaState='fade';$('axisToggle').checked=false;bodyStates.clear();for(const name of registered.keys())bodyStates.set(name,'on');Object.assign(bulkStates,{bone:'on',connective:'on',muscle:'on'});document.querySelectorAll('[data-body-details]').forEach(el=>el.open=false);Object.assign(kneeValues,{flex:90,rot:0,stress:0});Object.assign(hipValues,{flex:0,abd:0,rot:0});savedMotion.hip=savedMotion.knee='flex';setMotion('flex');}
  updateModeUI();setMotion(f==='body'?'flex':savedMotion[f]);updatePose();updateVisibility();
  // Focus is an intentional framing operation; frame the target pose rather than an intermediate tween.
@@ -270,6 +272,8 @@ function setMotion(m){setPlaying(false);playDirection=1;motion=m;motionValue=mot
  const sl=$('motionSlider');const ranges={flex:[...KNEE.flexionRange,90,'伸展 / Extension 0°',`屈曲 / Flexion ${KNEE.flexionRange[1]}°`],rot:[-15,30,0,'内旋 / Internal 15°','外旋 / External 30°'],stress:[-3,3,0,'内反 / Varus 3°','外反 / Valgus 3°']};
  const v=(focus==='hip'?hipRanges:ranges)[m];sl.min=v[0];sl.max=v[1];sl.step='.1';sl.value=motionValue;$('negativeLabel').textContent=v[3];$('positiveLabel').textContent=v[4];updatePose()}
 function updateModeUI(){
+ $('muscleGroups').replaceChildren();for(const [key,group] of Object.entries(muscleGroups[focus]||{})){const b=document.createElement('button');b.type='button';b.dataset.muscleGroup=key;b.classList.toggle('selected',selectedMuscleGroup[focus]===key);b.textContent=group.label;b.title=({flex:'Flexion',ext:'Extension',ir:'Internal rotation',er:'External rotation',abd:'Abduction',add:'Adduction'})[key];b.addEventListener('click',()=>{selectedMuscleGroup[focus]=key;for(const [name,,kind] of tissues)if(kind==='muscle')tissueStates.set(name,relevant(name,focus)&&group.names.includes(name)?'on':'off');if(focus==='hip')tissueStates.set('Iliotibial tract.r','fade');updateVisibility();for(const button of $('muscleGroups').children)button.classList.toggle('selected',button===b);if(activeSelection)selectStructure(activeSelection,{showFloating:!$('floatingSelection').hidden});});$('muscleGroups').append(b);}
+
  const kinds=focus==='hip'?[['flex','屈曲・伸展','Flexion / Extension'],['abd','外転・内転','Abduction / Adduction'],['rot','内旋・外旋','Rotation']]:[['flex','屈曲・伸展','Flexion / Extension'],['rot','内旋・外旋','Rotation'],['stress','内反・外反','Varus / Valgus']];
  document.querySelectorAll('[data-motion]').forEach((b,i)=>{b.dataset.motion=kinds[i][0];b.querySelector('span').textContent=kinds[i][1];b.querySelector('small').textContent=kinds[i][2];b.classList.toggle('selected',b.dataset.motion===motion);});
  $('motionSection').querySelector('.smallhead').textContent=focus==='hip'?'股関節運動 / Hip motion':'膝関節運動 / Knee motion';
@@ -458,3 +462,5 @@ function updateMusclePresentation(now){
  if(activeSelection===name&&state!=='off'){mat.emissive.lerp(new THREE.Color(0x2e7baa),.12);mat.emissiveIntensity+=.065;}
  }
 }
+
+if(new URLSearchParams(location.search).has('qa'))window.atlasMuscleGeometryQA=()=>({hipCenter:hipWorldPoint.toArray(),kneeCenter:kneeWorldPoint.toArray(),entries:tissueFollower.audit()});

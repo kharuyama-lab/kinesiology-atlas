@@ -35,3 +35,6 @@
  .sidebar[data-joint]:not([data-joint=body]) .tissueList button{min-height:21px;padding:1px 5px}
  .sidebar[data-joint]:not([data-joint=body]) .diagnostics{margin-top:4px}
 }
+
+.muscleGroups{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:3px;margin-bottom:4px}.muscleGroups button{font-size:11px;padding:3px 2px}.sidebar[data-joint=hip] .muscleGroups{grid-template-columns:repeat(6,minmax(0,1fr))}
+#sidebar details:has(>#selectedStructure){display:none}
