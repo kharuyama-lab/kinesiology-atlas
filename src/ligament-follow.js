@@ -1,4 +1,5 @@
 import {Vector3,Quaternion,Matrix4} from 'three';
+import {createCruciateSurface} from './cruciate-surface.js';
 
 export const REVIEWED_CRUCIATE_SOURCE='9fdab1a257652597cf8f0b2ac93d12abc817e8f9a9099b9628e764018490afa2';
 export const kneeLigamentBones=Object.freeze({
@@ -33,28 +34,16 @@ export class LigamentFollower{
      const t=Math.max(0,Math.min(1,rest[i].clone().sub(proximal).dot(axis)/length2));
      weights[i]=smooth((t-.15)/.7);centers.push(proximal.clone().addScaledVector(axis,t));
     }
+    if(sourceHash===REVIEWED_CRUCIATE_SOURCE&&name.includes('cruciate')&&(mesh.geometry.index?.count||source.length/3)%3===0){
+     const surface=createCruciateSurface(rest,proximal,distalPoint),originalSourceCount=source.length/3,toLocal=mesh.matrixWorld.clone().invert().multiply(femRest);
+     surface.update(new Matrix4(),toLocal);mesh.geometry.dispose();mesh.geometry=surface.geometry;
+     this.entries.push({name,mesh,femur,distal,source:new Float32Array(mesh.geometry.attributes.position.array),rest:surface.positions,weights:new Float32Array(surface.stations),centers:surface.stations.map(t=>proximal.clone().lerp(distalPoint,t)),pinned:surface.pins,proximal,distalPoint,surface,originalSourceCount,courseCorrected:true,maxRestCorrection:0,femRest,distalRestInverse:distal.matrixWorld.clone().invert(),restSpan:Math.sqrt(length2),span:Math.sqrt(length2)});
+     continue;
+    }
     const pinned={proximal:[],distal:[]};weights.forEach((w,i)=>{if(w===0)pinned.proximal.push(i);if(w===1)pinned.distal.push(i);});
     if(!pinned.proximal.length||!pinned.distal.length)throw Error('Missing ligament attachment collar: '+name);
-    const courseCorrected=sourceHash===REVIEWED_CRUCIATE_SOURCE&&name.includes('cruciate');let maxRestCorrection=0;
-    if(courseCorrected){
-     // The supplied cruciate body has an anterior bulge even in its rest mesh.
-     // Recenter sections on their attachment-to-attachment course, keeping
-     // each section's width and both original attachment collars unchanged.
-     const original=rest.map(p=>p.clone()),direction=axis.clone().normalize();
-     const stations=centers.map(c=>c.clone().sub(proximal).dot(axis)/length2);
-     const unique=new Map();original.forEach((p,i)=>{const key=p.toArray().map(v=>v.toFixed(7)).join(',');if(!unique.has(key))unique.set(key,{t:stations[i],radial:p.clone().sub(centers[i])});});
-     for(let i=0;i<rest.length;i++){
-      if(weights[i]===0||weights[i]===1)continue;
-      const t=stations[i],offset=new Vector3();let sum=0;
-      for(const sample of unique.values()){const g=Math.exp(-.5*((sample.t-t)/.075)**2);offset.addScaledVector(sample.radial,g);sum+=g;}
-      offset.multiplyScalar(1/sum);offset.addScaledVector(direction,-offset.dot(direction));
-      const blend=smooth((t-.15)/.20)*smooth((.85-t)/.20);
-      offset.multiplyScalar(blend);rest[i].sub(offset);maxRestCorrection=Math.max(maxRestCorrection,offset.length());
-     }
-    }
-    const normalGroups=new Map(),sourceNormals=mesh.geometry.attributes.normal;
-    if(courseCorrected)for(let i=0;i<source.length/3;i++){const key=Array.from(source.slice(i*3,i*3+3)).map(v=>v.toFixed(7)).join(',')+'/'+(sourceNormals?Array.from(sourceNormals.array.slice(i*3,i*3+3)).map(v=>v.toFixed(4)).join(','):'');if(!normalGroups.has(key))normalGroups.set(key,[]);normalGroups.get(key).push(i);}
-    this.entries.push({normalGroups,name,mesh,femur,distal,source,rest,weights,centers,pinned,proximal,distalPoint,maxRestCorrection,courseCorrected,
+    const courseCorrected=false,maxRestCorrection=0;
+    this.entries.push({name,mesh,femur,distal,source,rest,weights,centers,pinned,proximal,distalPoint,maxRestCorrection,courseCorrected,
      femRest,distalRestInverse:distal.matrixWorld.clone().invert(),restSpan:Math.sqrt(length2),span:Math.sqrt(length2)});
    }
   }
@@ -67,7 +56,7 @@ export class LigamentFollower{
    delta.decompose(new Vector3(),rotation,scale);
    const toMesh=new Matrix4().copy(e.mesh.matrixWorld).invert().multiply(e.femur.matrixWorld),a=e.mesh.geometry.attributes.position;
    e.span=e.proximal.distanceTo(e.distalPoint.clone().applyMatrix4(delta));
-   const distalNow=e.distalPoint.clone().applyMatrix4(delta),axis=e.distalPoint.clone().sub(e.proximal),length2=axis.lengthSq();
+   if(e.surface){e.surface.update(delta,toMesh);continue;}
    for(let i=0;i<e.rest.length;i++){
     const w=e.weights[i],rest=e.rest[i];
     if(w===0)p.copy(rest);else if(w===1)p.copy(rest).applyMatrix4(delta);
@@ -75,20 +64,15 @@ export class LigamentFollower{
      // Transport each cross section between the two rigid bone frames.
      // Preserve section width rather than linearly crushing rotated vertices.
      const c=e.centers[i];target.copy(c).lerp(p.copy(c).applyMatrix4(delta),w);
-     if(e.courseCorrected){
-      const t=c.clone().sub(e.proximal).dot(axis)/length2,blend=smooth((t-.15)/.20)*smooth((.85-t)/.20);
-      target.lerp(e.proximal.clone().lerp(distalNow,t),blend);
-     }
      q.identity().slerp(rotation,w);p.copy(rest).sub(c).applyQuaternion(q).add(target);
     }
     p.applyMatrix4(toMesh);a.setXYZ(i,p.x,p.y,p.z);
    }
    a.needsUpdate=true;e.mesh.geometry.computeVertexNormals();
-   const normals=e.mesh.geometry.attributes.normal;for(const group of e.normalGroups.values()){if(group.length<2)continue;const n=group.reduce((v,i)=>v.add(new Vector3().fromBufferAttribute(normals,i)),new Vector3()).normalize();for(const i of group)normals.setXYZ(i,n.x,n.y,n.z);}if(e.normalGroups.size)normals.needsUpdate=true;
    e.mesh.geometry.computeBoundingSphere();
   }
  }
- snapshot(){return this.entries.map(e=>({name:e.name,distalBone:kneeLigamentBones[e.name],vertices:e.rest.length,
+ snapshot(){return this.entries.map(e=>({name:e.name,distalBone:kneeLigamentBones[e.name],vertices:e.rest.length,sourceVertices:e.originalSourceCount||e.rest.length,representation:e.surface?'smooth-source-fitted':'source-mesh',attachmentCentres:e.surface?{proximalIndex:e.surface.capProx,distalIndex:e.surface.capDist}:null,
   proximalVertices:e.pinned.proximal.length,distalVertices:e.pinned.distal.length,restSpan:e.restSpan,span:e.span,
-  spanRatio:e.span/e.restSpan,maxRestCorrection:e.maxRestCorrection,courseCorrected:e.courseCorrected,status:'Original attachment collars; cruciate body-course correction; not validated force or strain'}));}
+  spanRatio:e.span/e.restSpan,maxRestCorrection:e.maxRestCorrection,courseCorrected:e.courseCorrected,status:e.surface?'Source-centred smooth presentation surface; not validated force or strain':'Original mesh follower; not validated force or strain'}));}
 }

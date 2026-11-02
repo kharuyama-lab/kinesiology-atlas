@@ -19,7 +19,7 @@ test('ligament end collars follow full bone translation/rotation and restore wit
  assert.ok(Math.abs(follower.snapshot()[0].spanRatio-1)<1e-6);
 });
 
-test('source-specific cruciate correction preserves collars and leaves unknown models untouched',()=>{
+test('unknown models and non-surface inputs retain their original coordinates',()=>{
  const source=[-.1,0,0,.1,0,0,-.1,-.1,0,.1,-.1,0,.4,-1,0,.6,-1,0,-.1,-1.9,0,.1,-1.9,0,-.1,-2,0,.1,-2,0];
  for(const sourceHash of [null,REVIEWED_CRUCIATE_SOURCE]){
   const root=new Group(),femur=new Group(),tibia=new Group();root.add(femur,tibia);tibia.position.y=-2;
@@ -27,6 +27,6 @@ test('source-specific cruciate correction preserves collars and leaves unknown m
   const follower=new LigamentFollower();follower.prepare({sourceHash,getMeshes:n=>n==='Posterior cruciate ligament.r'?[mesh]:[],bones:{femur,'Tibia.r':tibia}});follower.update();
   const a=mesh.geometry.attributes.position;
   for(const i of [0,1,8,9])assert.ok(new Vector3().fromBufferAttribute(a,i).distanceTo(new Vector3().fromArray(source,i*3))<1e-6);
-  if(sourceHash){assert.ok(follower.snapshot()[0].maxRestCorrection>0);assert.ok((a.getX(4)+a.getX(5))/2<.1);}else assert.deepEqual(Array.from(a.array),Array.from(new Float32Array(source)));
+  assert.deepEqual(Array.from(a.array),Array.from(new Float32Array(source)));
  }
 });
