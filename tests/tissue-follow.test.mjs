@@ -16,3 +16,17 @@ test('tibial endpoint follows knee, proximal endpoint stays, rest and source are
  assert.deepEqual(Array.from(muscle.geometry.attributes.position.array),source);
  assert.equal(follower.snapshot()[0].maxDisplacement,0);
 });
+
+test('knee sliding and patellar translation reach distinct muscle insertions and restore',()=>{
+ const mesh=points=>new Mesh(new BufferGeometry().setAttribute('position',new Float32BufferAttribute(points,3)));
+ const bones={'Hip bone.r':mesh([1,0,0]),'Femur.r':mesh([1,-1,0]),'Tibia.r':mesh([1,-3,0])};
+ const names=['Rectus femoris muscle.r','Semitendinosus muscle.r'],muscles=Object.fromEntries(names.map(n=>[n,mesh([1,0,0,1,-1,0,1,-3,0])]));
+ const sources=Object.fromEntries(names.map(n=>[n,Array.from(muscles[n].geometry.attributes.position.array)]));
+ const f=new TissueFollower();f.prepare({tissues:names.map(n=>[n,n,'muscle','hip knee']),getMeshes:n=>[muscles[n]||bones[n]],hipCenter:new Vector3(1,0,0),kneeCenter:new Vector3(1,-2,0)});
+ const identity=new Quaternion(),translation=new Vector3(0,.2,.3),patellaTranslation=new Vector3(0,.1,-.1);
+ f.update(identity,identity,100,{translation,patellaRotation:identity,patellaTranslation});
+ for(const [name,delta] of [[names[0],patellaTranslation],[names[1],translation]]){
+ const a=muscles[name].geometry.attributes.position;assert.ok(new Vector3().fromBufferAttribute(a,2).distanceTo(new Vector3(1,-3,0).add(delta))<1e-6);assert.ok(new Vector3().fromBufferAttribute(a,0).distanceTo(new Vector3(1,0,0))<1e-6);
+ }
+ f.update(identity,identity,200);for(const name of names)assert.deepEqual(Array.from(muscles[name].geometry.attributes.position.array),sources[name]);
+});

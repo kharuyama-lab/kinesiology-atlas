@@ -30,3 +30,8 @@
 @media(min-width:741px) and (max-height:850px){.group{padding:4px 0}.motionKinds button{gap:1px;padding:4px 3px}.displayControls button{min-height:24px}}
 
 .displayControls{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media(min-width:741px) and (max-height:850px){
+ .sidebar[data-joint]:not([data-joint=body]) .tissueList{gap:2px}
+ .sidebar[data-joint]:not([data-joint=body]) .tissueList button{min-height:21px;padding:1px 5px}
+ .sidebar[data-joint]:not([data-joint=body]) .diagnostics{margin-top:4px}
+}

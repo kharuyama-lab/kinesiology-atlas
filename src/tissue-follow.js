@@ -6,13 +6,13 @@ function tree(points,depth=0){if(!points.length)return null;const axis=depth%3;p
 function distance2(node,p,best=Infinity){if(!node)return best;const d=p[node.axis]-node.p[node.axis],v=node.p;best=Math.min(best,(p[0]-v[0])**2+(p[1]-v[1])**2+(p[2]-v[2])**2);best=distance2(d<0?node.left:node.right,p,best);if(d*d<best)best=distance2(d<0?node.right:node.left,p,best);return best;}
 const smooth=x=>{const t=Math.max(0,Math.min(1,x));return t*t*(3-2*t);};
 export class TissueFollower{
- constructor(){this.entries=[];this.version=0;this.hip=new Quaternion();this.knee=new Quaternion();this.lastUpdate=-Infinity;}
- clear(){for(const e of this.entries)e.mesh.geometry.dispose();this.entries=[];this.version=0;this.hip.identity();this.knee.identity();this.lastUpdate=-Infinity;}
+ constructor(){this.entries=[];this.version=0;this.hip=new Quaternion();this.knee=new Quaternion();this.lastUpdate=-Infinity;this.translation=new Vector3();this.patellaRotation=new Quaternion();this.patellaTranslation=new Vector3();}
+ clear(){for(const e of this.entries)e.mesh.geometry.dispose();this.entries=[];this.version=0;this.hip.identity();this.knee.identity();this.translation.set(0,0,0);this.patellaRotation.identity();this.patellaTranslation.set(0,0,0);this.lastUpdate=-Infinity;}
  prepare({tissues,getMeshes,hipCenter,kneeCenter}){
   this.h=hipCenter.clone();this.k=kneeCenter.clone();const v=new Vector3();
   const samples=name=>{const points=[];for(const mesh of getMeshes(name)){mesh.updateWorldMatrix(true,false);const a=mesh.geometry.attributes.position,step=Math.max(1,Math.floor(a.count/2500));for(let i=0;i<a.count;i+=step){v.fromBufferAttribute(a,i).applyMatrix4(mesh.matrixWorld);points.push(v.toArray());}}if(!points.length)throw Error('Missing binding bone '+name);return tree(points);};
   const pelvis=samples('Hip bone.r'),femur=samples('Femur.r'),tibia=samples('Tibia.r');
-  for(const [name,,kind,joints] of tissues){if(kind!=='muscle')continue;
+  for(const [name,,kind,joints] of tissues){if(kind!=='muscle'&&!(kind==='ligament'&&joints==='hip'))continue;
    for(const mesh of getMeshes(name)){
     mesh.geometry=mesh.geometry.clone();mesh.updateWorldMatrix(true,false);
     const a=mesh.geometry.attributes.position,source=new Float32Array(a.array),world=new Float64Array(a.count*3),weights=new Float32Array(a.count*2),matrix=mesh.matrixWorld.clone();
@@ -23,23 +23,33 @@ export class TissueFollower{
      const wp=joints==='knee'?0:1/(distance2(pelvis,p)+epsilon);
      const wf=1/(distance2(femur,p)+epsilon),wt=joints==='hip'?0:1/(distance2(tibia,p)+epsilon),total=wp+wf+wt;
      weights[2*i]=(wf+wt)/total;weights[2*i+1]=wt/total;
+     const t=(max-p[1])/Math.max(max-min,1e-10);
+     if(joints==='knee')weights[2*i]=1;
+     if(/Rectus femoris|Vastus/.test(name))weights[2*i+1]=smooth((t-.65)/.30);
+     if(/biceps femoris|Semitendinosus|Semimembranosus|Sartorius|Gracilis|gastrocnemius|Popliteus/.test(name)){
+      weights[2*i+1]=smooth((t-.65)/.30);
+      if(joints==='hip knee')weights[2*i]=smooth((t-.12)/.58);
+     }
+     if(name==='Iliotibial tract.r'){weights[2*i]=smooth((t-.07)/.25);weights[2*i+1]=smooth((t-.82)/.16);}
      if(name==='Psoas major.r'){weights[2*i]=smooth(((max-p[1])/(max-min)-.34)/(.86-.34));weights[2*i+1]=0;}
     }
     this.entries.push({name,mesh,source,world,weights,inverse:new Matrix4().copy(matrix).invert(),version:-1,maxDisplacement:0});
    }
   }
  }
- update(hip,knee,now=performance.now()){
-  const changed=1-Math.abs(this.hip.dot(hip))>1e-12||1-Math.abs(this.knee.dot(knee))>1e-12;
-  if(changed){if(now-this.lastUpdate<33)return;this.lastUpdate=now;this.hip.copy(hip);this.knee.copy(knee);this.version++;}
+ update(hip,knee,now=performance.now(),options={}){
+  const translation=options.translation||new Vector3(),patellaRotation=options.patellaRotation||knee,patellaTranslation=options.patellaTranslation||translation;
+  const changed=this.translation.distanceToSquared(translation)>1e-16||this.patellaTranslation.distanceToSquared(patellaTranslation)>1e-16||this.patellaRotation.angleTo(patellaRotation)>1e-6||1-Math.abs(this.hip.dot(hip))>1e-12||1-Math.abs(this.knee.dot(knee))>1e-12;
+  if(changed){if(now-this.lastUpdate<33)return;this.lastUpdate=now;this.translation.copy(translation);this.patellaRotation.copy(patellaRotation);this.patellaTranslation.copy(patellaTranslation);this.hip.copy(hip);this.knee.copy(knee);this.version++;}
   const identity=new Quaternion(),hQ=new Quaternion(),kQ=new Quaternion(),v=new Vector3(),rest=new Vector3();
-  const atRest=hip.angleTo(identity)<1e-5&&knee.angleTo(identity)<1e-5;
+  const atRest=hip.angleTo(identity)<1e-5&&knee.angleTo(identity)<1e-5&&translation.lengthSq()<1e-16&&patellaTranslation.lengthSq()<1e-16&&patellaRotation.angleTo(identity)<1e-5;
   for(const e of this.entries){if(!e.mesh.visible||e.version===this.version)continue;
    const attr=e.mesh.geometry.attributes.position;e.maxDisplacement=0;
    if(atRest)attr.array.set(e.source);
    else for(let i=0;i<attr.count;i++){
     rest.fromArray(e.world,i*3);v.copy(rest);
-    kQ.copy(identity).slerp(knee,e.weights[i*2+1]);v.sub(this.k).applyQuaternion(kQ).add(this.k);
+    const quad=/Rectus femoris|Vastus/.test(e.name),weight=e.weights[i*2+1];
+    kQ.copy(identity).slerp(quad?patellaRotation:knee,weight);v.sub(this.k).applyQuaternion(kQ).add(this.k).addScaledVector(quad?patellaTranslation:translation,weight);
     hQ.copy(identity).slerp(hip,e.weights[i*2]);v.sub(this.h).applyQuaternion(hQ).add(this.h);
     e.maxDisplacement=Math.max(e.maxDisplacement,v.distanceTo(rest));v.applyMatrix4(e.inverse);attr.setXYZ(i,v.x,v.y,v.z);
    }

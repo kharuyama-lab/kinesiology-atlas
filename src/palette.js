@@ -1,6 +1,7 @@
 // Hip identity colors preserved from the local legacy/hip reference.
 // Additional knee muscles receive stable, distinct identity colors.
 export const muscleColors=Object.freeze({
+ 'Tensor fasciae latae.r':0xeab38f,'(Adductor minimus).r':0xa48acb,'Iliotibial tract.r':0xa7aaa8,
  'Gluteus maximus muscle.r':0xc45382,'Gluteus medius muscle.r':0xdc7197,'Gluteus minimus muscle.r':0xff97b3,
  'Iliacus muscle.r':0xeda75d,'Psoas major.r':0xeeb85d,'Rectus femoris muscle.r':0xf2bc72,'Sartorius muscle.r':0xd9b55d,
  'Adductor magnus.r':0xc7a4f0,'Adductor longus.r':0xb98cd9,'Adductor brevis.r':0x9c84d3,'Gracilis muscle.r':0xcbb2db,
