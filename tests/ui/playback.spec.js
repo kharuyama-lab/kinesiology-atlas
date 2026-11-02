@@ -39,7 +39,7 @@ test('joint-review link starts Knee Mode 2 with skeleton, linked menisci and exi
  await expect(page.locator('#muscleList')).toBeHidden();await expect(page.locator('#ligamentList')).toBeHidden();await expect(page.locator('#ligamentTendency')).toBeHidden();await expect(page.locator('#axisToggle')).toBeChecked();await expect(page.locator('#playMotion')).toHaveText('Auto');
  await expect(page.locator('.viewTools #playMotion')).toHaveCount(0);
  await expect(page.locator('.inlineActions #playMotion + #resetPose')).toHaveCount(1);
- expect(await page.evaluate(()=>window.atlasAxisQA())).toMatchObject({visible:true,names:['SI tibia','AP tibia','SI femur']});
+ expect(await page.evaluate(()=>window.atlasAxisQA())).toMatchObject({visible:true,names:['SI tibia','ML tibia','AP tibia','SI femur','ML femur']});
  await expect.poll(async()=>Math.abs((await page.evaluate(()=>window.atlasQA())).hip[0])).toBeGreaterThan(.706);
  const guides=await page.evaluate(()=>window.atlasAxisQA());
  const boxes=await Promise.all(['#playMotion','#resetPose'].map(id=>page.locator(id).boundingBox()));expect(boxes[0].x+boxes[0].width).toBeLessThanOrEqual(boxes[1].x);expect(Math.abs(boxes[0].y-boxes[1].y)).toBeLessThan(2);

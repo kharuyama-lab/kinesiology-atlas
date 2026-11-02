@@ -56,7 +56,7 @@ const meniscusFollower=new MeniscusFollower();
 const patellaTracker=new PatellaTracker();
 scene.add(rig.hip);
 const axisGroup=new THREE.Group();scene.add(axisGroup);axisGroup.visible=false;
-const flexAxisGroup=new THREE.Group();scene.add(flexAxisGroup);flexAxisGroup.visible=false;
+
 function diagnostics(s){$('diagnostics').textContent=s}
 function status(s){$('modelStatus').textContent=s}
 function zaName(n){return typeof n.userData?.za_name==='string'?n.userData.za_name.trim():''}
@@ -185,7 +185,7 @@ function prepareRig(){
   patellaBasePosition.copy(rig.patella.position);
   patellaTracker.prepare({getMeshes,knee:rig.knee,flexAxis:activeFlexAxis});
   scene.add(axisGroup);axisGroup.position.copy(k);rig.hip.attach(axisGroup);
-  scene.add(flexAxisGroup);flexAxisGroup.position.copy(k);rig.hip.attach(flexAxisGroup);
+
   meniscusFollower.prepare({getMeshes,knee:rig.knee,referenceContacts:kneeContactModel.profiles});
   buildAxis();kneeModelReady=true;updatePose();
   diagnostics('Provisional hip and knee centers. Tissue motion is uncalibrated.');
@@ -199,16 +199,22 @@ function shaftGuide(name,parent){
  const low=centroid(.32),high=centroid(.68),direction=high.clone().sub(low).normalize();
  return [parent.worldToLocal(low.clone().addScaledVector(direction,-length*.4)),parent.worldToLocal(high.clone().addScaledVector(direction,length*.28))];
 }
-function buildAxis(){axisReference.clear();axisGroup.clear();flexAxisGroup.clear();const l=Math.max(kneeScale*1.35,.001);
+function buildAxis(){axisReference.clear();axisGroup.clear();const l=Math.max(kneeScale*1.35,.001);
 
  const line=(group,name,points,color,dashed=false)=>{const mat=dashed?new THREE.LineDashedMaterial({color,dashSize:kneeScale*.045,gapSize:kneeScale*.025,depthTest:false,depthWrite:false}):new THREE.LineBasicMaterial({color,depthTest:false,depthWrite:false});const o=new THREE.Line(new THREE.BufferGeometry().setFromPoints(points),mat);o.name=name;o.computeLineDistances();o.renderOrder=60;group.add(o);};
- line(axisGroup,'SI tibia',shaftGuide('Tibia.r',rig.knee),0x75d69c);
- line(axisGroup,'AP tibia',[new THREE.Vector3(0,0,-l*.55),new THREE.Vector3(0,0,l*.55)],0xffbd72);
- line(axisReference,'SI femur',shaftGuide('Femur.r',rig.hip),0x75d69c,true);
 
- const v=new THREE.Vector3(...activeFlexAxis).multiplyScalar(l*.7),color=0x65caff;
- flexAxisGroup.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints([v.clone().negate(),v]),new THREE.LineBasicMaterial({color,depthTest:false})));
- flexAxisGroup.add(new THREE.Mesh(new THREE.SphereGeometry(kneeScale*.025,12,8),new THREE.MeshBasicMaterial({color,depthTest:false})));flexAxisGroup.traverse(o=>o.renderOrder=60);
+ // Fixed femoral condylar reference: projected onto the floor plane.
+ const ml=new THREE.Vector3(...activeFlexAxis);ml.y=0;ml.normalize();
+ const shaft=shaftGuide('Tibia.r',rig.knee),si=shaft[1].clone().sub(shaft[0]).normalize();
+ const tibML=ml.clone().addScaledVector(si,-ml.dot(si)).normalize();
+ const ap=new THREE.Vector3().crossVectors(tibML,si).normalize();
+ const through=(direction,extent)=>[direction.clone().multiplyScalar(-extent),direction.clone().multiplyScalar(extent)];
+ line(axisGroup,'SI tibia',through(si,l*.85),0x75d69c);
+ line(axisGroup,'ML tibia',through(tibML,l*.7),0x65caff);
+ line(axisGroup,'AP tibia',through(ap,l*.55),0xffbd72);
+ line(axisReference,'SI femur',shaftGuide('Femur.r',rig.hip),0x75d69c,true);
+ line(axisReference,'ML femur',through(ml,l*.7).map(p=>p.add(kneeBasePosition)),0x65caff,true);
+
 }
 function updatePose(){if(!kneeModelReady)return;
  const moving=mode==='kinesiology'&&focus==='knee';
@@ -221,12 +227,12 @@ function updatePose(){if(!kneeModelReady)return;
  const axisOn=$('axisToggle').checked;
  $('axisVisibility').dataset.state=axisOn?'on':'off';$('axisVisibility').querySelector('small').textContent=axisOn?'ON':'OFF';$('axisVisibility').setAttribute('aria-pressed',String(axisOn));
  axisGroup.visible=axisOn&&moving;
- flexAxisGroup.visible=$('axisToggle').checked&&moving;axisReference.visible=$('axisToggle').checked&&moving;
+ axisReference.visible=axisOn&&moving;
  if(!boneReview){const p=teachingLigamentTendency(motion,motionValue);
  const markup=['mcl','lcl','acl','pcl'].map(key=>`<div class="ligItem"><strong>${key.toUpperCase()}</strong><span>${({'強調':'Emphasized','通常':'Baseline','角度依存':'Angle dependent','弛緩傾向':'Reduced restraint'})[p[key]]||'Baseline'}</span></div>`).join('');if($('ligamentStatus').innerHTML!==markup)$('ligamentStatus').innerHTML=markup;}
- const shown=Math.round(motionValue*10)/10;
+ const shown=Math.round(motionValue);
  $('angleReadout').textContent=motion==='stress'?(motionValue<0?'内反 / Varus ':motionValue>0?'外反 / Valgus ':'Neutral ')+Math.abs(shown)+'°':
-  motion==='rot'?(motionValue<0?'内旋 / Internal ':motionValue>0?'外旋 / External ':'Neutral ')+Math.abs(shown)+'°':`${Math.round(flex*10)/10}°`;
+  motion==='rot'?(motionValue<0?'内旋 / Internal ':motionValue>0?'外旋 / External ':'Neutral ')+Math.abs(shown)+'°':`${Math.round(flex)}°`;
 }
 function frame(target,extent){const d=Math.max(extent,.02);controls.target.copy(target);camera.position.copy(target).add(new THREE.Vector3(d*.5,d*.32,d*2.45));camera.near=Math.max(.0001,d/1500);camera.far=Math.max(1000,d*200);camera.updateProjectionMatrix();controls.update()}
 function frameFocus(f=focus){if(!modelLoaded)return;
@@ -251,7 +257,7 @@ function setMotion(m){setPlaying(false);playDirection=1;motion=m;motionValue=mot
 function updateModeUI(){
  const moving=mode==='kinesiology';
  $('bodyDisplay').hidden=focus!=='body';$('patellaDisplay').hidden=focus!=='knee';document.querySelectorAll('.jointDisplay').forEach(el=>el.hidden=focus==='body'||boneReview);
- $('ligamentTendency').hidden=boneReview;$('axisLabel').textContent='Axes';$('axisLabel').title='Femoral shaft: fixed dashed green. Tibial shaft: solid green; AP: orange; flexion axis: blue. Shaft estimates; FTA is not calibrated.';
+ $('ligamentTendency').hidden=boneReview;$('axisLabel').textContent='Axes';$('axisLabel').title='Femur: fixed shaft and horizontal condylar reference (dashed). Tibia: three axes sharing one origin (solid). Shaft estimates; FTA is not calibrated.';
  $('motionSection').hidden=!(moving&&focus==='knee');
  $('playMotion').hidden=!(moving&&focus==='knee');
  $('sectionEyebrow').textContent=moving?'MODE 2':'MODE 1';
@@ -375,10 +381,6 @@ function tick(now=performance.now()){requestAnimationFrame(tick);const dt=Math.m
   meniscusFollower.update(renderedAngles.flex,{pose:drawn,neutral,active:renderedMeniscusActive});
   if(!patellaTrial){const p=patellaTracker.pose(renderedAngles.flex);rig.patella.position.copy(patellaBasePosition).add(p.translation);rig.patella.quaternion.copy(p.rotation);}else{rig.patella.position.lerp(poseTarget.patella,t);rig.patella.quaternion.slerp(poseTarget.patellaRotation,t);}axisGroup.position.copy(rig.knee.position);axisGroup.quaternion.copy(rig.knee.quaternion);
 
-  // Evaluate the flexion guide separately; never change bone or tissue transforms.
-  const guide=drawn.instantaneous?drawn:kneePose('flex',renderedAngles.flex,sideSign,{flexAxis:activeFlexAxis,coupled:coupledMotion,anglesOverride:renderedAngles,coupledRotationOverride:renderedScrew,contactModel:kneeContactModel});
-  if(guide.instantaneous){flexAxisGroup.position.copy(kneeBasePosition).add(guide.instantaneous.point);flexAxisGroup.quaternion.setFromUnitVectors(new THREE.Vector3(...activeFlexAxis),guide.instantaneous.direction);}
-
   // Follow the moving right knee without changing the user's viewing direction, zoom or pan offset.
   if(modelLoaded&&focus==='knee'){const delta=kneeObservation().sub(before);camera.position.add(delta);controls.target.add(delta);}
   if(modeTransition&&rig.hip.quaternion.angleTo(poseTarget.hip)<.001&&rig.knee.quaternion.angleTo(poseTarget.knee)<.001&&rig.knee.position.distanceTo(poseTarget.kneePosition)<.00001)modeTransition=false;
@@ -398,4 +400,4 @@ if(new URLSearchParams(location.search).has('qa'))window.atlasContactQA=()=>knee
 if(new URLSearchParams(location.search).has('qa'))window.atlasTrackingQA=()=>patellaTracker.snapshot();
 if(new URLSearchParams(location.search).has('qa'))window.atlasMeniscusSupportQA=()=>({surface:meniscusFollower.surface,entries:meniscusFollower.entries.map(e=>({name:e.name,points:e.points.map(p=>p.toArray()),offsets:e.offsets,loadWeights:e.loadWeights}))});
 
-if(new URLSearchParams(location.search).has('qa'))window.atlasAxisQA=()=>({visible:axisGroup.visible&&axisReference.visible&&flexAxisGroup.visible,names:[...axisGroup.children,...axisReference.children].map(o=>o.name),segments:[...axisGroup.children,...axisReference.children].map(o=>{const a=o.geometry.attributes.position;return [0,1].map(i=>o.localToWorld(new THREE.Vector3().fromBufferAttribute(a,i)).toArray())}),directions:[...axisGroup.children,...axisReference.children].map(o=>{const a=o.geometry.attributes.position;return new THREE.Vector3().fromBufferAttribute(a,1).sub(new THREE.Vector3().fromBufferAttribute(a,0)).normalize().applyQuaternion(o.getWorldQuaternion(new THREE.Quaternion())).toArray()})});
+if(new URLSearchParams(location.search).has('qa'))window.atlasAxisQA=()=>({visible:axisGroup.visible&&axisReference.visible,names:[...axisGroup.children,...axisReference.children].map(o=>o.name),segments:[...axisGroup.children,...axisReference.children].map(o=>{const a=o.geometry.attributes.position;return [0,1].map(i=>o.localToWorld(new THREE.Vector3().fromBufferAttribute(a,i)).toArray())}),directions:[...axisGroup.children,...axisReference.children].map(o=>{const a=o.geometry.attributes.position;return new THREE.Vector3().fromBufferAttribute(a,1).sub(new THREE.Vector3().fromBufferAttribute(a,0)).normalize().applyQuaternion(o.getWorldQuaternion(new THREE.Quaternion())).toArray()})});
