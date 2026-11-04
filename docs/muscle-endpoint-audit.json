@@ -1,0 +1,57 @@
+[
+  {
+    "angle": 0,
+    "errorsByMuscle": {}
+  },
+  {
+    "angle": 60,
+    "errorsByMuscle": {
+      "Rectus femoris muscle.r": 1.4918809563224207e-8,
+      "Vastus medialis muscle.r": 1.5246687894984356e-8,
+      "Vastus lateralis muscle.r": 1.588922316662351e-8,
+      "Vastus intermedius muscle.r": 1.6131137094004863e-8,
+      "Long head of biceps femoris.r": 1.583247429128837e-8,
+      "Short head of biceps femoris.r": 1.9972672929044845e-8,
+      "Semitendinosus muscle.r": 3.0340687706801564e-8,
+      "Semimembranosus muscle.r": 1.6446184015454258e-8,
+      "Sartorius muscle.r": 1.576374236728364e-8,
+      "Gracilis muscle.r": 1.6120563249263283e-8,
+      "Medial head of gastrocnemius.r": 0,
+      "Lateral head of gastrocnemius.r": 0
+    }
+  },
+  {
+    "angle": 90,
+    "errorsByMuscle": {
+      "Rectus femoris muscle.r": 1.466114961147083e-8,
+      "Vastus medialis muscle.r": 1.537051579996884e-8,
+      "Vastus lateralis muscle.r": 1.6247104774919917e-8,
+      "Vastus intermedius muscle.r": 1.5047130914725432e-8,
+      "Long head of biceps femoris.r": 1.6402811306245613e-8,
+      "Short head of biceps femoris.r": 2.008731883556847e-8,
+      "Semitendinosus muscle.r": 1.6376560548294443e-8,
+      "Semimembranosus muscle.r": 1.587040161633513e-8,
+      "Sartorius muscle.r": 1.5456127468646816e-8,
+      "Gracilis muscle.r": 1.6304626345541836e-8,
+      "Medial head of gastrocnemius.r": 0,
+      "Lateral head of gastrocnemius.r": 0
+    }
+  },
+  {
+    "angle": 120,
+    "errorsByMuscle": {
+      "Rectus femoris muscle.r": 1.4763593131760462e-8,
+      "Vastus medialis muscle.r": 1.5559754931838994e-8,
+      "Vastus lateralis muscle.r": 1.498829553732341e-8,
+      "Vastus intermedius muscle.r": 1.548333132482591e-8,
+      "Long head of biceps femoris.r": 1.619657245730275e-8,
+      "Short head of biceps femoris.r": 2.0103823532945457e-8,
+      "Semitendinosus muscle.r": 1.6095544893693876e-8,
+      "Semimembranosus muscle.r": 1.5834604401895576e-8,
+      "Sartorius muscle.r": 1.6607304129222518e-8,
+      "Gracilis muscle.r": 1.6094850888964107e-8,
+      "Medial head of gastrocnemius.r": 0,
+      "Lateral head of gastrocnemius.r": 0
+    }
+  }
+]

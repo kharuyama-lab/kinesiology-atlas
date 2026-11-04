@@ -1,0 +1,26 @@
+{
+  "checkedAt": "2026-10-30 Asia/Tokyo",
+  "assets": [
+    {
+      "system": "skeletal",
+      "url": "https://nqwrc.github.io/3d-anatomy/models/skeletal.glb",
+      "bytes": 1863828,
+      "sha256": "c2b70b31ddec4062cbc5ba969fc24ecfed61d00397a0bca795e2701d997200f8",
+      "namedNodes": 277
+    },
+    {
+      "system": "joints",
+      "url": "https://nqwrc.github.io/3d-anatomy/models/joints.glb",
+      "bytes": 921960,
+      "sha256": "9fdab1a257652597cf8f0b2ac93d12abc817e8f9a9099b9628e764018490afa2",
+      "namedNodes": 349
+    },
+    {
+      "system": "muscular",
+      "url": "https://nqwrc.github.io/3d-anatomy/models/muscular.glb",
+      "bytes": 4503232,
+      "sha256": "f69ed1287f802a2d603d23293e01512bb57ae77ee7cca1d5527ba00496e51de2",
+      "namedNodes": 669
+    }
+  ]
+}

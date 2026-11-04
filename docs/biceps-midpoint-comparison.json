@@ -1,0 +1,71 @@
+[
+  {
+    "version": "05dd0ad",
+    "meanX": -0.1371851763977059,
+    "meanY": 0.6064787065252427,
+    "meanZ": -0.039819363090454495,
+    "toShort": {
+      "minimum": 0.005140304867338132,
+      "median": 0.03411471253365113
+    },
+    "toCalf": {
+      "minimum": 0.004632053349638379,
+      "median": 0.035322080307359505
+    },
+    "course": {
+      "name": "Long head of biceps femoris.r",
+      "length": 0.5142018241473925,
+      "freeLength": 0.4735068451030558,
+      "freeMaxTurnDegrees": 20.87234510759616,
+      "arcChordRatio": 1.207434197294513,
+      "freeArcChordRatio": 1.07570641173272,
+      "maxTurnDegrees": 21.56377311089912
+    }
+  },
+  {
+    "version": "6b5f42e",
+    "meanX": -0.09837689304424266,
+    "meanY": 0.6531802120063104,
+    "meanZ": -0.07271785492474701,
+    "toShort": {
+      "minimum": 0.02404970760582934,
+      "median": 0.041426440041257236
+    },
+    "toCalf": {
+      "minimum": 0.004704653442811111,
+      "median": 0.03043139971109795
+    },
+    "course": {
+      "name": "Long head of biceps femoris.r",
+      "length": 0.4262162719189896,
+      "freeLength": 0.4262162719189896,
+      "freeMaxTurnDegrees": 2.05228612033676,
+      "arcChordRatio": 1.0008290087193568,
+      "freeArcChordRatio": 1.0008290087193568,
+      "maxTurnDegrees": 2.05228612033676
+    }
+  },
+  {
+    "version": "midpoint",
+    "meanX": -0.11994004759873296,
+    "meanY": 0.6444850938259603,
+    "meanZ": -0.05590495627902055,
+    "toShort": {
+      "minimum": 0.011528436554877309,
+      "median": 0.030458906203579657
+    },
+    "toCalf": {
+      "minimum": 0.0011930260223022614,
+      "median": 0.04175157575947603
+    },
+    "course": {
+      "name": "Long head of biceps femoris.r",
+      "length": 0.4453954830693256,
+      "freeLength": 0.4453954830693256,
+      "freeMaxTurnDegrees": 13.182810034362197,
+      "arcChordRatio": 1.0458650905122602,
+      "freeArcChordRatio": 1.0458650905122602,
+      "maxTurnDegrees": 13.182810034362197
+    }
+  }
+]

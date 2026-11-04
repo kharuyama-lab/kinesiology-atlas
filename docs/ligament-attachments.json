@@ -1,0 +1,1025 @@
+[
+  {
+    "kind": "flex",
+    "angle": 0,
+    "entries": [
+      {
+        "name": "Anterior cruciate ligament.r",
+        "distalBone": "Tibia.r",
+        "vertices": 840,
+        "proximalVertices": 118,
+        "distalVertices": 170,
+        "restSpan": 0.032026013478019644,
+        "span": 0.03202601343690899,
+        "spanRatio": 0.9999999987163355,
+        "status": "Mesh-end binding; span ratio is not strain or force"
+      },
+      {
+        "name": "Posterior cruciate ligament.r",
+        "distalBone": "Tibia.r",
+        "vertices": 420,
+        "proximalVertices": 94,
+        "distalVertices": 73,
+        "restSpan": 0.03735435559236354,
+        "span": 0.03735435556992713,
+        "spanRatio": 0.999999999399363,
+        "status": "Mesh-end binding; span ratio is not strain or force"
+      },
+      {
+        "name": "Superficial part of tibial collateral ligament.r",
+        "distalBone": "Tibia.r",
+        "vertices": 250,
+        "proximalVertices": 90,
+        "distalVertices": 66,
+        "restSpan": 0.06362965682564693,
+        "span": 0.06362965681338219,
+        "spanRatio": 0.999999999807248,
+        "status": "Mesh-end binding; span ratio is not strain or force"
+      },
+      {
+        "name": "Deep part of tibial collateral ligament.r",
+        "distalBone": "Tibia.r",
+        "vertices": 132,
+        "proximalVertices": 30,
+        "distalVertices": 30,
+        "restSpan": 0.06501932838400579,
+        "span": 0.0650193283715432,
+        "spanRatio": 0.9999999998083249,
+        "status": "Mesh-end binding; span ratio is not strain or force"
+      },
+      {
+        "name": "Fibular collateral ligament.r",
+        "distalBone": "Fibula.r",
+        "vertices": 42,
+        "proximalVertices": 14,
+        "distalVertices": 12,
+        "restSpan": 0.04695702207326021,
+        "span": 0.04695702203574843,
+        "spanRatio": 0.9999999992011466,
+        "status": "Mesh-end binding; span ratio is not strain or force"
+      }
+    ],
+    "residuals": [
+      {
+        "name": "Anterior cruciate ligament.r",
+        "proximal": 1.2412670766236366e-16,
+        "distal": 1.3352616796385636e-10,
+        "finite": true
+      },
+      {
+        "name": "Posterior cruciate ligament.r",
+        "proximal": 1.2412670766236366e-16,
+        "distal": 1.9402215647684576e-10,
+        "finite": true
+      },
+      {
+        "name": "Superficial part of tibial collateral ligament.r",
+        "proximal": 5.551115123125783e-17,
+        "distal": 2.593139682181752e-10,
+        "finite": true
+      },
+      {
+        "name": "Deep part of tibial collateral ligament.r",
+        "proximal": 1.2412670766236366e-16,
+        "distal": 2.621605074414285e-10,
+        "finite": true
+      },
+      {
+        "name": "Fibular collateral ligament.r",
+        "proximal": 1.2412670766236366e-16,
+        "distal": 1.9530106423975254e-10,
+        "finite": true
+      }
+    ]
+  },
+  {
+    "kind": "flex",
+    "angle": 20,
+    "entries": [
+      {
+        "name": "Anterior cruciate ligament.r",
+        "distalBone": "Tibia.r",
+        "vertices": 840,
+        "proximalVertices": 118,
+        "distalVertices": 170,
+        "restSpan": 0.032026013478019644,
+        "span": 0.028756636932313676,
+        "spanRatio": 0.8979149700305399,
+        "status": "Mesh-end binding; span ratio is not strain or force"
+      },
+      {
+        "name": "Posterior cruciate ligament.r",
+        "distalBone": "Tibia.r",
+        "vertices": 420,
+        "proximalVertices": 94,
+        "distalVertices": 73,
+        "restSpan": 0.03735435559236354,
+        "span": 0.03707701853191345,
+        "spanRatio": 0.9925755094405433,
+        "status": "Mesh-end binding; span ratio is not strain or force"
+      },
+      {
+        "name": "Superficial part of tibial collateral ligament.r",
+        "distalBone": "Tibia.r",
+        "vertices": 250,
+        "proximalVertices": 90,
+        "distalVertices": 66,
+        "restSpan": 0.06362965682564693,
+        "span": 0.06225961331674381,
+        "spanRatio": 0.9784684755937438,
+        "status": "Mesh-end binding; span ratio is not strain or force"
+      },
+      {
+        "name": "Deep part of tibial collateral ligament.r",
+        "distalBone": "Tibia.r",
+        "vertices": 132,
+        "proximalVertices": 30,
+        "distalVertices": 30,
+        "restSpan": 0.06501932838400579,
+        "span": 0.06361789325209868,
+        "spanRatio": 0.9784458688402594,
+        "status": "Mesh-end binding; span ratio is not strain or force"
+      },
+      {
+        "name": "Fibular collateral ligament.r",
+        "distalBone": "Fibula.r",
+        "vertices": 42,
+        "proximalVertices": 14,
+        "distalVertices": 12,
+        "restSpan": 0.04695702207326021,
+        "span": 0.04453296423437026,
+        "spanRatio": 0.9483770960793032,
+        "status": "Mesh-end binding; span ratio is not strain or force"
+      }
+    ],
+    "residuals": [
+      {
+        "name": "Anterior cruciate ligament.r",
+        "proximal": 1.2412670766236366e-16,
+        "distal": 5.454430633179738e-10,
+        "finite": true
+      },
+      {
+        "name": "Posterior cruciate ligament.r",
+        "proximal": 1.2412670766236366e-16,
+        "distal": 1.0139120872422153e-9,
+        "finite": true
+      },
+      {
+        "name": "Superficial part of tibial collateral ligament.r",
+        "proximal": 5.551115123125783e-17,
+        "distal": 1.982615296632153e-9,
+        "finite": true
+      },
+      {
+        "name": "Deep part of tibial collateral ligament.r",
+        "proximal": 1.2412670766236366e-16,
+        "distal": 1.1295118890079283e-9,
+        "finite": true
+      },
+      {
+        "name": "Fibular collateral ligament.r",
+        "proximal": 1.2412670766236366e-16,
+        "distal": 9.319318651502394e-10,
+        "finite": true
+      }
+    ]
+  },
+  {
+    "kind": "flex",
+    "angle": 60,
+    "entries": [
+      {
+        "name": "Anterior cruciate ligament.r",
+        "distalBone": "Tibia.r",
+        "vertices": 840,
+        "proximalVertices": 118,
+        "distalVertices": 170,
+        "restSpan": 0.032026013478019644,
+        "span": 0.026669752588957294,
+        "spanRatio": 0.8327528060044531,
+        "status": "Mesh-end binding; span ratio is not strain or force"
+      },
+      {
+        "name": "Posterior cruciate ligament.r",
+        "distalBone": "Tibia.r",
+        "vertices": 420,
+        "proximalVertices": 94,
+        "distalVertices": 73,
+        "restSpan": 0.03735435559236354,
+        "span": 0.038363574255467534,
+        "spanRatio": 1.0270174293492647,
+        "status": "Mesh-end binding; span ratio is not strain or force"
+      },
+      {
+        "name": "Superficial part of tibial collateral ligament.r",
+        "distalBone": "Tibia.r",
+        "vertices": 250,
+        "proximalVertices": 90,
+        "distalVertices": 66,
+        "restSpan": 0.06362965682564693,
+        "span": 0.06500426294149907,
+        "spanRatio": 1.0216032300727116,
+        "status": "Mesh-end binding; span ratio is not strain or force"
+      },
+      {
+        "name": "Deep part of tibial collateral ligament.r",
+        "distalBone": "Tibia.r",
+        "vertices": 132,
+        "proximalVertices": 30,
+        "distalVertices": 30,
+        "restSpan": 0.06501932838400579,
+        "span": 0.06621946350527311,
+        "spanRatio": 1.018458128545704,
+        "status": "Mesh-end binding; span ratio is not strain or force"
+      },
+      {
+        "name": "Fibular collateral ligament.r",
+        "distalBone": "Fibula.r",
+        "vertices": 42,
+        "proximalVertices": 14,
+        "distalVertices": 12,
+        "restSpan": 0.04695702207326021,
+        "span": 0.0415264472487643,
+        "spanRatio": 0.8843501017585107,
+        "status": "Mesh-end binding; span ratio is not strain or force"
+      }
+    ],
+    "residuals": [
+      {
+        "name": "Anterior cruciate ligament.r",
+        "proximal": 1.2412670766236366e-16,
+        "distal": 9.310294472110592e-10,
+        "finite": true
+      },
+      {
+        "name": "Posterior cruciate ligament.r",
+        "proximal": 1.2412670766236366e-16,
+        "distal": 2.0544896014957087e-9,
+        "finite": true
+      },
+      {
+        "name": "Superficial part of tibial collateral ligament.r",
+        "proximal": 5.551115123125783e-17,
+        "distal": 2.261512657112971e-9,
+        "finite": true
+      },
+      {
+        "name": "Deep part of tibial collateral ligament.r",
+        "proximal": 1.2412670766236366e-16,
+        "distal": 2.3821944236573657e-9,
+        "finite": true
+      },
+      {
+        "name": "Fibular collateral ligament.r",
+        "proximal": 1.2412670766236366e-16,
+        "distal": 1.6066479801725055e-9,
+        "finite": true
+      }
+    ]
+  },
+  {
+    "kind": "flex",
+    "angle": 90,
+    "entries": [
+      {
+        "name": "Anterior cruciate ligament.r",
+        "distalBone": "Tibia.r",
+        "vertices": 840,
+        "proximalVertices": 118,
+        "distalVertices": 170,
+        "restSpan": 0.032026013478019644,
+        "span": 0.027036125194466257,
+        "spanRatio": 0.8441926502348446,
+        "status": "Mesh-end binding; span ratio is not strain or force"
+      },
+      {
+        "name": "Posterior cruciate ligament.r",
+        "distalBone": "Tibia.r",
+        "vertices": 420,
+        "proximalVertices": 94,
+        "distalVertices": 73,
+        "restSpan": 0.03735435559236354,
+        "span": 0.040138019465543545,
+        "spanRatio": 1.0745204629831462,
+        "status": "Mesh-end binding; span ratio is not strain or force"
+      },
+      {
+        "name": "Superficial part of tibial collateral ligament.r",
+        "distalBone": "Tibia.r",
+        "vertices": 250,
+        "proximalVertices": 90,
+        "distalVertices": 66,
+        "restSpan": 0.06362965682564693,
+        "span": 0.06703520242118442,
+        "spanRatio": 1.0535213572637852,
+        "status": "Mesh-end binding; span ratio is not strain or force"
+      },
+      {
+        "name": "Deep part of tibial collateral ligament.r",
+        "distalBone": "Tibia.r",
+        "vertices": 132,
+        "proximalVertices": 30,
+        "distalVertices": 30,
+        "restSpan": 0.06501932838400579,
+        "span": 0.06818713683390887,
+        "spanRatio": 1.0487210269413108,
+        "status": "Mesh-end binding; span ratio is not strain or force"
+      },
+      {
+        "name": "Fibular collateral ligament.r",
+        "distalBone": "Fibula.r",
+        "vertices": 42,
+        "proximalVertices": 14,
+        "distalVertices": 12,
+        "restSpan": 0.04695702207326021,
+        "span": 0.04124814864918166,
+        "spanRatio": 0.8784234354731476,
+        "status": "Mesh-end binding; span ratio is not strain or force"
+      }
+    ],
+    "residuals": [
+      {
+        "name": "Anterior cruciate ligament.r",
+        "proximal": 1.2412670766236366e-16,
+        "distal": 1.031475785644617e-9,
+        "finite": true
+      },
+      {
+        "name": "Posterior cruciate ligament.r",
+        "proximal": 1.2412670766236366e-16,
+        "distal": 1.9587572832944857e-9,
+        "finite": true
+      },
+      {
+        "name": "Superficial part of tibial collateral ligament.r",
+        "proximal": 5.551115123125783e-17,
+        "distal": 2.2668352152769726e-9,
+        "finite": true
+      },
+      {
+        "name": "Deep part of tibial collateral ligament.r",
+        "proximal": 1.2412670766236366e-16,
+        "distal": 2.254529789252548e-9,
+        "finite": true
+      },
+      {
+        "name": "Fibular collateral ligament.r",
+        "proximal": 1.2412670766236366e-16,
+        "distal": 1.7243218395105732e-9,
+        "finite": true
+      }
+    ]
+  },
+  {
+    "kind": "flex",
+    "angle": 120,
+    "entries": [
+      {
+        "name": "Anterior cruciate ligament.r",
+        "distalBone": "Tibia.r",
+        "vertices": 840,
+        "proximalVertices": 118,
+        "distalVertices": 170,
+        "restSpan": 0.032026013478019644,
+        "span": 0.027539378117561384,
+        "spanRatio": 0.859906529935811,
+        "status": "Mesh-end binding; span ratio is not strain or force"
+      },
+      {
+        "name": "Posterior cruciate ligament.r",
+        "distalBone": "Tibia.r",
+        "vertices": 420,
+        "proximalVertices": 94,
+        "distalVertices": 73,
+        "restSpan": 0.03735435559236354,
+        "span": 0.04261753041840536,
+        "spanRatio": 1.1408985576803201,
+        "status": "Mesh-end binding; span ratio is not strain or force"
+      },
+      {
+        "name": "Superficial part of tibial collateral ligament.r",
+        "distalBone": "Tibia.r",
+        "vertices": 250,
+        "proximalVertices": 90,
+        "distalVertices": 66,
+        "restSpan": 0.06362965682564693,
+        "span": 0.06746305356264701,
+        "spanRatio": 1.0602454410135207,
+        "status": "Mesh-end binding; span ratio is not strain or force"
+      },
+      {
+        "name": "Deep part of tibial collateral ligament.r",
+        "distalBone": "Tibia.r",
+        "vertices": 132,
+        "proximalVertices": 30,
+        "distalVertices": 30,
+        "restSpan": 0.06501932838400579,
+        "span": 0.06860144646875284,
+        "spanRatio": 1.0550931265175638,
+        "status": "Mesh-end binding; span ratio is not strain or force"
+      },
+      {
+        "name": "Fibular collateral ligament.r",
+        "distalBone": "Fibula.r",
+        "vertices": 42,
+        "proximalVertices": 14,
+        "distalVertices": 12,
+        "restSpan": 0.04695702207326021,
+        "span": 0.04171626810771049,
+        "spanRatio": 0.8883925399406006,
+        "status": "Mesh-end binding; span ratio is not strain or force"
+      }
+    ],
+    "residuals": [
+      {
+        "name": "Anterior cruciate ligament.r",
+        "proximal": 1.2412670766236366e-16,
+        "distal": 1.33955558474785e-9,
+        "finite": true
+      },
+      {
+        "name": "Posterior cruciate ligament.r",
+        "proximal": 1.2412670766236366e-16,
+        "distal": 1.864547624488516e-9,
+        "finite": true
+      },
+      {
+        "name": "Superficial part of tibial collateral ligament.r",
+        "proximal": 5.551115123125783e-17,
+        "distal": 2.7084996117050405e-9,
+        "finite": true
+      },
+      {
+        "name": "Deep part of tibial collateral ligament.r",
+        "proximal": 1.2412670766236366e-16,
+        "distal": 2.7165879961570816e-9,
+        "finite": true
+      },
+      {
+        "name": "Fibular collateral ligament.r",
+        "proximal": 1.2412670766236366e-16,
+        "distal": 2.3037741787285516e-9,
+        "finite": true
+      }
+    ]
+  },
+  {
+    "kind": "rot",
+    "angle": -15,
+    "entries": [
+      {
+        "name": "Anterior cruciate ligament.r",
+        "distalBone": "Tibia.r",
+        "vertices": 840,
+        "proximalVertices": 118,
+        "distalVertices": 170,
+        "restSpan": 0.032026013478019644,
+        "span": 0.027673119687379604,
+        "spanRatio": 0.8640825592099513,
+        "status": "Mesh-end binding; span ratio is not strain or force"
+      },
+      {
+        "name": "Posterior cruciate ligament.r",
+        "distalBone": "Tibia.r",
+        "vertices": 420,
+        "proximalVertices": 94,
+        "distalVertices": 73,
+        "restSpan": 0.03735435559236354,
+        "span": 0.040709892642660665,
+        "spanRatio": 1.0898298738416226,
+        "status": "Mesh-end binding; span ratio is not strain or force"
+      },
+      {
+        "name": "Superficial part of tibial collateral ligament.r",
+        "distalBone": "Tibia.r",
+        "vertices": 250,
+        "proximalVertices": 90,
+        "distalVertices": 66,
+        "restSpan": 0.06362965682564693,
+        "span": 0.06500428863036009,
+        "spanRatio": 1.021603633797363,
+        "status": "Mesh-end binding; span ratio is not strain or force"
+      },
+      {
+        "name": "Deep part of tibial collateral ligament.r",
+        "distalBone": "Tibia.r",
+        "vertices": 132,
+        "proximalVertices": 30,
+        "distalVertices": 30,
+        "restSpan": 0.06501932838400579,
+        "span": 0.0661144079369834,
+        "spanRatio": 1.0168423694952682,
+        "status": "Mesh-end binding; span ratio is not strain or force"
+      },
+      {
+        "name": "Fibular collateral ligament.r",
+        "distalBone": "Fibula.r",
+        "vertices": 42,
+        "proximalVertices": 14,
+        "distalVertices": 12,
+        "restSpan": 0.04695702207326021,
+        "span": 0.04342941071999971,
+        "spanRatio": 0.924875743871558,
+        "status": "Mesh-end binding; span ratio is not strain or force"
+      }
+    ],
+    "residuals": [
+      {
+        "name": "Anterior cruciate ligament.r",
+        "proximal": 1.2412670766236366e-16,
+        "distal": 9.930491351736078e-10,
+        "finite": true
+      },
+      {
+        "name": "Posterior cruciate ligament.r",
+        "proximal": 1.2412670766236366e-16,
+        "distal": 2.4195123438981624e-9,
+        "finite": true
+      },
+      {
+        "name": "Superficial part of tibial collateral ligament.r",
+        "proximal": 5.551115123125783e-17,
+        "distal": 2.3634820508932203e-9,
+        "finite": true
+      },
+      {
+        "name": "Deep part of tibial collateral ligament.r",
+        "proximal": 1.2412670766236366e-16,
+        "distal": 2.2874916945483967e-9,
+        "finite": true
+      },
+      {
+        "name": "Fibular collateral ligament.r",
+        "proximal": 1.2412670766236366e-16,
+        "distal": 1.85946622382696e-9,
+        "finite": true
+      }
+    ]
+  },
+  {
+    "kind": "rot",
+    "angle": 0,
+    "entries": [
+      {
+        "name": "Anterior cruciate ligament.r",
+        "distalBone": "Tibia.r",
+        "vertices": 840,
+        "proximalVertices": 118,
+        "distalVertices": 170,
+        "restSpan": 0.032026013478019644,
+        "span": 0.02703612519849723,
+        "spanRatio": 0.8441926503607102,
+        "status": "Mesh-end binding; span ratio is not strain or force"
+      },
+      {
+        "name": "Posterior cruciate ligament.r",
+        "distalBone": "Tibia.r",
+        "vertices": 420,
+        "proximalVertices": 94,
+        "distalVertices": 73,
+        "restSpan": 0.03735435559236354,
+        "span": 0.04013801947437311,
+        "spanRatio": 1.074520463219519,
+        "status": "Mesh-end binding; span ratio is not strain or force"
+      },
+      {
+        "name": "Superficial part of tibial collateral ligament.r",
+        "distalBone": "Tibia.r",
+        "vertices": 250,
+        "proximalVertices": 90,
+        "distalVertices": 66,
+        "restSpan": 0.06362965682564693,
+        "span": 0.0670352024189566,
+        "spanRatio": 1.0535213572287727,
+        "status": "Mesh-end binding; span ratio is not strain or force"
+      },
+      {
+        "name": "Deep part of tibial collateral ligament.r",
+        "distalBone": "Tibia.r",
+        "vertices": 132,
+        "proximalVertices": 30,
+        "distalVertices": 30,
+        "restSpan": 0.06501932838400579,
+        "span": 0.06818713683162496,
+        "spanRatio": 1.0487210269061842,
+        "status": "Mesh-end binding; span ratio is not strain or force"
+      },
+      {
+        "name": "Fibular collateral ligament.r",
+        "distalBone": "Fibula.r",
+        "vertices": 42,
+        "proximalVertices": 14,
+        "distalVertices": 12,
+        "restSpan": 0.04695702207326021,
+        "span": 0.04124814865212054,
+        "spanRatio": 0.8784234355357343,
+        "status": "Mesh-end binding; span ratio is not strain or force"
+      }
+    ],
+    "residuals": [
+      {
+        "name": "Anterior cruciate ligament.r",
+        "proximal": 1.2412670766236366e-16,
+        "distal": 1.019519249081294e-9,
+        "finite": true
+      },
+      {
+        "name": "Posterior cruciate ligament.r",
+        "proximal": 1.2412670766236366e-16,
+        "distal": 1.9715740891371057e-9,
+        "finite": true
+      },
+      {
+        "name": "Superficial part of tibial collateral ligament.r",
+        "proximal": 5.551115123125783e-17,
+        "distal": 2.264925572560537e-9,
+        "finite": true
+      },
+      {
+        "name": "Deep part of tibial collateral ligament.r",
+        "proximal": 1.2412670766236366e-16,
+        "distal": 2.263094950585323e-9,
+        "finite": true
+      },
+      {
+        "name": "Fibular collateral ligament.r",
+        "proximal": 1.2412670766236366e-16,
+        "distal": 1.7305902827522701e-9,
+        "finite": true
+      }
+    ]
+  },
+  {
+    "kind": "rot",
+    "angle": 30,
+    "entries": [
+      {
+        "name": "Anterior cruciate ligament.r",
+        "distalBone": "Tibia.r",
+        "vertices": 840,
+        "proximalVertices": 118,
+        "distalVertices": 170,
+        "restSpan": 0.032026013478019644,
+        "span": 0.025451952247388956,
+        "spanRatio": 0.7947274569423806,
+        "status": "Mesh-end binding; span ratio is not strain or force"
+      },
+      {
+        "name": "Posterior cruciate ligament.r",
+        "distalBone": "Tibia.r",
+        "vertices": 420,
+        "proximalVertices": 94,
+        "distalVertices": 73,
+        "restSpan": 0.03735435559236354,
+        "span": 0.038277630020288736,
+        "spanRatio": 1.0247166471830114,
+        "status": "Mesh-end binding; span ratio is not strain or force"
+      },
+      {
+        "name": "Superficial part of tibial collateral ligament.r",
+        "distalBone": "Tibia.r",
+        "vertices": 250,
+        "proximalVertices": 90,
+        "distalVertices": 66,
+        "restSpan": 0.06362965682564693,
+        "span": 0.07300287990959557,
+        "spanRatio": 1.1473090309072769,
+        "status": "Mesh-end binding; span ratio is not strain or force"
+      },
+      {
+        "name": "Deep part of tibial collateral ligament.r",
+        "distalBone": "Tibia.r",
+        "vertices": 132,
+        "proximalVertices": 30,
+        "distalVertices": 30,
+        "restSpan": 0.06501932838400579,
+        "span": 0.07385688117026402,
+        "spanRatio": 1.1359219328453138,
+        "status": "Mesh-end binding; span ratio is not strain or force"
+      },
+      {
+        "name": "Fibular collateral ligament.r",
+        "distalBone": "Fibula.r",
+        "vertices": 42,
+        "proximalVertices": 14,
+        "distalVertices": 12,
+        "restSpan": 0.04695702207326021,
+        "span": 0.0449185445476866,
+        "spanRatio": 0.9565884411836579,
+        "status": "Mesh-end binding; span ratio is not strain or force"
+      }
+    ],
+    "residuals": [
+      {
+        "name": "Anterior cruciate ligament.r",
+        "proximal": 1.2412670766236366e-16,
+        "distal": 9.468392458757374e-10,
+        "finite": true
+      },
+      {
+        "name": "Posterior cruciate ligament.r",
+        "proximal": 1.2412670766236366e-16,
+        "distal": 1.9518642851415946e-9,
+        "finite": true
+      },
+      {
+        "name": "Superficial part of tibial collateral ligament.r",
+        "proximal": 5.551115123125783e-17,
+        "distal": 2.420303175544383e-9,
+        "finite": true
+      },
+      {
+        "name": "Deep part of tibial collateral ligament.r",
+        "proximal": 1.2412670766236366e-16,
+        "distal": 2.239148155927749e-9,
+        "finite": true
+      },
+      {
+        "name": "Fibular collateral ligament.r",
+        "proximal": 1.2412670766236366e-16,
+        "distal": 1.7550986867175224e-9,
+        "finite": true
+      }
+    ]
+  },
+  {
+    "kind": "stress",
+    "angle": -3,
+    "entries": [
+      {
+        "name": "Anterior cruciate ligament.r",
+        "distalBone": "Tibia.r",
+        "vertices": 840,
+        "proximalVertices": 118,
+        "distalVertices": 170,
+        "restSpan": 0.032026013478019644,
+        "span": 0.027589978020582596,
+        "spanRatio": 0.8614864925201626,
+        "status": "Mesh-end binding; span ratio is not strain or force"
+      },
+      {
+        "name": "Posterior cruciate ligament.r",
+        "distalBone": "Tibia.r",
+        "vertices": 420,
+        "proximalVertices": 94,
+        "distalVertices": 73,
+        "restSpan": 0.03735435559236354,
+        "span": 0.03706191295328565,
+        "spanRatio": 0.9921711234355312,
+        "status": "Mesh-end binding; span ratio is not strain or force"
+      },
+      {
+        "name": "Superficial part of tibial collateral ligament.r",
+        "distalBone": "Tibia.r",
+        "vertices": 250,
+        "proximalVertices": 90,
+        "distalVertices": 66,
+        "restSpan": 0.06362965682564693,
+        "span": 0.06114974702359741,
+        "spanRatio": 0.9610258812357769,
+        "status": "Mesh-end binding; span ratio is not strain or force"
+      },
+      {
+        "name": "Deep part of tibial collateral ligament.r",
+        "distalBone": "Tibia.r",
+        "vertices": 132,
+        "proximalVertices": 30,
+        "distalVertices": 30,
+        "restSpan": 0.06501932838400579,
+        "span": 0.0625455733985567,
+        "spanRatio": 0.9619535444777431,
+        "status": "Mesh-end binding; span ratio is not strain or force"
+      },
+      {
+        "name": "Fibular collateral ligament.r",
+        "distalBone": "Fibula.r",
+        "vertices": 42,
+        "proximalVertices": 14,
+        "distalVertices": 12,
+        "restSpan": 0.04695702207326021,
+        "span": 0.04534289495955654,
+        "spanRatio": 0.9656254369967204,
+        "status": "Mesh-end binding; span ratio is not strain or force"
+      }
+    ],
+    "residuals": [
+      {
+        "name": "Anterior cruciate ligament.r",
+        "proximal": 1.2412670766236366e-16,
+        "distal": 5.416975416440341e-10,
+        "finite": true
+      },
+      {
+        "name": "Posterior cruciate ligament.r",
+        "proximal": 1.2412670766236366e-16,
+        "distal": 9.693686694221492e-10,
+        "finite": true
+      },
+      {
+        "name": "Superficial part of tibial collateral ligament.r",
+        "proximal": 5.551115123125783e-17,
+        "distal": 1.324753342640409e-9,
+        "finite": true
+      },
+      {
+        "name": "Deep part of tibial collateral ligament.r",
+        "proximal": 1.2412670766236366e-16,
+        "distal": 1.2704369385345342e-9,
+        "finite": true
+      },
+      {
+        "name": "Fibular collateral ligament.r",
+        "proximal": 1.2412670766236366e-16,
+        "distal": 1.230629173949232e-9,
+        "finite": true
+      }
+    ]
+  },
+  {
+    "kind": "stress",
+    "angle": 0,
+    "entries": [
+      {
+        "name": "Anterior cruciate ligament.r",
+        "distalBone": "Tibia.r",
+        "vertices": 840,
+        "proximalVertices": 118,
+        "distalVertices": 170,
+        "restSpan": 0.032026013478019644,
+        "span": 0.027742450466295827,
+        "spanRatio": 0.8662473862173402,
+        "status": "Mesh-end binding; span ratio is not strain or force"
+      },
+      {
+        "name": "Posterior cruciate ligament.r",
+        "distalBone": "Tibia.r",
+        "vertices": 420,
+        "proximalVertices": 94,
+        "distalVertices": 73,
+        "restSpan": 0.03735435559236354,
+        "span": 0.037097139826666216,
+        "spanRatio": 0.9931141693754743,
+        "status": "Mesh-end binding; span ratio is not strain or force"
+      },
+      {
+        "name": "Superficial part of tibial collateral ligament.r",
+        "distalBone": "Tibia.r",
+        "vertices": 250,
+        "proximalVertices": 90,
+        "distalVertices": 66,
+        "restSpan": 0.06362965682564693,
+        "span": 0.0627220673408447,
+        "spanRatio": 0.9857363762421486,
+        "status": "Mesh-end binding; span ratio is not strain or force"
+      },
+      {
+        "name": "Deep part of tibial collateral ligament.r",
+        "distalBone": "Tibia.r",
+        "vertices": 132,
+        "proximalVertices": 30,
+        "distalVertices": 30,
+        "restSpan": 0.06501932838400579,
+        "span": 0.06404071483470673,
+        "spanRatio": 0.9849488825304479,
+        "status": "Mesh-end binding; span ratio is not strain or force"
+      },
+      {
+        "name": "Fibular collateral ligament.r",
+        "distalBone": "Fibula.r",
+        "vertices": 42,
+        "proximalVertices": 14,
+        "distalVertices": 12,
+        "restSpan": 0.04695702207326021,
+        "span": 0.043325513758920395,
+        "spanRatio": 0.9226631469799319,
+        "status": "Mesh-end binding; span ratio is not strain or force"
+      }
+    ],
+    "residuals": [
+      {
+        "name": "Anterior cruciate ligament.r",
+        "proximal": 1.2412670766236366e-16,
+        "distal": 6.164529095682662e-10,
+        "finite": true
+      },
+      {
+        "name": "Posterior cruciate ligament.r",
+        "proximal": 1.2412670766236366e-16,
+        "distal": 9.80013008934435e-10,
+        "finite": true
+      },
+      {
+        "name": "Superficial part of tibial collateral ligament.r",
+        "proximal": 5.551115123125783e-17,
+        "distal": 1.454652458240137e-9,
+        "finite": true
+      },
+      {
+        "name": "Deep part of tibial collateral ligament.r",
+        "proximal": 1.2412670766236366e-16,
+        "distal": 1.4520142258444984e-9,
+        "finite": true
+      },
+      {
+        "name": "Fibular collateral ligament.r",
+        "proximal": 1.2412670766236366e-16,
+        "distal": 1.2405873782283204e-9,
+        "finite": true
+      }
+    ]
+  },
+  {
+    "kind": "stress",
+    "angle": 3,
+    "entries": [
+      {
+        "name": "Anterior cruciate ligament.r",
+        "distalBone": "Tibia.r",
+        "vertices": 840,
+        "proximalVertices": 118,
+        "distalVertices": 170,
+        "restSpan": 0.032026013478019644,
+        "span": 0.027884488949929717,
+        "spanRatio": 0.8706824834463905,
+        "status": "Mesh-end binding; span ratio is not strain or force"
+      },
+      {
+        "name": "Posterior cruciate ligament.r",
+        "distalBone": "Tibia.r",
+        "vertices": 420,
+        "proximalVertices": 94,
+        "distalVertices": 73,
+        "restSpan": 0.03735435559236354,
+        "span": 0.037114165610663385,
+        "spanRatio": 0.9935699605068476,
+        "status": "Mesh-end binding; span ratio is not strain or force"
+      },
+      {
+        "name": "Superficial part of tibial collateral ligament.r",
+        "distalBone": "Tibia.r",
+        "vertices": 250,
+        "proximalVertices": 90,
+        "distalVertices": 66,
+        "restSpan": 0.06362965682564693,
+        "span": 0.06425288791366061,
+        "spanRatio": 1.009794663669512,
+        "status": "Mesh-end binding; span ratio is not strain or force"
+      },
+      {
+        "name": "Deep part of tibial collateral ligament.r",
+        "distalBone": "Tibia.r",
+        "vertices": 132,
+        "proximalVertices": 30,
+        "distalVertices": 30,
+        "restSpan": 0.06501932838400579,
+        "span": 0.06549343773833229,
+        "spanRatio": 1.0072918217722335,
+        "status": "Mesh-end binding; span ratio is not strain or force"
+      },
+      {
+        "name": "Fibular collateral ligament.r",
+        "distalBone": "Fibula.r",
+        "vertices": 42,
+        "proximalVertices": 14,
+        "distalVertices": 12,
+        "restSpan": 0.04695702207326021,
+        "span": 0.04128799711354068,
+        "spanRatio": 0.8792720511348658,
+        "status": "Mesh-end binding; span ratio is not strain or force"
+      }
+    ],
+    "residuals": [
+      {
+        "name": "Anterior cruciate ligament.r",
+        "proximal": 1.2412670766236366e-16,
+        "distal": 7.021083701117787e-10,
+        "finite": true
+      },
+      {
+        "name": "Posterior cruciate ligament.r",
+        "proximal": 1.2412670766236366e-16,
+        "distal": 9.330995010221955e-10,
+        "finite": true
+      },
+      {
+        "name": "Superficial part of tibial collateral ligament.r",
+        "proximal": 5.551115123125783e-17,
+        "distal": 1.5707409487975344e-9,
+        "finite": true
+      },
+      {
+        "name": "Deep part of tibial collateral ligament.r",
+        "proximal": 1.2412670766236366e-16,
+        "distal": 1.4239658897213234e-9,
+        "finite": true
+      },
+      {
+        "name": "Fibular collateral ligament.r",
+        "proximal": 1.2412670766236366e-16,
+        "distal": 9.518623784837714e-10,
+        "finite": true
+      }
+    ]
+  }
+]

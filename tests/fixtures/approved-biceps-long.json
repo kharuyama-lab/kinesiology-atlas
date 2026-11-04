@@ -1,0 +1,17 @@
+[
+  {
+    "angle": 60,
+    "length": 0.5131050695719327,
+    "freeArcChordRatio": 1.0258843635732127
+  },
+  {
+    "angle": 90,
+    "length": 0.5141931852711564,
+    "freeArcChordRatio": 1.049411374637858
+  },
+  {
+    "angle": 120,
+    "length": 0.5122474849627416,
+    "freeArcChordRatio": 1.0643097973777764
+  }
+]

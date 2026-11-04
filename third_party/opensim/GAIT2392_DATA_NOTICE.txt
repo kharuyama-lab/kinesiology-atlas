@@ -1,0 +1,12 @@
+Gait2392 reference trajectory data
+
+Source: OpenSim Models, revision 84b487c4e3245359a64381e01f01b9cf4772d457
+https://github.com/opensim-org/opensim-models/blob/84b487c4e3245359a64381e01f01b9cf4772d457/Models/Gait2392_Simbody/gait2392_thelen2003muscle.osim
+
+Authors: S. L. Delp, J. P. Loan, M. G. Hoy, F. E. Zajac, E. L. Topp, J. M. Rosen, D. G. Thelen, F. C. Anderson, A. Seth.
+License: Creative Commons Attribution 3.0 Unported
+https://creativecommons.org/licenses/by/3.0/
+
+Changes: selected knee translation spline values were extracted, zero-point offsets removed, coordinates transformed and the interpolation ported to JavaScript. The data remain available as a reference; the default displayed knee path was replaced with the reviewed mesh-derived contact path. This viewer is not an OpenSim biomechanical solve.
+
+The SIMM spline algorithm is a separate Apache-2.0 component; see vendor/opensim/LICENSE and NOTICE.

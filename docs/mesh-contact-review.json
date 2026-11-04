@@ -1,0 +1,7486 @@
+{
+  "date": "2026-10-30",
+  "status": "GEOMETRIC REVIEW — CONTACT NOT ANATOMICALLY APPROVED",
+  "range": [
+    0,
+    120
+  ],
+  "method": "ellipse contact reference, full rigid-transform derivative, 7-ray majority mesh-volume probe",
+  "negativeControlOutside": 90,
+  "profiles": [
+    {
+      "kind": "medial",
+      "ellipse": {
+        "center": [
+          0.000599930628593768,
+          0.0067462290792952
+        ],
+        "rY": 0.023690305538709776,
+        "rZ": 0.02955803570122256
+      },
+      "reference": [
+        0.02270983755714588,
+        -0.024407076775667762,
+        0.006875364392220788
+      ],
+      "posteriorTravel": 0.003
+    },
+    {
+      "kind": "lateral",
+      "ellipse": {
+        "center": [
+          0.0009852106331984089,
+          0.0035557866747290335
+        ],
+        "rY": 0.0216035292107807,
+        "rZ": 0.02429922999776805
+      },
+      "reference": [
+        -0.02522414004030012,
+        -0.019232571184888952,
+        0.0034125325697246123
+      ],
+      "posteriorTravel": 0.006
+    }
+  ],
+  "variants": [
+    {
+      "variant": "condyle",
+      "checks": [
+        {
+          "angle": 0,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 0,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 1,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            1,
+            1
+          ]
+        },
+        {
+          "angle": 1,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 2,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "angle": 2,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 3,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "angle": 3,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 4,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "angle": 4,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 5,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "angle": 5,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 6,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "angle": 6,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 7,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "angle": 7,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 8,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "angle": 8,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 9,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "angle": 9,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 10,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "angle": 10,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 11,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "angle": 11,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 12,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "angle": 12,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 13,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "angle": 13,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 14,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "angle": 14,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 15,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "angle": 15,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 16,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "angle": 16,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 17,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "angle": 17,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 18,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            1,
+            1
+          ]
+        },
+        {
+          "angle": 18,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 19,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 19,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 20,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 20,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 21,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 21,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 22,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 22,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 23,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 23,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 24,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 24,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 25,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 25,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 26,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 26,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 27,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 27,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 28,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 28,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 29,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 29,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 30,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 30,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 31,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 31,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 32,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 32,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 33,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 33,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 34,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 34,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 35,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 35,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 36,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 36,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 37,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 37,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 38,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 38,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 39,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 39,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 40,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 40,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 41,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 41,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 42,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 42,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 43,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 43,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 44,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 44,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 45,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 45,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 46,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 46,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 47,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 47,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 48,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 48,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 49,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 49,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 50,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 50,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 51,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 51,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 52,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 52,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 53,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 53,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 54,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 54,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 55,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 55,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 56,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 56,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 57,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 57,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 58,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 58,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 59,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 59,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 60,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 60,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 61,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 61,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 62,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 62,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 63,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 63,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 64,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 64,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 65,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 65,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 66,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 66,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 67,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 67,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 68,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 68,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 69,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 69,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 70,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 70,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 71,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 71,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 72,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 72,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 73,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 73,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 74,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 74,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 75,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 75,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 76,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 76,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 77,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 77,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 78,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 78,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 79,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 79,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 80,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 80,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 81,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 81,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 82,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 82,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 83,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 83,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 84,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 84,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 85,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 85,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 86,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 86,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 87,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 87,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 88,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 88,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 89,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 89,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 90,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 90,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 91,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 91,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 92,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 92,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 93,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 93,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 94,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 94,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 95,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 95,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 96,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 96,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 97,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 97,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 98,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 98,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 99,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 99,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 100,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 100,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 101,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 101,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 102,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 102,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 103,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 103,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 104,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 104,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 105,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 105,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 106,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 106,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 107,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 107,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 108,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 108,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 109,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 109,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 110,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 110,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 111,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 111,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 112,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 112,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 113,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 113,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 114,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 114,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 115,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 115,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 116,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 116,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 117,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 117,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 118,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 118,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 119,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 119,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 120,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 120,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        }
+      ],
+      "failures": []
+    },
+    {
+      "variant": "default",
+      "checks": [
+        {
+          "angle": 0,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 0,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 1,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            1,
+            1
+          ]
+        },
+        {
+          "angle": 1,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 2,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            1,
+            1
+          ]
+        },
+        {
+          "angle": 2,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 3,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "angle": 3,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 4,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "angle": 4,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 5,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "angle": 5,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 6,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "angle": 6,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 7,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "angle": 7,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 8,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "angle": 8,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 9,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "angle": 9,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 10,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "angle": 10,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 11,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "angle": 11,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 12,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "angle": 12,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 13,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "angle": 13,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 14,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "angle": 14,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 15,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "angle": 15,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 16,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "angle": 16,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 17,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "angle": 17,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 18,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            1,
+            1
+          ]
+        },
+        {
+          "angle": 18,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 19,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 19,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 20,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 20,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 21,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 21,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 22,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 22,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 23,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 23,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 24,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 24,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 25,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 25,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 26,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 26,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 27,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 27,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 28,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 28,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 29,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 29,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 30,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 30,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 31,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 31,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 32,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 32,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 33,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 33,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 34,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 34,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 35,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 35,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 36,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 36,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 37,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 37,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 38,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 38,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 39,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 39,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 40,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 40,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 41,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 41,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 42,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 42,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 43,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 43,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 44,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 44,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 45,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 45,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 46,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 46,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 47,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 47,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 48,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 48,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 49,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 49,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 50,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 50,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 51,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 51,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 52,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 52,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 53,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 53,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 54,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 54,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 55,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 55,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 56,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 56,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 57,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 57,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 58,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 58,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 59,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 59,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 60,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 60,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 61,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 61,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 62,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 62,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 63,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 63,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 64,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 64,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 65,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 65,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 66,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 66,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 67,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 67,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 68,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 68,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 69,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 69,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 70,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 70,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 71,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 71,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 72,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 72,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 73,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 73,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 74,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 74,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 75,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 75,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 76,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 76,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 77,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 77,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 78,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 78,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 79,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 79,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 80,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 80,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 81,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 81,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 82,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 82,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 83,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 83,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 84,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 84,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 85,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 85,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 86,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 86,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 87,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 87,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 88,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 88,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 89,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 89,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 90,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 90,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 91,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 91,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 92,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 92,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 93,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 93,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 94,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 94,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 95,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 95,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 96,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 96,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 97,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 97,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 98,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 98,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 99,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 99,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 100,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 100,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 101,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 101,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 102,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 102,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 103,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 103,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 104,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 104,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 105,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 105,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 106,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 106,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 107,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 107,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 108,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 108,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 109,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 109,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 110,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 110,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 111,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 111,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 112,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 112,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 113,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 113,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 114,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 114,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 115,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 115,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 116,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 116,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 117,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 117,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 118,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 118,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 119,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 119,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 120,
+          "compartment": "medial",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "angle": 120,
+          "compartment": "lateral",
+          "inside": true,
+          "votes": [
+            1,
+            1,
+            0,
+            1,
+            0,
+            0,
+            1
+          ]
+        }
+      ],
+      "failures": []
+    }
+  ],
+  "poses": [
+    {
+      "angle": 0,
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "instantaneous": {
+        "point": {
+          "x": 0.0005459904559656784,
+          "y": 0.01023472990055499,
+          "z": 0.005154282544138431
+        },
+        "direction": {
+          "x": 0.9984079952298685,
+          "y": -0.05611860711631839,
+          "z": 0.005672477095536186
+        },
+        "pitch": 3.0463676499054937e-10
+      },
+      "contacts": [
+        {
+          "kind": "medial",
+          "femoral": [
+            0.02270983755714588,
+            -0.024407076775667762,
+            0.006875364392220788
+          ],
+          "tibial": [
+            0.02270983755714588,
+            -0.024407076775667762,
+            0.006875364392220788
+          ],
+          "curvatureCenter": [
+            0.024781890027443514,
+            0.012413780038090984,
+            0.0068871368029146856
+          ],
+          "curvatureRadius": 0.03687911382515372,
+          "normalResidual": 0
+        },
+        {
+          "kind": "lateral",
+          "femoral": [
+            -0.02522414004030012,
+            -0.019232571184888952,
+            0.0034125325697246123
+          ],
+          "tibial": [
+            -0.02522414004030012,
+            -0.019232571184888952,
+            0.0034125325697246123
+          ],
+          "curvatureCenter": [
+            -0.023688531244472816,
+            0.008055556120585998,
+            0.0034212571641394655
+          ],
+          "curvatureRadius": 0.027331301877740428,
+          "normalResidual": 0
+        }
+      ],
+      "menisci": [
+        {
+          "name": "Medial meniscus.r",
+          "displacement": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "Lateral meniscus.r",
+          "displacement": [
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "angle": 10,
+      "translation": [
+        -0.00033234779725770623,
+        0.0010428131095869264,
+        -0.0016639904288620125
+      ],
+      "instantaneous": {
+        "point": {
+          "x": -0.004635279964539284,
+          "y": 0.006697711230684089,
+          "z": 0.004449770792610414
+        },
+        "direction": {
+          "x": 0.84891193276343,
+          "y": 0.5181100878533046,
+          "z": 0.10445318222293933
+        },
+        "pitch": 0.00005994446079843488
+      },
+      "contacts": [
+        {
+          "kind": "medial",
+          "femoral": [
+            0.02277700705929211,
+            -0.023854648639814353,
+            0.000524737356908624
+          ],
+          "tibial": [
+            0.02270983755714588,
+            -0.024407076775667762,
+            0.0068163366144430105
+          ],
+          "curvatureCenter": [
+            0.02473176844649396,
+            0.011512521828730062,
+            0.0067819973037120404
+          ],
+          "curvatureRadius": 0.03596958633448327,
+          "normalResidual": 0.00022366340947517152
+        },
+        {
+          "kind": "lateral",
+          "femoral": [
+            -0.02517409290586998,
+            -0.01882047880484018,
+            -0.0013144316289073273
+          ],
+          "tibial": [
+            -0.02522414004030012,
+            -0.019232571184888952,
+            0.0032944770141690566
+          ],
+          "curvatureCenter": [
+            -0.02370641329092938,
+            0.007734002716362379,
+            0.00338366243486669
+          ],
+          "curvatureRadius": 0.027006789149102286,
+          "normalResidual": -0.00022366340947517155
+        }
+      ],
+      "menisci": [
+        {
+          "name": "Medial meniscus.r",
+          "displacement": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "Lateral meniscus.r",
+          "displacement": [
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "angle": 20,
+      "translation": [
+        -0.0006252018433736978,
+        0.002239588876107146,
+        -0.0027588311195882592
+      ],
+      "instantaneous": {
+        "point": {
+          "x": 0.0003348919025608036,
+          "y": 0.006364414489448966,
+          "z": 0.004051915478837256
+        },
+        "direction": {
+          "x": 0.9984059240887393,
+          "y": -0.056154278623927543,
+          "z": 0.005683989508890924
+        },
+        "pitch": 0.00028968040521096456
+      },
+      "contacts": [
+        {
+          "kind": "medial",
+          "femoral": [
+            0.02289838603579343,
+            -0.022290434712464703,
+            -0.005345476894918933
+          ],
+          "tibial": [
+            0.02270983755714588,
+            -0.024407076775667762,
+            0.0066531421699985655
+          ],
+          "curvatureCenter": [
+            0.024604472050198396,
+            0.009185577711423566,
+            0.006138858992467582
+          ],
+          "curvatureRadius": 0.033549069411410365,
+          "normalResidual": 0.0003432824255473684
+        },
+        {
+          "kind": "lateral",
+          "femoral": [
+            -0.025081348644172115,
+            -0.017624594063534515,
+            -0.005792988141093546
+          ],
+          "tibial": [
+            -0.02522414004030012,
+            -0.019232571184888952,
+            0.002968088125280168
+          ],
+          "curvatureCenter": [
+            -0.023753698583550732,
+            0.006869557725916433,
+            0.0031439465200834267
+          ],
+          "curvatureRadius": 0.026107373052574195,
+          "normalResidual": -0.0003432824255473684
+        }
+      ],
+      "menisci": [
+        {
+          "name": "Medial meniscus.r",
+          "displacement": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "Lateral meniscus.r",
+          "displacement": [
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "angle": 30,
+      "translation": [
+        -0.000500917818713283,
+        0.003341614815325078,
+        -0.0031713039518106168
+      ],
+      "instantaneous": {
+        "point": {
+          "x": 0.00020643341795830984,
+          "y": 0.003921856125996143,
+          "z": 0.0025119620279665904
+        },
+        "direction": {
+          "x": 0.9984042111166946,
+          "y": -0.05618589216725852,
+          "z": 0.005672455008193999
+        },
+        "pitch": 0.00039106706571351025
+      },
+      "contacts": [
+        {
+          "kind": "medial",
+          "femoral": [
+            0.023059027588635553,
+            -0.019946124140650025,
+            -0.010399377155343604
+          ],
+          "tibial": [
+            0.02270983755714588,
+            -0.024407076775667762,
+            0.0064066143922207885
+          ],
+          "curvatureCenter": [
+            0.024448718113156666,
+            0.0062801349989273815,
+            0.004774457812863505
+          ],
+          "curvatureRadius": 0.030331389283258955,
+          "normalResidual": 0.00037760781089376844
+        },
+        {
+          "kind": "lateral",
+          "femoral": [
+            -0.024953137868925543,
+            -0.01575291751194618,
+            -0.00982023225039485
+          ],
+          "tibial": [
+            -0.02522414004030012,
+            -0.019232571184888952,
+            0.0024750325697246124
+          ],
+          "curvatureCenter": [
+            -0.023815831463198704,
+            0.005710344985271974,
+            0.002597856096815192
+          ],
+          "curvatureRadius": 0.024822852799066278,
+          "normalResidual": -0.00037760781089376844
+        }
+      ],
+      "menisci": [
+        {
+          "name": "Medial meniscus.r",
+          "displacement": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "Lateral meniscus.r",
+          "displacement": [
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "angle": 45,
+      "translation": [
+        -0.0003266406161995493,
+        0.004403421095363624,
+        -0.002772859465681489
+      ],
+      "instantaneous": {
+        "point": {
+          "x": 0.00006572169061191308,
+          "y": 0.0011162304294974374,
+          "z": -0.0005113147868314177
+        },
+        "direction": {
+          "x": 0.9984042111166982,
+          "y": -0.05618589216723941,
+          "z": 0.005672455007769415
+        },
+        "pitch": 0.0004888338320233783
+      },
+      "contacts": [
+        {
+          "kind": "medial",
+          "femoral": [
+            0.023339481354198697,
+            -0.015546732476750128,
+            -0.016185668079381276
+          ],
+          "tibial": [
+            0.02270983755714588,
+            -0.024407076775667762,
+            0.005926145642220788
+          ],
+          "curvatureCenter": [
+            0.02425067000964068,
+            0.0024668363477404285,
+            0.001861869481572482
+          ],
+          "curvatureRadius": 0.025515339280019405,
+          "normalResidual": 0.00033007581303816174
+        },
+        {
+          "kind": "lateral",
+          "femoral": [
+            -0.024713660520825013,
+            -0.011994661114425119,
+            -0.014744767408631558
+          ],
+          "tibial": [
+            -0.02522414004030012,
+            -0.019232571184888952,
+            0.0015140950697246124
+          ],
+          "curvatureCenter": [
+            -0.02390387093869825,
+            0.004014318237847685,
+            0.00129440056456143
+          ],
+          "curvatureRadius": 0.022675936327770853,
+          "normalResidual": -0.00033007581303816174
+        }
+      ],
+      "menisci": [
+        {
+          "name": "Medial meniscus.r",
+          "displacement": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "Lateral meniscus.r",
+          "displacement": [
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "angle": 60,
+      "translation": [
+        -0.0001952451463719928,
+        0.004467919204478088,
+        -0.0016970763546975826
+      ],
+      "instantaneous": {
+        "point": {
+          "x": 0.000015455447307576345,
+          "y": -0.00006175952913279413,
+          "z": -0.0033320313504691572
+        },
+        "direction": {
+          "x": 0.9984042111166925,
+          "y": -0.056185892167318695,
+          "z": 0.005672455007986237
+        },
+        "pitch": 0.0005214227541660458
+      },
+      "contacts": [
+        {
+          "kind": "medial",
+          "femoral": [
+            0.023634306271448486,
+            -0.010687337560718659,
+            -0.019945063286730538
+          ],
+          "tibial": [
+            0.02270983755714588,
+            -0.024407076775667762,
+            0.005375364392220788
+          ],
+          "curvatureCenter": [
+            0.02414065086646955,
+            0.00022108024002937682,
+            -0.0010180536972145514
+          ],
+          "curvatureRadius": 0.021851353636930915,
+          "normalResidual": 0.0002449967498600456
+        },
+        {
+          "kind": "lateral",
+          "femoral": [
+            -0.024441811436426788,
+            -0.007512935797638513,
+            -0.018201037268626097
+          ],
+          "tibial": [
+            -0.02522414004030012,
+            -0.019232571184888952,
+            0.0004125325697246123
+          ],
+          "curvatureCenter": [
+            -0.023959328795665473,
+            0.0028814127918111703,
+            -0.0001659803957773827
+          ],
+          "curvatureRadius": 0.020821588520199854,
+          "normalResidual": -0.0002449967498600456
+        }
+      ],
+      "menisci": [
+        {
+          "name": "Medial meniscus.r",
+          "displacement": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "Lateral meniscus.r",
+          "displacement": [
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "angle": 90,
+      "translation": [
+        -0.0000747106103715419,
+        0.0023334167650093107,
+        0.00006474349395564627
+      ],
+      "instantaneous": {
+        "point": {
+          "x": 0.00007207449782944234,
+          "y": 0.0007693461745934278,
+          "z": -0.005065369562305086
+        },
+        "direction": {
+          "x": 0.9984042111166267,
+          "y": -0.05618589216848651,
+          "z": 0.005672455008003794
+        },
+        "pitch": 0.00039106706560585635
+      },
+      "contacts": [
+        {
+          "kind": "medial",
+          "femoral": [
+            0.024208808932432237,
+            -0.0007541942186018091,
+            -0.02267463192909688
+          ],
+          "tibial": [
+            0.02270983755714588,
+            -0.024407076775667762,
+            0.0043441143922207884
+          ],
+          "curvatureCenter": [
+            0.024100933288542084,
+            -0.0007541942186018056,
+            -0.003687527229852619
+          ],
+          "curvatureRadius": 0.01898741114566723,
+          "normalResidual": 0.0002015276649412028
+        },
+        {
+          "kind": "lateral",
+          "femoral": [
+            -0.02387229169798665,
+            0.0023368314724888893,
+            -0.020879409055200547
+          ],
+          "tibial": [
+            -0.02522414004030012,
+            -0.019232571184888952,
+            -0.0016499674302753878
+          ],
+          "curvatureCenter": [
+            -0.023981414257405503,
+            0.0023368314724888928,
+            -0.001672835763781598
+          ],
+          "curvatureRadius": 0.019206883280002036,
+          "normalResidual": -0.0002015276649412028
+        }
+      ],
+      "menisci": [
+        {
+          "name": "Medial meniscus.r",
+          "displacement": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "Lateral meniscus.r",
+          "displacement": [
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "angle": 120,
+      "translation": [
+        -0.00006477253287286329,
+        0.0005061575747533631,
+        0.0002707199098294713
+      ],
+      "instantaneous": {
+        "point": {
+          "x": 0.000005136602106970442,
+          "y": 0.000031446562078370206,
+          "z": -0.0005926097296644747
+        },
+        "direction": {
+          "x": 0.998404211116602,
+          "y": -0.05618589216899377,
+          "z": 0.0056724550072980995
+        },
+        "pitch": 8.690375406646063e-9
+      },
+      "contacts": [
+        {
+          "kind": "medial",
+          "femoral": [
+            0.02475225930029614,
+            0.009178949123515042,
+            -0.019938711612542393
+          ],
+          "tibial": [
+            0.02270983755714588,
+            -0.024407076775667762,
+            0.003875364392220788
+          ],
+          "curvatureCenter": [
+            0.02403088591116466,
+            -0.0017294686772329863,
+            -0.0010186773291699057
+          ],
+          "curvatureRadius": 0.021851353636930915,
+          "normalResidual": 0.000437332443581023
+        },
+        {
+          "kind": "lateral",
+          "femoral": [
+            -0.023333242197685008,
+            0.012186598742616291,
+            -0.01819473890864335
+          ],
+          "tibial": [
+            -0.02522414004030012,
+            -0.019232571184888952,
+            -0.0025874674302753878
+          ],
+          "curvatureCenter": [
+            -0.02402062020307009,
+            0.00179225015316661,
+            -0.00016632862422734027
+          ],
+          "curvatureRadius": 0.020821588520199864,
+          "normalResidual": -0.000437332443581023
+        }
+      ],
+      "menisci": [
+        {
+          "name": "Medial meniscus.r",
+          "displacement": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "name": "Lateral meniscus.r",
+          "displacement": [
+            0,
+            0,
+            0
+          ]
+        }
+      ]
+    }
+  ]
+}

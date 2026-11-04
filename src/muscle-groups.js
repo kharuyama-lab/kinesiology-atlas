@@ -1,0 +1,3 @@
+import {hipMuscleGroups} from './hip-motion.js';
+const knee={flex:{label:'屈曲',names:['Long head of biceps femoris.r','Short head of biceps femoris.r','Semitendinosus muscle.r','Semimembranosus muscle.r','Sartorius muscle.r','Gracilis muscle.r','Popliteus muscle.r','Medial head of gastrocnemius.r','Lateral head of gastrocnemius.r','Calcaneal tendon.r']},ext:{label:'伸展',names:['Rectus femoris muscle.r','Vastus medialis muscle.r','Vastus lateralis muscle.r','Vastus intermedius muscle.r']},ir:{label:'内旋',names:['Semitendinosus muscle.r','Semimembranosus muscle.r','Sartorius muscle.r','Gracilis muscle.r','Popliteus muscle.r']},er:{label:'外旋',names:['Long head of biceps femoris.r','Short head of biceps femoris.r']}};
+export const muscleGroups={hip:hipMuscleGroups,knee};

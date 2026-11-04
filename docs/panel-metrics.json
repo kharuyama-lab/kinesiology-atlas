@@ -1,0 +1,37 @@
+{
+  "overflow": 0,
+  "sections": [
+    {
+      "label": "MODE 2膝関節 / KneeReady",
+      "height": 41.1875
+    },
+    {
+      "label": "FocusWhole BodyHipKnee",
+      "height": 60.328125
+    },
+    {
+      "label": "\n  膝関節運動 / Knee motion屈伸 / Flexion–",
+      "height": 166.75
+    },
+    {
+      "label": "筋 / Muscles · ON → Fade → OFF大腿直筋ON",
+      "height": 216.9375
+    },
+    {
+      "label": "靭帯・半月板 / Ligaments & menisci前十字靭帯ON",
+      "height": 135.9375
+    },
+    {
+      "label": "SelectionClick a structure",
+      "height": 26.9375
+    },
+    {
+      "label": "Centers & axes: provisional · Z-Ana",
+      "height": 0
+    },
+    {
+      "label": "Diagnosticsskeletal: loaded\njoints:",
+      "height": 15.9375
+    }
+  ]
+}

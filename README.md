@@ -1,24 +1,33 @@
-# Interactive 3D Kinesiology Atlas — Foundation / Knee v0.1
+# ATLASCEND — Kinesiology (BETA)
 
-膝関節運動学の**検証用プロトタイプ**。既存のHip公開ページは変更しません。
+On the Shoulders of Giants. Beyond the Atlas.
 
-## 起動
-ZIP解凍後、フォルダ全体を新しいGitHubリポジトリ `kinesiology-atlas` にアップロードし、GitHub Pagesをmain/(root)で公開します。
-ローカル確認はフォルダ内で `python -m http.server 8080` を起動し `http://localhost:8080/` にアクセス。`file://` での直接起動は避けてください。
-3Dモデルはオンライン取得（Z-Anatomy派生モデルのGLB）。通信環境が制限される場合は教材画面の診断欄からGLBを手動読み込みできます。
+学生の学習・授業での教育利用のための3D教材です。v0.2.0-beta.1は、ユーザー確認済みの中間筋走行・操作・表示をFIXした配布版です。モデルの動態は教育用の可視化であり、実測筋力や組織ひずみの計算ではありません。
 
-## 学習画面
-- Mode 1：全身静止解剖。全身→右膝へフォーカス、右膝主要筋とACL/PCL/MCL/LCL・内外側半月板の表示。モデル上の組織をクリックして名前や表示を切替。
-- Mode 2：膝屈伸、屈曲位の下腿内外旋、軽度内外反。骨格運動は**校正前の試作**。正式授業配布前に大腿骨と脛骨の解剖学的整合を確認。
-- Hip 完成版：`legacy/hip/index.html`を独立して表示。
+## 配布と利用方針
 
-## 次期開発（今回は実装しない）
-- 膝動態：靭帯の変形・線維束ごとの緊張、半月板・膝蓋骨の連動軌道。
-- Mode 1：Z-Anatomy 3Dメッシュの水平断面。
-- Mode 3：二関節筋限定表示、股・膝等の個別角度と筋腱長変化。
-- CKC / reverse action。
+配布されたURLをHTTPS対応のブラウザで開いて使います。ページには検索除外を設定していますが、認証による閲覧制限はありません。URLを知る人はアクセスできます。授業外への共有は控えてください。リポジトリの公開範囲とページの検索除外は別の設定です。
 
-詳しくは `docs/ARCHITECTURE.md` と `docs/RELEASE_AND_QC.md` を参照してください。
+独自プログラム・教材・ブランドに一般的な再利用許諾は追加しません。[利用方針](TERMS_OF_USE.md)・[権利の区分](LICENSE.md)・[クレジット](CREDITS_AND_LICENSES.md)を参照してください。第三者素材の元ライセンスに基づく権利は制限しません。
 
-## データ・出典
-3Dモデル：Z-Anatomy/BodyParts3D由来、`nqwrc/3d-anatomy` 公開GLBを使用。アセットは本ZIPに同梱していません。ライセンス等は`CREDITS_AND_LICENSES.md`を参照してください。
+## 操作
+
+Mode 1はAnatomy、Mode 2はJoint Kinesiology。FocusはWhole Body / Hip / Knee。モード切替でカメラ・Focus・組織表示を維持し、Whole Bodyは意図的なホーム操作です。組織表示はON / Fade / OFF。Hip/Kneeの一括表示、個別表示、フローティング操作を同期します。Autoで選択した関節運動を往復します。
+
+ヘッダーは左のパネル列に収め、PCの3D領域は画面上端まで使用します。クレジットは左下のCreditsから別タブで開きます。
+
+## モデルと通信
+
+使用するモデルはskeletal / joints / muscularの3ファイルのみ。確認済みの上流コミットとSHA-256を[config/model-assets.js](config/model-assets.js)に固定し、読み込み時に検証します。GLBはリポジトリ・配布ZIPに同梱せず外部配信元から取得します。最初の読み込みにはインターネット接続が必要です。Three.jsとDracoは同梱しています。教材自体に広告・アクセス解析・入力情報の送信機能はありません。
+
+## ローカル起動
+
+Node.jsを用意し、フォルダー内で npm run serve を実行して http://127.0.0.1:8080/ を開きます。ファイルを直接開く形式ではありません。保存済みの.cache内GLBがある場合も同じハッシュで検証します。
+
+## 検証・保全
+
+npm ci → npm run check → npm test。実モデルのブラウザ検証はWindows EdgeとPlaywrightを使用します。配布版の準備と検証は[STUDENT_DISTRIBUTION_FIX](docs/STUDENT_DISTRIBUTION_FIX.md)を参照してください。過去の試作記録はdocs内の履歴であり、現在の操作説明ではありません。
+
+今回のFIXは確認済み教材表示の保全を意味し、生体接触・張力解析の認証ではありません。以前からの全筋短縮検査の半腱様筋の方向変化条件は別途の既知課題として残しています。承認済み筋走行の再変更は行いません。
+
+既存のhip-kinesiologyおよびatlascend-brainのサイト・リポジトリは変更しません。legacy/hipは参照用で、学生用Pages配信から除外しています。

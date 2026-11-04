@@ -1,0 +1,70 @@
+{
+  "status": "NOT ANATOMICAL VALIDATION",
+  "method": "closest vertex sample distance: distal femur / proximal tibia; unsigned, no contact/penetration determination",
+  "counts": {
+    "femur": 419,
+    "tibia": 525
+  },
+  "rows": [
+    {
+      "pivot": "current",
+      "flexionDeg": 0,
+      "nearestSampleDistance": 0.0019978503935234415
+    },
+    {
+      "pivot": "current",
+      "flexionDeg": 30,
+      "nearestSampleDistance": 0.0034342543291953492
+    },
+    {
+      "pivot": "current",
+      "flexionDeg": 60,
+      "nearestSampleDistance": 0.002160761327000624
+    },
+    {
+      "pivot": "current",
+      "flexionDeg": 90,
+      "nearestSampleDistance": 0.000805498798910633
+    },
+    {
+      "pivot": "current",
+      "flexionDeg": 120,
+      "nearestSampleDistance": 0.0005437901992055574
+    },
+    {
+      "pivot": "current",
+      "flexionDeg": 140,
+      "nearestSampleDistance": 0.00065527346173579
+    },
+    {
+      "pivot": "mesh-end candidate (not applied)",
+      "flexionDeg": 0,
+      "nearestSampleDistance": 0.0018062171539836565
+    },
+    {
+      "pivot": "mesh-end candidate (not applied)",
+      "flexionDeg": 30,
+      "nearestSampleDistance": 0.004674001831341533
+    },
+    {
+      "pivot": "mesh-end candidate (not applied)",
+      "flexionDeg": 60,
+      "nearestSampleDistance": 0.004790469620782353
+    },
+    {
+      "pivot": "mesh-end candidate (not applied)",
+      "flexionDeg": 90,
+      "nearestSampleDistance": 0.004466609060264228
+    },
+    {
+      "pivot": "mesh-end candidate (not applied)",
+      "flexionDeg": 120,
+      "nearestSampleDistance": 0.0042718170814254885
+    },
+    {
+      "pivot": "mesh-end candidate (not applied)",
+      "flexionDeg": 140,
+      "nearestSampleDistance": 0.004342120864607785
+    }
+  ]
+}
