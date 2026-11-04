@@ -12,3 +12,11 @@
 - SIMM spline algorithm ported from OpenSim/Common/SimmSpline.cpp, Peter Loan / Stanford University and Authors, Apache-2.0. License and notice: `vendor/opensim`.
 
 Content is for teaching anatomical relationships. Movements/ligament tables are schematic, not clinical diagnosis, validated force estimation or quantitative tissue strain.
+
+## ATLASCEND identity
+
+ATLASCEND — Kinesiology (BETA). On the Shoulders of Giants. Beyond the Atlas.
+
+巨人の肩に立ち、知の地図のその先へ。
+
+The header and application icon use the user-provided, approved Kinesiology asset from the 2026-11-04 brand handover. The cube, orbital ring and knee symbol are preserved without regeneration. Brand artwork is separate from the third-party anatomy/model licenses above; no additional artwork license is inferred.

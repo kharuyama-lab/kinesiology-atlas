@@ -1,0 +1,17 @@
+{
+  "name": "ATLASCEND — Kinesiology",
+  "short_name": "Kinesiology",
+  "description": "On the Shoulders of Giants. Beyond the Atlas.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#081320",
+  "theme_color": "#0b1b2e",
+  "icons": [
+    {
+      "src": "assets/brand/kinesiology-icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

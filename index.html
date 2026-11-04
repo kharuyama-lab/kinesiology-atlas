@@ -1,10 +1,18 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Kinesiology Atlas — Anatomy v0.2</title>
+<title>ATLASCEND — Kinesiology (BETA)</title>
+<meta name="description" content="On the Shoulders of Giants. Beyond the Atlas. Interactive anatomy and joint kinesiology.">
+<meta name="theme-color" content="#0b1b2e">
+<meta property="og:site_name" content="ATLASCEND">
+<meta property="og:title" content="ATLASCEND — Kinesiology (BETA)">
+<meta property="og:description" content="On the Shoulders of Giants. Beyond the Atlas.">
+<link rel="icon" type="image/png" href="assets/brand/kinesiology-icon.png">
+<link rel="apple-touch-icon" href="assets/brand/kinesiology-icon.png">
+<link rel="manifest" href="site.webmanifest">
 <link rel="stylesheet" href="src/style.css">
 <script type="importmap">{"imports":{"three":"./vendor/three/build/three.module.js","three/addons/":"./vendor/three/addons/"}}</script>
 </head><body>
-<header class="topbar"><div class="brand"><div class="brandmark">K</div><div><strong>Kinesiology Atlas</strong><small>Anatomy v0.2 · Provisional calibration</small></div></div><button id="mobilePanel" class="mobileOnly">Panel</button></header>
+<header class="topbar"><div class="brand" aria-label="ATLASCEND Kinesiology"><img class="brandIcon" src="assets/brand/kinesiology-icon.png" width="48" height="48" alt="" fetchpriority="high"><div class="brandText"><div class="brandLine"><span class="brandWordmark">ATLASCEND</span><strong>Kinesiology</strong><span class="brandBeta">BETA</span></div><small class="brandTagline">On the Shoulders of Giants. Beyond the Atlas.</small></div></div><button id="mobilePanel" class="mobileOnly">Panel</button></header>
 <div class="layout"><aside class="sidebar" id="sidebar">
  <div class="sectionhead"><div><div class="eyebrow" id="sectionEyebrow">MODE 1</div><h1 id="sectionTitle">Whole Body</h1></div><span id="modelStatus" class="status">Loading</span></div>
  <div class="group modeSelection"><label class="smallhead">Mode</label><nav class="modes" aria-label="Mode"><button class="selected" data-mode="anatomy">Mode 1 · Anatomy</button><button data-mode="kinesiology">Mode 2 · Joint Kinesiology</button></nav></div>

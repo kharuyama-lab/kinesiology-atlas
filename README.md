@@ -1,14 +1,10 @@
-# Kinesiology Atlas — Anatomy v0.2
+# ATLASCEND — Kinesiology (BETA)
 
-Anatomy優先の改修版と、同一3DシーンでJoint Kinesiologyへ切り替える基盤です。既存の `kharuyama-lab/hip-kinesiology` は変更していません。
+On the Shoulders of Giants. Beyond the Atlas.
 
-Hipの骨・筋・靭帯の一括ON／Fade／OFFと、Focus直前のMode選択を復元しました。検証記録: [HIP_UI_RESTORATION](docs/HIP_UI_RESTORATION.md)。
+AnatomyとJoint Kinesiologyを同じ3Dシーンで切り替える教材です。既存の `kharuyama-lab/hip-kinesiology` は変更していません。
 
-大腿二頭筋短頭のみの走行修正：[変更・検証記録](docs/SHORT_HEAD_COURSE.md)。
-
-大腿二頭筋の長頭・短頭の層関係と長頭の変形修正：[変更・検証記録](docs/BICEPS_LAYER_SUPPORT.md)。
-
-長頭の停止側の折り返し・動作時の震えの修正：[変更・検証記録](docs/BICEPS_DISTAL_CONTINUITY.md)。
+最新版は、長頭の走行を前の湾曲版と直線版の中間へ調整し、承認済みATLASCENDヘッダーを統合しています。[変更・検証記録](docs/FINAL_CURVATURE_AND_BRAND.md)。
 
 ## 起動
 
