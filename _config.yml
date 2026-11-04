@@ -1,0 +1,14 @@
+# Runtime stays at the repository root; development references are not Pages content.
+exclude:
+  - legacy
+  - tests
+  - docs
+  - scripts
+  - node_modules
+  - dist
+  - .cache
+  - package.json
+  - package-lock.json
+  - playwright.config.js
+  - AGENTS.md
+  - README.md

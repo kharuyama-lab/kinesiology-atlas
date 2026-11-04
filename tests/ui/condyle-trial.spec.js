@@ -1,7 +1,7 @@
 import {test,expect} from '@playwright/test';import {writeFileSync} from 'node:fs';
 test('isolated axis and patella trials; baseline remains unchanged',async({page})=>{
  const errors=[];page.on('pageerror',e=>errors.push(e.message));const reports=[];
- for(const [key,query] of [['current',''],['condyle','&axis=condyle'],['patella-arc','&axis=condyle&patella=arc']]){
+ for(const [key,query] of [['current','&axis=legacy'],['condyle','&axis=condyle'],['patella-arc','&axis=condyle&patella=arc']]){
   await page.goto('http://127.0.0.1:8080/?review=knee&qa'+query);await expect(page.locator('#modelStatus')).toHaveText('Ready');
   await page.locator('[data-mode="anatomy"]').click();await page.locator('[data-focus="knee"]').click();
   const rest=await page.evaluate(()=>window.atlasQA());expect(Math.hypot(...rest.patellaRotation.slice(0,3))).toBeLessThan(1e-12);expect(rest.patellaRotation[3]).toBeCloseTo(1,12);

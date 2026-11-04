@@ -1,0 +1,14 @@
+{
+  "version": "0.2.0-beta.1",
+  "subpath": "/kinesiology-atlas/",
+  "status": "Ready",
+  "modelRevision": "8ca3b7421bcfbe88b85859eb1983d5cf79f21749",
+  "modelHashes": {
+    "joints": "9fdab1a257652597cf8f0b2ac93d12abc817e8f9a9099b9628e764018490afa2",
+    "skeletal": "c2b70b31ddec4062cbc5ba969fc24ecfed61d00397a0bca795e2701d997200f8",
+    "muscular": "f69ed1287f802a2d603d23293e01512bb57ae77ee7cca1d5527ba00496e51de2"
+  },
+  "requiredLinks": "all 200",
+  "developmentFiles": "all 404",
+  "errors": []
+}

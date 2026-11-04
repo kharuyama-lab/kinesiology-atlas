@@ -2,6 +2,9 @@
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>ATLASCEND — Kinesiology (BETA)</title>
 <meta name="description" content="On the Shoulders of Giants. Beyond the Atlas. Interactive anatomy and joint kinesiology.">
+<meta name="application-version" content="0.2.0-beta.1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="referrer" content="no-referrer">
 <meta name="theme-color" content="#0b1b2e">
 <meta property="og:site_name" content="ATLASCEND">
 <meta property="og:title" content="ATLASCEND — Kinesiology (BETA)">
@@ -9,7 +12,7 @@
 <link rel="icon" type="image/png" href="assets/brand/kinesiology-icon.png">
 <link rel="apple-touch-icon" href="assets/brand/kinesiology-icon.png">
 <link rel="manifest" href="site.webmanifest">
-<link rel="stylesheet" href="src/style.css">
+<link rel="stylesheet" href="src/style.css?v=0.2.0-beta.1">
 <script type="importmap">{"imports":{"three":"./vendor/three/build/three.module.js","three/addons/":"./vendor/three/addons/"}}</script>
 </head><body>
 <header class="topbar"><div class="brand" aria-label="ATLASCEND Kinesiology"><img class="brandIcon" src="assets/brand/kinesiology-icon.png" width="48" height="48" alt="" fetchpriority="high"><div class="brandText"><div class="brandLine"><span class="brandWordmark">ATLASCEND</span><strong>Kinesiology</strong><span class="brandBeta">BETA</span></div><small class="brandTagline">On the Shoulders of Giants. Beyond the Atlas.</small></div></div><button id="mobilePanel" class="mobileOnly">Panel</button></header>
@@ -31,7 +34,7 @@
  <div class="group jointDisplay" hidden><div class="structureHeading"><label id="jointConnectiveLabel" class="smallhead">靭帯・半月板 / Ligaments &amp; menisci</label><div class="groupPresets" role="group" aria-label="connective display"><button type="button" data-joint-bulk="connective" data-display-state="on" aria-pressed="false">ON</button><button type="button" data-joint-bulk="connective" data-display-state="fade" aria-pressed="false">Fade</button><button type="button" data-joint-bulk="connective" data-display-state="off" aria-pressed="false">OFF</button></div></div><div id="ligamentList" class="tissueList"></div></div>
  <details class="group jointDisplay" hidden><summary class="smallhead">Selection</summary><div id="selectedStructure" class="selection">Click a structure</div></details>
  <div class="smallprint">Centers &amp; axes: provisional · Z-Anatomy</div>
- <details class="diagnostics"><summary>Diagnostics</summary><pre id="diagnostics">Initializing…</pre><label class="fileLabel">Load GLB files<input type="file" id="manualFiles" accept=".glb" multiple></label></details>
+ <div class="sidebarMeta"><details class="diagnostics"><summary>Diagnostics</summary><pre id="diagnostics">Initializing…</pre><label class="fileLabel">Load GLB files<input type="file" id="manualFiles" accept=".glb" multiple></label></details><a class="creditsLink" href="credits.html" target="_blank" rel="noopener noreferrer">Credits</a></div>
 </aside>
 <main id="viewport" class="viewport"><div id="canvasHost"></div><div class="viewTools"><button data-view="front">Front</button><button data-view="back">Back</button><button data-view="lateral" title="Right lateral">Lateral</button><button data-view="medial" title="Right medial">Medial</button><button data-view="iso">3D</button></div><div class="stageBadge" id="stageBadge">Anatomy</div><div id="hoverPopup" class="hoverPopup" hidden></div><div id="floatingSelection" class="floatingSelection selection" hidden></div><div class="loadOverlay" id="loadOverlay"><div class="loader"></div><strong>Loading anatomy models</strong><small>Preparing the 3D view</small></div><div class="stageFoot">Drag to rotate · Scroll or pinch to zoom</div></main></div>
-<script type="module" src="src/boot.js"></script></body></html>
+<script type="module" src="src/boot.js?v=0.2.0-beta.1"></script></body></html>

@@ -1,5 +1,15 @@
 # Credits / licenses
 
+閲覧用の一覧は [credits.html](credits.html)。独自部分は [LICENSE.md](LICENSE.md) と [学習・教育目的の利用方針](TERMS_OF_USE.md) を参照してください。第三者コンテンツの既存の権利は制限しません。
+
+## Required anatomy attributions
+
+BodyParts3D - The Database Center for Life Science - CC-BY-SA 2.1 Japan
+
+Z-Anatomy - The open source atlas of anatomy - CC-BY-SA 4.0
+
+元の指定と全体配布条件は `third_party/3d-anatomy/` に原文で保持。表示に使う3ファイルと確認版は `config/model-assets.js` に固定し、読み込み時にSHA-256を照合します。名称対応、配色、肢位、関節運動、教育用の筋・靭帯変形を加えています。
+
 - Z-Anatomy 3D Atlas: https://www.z-anatomy.com/
 - Original BodyParts3D project: https://lifesciencedb.jp/bp3d/
 - Public web GLB derivative: https://github.com/nqwrc/3d-anatomy and https://nqwrc.github.io/3d-anatomy/

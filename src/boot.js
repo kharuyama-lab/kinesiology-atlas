@@ -12,4 +12,4 @@ window.addEventListener('error',event=>fail(event.error||event.message));
 window.addEventListener('unhandledrejection',event=>fail(event.reason));
 const started=performance.now();
 const watch=setInterval(()=>{if(status.textContent==='Ready'||status.textContent.includes('failed'))clearInterval(watch);else if(performance.now()-started>90000){clearInterval(watch);fail('Loading timed out. See Diagnostics or retry.');}},1000);
-import('./main.js?v=local-runtime-1').catch(fail);
+import('./main.js?v=0.2.0-beta.1').catch(fail);
