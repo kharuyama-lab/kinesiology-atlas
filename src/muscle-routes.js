@@ -29,7 +29,7 @@ export class MuscleRoutes{
  // A smooth course over the entire muscle, rather than a second local
  // deformation grafted onto an already displaced body. Sections retain width.
  wholeRoute(name,curve){if(this.medialRoutes.has(name))return this.medialRoutes.get(name);
-  const tb=/Popliteus/.test(name)?clamp((curve.hi-(this.k.y-.02))/curve.span):Math.max(.25,(this.attachT.get(name)??1)-.025),sourceEnd=curve.source(tb),start=curve.start.clone(),end=this.world(this.tibial(sourceEnd.clone())),chord=end.clone().sub(start),length=chord.length(),src=sourceEnd.clone().sub(curve.a),rotation=new Quaternion().setFromUnitVectors(src.clone().normalize(),chord.clone().normalize());
+  const tb=/Long head of biceps/.test(name)?1:/Popliteus/.test(name)?clamp((curve.hi-(this.k.y-.02))/curve.span):Math.max(.25,(this.attachT.get(name)??1)-.025),sourceEnd=curve.source(tb),start=curve.start.clone(),end=this.world(this.tibial(sourceEnd.clone())),chord=end.clone().sub(start),length=chord.length(),src=sourceEnd.clone().sub(curve.a),rotation=new Quaternion().setFromUnitVectors(src.clone().normalize(),chord.clone().normalize());
   const shortHead=/Short head of biceps/.test(name);
   const distalTangent=curve.source(tb).sub(curve.source(Math.max(0,tb-.02))).normalize().applyQuaternion(this.tibialRotation),c1=start.clone().addScaledVector(chord,.33),c2=end.clone().addScaledVector(distalTangent,-length*(.25-(routeFamily(name)==='medial'?.09*this.terminalFlex:0))),samples=[];
   for(let i=0;i<=128;i++){const t=i/128,u=1-t,p=start.clone().multiplyScalar(u*u*u).addScaledVector(c1,3*u*u*t).addScaledVector(c2,3*u*t*t).addScaledVector(end,t*t*t),residual=curve.source(t*tb).sub(curve.a.clone().lerp(sourceEnd,t)).applyQuaternion(rotation);p.addScaledVector(residual,.25*(1-(routeFamily(name)==='medial'?.65*this.terminalFlex:0))*Math.sin(Math.PI*t)**2);
@@ -37,9 +37,8 @@ export class MuscleRoutes{
    // Keep the femoral source course; distribute distal travel and tangent
    // change over the free muscle instead of pushing it sideways under the long head.
    if(/Long head of biceps/.test(name)){
-    const bodyStart=this.world(curve.a.clone()),bodyEnd=this.world(sourceEnd.clone()),proximal=start.clone().sub(bodyStart),distal=end.clone().sub(bodyEnd),h=.0001;
-    const derivative=curve.source(tb).sub(curve.source(tb-h)).multiplyScalar(tb/h),native=derivative.clone().applyQuaternion(this.hip).add(distal).sub(proximal),target=derivative.applyQuaternion(this.tibialRotation);
-    p.copy(this.world(curve.source(t*tb))).addScaledVector(proximal,1-t).addScaledVector(distal,t).addScaledVector(target.sub(native),.7*(t-1)*smooth((t-.4)/.6)**2);
+    const original=curve.source(t).sub(curve.a.clone().lerp(sourceEnd,t)).applyQuaternion(rotation);
+    p.copy(start).lerp(end,t).addScaledVector(original,.35);
    }
    if(shortHead){
     const original=this.world(curve.source(t*tb)),carriedEnd=this.world(sourceEnd.clone()),h=.0001;
@@ -64,16 +63,17 @@ export class MuscleRoutes{
   // Uniform arc-length stations distribute shortening along the complete
   // free muscle, rather than compressing just the cubic's terminal span.
   const guide=samples.map(s=>s.p.clone()),arcs=[0];for(let i=1;i<=128;i++)arcs.push(arcs[i-1]+guide[i].distanceTo(guide[i-1]));let station=1;for(let i=1;i<128;i++){const distance=arcs[128]*i/128;while(station<128&&arcs[station]<distance)station++;samples[i].p.copy(guide[station-1]).lerp(guide[station],(distance-arcs[station-1])/Math.max(1e-9,arcs[station]-arcs[station-1]));}
-  const orient=()=>{for(let i=0;i<=128;i++){const t=i/128,ds=curve.source(Math.min(tb,(t+1/128)*tb)).sub(curve.source(Math.max(0,(t-1/128)*tb))).normalize(),dt=samples[Math.min(128,i+1)].p.clone().sub(samples[Math.max(0,i-1)].p).normalize();const frame=new Quaternion().slerp(this.tibialRotation,t);samples[i].q.setFromUnitVectors(ds.applyQuaternion(frame),dt).multiply(frame);}};orient();if(/Long head of biceps/.test(name))for(let pass=0;pass<4;pass++){this.supportLongHead(samples,name,curve,tb);orient();}if(/Gracilis/.test(name))for(let pass=0;pass<2;pass++){this.constrainLayer(samples,name,curve,tb);orient();}
+  const orient=()=>{for(let i=0;i<=128;i++){const t=i/128,ds=curve.source(Math.min(tb,(t+1/128)*tb)).sub(curve.source(Math.max(0,(t-1/128)*tb))).normalize(),dt=samples[Math.min(128,i+1)].p.clone().sub(samples[Math.max(0,i-1)].p).normalize();const frame=new Quaternion().slerp(this.tibialRotation,t);samples[i].q.setFromUnitVectors(ds.applyQuaternion(frame),dt).multiply(frame);}};orient();if(/Long head of biceps/.test(name))for(let pass=0;pass<2;pass++){this.supportLongHead(samples,name,curve,tb);orient();}if(/Gracilis/.test(name))for(let pass=0;pass<2;pass++){this.constrainLayer(samples,name,curve,tb);orient();}
   samples.tb=tb;this.medialRoutes.set(name,samples);return samples;
  }
  // Keep the long-head surface superficial to the short head using a smooth
  // full-muscle lateral support. The deep head and both endpoint frames stay fixed.
+ supportSource(name){if(!this.supportSamples)this.supportSamples=new Map();if(this.supportSamples.has(name))return this.supportSamples.get(name);const entries=this.entries.filter(e=>e.name===name&&e.curve),count=entries.reduce((n,e)=>n+e.world.length/3,0),step=Math.max(1,Math.ceil(count/320)),samples=[];let offset=0;for(const e of entries){for(let k=(step-offset%step)%step;k<e.world.length/3;k+=step)samples.push({e,index:k,rest:new Vector3().fromArray(e.world,k*3)});offset+=e.world.length/3;}this.supportSamples.set(name,samples);return samples;}
  supportLongHead(samples,name,curve,tb){
-  let field=this.depthFields.get('shortOuter');
-  if(!field){field=new Map();this.depthFields.set('shortOuter',field);for(const e of this.entries.filter(e=>e.name==='Short head of biceps femoris.r'&&e.curve))for(let k=0;k<e.world.length/3;k++){const rest=new Vector3().fromArray(e.world,k*3),p=this.local(this.deform(e,rest,e.curve.deform(rest,new Vector3()),new Vector3(),k)),key=Math.floor(p.y/.004)+','+Math.floor(p.z/.004);field.set(key,Math.min(field.get(key)??Infinity,p.x));}}
+  let cloud=this.depthFields.get('shortSurface');
+  if(!cloud){cloud=[];this.depthFields.set('shortSurface',cloud);for(const {e,index,rest} of this.supportSource('Short head of biceps femoris.r')){const t=(e.curve.hi-rest.y)/e.curve.span;if(t<.1||t>.9)continue;cloud.push(this.local(this.deform(e,rest,e.curve.deform(rest,new Vector3()),new Vector3(),index)));}}
   let amplitude=0;const p=new Vector3(),q=new Quaternion();
-  for(const e of this.entries.filter(e=>e.name===name))for(let k=0;k<e.world.length/3;k++){const t=clamp((curve.hi-e.world[k*3+1])/curve.span);if(t<.1||t>tb*.9)continue;const rt=t/tb,x=rt*128,i=Math.min(127,Math.floor(x)),u=x-i;q.copy(samples[i].q).slerp(samples[i+1].q,u);p.fromArray(e.world,k*3).sub(curve.source(t)).applyQuaternion(q).add(samples[i].p.clone().lerp(samples[i+1].p,u));this.local(p);const iy=Math.floor(p.y/.004),iz=Math.floor(p.z/.004);let bound=Infinity;for(let dy=-1;dy<=1;dy++)for(let dz=-1;dz<=1;dz++)bound=Math.min(bound,field.get((iy+dy)+','+(iz+dz))??Infinity);const basis=smooth(rt/.25)*smooth((1-rt)/.25);if(Number.isFinite(bound))amplitude=Math.max(amplitude,(p.x-bound+.003)/basis);}
+  for(const {e,rest} of this.supportSource(name)){const t=clamp((curve.hi-rest.y)/curve.span);if(t<.1||t>.9)continue;const x=t*128,i=Math.min(127,Math.floor(x)),u=x-i;q.copy(samples[i].q).slerp(samples[i+1].q,u);p.copy(rest).sub(curve.source(t)).applyQuaternion(q).add(samples[i].p.clone().lerp(samples[i+1].p,u));this.local(p);const basis=smooth(t/.25)*smooth((1-t)/.25);for(const v of cloud){const d2=(p.y-v.y)**2+(p.z-v.z)**2,weight=Math.exp(-d2/(2*.012**2));amplitude=Math.max(amplitude,(p.x-v.x+.006)*weight/basis);}}
   const outward=new Vector3(-1,0,0).applyQuaternion(this.hip);for(let i=1;i<128;i++){const t=i/128;samples[i].p.addScaledVector(outward,Math.max(0,amplitude)*smooth(t/.25)*smooth((1-t)/.25));}
  }
  depthField(kind){let field=this.depthFields.get(kind);if(field)return field;field=new Map();this.depthFields.set(kind,field);const names=kind==='gracilis'?['Semitendinosus muscle.r','Semimembranosus muscle.r']:['Long head of biceps femoris.r'];for(const e of this.entries.filter(e=>names.includes(e.name)&&e.curve))for(let i=0;i<e.world.length/3;i++){const rest=new Vector3().fromArray(e.world,i*3),base=e.curve.deform(rest,new Vector3()),q=this.deform(e,rest,base,new Vector3(),i),key=Math.floor(q.y/.006)+','+Math.floor(q.z/.006);field.set(key,Math.max(field.get(key)??-Infinity,q.x));}return field;
@@ -101,6 +101,7 @@ export class MuscleRoutes{
    if(curve?.source){const route=this.wholeRoute(e.name,curve),rt=clamp(t/route.tb),x=rt*128,j=Math.min(127,Math.floor(x)),u=x-j,a=route[j],b=route[j+1];this.q.copy(a.q).slerp(b.q,u);p.copy(rest).sub(curve.source(t,this.b)).applyQuaternion(this.q).add(this.a.copy(a.p).lerp(b.p,u));if(family==='popliteus'&&this.flexFactor){let min=Infinity,x=p.x;for(const q of this.lcl){const d=Math.hypot(p.y-q.y,p.z-q.z);if(d<min){min=d;x=q.x;}}if(min<.014&&p.x<x+.004)p.x+=(x+.004-p.x)*smooth((.014-min)/.006)*this.flexFactor;}
     // The guide ends tangent to the tibia-carried source continuation.
     if(t>=route.tb)p.copy(this.world(this.tibial(this.b.copy(rest))));
+    if(/Long head of biceps/.test(e.name)&&index>=0&&e.bonePins?.[index])p.lerp(this.world(this.tibial(this.b.copy(rest))),e.bonePins[index]);
    }else p.copy(base).lerp(this.world(this.tibial(this.b.copy(rest))),family==='biceps'?smooth((this.k.y+.005-sourceY)/.035):smooth((this.k.y+.13-sourceY)/.14));
   }else{
    p.copy(base).lerp(this.world(this.tibial(this.a.copy(rest))),smooth((this.k.y+.005-sourceY)/.035));

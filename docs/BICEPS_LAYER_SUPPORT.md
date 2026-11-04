@@ -20,3 +20,5 @@ short-headは0/30/60/90/120°、terminal-muscle-layersは60/90/105/120°を検�
 0→120°での長頭経路長は535.4→514.2mm。測定した各段階で短縮。120°の自由経路余長比は1.0757、最大方向変化は21.56°。測定5肢位の表面逆転は0。付着/ホバーの回帰検証と単体41件・構文チェックは成功。
 
 最終結果：continuous-muscles、short-head、terminal-muscle-layersの3件成功。terminal-muscle-layersの60/90/105/120°の全筋表示でも、薄筋の既存浅深条件と長頭/短頭の浅深条件を満たした。
+
+後続の停止側の折り返し・時間連続性修正は[BICEPS_DISTAL_CONTINUITY](BICEPS_DISTAL_CONTINUITY.md)を参照。

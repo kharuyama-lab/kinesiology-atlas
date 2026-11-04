@@ -8,6 +8,8 @@ Hipの骨・筋・靭帯の一括ON／Fade／OFFと、Focus直前のMode選択�
 
 大腿二頭筋の長頭・短頭の層関係と長頭の変形修正：[変更・検証記録](docs/BICEPS_LAYER_SUPPORT.md)。
 
+長頭の停止側の折り返し・動作時の震えの修正：[変更・検証記録](docs/BICEPS_DISTAL_CONTINUITY.md)。
+
 ## 起動
 
 Node.jsを用意し、フォルダー内で `npm run serve` を実行して http://127.0.0.1:8080/ を開きます。静的ホスティングにも配置可能です。Three.jsとDracoは同梱済みです。ローカル確認では保存済みの `.cache/` 内GLBを自動で優先し、公開ホスティングではGLBを外部から取得します。GLB取得に失敗した場合はDiagnosticsから `skeletal.glb / joints.glb / muscular.glb` を読み込めます。ライセンスはCREDITS_AND_LICENSES.mdを保持してください。
