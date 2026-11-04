@@ -10,19 +10,19 @@
     "maxTurnDegrees": 18.098707390111652,
     "long": {
       "name": "Long head of biceps femoris.r",
-      "length": 0.5324838497829469,
-      "freeLength": 0.5324838497829469,
-      "freeMaxTurnDegrees": 5.90343216220173,
-      "arcChordRatio": 1.0241086808998805,
-      "freeArcChordRatio": 1.0241086808998805,
-      "maxTurnDegrees": 5.90343216220173
+      "length": 0.5329573149024409,
+      "freeLength": 0.5329573149024409,
+      "freeMaxTurnDegrees": 6.780740552004278,
+      "arcChordRatio": 1.025019280797276,
+      "freeArcChordRatio": 1.025019280797276,
+      "maxTurnDegrees": 6.780740552004278
     },
     "layer": {
       "name": "Short head of biceps femoris.r",
       "peer": "Long head of biceps femoris.r",
       "method": "femoral radial envelope",
       "samples": 986,
-      "minGap": 0.027959115790039048,
+      "minGap": 0.027821136326642217,
       "penetrating": 0,
       "worstT": 0.810434449886823
     }
@@ -30,57 +30,57 @@
   {
     "angle": 30,
     "name": "Short head of biceps femoris.r",
-    "length": 0.30256095928195353,
-    "freeLength": 0.27232432463622097,
-    "freeMaxTurnDegrees": 3.2913551240561945,
-    "arcChordRatio": 1.017422416924028,
-    "freeArcChordRatio": 1.0150279046348412,
-    "maxTurnDegrees": 18.09870739011094,
+    "length": 0.3025609592859456,
+    "freeLength": 0.272324324640157,
+    "freeMaxTurnDegrees": 3.291355112778385,
+    "arcChordRatio": 1.0174224168360004,
+    "freeArcChordRatio": 1.0150279045576114,
+    "maxTurnDegrees": 18.098707390110484,
     "long": {
       "name": "Long head of biceps femoris.r",
-      "length": 0.5129975308739245,
-      "freeLength": 0.5129975308739245,
-      "freeMaxTurnDegrees": 4.254695710219909,
-      "arcChordRatio": 1.0108179318476778,
-      "freeArcChordRatio": 1.0108179318476778,
-      "maxTurnDegrees": 4.254695710219909
+      "length": 0.5178743617691882,
+      "freeLength": 0.5178743617691882,
+      "freeMaxTurnDegrees": 6.170589878041647,
+      "arcChordRatio": 1.0204273115509392,
+      "freeArcChordRatio": 1.0204273115509392,
+      "maxTurnDegrees": 6.170589878041647
     },
     "layer": {
       "name": "Short head of biceps femoris.r",
       "peer": "Long head of biceps femoris.r",
       "method": "femoral radial envelope",
-      "samples": 942,
-      "minGap": 0.025152388553983385,
+      "samples": 946,
+      "minGap": 0.02526026891453554,
       "penetrating": 0,
-      "worstT": 0.7808456868117305
+      "worstT": 0.7854609343414963
     }
   },
   {
     "angle": 60,
     "name": "Short head of biceps femoris.r",
-    "length": 0.299468443206082,
-    "freeLength": 0.2692709119628557,
-    "freeMaxTurnDegrees": 6.826619226639724,
-    "arcChordRatio": 1.0604369829626479,
-    "freeArcChordRatio": 1.0444623123165229,
-    "maxTurnDegrees": 18.098707390113617,
+    "length": 0.29946844321868143,
+    "freeLength": 0.26927091197528547,
+    "freeMaxTurnDegrees": 6.826619203543864,
+    "arcChordRatio": 1.0604369826016686,
+    "freeArcChordRatio": 1.0444623121060097,
+    "maxTurnDegrees": 18.098707390111308,
     "long": {
       "name": "Long head of biceps femoris.r",
-      "length": 0.4846832732685706,
-      "freeLength": 0.4846832732685706,
-      "freeMaxTurnDegrees": 2.3117053929186526,
-      "arcChordRatio": 1.001396878846513,
-      "freeArcChordRatio": 1.001396878846513,
-      "maxTurnDegrees": 2.3117053929186526
+      "length": 0.49744152484767384,
+      "freeLength": 0.49744152484767384,
+      "freeMaxTurnDegrees": 6.195764355350238,
+      "arcChordRatio": 1.0277565117336211,
+      "freeArcChordRatio": 1.0277565117336211,
+      "maxTurnDegrees": 6.195764355350238
     },
     "layer": {
       "name": "Short head of biceps femoris.r",
       "peer": "Long head of biceps femoris.r",
       "method": "femoral radial envelope",
-      "samples": 819,
-      "minGap": 0.026668934304871834,
+      "samples": 859,
+      "minGap": 0.025396026931570635,
       "penetrating": 0,
-      "worstT": 0.12209842920877345
+      "worstT": 0.7410521508383645
     }
   },
   {
@@ -94,49 +94,49 @@
     "maxTurnDegrees": 18.09870739011229,
     "long": {
       "name": "Long head of biceps femoris.r",
-      "length": 0.4557160879174636,
-      "freeLength": 0.4557160879174636,
-      "freeMaxTurnDegrees": 1.8809024514913781,
-      "arcChordRatio": 1.000687166423947,
-      "freeArcChordRatio": 1.000687166423947,
-      "maxTurnDegrees": 1.8809024514913781
+      "length": 0.4733801039579488,
+      "freeLength": 0.4733801039579488,
+      "freeMaxTurnDegrees": 6.379564388975543,
+      "arcChordRatio": 1.0394748121267725,
+      "freeArcChordRatio": 1.0394748121267725,
+      "maxTurnDegrees": 6.379564388975543
     },
     "layer": {
       "name": "Short head of biceps femoris.r",
       "peer": "Long head of biceps femoris.r",
       "method": "femoral radial envelope",
-      "samples": 652,
-      "minGap": 0.021750331285524838,
+      "samples": 741,
+      "minGap": 0.026549495819826033,
       "penetrating": 0,
-      "worstT": 0.6334660011994154
+      "worstT": 0.6767465993485496
     }
   },
   {
     "angle": 120,
     "name": "Short head of biceps femoris.r",
-    "length": 0.2931422841025822,
-    "freeLength": 0.26302070987406867,
-    "freeMaxTurnDegrees": 24.611992514776844,
-    "arcChordRatio": 1.246363868749717,
-    "freeArcChordRatio": 1.1155909123627665,
-    "maxTurnDegrees": 24.611992514776844,
+    "length": 0.2931422822115865,
+    "freeLength": 0.26302070800361105,
+    "freeMaxTurnDegrees": 24.6119977413917,
+    "arcChordRatio": 1.2463639042969912,
+    "freeArcChordRatio": 1.1155909205570202,
+    "maxTurnDegrees": 24.6119977413917,
     "long": {
       "name": "Long head of biceps femoris.r",
-      "length": 0.4262162749875397,
-      "freeLength": 0.4262162749875397,
-      "freeMaxTurnDegrees": 2.0522858824779306,
-      "arcChordRatio": 1.0008290086409293,
-      "freeArcChordRatio": 1.0008290086409293,
-      "maxTurnDegrees": 2.0522858824779306
+      "length": 0.4453954782151526,
+      "freeLength": 0.4453954782151526,
+      "freeMaxTurnDegrees": 13.18281111878167,
+      "arcChordRatio": 1.0458650923598936,
+      "freeArcChordRatio": 1.0458650923598936,
+      "maxTurnDegrees": 13.18281111878167
     },
     "layer": {
       "name": "Short head of biceps femoris.r",
       "peer": "Long head of biceps femoris.r",
       "method": "femoral radial envelope",
-      "samples": 505,
-      "minGap": 0.01597198853275343,
+      "samples": 599,
+      "minGap": 0.02150528795177528,
       "penetrating": 0,
-      "worstT": 0.560340226346158
+      "worstT": 0.6100308932559779
     }
   }
 ]

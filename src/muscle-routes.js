@@ -39,6 +39,14 @@ export class MuscleRoutes{
    if(/Long head of biceps/.test(name)){
     const original=curve.source(t).sub(curve.a.clone().lerp(sourceEnd,t)).applyQuaternion(rotation);
     p.copy(start).lerp(end,t).addScaledVector(original,.35);
+    // User-selected midpoint between the 05dd0ad curved guide and the
+    // 6b5f42e full-insertion guide; retain the continuous support solver.
+    const previousEndT=Math.max(.25,(this.attachT.get(name)??1)-.025),u=clamp(t/previousEndT),oldEnd=curve.source(previousEndT),curved=this.world(this.tibial(curve.source(t)));
+    if(t<previousEndT){const bodyStart=this.world(curve.a.clone()),bodyEnd=this.world(oldEnd.clone()),proximal=start.clone().sub(bodyStart),distal=this.world(this.tibial(oldEnd.clone())).sub(bodyEnd),h=.0001;
+     const derivative=curve.source(previousEndT).sub(curve.source(previousEndT-h)).multiplyScalar(previousEndT/h),native=derivative.clone().applyQuaternion(this.hip).add(distal).sub(proximal),target=derivative.applyQuaternion(this.tibialRotation);
+     curved.copy(this.world(curve.source(t))).addScaledVector(proximal,1-u).addScaledVector(distal,u).addScaledVector(target.sub(native),.7*(u-1)*smooth((u-.4)/.6)**2);
+    }
+    p.lerp(curved,.5);
    }
    if(shortHead){
     const original=this.world(curve.source(t*tb)),carriedEnd=this.world(sourceEnd.clone()),h=.0001;
