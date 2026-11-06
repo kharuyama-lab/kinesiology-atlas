@@ -283,6 +283,9 @@
     "Long plantar ligament has multiple distal attachment surfaces transported with the existing forefoot frame",
     "Lateral talocalcaneal ligament is distinct from calcaneofibular ligament; do not substitute it for CFL",
     "Tibiofibular syndesmosis shares shank frames, which are currently fixed relative to one another",
-    "No muscles/tendons added; existing shared gastrocnemius and Achilles remain unchanged"
-  ]
+    "No muscles/tendons added; existing shared gastrocnemius and Achilles remain unchanged",
+    "Display surfaces now differ from source mesh: retain source names/attachment guidance and approximate width; use procedural bands for body routing.",
+    "Long plantar is displayed as five independent endpoint branches to cuboid and second through fifth metatarsals."
+  ],
+  "representation": "source-derived smooth bands; terminal footprint rows fixed; free body exterior routing"
 }

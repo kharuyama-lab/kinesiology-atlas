@@ -69,3 +69,9 @@
 /* Four Focus choices keep the existing single-row layout in every joint. */
 .choicegrid{grid-template-columns:repeat(4,minmax(0,1fr))}
 .sidebar[data-joint="ankle"] .motionKinds{grid-template-columns:repeat(2,minmax(0,1fr))}
+
+/* Shared disclosure headers keep bulk controls visible without another row. */
+summary.structureHeading{display:list-item;list-style-position:inside;cursor:pointer;min-height:24px}
+summary.structureHeading>.smallhead{display:inline;margin:0}
+summary.structureHeading>.groupPresets{float:right;display:inline-flex}
+summary.structureHeading::marker{color:var(--muted);font-size:10px}
