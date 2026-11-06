@@ -1,3 +1,4 @@
+import {ankleTensionCues} from './ankle-ligament-presentation.js';
 import {AnkleLigamentFollower} from './ankle-ligament-follow.js';
 import {ankleLigamentColors} from '../config/ankle-ligaments.js';
 import {AnkleMotion,ankleRanges,ankleKinds} from './ankle-motion.js';
@@ -349,7 +350,7 @@ renderer.domElement.addEventListener('pointerdown',e=>{mouseDown={x:e.clientX,y:
 renderer.domElement.addEventListener('pointerup',e=>{if(!mouseDown)return;const dist=Math.hypot(e.clientX-mouseDown.x,e.clientY-mouseDown.y);if(dist<9&&performance.now()-mouseDown.t<550){const name=hitAt(e.clientX,e.clientY);if(name)selectStructure(name,{point:{x:e.clientX,y:e.clientY}});else $('floatingSelection').hidden=true;}mouseDown=null});
 renderer.domElement.addEventListener('pointermove',e=>{if(e.buttons){$('hoverPopup').hidden=true;if(mouseDown&&Math.hypot(e.clientX-mouseDown.x,e.clientY-mouseDown.y)>=9)$('floatingSelection').hidden=true;return}
  const name=hitAt(e.clientX,e.clientY),axis=focus==='ankle'?ankleRig.hoverAxis(raycaster):null,tip=$('hoverPopup');if(!axis&&(!name||(! $('floatingSelection').hidden&&name===activeSelection))){tip.hidden=true;return}
- tip.hidden=false;tip.replaceChildren();let strong=document.createElement('strong');strong.textContent=axis?axis[0]:japaneseName(name)||englishName(name);let sub=document.createElement('small');sub.textContent=axis?axis[1]:name.replace(/\.[rl]$/,'');tip.append(strong,sub);
+ tip.hidden=false;tip.replaceChildren();let strong=document.createElement('strong');strong.textContent=axis?axis[0]:japaneseName(name)||englishName(name);let sub=document.createElement('small');sub.textContent=axis?axis[1]:name.replace(/\.[rl]$/,'');tip.append(strong,sub);if(!axis&&ankleLigamentFollower.cues?.[name]){const cue=ankleLigamentFollower.cues[name],note=document.createElement('span');note.style.cssText='display:block;font-size:11px;margin-top:4px';note.textContent=cue.engagement>.1?'緊張傾向（文献に基づく模式表示）':cue.slack>.1?'相対的に低緊張（たるみは模式表示）':'中間位';tip.append(note);}
  const b=$('viewport').getBoundingClientRect();tip.style.left=Math.min(e.clientX-b.left+12,b.width-220)+'px';tip.style.top=Math.max(10,e.clientY-b.top-48)+'px';
 });
 renderer.domElement.addEventListener('pointerleave',()=>{$('hoverPopup').hidden=true});
@@ -434,7 +435,7 @@ function tick(now=performance.now()){requestAnimationFrame(tick);const dt=Math.m
   if(modelLoaded&&focus==='knee'){const delta=kneeObservation().sub(before);camera.position.add(delta);controls.target.add(delta);}
   if(modeTransition&&rig.hip.quaternion.angleTo(poseTarget.hip)<.001&&rig.knee.quaternion.angleTo(poseTarget.knee)<.001&&rig.knee.position.distanceTo(poseTarget.kneePosition)<.00001)modeTransition=false;
  }
- ankleRig.update(dt,focus==='ankle',$('axisToggle').checked);scene.updateMatrixWorld(true);ligamentFollower.update();ankleLigamentFollower.update(dt);tissueFollower.update(rig.hip.quaternion,rig.knee.quaternion,now,{kneeActive:renderedMeniscusActive,flexion:renderedAngles.flex,translation:rig.knee.position.clone().sub(kneeBasePosition),patellaRotation:rig.patella.quaternion,patellaTranslation:rig.patella.position.clone().sub(patellaBasePosition)});updateMusclePresentation(now);controls.update();scene.updateMatrixWorld(true);updateLigamentPresentation(now);fadeLeftSkeleton();renderer.render(scene,camera);
+ ankleRig.update(dt,focus==='ankle',$('axisToggle').checked);scene.updateMatrixWorld(true);ligamentFollower.update();ankleLigamentFollower.cues=ankleTensionCues(ankleRig.kind,ankleRig.value,focus==='ankle'&&mode==='kinesiology');ankleLigamentFollower.update(dt);tissueFollower.update(rig.hip.quaternion,rig.knee.quaternion,now,{kneeActive:renderedMeniscusActive,flexion:renderedAngles.flex,translation:rig.knee.position.clone().sub(kneeBasePosition),patellaRotation:rig.patella.quaternion,patellaTranslation:rig.patella.position.clone().sub(patellaBasePosition)});updateMusclePresentation(now);controls.update();scene.updateMatrixWorld(true);updateLigamentPresentation(now);fadeLeftSkeleton();renderer.render(scene,camera);
 }tick();boot();
 // Read-only QA snapshot, opt in locally with ?qa; no remote controls.
 if(new URLSearchParams(location.search).has('qa'))window.atlasAnkleStateQA=()=>({...ankleRig.snapshot(),ligamentSettling:!!ankleLigamentFollower.settling});
@@ -455,6 +456,14 @@ if(new URLSearchParams(location.search).has('qa'))window.atlasAxisQA=()=>({visib
 if(new URLSearchParams(location.search).has('qa'))window.atlasLigamentQA=()=>({entries:ligamentFollower.snapshot(),bindings:ligamentFollower.entries.map(e=>({name:e.name,proximal:e.pinned.proximal.map(i=>({index:i,expected:e.rest[i].clone().applyMatrix4(e.femur.matrixWorld).toArray()})),distal:e.pinned.distal.map(i=>({index:i,expected:e.rest[i].clone().applyMatrix4(e.femRest).applyMatrix4(e.distalRestInverse).applyMatrix4(e.distal.matrixWorld).toArray()}))}))});
 
 function updateLigamentPresentation(now){
+ for(const [name,color] of Object.entries(ankleLigamentColors)){
+  const mat=originalMaterials.get(name);if(!mat)continue;
+  const cue=ankleLigamentFollower.cues?.[name],g=cue?.engagement||0,state=visibleStates.get(name);
+  mat.color.setHex(color).lerp(new THREE.Color(0xffba55),g*.65);
+  mat.emissive.setHex(0xffa52d);mat.emissiveIntensity=state==='off'?0:g*.65*(state==='fade'?.25:1);
+  if(activeSelection===name&&state!=='off')mat.emissiveIntensity+=.065;
+ }
+
  const active=mode==='kinesiology'&&focus==='knee',scores=ligamentEngagement(renderedAngles);
  for(const name of Object.keys(kneeLigamentBones)){
   const mat=originalMaterials.get(name);if(!mat)continue;
@@ -489,3 +498,5 @@ if(new URLSearchParams(location.search).has('qa'))window.atlasMuscleGeometryQA=(
 if(new URLSearchParams(location.search).has('qa'))window.atlasPickQA=name=>{const r=renderer.domElement.getBoundingClientRect();scene.updateMatrixWorld(true);for(const mesh of getMeshes(name)){if(!mesh.visible)continue;const a=mesh.geometry.attributes.position,idx=mesh.geometry.index,n=idx?idx.count:a.count,p=new THREE.Vector3();for(let i=0;i+2<n;i+=Math.max(3,Math.ceil(n/900/3)*3)){p.set(0,0,0);for(let k=0;k<3;k++)p.add(new THREE.Vector3().fromBufferAttribute(a,idx?idx.getX(i+k):i+k));p.multiplyScalar(1/3).applyMatrix4(mesh.matrixWorld).project(camera);if(Math.abs(p.x)>.98||Math.abs(p.y)>.98||p.z>1)continue;const x=r.left+(p.x+1)*r.width/2,y=r.top+(1-p.y)*r.height/2;if(hitAt(x,y)===name)return {x,y,name};}}return null;};
 
 if(new URLSearchParams(location.search).has("qa"))window.atlasMuscleFrameQA=name=>({angle:renderedAngles.flex,playDirection,playing,...tissueFollower.surfaceFrame(name)});
+
+if(new URLSearchParams(location.search).has('qa'))window.atlasAnkleTensionQA=()=>({cues:ankleLigamentFollower.cues,materials:Object.fromEntries(Object.keys(ankleLigamentColors).map(n=>[n,{glow:originalMaterials.get(n)?.emissiveIntensity,opacity:originalMaterials.get(n)?.opacity}]))});
