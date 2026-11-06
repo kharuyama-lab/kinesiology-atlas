@@ -1,0 +1,47 @@
+{
+  "version": "ankle-bone-fix-1",
+  "status": "teaching convention fixed with user authorization",
+  "date": "2026-11-06 Asia/Tokyo",
+  "configuration": "config/ankle.json",
+  "sha256": "ff3ce6d8ae11f4c6b8c597e85d6758f8e5bd7585286c838162292d429e4a6059",
+  "tc": {
+    "id": "TC",
+    "name": "距腿関節",
+    "center": [
+      -0.075,
+      0.0682276005089127,
+      -0.039997841507842274
+    ],
+    "axis": [
+      0.9877704833475166,
+      0.090424074438055,
+      0.1270155856162325
+    ],
+    "color": 16766073,
+    "method": "距骨上面の限定領域への円筒近似。固定軸の比較候補であり、生体の瞬間軸ではありません。"
+  },
+  "st": {
+    "id": "ST",
+    "name": "距骨下関節",
+    "center": [
+      -0.0735087679378665,
+      0.05704069330534304,
+      -0.04304193245137439
+    ],
+    "axis": [
+      0.21164988953612984,
+      0.6691306063588582,
+      0.7123682726604061
+    ],
+    "color": 7527399,
+    "method": "教材用FIX：足部基準で上方42°・内側23°の代表斜軸。距踵近接面から位置を合わせる。個体の実測機能軸ではない。"
+  },
+  "motionChange": "Removed independent TC contribution to pronation/supination; inversion and pronation now share the same ST reference and ST/MT distribution",
+  "limitations": [
+    "Model-level teaching FIX, not validated patient-specific biomechanics",
+    "42/23 degree reference placed using this GLB foot direction and talocalcaneal proximity",
+    "Current spatial surface crops do not isolate anatomical articular facets reliably enough for a morphology-specific sphere-based axis; crop fits were not adopted",
+    "Midtarsal coupling remains a shared-direction visual approximation",
+    "No weight-bearing arch or toe articulation"
+  ]
+}

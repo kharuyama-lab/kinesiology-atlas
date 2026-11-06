@@ -1,0 +1,24 @@
+import {chromium,expect} from '@playwright/test';
+import fs from 'node:fs';
+const browser=await chromium.launch({channel:'msedge',headless:true,args:['--use-angle=swiftshader','--enable-unsafe-swiftshader']});
+try{
+ const page=await browser.newPage({viewport:{width:1440,height:1000}}),errors=[];page.on('pageerror',e=>errors.push(e.message));
+ await page.goto('http://127.0.0.1:8080/?focus=ankle&qa');await expect(page.locator('#modelStatus')).toHaveText('Ready',{timeout:90000});
+ await expect(page.locator('#sectionTitle')).toHaveText('足関節 / Ankle');await expect(page.locator('[data-motion]:visible')).toHaveCount(4);await expect(page.locator('#axisVisibility')).toHaveAttribute('data-state','on');
+ const snap=()=>page.evaluate(()=>atlasQA());await expect.poll(async()=>(await snap()).ankle.axes.length).toBe(1);const rest=await snap();expect(rest.ankle.bones).toHaveLength(27);
+ const canvas=await page.locator('canvas').elementHandle(),uuids=rest.ankle.bones.map(b=>b.uuid),report=[];
+ const slider=async value=>{await page.locator('#motionSlider').evaluate((el,value)=>{el.value=value;el.dispatchEvent(new Event('input',{bubbles:true}));},value);await expect.poll(async()=>Math.abs((await snap()).ankle.value-value)).toBeLessThan(.001);};
+ fs.mkdirSync('docs/screenshots/ankle-motion',{recursive:true});
+ for(const [kind,lo,hi] of [['flex',-40,20],['invert',-10,20],['adduct',-10,15],['compound',-15,20]]){
+  await page.locator(`[data-motion="${kind}"]`).click();for(const value of [lo,hi,0]){await slider(value);const q=await snap();expect(q.ankle.axes).toHaveLength(1);expect(q.ankle.resultant.direction.every(Number.isFinite)).toBe(true);expect(q.ankle.bones.map(b=>b.uuid)).toEqual(uuids);for(const b of q.ankle.bones)expect(b.matrix.every(Number.isFinite)).toBe(true);report.push({kind,value,excursions:q.ankle.excursions});if(value===hi)await page.screenshot({path:`docs/screenshots/ankle-motion/${kind}.png`});}
+ }
+ const reset=await snap();for(let i=0;i<27;i++)for(let k=0;k<16;k++)expect(reset.ankle.bones[i].matrix[k]).toBeCloseTo(rest.ankle.bones[i].matrix[k],6);
+ await slider(10);const before=await snap();await page.locator('[data-mode="anatomy"]').click();await expect.poll(async()=>Math.abs((await snap()).ankle.value)).toBeLessThan(.001);const anatomy=await snap();expect(anatomy.camera).toEqual(before.camera);expect(anatomy.target).toEqual(before.target);expect(anatomy.focus).toBe('ankle');await page.locator('[data-mode="kinesiology"]').click();await expect.poll(async()=>Math.abs((await snap()).ankle.value-10)).toBeLessThan(.001);
+ await page.locator('#resetPose').click();await expect.poll(async()=>Math.abs((await snap()).ankle.value)).toBeLessThan(.001);await page.locator('#playMotion').click();await page.waitForTimeout(600);expect((await snap()).ankle.value).not.toBe(0);await page.locator('#playMotion').click();
+ await page.locator('[data-focus="knee"]').click();await expect(page.locator('[data-motion]:visible')).toHaveCount(3);await expect(page.locator('#patellaVisibility')).toBeVisible();await expect(page.locator('#axisVisibility')).toHaveAttribute('data-state','off');await expect.poll(async()=>Math.abs((await snap()).renderedAngles.flex-90)).toBeLessThan(.01);
+ await page.locator('[data-focus="hip"]').click();await expect(page.locator('#hipBoneDisplay')).toBeVisible();await expect(page.locator('#patellaDisplay')).toBeHidden();await expect(page.locator('[data-motion]:visible')).toHaveCount(3);
+ await page.locator('[data-focus="ankle"]').click();await expect(page.locator('#axisVisibility')).toHaveAttribute('data-state','on');expect(await canvas.evaluate(e=>e===document.querySelector('canvas'))).toBe(true);
+ await page.locator('#resetPose').click();await slider(0);await page.locator('[data-motion="compound"]').click();await slider(12);await page.screenshot({path:'docs/screenshots/ankle-motion/shared-ui.png'});
+ await page.setViewportSize({width:390,height:844});await page.waitForTimeout(200);expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);await page.screenshot({path:'docs/screenshots/ankle-motion/mobile.png'});
+ expect(errors).toEqual([]);fs.writeFileSync('docs/ANKLE_MOTION_VERIFICATION.json',JSON.stringify({status:'passed',date:'2026-11-06 Asia/Tokyo',pageErrors:errors,motions:report,checks:['shared UI with four motion choices','axes default ON and Knee default OFF','27 unique right foot nodes unchanged during motion','finite rigid transforms at endpoints','rest recovery','mode retains camera and focus','Auto and Reset','Hip/Knee UI retained','single canvas retained','mobile no horizontal overflow'],limitations:['No dynamic bone contact validation','No anatomical neutral calibration','Effective midtarsal frame uses provisional common-axis coupling']},null,2)+'\n');console.log({status:'passed',errors,motionSamples:report.length});
+}finally{await browser.close();}

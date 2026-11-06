@@ -65,3 +65,7 @@
 .creditsPage{display:block;height:auto;overflow:auto}.creditsPage .topbar{height:auto;min-height:73px;max-width:920px;margin:auto;border:0}.creditsContent{max-width:920px;margin:auto;padding:20px 24px 48px;line-height:1.7}.creditsContent h1{font-size:25px;margin-top:0}.creditsContent h2{font-size:18px;margin-top:28px}.creditsContent a{color:#82c9ff}.creditsContent li{margin:9px 0}.creditsContent .attribution{padding:10px 14px;background:#10263e;border-left:3px solid #56baff;overflow-wrap:anywhere}.creditsContent .muted{color:#a6bad1;font-size:13px}
 
 .creditsPage .topbar{flex-wrap:wrap;gap:8px}.creditsPage .brand{max-width:100%}.creditsPage .topbar>a{color:#a9c9e9;font-size:12px}
+
+/* Four Focus choices keep the existing single-row layout in every joint. */
+.choicegrid{grid-template-columns:repeat(4,minmax(0,1fr))}
+.sidebar[data-joint="ankle"] .motionKinds{grid-template-columns:repeat(2,minmax(0,1fr))}

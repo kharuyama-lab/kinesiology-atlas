@@ -1,0 +1,71 @@
+{
+  "version": "ankle-bone-fix-1",
+  "status": "user-approved teaching axis convention; not subject-specific biomechanical validation",
+  "fixedAt": "2026-11-06 Asia/Tokyo",
+  "scope": "TC axis for dorsiflexion/plantarflexion; ST oblique axis reference for triplanar pronation/supination; no added TC rotation",
+  "reference": {
+    "inclinationDeg": 42,
+    "medialDeviationDeg": 23,
+    "source": "https://www.sciencedirect.com/science/article/pii/S0021929001000318",
+    "footReference": "heel to second metatarsal direction projected onto the model horizontal plane",
+    "position": "model-specific nearest talocalcaneal surface patch estimate; no patient-specific functional axis measurement"
+  },
+  "joints": [
+    {
+      "id": "TC",
+      "name": "距腿関節",
+      "center": [
+        -0.075,
+        0.0682276005089127,
+        -0.039997841507842274
+      ],
+      "axis": [
+        0.9877704833475166,
+        0.090424074438055,
+        0.1270155856162325
+      ],
+      "color": 16766073,
+      "method": "距骨上面の限定領域への円筒近似。固定軸の比較候補であり、生体の瞬間軸ではありません。"
+    },
+    {
+      "id": "ST",
+      "name": "距骨下関節",
+      "center": [
+        -0.0735087679378665,
+        0.05704069330534304,
+        -0.04304193245137439
+      ],
+      "axis": [
+        0.21164988953612984,
+        0.6691306063588582,
+        0.7123682726604061
+      ],
+      "color": 7527399,
+      "method": "教材用FIX：足部基準で上方42°・内側23°の代表斜軸。距踵近接面から位置を合わせる。個体の実測機能軸ではない。"
+    },
+    {
+      "id": "TN",
+      "name": "足根部 · 距舟関節",
+      "center": [
+        -0.08043627524748445,
+        0.06659563089100023,
+        -0.01160786678083241
+      ],
+      "axis": null,
+      "color": 13215729,
+      "method": "近接骨表面から関節位置を推定。運動軸と連動量は未確定です。"
+    },
+    {
+      "id": "CC",
+      "name": "足根部 · 踵立方関節",
+      "center": [
+        -0.09045461305681998,
+        0.04960090835210602,
+        -0.01965937932403997
+      ],
+      "axis": null,
+      "color": 9559465,
+      "method": "近接骨表面から関節位置を推定。運動軸と連動量は未確定です。"
+    }
+  ]
+}

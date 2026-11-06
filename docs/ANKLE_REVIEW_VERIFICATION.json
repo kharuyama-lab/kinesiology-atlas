@@ -1,0 +1,28 @@
+{
+  "date": "2026-11-06 Asia/Tokyo",
+  "status": "passed",
+  "initial": {
+    "axes": true,
+    "shankState": "fade",
+    "showLeft": false,
+    "selectedJoint": null,
+    "boneCount": 58
+  },
+  "views": [
+    "oblique",
+    "front",
+    "back",
+    "lateral",
+    "medial",
+    "top"
+  ],
+  "checks": [
+    "GLB decode and 58 nodes",
+    "axes ON by default and toggle",
+    "shank visibility cycle",
+    "left Fade toggle",
+    "four joint selections",
+    "mobile no horizontal overflow"
+  ],
+  "pageErrors": []
+}

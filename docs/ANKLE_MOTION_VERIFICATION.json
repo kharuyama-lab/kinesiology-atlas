@@ -1,0 +1,132 @@
+{
+  "status": "passed",
+  "date": "2026-11-06 Asia/Tokyo",
+  "pageErrors": [],
+  "motions": [
+    {
+      "kind": "flex",
+      "value": -40,
+      "excursions": {
+        "tc": 40.49519463527543,
+        "st": 0,
+        "mt": 0
+      }
+    },
+    {
+      "kind": "flex",
+      "value": 20,
+      "excursions": {
+        "tc": -20.247516732741033,
+        "st": 0,
+        "mt": 0
+      }
+    },
+    {
+      "kind": "flex",
+      "value": 0,
+      "excursions": {
+        "tc": -0.00002130086115931161,
+        "st": 0,
+        "mt": 0
+      }
+    },
+    {
+      "kind": "invert",
+      "value": -10,
+      "excursions": {
+        "tc": 0,
+        "st": -11.932018025747078,
+        "mt": -2.1056502398377197
+      }
+    },
+    {
+      "kind": "invert",
+      "value": 20,
+      "excursions": {
+        "tc": 0,
+        "st": 23.86402351635099,
+        "mt": 4.211298267591351
+      }
+    },
+    {
+      "kind": "invert",
+      "value": 0,
+      "excursions": {
+        "tc": 0,
+        "st": 0.00003171798953893732,
+        "mt": 0.0000055972922715771735
+      }
+    },
+    {
+      "kind": "adduct",
+      "value": -10,
+      "excursions": {
+        "tc": 0,
+        "st": -12.703033790080397,
+        "mt": -2.241711845308305
+      }
+    },
+    {
+      "kind": "adduct",
+      "value": 15,
+      "excursions": {
+        "tc": 0,
+        "st": 19.054533801369573,
+        "mt": 3.3625647884769836
+      }
+    },
+    {
+      "kind": "adduct",
+      "value": 0,
+      "excursions": {
+        "tc": 0,
+        "st": 0.00003195145547179812,
+        "mt": 0.000005638492142082021
+      }
+    },
+    {
+      "kind": "compound",
+      "value": -15,
+      "excursions": {
+        "tc": 0,
+        "st": -17.898022052855232,
+        "mt": -3.158474479915629
+      }
+    },
+    {
+      "kind": "compound",
+      "value": 20,
+      "excursions": {
+        "tc": 0,
+        "st": 23.864005615336207,
+        "mt": 4.211295108588742
+      }
+    },
+    {
+      "kind": "compound",
+      "value": 0,
+      "excursions": {
+        "tc": 0,
+        "st": 0.000025105426675690118,
+        "mt": 0.000004430369413357079
+      }
+    }
+  ],
+  "checks": [
+    "shared UI with four motion choices",
+    "axes default ON and Knee default OFF",
+    "27 unique right foot nodes unchanged during motion",
+    "finite rigid transforms at endpoints",
+    "rest recovery",
+    "mode retains camera and focus",
+    "Auto and Reset",
+    "Hip/Knee UI retained",
+    "single canvas retained",
+    "mobile no horizontal overflow"
+  ],
+  "limitations": [
+    "No dynamic bone contact validation",
+    "No anatomical neutral calibration",
+    "Effective midtarsal frame uses provisional common-axis coupling"
+  ]
+}
