@@ -24,4 +24,7 @@ test('free ligament body is excluded from an intervening bone while only termina
  const registered=new Map([['Tibia.r',aBone],['Talus.r',bBone],['Calcaneus.r',obstacle]]),getMeshes=n=>n==='Tibia.r'?[a]:n==='Talus.r'?[b]:n==='Calcaneus.r'?[box]:n==='Posterior tibiotalar ligament.r'?[mesh]:[],follower=new AnkleLigamentFollower();follower.prepare({registered,getMeshes});
  const audit=follower.audit()[0];assert.equal(audit.middleAnchors,0);assert.ok(audit.maxAnchorError<1e-8);assert.ok(audit.maxPenetration<.00005);assert.ok(audit.maxFacePenetration<.00005);
  const collider=new BoneSurface(obstacle,[box]);assert.ok(collider.signedDistance(new Vector3(.01,0,0))<0);for(const [i,pos] of follower.entries[0].positions.entries())if(!follower.entries[0].anchors.has(i))assert.ok(collider.signedDistance(pos)>-.00005);
+ const previous=follower.entries[0].routeHeight;assert.ok(previous>0);obstacle.position.y=.02;follower.update(1/60);let height=follower.entries[0].routeHeight;assert.ok(height>0&&height<previous,'free body relaxes gradually instead of snapping to the new route');
+ for(let i=0;i<60;i++){follower.update(1/60);const next=follower.entries[0].routeHeight;assert.ok(next<=height+1e-12,'relaxation has no rebound');height=next;const check=follower.audit()[0];assert.ok(check.maxAnchorError<1e-8);assert.ok(check.maxPenetration<.00005);}
+ assert.equal(height,0,'settles at the unobstructed route');
 });
