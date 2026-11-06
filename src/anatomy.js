@@ -1,5 +1,7 @@
+import {ankleLigaments} from '../config/ankle-ligaments.js';
 // Names checked against GLB extras.za_name, 2026-10-30.
 export const tissues = [
+ ...ankleLigaments.map(([name,jp])=>[name,jp,'ligament','ankle']),
  ['Rectus femoris muscle.r','大腿直筋','muscle','hip knee'],
  ['Vastus medialis muscle.r','内側広筋','muscle','knee'],
  ['Vastus lateralis muscle.r','外側広筋','muscle','knee'],

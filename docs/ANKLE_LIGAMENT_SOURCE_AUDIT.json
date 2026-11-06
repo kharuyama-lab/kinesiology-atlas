@@ -1,0 +1,288 @@
+{
+  "date": "2026-11-06 Asia/Tokyo",
+  "phase1Commit": "dbe9119",
+  "axisVersion": "ankle-bone-fix-1",
+  "phase": "2 source ligament following; not complete anatomical/force validation",
+  "sourceHashes": {
+    "skeletal": {
+      "bytes": 1863828,
+      "sha256": "c2b70b31ddec4062cbc5ba969fc24ecfed61d00397a0bca795e2701d997200f8"
+    },
+    "joints": {
+      "bytes": 921960,
+      "sha256": "9fdab1a257652597cf8f0b2ac93d12abc817e8f9a9099b9628e764018490afa2"
+    },
+    "muscular": {
+      "bytes": 4503232,
+      "sha256": "f69ed1287f802a2d603d23293e01512bb57ae77ee7cca1d5527ba00496e51de2"
+    }
+  },
+  "available": [
+    {
+      "name": "Anterior tibiofibular ligament.r",
+      "japaneseName": "前脛腓靭帯",
+      "proximalFrame": "Tibia.r",
+      "distalFrame": "Fibula.r",
+      "attachmentSurfaces": {
+        "a": [
+          "Tibia.r"
+        ],
+        "b": [
+          "Fibula.r"
+        ]
+      },
+      "present": true
+    },
+    {
+      "name": "Posterior tibiofibular ligament.r",
+      "japaneseName": "後脛腓靭帯",
+      "proximalFrame": "Tibia.r",
+      "distalFrame": "Fibula.r",
+      "attachmentSurfaces": {
+        "a": [
+          "Tibia.r"
+        ],
+        "b": [
+          "Fibula.r"
+        ]
+      },
+      "present": true
+    },
+    {
+      "name": "Transverse tibiofibular ligament.r",
+      "japaneseName": "横脛腓靭帯",
+      "proximalFrame": "Tibia.r",
+      "distalFrame": "Fibula.r",
+      "attachmentSurfaces": {
+        "a": [
+          "Tibia.r"
+        ],
+        "b": [
+          "Fibula.r"
+        ]
+      },
+      "present": true
+    },
+    {
+      "name": "Posterior tibiotalar ligament.r",
+      "japaneseName": "後脛距靭帯",
+      "proximalFrame": "Tibia.r",
+      "distalFrame": "Talus.r",
+      "attachmentSurfaces": {
+        "a": [
+          "Tibia.r"
+        ],
+        "b": [
+          "Talus.r"
+        ]
+      },
+      "present": true
+    },
+    {
+      "name": "Tibiocalcaneal ligament.r",
+      "japaneseName": "脛踵靭帯",
+      "proximalFrame": "Tibia.r",
+      "distalFrame": "Calcaneus.r",
+      "attachmentSurfaces": {
+        "a": [
+          "Tibia.r"
+        ],
+        "b": [
+          "Calcaneus.r"
+        ]
+      },
+      "present": true
+    },
+    {
+      "name": "Tibionavicular ligament.r",
+      "japaneseName": "脛舟靭帯",
+      "proximalFrame": "Tibia.r",
+      "distalFrame": "Navicular bone.r",
+      "attachmentSurfaces": {
+        "a": [
+          "Tibia.r"
+        ],
+        "b": [
+          "Navicular bone.r"
+        ]
+      },
+      "present": true
+    },
+    {
+      "name": "Anterior talocalcaneal ligament.r",
+      "japaneseName": "前距踵靭帯",
+      "proximalFrame": "Talus.r",
+      "distalFrame": "Calcaneus.r",
+      "attachmentSurfaces": {
+        "a": [
+          "Talus.r"
+        ],
+        "b": [
+          "Calcaneus.r"
+        ]
+      },
+      "present": true
+    },
+    {
+      "name": "Lateral talocalcaneal ligament.r",
+      "japaneseName": "外側距踵靭帯",
+      "proximalFrame": "Talus.r",
+      "distalFrame": "Calcaneus.r",
+      "attachmentSurfaces": {
+        "a": [
+          "Talus.r"
+        ],
+        "b": [
+          "Calcaneus.r"
+        ]
+      },
+      "present": true
+    },
+    {
+      "name": "Medial talocalcaneal ligament.r",
+      "japaneseName": "内側距踵靭帯",
+      "proximalFrame": "Talus.r",
+      "distalFrame": "Calcaneus.r",
+      "attachmentSurfaces": {
+        "a": [
+          "Talus.r"
+        ],
+        "b": [
+          "Calcaneus.r"
+        ]
+      },
+      "present": true
+    },
+    {
+      "name": "Posterior talocalcaneal ligament.r",
+      "japaneseName": "後距踵靭帯",
+      "proximalFrame": "Talus.r",
+      "distalFrame": "Calcaneus.r",
+      "attachmentSurfaces": {
+        "a": [
+          "Talus.r"
+        ],
+        "b": [
+          "Calcaneus.r"
+        ]
+      },
+      "present": true
+    },
+    {
+      "name": "Talocalcaneal interosseous ligament.r",
+      "japaneseName": "骨間距踵靭帯",
+      "proximalFrame": "Talus.r",
+      "distalFrame": "Calcaneus.r",
+      "attachmentSurfaces": {
+        "a": [
+          "Talus.r"
+        ],
+        "b": [
+          "Calcaneus.r"
+        ]
+      },
+      "present": true
+    },
+    {
+      "name": "Talonavicular ligament.r",
+      "japaneseName": "距舟靭帯",
+      "proximalFrame": "Talus.r",
+      "distalFrame": "Navicular bone.r",
+      "attachmentSurfaces": {
+        "a": [
+          "Talus.r"
+        ],
+        "b": [
+          "Navicular bone.r"
+        ]
+      },
+      "present": true
+    },
+    {
+      "name": "Calcaneonavicular ligament.r",
+      "japaneseName": "踵舟靭帯",
+      "proximalFrame": "Calcaneus.r",
+      "distalFrame": "Navicular bone.r",
+      "attachmentSurfaces": {
+        "a": [
+          "Calcaneus.r"
+        ],
+        "b": [
+          "Navicular bone.r"
+        ]
+      },
+      "present": true
+    },
+    {
+      "name": "Calcaneocuboid ligament.r",
+      "japaneseName": "踵立方靭帯",
+      "proximalFrame": "Calcaneus.r",
+      "distalFrame": "Cuboid bone.r",
+      "attachmentSurfaces": {
+        "a": [
+          "Calcaneus.r"
+        ],
+        "b": [
+          "Cuboid bone.r"
+        ]
+      },
+      "present": true
+    },
+    {
+      "name": "Plantar calcaneocuboid ligament.r",
+      "japaneseName": "足底踵立方靭帯",
+      "proximalFrame": "Calcaneus.r",
+      "distalFrame": "Cuboid bone.r",
+      "attachmentSurfaces": {
+        "a": [
+          "Calcaneus.r"
+        ],
+        "b": [
+          "Cuboid bone.r"
+        ]
+      },
+      "present": true
+    },
+    {
+      "name": "Long plantar ligament.r",
+      "japaneseName": "長足底靭帯",
+      "proximalFrame": "Calcaneus.r",
+      "distalFrame": "Cuboid bone.r",
+      "attachmentSurfaces": {
+        "a": [
+          "Calcaneus.r"
+        ],
+        "b": [
+          "Cuboid bone.r",
+          "Second metatarsal bone.r",
+          "Third metatarsal bone.r",
+          "Fourth metatarsal bone.r",
+          "Fifth metatarsal bone.r"
+        ]
+      },
+      "present": true
+    }
+  ],
+  "missing": [
+    {
+      "name": "Anterior talofibular ligament.r",
+      "foundIn": []
+    },
+    {
+      "name": "Calcaneofibular ligament.r",
+      "foundIn": []
+    },
+    {
+      "name": "Posterior talofibular ligament.r",
+      "foundIn": []
+    }
+  ],
+  "license": "Existing pinned joints.glb, existing credits unchanged; no new third-party models fetched",
+  "notes": [
+    "Tibionavicular source collar has an approximately 9 mm vertex-to-bone sampling gap; preserve original source and review its anatomy before tension inference",
+    "Long plantar ligament has multiple distal attachment surfaces transported with the existing forefoot frame",
+    "Lateral talocalcaneal ligament is distinct from calcaneofibular ligament; do not substitute it for CFL",
+    "Tibiofibular syndesmosis shares shank frames, which are currently fixed relative to one another",
+    "No muscles/tendons added; existing shared gastrocnemius and Achilles remain unchanged"
+  ]
+}
