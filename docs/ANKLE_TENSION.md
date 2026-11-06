@@ -27,11 +27,34 @@ Evidence:
   dorsiflexion tendency. The GLB does not identify superficial versus deep PTTL;
   therefore no band-specific magnitude or external-rotation rule is assigned.
 
+## Coupled motion extension
+
 The user-provided Michaud teaching table is a reference, not a force dataset.
-No independent eversion, adduction, or pronation rule is assigned: this model
-drives subtalar/midfoot oblique axes with zero talocrural DF in those modes,
-which does not reproduce the study's imposed DF-abduction loading condition.
-ITCL findings vary and are not mapped. ATFL/CFL/PTFL are absent from the pinned
-GLBs; the anterior talocalcaneal mesh is not relabeled as cervical ligament.
-No effect is assigned to unsupported structures. No bone axes, muscles,
-shared GLB assets, Hip/Knee behavior, or public deployment are changed.
+The three oblique-axis controls now share cues evaluated from the same physical
+coronal component: invert/compound value, or adduct value * ST.z / ST.y. Equal
+bone poses consequently have equal engagement despite different slider labels.
+The 10/20 degree display envelopes are illustrative, not experimental thresholds.
+
+- TCL: emphasize eversion/pronation-side elongation. Merian et al. 2011 measured
+  greater TCL length in eversion than inversion in eight loaded cadaver limbs:
+  https://doi.org/10.3113/FAI.2011.0457 . This supports a directional teaching cue;
+  it does not reproduce the experiment's loading, force or percentage strain.
+  No extra DF is assumed, no posterior-band/TNL rule is extrapolated, and no
+  reverse-direction slack is inferred for this coupled rule.
+- ITCL: show **restraint contribution**, explicitly identified on hover, rather
+  than calling sectioning evidence a tension measurement. Supination-side support:
+  Knudson et al. 1997, six specimens, sectioning increased supination displacement:
+  https://pubmed.ncbi.nlm.nih.gov/9385243/ . Both inversion/eversion restraint:
+  Iglesias-Duran et al. 2023, fifteen legs, sequential sectioning and reconstruction:
+  https://doi.org/10.1007/s00167-023-07622-6 . Studies differ: Pellegrini et al. 2016
+  found significant increases only after CFL sectioning in their test protocol:
+  https://pubmed.ncbi.nlm.nih.gov/27194494/ . Merian did not find significant ITCL
+  elongation. The cue therefore indicates reported participation, not primary
+  restraint, consensus ranking, proof of tension, or strain magnitude. No ITCL
+  sag/laxity rule is assigned. Pulse strength is not comparable across ligaments.
+
+Unmapped structures remain unassessed. ATFL/CFL/PTFL are absent from the pinned
+GLBs; anterior talocalcaneal is not relabeled cervical. Subtype-ambiguous bands
+(posterolateral/posteromedial talocalcaneal and bifurcate) are not guessed from
+similar generic mesh names. No bone axes, muscles, shared GLB assets, Hip/Knee
+behavior, or public deployment are changed.

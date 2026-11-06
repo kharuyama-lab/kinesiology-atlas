@@ -32,7 +32,7 @@ try{
  await page.locator('[data-view="medial"]').click();await page.locator('#boneVisibility').click();
  await page.screenshot({path:'docs/screenshots/ankle-ligaments/tension-dorsiflexion.png'});
  await slider(-40);await page.screenshot({path:'docs/screenshots/ankle-ligaments/tension-plantarflexion.png'});
- await page.locator('[data-motion="compound"]').click();await slider(-15);expect((await snapshot()).cues).toEqual({});
+ for(const kind of ['invert','adduct','compound']){await page.locator('[data-motion="'+kind+'"]').click();for(const value of [-10,10,0]){await slider(value);const q=await snapshot();expect(q.cues['Talocalcaneal interosseous ligament.r'].basis).toBe('restraint');for(const [name,cue] of Object.entries(q.cues)){const m=q.materials[name];expect(m.emissive).toEqual(new Color(ankleLigamentColors[name]).toArray());if(cue.engagement>0)expect(m.glow).toBeGreaterThan(0);else expect(m.glow).toBe(0);expect(cue.slack).toBe(0);}report.samples.push({kind,value,...q});}}
  await page.locator('[data-mode="anatomy"]').click();await expect.poll(async()=>Object.values((await snapshot()).materials).some(m=>m.glow>0)).toBe(false);
  expect(errors).toEqual([]);
  fs.writeFileSync('docs/ANKLE_TENSION_PRESENTATION_VERIFICATION.json',JSON.stringify(report,null,2)+'\n');
