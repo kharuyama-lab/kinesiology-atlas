@@ -1,4 +1,4 @@
-import {ankleTensionCues} from './ankle-ligament-presentation.js';
+import {ankleTensionCues,ankleTensionAppearance} from './ankle-ligament-presentation.js';
 import {AnkleLigamentFollower} from './ankle-ligament-follow.js';
 import {ankleLigamentColors} from '../config/ankle-ligaments.js';
 import {AnkleMotion,ankleRanges,ankleKinds} from './ankle-motion.js';
@@ -350,7 +350,7 @@ renderer.domElement.addEventListener('pointerdown',e=>{mouseDown={x:e.clientX,y:
 renderer.domElement.addEventListener('pointerup',e=>{if(!mouseDown)return;const dist=Math.hypot(e.clientX-mouseDown.x,e.clientY-mouseDown.y);if(dist<9&&performance.now()-mouseDown.t<550){const name=hitAt(e.clientX,e.clientY);if(name)selectStructure(name,{point:{x:e.clientX,y:e.clientY}});else $('floatingSelection').hidden=true;}mouseDown=null});
 renderer.domElement.addEventListener('pointermove',e=>{if(e.buttons){$('hoverPopup').hidden=true;if(mouseDown&&Math.hypot(e.clientX-mouseDown.x,e.clientY-mouseDown.y)>=9)$('floatingSelection').hidden=true;return}
  const name=hitAt(e.clientX,e.clientY),axis=focus==='ankle'?ankleRig.hoverAxis(raycaster):null,tip=$('hoverPopup');if(!axis&&(!name||(! $('floatingSelection').hidden&&name===activeSelection))){tip.hidden=true;return}
- tip.hidden=false;tip.replaceChildren();let strong=document.createElement('strong');strong.textContent=axis?axis[0]:japaneseName(name)||englishName(name);let sub=document.createElement('small');sub.textContent=axis?axis[1]:name.replace(/\.[rl]$/,'');tip.append(strong,sub);if(!axis&&ankleLigamentFollower.cues?.[name]){const cue=ankleLigamentFollower.cues[name],note=document.createElement('span');note.style.cssText='display:block;font-size:11px;margin-top:4px';note.textContent=cue.engagement>.1?'緊張傾向（文献に基づく模式表示）':cue.slack>.1?'相対的に低緊張（たるみは模式表示）':'中間位';tip.append(note);}
+ tip.hidden=false;tip.replaceChildren();let strong=document.createElement('strong');strong.textContent=axis?axis[0]:japaneseName(name)||englishName(name);let sub=document.createElement('small');sub.textContent=axis?axis[1]:name.replace(/\.[rl]$/,'');tip.append(strong,sub);if(!axis&&ankleLigamentFollower.cues?.[name]){const cue=ankleLigamentFollower.cues[name],note=document.createElement('span');note.style.cssText='display:block;font-size:11px;margin-top:4px';note.textContent=cue.engagement>.1?'緊張傾向（文献に基づく模式表示）':cue.slack>.1?'相対的に低緊張（たるみは模式表示）':'中間位';tip.append(note);}else if(!axis&&focus==='ankle'&&mode==='kinesiology'&&ankleLigamentColors[name]){const note=document.createElement('span');note.style.cssText='display:block;font-size:11px;margin-top:4px';note.textContent='この運動の緊張判定は未設定';tip.append(note);}
  const b=$('viewport').getBoundingClientRect();tip.style.left=Math.min(e.clientX-b.left+12,b.width-220)+'px';tip.style.top=Math.max(10,e.clientY-b.top-48)+'px';
 });
 renderer.domElement.addEventListener('pointerleave',()=>{$('hoverPopup').hidden=true});
@@ -459,8 +459,9 @@ function updateLigamentPresentation(now){
  for(const [name,color] of Object.entries(ankleLigamentColors)){
   const mat=originalMaterials.get(name);if(!mat)continue;
   const cue=ankleLigamentFollower.cues?.[name],g=cue?.engagement||0,state=visibleStates.get(name);
-  mat.color.setHex(color).lerp(new THREE.Color(0xffba55),g*.65);
-  mat.emissive.setHex(0xffa52d);mat.emissiveIntensity=state==='off'?0:g*.65*(state==='fade'?.25:1);
+  const appearance=ankleTensionAppearance(g,now,state);
+  mat.color.setHex(color).offsetHSL(0,appearance.saturation,0).multiplyScalar(1-appearance.darkening);
+  mat.emissive.setHex(color);mat.emissiveIntensity=appearance.glow;
   if(activeSelection===name&&state!=='off')mat.emissiveIntensity+=.065;
  }
 
@@ -499,4 +500,4 @@ if(new URLSearchParams(location.search).has('qa'))window.atlasPickQA=name=>{cons
 
 if(new URLSearchParams(location.search).has("qa"))window.atlasMuscleFrameQA=name=>({angle:renderedAngles.flex,playDirection,playing,...tissueFollower.surfaceFrame(name)});
 
-if(new URLSearchParams(location.search).has('qa'))window.atlasAnkleTensionQA=()=>({cues:ankleLigamentFollower.cues,materials:Object.fromEntries(Object.keys(ankleLigamentColors).map(n=>[n,{glow:originalMaterials.get(n)?.emissiveIntensity,opacity:originalMaterials.get(n)?.opacity}]))});
+if(new URLSearchParams(location.search).has('qa'))window.atlasAnkleTensionQA=()=>({cues:ankleLigamentFollower.cues,materials:Object.fromEntries(Object.keys(ankleLigamentColors).map(n=>[n,{glow:originalMaterials.get(n)?.emissiveIntensity,color:originalMaterials.get(n)?.color.toArray(),emissive:originalMaterials.get(n)?.emissive.toArray(),opacity:originalMaterials.get(n)?.opacity}]))});

@@ -16,3 +16,12 @@ export function ankleTensionCues(kind,value,active=true){
   return [name,{engagement:smooth(directed/r.range),slack:smooth(-directed/(r.direction===1?40:20))}];
  }));
 }
+
+// Keep the anatomical identity hue. A gentle 1.6 s pulse distinguishes
+// engagement from an inherently yellow band, without a yellow/white overlay.
+export function ankleTensionAppearance(score,now,state='on'){
+ const g=Math.sqrt(Math.max(0,Math.min(1,Number.isFinite(score)?score:0)));
+ const pulse=.5+.5*Math.sin(now*Math.PI*2/1600);
+ return {darkening:g*(.18+.12*pulse),saturation:g*.18,
+  glow:state==='off'?0:g*(.06+.3*pulse)*(state==='fade'?.25:1)};
+}

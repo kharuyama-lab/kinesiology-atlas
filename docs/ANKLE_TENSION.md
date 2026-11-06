@@ -13,7 +13,10 @@ than the target slider, and preserve On/Fade/Off and terminal bone footprints.
 Every bow candidate is checked at body vertices and triangle centroids by the
 existing bone exclusion method; it is reduced or omitted if unsafe. This discrete
 check is not a continuous collision guarantee. The existing route smoothing is
-retained. Warm color and steady emission increase continuously with engagement.
+retained. Identity hue is retained. Increased saturation and a darker base combine with a gentle
+1.6-second same-color emission pulse; engagement increases its amplitude. No yellow
+or white highlight is overlaid. The hover identifies unmapped motion/ligament pairs
+as unassessed, rather than implying relaxation.
 
 Evidence:
 - Takao et al. 2020, six cadaver specimens, superficial deltoid band strain:
