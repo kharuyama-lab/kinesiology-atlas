@@ -2,6 +2,9 @@
 // Takao et al. 2020, doi:10.1186/s12891-020-03296-0.
 // Separate direct elongation/strain evidence from sectioning-based restraint.
 export const ankleTensionEvidence={
+ 'Anterior talofibular ligament.r':{direction:-1,range:30,source:'https://pubmed.ncbi.nlm.nih.gov/33610165/'},
+ 'Calcaneofibular ligament.r':{direction:1,range:20,source:'https://pmc.ncbi.nlm.nih.gov/articles/PMC2666648/'},
+ 'Posterior talofibular ligament.r':{direction:1,range:20,source:'https://pubmed.ncbi.nlm.nih.gov/17144961/'},
  'Tibionavicular ligament.r':{direction:-1,range:30,source:'https://pubmed.ncbi.nlm.nih.gov/32386522/'},
  'Tibiocalcaneal ligament.r':{direction:1,range:20,source:'https://pubmed.ncbi.nlm.nih.gov/32386522/'},
  // Generic source mesh: do not claim a superficial/deep band identification.
@@ -16,6 +19,7 @@ export function ankleTensionCues(kind,value,active=true,stAxis=null){
   const coronal=kind==='invert'||kind==='compound'?value:kind==='adduct'&&stAxis&&Math.abs(stAxis.y)>1e-6?value*stAxis.z/stAxis.y:null;
   if(coronal===null)return {};
   return {
+   'Calcaneofibular ligament.r':{engagement:smooth(coronal/20),slack:0,basis:'restraint',source:'https://pubmed.ncbi.nlm.nih.gov/27194494/'},
    'Tibiocalcaneal ligament.r':{engagement:smooth(-coronal/10),slack:0,basis:'elongation',source:'https://doi.org/10.3113/FAI.2011.0457'},
    // Sectioning studies differ. This is a restraint contribution cue in both
    // directions, NOT a claim of measured tension or laxity in the reverse one.

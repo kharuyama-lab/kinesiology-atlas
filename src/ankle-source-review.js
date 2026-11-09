@@ -15,7 +15,7 @@ function show(name=null){
  const generated=name==='supplements'||name==='cervical-review'||supplements.some(r=>r.name===name);
  for(const r of [...records,...supplements])r.node.traverse(o=>{if(o.isMesh){o.visible=name==='cervical-review'?(supplements.includes(r)||r.name==='Anterior talocalcaneal ligament.r'):name==='supplements'?supplements.includes(r):name?r.name===name:records.includes(r);o.material.emissive.setHex(r.name===name?0x174560:0);}});
  closeView=generated;for(const r of landmarkObjects){r.marker.visible=generated&&landmarksOn;r.element.hidden=!r.marker.visible;}target.copy(footTarget);if(generated){const pts=supplements.filter(r=>name==='supplements'||name==='cervical-review'||r.name===name).flatMap(r=>[new T.Vector3(...r.a),new T.Vector3(...r.b)]);target.copy(new T.Box3().setFromPoints(pts).getCenter(new T.Vector3()));}
- document.querySelector('#label').textContent=generated?(name==='cervical-review'?'補完3靭帯＋元の前距踵靭帯（頸靭帯との対応候補・未確定）':name==='supplements'?'補完3靭帯：静止形状の確認案／白点は推定付着部':supplements.find(r=>r.name===name).jp+'：'+name+'（補完・静止案）'):(name||'全構造（元形状）');
+ document.querySelector('#label').textContent=generated?(name==='cervical-review'?'補完3靭帯＋既存の前距踵靭帯':name==='supplements'?'補完3靭帯：静止形状の確認案／白点は推定付着部':supplements.find(r=>r.name===name).jp+'：'+name+'（補完・静止案）'):(name||'全構造（元形状）');
  document.querySelectorAll('#list button').forEach(b=>b.classList.toggle('selected',b.dataset.name===name));view(currentView);
 }
 

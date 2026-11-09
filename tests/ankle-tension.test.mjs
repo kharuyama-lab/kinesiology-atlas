@@ -1,6 +1,17 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {ankleTensionCues,ankleTensionAppearance} from '../src/ankle-ligament-presentation.js';
+test('approved lateral supplements have motion-specific effects without inventing talocrural rotation',()=>{
+ const pf=ankleTensionCues('flex',-30),df=ankleTensionCues('flex',20);
+ assert.equal(pf['Anterior talofibular ligament.r'].engagement,1);
+ assert.equal(df['Anterior talofibular ligament.r'].engagement,0);
+ for(const name of ['Calcaneofibular ligament.r','Posterior talofibular ligament.r'])assert.equal(df[name].engagement,1);
+ const inversion=ankleTensionCues('invert',20);
+ assert.equal(inversion['Calcaneofibular ligament.r'].basis,'restraint');
+ assert.equal(inversion['Calcaneofibular ligament.r'].engagement,1);
+ assert.ok(!('Anterior talofibular ligament.r' in inversion));
+ assert.ok(!('Posterior talofibular ligament.r' in inversion));
+});
 test('evidence cues distinguish DF/PF and do not invent unsupported motion effects',()=>{
  const df=ankleTensionCues('flex',20),pf=ankleTensionCues('flex',-40);
  for(const n of ['Tibiocalcaneal ligament.r','Posterior tibiotalar ligament.r']){

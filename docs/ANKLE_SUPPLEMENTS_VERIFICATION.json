@@ -88,7 +88,8 @@
       "maxFacePenetration": 0.000011934388181955809,
       "maxFootprintGap": 3.829326798940455e-9,
       "source": "original schematic supplement; static review only",
-      "anatomicalStatus": "estimated model landmarks; awaiting user review"
+      "anatomicalStatus": "user-approved teaching geometry; not subject-specific validation",
+      "fixVersion": "ankle-lateral-fix-1"
     },
     {
       "shape": "band",
@@ -176,7 +177,8 @@
       "maxFacePenetration": 0,
       "maxFootprintGap": 3.3032560574987513e-9,
       "source": "original schematic supplement; static review only",
-      "anatomicalStatus": "estimated model landmarks; awaiting user review"
+      "anatomicalStatus": "user-approved teaching geometry; not subject-specific validation",
+      "fixVersion": "ankle-lateral-fix-1"
     },
     {
       "shape": "fan",
@@ -264,7 +266,8 @@
       "maxFacePenetration": 0,
       "maxFootprintGap": 3.875493659440601e-9,
       "source": "original schematic supplement; static review only",
-      "anatomicalStatus": "estimated model landmarks; awaiting user review"
+      "anatomicalStatus": "user-approved teaching geometry; not subject-specific validation",
+      "fixVersion": "ankle-lateral-fix-1"
     }
   ],
   "landmarks": [

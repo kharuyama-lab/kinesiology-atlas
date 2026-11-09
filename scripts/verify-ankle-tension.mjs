@@ -29,7 +29,7 @@ try{
   const q=await snapshot();expect(q.materials['Tibiocalcaneal ligament.r'].opacity).toBe(state==='fade'?.3:1);
   if(state==='off')expect(q.materials['Tibiocalcaneal ligament.r'].glow).toBe(0);
  }
- await page.locator('[data-view="medial"]').click();await page.locator('#boneVisibility').click();
+ await page.locator('[data-view="lateral"]').click();await page.locator('#boneVisibility').click();
  await page.screenshot({path:'docs/screenshots/ankle-ligaments/tension-dorsiflexion.png'});
  await slider(-40);await page.screenshot({path:'docs/screenshots/ankle-ligaments/tension-plantarflexion.png'});
  for(const kind of ['invert','adduct','compound']){await page.locator('[data-motion="'+kind+'"]').click();for(const value of [-10,10,0]){await slider(value);const q=await snapshot();expect(q.cues['Talocalcaneal interosseous ligament.r'].basis).toBe('restraint');for(const [name,cue] of Object.entries(q.cues)){const m=q.materials[name];expect(m.emissive).toEqual(new Color(ankleLigamentColors[name]).toArray());if(cue.engagement>0)expect(m.glow).toBeGreaterThan(0);else expect(m.glow).toBe(0);expect(cue.slack).toBe(0);}report.samples.push({kind,value,...q});}}

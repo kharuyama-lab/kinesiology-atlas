@@ -16,3 +16,5 @@ export const ankleReviewLandmarks=[
  {id:'T1',label:'距骨外側面の前縁・頸部境界（推定）',bone:'Talus.r',seed:[-.085,.064,-.024],normal:[-.6,0,.8]},
  {id:'T2',label:'距骨後突起外側結節の領域（推定）',bone:'Talus.r',seed:[-.081,.0575,-.066],normal:[0,0,-1]}
 ];
+
+export const ankleSupplementFix={version:'ankle-lateral-fix-1',approvedAt:'2026-11-09 Asia/Tokyo',shapeCommit:'8f3b485',scope:'user-approved teaching geometry; no separate cervical ligament'};

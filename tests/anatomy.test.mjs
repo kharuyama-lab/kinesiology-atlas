@@ -1,3 +1,4 @@
+import {ankleSupplements} from '../config/ankle-supplements.js';
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync,existsSync} from 'node:fs';
@@ -9,9 +10,9 @@ test('visibility cycle and focus relevance',()=>{
  assert.equal(focusStates('knee').get('Rectus femoris muscle.r'),'on');
  assert.equal(focusStates('hip').get('Rectus femoris muscle.r'),'on');
 });
-test('all catalog names exist in actual GLBs', {skip:!existsSync('.cache/muscular.glb')},()=>{
+test('all catalog names resolve to actual GLBs or explicit original supplements', {skip:!existsSync('.cache/muscular.glb')},()=>{
  const names=new Set();for(const sys of ['muscular','joints']){const b=readFileSync('.cache/'+sys+'.glb');const j=JSON.parse(b.subarray(20,20+b.readUInt32LE(12)));for(const n of j.nodes)names.add(n.extras?.za_name);}
- for(const [name] of tissues)assert.ok(names.has(name),name);
+ for(const [name] of tissues)assert.ok(names.has(name)||ankleSupplements.some(s=>s.name===name),name);
  const b=readFileSync('.cache/skeletal.glb');const j=JSON.parse(b.subarray(20,20+b.readUInt32LE(12)));
  for(const n of j.nodes)if(n.extras?.za_name)assert.ok(japaneseName(n.extras.za_name),n.extras.za_name);
 });

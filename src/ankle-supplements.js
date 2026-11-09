@@ -1,5 +1,5 @@
 import {Vector3,Triangle,Group,Mesh,MeshStandardMaterial,SphereGeometry,BufferGeometry,Float32BufferAttribute} from 'three';
-import {ankleSupplements,ankleReviewLandmarks} from '../config/ankle-supplements.js';
+import {ankleSupplements,ankleReviewLandmarks,ankleSupplementFix} from '../config/ankle-supplements.js';
 
 // Clip the actual surface triangle to a proposed anatomical region. Filtering
 // only its unconstrained closest point can falsely report an empty region.
@@ -49,9 +49,10 @@ export function createAnkleSupplements(bones){
   const geometry=new BufferGeometry().setAttribute('position',new Float32BufferAttribute(positions.flatMap(p=>p.toArray()),3)).setIndex(indices);geometry.computeVertexNormals();
   const group=new Group(),mesh=new Mesh(geometry,new MeshStandardMaterial({color:0x82b9e1,roughness:.7,side:2}));mesh.userData.za_name=spec.name;group.add(mesh);
   for(const [end,f] of [['腓骨',a],[spec.bone==='Talus.r'?'距骨':'踵骨',b]]){const marker=new Mesh(new SphereGeometry(.00065,12,8),new MeshStandardMaterial({color:0xf4f8ff,roughness:.5}));marker.position.copy(f.p);marker.userData.label=spec.jp+'：'+end+'付着部（推定）';group.add(marker);}
+  mesh.userData.ankleSupplementBinding={rows,cols,anchors,a,b,outward,restSpan:a.p.distanceTo(b.p)};
   const actual=positions.map((_,i)=>new Vector3().fromBufferAttribute(geometry.attributes.position,i)),gap=Math.max(...[...anchors].map(([i,f])=>f.surface.nearest(actual[i]).distance)),depth=p=>Math.max(0,...all.map(s=>-s.signedDistance(p)));let maxBodyPenetration=0,maxFacePenetration=0;for(let i=0;i<actual.length;i++)if(!anchors.has(i))maxBodyPenetration=Math.max(maxBodyPenetration,depth(actual[i]));for(let i=0;i<indices.length;i+=3)maxFacePenetration=Math.max(maxFacePenetration,depth(actual[indices[i]].clone().add(actual[indices[i+1]]).add(actual[indices[i+2]]).divideScalar(3)));
   const rowWidths=Array.from({length:rows+1},(_,r)=>actual[r*(cols+1)].distanceTo(actual[r*(cols+1)+cols]));
-  entries.push({shape:spec.shape||'band',proximalWidth:rowWidths[0],distalWidth:rowWidths[rows],widthRatio:rowWidths[rows]/rowWidths[0],rowWidths,name:spec.name,jp:spec.jp,id:spec.id,node:group,mesh,a:a.p.toArray(),b:b.p.toArray(),bones:['Fibula.r',spec.bone],fibularTip:tip.toArray(),span:a.p.distanceTo(b.p),width:spec.width,routeHeight:height,routeValid,maxBodyPenetration,maxFacePenetration,maxFootprintGap:gap,source:'original schematic supplement; static review only',anatomicalStatus:'estimated model landmarks; awaiting user review'});
+  entries.push({shape:spec.shape||'band',proximalWidth:rowWidths[0],distalWidth:rowWidths[rows],widthRatio:rowWidths[rows]/rowWidths[0],rowWidths,name:spec.name,jp:spec.jp,id:spec.id,node:group,mesh,a:a.p.toArray(),b:b.p.toArray(),bones:['Fibula.r',spec.bone],fibularTip:tip.toArray(),span:a.p.distanceTo(b.p),width:spec.width,routeHeight:height,routeValid,maxBodyPenetration,maxFacePenetration,maxFootprintGap:gap,source:'original schematic supplement; static review only',anatomicalStatus:'user-approved teaching geometry; not subject-specific validation',fixVersion:ankleSupplementFix.version});
  }
  entries.landmarks=ankleReviewLandmarks.map(r=>{const surface=bones.get(r.bone),p=r.id==='F0'?tip.clone():fit(new Vector3(...r.seed),surface,new Vector3(...r.normal)).p;return {...r,point:p.toArray(),surfaceGap:surface.nearest(p).distance,status:'proposed landmark; anatomical review pending'};});
  return entries;

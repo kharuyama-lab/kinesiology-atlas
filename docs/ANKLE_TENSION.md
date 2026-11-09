@@ -58,3 +58,7 @@ GLBs; anterior talocalcaneal is not relabeled cervical. Subtype-ambiguous bands
 (posterolateral/posteromedial talocalcaneal and bifurcate) are not guessed from
 similar generic mesh names. No bone axes, muscles, shared GLB assets, Hip/Knee
 behavior, or public deployment are changed.
+
+## Approved lateral supplements
+
+User-approved lateral-fix-1 geometry is now in the main Ankle viewer (19 ligaments). ATFL: plantarflexion tendency; CFL: dorsiflexion tendency and inversion-side restraint cue; PTFL: dorsiflexion tendency. Same identity-color 1.6-second pulse and On/Fade/Off rules apply. No cervical ligament was added. See ANKLE_SUPPLEMENTS_DESIGN.md for sources, approved geometry provenance and motion-routing limits.

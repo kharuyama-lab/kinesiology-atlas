@@ -1,3 +1,5 @@
+import {createAnkleSupplements} from './ankle-supplements.js';
+import {BoneSurface} from './bone-surface.js';
 import {ankleTensionCues,ankleTensionAppearance} from './ankle-ligament-presentation.js';
 import {AnkleLigamentFollower} from './ankle-ligament-follow.js';
 import {ankleLigamentColors} from '../config/ankle-ligaments.js';
@@ -391,7 +393,7 @@ async function afterLoad(){
  rig.hip.quaternion.identity();rig.knee.quaternion.identity();rig.patella.quaternion.identity();
  for(const [sys,source] of modelSources){const root=source.clone(true);root.traverse(o=>{if(o.isMesh)o.visible=false});scene.add(root);liveRoots.push(root);register(root,sys);}
  if(!registered.has('Femur.r')||!registered.has('Tibia.r'))throw Error('Femur.r / Tibia.r not found');
- flatten();assignMaterials();const allBones=[...registered.keys()].filter(n=>category.get(n)==='bone');fullBox=new THREE.Box3();for(const nm of allBones){const b=worldBox(nm);if(b)fullBox.union(b)}
+ flatten();const supplementBones=new Map();for(const [name,obj] of registered)if(/^(Tibia|Fibula|Talus|Calcaneus|Navicular bone|Cuboid bone|.*cuneiform bone|.*metatarsal bone)\.r$/.test(name))supplementBones.set(name,new BoneSurface(obj,getMeshes(name)));for(const e of createAnkleSupplements(supplementBones)){e.mesh.removeFromParent();scene.add(e.mesh);registered.set(e.name,e.mesh);category.set(e.name,'ligament');}assignMaterials();const allBones=[...registered.keys()].filter(n=>category.get(n)==='bone');fullBox=new THREE.Box3();for(const nm of allBones){const b=worldBox(nm);if(b)fullBox.union(b)}
  prepareRig();if(!ankleCalibration){const response=await fetch('config/ankle.json');if(!response.ok)throw Error('Ankle configuration unavailable');ankleCalibration=await response.json();}ankleRig.prepare({registered,parent:rig.knee,calibration:ankleCalibration});scene.updateMatrixWorld(true);captureJointSurfaces();ligamentFollower.prepare({getMeshes,sourceHash:modelSources.get('joints')?.userData.atlasSourceHash,bones:{femur:registered.get('Femur.r'),'Tibia.r':registered.get('Tibia.r'),'Fibula.r':registered.get('Fibula.r')}});tissueFollower.prepare({tissues,getMeshes,hipCenter:hipWorldPoint,kneeCenter:kneeWorldPoint});ankleLigamentFollower.prepare({getMeshes,registered});uiBodyLists();modelLoaded=true;
  for(const name of allBones){const root=registered.get(name);root.updateWorldMatrix(true,true);const box=new THREE.Box3();
   for(const mesh of getMeshes(name)){mesh.geometry.computeBoundingBox();const mb=mesh.geometry.boundingBox.clone().applyMatrix4(mesh.matrixWorld);box.union(mb);}
