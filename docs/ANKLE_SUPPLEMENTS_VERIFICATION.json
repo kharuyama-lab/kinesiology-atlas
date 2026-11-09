@@ -7,14 +7,14 @@
       "jp": "前距腓靭帯",
       "id": "ATFL",
       "a": [
-        -0.10654773367801028,
-        0.06801830636770168,
-        -0.04310670738871477
+        -0.10212155809278017,
+        0.06297261228354448,
+        -0.04001602891611815
       ],
       "b": [
-        -0.0865727470062234,
-        0.06890454734951314,
-        -0.027577598917938193
+        -0.08527429180219871,
+        0.06400916748002412,
+        -0.031395088963148673
       ],
       "bones": [
         "Fibula.r",
@@ -25,13 +25,13 @@
         0.055210962891578674,
         -0.052053024526685476
       ],
-      "span": 0.025316767675061726,
+      "span": 0.018953243358692376,
       "width": 0.007,
-      "routeHeight": 0.0015,
+      "routeHeight": 0,
       "routeValid": true,
       "maxBodyPenetration": 0,
       "maxFacePenetration": 0,
-      "maxFootprintGap": 3.2803653534207555e-9,
+      "maxFootprintGap": 3.135516551137016e-9,
       "source": "original schematic supplement; static review only",
       "anatomicalStatus": "estimated model landmarks; awaiting user review"
     },
@@ -40,14 +40,14 @@
       "jp": "踵腓靭帯",
       "id": "CFL",
       "a": [
-        -0.10227844059641394,
-        0.059172421444417034,
-        -0.04311849002388559
+        -0.09919547619486002,
+        0.05892603613156447,
+        -0.04217413521735993
       ],
       "b": [
-        -0.09521170495909491,
-        0.03619477989618305,
-        -0.05723474101406021
+        -0.0948875116281209,
+        0.03740768235839015,
+        -0.059170154595446195
       ],
       "bones": [
         "Fibula.r",
@@ -58,13 +58,13 @@
         0.055210962891578674,
         -0.052053024526685476
       ],
-      "span": 0.02787793582216032,
+      "span": 0.02775721136058248,
       "width": 0.005,
-      "routeHeight": 0,
+      "routeHeight": 0.00075,
       "routeValid": true,
       "maxBodyPenetration": 0,
-      "maxFacePenetration": 0,
-      "maxFootprintGap": 2.6941729883852457e-9,
+      "maxFacePenetration": 0.000011946318576345616,
+      "maxFootprintGap": 3.2135559380367843e-9,
       "source": "original schematic supplement; static review only",
       "anatomicalStatus": "estimated model landmarks; awaiting user review"
     },
@@ -73,14 +73,14 @@
       "jp": "後距腓靭帯",
       "id": "PTFL",
       "a": [
-        -0.09759825054606883,
-        0.06032004670560001,
-        -0.05516778602162907
+        -0.09766245316103254,
+        0.06047608059145024,
+        -0.054571492772614305
       ],
       "b": [
-        -0.0779782918899973,
-        0.06190770442895099,
-        -0.06481586927430451
+        -0.07906876323471021,
+        0.06263868331393527,
+        -0.06394641786526288
       ],
       "bones": [
         "Fibula.r",
@@ -91,13 +91,13 @@
         0.055210962891578674,
         -0.052053024526685476
       ],
-      "span": 0.02192142662244016,
-      "width": 0.008,
-      "routeHeight": 0.006000000000000004,
+      "span": 0.020935409623513274,
+      "width": 0.007,
+      "routeHeight": 0.00075,
       "routeValid": true,
-      "maxBodyPenetration": 0.00002270340205382187,
-      "maxFacePenetration": 0.000020772688476462178,
-      "maxFootprintGap": 3.5191302983325496e-9,
+      "maxBodyPenetration": 0,
+      "maxFacePenetration": 0,
+      "maxFootprintGap": 3.7229741569982773e-9,
       "source": "original schematic supplement; static review only",
       "anatomicalStatus": "estimated model landmarks; awaiting user review"
     }

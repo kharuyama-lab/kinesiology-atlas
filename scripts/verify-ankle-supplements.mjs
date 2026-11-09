@@ -3,9 +3,10 @@ import fs from 'node:fs';
 const browser=await chromium.launch({channel:'msedge',headless:true,args:['--use-angle=swiftshader','--enable-unsafe-swiftshader']});
 try{
  const page=await browser.newPage({viewport:{width:1500,height:1100}}),errors=[];page.on('pageerror',e=>errors.push(e.message));
- await page.goto('http://127.0.0.1:8080/ankle-source-review.html?supplements');await expect(page.locator('#status')).toContainText('Ready',{timeout:120000});
+ await page.goto('http://127.0.0.1:8080/ankle-source-review.html?supplements');await page.waitForFunction(()=>!document.querySelector('#status').textContent.includes('読み込み中'),null,{timeout:120000});await expect(page.locator('#status')).toContainText('Ready',{timeout:1000});
  const entries=await page.evaluate(()=>sourceReview.supplements());expect(entries).toHaveLength(3);
  for(const e of entries){expect(e.routeValid).toBe(true);expect(e.maxFootprintGap).toBeLessThan(1e-7);expect(e.maxBodyPenetration).toBeLessThan(.00005);expect(e.maxFacePenetration).toBeLessThan(.00005);expect(e.span).toBeGreaterThan(.008);expect(e.span).toBeLessThan(.06);expect(e.bones[0]).toBe('Fibula.r');}
+ const atfl=entries.find(e=>e.id==='ATFL'),cfl=entries.find(e=>e.id==='CFL'),ptfl=entries.find(e=>e.id==='PTFL');expect(atfl.b[2]-atfl.a[2]).toBeGreaterThan(.005);expect(Math.abs(atfl.b[1]-atfl.a[1])).toBeLessThan(.004);expect(cfl.a[1]-cfl.b[1]).toBeGreaterThan(.015);expect(cfl.a[2]-cfl.b[2]).toBeGreaterThan(.01);expect(ptfl.b[0]-ptfl.a[0]).toBeGreaterThan(.01);expect(ptfl.a[2]-ptfl.b[2]).toBeGreaterThan(.005);expect(ptfl.routeHeight).toBeLessThan(.002);
  fs.mkdirSync('docs/screenshots/ankle-supplements',{recursive:true});
  for(const view of ['lateral','posterior']){await page.evaluate(v=>sourceReview.view(v),view);await page.waitForTimeout(100);await page.screenshot({path:'docs/screenshots/ankle-supplements/'+view+'.png'});}
  for(const e of entries){await page.evaluate(n=>{sourceReview.show(n);sourceReview.view('lateral');},e.name);await expect(page.locator('#label')).toContainText(e.jp);await page.screenshot({path:'docs/screenshots/ankle-supplements/'+e.id+'.png'});}

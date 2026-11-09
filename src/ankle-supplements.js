@@ -10,14 +10,14 @@ export function createAnkleSupplements(bones){
  function fit(seed,surface,normalPreference){
   const local=seed.clone().applyMatrix4(surface.inverse),candidates=surface.faces.map(f=>{
    const p=f.triangle.closestPointToPoint(local,new Vector3()).applyMatrix4(surface.world),n=f.triangle.getNormal(new Vector3()).multiplyScalar(surface.normalSign).transformDirection(surface.world);
-   return {p,n,surface,triangle:f.triangle,score:p.distanceToSquared(seed),facing:!normalPreference||n.dot(normalPreference)>-.1};
+   return {p,n,surface,triangle:f.triangle,score:p.distanceToSquared(seed),facing:!normalPreference||n.dot(normalPreference.clone().normalize())>.65};
   }).filter(c=>c.facing&&outside(c.p,surface));
   candidates.sort((a,b)=>a.score-b.score);if(!candidates.length)throw Error('No exposed attachment surface');return candidates[0];
  }
  const entries=[];
  for(const spec of ankleSupplements){
-  const distal=bones.get(spec.bone),seed=tip.clone().add(new Vector3(spec.fibularSide==='anterior'?0:.006,spec.fibularHeight,spec.fibularSide==='anterior'?.008:-.003));
-  const a=fit(seed,fibula,spec.fibularSide==='anterior'?new Vector3(-.2,0,1):new Vector3(1,0,-.3)),b=fit(new Vector3(...spec.distalSeed),distal,spec.id==='PTFL'?new Vector3(0,0,-1):new Vector3(-1,0,0));
+  const distal=bones.get(spec.bone),seed=tip.clone().add(new Vector3(...spec.fibularOffset));
+  const a=fit(seed,fibula,spec.fibularSide==='anterior'?new Vector3(0,0,1):new Vector3(1,0,0)),b=fit(new Vector3(...spec.distalSeed),distal,spec.id==='PTFL'?new Vector3(0,0,-1):spec.id==='ATFL'?new Vector3(-.7,0,.7):new Vector3(-1,0,0));
   const axis=b.p.clone().sub(a.p).normalize(),outward=new Vector3(...spec.outward).normalize(),side=new Vector3().crossVectors(axis,outward).normalize(),rows=48,cols=8,anchors=new Map(),base=[],indices=[],handle=Math.min(.004,a.p.distanceTo(b.p)*.25);
   for(let r=0;r<=rows;r++)for(let c=0;c<=cols;c++){
    const t=r/rows,lateral=(c/cols-.5)*spec.width*(.8+.2*Math.sin(Math.PI*t));let p;
@@ -28,7 +28,7 @@ export function createAnkleSupplements(bones){
   // Each fibre connects its own footprint rather than a central origin.
   for(let c=0;c<=cols;c++){const fa=anchors.get(c),fb=anchors.get(rows*(cols+1)+c);for(let r=1;r<rows;r++){const t=r/rows;base[r*(cols+1)+c]=fa.p.clone().multiplyScalar((1-t)**3).addScaledVector(fa.p.clone().addScaledVector(fa.n,handle),3*(1-t)**2*t).addScaledVector(fb.p.clone().addScaledVector(fb.n,handle),3*(1-t)*t*t).addScaledVector(fb.p,t**3);}}
   for(let r=0;r<rows;r++)for(let c=0;c<cols;c++){const i=r*(cols+1)+c;indices.push(i,i+1,i+cols+1,i+1,i+cols+2,i+cols+1);}
-  const build=height=>base.map((p,i)=>anchors.has(i)?p.clone():p.clone().addScaledVector(outward,Math.sin(Math.PI*Math.floor(i/(cols+1))/rows)*height));
+  const build=height=>base.map((p,i)=>{if(anchors.has(i))return p.clone();const t=Math.floor(i/(cols+1))/rows,c=i%(cols+1),direction=spec.id==='PTFL'?outward.clone().lerp(anchors.get(rows*(cols+1)+c).n,t*t).normalize():outward;return p.clone().addScaledVector(direction,Math.sqrt(Math.sin(Math.PI*t))*height);});
   const valid=ps=>ps.every((p,i)=>anchors.has(i)||outside(p))&&indices.every((_,i)=>i%3||outside(ps[indices[i]].clone().add(ps[indices[i+1]]).add(ps[indices[i+2]]).divideScalar(3)));
   let height=0,positions=build(0);for(;height<.025&&!valid(positions);height+=.00025)positions=build(height+.00025);
   const routeValid=valid(positions);if(!routeValid)throw Error(spec.id+': static route could not clear bones');
