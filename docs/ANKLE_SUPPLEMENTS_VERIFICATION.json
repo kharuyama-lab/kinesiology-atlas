@@ -1,0 +1,106 @@
+{
+  "date": "2026-11-09 Asia/Tokyo",
+  "stage": "static review only; user anatomical review pending",
+  "entries": [
+    {
+      "name": "Anterior talofibular ligament.r",
+      "jp": "前距腓靭帯",
+      "id": "ATFL",
+      "a": [
+        -0.10654773367801028,
+        0.06801830636770168,
+        -0.04310670738871477
+      ],
+      "b": [
+        -0.0865727470062234,
+        0.06890454734951314,
+        -0.027577598917938193
+      ],
+      "bones": [
+        "Fibula.r",
+        "Talus.r"
+      ],
+      "fibularTip": [
+        -0.1016146969050169,
+        0.055210962891578674,
+        -0.052053024526685476
+      ],
+      "span": 0.025316767675061726,
+      "width": 0.007,
+      "routeHeight": 0.0015,
+      "routeValid": true,
+      "maxBodyPenetration": 0,
+      "maxFacePenetration": 0,
+      "maxFootprintGap": 3.2803653534207555e-9,
+      "source": "original schematic supplement; static review only",
+      "anatomicalStatus": "estimated model landmarks; awaiting user review"
+    },
+    {
+      "name": "Calcaneofibular ligament.r",
+      "jp": "踵腓靭帯",
+      "id": "CFL",
+      "a": [
+        -0.10227844059641394,
+        0.059172421444417034,
+        -0.04311849002388559
+      ],
+      "b": [
+        -0.09521170495909491,
+        0.03619477989618305,
+        -0.05723474101406021
+      ],
+      "bones": [
+        "Fibula.r",
+        "Calcaneus.r"
+      ],
+      "fibularTip": [
+        -0.1016146969050169,
+        0.055210962891578674,
+        -0.052053024526685476
+      ],
+      "span": 0.02787793582216032,
+      "width": 0.005,
+      "routeHeight": 0,
+      "routeValid": true,
+      "maxBodyPenetration": 0,
+      "maxFacePenetration": 0,
+      "maxFootprintGap": 2.6941729883852457e-9,
+      "source": "original schematic supplement; static review only",
+      "anatomicalStatus": "estimated model landmarks; awaiting user review"
+    },
+    {
+      "name": "Posterior talofibular ligament.r",
+      "jp": "後距腓靭帯",
+      "id": "PTFL",
+      "a": [
+        -0.09759825054606883,
+        0.06032004670560001,
+        -0.05516778602162907
+      ],
+      "b": [
+        -0.0779782918899973,
+        0.06190770442895099,
+        -0.06481586927430451
+      ],
+      "bones": [
+        "Fibula.r",
+        "Talus.r"
+      ],
+      "fibularTip": [
+        -0.1016146969050169,
+        0.055210962891578674,
+        -0.052053024526685476
+      ],
+      "span": 0.02192142662244016,
+      "width": 0.008,
+      "routeHeight": 0.006000000000000004,
+      "routeValid": true,
+      "maxBodyPenetration": 0.00002270340205382187,
+      "maxFacePenetration": 0.000020772688476462178,
+      "maxFootprintGap": 3.5191302983325496e-9,
+      "source": "original schematic supplement; static review only",
+      "anatomicalStatus": "estimated model landmarks; awaiting user review"
+    }
+  ],
+  "errors": []
+}

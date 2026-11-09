@@ -1,3 +1,4 @@
+import {createAnkleSupplements} from './ankle-supplements.js';
 import * as T from 'three';
 import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
 import {DRACOLoader} from 'three/addons/loaders/DRACOLoader.js';
@@ -6,9 +7,17 @@ import {BoneSurface} from './bone-surface.js';
 import {ankleLigaments} from '../config/ankle-ligaments.js';
 const host=document.querySelector('main'),renderer=new T.WebGLRenderer({antialias:true}),scene=new T.Scene(),camera=new T.PerspectiveCamera(35,1,.001,10),controls=new OrbitControls(camera,renderer.domElement);
 host.append(renderer.domElement);scene.add(new T.HemisphereLight(0xffffff,0x4b606e,2));const light=new T.DirectionalLight(0xffffff,2);light.position.set(-1,2,2);scene.add(light);
-const loader=new GLTFLoader().setDRACOLoader(new DRACOLoader().setDecoderPath('./vendor/three/draco/')),named=[],inventory={},bones=new Map(),records=[],target=new T.Vector3(-.075,.06,.015);
-function view(kind){camera.position.copy(target).add(kind==='medial'?new T.Vector3(.46,.10,.03):kind==='posterior'?new T.Vector3(0,.10,-.46):new T.Vector3(-.46,.10,.03));controls.target.copy(target);controls.update();}
-function show(name=null){for(const r of records){r.node.traverse(o=>{if(o.isMesh){o.visible=!name||r.name===name;o.material.emissive.setHex(r.name===name?0x174560:0);}});}document.querySelector('#label').textContent=name||'全構造（元形状）';document.querySelectorAll('#list button').forEach(b=>b.classList.toggle('selected',b.dataset.name===name));}
+const loader=new GLTFLoader().setDRACOLoader(new DRACOLoader().setDecoderPath('./vendor/three/draco/')),named=[],inventory={},bones=new Map(),records=[],supplements=[],target=new T.Vector3(-.075,.06,.015);
+let currentView='lateral',closeView=false;const footTarget=new T.Vector3();
+function view(kind){currentView=kind;camera.position.copy(target).add(kind==='medial'?new T.Vector3(.46,.10,.03):kind==='posterior'?new T.Vector3(0,.10,-.46):new T.Vector3(-.46,.10,.03));if(closeView)camera.position.sub(target).multiplyScalar(.43).add(target);controls.target.copy(target);controls.update();}
+function show(name=null){
+ const generated=name==='supplements'||name==='cervical-review'||supplements.some(r=>r.name===name);
+ for(const r of [...records,...supplements])r.node.traverse(o=>{if(o.isMesh){o.visible=name==='cervical-review'?(supplements.includes(r)||r.name==='Anterior talocalcaneal ligament.r'):name==='supplements'?supplements.includes(r):name?r.name===name:records.includes(r);o.material.emissive.setHex(r.name===name?0x174560:0);}});
+ closeView=generated;target.copy(footTarget);if(generated){const pts=supplements.filter(r=>name==='supplements'||name==='cervical-review'||r.name===name).flatMap(r=>[new T.Vector3(...r.a),new T.Vector3(...r.b)]);target.copy(new T.Box3().setFromPoints(pts).getCenter(new T.Vector3()));}
+ document.querySelector('#label').textContent=generated?(name==='cervical-review'?'補完3靭帯＋元の前距踵靭帯（頸靭帯との対応候補・未確定）':name==='supplements'?'補完3靭帯：静止形状の確認案／白点は推定付着部':supplements.find(r=>r.name===name).jp+'：'+name+'（補完・静止案）'):(name||'全構造（元形状）');
+ document.querySelectorAll('#list button').forEach(b=>b.classList.toggle('selected',b.dataset.name===name));view(currentView);
+}
+
 try{
  for(const system of ['skeletal','joints','muscular']){
   const gltf=await loader.loadAsync('./.cache/'+system+'.glb');gltf.scene.updateMatrixWorld(true);scene.add(gltf.scene);const rows=[];
@@ -33,8 +42,10 @@ try{
   row.endCandidates=[points.slice(0,count),points.slice(-count)].map(cloud=>[...bones].map(([name,s])=>({bone:name,meanGap:cloud.reduce((sum,p)=>sum+s.nearestLocal(p.clone().applyMatrix4(s.inverse)).distance,0)/cloud.length})).sort((a,b)=>a.meanGap-b.meanGap).slice(0,3));
   records.push(r);const button=document.createElement('button');button.dataset.name=r.name;button.textContent=r.name+(row.activeFollower?' [追従対象]':' [未追従]');button.onclick=()=>show(r.name);document.querySelector('#list').append(button);
  }
- const footBox=new T.Box3();for(const r of records)footBox.union(new T.Box3().setFromObject(r.node));target.copy(footBox.getCenter(new T.Vector3()));window.sourceReview={inventory,show,view};document.querySelector('#status').textContent='Ready：右足関節・足部 '+records.length+'構造（関節包を含む）';
- document.querySelector('#all').onclick=()=>show();document.querySelectorAll('[data-view]').forEach(b=>b.onclick=()=>view(b.dataset.view));view('lateral');
+ const footBox=new T.Box3();for(const r of records)footBox.union(new T.Box3().setFromObject(r.node));target.copy(footBox.getCenter(new T.Vector3()));footTarget.copy(target);
+ for(const r of createAnkleSupplements(bones)){supplements.push(r);scene.add(r.node);r.node.traverse(o=>{if(o.isMesh)o.visible=false;});const button=document.createElement('button');button.dataset.name=r.name;button.textContent=r.jp+' / '+r.id+' [補完・静止案]';button.onclick=()=>show(r.name);document.querySelector('#supplementList').append(button);}
+ window.sourceReview={inventory,show,view,supplements:()=>supplements.map(({node,mesh,...r})=>r)};document.querySelector('#status').textContent='Ready：右足関節・足部 '+records.length+'構造（関節包を含む）';
+ document.querySelector('#all').onclick=()=>show();document.querySelectorAll('[data-view]').forEach(b=>b.onclick=()=>view(b.dataset.view));view('lateral');document.querySelector('#supplements').onclick=()=>show('supplements');document.querySelector('#cervicalCompare').onclick=()=>show('cervical-review');let opaque=false;document.querySelector('#boneReview').onclick=()=>{opaque=!opaque;for(const r of named.filter(r=>r.system==='skeletal'))for(const m of r.meshes){m.material.opacity=opaque?1:.24;m.material.transparent=!opaque;m.material.depthWrite=opaque;}document.querySelector('#boneReview').textContent=opaque?'骨：ON':'骨：Fade';};if(new URLSearchParams(location.search).has('supplements'))show('supplements');
 }catch(e){document.querySelector('#status').textContent=String(e);console.error(e);}
 new ResizeObserver(()=>{camera.aspect=host.clientWidth/host.clientHeight;camera.updateProjectionMatrix();renderer.setSize(host.clientWidth,host.clientHeight);}).observe(host);
 renderer.setAnimationLoop(()=>{controls.update();renderer.render(scene,camera);});
