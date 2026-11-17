@@ -7,10 +7,12 @@ const browser=await chromium.launch({channel:'msedge',headless:true,args:['--use
 try{
  const page=await browser.newPage({viewport:{width:1440,height:1000}}),errors=[];page.on('pageerror',e=>errors.push(e.message));
  await page.goto('http://127.0.0.1:8080/?focus=ankle&qa');await expect(page.locator('#modelStatus')).toHaveText('Ready',{timeout:120000});
+ await expect.poll(()=>page.evaluate(()=>Number.isFinite(atlasAnkleMuscleQA().updateMs)),{timeout:60000}).toBe(true);
  const qa=()=>page.evaluate(()=>atlasAnkleMuscleQA());
  const initial=await qa();console.log('muscles',new Set(initial.entries.map(e=>e.name)).size);
  expect(new Set(initial.entries.map(e=>e.name)).size).toBe(ankleMuscles.length);
  expect(initial.finite).toBe(true);expect(initial.restError).toBeLessThan(.000001);
+ await page.locator('[data-joint-bulk="muscle"][data-display-state="on"]').click();await page.locator('[data-joint-bulk="connective"][data-display-state="on"]').click();
  const report=[];fs.mkdirSync('docs/screenshots/ankle-muscles',{recursive:true});
  const staticRest=await page.evaluate(()=>atlasAnkleStaticMuscleQA());expect(staticRest).toHaveLength(15);
  await page.locator('#muscleDetails').evaluate(el=>el.open=true);
@@ -22,6 +24,8 @@ try{
   for(const value of [min,max,0]){
    await page.locator('#motionSlider').evaluate((el,value)=>{el.value=value;el.dispatchEvent(new Event('input',{bubbles:true}));},value);
    await expect.poll(()=>page.evaluate(v=>Math.abs(atlasAnkleStateQA().value-v),value),{timeout:60000}).toBeLessThan(.0001);
+   if(value===0)await expect.poll(()=>page.evaluate(()=>atlasAnkleStateQA().value),{timeout:30000}).toBe(0);
+   await expect.poll(()=>page.evaluate(()=>atlasAnkleStateQA().ligamentSettling),{timeout:30000}).toBe(false);
    const result=await qa();expect(result.finite).toBe(true);expect(result.terminalError).toBeLessThan(.000001);
    const statics=await page.evaluate(()=>atlasAnkleStaticMuscleQA());
    for(let i=0;i<statics.length;i++){
@@ -41,10 +45,15 @@ try{
    expect(freeEdges).toBeGreaterThan(100);expect(maxFreeEdgeError).toBeLessThan(.0000001);expect(Math.abs(tendon.length-tendon.restLength)).toBeLessThan(.0000001);result.achilles={...tendon,maxFreeEdgeError,freeEdges};
    if(motion==='flex'&&value!==0){
     const calf=[];
-    for(const name of ['Medial head of gastrocnemius.r','Lateral head of gastrocnemius.r','Soleus muscle.r','Calcaneal tendon.r']){
-     const parts=await page.evaluate(n=>atlasAnkleMuscleGeometryQA(n),name);let upperBedError=0;
-     for(const part of parts)for(let i=0;i<part.rest.length;i++)if(part.rest[i][1]>=.36)upperBedError=Math.max(upperBedError,new Vector3(...part.rest[i]).distanceTo(new Vector3(...part.positions[i])));
-     expect(upperBedError).toBeLessThan(.000001);calf.push({name,upperBedError});
+    const excursion=await page.evaluate(()=>atlasAnkleExcursionQA());
+    for(const name of ['Medial head of gastrocnemius.r','Lateral head of gastrocnemius.r','Soleus muscle.r']){
+     const parts=await page.evaluate(n=>atlasAnkleMuscleGeometryQA(n),name),model=excursion.find(e=>e.name===name);let originError=0,middleTravel=0,middleCount=0;
+     for(const part of parts)for(let i=0;i<part.rest.length;i++){
+      const travel=new Vector3(...part.rest[i]).distanceTo(new Vector3(...part.positions[i]));
+      if(part.rest[i][1]>=model.proximalY)originError=Math.max(originError,travel);
+      const t=(model.proximalY-part.rest[i][1])/model.sourceLength;if(!part.tendon&&t>.25&&t<.75&&!part.pins[i]){middleTravel+=travel;middleCount++;}
+     }
+     expect(originError).toBeLessThan(.000001);expect(middleCount).toBeGreaterThan(0);expect(middleTravel/middleCount).toBeGreaterThan(.0005);calf.push({name,originError,middleTravel:middleTravel/middleCount});
     }
     result.calf=calf;
     await page.waitForTimeout(300);const held=await qa();

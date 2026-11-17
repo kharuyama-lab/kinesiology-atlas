@@ -1,8 +1,10 @@
 import {ankleLigaments} from '../config/ankle-ligaments.js';
 import {ankleMuscles,ankleStaticMuscles} from '../config/ankle-muscles.js';
+import {ankleRetinacula} from '../config/ankle-retinacula.js';
 // Names checked against GLB extras.za_name, 2026-10-30.
 export const tissues = [
  ...ankleLigaments.map(([name,jp])=>[name,jp,'ligament','ankle']),
+ ...ankleRetinacula.map(([name,jp])=>[name,jp,'ligament','ankle']),
  ...ankleMuscles.filter(([name])=>!/gastrocnemius|Calcaneal tendon/.test(name)).map(([name,jp])=>[name,jp,'muscle','ankle']),
  ...ankleStaticMuscles.map(([name,jp])=>[name,jp,'muscle','ankle']),
  ['Rectus femoris muscle.r','大腿直筋','muscle','hip knee'],
