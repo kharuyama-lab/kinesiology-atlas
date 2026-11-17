@@ -1,4 +1,5 @@
 import {createAnkleSupplements} from './ankle-supplements.js';
+import {AnkleMuscleFollower} from './ankle-muscle-follow.js';
 import {BoneSurface} from './bone-surface.js';
 import {ankleTensionCues,ankleTensionAppearance} from './ankle-ligament-presentation.js';
 import {AnkleLigamentFollower} from './ankle-ligament-follow.js';
@@ -56,6 +57,7 @@ let renderedMeniscusActive=0;
 const renderedAngles={flex:0,rot:0,valgus:0};let renderedScrew=0;
 let mode='anatomy',focus='body',motion='flex',motionValue=90,activeSelection=null;
 const ankleLigamentFollower=new AnkleLigamentFollower();
+const ankleMuscleFollower=new AnkleMuscleFollower();
 const ankleRig=new AnkleMotion(),ankleValues={flex:0,invert:0,adduct:0,compound:0},axisStates={knee:false,ankle:true};
 let ankleCalibration=null;const jointDetailStates={hip:{muscle:true,ligament:true},knee:{muscle:true,ligament:true},ankle:{muscle:false,ligament:false}};
 const kneeValues={flex:90,rot:0,stress:0},hipValues={flex:0,abd:0,rot:0};
@@ -290,7 +292,7 @@ function setMotion(m){setPlaying(false);playDirection=1;motion=m;motionValue=mot
  const sl=$('motionSlider');const ranges={flex:[...KNEE.flexionRange,90,'伸展 / Extension 0°',`屈曲 / Flexion ${KNEE.flexionRange[1]}°`],rot:[-15,30,0,'内旋 / Internal 15°','外旋 / External 30°'],stress:[-3,3,0,'内反 / Varus 3°','外反 / Valgus 3°']};
  const v=(focus==='ankle'?ankleRanges:focus==='hip'?hipRanges:ranges)[m];sl.min=v[0];sl.max=v[1];sl.step='.1';sl.value=motionValue;$('negativeLabel').textContent=v[3].replace(/ \/ [A-Za-z]+ /,' ');$('positiveLabel').textContent=v[4].replace(/ \/ [A-Za-z]+ /,' ');updatePose()}
 function updateModeUI(){
- $('muscleGroups').replaceChildren();for(const [key,group] of Object.entries(muscleGroups[focus]||{})){const b=document.createElement('button');b.type='button';b.dataset.muscleGroup=key;b.classList.toggle('selected',selectedMuscleGroup[focus]===key);b.textContent=group.label;b.title=({flex:'Flexion',ext:'Extension',ir:'Internal rotation',er:'External rotation',abd:'Abduction',add:'Adduction'})[key];b.addEventListener('click',()=>{selectedMuscleGroup[focus]=key;for(const [name,,kind] of tissues)if(kind==='muscle')tissueStates.set(name,relevant(name,focus)&&group.names.includes(name)?'on':'off');if(focus==='hip')tissueStates.set('Iliotibial tract.r','fade');updateVisibility();for(const button of $('muscleGroups').children)button.classList.toggle('selected',button===b);if(activeSelection)selectStructure(activeSelection,{showFloating:!$('floatingSelection').hidden});});$('muscleGroups').append(b);}
+ $('muscleGroups').replaceChildren();for(const [key,group] of Object.entries(muscleGroups[focus]||{})){const b=document.createElement('button');b.type='button';b.dataset.muscleGroup=key;b.classList.toggle('selected',selectedMuscleGroup[focus]===key);b.textContent=group.label;b.title=({flex:'Flexion',ext:'Extension',ir:'Internal rotation',er:'External rotation',abd:'Abduction',add:'Adduction',dorsiflex:'Dorsiflexion',plantarflex:'Plantarflexion',inversion:'Inversion',eversion:'Eversion'})[key];b.addEventListener('click',()=>{selectedMuscleGroup[focus]=key;for(const [name,,kind] of tissues)if(kind==='muscle')tissueStates.set(name,relevant(name,focus)&&group.names.includes(name)?'on':'off');if(focus==='hip')tissueStates.set('Iliotibial tract.r','fade');updateVisibility();for(const button of $('muscleGroups').children)button.classList.toggle('selected',button===b);if(activeSelection)selectStructure(activeSelection,{showFloating:!$('floatingSelection').hidden});});$('muscleGroups').append(b);}
 
  const kinds=focus==='ankle'?ankleKinds:focus==='hip'?[['flex','屈曲・伸展','Flexion / Extension'],['abd','外転・内転','Abduction / Adduction'],['rot','内旋・外旋','Rotation']]:[['flex','屈曲・伸展','Flexion / Extension'],['rot','内旋・外旋','Rotation'],['stress','内反・外反','Varus / Valgus']];
  document.querySelectorAll('[data-motion]').forEach((b,i)=>{b.hidden=!kinds[i];if(!kinds[i])return;b.dataset.motion=kinds[i][0];b.querySelector('span').textContent=kinds[i][1];b.querySelector('small').textContent=kinds[i][2];b.classList.toggle('selected',b.dataset.motion===motion);});
@@ -300,7 +302,7 @@ function updateModeUI(){
 
  const moving=mode==='kinesiology';
  $('bodyDisplay').hidden=focus!=='body';$('patellaDisplay').hidden=focus!=='knee';$('hipBoneDisplay').hidden=focus!=='hip';$('patellaVisibility').hidden=focus!=='knee';$('axisVisibility').hidden=focus!=='knee';document.querySelectorAll('.jointDisplay').forEach(el=>el.hidden=focus==='body'||boneReview&&focus==='knee');
- $('hipBoneDisplay').hidden=focus!=='hip';$('ligamentList').hidden=false;if(focus==='ankle'){document.querySelectorAll('.jointDisplay').forEach(el=>el.hidden=true);$('patellaDisplay').hidden=false;$('patellaVisibility').hidden=true;$('axisVisibility').hidden=false;$('ligamentList').closest('.jointDisplay').hidden=false;$('jointConnectiveLabel').textContent='靭帯 / Ligaments';}syncJointPresets();
+ $('hipBoneDisplay').hidden=focus!=='hip';$('ligamentList').hidden=false;if(focus==='ankle'){document.querySelectorAll('.jointDisplay').forEach(el=>el.hidden=true);$('patellaDisplay').hidden=false;$('patellaVisibility').hidden=true;$('axisVisibility').hidden=false;$('ligamentList').closest('.jointDisplay').hidden=false;$('jointConnectiveLabel').textContent='靭帯 / Ligaments';$('muscleList').closest('.jointDisplay').hidden=false;}syncJointPresets();
  if(ligamentReview&&focus==='knee')$('ligamentList').closest('.jointDisplay').hidden=false;
  $('ligamentTendency').hidden=boneReview||focus!=='knee';$('axisLabel').textContent='Axes';$('axisLabel').title=focus==='ankle'?'One rotation axis for the selected motion. Provisional motion trial.':'Femur: fixed shaft and horizontal condylar reference (dashed). Tibia: three axes sharing one origin (solid). Shaft estimates; FTA is not calibrated.';
  $('motionSection').hidden=!(moving&&focus!=='body');
@@ -386,7 +388,7 @@ async function loadOne(name){const errs=[];for(const base of BASES){try{
  throw Error(`${name}.glb — ${errs.join(' / ')}`)}
 async function afterLoad(){
  // Rebuild from pristine sources so manual retries cannot accumulate rotations or duplicate meshes.
- ankleLigamentFollower.clear();ankleRig.clear();poseTarget=null;modelLoaded=false;kneeModelReady=false;tissueFollower.clear();ligamentFollower.clear();meniscusFollower.clear();
+ ankleMuscleFollower.clear();ankleLigamentFollower.clear();ankleRig.clear();poseTarget=null;modelLoaded=false;kneeModelReady=false;tissueFollower.clear();ligamentFollower.clear();meniscusFollower.clear();
  for(const obj of registered.values())obj.removeFromParent();for(const root of liveRoots)root.removeFromParent();liveRoots.length=0;
  for(const m of originalMaterials.values())m.dispose();
  registered.clear();originalMaterials.clear();category.clear();meshInfo.clear();visibleStates.clear();skeletonBounds.clear();
@@ -394,7 +396,7 @@ async function afterLoad(){
  for(const [sys,source] of modelSources){const root=source.clone(true);root.traverse(o=>{if(o.isMesh)o.visible=false});scene.add(root);liveRoots.push(root);register(root,sys);}
  if(!registered.has('Femur.r')||!registered.has('Tibia.r'))throw Error('Femur.r / Tibia.r not found');
  flatten();const supplementBones=new Map();for(const [name,obj] of registered)if(/^(Tibia|Fibula|Talus|Calcaneus|Navicular bone|Cuboid bone|.*cuneiform bone|.*metatarsal bone)\.r$/.test(name))supplementBones.set(name,new BoneSurface(obj,getMeshes(name)));for(const e of createAnkleSupplements(supplementBones)){e.mesh.removeFromParent();scene.add(e.mesh);registered.set(e.name,e.mesh);category.set(e.name,'ligament');}assignMaterials();const allBones=[...registered.keys()].filter(n=>category.get(n)==='bone');fullBox=new THREE.Box3();for(const nm of allBones){const b=worldBox(nm);if(b)fullBox.union(b)}
- prepareRig();if(!ankleCalibration){const response=await fetch('config/ankle.json');if(!response.ok)throw Error('Ankle configuration unavailable');ankleCalibration=await response.json();}ankleRig.prepare({registered,parent:rig.knee,calibration:ankleCalibration});scene.updateMatrixWorld(true);captureJointSurfaces();ligamentFollower.prepare({getMeshes,sourceHash:modelSources.get('joints')?.userData.atlasSourceHash,bones:{femur:registered.get('Femur.r'),'Tibia.r':registered.get('Tibia.r'),'Fibula.r':registered.get('Fibula.r')}});tissueFollower.prepare({tissues,getMeshes,hipCenter:hipWorldPoint,kneeCenter:kneeWorldPoint});ankleLigamentFollower.prepare({getMeshes,registered});uiBodyLists();modelLoaded=true;
+ prepareRig();if(!ankleCalibration){const response=await fetch('config/ankle.json');if(!response.ok)throw Error('Ankle configuration unavailable');ankleCalibration=await response.json();}ankleRig.prepare({registered,parent:rig.knee,calibration:ankleCalibration});scene.updateMatrixWorld(true);captureJointSurfaces();ligamentFollower.prepare({getMeshes,sourceHash:modelSources.get('joints')?.userData.atlasSourceHash,bones:{femur:registered.get('Femur.r'),'Tibia.r':registered.get('Tibia.r'),'Fibula.r':registered.get('Fibula.r')}});tissueFollower.prepare({tissues,getMeshes,hipCenter:hipWorldPoint,kneeCenter:kneeWorldPoint});ankleLigamentFollower.prepare({getMeshes,registered});ankleMuscleFollower.prepare({getMeshes,registered});uiBodyLists();modelLoaded=true;
  for(const name of allBones){const root=registered.get(name);root.updateWorldMatrix(true,true);const box=new THREE.Box3();
   for(const mesh of getMeshes(name)){mesh.geometry.computeBoundingBox();const mb=mesh.geometry.boundingBox.clone().applyMatrix4(mesh.matrixWorld);box.union(mb);}
   const inv=root.matrixWorld.clone().invert();const corners=[];for(const x of [box.min.x,box.max.x])for(const y of [box.min.y,box.max.y])for(const z of [box.min.z,box.max.z])corners.push(new THREE.Vector3(x,y,z).applyMatrix4(inv));skeletonBounds.set(name,corners);
@@ -437,7 +439,7 @@ function tick(now=performance.now()){requestAnimationFrame(tick);const dt=Math.m
   if(modelLoaded&&focus==='knee'){const delta=kneeObservation().sub(before);camera.position.add(delta);controls.target.add(delta);}
   if(modeTransition&&rig.hip.quaternion.angleTo(poseTarget.hip)<.001&&rig.knee.quaternion.angleTo(poseTarget.knee)<.001&&rig.knee.position.distanceTo(poseTarget.kneePosition)<.00001)modeTransition=false;
  }
- ankleRig.update(dt,focus==='ankle',$('axisToggle').checked);scene.updateMatrixWorld(true);ligamentFollower.update();ankleLigamentFollower.cues=ankleTensionCues(ankleRig.kind,ankleRig.value,focus==='ankle'&&mode==='kinesiology',ankleRig.stAxis);ankleLigamentFollower.update(dt);tissueFollower.update(rig.hip.quaternion,rig.knee.quaternion,now,{kneeActive:renderedMeniscusActive,flexion:renderedAngles.flex,translation:rig.knee.position.clone().sub(kneeBasePosition),patellaRotation:rig.patella.quaternion,patellaTranslation:rig.patella.position.clone().sub(patellaBasePosition)});updateMusclePresentation(now);controls.update();scene.updateMatrixWorld(true);updateLigamentPresentation(now);fadeLeftSkeleton();renderer.render(scene,camera);
+ ankleRig.update(dt,focus==='ankle',$('axisToggle').checked);scene.updateMatrixWorld(true);ligamentFollower.update();ankleLigamentFollower.cues=ankleTensionCues(ankleRig.kind,ankleRig.value,focus==='ankle'&&mode==='kinesiology',ankleRig.stAxis);ankleLigamentFollower.update(dt);if(focus!=='ankle')ankleMuscleFollower.update(false);tissueFollower.update(rig.hip.quaternion,rig.knee.quaternion,now,{kneeActive:renderedMeniscusActive,flexion:renderedAngles.flex,translation:rig.knee.position.clone().sub(kneeBasePosition),patellaRotation:rig.patella.quaternion,patellaTranslation:rig.patella.position.clone().sub(patellaBasePosition)});if(focus==='ankle')ankleMuscleFollower.update(true);updateMusclePresentation(now);controls.update();scene.updateMatrixWorld(true);updateLigamentPresentation(now);fadeLeftSkeleton();renderer.render(scene,camera);
 }tick();boot();
 // Read-only QA snapshot, opt in locally with ?qa; no remote controls.
 if(new URLSearchParams(location.search).has('qa'))window.atlasAnkleStateQA=()=>({...ankleRig.snapshot(),ligamentSettling:!!ankleLigamentFollower.settling});
@@ -503,3 +505,5 @@ if(new URLSearchParams(location.search).has('qa'))window.atlasPickQA=name=>{cons
 if(new URLSearchParams(location.search).has("qa"))window.atlasMuscleFrameQA=name=>({angle:renderedAngles.flex,playDirection,playing,...tissueFollower.surfaceFrame(name)});
 
 if(new URLSearchParams(location.search).has('qa'))window.atlasAnkleTensionQA=()=>({cues:ankleLigamentFollower.cues,materials:Object.fromEntries(Object.keys(ankleLigamentColors).map(n=>[n,{glow:originalMaterials.get(n)?.emissiveIntensity,color:originalMaterials.get(n)?.color.toArray(),emissive:originalMaterials.get(n)?.emissive.toArray(),opacity:originalMaterials.get(n)?.opacity}]))});
+
+if(new URLSearchParams(location.search).has('qa'))window.atlasAnkleMuscleQA=()=>ankleMuscleFollower.audit();

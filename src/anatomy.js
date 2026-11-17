@@ -1,7 +1,9 @@
 import {ankleLigaments} from '../config/ankle-ligaments.js';
+import {ankleMuscles} from '../config/ankle-muscles.js';
 // Names checked against GLB extras.za_name, 2026-10-30.
 export const tissues = [
  ...ankleLigaments.map(([name,jp])=>[name,jp,'ligament','ankle']),
+ ...ankleMuscles.filter(([name])=>!/gastrocnemius|Calcaneal tendon/.test(name)).map(([name,jp])=>[name,jp,'muscle','ankle']),
  ['Rectus femoris muscle.r','大腿直筋','muscle','hip knee'],
  ['Vastus medialis muscle.r','内側広筋','muscle','knee'],
  ['Vastus lateralis muscle.r','外側広筋','muscle','knee'],
@@ -13,9 +15,9 @@ export const tissues = [
  ['Sartorius muscle.r','縫工筋','muscle','hip knee'],
  ['Gracilis muscle.r','薄筋','muscle','hip knee'],
  ['Popliteus muscle.r','膝窩筋','muscle','knee'],
- ['Calcaneal tendon.r','アキレス腱','muscle','knee'],
- ['Medial head of gastrocnemius.r','腓腹筋内側頭','muscle','knee'],
- ['Lateral head of gastrocnemius.r','腓腹筋外側頭','muscle','knee'],
+ ['Calcaneal tendon.r','アキレス腱','muscle','knee ankle'],
+ ['Medial head of gastrocnemius.r','腓腹筋内側頭','muscle','knee ankle'],
+ ['Lateral head of gastrocnemius.r','腓腹筋外側頭','muscle','knee ankle'],
  ['Gluteus maximus muscle.r','大殿筋','muscle','hip'],
  ['Gluteus medius muscle.r','中殿筋','muscle','hip'],
  ['Gluteus minimus muscle.r','小殿筋','muscle','hip'],
