@@ -1,8 +1,9 @@
 // Hip identity colors preserved from the local legacy/hip reference.
 // Additional knee muscles receive stable, distinct identity colors.
-import {ankleMuscleColors} from '../config/ankle-muscles.js';
+import {ankleMuscleColors,ankleStaticMuscles} from '../config/ankle-muscles.js';
 export const muscleColors=Object.freeze({
  ...ankleMuscleColors,
+ ...Object.fromEntries(ankleStaticMuscles.map(([name,,color])=>[name,color])),
  'Calcaneal tendon.r':0xd8cbb2,
  'Tensor fasciae latae.r':0xeab38f,'(Adductor minimus).r':0xa48acb,'Iliotibial tract.r':0xa7aaa8,
  'Gluteus maximus muscle.r':0xc45382,'Gluteus medius muscle.r':0xdc7197,'Gluteus minimus muscle.r':0xff97b3,

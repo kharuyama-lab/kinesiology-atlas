@@ -20,3 +20,23 @@ export const ankleMuscles=[
 export const ankleMuscleNames=new Set(ankleMuscles.map(([name])=>name));
 export const ankleMuscleColors=Object.fromEntries(ankleMuscles.map(([name,,,color])=>[name,color]));
 export const ankleCalf=name=>/gastrocnemius|Soleus|Plantaris|Calcaneal tendon/.test(name);
+
+// Original intrinsic muscles: no contraction or individual toe articulation.
+// They are displayed rigidly with the existing forefoot frame.
+export const ankleStaticMuscles=[
+ ['(Opponens digiti minimi muscle of foot).r','小趾対立筋',0xb88d76],
+ ['Abductor digiti minimi of foot.r','小趾外転筋',0xcb9c7d],
+ ['Abductor hallucis.r','母趾外転筋',0xc8848f],
+ ['Oblique head of adductor hallucis.r','母趾内転筋・斜頭',0xb584ab],
+ ['Transverse head of adductor hallucis.r','母趾内転筋・横頭',0xa9759f],
+ ['Dorsal interossei muscles of foot.r','足の背側骨間筋',0x8eacbd],
+ ['Extensor digitorum brevis.r','短趾伸筋',0xd1a488],
+ ['Extensor hallucis brevis.r','短母趾伸筋',0xc79482],
+ ['Flexor digiti minimi of foot.r','短小趾屈筋',0xb89f83],
+ ['Flexor digitorum brevis.r','短趾屈筋',0xb78da2],
+ ['Lateral head of flexor hallucis brevis.r','短母趾屈筋・外側頭',0xa59cbd],
+ ['Medial head of flexor hallucis brevis.r','短母趾屈筋・内側頭',0xb5aac9],
+ ['Lumbrical muscles of foot.r','足の虫様筋',0xc2b28b],
+ ['Plantar interossei muscles.r','足の底側骨間筋',0x92b7ae],
+ ['Quadratus plantae muscle.r','足底方形筋',0x9aaa8c]
+];

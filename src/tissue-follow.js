@@ -68,7 +68,9 @@ export class TissueFollower{
   const atRest=hip.angleTo(identity)<1e-5&&knee.angleTo(identity)<1e-5&&translation.lengthSq()<1e-16&&patellaTranslation.lengthSq()<1e-16&&patellaRotation.angleTo(identity)<1e-5;
   const femur={rotation:hip,point:p=>p.sub(this.h).applyQuaternion(hip).add(this.h)},fixed={rotation:identity,point:p=>p},tibia={rotation:hip.clone().multiply(knee),point:p=>p.sub(this.k).applyQuaternion(knee).add(this.k).add(translation).sub(this.h).applyQuaternion(hip).add(this.h)},patella={rotation:hip.clone().multiply(patellaRotation),point:p=>p.sub(this.k).applyQuaternion(patellaRotation).add(this.k).add(patellaTranslation).sub(this.h).applyQuaternion(hip).add(this.h)};
   for(const [name,curve] of this.curves||[]){if(curve.version===this.version)continue;const proximal=/Short head of biceps|Vastus|gastrocnemius|Popliteus/.test(name)?femur:fixed;const distal=tibia;curve.pose({proximal,distal,body:/gastrocnemius/.test(name)?tibia:femur,via:/Rectus femoris|Vastus/.test(name)?{...patella,y:this.patellaY}:null});curve.version=this.version;}
-  for(const e of this.entries){if(!e.mesh.visible||e.version===this.version)continue;
+  for(const e of this.entries){
+   if(options.excludeNames?.has(e.name)){e.version=-1;continue;}
+   if(!e.mesh.visible||e.version===this.version)continue;
    const attr=e.mesh.geometry.attributes.position;e.maxDisplacement=0;
    if(atRest)attr.array.set(e.source);
    else for(let i=0;i<attr.count;i++){

@@ -1,0 +1,362 @@
+{
+  "date": "2026-11-17 Asia/Tokyo",
+  "pageErrors": [],
+  "samples": [
+    {
+      "angle": -40,
+      "contact": [
+        {
+          "name": "Medial head of gastrocnemius.r",
+          "samples": 0,
+          "maxAddedDepth": 0,
+          "worst": null
+        },
+        {
+          "name": "Medial head of gastrocnemius.r",
+          "samples": 0,
+          "maxAddedDepth": 0,
+          "worst": null
+        },
+        {
+          "name": "Lateral head of gastrocnemius.r",
+          "samples": 0,
+          "maxAddedDepth": 0,
+          "worst": null
+        },
+        {
+          "name": "Lateral head of gastrocnemius.r",
+          "samples": 0,
+          "maxAddedDepth": 0,
+          "worst": null
+        },
+        {
+          "name": "Soleus muscle.r",
+          "samples": 0,
+          "maxAddedDepth": 0,
+          "worst": null
+        },
+        {
+          "name": "Soleus muscle.r",
+          "samples": 114,
+          "maxAddedDepth": 0,
+          "worst": null
+        },
+        {
+          "name": "Plantaris muscle.r",
+          "samples": 0,
+          "maxAddedDepth": 0,
+          "worst": null
+        },
+        {
+          "name": "Plantaris muscle.r",
+          "samples": 887,
+          "maxAddedDepth": 0,
+          "worst": null
+        },
+        {
+          "name": "Calcaneal tendon.r",
+          "samples": 940,
+          "maxAddedDepth": 0,
+          "worst": null
+        }
+      ]
+    },
+    {
+      "angle": -20,
+      "contact": [
+        {
+          "name": "Medial head of gastrocnemius.r",
+          "samples": 0,
+          "maxAddedDepth": 0,
+          "worst": null
+        },
+        {
+          "name": "Medial head of gastrocnemius.r",
+          "samples": 0,
+          "maxAddedDepth": 0,
+          "worst": null
+        },
+        {
+          "name": "Lateral head of gastrocnemius.r",
+          "samples": 0,
+          "maxAddedDepth": 0,
+          "worst": null
+        },
+        {
+          "name": "Lateral head of gastrocnemius.r",
+          "samples": 0,
+          "maxAddedDepth": 0,
+          "worst": null
+        },
+        {
+          "name": "Soleus muscle.r",
+          "samples": 0,
+          "maxAddedDepth": 0,
+          "worst": null
+        },
+        {
+          "name": "Soleus muscle.r",
+          "samples": 114,
+          "maxAddedDepth": 0,
+          "worst": null
+        },
+        {
+          "name": "Plantaris muscle.r",
+          "samples": 0,
+          "maxAddedDepth": 0,
+          "worst": null
+        },
+        {
+          "name": "Plantaris muscle.r",
+          "samples": 887,
+          "maxAddedDepth": 0,
+          "worst": null
+        },
+        {
+          "name": "Calcaneal tendon.r",
+          "samples": 940,
+          "maxAddedDepth": 0,
+          "worst": null
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "contact": [
+        {
+          "name": "Medial head of gastrocnemius.r",
+          "samples": 0,
+          "maxAddedDepth": 0,
+          "worst": null
+        },
+        {
+          "name": "Medial head of gastrocnemius.r",
+          "samples": 0,
+          "maxAddedDepth": 0,
+          "worst": null
+        },
+        {
+          "name": "Lateral head of gastrocnemius.r",
+          "samples": 0,
+          "maxAddedDepth": 0,
+          "worst": null
+        },
+        {
+          "name": "Lateral head of gastrocnemius.r",
+          "samples": 0,
+          "maxAddedDepth": 0,
+          "worst": null
+        },
+        {
+          "name": "Soleus muscle.r",
+          "samples": 0,
+          "maxAddedDepth": 0,
+          "worst": null
+        },
+        {
+          "name": "Soleus muscle.r",
+          "samples": 114,
+          "maxAddedDepth": 0,
+          "worst": null
+        },
+        {
+          "name": "Plantaris muscle.r",
+          "samples": 0,
+          "maxAddedDepth": 0,
+          "worst": null
+        },
+        {
+          "name": "Plantaris muscle.r",
+          "samples": 887,
+          "maxAddedDepth": 0,
+          "worst": null
+        },
+        {
+          "name": "Calcaneal tendon.r",
+          "samples": 940,
+          "maxAddedDepth": 0,
+          "worst": null
+        }
+      ]
+    },
+    {
+      "angle": 10,
+      "contact": [
+        {
+          "name": "Medial head of gastrocnemius.r",
+          "samples": 0,
+          "maxAddedDepth": 0,
+          "worst": null
+        },
+        {
+          "name": "Medial head of gastrocnemius.r",
+          "samples": 0,
+          "maxAddedDepth": 0,
+          "worst": null
+        },
+        {
+          "name": "Lateral head of gastrocnemius.r",
+          "samples": 0,
+          "maxAddedDepth": 0,
+          "worst": null
+        },
+        {
+          "name": "Lateral head of gastrocnemius.r",
+          "samples": 0,
+          "maxAddedDepth": 0,
+          "worst": null
+        },
+        {
+          "name": "Soleus muscle.r",
+          "samples": 0,
+          "maxAddedDepth": 0,
+          "worst": null
+        },
+        {
+          "name": "Soleus muscle.r",
+          "samples": 114,
+          "maxAddedDepth": 0,
+          "worst": null
+        },
+        {
+          "name": "Plantaris muscle.r",
+          "samples": 0,
+          "maxAddedDepth": 0,
+          "worst": null
+        },
+        {
+          "name": "Plantaris muscle.r",
+          "samples": 887,
+          "maxAddedDepth": 0,
+          "worst": null
+        },
+        {
+          "name": "Calcaneal tendon.r",
+          "samples": 940,
+          "maxAddedDepth": 0,
+          "worst": null
+        }
+      ]
+    },
+    {
+      "angle": 20,
+      "contact": [
+        {
+          "name": "Medial head of gastrocnemius.r",
+          "samples": 0,
+          "maxAddedDepth": 0,
+          "worst": null
+        },
+        {
+          "name": "Medial head of gastrocnemius.r",
+          "samples": 0,
+          "maxAddedDepth": 0,
+          "worst": null
+        },
+        {
+          "name": "Lateral head of gastrocnemius.r",
+          "samples": 0,
+          "maxAddedDepth": 0,
+          "worst": null
+        },
+        {
+          "name": "Lateral head of gastrocnemius.r",
+          "samples": 0,
+          "maxAddedDepth": 0,
+          "worst": null
+        },
+        {
+          "name": "Soleus muscle.r",
+          "samples": 0,
+          "maxAddedDepth": 0,
+          "worst": null
+        },
+        {
+          "name": "Soleus muscle.r",
+          "samples": 114,
+          "maxAddedDepth": 0,
+          "worst": null
+        },
+        {
+          "name": "Plantaris muscle.r",
+          "samples": 0,
+          "maxAddedDepth": 0,
+          "worst": null
+        },
+        {
+          "name": "Plantaris muscle.r",
+          "samples": 887,
+          "maxAddedDepth": 0,
+          "worst": null
+        },
+        {
+          "name": "Calcaneal tendon.r",
+          "samples": 940,
+          "maxAddedDepth": 0,
+          "worst": null
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "contact": [
+        {
+          "name": "Medial head of gastrocnemius.r",
+          "samples": 0,
+          "maxAddedDepth": 0,
+          "worst": null
+        },
+        {
+          "name": "Medial head of gastrocnemius.r",
+          "samples": 0,
+          "maxAddedDepth": 0,
+          "worst": null
+        },
+        {
+          "name": "Lateral head of gastrocnemius.r",
+          "samples": 0,
+          "maxAddedDepth": 0,
+          "worst": null
+        },
+        {
+          "name": "Lateral head of gastrocnemius.r",
+          "samples": 0,
+          "maxAddedDepth": 0,
+          "worst": null
+        },
+        {
+          "name": "Soleus muscle.r",
+          "samples": 0,
+          "maxAddedDepth": 0,
+          "worst": null
+        },
+        {
+          "name": "Soleus muscle.r",
+          "samples": 114,
+          "maxAddedDepth": 0,
+          "worst": null
+        },
+        {
+          "name": "Plantaris muscle.r",
+          "samples": 0,
+          "maxAddedDepth": 0,
+          "worst": null
+        },
+        {
+          "name": "Plantaris muscle.r",
+          "samples": 887,
+          "maxAddedDepth": 0,
+          "worst": null
+        },
+        {
+          "name": "Calcaneal tendon.r",
+          "samples": 940,
+          "maxAddedDepth": 0,
+          "worst": null
+        }
+      ]
+    }
+  ],
+  "status": "passed",
+  "method": "source-relative added depth at free periarticular vertices and triangle centroids; original terminal collar offsets retained"
+}

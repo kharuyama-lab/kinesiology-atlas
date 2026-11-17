@@ -1,6 +1,7 @@
 import {chromium,expect} from '@playwright/test';
 import fs from 'node:fs';
-import {ankleMuscles} from '../config/ankle-muscles.js';
+import {ankleMuscles,ankleStaticMuscles} from '../config/ankle-muscles.js';
+import {Matrix4,Vector3} from 'three';
 const browser=await chromium.launch({channel:'msedge',headless:true,args:['--use-angle=swiftshader','--enable-unsafe-swiftshader']});
 try{
  const page=await browser.newPage({viewport:{width:1440,height:1000}}),errors=[];page.on('pageerror',e=>errors.push(e.message));
@@ -10,8 +11,9 @@ try{
  expect(new Set(initial.entries.map(e=>e.name)).size).toBe(ankleMuscles.length);
  expect(initial.finite).toBe(true);expect(initial.restError).toBeLessThan(.000001);
  const report=[];fs.mkdirSync('docs/screenshots/ankle-muscles',{recursive:true});
+ const staticRest=await page.evaluate(()=>atlasAnkleStaticMuscleQA());expect(staticRest).toHaveLength(15);
  await page.locator('#muscleDetails').evaluate(el=>el.open=true);
- await expect(page.locator('#muscleList')).toBeVisible();await expect(page.locator('#muscleList [data-tissue]:visible')).toHaveCount(15);
+ await expect(page.locator('#muscleList')).toBeVisible();await expect(page.locator('#muscleList [data-tissue]:visible')).toHaveCount(ankleMuscles.length+ankleStaticMuscles.length);
  await expect(page.locator('#muscleGroups button')).toHaveCount(4);
  await page.screenshot({path:'docs/screenshots/ankle-muscles/neutral.png'});
  for(const [motion,min,max] of [['flex',-40,20],['invert',-10,20],['adduct',-10,15],['compound',-15,20]]){
@@ -20,6 +22,25 @@ try{
    await page.locator('#motionSlider').evaluate((el,value)=>{el.value=value;el.dispatchEvent(new Event('input',{bubbles:true}));},value);
    await expect.poll(()=>page.evaluate(v=>Math.abs(atlasAnkleStateQA().value-v),value),{timeout:60000}).toBeLessThan(.0001);
    const result=await qa();expect(result.finite).toBe(true);expect(result.terminalError).toBeLessThan(.000001);
+   const statics=await page.evaluate(()=>atlasAnkleStaticMuscleQA());
+   for(let i=0;i<statics.length;i++){
+    const current=statics[i],rest=staticRest[i];expect(current.name).toBe(rest.name);
+    expect(current.meshes.every(m=>m.visible)).toBe(true);
+    expect(current.meshes.map(m=>m.positions)).toEqual(rest.meshes.map(m=>m.positions));
+    const expected=new Matrix4().fromArray(current.frame).multiply(new Matrix4().fromArray(rest.frame).invert()).multiply(new Matrix4().fromArray(rest.matrix));
+    for(let j=0;j<16;j++)expect(current.matrix[j]).toBeCloseTo(expected.elements[j],6);
+   }
+   if(motion==='flex'&&value!==0){
+    const calf=[];
+    for(const name of ['Medial head of gastrocnemius.r','Lateral head of gastrocnemius.r','Soleus muscle.r','Calcaneal tendon.r']){
+     const parts=await page.evaluate(n=>atlasAnkleMuscleGeometryQA(n),name);let upperBedError=0;
+     for(const part of parts)for(let i=0;i<part.rest.length;i++)if(part.rest[i][1]>=.36)upperBedError=Math.max(upperBedError,new Vector3(...part.rest[i]).distanceTo(new Vector3(...part.positions[i])));
+     expect(upperBedError).toBeLessThan(.000001);calf.push({name,upperBedError});
+    }
+    result.calf=calf;
+    await page.waitForTimeout(300);const held=await qa();
+    for(let i=0;i<result.entries.length;i++)expect(Math.abs(held.entries[i].maxDisplacement-result.entries[i].maxDisplacement)).toBeLessThan(.000001);
+   }
    if(value===0)expect(result.restError).toBeLessThan(.000001);else expect(Math.max(...result.entries.map(e=>e.maxDisplacement))).toBeGreaterThan(.001);
    report.push({motion,value,...result});console.log(motion,value,'pins',result.terminalError,'update ms',result.updateMs);
    if(value!==0)await page.screenshot({path:`docs/screenshots/ankle-muscles/${motion}-${value<0?'negative':'positive'}.png`});

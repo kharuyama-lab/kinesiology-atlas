@@ -2,6 +2,19 @@ import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {Mesh,BufferGeometry,Float32BufferAttribute,Vector3,Quaternion} from 'three';
 import {TissueFollower} from '../src/tissue-follow.js';
+
+test('shared calf has one geometry writer during Ankle and resumes Knee even without a new bone pose',()=>{
+ const mesh=points=>new Mesh(new BufferGeometry().setAttribute('position',new Float32BufferAttribute(points,3)));
+ const muscle=mesh([1,-3,0,1,-1,0]),name='Calcaneal tendon.r';
+ const bones={'Hip bone.r':mesh([1,0,0]),'Femur.r':mesh([1,-1,0]),'Tibia.r':mesh([1,-3,0])};
+ const follower=new TissueFollower(),identity=new Quaternion();
+ follower.prepare({tissues:[[name,name,'muscle','knee ankle']],getMeshes:n=>[n===name?muscle:bones[n]],hipCenter:new Vector3(1,0,0),kneeCenter:new Vector3(1,-2,0)});
+ follower.update(identity,identity,100);
+ muscle.geometry.attributes.position.setX(0,123);
+ for(const now of [200,300])follower.update(identity,identity,now,{excludeNames:new Set([name])});
+ assert.equal(muscle.geometry.attributes.position.getX(0),123);
+ follower.update(identity,identity,400);assert.equal(muscle.geometry.attributes.position.getX(0),1);
+});
 test('tibial endpoint follows knee, proximal endpoint stays, rest and source are preserved',()=>{
  const mesh=points=>new Mesh(new BufferGeometry().setAttribute('position',new Float32BufferAttribute(points,3)));
  const muscle=mesh([1,-3,0,1,-1,0,1,0,0]),original=muscle.geometry,source=Array.from(original.attributes.position.array);
