@@ -21,8 +21,8 @@ export const ankleMuscleNames=new Set(ankleMuscles.map(([name])=>name));
 export const ankleMuscleColors=Object.fromEntries(ankleMuscles.map(([name,,,color])=>[name,color]));
 export const ankleCalf=name=>/gastrocnemius|Soleus|Plantaris|Calcaneal tendon/.test(name);
 
-// Original intrinsic muscles: no contraction or individual toe articulation.
-// They are displayed rigidly with the existing forefoot frame.
+// Original intrinsic muscles: no active contraction or toe articulation.
+// Passive hindfoot/forefoot following prevents burial at their heel origins.
 export const ankleStaticMuscles=[
  ['(Opponens digiti minimi muscle of foot).r','小趾対立筋',0xb88d76],
  ['Abductor digiti minimi of foot.r','小趾外転筋',0xcb9c7d],
