@@ -1,7 +1,7 @@
 import {Vector3,Matrix4,Box3} from 'three';
 // Source-relative exclusion, including triangle interiors. A source footprint
 // may already intersect a coarse bone; do not deepen it during movement.
-export function resolveMuscleContact(entry,points,frames){
+export function resolveMuscleContact(entry,points,frames,{vertices=null,maxPasses=16,layerTolerance=0}={}){
  const allFrames=frames,bounds=new Box3().setFromPoints(points).expandByScalar(.004);
  frames=new Map([...frames].filter(([,f])=>f.box.intersectsBox(bounds)));
  const index=entry.mesh.geometry.index;
@@ -23,14 +23,14 @@ export function resolveMuscleContact(entry,points,frames){
    const normal=hit.triangle.getNormal(new Vector3()).multiplyScalar(f.surface.normalSign),target=hit.point.clone().addScaledVector(normal,.00015-Math.max(0,baseline-.00015));
    move=target.applyMatrix4(f.surface.world).sub(point);worst=extra;
   }
-  for(const sheet of entry.activeLayerSheets||entry.layerSheets||[]){const contact=sheet.project(point);if(contact&&contact.depth>worst){move=contact.move;worst=contact.depth;}}
+  for(const sheet of entry.activeLayerSheets||entry.layerSheets||[]){const contact=sheet.project(point);if(contact&&contact.depth>Math.max(worst,layerTolerance)){move=contact.move;worst=contact.depth;}}
   return move;
  };
  const world=entry.mesh.matrixWorld,inverse=new Matrix4().copy(world).invert();
  const quantize=p=>{p.applyMatrix4(inverse);p.set(Math.fround(p.x),Math.fround(p.y),Math.fround(p.z));p.applyMatrix4(world);};
  let corrections=0;
- let vertexQueue=points.map((_,i)=>i),faceQueue=entry.contactFaces.map((_,i)=>i);
- for(let pass=0;pass<16;pass++){
+ let vertexQueue=vertices?[...vertices]:points.map((_,i)=>i),faceQueue=vertices?[...new Set(vertexQueue.flatMap(i=>entry.incidentFaces[i]))]:entry.contactFaces.map((_,i)=>i);
+ for(let pass=0;pass<maxPasses;pass++){
   const changed=new Set(),faces=new Set(faceQueue);
   for(const i of vertexQueue){if(entry.owners[i].pin)continue;const move=delta(entry.contactSamples[i],points[i],moved.has(i)?null:equivalent.get(entry.owners[i].carrier));if(move){points[i].add(move);quantize(points[i]);moved.add(i);changed.add(i);for(const f of entry.incidentFaces[i])faces.add(f);corrections++;}}
   for(const id of faces){const sample=entry.contactFaces[id],free=sample.ids.filter(i=>!entry.owners[i].pin);if(!free.length)continue;const carrier=entry.owners[sample.ids[0]].carrier,skip=carrier&&sample.ids.every(i=>!moved.has(i)&&entry.owners[i].carrier===carrier)?equivalent.get(carrier):null;

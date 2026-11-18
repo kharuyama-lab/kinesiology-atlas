@@ -1,4 +1,4 @@
-import {Vector3,Triangle,Box3,Ray} from 'three';
+import {Vector3,Triangle,Box3,Ray} from '../vendor/three/build/three.module.js';
 function build(faces){const box=new Box3();for(const f of faces)box.union(f.box);if(faces.length<=8)return {box,faces};const size=box.getSize(new Vector3()),axis=size.x>size.y&&size.x>size.z?'x':size.y>size.z?'y':'z';faces.sort((a,b)=>a.center[axis]-b.center[axis]);const mid=Math.floor(faces.length/2);return {box,left:build(faces.slice(0,mid)),right:build(faces.slice(mid))};}
 function refit(node){node.box.makeEmpty();if(node.faces)for(const face of node.faces)node.box.union(face.box);else{refit(node.left);refit(node.right);node.box.union(node.left.box).union(node.right.box);}}
 export class TissueSheet{

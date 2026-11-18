@@ -1,0 +1,331 @@
+{
+  "path": "exact contact solver",
+  "samples": [
+    {
+      "frameMs": 549.6999999880791,
+      "inputToFrameMs": 549.6999999880791,
+      "updateMs": 279.59999999403954,
+      "totalFrameMs": 538.6999999880791,
+      "cached": false,
+      "vertices": null
+    },
+    {
+      "frameMs": 481.19999998807907,
+      "inputToFrameMs": 481.09999999403954,
+      "updateMs": 243.19999998807907,
+      "totalFrameMs": 480.19999998807907,
+      "cached": false,
+      "vertices": null
+    },
+    {
+      "frameMs": 523.9000000059605,
+      "inputToFrameMs": 523.9000000059605,
+      "updateMs": 240.69999998807907,
+      "totalFrameMs": 520.7999999821186,
+      "cached": false,
+      "vertices": null
+    },
+    {
+      "frameMs": 481.40000000596046,
+      "inputToFrameMs": 481.40000000596046,
+      "updateMs": 216.5,
+      "totalFrameMs": 480.30000001192093,
+      "cached": false,
+      "vertices": null
+    },
+    {
+      "frameMs": 512.8000000119209,
+      "inputToFrameMs": 512.8000000119209,
+      "updateMs": 243.5,
+      "totalFrameMs": 511.89999997615814,
+      "cached": false,
+      "vertices": null
+    },
+    {
+      "frameMs": 488.19999998807907,
+      "inputToFrameMs": 488.19999998807907,
+      "updateMs": 253.7999999821186,
+      "totalFrameMs": 487.30000001192093,
+      "cached": false,
+      "vertices": null
+    },
+    {
+      "frameMs": 526.5,
+      "inputToFrameMs": 526.5,
+      "updateMs": 255.90000000596046,
+      "totalFrameMs": 525.5,
+      "cached": false,
+      "vertices": null
+    },
+    {
+      "frameMs": 492.80000001192093,
+      "inputToFrameMs": 492.80000001192093,
+      "updateMs": 250.40000000596046,
+      "totalFrameMs": 492,
+      "cached": false,
+      "vertices": null
+    },
+    {
+      "frameMs": 471.39999997615814,
+      "inputToFrameMs": 471.39999997615814,
+      "updateMs": 231.10000002384186,
+      "totalFrameMs": 470.7999999821186,
+      "cached": false,
+      "vertices": null
+    },
+    {
+      "frameMs": 513,
+      "inputToFrameMs": 513,
+      "updateMs": 234.5,
+      "totalFrameMs": 511.40000000596046,
+      "cached": false,
+      "vertices": null
+    },
+    {
+      "frameMs": 503.10000002384186,
+      "inputToFrameMs": 503.10000002384186,
+      "updateMs": 254.80000001192093,
+      "totalFrameMs": 502.2000000178814,
+      "cached": false,
+      "vertices": null
+    },
+    {
+      "frameMs": 469.09999999403954,
+      "inputToFrameMs": 469.09999999403954,
+      "updateMs": 240.30000001192093,
+      "totalFrameMs": 468.30000001192093,
+      "cached": false,
+      "vertices": null
+    },
+    {
+      "frameMs": 489.09999999403954,
+      "inputToFrameMs": 489.09999999403954,
+      "updateMs": 231.7000000178814,
+      "totalFrameMs": 488.5,
+      "cached": false,
+      "vertices": null
+    },
+    {
+      "frameMs": 451.80000001192093,
+      "inputToFrameMs": 451.80000001192093,
+      "updateMs": 221.89999997615814,
+      "totalFrameMs": 451.10000002384186,
+      "cached": false,
+      "vertices": null
+    },
+    {
+      "frameMs": 538.7999999821186,
+      "inputToFrameMs": 538.7999999821186,
+      "updateMs": 273.80000001192093,
+      "totalFrameMs": 538,
+      "cached": false,
+      "vertices": null
+    },
+    {
+      "frameMs": 486.40000000596046,
+      "inputToFrameMs": 486.40000000596046,
+      "updateMs": 233.69999998807907,
+      "totalFrameMs": 485.59999999403954,
+      "cached": false,
+      "vertices": null
+    },
+    {
+      "frameMs": 461.5,
+      "inputToFrameMs": 461.5,
+      "updateMs": 219.2000000178814,
+      "totalFrameMs": 460.5,
+      "cached": false,
+      "vertices": null
+    },
+    {
+      "frameMs": 520.5,
+      "inputToFrameMs": 520.5,
+      "updateMs": 288.89999997615814,
+      "totalFrameMs": 519.9000000059605,
+      "cached": false,
+      "vertices": null
+    },
+    {
+      "frameMs": 515.4000000059605,
+      "inputToFrameMs": 515.4000000059605,
+      "updateMs": 279,
+      "totalFrameMs": 514.6000000238419,
+      "cached": false,
+      "vertices": null
+    },
+    {
+      "frameMs": 512.6999999880791,
+      "inputToFrameMs": 512.6999999880791,
+      "updateMs": 277.09999999403954,
+      "totalFrameMs": 512.0999999940395,
+      "cached": false,
+      "vertices": null
+    },
+    {
+      "frameMs": 608.2000000178814,
+      "inputToFrameMs": 608.2000000178814,
+      "updateMs": 324.19999998807907,
+      "totalFrameMs": 607.1999999880791,
+      "cached": false,
+      "vertices": null
+    },
+    {
+      "frameMs": 588,
+      "inputToFrameMs": 588,
+      "updateMs": 311.40000000596046,
+      "totalFrameMs": 587.1000000238419,
+      "cached": false,
+      "vertices": null
+    },
+    {
+      "frameMs": 703.5999999940395,
+      "inputToFrameMs": 703.5999999940395,
+      "updateMs": 359.40000000596046,
+      "totalFrameMs": 702.5,
+      "cached": false,
+      "vertices": null
+    },
+    {
+      "frameMs": 687.7999999821186,
+      "inputToFrameMs": 687.7999999821186,
+      "updateMs": 363.2999999821186,
+      "totalFrameMs": 686.5999999940395,
+      "cached": false,
+      "vertices": null
+    },
+    {
+      "frameMs": 670.6000000238419,
+      "inputToFrameMs": 670.6000000238419,
+      "updateMs": 383.7000000178814,
+      "totalFrameMs": 669.7000000178814,
+      "cached": false,
+      "vertices": null
+    },
+    {
+      "frameMs": 650.2999999821186,
+      "inputToFrameMs": 650.2999999821186,
+      "updateMs": 357.59999999403954,
+      "totalFrameMs": 649.4000000059605,
+      "cached": false,
+      "vertices": null
+    },
+    {
+      "frameMs": 637.5999999940395,
+      "inputToFrameMs": 637.5999999940395,
+      "updateMs": 360.40000000596046,
+      "totalFrameMs": 636.5,
+      "cached": false,
+      "vertices": null
+    },
+    {
+      "frameMs": 693.7000000178814,
+      "inputToFrameMs": 693.7000000178814,
+      "updateMs": 368.10000002384186,
+      "totalFrameMs": 692.8000000119209,
+      "cached": false,
+      "vertices": null
+    },
+    {
+      "frameMs": 718.6999999880791,
+      "inputToFrameMs": 718.6999999880791,
+      "updateMs": 343.7999999821186,
+      "totalFrameMs": 717.5999999940395,
+      "cached": false,
+      "vertices": null
+    },
+    {
+      "frameMs": 672.5,
+      "inputToFrameMs": 672.5,
+      "updateMs": 361.59999999403954,
+      "totalFrameMs": 671.4000000059605,
+      "cached": false,
+      "vertices": null
+    },
+    {
+      "frameMs": 625.3000000119209,
+      "inputToFrameMs": 625.3000000119209,
+      "updateMs": 289.80000001192093,
+      "totalFrameMs": 624.4000000059605,
+      "cached": false,
+      "vertices": null
+    },
+    {
+      "frameMs": 513.7999999821186,
+      "inputToFrameMs": 513.7999999821186,
+      "updateMs": 229.69999998807907,
+      "totalFrameMs": 512.7999999821186,
+      "cached": false,
+      "vertices": null
+    },
+    {
+      "frameMs": 473,
+      "inputToFrameMs": 473,
+      "updateMs": 221,
+      "totalFrameMs": 472.19999998807907,
+      "cached": false,
+      "vertices": null
+    },
+    {
+      "frameMs": 489.40000000596046,
+      "inputToFrameMs": 489.40000000596046,
+      "updateMs": 230.7999999821186,
+      "totalFrameMs": 488.69999998807907,
+      "cached": false,
+      "vertices": null
+    },
+    {
+      "frameMs": 498.5,
+      "inputToFrameMs": 498.5,
+      "updateMs": 227,
+      "totalFrameMs": 497.80000001192093,
+      "cached": false,
+      "vertices": null
+    },
+    {
+      "frameMs": 1576.9000000059605,
+      "inputToFrameMs": 1576.9000000059605,
+      "updateMs": 252.40000000596046,
+      "totalFrameMs": 1575.699999988079,
+      "cached": false,
+      "vertices": null
+    },
+    {
+      "frameMs": 511,
+      "inputToFrameMs": 511,
+      "updateMs": 263.10000002384186,
+      "totalFrameMs": 510.09999999403954,
+      "cached": false,
+      "vertices": null
+    },
+    {
+      "frameMs": 545.8000000119209,
+      "inputToFrameMs": 545.8000000119209,
+      "updateMs": 261,
+      "totalFrameMs": 544.8999999761581,
+      "cached": false,
+      "vertices": null
+    },
+    {
+      "frameMs": 545,
+      "inputToFrameMs": 545,
+      "updateMs": 277.7999999821186,
+      "totalFrameMs": 544.4000000059605,
+      "cached": false,
+      "vertices": null
+    },
+    {
+      "frameMs": 533,
+      "inputToFrameMs": 533,
+      "updateMs": 277.30000001192093,
+      "totalFrameMs": 532.2000000178814,
+      "cached": false,
+      "vertices": null
+    }
+  ],
+  "frameMedian": 515.4000000059605,
+  "frameP95": 703.5999999940395,
+  "updateMedian": 255.90000000596046,
+  "frameWorkMedian": 514.6000000238419,
+  "inputToFrameP95": 703.5999999940395,
+  "errors": []
+}

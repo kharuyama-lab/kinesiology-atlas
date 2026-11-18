@@ -26,6 +26,7 @@ try{
    await expect.poll(()=>page.evaluate(v=>Math.abs(atlasAnkleStateQA().value-v),value),{timeout:60000}).toBeLessThan(.0001);
    if(value===0)await expect.poll(()=>page.evaluate(()=>atlasAnkleStateQA().value),{timeout:30000}).toBe(0);
    await expect.poll(()=>page.evaluate(()=>atlasAnkleStateQA().ligamentSettling),{timeout:30000}).toBe(false);
+await expect.poll(()=>page.evaluate(()=>atlasAnkleStateQA().retinaculumSettling),{timeout:30000}).toBe(false);
    const result=await qa();expect(result.finite).toBe(true);expect(result.terminalError).toBeLessThan(.000001);
    const statics=await page.evaluate(()=>atlasAnkleStaticMuscleQA());
    for(let i=0;i<statics.length;i++){
@@ -83,5 +84,5 @@ try{
  await page.locator('[data-focus="knee"]').click();await expect(page.locator('#sectionTitle')).toContainText('Knee');
  await page.locator('[data-focus="hip"]').click();await expect(page.locator('#sectionTitle')).toContainText('Hip');
  expect(errors).toEqual([]);
- fs.writeFileSync('docs/ANKLE_MUSCLE_VERIFICATION.json',JSON.stringify({date:'2026-11-17 Asia/Tokyo',status:'passed',pageErrors:errors,samples:report,limitations:['source collars retain original bone offsets; not newly calibrated anatomical footprints','vertex routing is schematic; continuous tendon contact and physiological force are not validated']},null,2)+'\n');
+ fs.writeFileSync('docs/ANKLE_MUSCLE_VERIFICATION.json',JSON.stringify({date:new Date().toLocaleString('sv-SE',{timeZone:'Asia/Tokyo'})+' Asia/Tokyo',status:'passed',pageErrors:errors,samples:report,limitations:['source collars retain original bone offsets; not newly calibrated anatomical footprints','vertex routing is schematic; continuous tendon contact and physiological force are not validated']},null,2)+'\n');
 }finally{await browser.close();}

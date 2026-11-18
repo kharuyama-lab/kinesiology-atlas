@@ -13,7 +13,7 @@ Z-Anatomy - The open source atlas of anatomy - CC-BY-SA 4.0
 - Z-Anatomy 3D Atlas: https://www.z-anatomy.com/
 - Original BodyParts3D project: https://lifesciencedb.jp/bp3d/
 - Public web GLB derivative: https://github.com/nqwrc/3d-anatomy and https://nqwrc.github.io/3d-anatomy/
-- glTF models are not bundled in this project; at runtime they are fetched from the upstream site.
+- Original GLB files are fetched from the upstream site at runtime. `assets/ankle-motion/` contains modified ankle vertex trajectories derived from those pinned models; the original anatomy credits and license conditions also apply to this geometry cache. See its `NOTICE.md`.
 - Upstream license summary: models derive from BodyParts3D (CC BY-SA 2.1 JP), Z-Anatomy (CC BY-SA 4.0). Upstream's complete compilation contains two non-commercial components (inner ear and kidney) and is distributed as CC BY-NC-SA 4.0; see its LICENSE, NOTICE, public/models/License.txt, and attribution requirements before mirroring or redistributing models.
 - Three.js https://threejs.org/ MIT License, pinned 0.160.0 runtime bundled under `vendor/three`; license included.
 - Draco decoders https://google.github.io/draco/ Apache-2.0, bundled from the pinned Three.js package; license included under `vendor/three/draco`.

@@ -1,14 +1,14 @@
 {
   "status": "passed",
   "frames": 240,
-  "maxRouteStep": 0.0007500000000000089,
-  "maxAnchorError": 0,
+  "maxRouteStep": 0.0007500045036707595,
+  "maxAnchorError": 5.965962164242973e-9,
   "ligaments": [
     {
       "name": "Anterior tibiofibular ligament.r",
       "finite": true,
       "maxAnchorError": 4.3337141342645093e-10,
-      "maxAnchorPenetration": 1.9829882553608954e-10,
+      "maxAnchorPenetration": 0,
       "maxSurfaceGap": 1.9829882553608954e-10,
       "byBone": {
         "Tibia.r": 1.9829882553608954e-10,
@@ -20,12 +20,8 @@
       "maxFacePenetration": 0,
       "penetratingBodyVertices": 0,
       "penetratingBodyFaces": 0,
-      "worstBone": "Tibia.r",
-      "worstPoint": [
-        -0.09663683362305164,
-        0.09203037898987532,
-        -0.02543699461966753
-      ],
+      "worstBone": null,
+      "worstPoint": null,
       "routeValid": true
     },
     {
@@ -86,7 +82,7 @@
         "Tibia.r": 1.9729579906799915e-10,
         "Talus.r": 7.997702806640073e-11
       },
-      "maxRestError": 0.0013597994111478329,
+      "maxRestError": 0.0013602001126855612,
       "middleAnchors": 0,
       "maxPenetration": 0,
       "maxFacePenetration": 0,
@@ -110,7 +106,7 @@
         "Tibia.r": 4.262412003131134e-10,
         "Calcaneus.r": 3.0579186886716766e-10
       },
-      "maxRestError": 0.00331902620382607,
+      "maxRestError": 0.0033198001328855753,
       "middleAnchors": 0,
       "maxPenetration": 0,
       "maxFacePenetration": 0,
@@ -132,15 +128,15 @@
       },
       "maxRestError": 0.0036501758731901646,
       "middleAnchors": 0,
-      "maxPenetration": 0.000020331691714402254,
-      "maxFacePenetration": 0.000020277757859296036,
+      "maxPenetration": 0.000019415115452431282,
+      "maxFacePenetration": 0.000020229831212443797,
       "penetratingBodyVertices": 0,
       "penetratingBodyFaces": 0,
       "worstBone": "Talus.r",
       "worstPoint": [
-        -0.055593858538177075,
-        0.06193249187345437,
-        -0.017908287581565777
+        -0.05545472091554343,
+        0.062758066106219,
+        -0.018079265501611354
       ],
       "routeValid": true
     },
@@ -154,7 +150,7 @@
         "Talus.r": 1.9292565431882427e-10,
         "Calcaneus.r": 1.886563553916121e-10
       },
-      "maxRestError": 0.0040684775449335575,
+      "maxRestError": 0.004110600100830197,
       "middleAnchors": 0,
       "maxPenetration": 0,
       "maxFacePenetration": 0,
@@ -178,7 +174,7 @@
         "Talus.r": 8.902986790983226e-11,
         "Calcaneus.r": 8.157014817241164e-11
       },
-      "maxRestError": 0.003922660194803029,
+      "maxRestError": 0.0039240000187419355,
       "middleAnchors": 0,
       "maxPenetration": 0,
       "maxFacePenetration": 0,
@@ -196,23 +192,23 @@
       "name": "Medial talocalcaneal ligament.r",
       "finite": true,
       "maxAnchorError": 4.672788133671833e-10,
-      "maxAnchorPenetration": 1.05626211763551e-10,
+      "maxAnchorPenetration": 2.7109448890182177e-10,
       "maxSurfaceGap": 2.7109448890182177e-10,
       "byBone": {
         "Talus.r": 2.7109448890182177e-10,
         "Calcaneus.r": 1.05626211763551e-10
       },
-      "maxRestError": 0.0035958384978584945,
+      "maxRestError": 0.0035964000853709877,
       "middleAnchors": 0,
       "maxPenetration": 0,
       "maxFacePenetration": 0,
       "penetratingBodyVertices": 0,
       "penetratingBodyFaces": 0,
-      "worstBone": "Calcaneus.r",
+      "worstBone": "Talus.r",
       "worstPoint": [
-        -0.05870483256876469,
-        0.052494284231215715,
-        -0.04445736843626946
+        -0.05570880917366594,
+        0.06164632784202695,
+        -0.05322257895022631
       ],
       "routeValid": true
     },
@@ -226,7 +222,7 @@
         "Talus.r": 8.885597963451209e-11,
         "Calcaneus.r": 1.830759418133313e-10
       },
-      "maxRestError": 0.004670480499044061,
+      "maxRestError": 0.0046697999350726604,
       "middleAnchors": 0,
       "maxPenetration": 0,
       "maxFacePenetration": 0,
@@ -296,15 +292,15 @@
       },
       "maxRestError": 0.006062795175239444,
       "middleAnchors": 0,
-      "maxPenetration": 0.0000014771828711755347,
+      "maxPenetration": 0.0000020550520174904816,
       "maxFacePenetration": 0,
       "penetratingBodyVertices": 0,
       "penetratingBodyFaces": 0,
       "worstBone": "Cuboid bone.r",
       "worstPoint": [
-        -0.09384899912402034,
-        0.0530978855676949,
-        -0.019362309481948614
+        -0.09384783287532628,
+        0.05309766810387373,
+        -0.019363812869414687
       ],
       "routeValid": true
     },
@@ -312,7 +308,7 @@
       "name": "Calcaneocuboid ligament.r",
       "finite": true,
       "maxAnchorError": 2.5087523354804164e-10,
-      "maxAnchorPenetration": 2.2235929112193723e-10,
+      "maxAnchorPenetration": 1.9146779750505668e-10,
       "maxSurfaceGap": 2.2235929112193723e-10,
       "byBone": {
         "Calcaneus.r": 2.2235929112193723e-10,
@@ -324,11 +320,11 @@
       "maxFacePenetration": 0,
       "penetratingBodyVertices": 0,
       "penetratingBodyFaces": 0,
-      "worstBone": "Calcaneus.r",
+      "worstBone": "Cuboid bone.r",
       "worstPoint": [
-        -0.0890504289418459,
-        0.05431773397140205,
-        -0.022181921172887087
+        -0.09365142381284386,
+        0.05319970427080989,
+        -0.018928271892946213
       ],
       "routeValid": true
     },
@@ -342,7 +338,7 @@
         "Calcaneus.r": 2.889769302731954e-10,
         "Cuboid bone.r": 1.8257723100030362e-10
       },
-      "maxRestError": 0.008550096536055207,
+      "maxRestError": 0.007796399760991335,
       "middleAnchors": 0,
       "maxPenetration": 0,
       "maxFacePenetration": 0,
@@ -360,7 +356,7 @@
       "name": "Long plantar ligament.r",
       "finite": true,
       "maxAnchorError": 1.8649984162671904e-9,
-      "maxAnchorPenetration": 7.48177029909686e-10,
+      "maxAnchorPenetration": 7.990529012373271e-10,
       "maxSurfaceGap": 8.123029668707196e-10,
       "byBone": {
         "Calcaneus.r": 7.48177029909686e-10,
@@ -376,11 +372,11 @@
       "maxFacePenetration": 0,
       "penetratingBodyVertices": 0,
       "penetratingBodyFaces": 0,
-      "worstBone": "Calcaneus.r",
+      "worstBone": "Second metatarsal bone.r",
       "worstPoint": [
-        -0.08385662315413356,
-        0.02258138731122017,
-        -0.0715133473277092
+        -0.08704447338823229,
+        0.022862807847559452,
+        0.043154943734407425
       ],
       "routeValid": true
     },
@@ -394,17 +390,17 @@
         "Fibula.r": 2.9704561235239348e-9,
         "Talus.r": 3.841020900200178e-9
       },
-      "maxRestError": 0.003045644611120224,
+      "maxRestError": 0.00304500013589859,
       "middleAnchors": 0,
       "maxPenetration": 0,
-      "maxFacePenetration": 0.000014673185475025685,
+      "maxFacePenetration": 0.000014907950762416074,
       "penetratingBodyVertices": 0,
       "penetratingBodyFaces": 0,
       "worstBone": "Talus.r",
       "worstPoint": [
-        -0.0843722696105639,
-        0.06523758421341577,
-        -0.025688343370954193
+        -0.08437229692935944,
+        0.06523799151182175,
+        -0.02568858116865158
       ],
       "routeValid": true
     },
@@ -442,7 +438,7 @@
         "Fibula.r": 3.5309236095105376e-9,
         "Talus.r": 8.356158660423095e-9
       },
-      "maxRestError": 0.006432428956031799,
+      "maxRestError": 0.006524398922920227,
       "middleAnchors": 0,
       "maxPenetration": 0,
       "maxFacePenetration": 0,

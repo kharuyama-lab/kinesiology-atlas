@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-17 Asia/Tokyo",
+  "date": "2026-11-18 Asia/Tokyo",
   "status": "passed",
   "pageErrors": [],
   "samples": [
@@ -7,288 +7,1164 @@
       "motion": "flex",
       "value": -40,
       "finite": true,
-      "terminalError": 8.093907538805064e-9,
-      "restError": 0.12407843359191069,
-      "updateMs": 220.90000000596046,
+      "terminalError": 7.986753642185498e-9,
+      "restError": 0.12407845232125944,
+      "updateMs": 19.30000001192093,
       "entries": [
         {
           "name": "Tibialis anterior muscle.r",
           "vertices": 1306,
           "distal": "Medial cuneiform bone.r",
-          "maxDisplacement": 0.023841010376914766,
+          "maxDisplacement": 0.02384152699698927,
           "visible": true,
-          "corrections": 28,
-          "contactMs": 9.800000011920929,
+          "corrections": 0,
           "terminalPins": 284
         },
         {
           "name": "Tibialis anterior muscle.r",
           "vertices": 472,
           "distal": "Medial cuneiform bone.r",
-          "maxDisplacement": 0.05495924021353912,
+          "maxDisplacement": 0.05495924254216703,
           "visible": true,
-          "corrections": 4,
-          "contactMs": 1,
+          "corrections": 0,
           "terminalPins": 3
         },
         {
           "name": "Tibialis posterior muscle.r",
           "vertices": 1331,
           "distal": "Navicular bone.r",
-          "maxDisplacement": 0.003912305651223701,
+          "maxDisplacement": 0.003912613864262566,
           "visible": true,
           "corrections": 0,
-          "contactMs": 15.200000017881393,
           "terminalPins": 365
         },
         {
           "name": "Tibialis posterior muscle.r",
           "vertices": 1424,
           "distal": "Navicular bone.r",
-          "maxDisplacement": 0.06169798341055643,
+          "maxDisplacement": 0.06169723484448228,
           "visible": true,
-          "corrections": 518,
-          "contactMs": 17.700000017881393,
+          "corrections": 0,
           "terminalPins": 5
         },
         {
           "name": "Fibularis longus muscle.r",
           "vertices": 1777,
           "distal": "First metatarsal bone.r",
-          "maxDisplacement": 0.008428045908748492,
+          "maxDisplacement": 0.008427947745927105,
           "visible": true,
           "corrections": 0,
-          "contactMs": 10.300000011920929,
           "terminalPins": 307
         },
         {
           "name": "Fibularis longus muscle.r",
           "vertices": 993,
           "distal": "First metatarsal bone.r",
-          "maxDisplacement": 0.04972617349573794,
+          "maxDisplacement": 0.04972617295691953,
           "visible": true,
-          "corrections": 149,
-          "contactMs": 13.099999994039536,
+          "corrections": 0,
           "terminalPins": 9
         },
         {
           "name": "Fibularis brevis muscle.r",
           "vertices": 1130,
           "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0.009747642146157325,
+          "maxDisplacement": 0.009747988602041064,
           "visible": true,
-          "corrections": 44,
-          "contactMs": 9.599999994039536,
+          "corrections": 0,
           "terminalPins": 287
         },
         {
           "name": "Fibularis brevis muscle.r",
           "vertices": 617,
           "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0.034678858944877974,
+          "maxDisplacement": 0.034679037286503664,
           "visible": true,
-          "corrections": 273,
-          "contactMs": 11,
+          "corrections": 0,
           "terminalPins": 43
         },
         {
           "name": "Fibularis tertius muscle.r",
           "vertices": 121,
           "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0.01125174580912647,
+          "maxDisplacement": 0.011251870618953,
           "visible": true,
-          "corrections": 4,
-          "contactMs": 0.5999999940395355,
+          "corrections": 0,
           "terminalPins": 33
         },
         {
           "name": "Fibularis tertius muscle.r",
           "vertices": 188,
           "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0.045554987374054334,
+          "maxDisplacement": 0.04555498953160096,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0.5,
           "terminalPins": 18
         },
         {
           "name": "Medial head of gastrocnemius.r",
           "vertices": 2227,
           "distal": "Calcaneus.r",
-          "maxDisplacement": 0.030586187001228983,
+          "maxDisplacement": 0.03058569711647283,
           "visible": true,
-          "corrections": 106,
-          "contactMs": 3.9000000059604645,
+          "corrections": 0,
           "terminalPins": 0
         },
         {
           "name": "Medial head of gastrocnemius.r",
           "vertices": 1102,
           "distal": "Calcaneus.r",
-          "maxDisplacement": 0.001411745697471244,
+          "maxDisplacement": 0.0014113522154131691,
           "visible": true,
           "corrections": 0,
-          "contactMs": 4.600000023841858,
           "terminalPins": 79
         },
         {
           "name": "Lateral head of gastrocnemius.r",
           "vertices": 1948,
           "distal": "Calcaneus.r",
-          "maxDisplacement": 0.030126826195945648,
+          "maxDisplacement": 0.03012803023446116,
           "visible": true,
           "corrections": 0,
-          "contactMs": 1.800000011920929,
           "terminalPins": 0
         },
         {
           "name": "Lateral head of gastrocnemius.r",
           "vertices": 587,
           "distal": "Calcaneus.r",
-          "maxDisplacement": 0.0018504795829001807,
+          "maxDisplacement": 0.0018506023425892853,
           "visible": true,
           "corrections": 0,
-          "contactMs": 4.5999999940395355,
           "terminalPins": 116
         },
         {
           "name": "Soleus muscle.r",
           "vertices": 3192,
           "distal": "Calcaneus.r",
-          "maxDisplacement": 0.030045034463508757,
+          "maxDisplacement": 0.030045005201196226,
           "visible": true,
-          "corrections": 26,
-          "contactMs": 9,
+          "corrections": 0,
           "terminalPins": 228
         },
         {
           "name": "Soleus muscle.r",
           "vertices": 252,
           "distal": "Calcaneus.r",
-          "maxDisplacement": 0.030374723583734192,
+          "maxDisplacement": 0.03037451455174116,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0.09999999403953552,
           "terminalPins": 0
         },
         {
           "name": "Plantaris muscle.r",
           "vertices": 1103,
           "distal": "Calcaneus.r",
-          "maxDisplacement": 0.02718702556924408,
+          "maxDisplacement": 0.027185741542353713,
           "visible": true,
-          "corrections": 126,
-          "contactMs": 15,
+          "corrections": 0,
           "terminalPins": 104
         },
         {
           "name": "Plantaris muscle.r",
           "vertices": 1279,
           "distal": "Calcaneus.r",
-          "maxDisplacement": 0.04089173063665018,
+          "maxDisplacement": 0.040891735396702704,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0.699999988079071,
           "terminalPins": 145
         },
         {
           "name": "Calcaneal tendon.r",
           "vertices": 2193,
           "distal": "Calcaneus.r",
-          "maxDisplacement": 0.04453416935832859,
+          "maxDisplacement": 0.044534173409752686,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0,
           "terminalPins": 241
         },
         {
           "name": "Extensor digitorum longus.r",
           "vertices": 1371,
           "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0.025830853218881056,
+          "maxDisplacement": 0.02583171358679424,
           "visible": true,
-          "corrections": 35,
-          "contactMs": 9.5,
+          "corrections": 0,
           "terminalPins": 299
         },
         {
           "name": "Extensor digitorum longus.r",
           "vertices": 252,
           "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0.04225958649584388,
+          "maxDisplacement": 0.042260252992080125,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0.5,
           "terminalPins": 0
         },
         {
           "name": "Tendon of extensor digitorum longus.r",
           "vertices": 2640,
           "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0.12139870441736124,
+          "maxDisplacement": 0.12139871223134832,
           "visible": true,
           "corrections": 0,
-          "contactMs": 3,
           "terminalPins": 17
         },
         {
           "name": "Extensor hallucis longus.r",
           "vertices": 671,
           "distal": "First metatarsal bone.r",
-          "maxDisplacement": 0.026433795258243135,
+          "maxDisplacement": 0.026434269048065485,
           "visible": true,
           "corrections": 0,
-          "contactMs": 7.0999999940395355,
           "terminalPins": 132
         },
         {
           "name": "Extensor hallucis longus.r",
           "vertices": 531,
           "distal": "First metatarsal bone.r",
-          "maxDisplacement": 0.10148499325914695,
+          "maxDisplacement": 0.10148500126016109,
           "visible": true,
-          "corrections": 41,
-          "contactMs": 2.5,
+          "corrections": 0,
           "terminalPins": 11
         },
         {
           "name": "Flexor digitorum longus.r",
           "vertices": 1475,
           "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0.015383215608589004,
+          "maxDisplacement": 0.01538340464100075,
           "visible": true,
           "corrections": 0,
-          "contactMs": 5.200000017881393,
           "terminalPins": 156
         },
         {
           "name": "Flexor digitorum longus.r",
           "vertices": 1982,
           "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0.12407843618325616,
+          "maxDisplacement": 0.12407845232125944,
           "visible": true,
-          "corrections": 3,
-          "contactMs": 6.199999988079071,
+          "corrections": 0,
           "terminalPins": 15
         },
         {
           "name": "Flexor hallucis longus.r",
           "vertices": 1896,
           "distal": "First metatarsal bone.r",
-          "maxDisplacement": 0.015054823234504558,
+          "maxDisplacement": 0.015055704787685052,
           "visible": true,
-          "corrections": 31,
-          "contactMs": 10.900000005960464,
+          "corrections": 0,
           "terminalPins": 482
         },
         {
           "name": "Flexor hallucis longus.r",
           "vertices": 1081,
           "distal": "First metatarsal bone.r",
-          "maxDisplacement": 0.11582475570284255,
+          "maxDisplacement": 0.11582476975210602,
           "visible": true,
-          "corrections": 174,
-          "contactMs": 7.199999988079071,
+          "corrections": 0,
+          "terminalPins": 31
+        }
+      ],
+      "status": "source-preserving teaching deformation; not measured muscle force or validated footprints",
+      "achilles": {
+        "restLength": 0.1904333519395865,
+        "length": 0.1904333519395865,
+        "freeFromY": 0.07324755471944809,
+        "sourceBase": [
+          -0.07060121021726552,
+          0.05824755471944809,
+          -0.08189596460365198
+        ],
+        "sourceTop": [
+          -0.11435713097453117,
+          0.243536376953125,
+          -0.07761422606805961
+        ],
+        "base": [
+          -0.07373660948692294,
+          0.08783555850029733,
+          -0.07857678929395592
+        ],
+        "top": [
+          -0.12180852921110039,
+          0.2720980192354801,
+          -0.07743765418612997
+        ],
+        "maxFreeEdgeError": 7.081398085105606e-9,
+        "freeEdges": 11388
+      },
+      "calf": [
+        {
+          "name": "Medial head of gastrocnemius.r",
+          "originError": 0,
+          "middleTravel": 0.01634265495737909
+        },
+        {
+          "name": "Lateral head of gastrocnemius.r",
+          "originError": 0,
+          "middleTravel": 0.01482418092528761
+        },
+        {
+          "name": "Soleus muscle.r",
+          "originError": 0,
+          "middleTravel": 0.014577047556509334
+        }
+      ]
+    },
+    {
+      "motion": "flex",
+      "value": 20,
+      "finite": true,
+      "terminalError": 1.4769062505754528e-8,
+      "restError": 0.06302043797601581,
+      "updateMs": 36.69999998807907,
+      "entries": [
+        {
+          "name": "Tibialis anterior muscle.r",
+          "vertices": 1306,
+          "distal": "Medial cuneiform bone.r",
+          "maxDisplacement": 0.01131473300812999,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 284
+        },
+        {
+          "name": "Tibialis anterior muscle.r",
+          "vertices": 472,
+          "distal": "Medial cuneiform bone.r",
+          "maxDisplacement": 0.027914234601218724,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 3
+        },
+        {
+          "name": "Tibialis posterior muscle.r",
+          "vertices": 1331,
+          "distal": "Navicular bone.r",
+          "maxDisplacement": 0.0005691942529220727,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 365
+        },
+        {
+          "name": "Tibialis posterior muscle.r",
+          "vertices": 1424,
+          "distal": "Navicular bone.r",
+          "maxDisplacement": 0.023802551528225635,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 5
+        },
+        {
+          "name": "Fibularis longus muscle.r",
+          "vertices": 1777,
+          "distal": "First metatarsal bone.r",
+          "maxDisplacement": 0.0026415543791536923,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 307
+        },
+        {
+          "name": "Fibularis longus muscle.r",
+          "vertices": 993,
+          "distal": "First metatarsal bone.r",
+          "maxDisplacement": 0.025256330825700786,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 9
+        },
+        {
+          "name": "Fibularis brevis muscle.r",
+          "vertices": 1130,
+          "distal": "Fifth metatarsal bone.r",
+          "maxDisplacement": 0.004412714215907348,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 287
+        },
+        {
+          "name": "Fibularis brevis muscle.r",
+          "vertices": 617,
+          "distal": "Fifth metatarsal bone.r",
+          "maxDisplacement": 0.017613869993915864,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 43
+        },
+        {
+          "name": "Fibularis tertius muscle.r",
+          "vertices": 121,
+          "distal": "Fifth metatarsal bone.r",
+          "maxDisplacement": 0.012315644175647617,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 33
+        },
+        {
+          "name": "Fibularis tertius muscle.r",
+          "vertices": 188,
+          "distal": "Fifth metatarsal bone.r",
+          "maxDisplacement": 0.023137745633327756,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 18
+        },
+        {
+          "name": "Medial head of gastrocnemius.r",
+          "vertices": 2227,
+          "distal": "Calcaneus.r",
+          "maxDisplacement": 0.014227280795085031,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 0
+        },
+        {
+          "name": "Medial head of gastrocnemius.r",
+          "vertices": 1102,
+          "distal": "Calcaneus.r",
+          "maxDisplacement": 0.0006306980193680012,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 79
+        },
+        {
+          "name": "Lateral head of gastrocnemius.r",
+          "vertices": 1948,
+          "distal": "Calcaneus.r",
+          "maxDisplacement": 0.014105399265122673,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 0
+        },
+        {
+          "name": "Lateral head of gastrocnemius.r",
+          "vertices": 587,
+          "distal": "Calcaneus.r",
+          "maxDisplacement": 0.0008624374649659412,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 116
+        },
+        {
+          "name": "Soleus muscle.r",
+          "vertices": 3192,
+          "distal": "Calcaneus.r",
+          "maxDisplacement": 0.013976241235293759,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 228
+        },
+        {
+          "name": "Soleus muscle.r",
+          "vertices": 252,
+          "distal": "Calcaneus.r",
+          "maxDisplacement": 0.014345988578941428,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 0
+        },
+        {
+          "name": "Plantaris muscle.r",
+          "vertices": 1103,
+          "distal": "Calcaneus.r",
+          "maxDisplacement": 0.014738112685766185,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 104
+        },
+        {
+          "name": "Plantaris muscle.r",
+          "vertices": 1279,
+          "distal": "Calcaneus.r",
+          "maxDisplacement": 0.02076923417939916,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 145
+        },
+        {
+          "name": "Calcaneal tendon.r",
+          "vertices": 2193,
+          "distal": "Calcaneus.r",
+          "maxDisplacement": 0.022619265594513733,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 241
+        },
+        {
+          "name": "Extensor digitorum longus.r",
+          "vertices": 1371,
+          "distal": "Fifth metatarsal bone.r",
+          "maxDisplacement": 0.012598161627105255,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 299
+        },
+        {
+          "name": "Extensor digitorum longus.r",
+          "vertices": 252,
+          "distal": "Fifth metatarsal bone.r",
+          "maxDisplacement": 0.013428691982917273,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 0
+        },
+        {
+          "name": "Tendon of extensor digitorum longus.r",
+          "vertices": 2640,
+          "distal": "Fifth metatarsal bone.r",
+          "maxDisplacement": 0.061659381881384506,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 17
+        },
+        {
+          "name": "Extensor hallucis longus.r",
+          "vertices": 671,
+          "distal": "First metatarsal bone.r",
+          "maxDisplacement": 0.012752778771358156,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 132
+        },
+        {
+          "name": "Extensor hallucis longus.r",
+          "vertices": 531,
+          "distal": "First metatarsal bone.r",
+          "maxDisplacement": 0.051545044079968565,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 11
+        },
+        {
+          "name": "Flexor digitorum longus.r",
+          "vertices": 1475,
+          "distal": "Fifth metatarsal bone.r",
+          "maxDisplacement": 0.004932844285757867,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 156
+        },
+        {
+          "name": "Flexor digitorum longus.r",
+          "vertices": 1982,
+          "distal": "Fifth metatarsal bone.r",
+          "maxDisplacement": 0.06302043797601581,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 15
+        },
+        {
+          "name": "Flexor hallucis longus.r",
+          "vertices": 1896,
+          "distal": "First metatarsal bone.r",
+          "maxDisplacement": 0.007165856051589745,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 482
+        },
+        {
+          "name": "Flexor hallucis longus.r",
+          "vertices": 1081,
+          "distal": "First metatarsal bone.r",
+          "maxDisplacement": 0.05882832507933119,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 31
+        }
+      ],
+      "status": "source-preserving teaching deformation; not measured muscle force or validated footprints",
+      "achilles": {
+        "restLength": 0.1904333519395865,
+        "length": 0.1904333519395865,
+        "freeFromY": 0.07324755471944809,
+        "sourceBase": [
+          -0.07060121021726552,
+          0.05824755471944809,
+          -0.08189596460365198
+        ],
+        "sourceTop": [
+          -0.11435713097453117,
+          0.243536376953125,
+          -0.07761422606805961
+        ],
+        "base": [
+          -0.07011527620937832,
+          0.044337712350512204,
+          -0.07577235899910373
+        ],
+        "top": [
+          -0.11140258594548302,
+          0.23023355709128132,
+          -0.07749122310578242
+        ],
+        "maxFreeEdgeError": 7.232868854192831e-9,
+        "freeEdges": 11388
+      },
+      "calf": [
+        {
+          "name": "Medial head of gastrocnemius.r",
+          "originError": 0,
+          "middleTravel": 0.0073640340364226385
+        },
+        {
+          "name": "Lateral head of gastrocnemius.r",
+          "originError": 0,
+          "middleTravel": 0.006932368321602994
+        },
+        {
+          "name": "Soleus muscle.r",
+          "originError": 0,
+          "middleTravel": 0.006776053491730248
+        }
+      ]
+    },
+    {
+      "motion": "flex",
+      "value": 0,
+      "finite": true,
+      "terminalError": 1.5515838457795457e-17,
+      "restError": 0,
+      "updateMs": 54.90000003576279,
+      "entries": [
+        {
+          "name": "Tibialis anterior muscle.r",
+          "vertices": 1306,
+          "distal": "Medial cuneiform bone.r",
+          "maxDisplacement": 0,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 284
+        },
+        {
+          "name": "Tibialis anterior muscle.r",
+          "vertices": 472,
+          "distal": "Medial cuneiform bone.r",
+          "maxDisplacement": 0,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 3
+        },
+        {
+          "name": "Tibialis posterior muscle.r",
+          "vertices": 1331,
+          "distal": "Navicular bone.r",
+          "maxDisplacement": 0,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 365
+        },
+        {
+          "name": "Tibialis posterior muscle.r",
+          "vertices": 1424,
+          "distal": "Navicular bone.r",
+          "maxDisplacement": 0.0235503688454628,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 5
+        },
+        {
+          "name": "Fibularis longus muscle.r",
+          "vertices": 1777,
+          "distal": "First metatarsal bone.r",
+          "maxDisplacement": 0,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 307
+        },
+        {
+          "name": "Fibularis longus muscle.r",
+          "vertices": 993,
+          "distal": "First metatarsal bone.r",
+          "maxDisplacement": 0.008843415416777134,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 9
+        },
+        {
+          "name": "Fibularis brevis muscle.r",
+          "vertices": 1130,
+          "distal": "Fifth metatarsal bone.r",
+          "maxDisplacement": 0,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 287
+        },
+        {
+          "name": "Fibularis brevis muscle.r",
+          "vertices": 617,
+          "distal": "Fifth metatarsal bone.r",
+          "maxDisplacement": 0.0078292281832546,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 43
+        },
+        {
+          "name": "Fibularis tertius muscle.r",
+          "vertices": 121,
+          "distal": "Fifth metatarsal bone.r",
+          "maxDisplacement": 0,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 33
+        },
+        {
+          "name": "Fibularis tertius muscle.r",
+          "vertices": 188,
+          "distal": "Fifth metatarsal bone.r",
+          "maxDisplacement": 0,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 18
+        },
+        {
+          "name": "Medial head of gastrocnemius.r",
+          "vertices": 2227,
+          "distal": "Calcaneus.r",
+          "maxDisplacement": 0,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 0
+        },
+        {
+          "name": "Medial head of gastrocnemius.r",
+          "vertices": 1102,
+          "distal": "Calcaneus.r",
+          "maxDisplacement": 0,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 79
+        },
+        {
+          "name": "Lateral head of gastrocnemius.r",
+          "vertices": 1948,
+          "distal": "Calcaneus.r",
+          "maxDisplacement": 0,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 0
+        },
+        {
+          "name": "Lateral head of gastrocnemius.r",
+          "vertices": 587,
+          "distal": "Calcaneus.r",
+          "maxDisplacement": 0,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 116
+        },
+        {
+          "name": "Soleus muscle.r",
+          "vertices": 3192,
+          "distal": "Calcaneus.r",
+          "maxDisplacement": 0,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 228
+        },
+        {
+          "name": "Soleus muscle.r",
+          "vertices": 252,
+          "distal": "Calcaneus.r",
+          "maxDisplacement": 0,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 0
+        },
+        {
+          "name": "Plantaris muscle.r",
+          "vertices": 1103,
+          "distal": "Calcaneus.r",
+          "maxDisplacement": 0,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 104
+        },
+        {
+          "name": "Plantaris muscle.r",
+          "vertices": 1279,
+          "distal": "Calcaneus.r",
+          "maxDisplacement": 0,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 145
+        },
+        {
+          "name": "Calcaneal tendon.r",
+          "vertices": 2193,
+          "distal": "Calcaneus.r",
+          "maxDisplacement": 0,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 241
+        },
+        {
+          "name": "Extensor digitorum longus.r",
+          "vertices": 1371,
+          "distal": "Fifth metatarsal bone.r",
+          "maxDisplacement": 0,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 299
+        },
+        {
+          "name": "Extensor digitorum longus.r",
+          "vertices": 252,
+          "distal": "Fifth metatarsal bone.r",
+          "maxDisplacement": 0,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 0
+        },
+        {
+          "name": "Tendon of extensor digitorum longus.r",
+          "vertices": 2640,
+          "distal": "Fifth metatarsal bone.r",
+          "maxDisplacement": 0,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 17
+        },
+        {
+          "name": "Extensor hallucis longus.r",
+          "vertices": 671,
+          "distal": "First metatarsal bone.r",
+          "maxDisplacement": 0,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 132
+        },
+        {
+          "name": "Extensor hallucis longus.r",
+          "vertices": 531,
+          "distal": "First metatarsal bone.r",
+          "maxDisplacement": 0,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 11
+        },
+        {
+          "name": "Flexor digitorum longus.r",
+          "vertices": 1475,
+          "distal": "Fifth metatarsal bone.r",
+          "maxDisplacement": 0,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 156
+        },
+        {
+          "name": "Flexor digitorum longus.r",
+          "vertices": 1982,
+          "distal": "Fifth metatarsal bone.r",
+          "maxDisplacement": 0,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 15
+        },
+        {
+          "name": "Flexor hallucis longus.r",
+          "vertices": 1896,
+          "distal": "First metatarsal bone.r",
+          "maxDisplacement": 0,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 482
+        },
+        {
+          "name": "Flexor hallucis longus.r",
+          "vertices": 1081,
+          "distal": "First metatarsal bone.r",
+          "maxDisplacement": 0.04031038470566273,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 31
+        }
+      ],
+      "status": "source-preserving teaching deformation; not measured muscle force or validated footprints",
+      "achilles": {
+        "restLength": 0.1904333519395865,
+        "length": 0.1904333519395865,
+        "freeFromY": 0.07324755471944809,
+        "sourceBase": [
+          -0.07060121021726552,
+          0.05824755471944809,
+          -0.08189596460365198
+        ],
+        "sourceTop": [
+          -0.11435713097453117,
+          0.243536376953125,
+          -0.07761422606805961
+        ],
+        "base": [
+          -0.07060121021726554,
+          0.0582475547194481,
+          -0.08189596460365198
+        ],
+        "top": [
+          -0.11435713097453117,
+          0.243536376953125,
+          -0.07761422606805961
+        ],
+        "maxFreeEdgeError": 0,
+        "freeEdges": 11388
+      }
+    },
+    {
+      "motion": "invert",
+      "value": -10,
+      "finite": true,
+      "terminalError": 1.4906666907292984e-8,
+      "restError": 0.04299358341384044,
+      "updateMs": 22.5,
+      "entries": [
+        {
+          "name": "Tibialis anterior muscle.r",
+          "vertices": 1306,
+          "distal": "Medial cuneiform bone.r",
+          "maxDisplacement": 0.00034134511402091923,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 284
+        },
+        {
+          "name": "Tibialis anterior muscle.r",
+          "vertices": 472,
+          "distal": "Medial cuneiform bone.r",
+          "maxDisplacement": 0.014473079554172298,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 3
+        },
+        {
+          "name": "Tibialis posterior muscle.r",
+          "vertices": 1331,
+          "distal": "Navicular bone.r",
+          "maxDisplacement": 0.004089601033445053,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 365
+        },
+        {
+          "name": "Tibialis posterior muscle.r",
+          "vertices": 1424,
+          "distal": "Navicular bone.r",
+          "maxDisplacement": 0.022793771962480548,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 5
+        },
+        {
+          "name": "Fibularis longus muscle.r",
+          "vertices": 1777,
+          "distal": "First metatarsal bone.r",
+          "maxDisplacement": 0.003983378660021521,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 307
+        },
+        {
+          "name": "Fibularis longus muscle.r",
+          "vertices": 993,
+          "distal": "First metatarsal bone.r",
+          "maxDisplacement": 0.014325533733263418,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 9
+        },
+        {
+          "name": "Fibularis brevis muscle.r",
+          "vertices": 1130,
+          "distal": "Fifth metatarsal bone.r",
+          "maxDisplacement": 0.004973199324202778,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 287
+        },
+        {
+          "name": "Fibularis brevis muscle.r",
+          "vertices": 617,
+          "distal": "Fifth metatarsal bone.r",
+          "maxDisplacement": 0.013919589147688182,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 43
+        },
+        {
+          "name": "Fibularis tertius muscle.r",
+          "vertices": 121,
+          "distal": "Fifth metatarsal bone.r",
+          "maxDisplacement": 0.00772719049172773,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 33
+        },
+        {
+          "name": "Fibularis tertius muscle.r",
+          "vertices": 188,
+          "distal": "Fifth metatarsal bone.r",
+          "maxDisplacement": 0.01692750715411512,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 18
+        },
+        {
+          "name": "Medial head of gastrocnemius.r",
+          "vertices": 2227,
+          "distal": "Calcaneus.r",
+          "maxDisplacement": 0.003095906070330586,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 0
+        },
+        {
+          "name": "Medial head of gastrocnemius.r",
+          "vertices": 1102,
+          "distal": "Calcaneus.r",
+          "maxDisplacement": 0.00014852352255277396,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 79
+        },
+        {
+          "name": "Lateral head of gastrocnemius.r",
+          "vertices": 1948,
+          "distal": "Calcaneus.r",
+          "maxDisplacement": 0.0036343259305516556,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 0
+        },
+        {
+          "name": "Lateral head of gastrocnemius.r",
+          "vertices": 587,
+          "distal": "Calcaneus.r",
+          "maxDisplacement": 0.0002114952806004499,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 116
+        },
+        {
+          "name": "Soleus muscle.r",
+          "vertices": 3192,
+          "distal": "Calcaneus.r",
+          "maxDisplacement": 0.004203574967136632,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 228
+        },
+        {
+          "name": "Soleus muscle.r",
+          "vertices": 252,
+          "distal": "Calcaneus.r",
+          "maxDisplacement": 0.004438061717625081,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 0
+        },
+        {
+          "name": "Plantaris muscle.r",
+          "vertices": 1103,
+          "distal": "Calcaneus.r",
+          "maxDisplacement": 0.0036884657293252236,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 104
+        },
+        {
+          "name": "Plantaris muscle.r",
+          "vertices": 1279,
+          "distal": "Calcaneus.r",
+          "maxDisplacement": 0.00732910615397756,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 145
+        },
+        {
+          "name": "Calcaneal tendon.r",
+          "vertices": 2193,
+          "distal": "Calcaneus.r",
+          "maxDisplacement": 0.007087951955443261,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 241
+        },
+        {
+          "name": "Extensor digitorum longus.r",
+          "vertices": 1371,
+          "distal": "Fifth metatarsal bone.r",
+          "maxDisplacement": 0.005924542834034391,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 299
+        },
+        {
+          "name": "Extensor digitorum longus.r",
+          "vertices": 252,
+          "distal": "Fifth metatarsal bone.r",
+          "maxDisplacement": 0.0060744385517017205,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 0
+        },
+        {
+          "name": "Tendon of extensor digitorum longus.r",
+          "vertices": 2640,
+          "distal": "Fifth metatarsal bone.r",
+          "maxDisplacement": 0.03710797835962521,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 17
+        },
+        {
+          "name": "Extensor hallucis longus.r",
+          "vertices": 671,
+          "distal": "First metatarsal bone.r",
+          "maxDisplacement": 0.002993876914728198,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 132
+        },
+        {
+          "name": "Extensor hallucis longus.r",
+          "vertices": 531,
+          "distal": "First metatarsal bone.r",
+          "maxDisplacement": 0.029620273024548508,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 11
+        },
+        {
+          "name": "Flexor digitorum longus.r",
+          "vertices": 1475,
+          "distal": "Fifth metatarsal bone.r",
+          "maxDisplacement": 0.0034601045703344193,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 156
+        },
+        {
+          "name": "Flexor digitorum longus.r",
+          "vertices": 1982,
+          "distal": "Fifth metatarsal bone.r",
+          "maxDisplacement": 0.03845554345143963,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 15
+        },
+        {
+          "name": "Flexor hallucis longus.r",
+          "vertices": 1896,
+          "distal": "First metatarsal bone.r",
+          "maxDisplacement": 0.003466952988258246,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 482
+        },
+        {
+          "name": "Flexor hallucis longus.r",
+          "vertices": 1081,
+          "distal": "First metatarsal bone.r",
+          "maxDisplacement": 0.03491120699131062,
+          "visible": true,
+          "corrections": 0,
           "terminalPins": 31
         }
       ],
@@ -308,1004 +1184,16 @@
           -0.07761422606805961
         ],
         "base": [
-          -0.07373660938081322,
-          0.08783555782115735,
-          -0.07857678963565759
+          -0.06523114387274534,
+          0.055713447669735586,
+          -0.0811111533485899
         ],
         "top": [
-          -0.12180852902564014,
-          0.27209801857457183,
-          -0.07743765412830447
+          -0.11341106613324653,
+          0.23991929605022244,
+          -0.07768156965030222
         ],
-        "maxFreeEdgeError": 7.72164415816911e-9,
-        "freeEdges": 11388
-      },
-      "calf": [
-        {
-          "name": "Medial head of gastrocnemius.r",
-          "originError": 0,
-          "middleTravel": 0.016342632125582984
-        },
-        {
-          "name": "Lateral head of gastrocnemius.r",
-          "originError": 0,
-          "middleTravel": 0.01482421076702713
-        },
-        {
-          "name": "Soleus muscle.r",
-          "originError": 0,
-          "middleTravel": 0.014577045807261874
-        }
-      ]
-    },
-    {
-      "motion": "flex",
-      "value": 20,
-      "finite": true,
-      "terminalError": 1.4821553874318026e-8,
-      "restError": 0.06302042878435889,
-      "updateMs": 192.40000000596046,
-      "entries": [
-        {
-          "name": "Tibialis anterior muscle.r",
-          "vertices": 1306,
-          "distal": "Medial cuneiform bone.r",
-          "maxDisplacement": 0.01131598601243277,
-          "visible": true,
-          "corrections": 10,
-          "contactMs": 9.599999994039536,
-          "terminalPins": 284
-        },
-        {
-          "name": "Tibialis anterior muscle.r",
-          "vertices": 472,
-          "distal": "Medial cuneiform bone.r",
-          "maxDisplacement": 0.027914237159513668,
-          "visible": true,
-          "corrections": 24,
-          "contactMs": 1.600000023841858,
-          "terminalPins": 3
-        },
-        {
-          "name": "Tibialis posterior muscle.r",
-          "vertices": 1331,
-          "distal": "Navicular bone.r",
-          "maxDisplacement": 0.0005684177287138621,
-          "visible": true,
-          "corrections": 0,
-          "contactMs": 14.5,
-          "terminalPins": 365
-        },
-        {
-          "name": "Tibialis posterior muscle.r",
-          "vertices": 1424,
-          "distal": "Navicular bone.r",
-          "maxDisplacement": 0.023802545776007215,
-          "visible": true,
-          "corrections": 364,
-          "contactMs": 19.80000001192093,
-          "terminalPins": 5
-        },
-        {
-          "name": "Fibularis longus muscle.r",
-          "vertices": 1777,
-          "distal": "First metatarsal bone.r",
-          "maxDisplacement": 0.0026409525674545723,
-          "visible": true,
-          "corrections": 0,
-          "contactMs": 9.200000017881393,
-          "terminalPins": 307
-        },
-        {
-          "name": "Fibularis longus muscle.r",
-          "vertices": 993,
-          "distal": "First metatarsal bone.r",
-          "maxDisplacement": 0.025256320767935273,
-          "visible": true,
-          "corrections": 146,
-          "contactMs": 10,
-          "terminalPins": 9
-        },
-        {
-          "name": "Fibularis brevis muscle.r",
-          "vertices": 1130,
-          "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0.004413539126884682,
-          "visible": true,
-          "corrections": 9,
-          "contactMs": 8.399999976158142,
-          "terminalPins": 287
-        },
-        {
-          "name": "Fibularis brevis muscle.r",
-          "vertices": 617,
-          "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0.01761366949847629,
-          "visible": true,
-          "corrections": 255,
-          "contactMs": 9.300000011920929,
-          "terminalPins": 43
-        },
-        {
-          "name": "Fibularis tertius muscle.r",
-          "vertices": 121,
-          "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0.012315303850569044,
-          "visible": true,
-          "corrections": 2,
-          "contactMs": 0.699999988079071,
-          "terminalPins": 33
-        },
-        {
-          "name": "Fibularis tertius muscle.r",
-          "vertices": 188,
-          "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0.023137742014212537,
-          "visible": true,
-          "corrections": 2,
-          "contactMs": 0.800000011920929,
-          "terminalPins": 18
-        },
-        {
-          "name": "Medial head of gastrocnemius.r",
-          "vertices": 2227,
-          "distal": "Calcaneus.r",
-          "maxDisplacement": 0.014226866744092686,
-          "visible": true,
-          "corrections": 29,
-          "contactMs": 2.800000011920929,
-          "terminalPins": 0
-        },
-        {
-          "name": "Medial head of gastrocnemius.r",
-          "vertices": 1102,
-          "distal": "Calcaneus.r",
-          "maxDisplacement": 0.0006321529237554741,
-          "visible": true,
-          "corrections": 0,
-          "contactMs": 4.5999999940395355,
-          "terminalPins": 79
-        },
-        {
-          "name": "Lateral head of gastrocnemius.r",
-          "vertices": 1948,
-          "distal": "Calcaneus.r",
-          "maxDisplacement": 0.01410554500052282,
-          "visible": true,
-          "corrections": 0,
-          "contactMs": 1.4000000059604645,
-          "terminalPins": 0
-        },
-        {
-          "name": "Lateral head of gastrocnemius.r",
-          "vertices": 587,
-          "distal": "Calcaneus.r",
-          "maxDisplacement": 0.0008623430632537411,
-          "visible": true,
-          "corrections": 0,
-          "contactMs": 3.699999988079071,
-          "terminalPins": 116
-        },
-        {
-          "name": "Soleus muscle.r",
-          "vertices": 3192,
-          "distal": "Calcaneus.r",
-          "maxDisplacement": 0.013977180980469546,
-          "visible": true,
-          "corrections": 0,
-          "contactMs": 7.699999988079071,
-          "terminalPins": 228
-        },
-        {
-          "name": "Soleus muscle.r",
-          "vertices": 252,
-          "distal": "Calcaneus.r",
-          "maxDisplacement": 0.014344288755255601,
-          "visible": true,
-          "corrections": 0,
-          "contactMs": 0.09999999403953552,
-          "terminalPins": 0
-        },
-        {
-          "name": "Plantaris muscle.r",
-          "vertices": 1103,
-          "distal": "Calcaneus.r",
-          "maxDisplacement": 0.014738116762180998,
-          "visible": true,
-          "corrections": 46,
-          "contactMs": 8.5,
-          "terminalPins": 104
-        },
-        {
-          "name": "Plantaris muscle.r",
-          "vertices": 1279,
-          "distal": "Calcaneus.r",
-          "maxDisplacement": 0.02076923666374135,
-          "visible": true,
-          "corrections": 0,
-          "contactMs": 0.5999999940395355,
-          "terminalPins": 145
-        },
-        {
-          "name": "Calcaneal tendon.r",
-          "vertices": 2193,
-          "distal": "Calcaneus.r",
-          "maxDisplacement": 0.022619260388976156,
-          "visible": true,
-          "corrections": 0,
-          "contactMs": 0,
-          "terminalPins": 241
-        },
-        {
-          "name": "Extensor digitorum longus.r",
-          "vertices": 1371,
-          "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0.012598660485034654,
-          "visible": true,
-          "corrections": 1,
-          "contactMs": 9.400000005960464,
-          "terminalPins": 299
-        },
-        {
-          "name": "Extensor digitorum longus.r",
-          "vertices": 252,
-          "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0.01342933823907509,
-          "visible": true,
-          "corrections": 12,
-          "contactMs": 1.5,
-          "terminalPins": 0
-        },
-        {
-          "name": "Tendon of extensor digitorum longus.r",
-          "vertices": 2640,
-          "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0.06165937179621175,
-          "visible": true,
-          "corrections": 2,
-          "contactMs": 4.5,
-          "terminalPins": 17
-        },
-        {
-          "name": "Extensor hallucis longus.r",
-          "vertices": 671,
-          "distal": "First metatarsal bone.r",
-          "maxDisplacement": 0.012753088810166695,
-          "visible": true,
-          "corrections": 0,
-          "contactMs": 4.899999976158142,
-          "terminalPins": 132
-        },
-        {
-          "name": "Extensor hallucis longus.r",
-          "vertices": 531,
-          "distal": "First metatarsal bone.r",
-          "maxDisplacement": 0.05154503881350236,
-          "visible": true,
-          "corrections": 36,
-          "contactMs": 2.5999999940395355,
-          "terminalPins": 11
-        },
-        {
-          "name": "Flexor digitorum longus.r",
-          "vertices": 1475,
-          "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0.004933794051145963,
-          "visible": true,
-          "corrections": 3,
-          "contactMs": 3.2999999821186066,
-          "terminalPins": 156
-        },
-        {
-          "name": "Flexor digitorum longus.r",
-          "vertices": 1982,
-          "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0.06302042896778899,
-          "visible": true,
-          "corrections": 18,
-          "contactMs": 5.799999982118607,
-          "terminalPins": 15
-        },
-        {
-          "name": "Flexor hallucis longus.r",
-          "vertices": 1896,
-          "distal": "First metatarsal bone.r",
-          "maxDisplacement": 0.007167574520829478,
-          "visible": true,
-          "corrections": 25,
-          "contactMs": 8.599999994039536,
-          "terminalPins": 482
-        },
-        {
-          "name": "Flexor hallucis longus.r",
-          "vertices": 1081,
-          "distal": "First metatarsal bone.r",
-          "maxDisplacement": 0.05882831871528303,
-          "visible": true,
-          "corrections": 110,
-          "contactMs": 4.0999999940395355,
-          "terminalPins": 31
-        }
-      ],
-      "status": "source-preserving teaching deformation; not measured muscle force or validated footprints",
-      "achilles": {
-        "restLength": 0.1904333519395865,
-        "length": 0.1904333519395865,
-        "freeFromY": 0.07324755471944809,
-        "sourceBase": [
-          -0.07060121021726552,
-          0.05824755471944809,
-          -0.08189596460365198
-        ],
-        "sourceTop": [
-          -0.11435713097453117,
-          0.243536376953125,
-          -0.07761422606805961
-        ],
-        "base": [
-          -0.07011527621202869,
-          0.04433771282584949,
-          -0.07577235931689141
-        ],
-        "top": [
-          -0.11140258604023928,
-          0.2302335575488677,
-          -0.07749122313094231
-        ],
-        "maxFreeEdgeError": 6.782044227431061e-9,
-        "freeEdges": 11388
-      },
-      "calf": [
-        {
-          "name": "Medial head of gastrocnemius.r",
-          "originError": 0,
-          "middleTravel": 0.0073640226225850265
-        },
-        {
-          "name": "Lateral head of gastrocnemius.r",
-          "originError": 0,
-          "middleTravel": 0.006932380566626628
-        },
-        {
-          "name": "Soleus muscle.r",
-          "originError": 0,
-          "middleTravel": 0.006776027716070011
-        }
-      ]
-    },
-    {
-      "motion": "flex",
-      "value": 0,
-      "finite": true,
-      "terminalError": 1.5515838457795457e-17,
-      "restError": 1.962615573354719e-17,
-      "updateMs": 60.80000001192093,
-      "entries": [
-        {
-          "name": "Tibialis anterior muscle.r",
-          "vertices": 1306,
-          "distal": "Medial cuneiform bone.r",
-          "maxDisplacement": 0,
-          "visible": true,
-          "corrections": 0,
-          "contactMs": 0,
-          "terminalPins": 284
-        },
-        {
-          "name": "Tibialis anterior muscle.r",
-          "vertices": 472,
-          "distal": "Medial cuneiform bone.r",
-          "maxDisplacement": 0,
-          "visible": true,
-          "corrections": 0,
-          "contactMs": 0.6000000238418579,
-          "terminalPins": 3
-        },
-        {
-          "name": "Tibialis posterior muscle.r",
-          "vertices": 1331,
-          "distal": "Navicular bone.r",
-          "maxDisplacement": 0,
-          "visible": true,
-          "corrections": 0,
-          "contactMs": 0,
-          "terminalPins": 365
-        },
-        {
-          "name": "Tibialis posterior muscle.r",
-          "vertices": 1424,
-          "distal": "Navicular bone.r",
-          "maxDisplacement": 0.0235503688454628,
-          "visible": true,
-          "corrections": 453,
-          "contactMs": 9.700000017881393,
-          "terminalPins": 5
-        },
-        {
-          "name": "Fibularis longus muscle.r",
-          "vertices": 1777,
-          "distal": "First metatarsal bone.r",
-          "maxDisplacement": 0,
-          "visible": true,
-          "corrections": 0,
-          "contactMs": 0,
-          "terminalPins": 307
-        },
-        {
-          "name": "Fibularis longus muscle.r",
-          "vertices": 993,
-          "distal": "First metatarsal bone.r",
-          "maxDisplacement": 0.008843415416777134,
-          "visible": true,
-          "corrections": 164,
-          "contactMs": 4.799999982118607,
-          "terminalPins": 9
-        },
-        {
-          "name": "Fibularis brevis muscle.r",
-          "vertices": 1130,
-          "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0,
-          "visible": true,
-          "corrections": 0,
-          "contactMs": 0,
-          "terminalPins": 287
-        },
-        {
-          "name": "Fibularis brevis muscle.r",
-          "vertices": 617,
-          "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0.0078292281832546,
-          "visible": true,
-          "corrections": 208,
-          "contactMs": 4.800000011920929,
-          "terminalPins": 43
-        },
-        {
-          "name": "Fibularis tertius muscle.r",
-          "vertices": 121,
-          "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0,
-          "visible": true,
-          "corrections": 0,
-          "contactMs": 0.20000001788139343,
-          "terminalPins": 33
-        },
-        {
-          "name": "Fibularis tertius muscle.r",
-          "vertices": 188,
-          "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0,
-          "visible": true,
-          "corrections": 0,
-          "contactMs": 0.19999998807907104,
-          "terminalPins": 18
-        },
-        {
-          "name": "Medial head of gastrocnemius.r",
-          "vertices": 2227,
-          "distal": "Calcaneus.r",
-          "maxDisplacement": 0,
-          "visible": true,
-          "corrections": 0,
-          "contactMs": 0,
-          "terminalPins": 0
-        },
-        {
-          "name": "Medial head of gastrocnemius.r",
-          "vertices": 1102,
-          "distal": "Calcaneus.r",
-          "maxDisplacement": 0,
-          "visible": true,
-          "corrections": 0,
-          "contactMs": 0,
-          "terminalPins": 79
-        },
-        {
-          "name": "Lateral head of gastrocnemius.r",
-          "vertices": 1948,
-          "distal": "Calcaneus.r",
-          "maxDisplacement": 0,
-          "visible": true,
-          "corrections": 0,
-          "contactMs": 0,
-          "terminalPins": 0
-        },
-        {
-          "name": "Lateral head of gastrocnemius.r",
-          "vertices": 587,
-          "distal": "Calcaneus.r",
-          "maxDisplacement": 0,
-          "visible": true,
-          "corrections": 0,
-          "contactMs": 0,
-          "terminalPins": 116
-        },
-        {
-          "name": "Soleus muscle.r",
-          "vertices": 3192,
-          "distal": "Calcaneus.r",
-          "maxDisplacement": 0,
-          "visible": true,
-          "corrections": 0,
-          "contactMs": 0,
-          "terminalPins": 228
-        },
-        {
-          "name": "Soleus muscle.r",
-          "vertices": 252,
-          "distal": "Calcaneus.r",
-          "maxDisplacement": 1.3877787807814457e-17,
-          "visible": true,
-          "corrections": 0,
-          "contactMs": 0,
-          "terminalPins": 0
-        },
-        {
-          "name": "Plantaris muscle.r",
-          "vertices": 1103,
-          "distal": "Calcaneus.r",
-          "maxDisplacement": 1.3877787807814457e-17,
-          "visible": true,
-          "corrections": 0,
-          "contactMs": 0,
-          "terminalPins": 104
-        },
-        {
-          "name": "Plantaris muscle.r",
-          "vertices": 1279,
-          "distal": "Calcaneus.r",
-          "maxDisplacement": 1.5515838457795457e-17,
-          "visible": true,
-          "corrections": 0,
-          "contactMs": 0.5,
-          "terminalPins": 145
-        },
-        {
-          "name": "Calcaneal tendon.r",
-          "vertices": 2193,
-          "distal": "Calcaneus.r",
-          "maxDisplacement": 1.962615573354719e-17,
-          "visible": true,
-          "corrections": 0,
-          "contactMs": 0,
-          "terminalPins": 241
-        },
-        {
-          "name": "Extensor digitorum longus.r",
-          "vertices": 1371,
-          "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0,
-          "visible": true,
-          "corrections": 0,
-          "contactMs": 0,
-          "terminalPins": 299
-        },
-        {
-          "name": "Extensor digitorum longus.r",
-          "vertices": 252,
-          "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0,
-          "visible": true,
-          "corrections": 0,
-          "contactMs": 0.09999999403953552,
-          "terminalPins": 0
-        },
-        {
-          "name": "Tendon of extensor digitorum longus.r",
-          "vertices": 2640,
-          "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0,
-          "visible": true,
-          "corrections": 0,
-          "contactMs": 2.5,
-          "terminalPins": 17
-        },
-        {
-          "name": "Extensor hallucis longus.r",
-          "vertices": 671,
-          "distal": "First metatarsal bone.r",
-          "maxDisplacement": 0,
-          "visible": true,
-          "corrections": 0,
-          "contactMs": 0,
-          "terminalPins": 132
-        },
-        {
-          "name": "Extensor hallucis longus.r",
-          "vertices": 531,
-          "distal": "First metatarsal bone.r",
-          "maxDisplacement": 0,
-          "visible": true,
-          "corrections": 0,
-          "contactMs": 0.5,
-          "terminalPins": 11
-        },
-        {
-          "name": "Flexor digitorum longus.r",
-          "vertices": 1475,
-          "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0,
-          "visible": true,
-          "corrections": 0,
-          "contactMs": 0,
-          "terminalPins": 156
-        },
-        {
-          "name": "Flexor digitorum longus.r",
-          "vertices": 1982,
-          "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0,
-          "visible": true,
-          "corrections": 0,
-          "contactMs": 3.699999988079071,
-          "terminalPins": 15
-        },
-        {
-          "name": "Flexor hallucis longus.r",
-          "vertices": 1896,
-          "distal": "First metatarsal bone.r",
-          "maxDisplacement": 0,
-          "visible": true,
-          "corrections": 0,
-          "contactMs": 0,
-          "terminalPins": 482
-        },
-        {
-          "name": "Flexor hallucis longus.r",
-          "vertices": 1081,
-          "distal": "First metatarsal bone.r",
-          "maxDisplacement": 0.04031038470566273,
-          "visible": true,
-          "corrections": 162,
-          "contactMs": 3.699999988079071,
-          "terminalPins": 31
-        }
-      ],
-      "status": "source-preserving teaching deformation; not measured muscle force or validated footprints",
-      "achilles": {
-        "restLength": 0.1904333519395865,
-        "length": 0.1904333519395865,
-        "freeFromY": 0.07324755471944809,
-        "sourceBase": [
-          -0.07060121021726552,
-          0.05824755471944809,
-          -0.08189596460365198
-        ],
-        "sourceTop": [
-          -0.11435713097453117,
-          0.243536376953125,
-          -0.07761422606805961
-        ],
-        "base": [
-          -0.07060121021726554,
-          0.0582475547194481,
-          -0.08189596460365198
-        ],
-        "top": [
-          -0.11435713097453117,
-          0.243536376953125,
-          -0.07761422606805961
-        ],
-        "maxFreeEdgeError": 0,
-        "freeEdges": 11388
-      }
-    },
-    {
-      "motion": "invert",
-      "value": -10,
-      "finite": true,
-      "terminalError": 1.492096350141011e-8,
-      "restError": 0.04299479950190553,
-      "updateMs": 224.19999998807907,
-      "entries": [
-        {
-          "name": "Tibialis anterior muscle.r",
-          "vertices": 1306,
-          "distal": "Medial cuneiform bone.r",
-          "maxDisplacement": 0.0003400239487983134,
-          "visible": true,
-          "corrections": 0,
-          "contactMs": 6.0999999940395355,
-          "terminalPins": 284
-        },
-        {
-          "name": "Tibialis anterior muscle.r",
-          "vertices": 472,
-          "distal": "Medial cuneiform bone.r",
-          "maxDisplacement": 0.014473073672283905,
-          "visible": true,
-          "corrections": 0,
-          "contactMs": 0.800000011920929,
-          "terminalPins": 3
-        },
-        {
-          "name": "Tibialis posterior muscle.r",
-          "vertices": 1331,
-          "distal": "Navicular bone.r",
-          "maxDisplacement": 0.004089639020119327,
-          "visible": true,
-          "corrections": 1,
-          "contactMs": 8.300000011920929,
-          "terminalPins": 365
-        },
-        {
-          "name": "Tibialis posterior muscle.r",
-          "vertices": 1424,
-          "distal": "Navicular bone.r",
-          "maxDisplacement": 0.022791538207067173,
-          "visible": true,
-          "corrections": 370,
-          "contactMs": 12.099999994039536,
-          "terminalPins": 5
-        },
-        {
-          "name": "Fibularis longus muscle.r",
-          "vertices": 1777,
-          "distal": "First metatarsal bone.r",
-          "maxDisplacement": 0.003983513675380774,
-          "visible": true,
-          "corrections": 0,
-          "contactMs": 7.100000023841858,
-          "terminalPins": 307
-        },
-        {
-          "name": "Fibularis longus muscle.r",
-          "vertices": 993,
-          "distal": "First metatarsal bone.r",
-          "maxDisplacement": 0.014325525239141221,
-          "visible": true,
-          "corrections": 153,
-          "contactMs": 9.700000017881393,
-          "terminalPins": 9
-        },
-        {
-          "name": "Fibularis brevis muscle.r",
-          "vertices": 1130,
-          "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0.004972632795574039,
-          "visible": true,
-          "corrections": 34,
-          "contactMs": 11.399999976158142,
-          "terminalPins": 287
-        },
-        {
-          "name": "Fibularis brevis muscle.r",
-          "vertices": 617,
-          "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0.013919582234492528,
-          "visible": true,
-          "corrections": 192,
-          "contactMs": 13.100000023841858,
-          "terminalPins": 43
-        },
-        {
-          "name": "Fibularis tertius muscle.r",
-          "vertices": 121,
-          "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0.0077265662206173775,
-          "visible": true,
-          "corrections": 1,
-          "contactMs": 1.0999999940395355,
-          "terminalPins": 33
-        },
-        {
-          "name": "Fibularis tertius muscle.r",
-          "vertices": 188,
-          "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0.01692763541090374,
-          "visible": true,
-          "corrections": 1,
-          "contactMs": 1.100000023841858,
-          "terminalPins": 18
-        },
-        {
-          "name": "Medial head of gastrocnemius.r",
-          "vertices": 2227,
-          "distal": "Calcaneus.r",
-          "maxDisplacement": 0.003095567646142652,
-          "visible": true,
-          "corrections": 17,
-          "contactMs": 3.100000023841858,
-          "terminalPins": 0
-        },
-        {
-          "name": "Medial head of gastrocnemius.r",
-          "vertices": 1102,
-          "distal": "Calcaneus.r",
-          "maxDisplacement": 0.00014770004549456554,
-          "visible": true,
-          "corrections": 0,
-          "contactMs": 7.0999999940395355,
-          "terminalPins": 79
-        },
-        {
-          "name": "Lateral head of gastrocnemius.r",
-          "vertices": 1948,
-          "distal": "Calcaneus.r",
-          "maxDisplacement": 0.003635038894329777,
-          "visible": true,
-          "corrections": 0,
-          "contactMs": 2.399999976158142,
-          "terminalPins": 0
-        },
-        {
-          "name": "Lateral head of gastrocnemius.r",
-          "vertices": 587,
-          "distal": "Calcaneus.r",
-          "maxDisplacement": 0.00021281408132360982,
-          "visible": true,
-          "corrections": 0,
-          "contactMs": 6.300000011920929,
-          "terminalPins": 116
-        },
-        {
-          "name": "Soleus muscle.r",
-          "vertices": 3192,
-          "distal": "Calcaneus.r",
-          "maxDisplacement": 0.0042046065780080985,
-          "visible": true,
-          "corrections": 0,
-          "contactMs": 11,
-          "terminalPins": 228
-        },
-        {
-          "name": "Soleus muscle.r",
-          "vertices": 252,
-          "distal": "Calcaneus.r",
-          "maxDisplacement": 0.004439935947565102,
-          "visible": true,
-          "corrections": 0,
-          "contactMs": 0.09999999403953552,
-          "terminalPins": 0
-        },
-        {
-          "name": "Plantaris muscle.r",
-          "vertices": 1103,
-          "distal": "Calcaneus.r",
-          "maxDisplacement": 0.003686936430944792,
-          "visible": true,
-          "corrections": 44,
-          "contactMs": 12.299999982118607,
-          "terminalPins": 104
-        },
-        {
-          "name": "Plantaris muscle.r",
-          "vertices": 1279,
-          "distal": "Calcaneus.r",
-          "maxDisplacement": 0.007329416457690385,
-          "visible": true,
-          "corrections": 0,
-          "contactMs": 0.800000011920929,
-          "terminalPins": 145
-        },
-        {
-          "name": "Calcaneal tendon.r",
-          "vertices": 2193,
-          "distal": "Calcaneus.r",
-          "maxDisplacement": 0.007087948356213589,
-          "visible": true,
-          "corrections": 0,
-          "contactMs": 0,
-          "terminalPins": 241
-        },
-        {
-          "name": "Extensor digitorum longus.r",
-          "vertices": 1371,
-          "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0.0059257184674985615,
-          "visible": true,
-          "corrections": 1,
-          "contactMs": 13.300000011920929,
-          "terminalPins": 299
-        },
-        {
-          "name": "Extensor digitorum longus.r",
-          "vertices": 252,
-          "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0.006075651044673518,
-          "visible": true,
-          "corrections": 6,
-          "contactMs": 1.7000000178813934,
-          "terminalPins": 0
-        },
-        {
-          "name": "Tendon of extensor digitorum longus.r",
-          "vertices": 2640,
-          "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0.03710748235968703,
-          "visible": true,
-          "corrections": 0,
-          "contactMs": 4.4000000059604645,
-          "terminalPins": 17
-        },
-        {
-          "name": "Extensor hallucis longus.r",
-          "vertices": 671,
-          "distal": "First metatarsal bone.r",
-          "maxDisplacement": 0.0029944741557721825,
-          "visible": true,
-          "corrections": 0,
-          "contactMs": 7.5,
-          "terminalPins": 132
-        },
-        {
-          "name": "Extensor hallucis longus.r",
-          "vertices": 531,
-          "distal": "First metatarsal bone.r",
-          "maxDisplacement": 0.02962025972808279,
-          "visible": true,
-          "corrections": 23,
-          "contactMs": 3.0999999940395355,
-          "terminalPins": 11
-        },
-        {
-          "name": "Flexor digitorum longus.r",
-          "vertices": 1475,
-          "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0.003461261982131298,
-          "visible": true,
-          "corrections": 3,
-          "contactMs": 6.100000023841858,
-          "terminalPins": 156
-        },
-        {
-          "name": "Flexor digitorum longus.r",
-          "vertices": 1982,
-          "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0.03845489038233199,
-          "visible": true,
-          "corrections": 2,
-          "contactMs": 7.0999999940395355,
-          "terminalPins": 15
-        },
-        {
-          "name": "Flexor hallucis longus.r",
-          "vertices": 1896,
-          "distal": "First metatarsal bone.r",
-          "maxDisplacement": 0.0034667714873828416,
-          "visible": true,
-          "corrections": 13,
-          "contactMs": 12.599999994039536,
-          "terminalPins": 482
-        },
-        {
-          "name": "Flexor hallucis longus.r",
-          "vertices": 1081,
-          "distal": "First metatarsal bone.r",
-          "maxDisplacement": 0.03491119345796538,
-          "visible": true,
-          "corrections": 114,
-          "contactMs": 5.700000017881393,
-          "terminalPins": 31
-        }
-      ],
-      "status": "source-preserving teaching deformation; not measured muscle force or validated footprints",
-      "achilles": {
-        "restLength": 0.1904333519395865,
-        "length": 0.1904333519395865,
-        "freeFromY": 0.07324755471944809,
-        "sourceBase": [
-          -0.07060121021726552,
-          0.05824755471944809,
-          -0.08189596460365198
-        ],
-        "sourceTop": [
-          -0.11435713097453117,
-          0.243536376953125,
-          -0.07761422606805961
-        ],
-        "base": [
-          -0.06523114439287193,
-          0.055713447965639845,
-          -0.08111115347200062
-        ],
-        "top": [
-          -0.11341106624638507,
-          0.23991929645018628,
-          -0.07768156964533834
-        ],
-        "maxFreeEdgeError": 7.057680498183394e-9,
+        "maxFreeEdgeError": 6.758254763108984e-9,
         "freeEdges": 11388
       }
     },
@@ -1313,295 +1201,267 @@
       "motion": "invert",
       "value": 20,
       "finite": true,
-      "terminalError": 1.4861209803070037e-8,
-      "restError": 0.07617380443922579,
-      "updateMs": 214.80000001192093,
+      "terminalError": 1.4837717457424094e-8,
+      "restError": 0.07617335324027573,
+      "updateMs": 23.899999976158142,
       "entries": [
         {
           "name": "Tibialis anterior muscle.r",
           "vertices": 1306,
           "distal": "Medial cuneiform bone.r",
-          "maxDisplacement": 0.0008520998147777269,
+          "maxDisplacement": 0.0008522275352804696,
           "visible": true,
           "corrections": 0,
-          "contactMs": 9.5,
           "terminalPins": 284
         },
         {
           "name": "Tibialis anterior muscle.r",
           "vertices": 472,
           "distal": "Medial cuneiform bone.r",
-          "maxDisplacement": 0.028369046787574168,
+          "maxDisplacement": 0.028369064416183854,
           "visible": true,
           "corrections": 0,
-          "contactMs": 1.0999999940395355,
           "terminalPins": 3
         },
         {
           "name": "Tibialis posterior muscle.r",
           "vertices": 1331,
           "distal": "Navicular bone.r",
-          "maxDisplacement": 0.008864079803474919,
+          "maxDisplacement": 0.008864096225460518,
           "visible": true,
-          "corrections": 9,
-          "contactMs": 14.199999988079071,
+          "corrections": 0,
           "terminalPins": 365
         },
         {
           "name": "Tibialis posterior muscle.r",
           "vertices": 1424,
           "distal": "Navicular bone.r",
-          "maxDisplacement": 0.03744964524941402,
+          "maxDisplacement": 0.037451750898080755,
           "visible": true,
-          "corrections": 477,
-          "contactMs": 16.900000005960464,
+          "corrections": 0,
           "terminalPins": 5
         },
         {
           "name": "Fibularis longus muscle.r",
           "vertices": 1777,
           "distal": "First metatarsal bone.r",
-          "maxDisplacement": 0.006738842862112131,
+          "maxDisplacement": 0.006739562234966913,
           "visible": true,
           "corrections": 0,
-          "contactMs": 10.599999994039536,
           "terminalPins": 307
         },
         {
           "name": "Fibularis longus muscle.r",
           "vertices": 993,
           "distal": "First metatarsal bone.r",
-          "maxDisplacement": 0.028189465784663647,
+          "maxDisplacement": 0.028189482649845454,
           "visible": true,
-          "corrections": 187,
-          "contactMs": 14.200000017881393,
+          "corrections": 0,
           "terminalPins": 9
         },
         {
           "name": "Fibularis brevis muscle.r",
           "vertices": 1130,
           "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0.012013990664226214,
+          "maxDisplacement": 0.012013380062047581,
           "visible": true,
-          "corrections": 48,
-          "contactMs": 13.5,
+          "corrections": 0,
           "terminalPins": 287
         },
         {
           "name": "Fibularis brevis muscle.r",
           "vertices": 617,
           "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0.027680537730284505,
+          "maxDisplacement": 0.027680555309883607,
           "visible": true,
-          "corrections": 344,
-          "contactMs": 10.300000011920929,
+          "corrections": 0,
           "terminalPins": 43
         },
         {
           "name": "Fibularis tertius muscle.r",
           "vertices": 121,
           "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0.01125174580912647,
+          "maxDisplacement": 0.011251870618953,
           "visible": true,
-          "corrections": 4,
-          "contactMs": 0.6000000238418579,
+          "corrections": 0,
           "terminalPins": 33
         },
         {
           "name": "Fibularis tertius muscle.r",
           "vertices": 188,
           "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0.03361642060225514,
+          "maxDisplacement": 0.033616279989031335,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0.5,
           "terminalPins": 18
         },
         {
           "name": "Medial head of gastrocnemius.r",
           "vertices": 2227,
           "distal": "Calcaneus.r",
-          "maxDisplacement": 0.00378121024446196,
+          "maxDisplacement": 0.0037821804769192684,
           "visible": true,
-          "corrections": 35,
-          "contactMs": 4,
+          "corrections": 0,
           "terminalPins": 0
         },
         {
           "name": "Medial head of gastrocnemius.r",
           "vertices": 1102,
           "distal": "Calcaneus.r",
-          "maxDisplacement": 0.00017762585006470365,
+          "maxDisplacement": 0.00017740514039554057,
           "visible": true,
           "corrections": 0,
-          "contactMs": 7.0999999940395355,
           "terminalPins": 79
         },
         {
           "name": "Lateral head of gastrocnemius.r",
           "vertices": 1948,
           "distal": "Calcaneus.r",
-          "maxDisplacement": 0.004560572680082538,
+          "maxDisplacement": 0.004559253750217161,
           "visible": true,
-          "corrections": 1,
-          "contactMs": 3.4000000059604645,
+          "corrections": 0,
           "terminalPins": 0
         },
         {
           "name": "Lateral head of gastrocnemius.r",
           "vertices": 587,
           "distal": "Calcaneus.r",
-          "maxDisplacement": 0.0002655790496773745,
+          "maxDisplacement": 0.00026519019373765277,
           "visible": true,
           "corrections": 0,
-          "contactMs": 5.5,
           "terminalPins": 116
         },
         {
           "name": "Soleus muscle.r",
           "vertices": 3192,
           "distal": "Calcaneus.r",
-          "maxDisplacement": 0.0068998470246065865,
+          "maxDisplacement": 0.006899180217841958,
           "visible": true,
-          "corrections": 17,
-          "contactMs": 8.199999988079071,
+          "corrections": 0,
           "terminalPins": 228
         },
         {
           "name": "Soleus muscle.r",
           "vertices": 252,
           "distal": "Calcaneus.r",
-          "maxDisplacement": 0.007680537788195673,
+          "maxDisplacement": 0.0076819339455183435,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0.09999999403953552,
           "terminalPins": 0
         },
         {
           "name": "Plantaris muscle.r",
           "vertices": 1103,
           "distal": "Calcaneus.r",
-          "maxDisplacement": 0.00699014171648994,
+          "maxDisplacement": 0.006990604853274608,
           "visible": true,
-          "corrections": 51,
-          "contactMs": 9.199999988079071,
+          "corrections": 0,
           "terminalPins": 104
         },
         {
           "name": "Plantaris muscle.r",
           "vertices": 1279,
           "distal": "Calcaneus.r",
-          "maxDisplacement": 0.014580249815588038,
+          "maxDisplacement": 0.014579420732757066,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0.5,
           "terminalPins": 145
         },
         {
           "name": "Calcaneal tendon.r",
           "vertices": 2193,
           "distal": "Calcaneus.r",
-          "maxDisplacement": 0.01408362731468671,
+          "maxDisplacement": 0.014083636027269515,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0,
           "terminalPins": 241
         },
         {
           "name": "Extensor digitorum longus.r",
           "vertices": 1371,
           "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0.012226998858934248,
+          "maxDisplacement": 0.012226104271113994,
           "visible": true,
-          "corrections": 12,
-          "contactMs": 8.400000005960464,
+          "corrections": 0,
           "terminalPins": 299
         },
         {
           "name": "Extensor digitorum longus.r",
           "vertices": 252,
           "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0.017540254472038545,
+          "maxDisplacement": 0.017539021135760505,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0.7000000178813934,
           "terminalPins": 0
         },
         {
           "name": "Tendon of extensor digitorum longus.r",
           "vertices": 2640,
           "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0.07350485675443094,
+          "maxDisplacement": 0.07350380778431943,
           "visible": true,
           "corrections": 0,
-          "contactMs": 2.5,
           "terminalPins": 17
         },
         {
           "name": "Extensor hallucis longus.r",
           "vertices": 671,
           "distal": "First metatarsal bone.r",
-          "maxDisplacement": 0.0057579462636065904,
+          "maxDisplacement": 0.0057564597641811405,
           "visible": true,
           "corrections": 0,
-          "contactMs": 4.300000011920929,
           "terminalPins": 132
         },
         {
           "name": "Extensor hallucis longus.r",
           "vertices": 531,
           "distal": "First metatarsal bone.r",
-          "maxDisplacement": 0.05851231885755496,
+          "maxDisplacement": 0.05851235018917903,
           "visible": true,
-          "corrections": 39,
-          "contactMs": 2.0999999940395355,
+          "corrections": 0,
           "terminalPins": 11
         },
         {
           "name": "Flexor digitorum longus.r",
           "vertices": 1475,
           "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0.009489604184310605,
+          "maxDisplacement": 0.0094909110549408,
           "visible": true,
           "corrections": 0,
-          "contactMs": 6.300000011920929,
           "terminalPins": 156
         },
         {
           "name": "Flexor digitorum longus.r",
           "vertices": 1982,
           "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0.07617380566635729,
+          "maxDisplacement": 0.07617335324027573,
           "visible": true,
-          "corrections": 27,
-          "contactMs": 4.799999982118607,
+          "corrections": 0,
           "terminalPins": 15
         },
         {
           "name": "Flexor hallucis longus.r",
           "vertices": 1896,
           "distal": "First metatarsal bone.r",
-          "maxDisplacement": 0.0068667260307674624,
+          "maxDisplacement": 0.00686687959227163,
           "visible": true,
-          "corrections": 22,
-          "contactMs": 8.700000017881393,
+          "corrections": 0,
           "terminalPins": 482
         },
         {
           "name": "Flexor hallucis longus.r",
           "vertices": 1081,
           "distal": "First metatarsal bone.r",
-          "maxDisplacement": 0.06900502170099737,
+          "maxDisplacement": 0.06900506361066422,
           "visible": true,
-          "corrections": 289,
-          "contactMs": 5.0999999940395355,
+          "corrections": 0,
           "terminalPins": 31
         }
       ],
       "status": "source-preserving teaching deformation; not measured muscle force or validated footprints",
       "achilles": {
         "restLength": 0.1904333519395865,
-        "length": 0.1904333519395865,
+        "length": 0.19043335193958646,
         "freeFromY": 0.07324755471944809,
         "sourceBase": [
           -0.07060121021726552,
@@ -1614,16 +1474,16 @@
           -0.07761422606805961
         ],
         "base": [
-          -0.08219080789777587,
-          0.06080733264127399,
-          -0.08085701979900928
+          -0.08219080967818533,
+          0.06080733275697696,
+          -0.08085701937871674
         ],
         "top": [
-          -0.1152006775640966,
-          0.24832835960454594,
-          -0.07752918533816706
+          -0.11520067759387886,
+          0.24832836003593434,
+          -0.07752918534147957
         ],
-        "maxFreeEdgeError": 6.420874938185307e-9,
+        "maxFreeEdgeError": 6.419314128001952e-9,
         "freeEdges": 11388
       }
     },
@@ -1632,8 +1492,8 @@
       "value": 0,
       "finite": true,
       "terminalError": 1.5515838457795457e-17,
-      "restError": 1.962615573354719e-17,
-      "updateMs": 88.5,
+      "restError": 0,
+      "updateMs": 14.199999988079071,
       "entries": [
         {
           "name": "Tibialis anterior muscle.r",
@@ -1642,7 +1502,6 @@
           "maxDisplacement": 0,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0,
           "terminalPins": 284
         },
         {
@@ -1652,7 +1511,6 @@
           "maxDisplacement": 0,
           "visible": true,
           "corrections": 0,
-          "contactMs": 3.100000023841858,
           "terminalPins": 3
         },
         {
@@ -1662,7 +1520,6 @@
           "maxDisplacement": 0,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0,
           "terminalPins": 365
         },
         {
@@ -1671,8 +1528,7 @@
           "distal": "Navicular bone.r",
           "maxDisplacement": 0.0235503688454628,
           "visible": true,
-          "corrections": 453,
-          "contactMs": 17.5,
+          "corrections": 0,
           "terminalPins": 5
         },
         {
@@ -1682,7 +1538,6 @@
           "maxDisplacement": 0,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0,
           "terminalPins": 307
         },
         {
@@ -1691,8 +1546,7 @@
           "distal": "First metatarsal bone.r",
           "maxDisplacement": 0.008843415416777134,
           "visible": true,
-          "corrections": 164,
-          "contactMs": 7.700000017881393,
+          "corrections": 0,
           "terminalPins": 9
         },
         {
@@ -1702,7 +1556,6 @@
           "maxDisplacement": 0,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0,
           "terminalPins": 287
         },
         {
@@ -1711,8 +1564,7 @@
           "distal": "Fifth metatarsal bone.r",
           "maxDisplacement": 0.0078292281832546,
           "visible": true,
-          "corrections": 208,
-          "contactMs": 8.700000017881393,
+          "corrections": 0,
           "terminalPins": 43
         },
         {
@@ -1722,7 +1574,6 @@
           "maxDisplacement": 0,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0.30000001192092896,
           "terminalPins": 33
         },
         {
@@ -1732,7 +1583,6 @@
           "maxDisplacement": 0,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0.4000000059604645,
           "terminalPins": 18
         },
         {
@@ -1742,7 +1592,6 @@
           "maxDisplacement": 0,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0,
           "terminalPins": 0
         },
         {
@@ -1752,7 +1601,6 @@
           "maxDisplacement": 0,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0,
           "terminalPins": 79
         },
         {
@@ -1762,7 +1610,6 @@
           "maxDisplacement": 0,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0,
           "terminalPins": 0
         },
         {
@@ -1772,7 +1619,6 @@
           "maxDisplacement": 0,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0,
           "terminalPins": 116
         },
         {
@@ -1782,47 +1628,42 @@
           "maxDisplacement": 0,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0,
           "terminalPins": 228
         },
         {
           "name": "Soleus muscle.r",
           "vertices": 252,
           "distal": "Calcaneus.r",
-          "maxDisplacement": 1.3877787807814457e-17,
+          "maxDisplacement": 0,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0,
           "terminalPins": 0
         },
         {
           "name": "Plantaris muscle.r",
           "vertices": 1103,
           "distal": "Calcaneus.r",
-          "maxDisplacement": 1.3877787807814457e-17,
+          "maxDisplacement": 0,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0,
           "terminalPins": 104
         },
         {
           "name": "Plantaris muscle.r",
           "vertices": 1279,
           "distal": "Calcaneus.r",
-          "maxDisplacement": 1.5515838457795457e-17,
+          "maxDisplacement": 0,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0.30000001192092896,
           "terminalPins": 145
         },
         {
           "name": "Calcaneal tendon.r",
           "vertices": 2193,
           "distal": "Calcaneus.r",
-          "maxDisplacement": 1.962615573354719e-17,
+          "maxDisplacement": 0,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0,
           "terminalPins": 241
         },
         {
@@ -1832,7 +1673,6 @@
           "maxDisplacement": 0,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0,
           "terminalPins": 299
         },
         {
@@ -1842,7 +1682,6 @@
           "maxDisplacement": 0,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0.09999999403953552,
           "terminalPins": 0
         },
         {
@@ -1852,7 +1691,6 @@
           "maxDisplacement": 0,
           "visible": true,
           "corrections": 0,
-          "contactMs": 2.300000011920929,
           "terminalPins": 17
         },
         {
@@ -1862,7 +1700,6 @@
           "maxDisplacement": 0,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0,
           "terminalPins": 132
         },
         {
@@ -1872,7 +1709,6 @@
           "maxDisplacement": 0,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0.3999999761581421,
           "terminalPins": 11
         },
         {
@@ -1882,7 +1718,6 @@
           "maxDisplacement": 0,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0,
           "terminalPins": 156
         },
         {
@@ -1892,7 +1727,6 @@
           "maxDisplacement": 0,
           "visible": true,
           "corrections": 0,
-          "contactMs": 3.7000000178813934,
           "terminalPins": 15
         },
         {
@@ -1902,7 +1736,6 @@
           "maxDisplacement": 0,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0,
           "terminalPins": 482
         },
         {
@@ -1911,8 +1744,7 @@
           "distal": "First metatarsal bone.r",
           "maxDisplacement": 0.04031038470566273,
           "visible": true,
-          "corrections": 162,
-          "contactMs": 5.0999999940395355,
+          "corrections": 0,
           "terminalPins": 31
         }
       ],
@@ -1949,288 +1781,260 @@
       "motion": "adduct",
       "value": -10,
       "finite": true,
-      "terminalError": 1.466429443303926e-8,
-      "restError": 0.043185450469374095,
-      "updateMs": 180.80000001192093,
+      "terminalError": 1.4928726931739163e-8,
+      "restError": 0.043186728559727654,
+      "updateMs": 19.100000023841858,
       "entries": [
         {
           "name": "Tibialis anterior muscle.r",
           "vertices": 1306,
           "distal": "Medial cuneiform bone.r",
-          "maxDisplacement": 0.0003599542142982363,
+          "maxDisplacement": 0.00035997189182384546,
           "visible": true,
           "corrections": 0,
-          "contactMs": 10.300000011920929,
           "terminalPins": 284
         },
         {
           "name": "Tibialis anterior muscle.r",
           "vertices": 472,
           "distal": "Medial cuneiform bone.r",
-          "maxDisplacement": 0.015407739740731206,
+          "maxDisplacement": 0.01540775204686578,
           "visible": true,
           "corrections": 0,
-          "contactMs": 1.0999999940395355,
           "terminalPins": 3
         },
         {
           "name": "Tibialis posterior muscle.r",
           "vertices": 1331,
           "distal": "Navicular bone.r",
-          "maxDisplacement": 0.0043418790797033965,
+          "maxDisplacement": 0.004340613209626562,
           "visible": true,
-          "corrections": 1,
-          "contactMs": 13.799999982118607,
+          "corrections": 0,
           "terminalPins": 365
         },
         {
           "name": "Tibialis posterior muscle.r",
           "vertices": 1424,
           "distal": "Navicular bone.r",
-          "maxDisplacement": 0.023027679959840584,
+          "maxDisplacement": 0.023028203575592942,
           "visible": true,
-          "corrections": 291,
-          "contactMs": 9.400000005960464,
+          "corrections": 0,
           "terminalPins": 5
         },
         {
           "name": "Fibularis longus muscle.r",
           "vertices": 1777,
           "distal": "First metatarsal bone.r",
-          "maxDisplacement": 0.004251189037836968,
+          "maxDisplacement": 0.004251736785516198,
           "visible": true,
           "corrections": 0,
-          "contactMs": 7,
           "terminalPins": 307
         },
         {
           "name": "Fibularis longus muscle.r",
           "vertices": 993,
           "distal": "First metatarsal bone.r",
-          "maxDisplacement": 0.015249496320360998,
+          "maxDisplacement": 0.015249506712019701,
           "visible": true,
-          "corrections": 203,
-          "contactMs": 13.100000023841858,
+          "corrections": 0,
           "terminalPins": 9
         },
         {
           "name": "Fibularis brevis muscle.r",
           "vertices": 1130,
           "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0.005294943404313641,
+          "maxDisplacement": 0.0052943778694675885,
           "visible": true,
-          "corrections": 34,
-          "contactMs": 8.800000011920929,
+          "corrections": 0,
           "terminalPins": 287
         },
         {
           "name": "Fibularis brevis muscle.r",
           "vertices": 617,
           "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0.014814120353174106,
+          "maxDisplacement": 0.014814134955940415,
           "visible": true,
-          "corrections": 278,
-          "contactMs": 10.799999982118607,
+          "corrections": 0,
           "terminalPins": 43
         },
         {
           "name": "Fibularis tertius muscle.r",
           "vertices": 121,
           "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0.008196088373906327,
+          "maxDisplacement": 0.008195623687576837,
           "visible": true,
-          "corrections": 2,
-          "contactMs": 0.5999999940395355,
+          "corrections": 0,
           "terminalPins": 33
         },
         {
           "name": "Fibularis tertius muscle.r",
           "vertices": 188,
           "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0.018015871669691475,
+          "maxDisplacement": 0.01801426028899149,
           "visible": true,
-          "corrections": 2,
-          "contactMs": 0.699999988079071,
+          "corrections": 0,
           "terminalPins": 18
         },
         {
           "name": "Medial head of gastrocnemius.r",
           "vertices": 2227,
           "distal": "Calcaneus.r",
-          "maxDisplacement": 0.0033211123812945135,
+          "maxDisplacement": 0.0033200356887385625,
           "visible": true,
-          "corrections": 17,
-          "contactMs": 2.199999988079071,
+          "corrections": 0,
           "terminalPins": 0
         },
         {
           "name": "Medial head of gastrocnemius.r",
           "vertices": 1102,
           "distal": "Calcaneus.r",
-          "maxDisplacement": 0.00015843685845625676,
+          "maxDisplacement": 0.00015914217550045613,
           "visible": true,
           "corrections": 0,
-          "contactMs": 4.4000000059604645,
           "terminalPins": 79
         },
         {
           "name": "Lateral head of gastrocnemius.r",
           "vertices": 1948,
           "distal": "Calcaneus.r",
-          "maxDisplacement": 0.0038951434835907653,
+          "maxDisplacement": 0.003893625149701015,
           "visible": true,
           "corrections": 0,
-          "contactMs": 1.5,
           "terminalPins": 0
         },
         {
           "name": "Lateral head of gastrocnemius.r",
           "vertices": 587,
           "distal": "Calcaneus.r",
-          "maxDisplacement": 0.00022803138038120607,
+          "maxDisplacement": 0.00022726735901777012,
           "visible": true,
           "corrections": 0,
-          "contactMs": 4.300000011920929,
           "terminalPins": 116
         },
         {
           "name": "Soleus muscle.r",
           "vertices": 3192,
           "distal": "Calcaneus.r",
-          "maxDisplacement": 0.004491061601504461,
+          "maxDisplacement": 0.00448965199742774,
           "visible": true,
           "corrections": 0,
-          "contactMs": 7,
           "terminalPins": 228
         },
         {
           "name": "Soleus muscle.r",
           "vertices": 252,
           "distal": "Calcaneus.r",
-          "maxDisplacement": 0.004739274613686815,
+          "maxDisplacement": 0.004739470515146064,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0.09999999403953552,
           "terminalPins": 0
         },
         {
           "name": "Plantaris muscle.r",
           "vertices": 1103,
           "distal": "Calcaneus.r",
-          "maxDisplacement": 0.003933173108309543,
+          "maxDisplacement": 0.003933925359701327,
           "visible": true,
-          "corrections": 44,
-          "contactMs": 8.800000011920929,
+          "corrections": 0,
           "terminalPins": 104
         },
         {
           "name": "Plantaris muscle.r",
           "vertices": 1279,
           "distal": "Calcaneus.r",
-          "maxDisplacement": 0.0078012062097430794,
+          "maxDisplacement": 0.007801362137338018,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0.5,
           "terminalPins": 145
         },
         {
           "name": "Calcaneal tendon.r",
           "vertices": 2193,
           "distal": "Calcaneus.r",
-          "maxDisplacement": 0.007544451194041729,
+          "maxDisplacement": 0.00754445833016734,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0,
           "terminalPins": 241
         },
         {
           "name": "Extensor digitorum longus.r",
           "vertices": 1371,
           "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0.0062946575985893755,
+          "maxDisplacement": 0.006295599697827947,
           "visible": true,
-          "corrections": 1,
-          "contactMs": 8.400000005960464,
+          "corrections": 0,
           "terminalPins": 299
         },
         {
           "name": "Extensor digitorum longus.r",
           "vertices": 252,
           "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0.0064539250766794,
+          "maxDisplacement": 0.006455203068089224,
           "visible": true,
-          "corrections": 6,
-          "contactMs": 1,
+          "corrections": 0,
           "terminalPins": 0
         },
         {
           "name": "Tendon of extensor digitorum longus.r",
           "vertices": 2640,
           "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0.03949440065701647,
+          "maxDisplacement": 0.03949504052001066,
           "visible": true,
           "corrections": 0,
-          "contactMs": 3.5,
           "terminalPins": 17
         },
         {
           "name": "Extensor hallucis longus.r",
           "vertices": 671,
           "distal": "First metatarsal bone.r",
-          "maxDisplacement": 0.0031877840776897873,
+          "maxDisplacement": 0.003189101162554621,
           "visible": true,
           "corrections": 0,
-          "contactMs": 4.5,
           "terminalPins": 132
         },
         {
           "name": "Extensor hallucis longus.r",
           "vertices": 531,
           "distal": "First metatarsal bone.r",
-          "maxDisplacement": 0.03152747909046838,
+          "maxDisplacement": 0.031527504776853024,
           "visible": true,
-          "corrections": 24,
-          "contactMs": 2.0999999940395355,
+          "corrections": 0,
           "terminalPins": 11
         },
         {
           "name": "Flexor digitorum longus.r",
           "vertices": 1475,
           "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0.0036544877007336136,
+          "maxDisplacement": 0.0036547562005331364,
           "visible": true,
-          "corrections": 3,
-          "contactMs": 3.199999988079071,
+          "corrections": 0,
           "terminalPins": 156
         },
         {
           "name": "Flexor digitorum longus.r",
           "vertices": 1982,
           "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0.040928458095979066,
+          "maxDisplacement": 0.04092986639122521,
           "visible": true,
-          "corrections": 2,
-          "contactMs": 4.0999999940395355,
+          "corrections": 0,
           "terminalPins": 15
         },
         {
           "name": "Flexor hallucis longus.r",
           "vertices": 1896,
           "distal": "First metatarsal bone.r",
-          "maxDisplacement": 0.003703473860962743,
+          "maxDisplacement": 0.0037028408941757857,
           "visible": true,
-          "corrections": 13,
-          "contactMs": 8.800000011920929,
+          "corrections": 0,
           "terminalPins": 482
         },
         {
           "name": "Flexor hallucis longus.r",
           "vertices": 1081,
           "distal": "First metatarsal bone.r",
-          "maxDisplacement": 0.037158520856049614,
+          "maxDisplacement": 0.03715855162765295,
           "visible": true,
-          "corrections": 98,
-          "contactMs": 5.9000000059604645,
+          "corrections": 0,
           "terminalPins": 31
         }
       ],
@@ -2250,16 +2054,16 @@
           -0.07761422606805961
         ],
         "base": [
-          -0.06490234097284339,
-          0.05552420589401266,
-          -0.08103108750500387
+          -0.06490233986632052,
+          0.05552420524975218,
+          -0.08103108722860336
         ],
         "top": [
-          -0.11333862865320699,
-          0.2396643388218465,
-          -0.07768459501119034
+          -0.11333862840633108,
+          0.2396643379566653,
+          -0.07768459502098031
         ],
-        "maxFreeEdgeError": 7.135204085125663e-9,
+        "maxFreeEdgeError": 6.857996719990267e-9,
         "freeEdges": 11388
       }
     },
@@ -2267,288 +2071,260 @@
       "motion": "adduct",
       "value": 15,
       "finite": true,
-      "terminalError": 1.490611804227563e-8,
-      "restError": 0.06105651755931935,
-      "updateMs": 214.90000000596046,
+      "terminalError": 1.4555079798458297e-8,
+      "restError": 0.06105615244236111,
+      "updateMs": 17.69999998807907,
       "entries": [
         {
           "name": "Tibialis anterior muscle.r",
           "vertices": 1306,
           "distal": "Medial cuneiform bone.r",
-          "maxDisplacement": 0.0006641289353101227,
+          "maxDisplacement": 0.0006643486279974918,
           "visible": true,
           "corrections": 0,
-          "contactMs": 6,
           "terminalPins": 284
         },
         {
           "name": "Tibialis anterior muscle.r",
           "vertices": 472,
           "distal": "Medial cuneiform bone.r",
-          "maxDisplacement": 0.02276958274575387,
+          "maxDisplacement": 0.0227696143544911,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0.7000000178813934,
           "terminalPins": 3
         },
         {
           "name": "Tibialis posterior muscle.r",
           "vertices": 1331,
           "distal": "Navicular bone.r",
-          "maxDisplacement": 0.007042133187868092,
+          "maxDisplacement": 0.0070416259601924,
           "visible": true,
-          "corrections": 7,
-          "contactMs": 9.200000017881393,
+          "corrections": 0,
           "terminalPins": 365
         },
         {
           "name": "Tibialis posterior muscle.r",
           "vertices": 1424,
           "distal": "Navicular bone.r",
-          "maxDisplacement": 0.03383709495162384,
+          "maxDisplacement": 0.0338381843783089,
           "visible": true,
-          "corrections": 391,
-          "contactMs": 13.799999982118607,
+          "corrections": 0,
           "terminalPins": 5
         },
         {
           "name": "Fibularis longus muscle.r",
           "vertices": 1777,
           "distal": "First metatarsal bone.r",
-          "maxDisplacement": 0.005537519582923805,
+          "maxDisplacement": 0.005536246466251157,
           "visible": true,
           "corrections": 0,
-          "contactMs": 7.300000011920929,
           "terminalPins": 307
         },
         {
           "name": "Fibularis longus muscle.r",
           "vertices": 993,
           "distal": "First metatarsal bone.r",
-          "maxDisplacement": 0.02261266901882989,
+          "maxDisplacement": 0.022612700092722843,
           "visible": true,
-          "corrections": 204,
-          "contactMs": 11.300000011920929,
+          "corrections": 0,
           "terminalPins": 9
         },
         {
           "name": "Fibularis brevis muscle.r",
           "vertices": 1130,
           "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0.00771804789239798,
+          "maxDisplacement": 0.007718846095950404,
           "visible": true,
-          "corrections": 26,
-          "contactMs": 8.900000005960464,
+          "corrections": 0,
           "terminalPins": 287
         },
         {
           "name": "Fibularis brevis muscle.r",
           "vertices": 617,
           "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0.022172112288137542,
+          "maxDisplacement": 0.022172141239950774,
           "visible": true,
-          "corrections": 371,
-          "contactMs": 11.900000005960464,
+          "corrections": 0,
           "terminalPins": 43
         },
         {
           "name": "Fibularis tertius muscle.r",
           "vertices": 121,
           "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0.01125174580912647,
+          "maxDisplacement": 0.011251870618953,
           "visible": true,
-          "corrections": 4,
-          "contactMs": 0.5999999940395355,
+          "corrections": 0,
           "terminalPins": 33
         },
         {
           "name": "Fibularis tertius muscle.r",
           "vertices": 188,
           "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0.02693284289260349,
+          "maxDisplacement": 0.026931722697985366,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0.5999999940395355,
           "terminalPins": 18
         },
         {
           "name": "Medial head of gastrocnemius.r",
           "vertices": 2227,
           "distal": "Calcaneus.r",
-          "maxDisplacement": 0.0032704066345472906,
+          "maxDisplacement": 0.003268961014100642,
           "visible": true,
-          "corrections": 35,
-          "contactMs": 2.300000011920929,
+          "corrections": 0,
           "terminalPins": 0
         },
         {
           "name": "Medial head of gastrocnemius.r",
           "vertices": 1102,
           "distal": "Calcaneus.r",
-          "maxDisplacement": 0.00015483645546868828,
+          "maxDisplacement": 0.00015385044989574043,
           "visible": true,
           "corrections": 0,
-          "contactMs": 4.799999982118607,
           "terminalPins": 79
         },
         {
           "name": "Lateral head of gastrocnemius.r",
           "vertices": 1948,
           "distal": "Calcaneus.r",
-          "maxDisplacement": 0.003967236969332249,
+          "maxDisplacement": 0.003968403869606234,
           "visible": true,
           "corrections": 0,
-          "contactMs": 1.300000011920929,
           "terminalPins": 0
         },
         {
           "name": "Lateral head of gastrocnemius.r",
           "vertices": 587,
           "distal": "Calcaneus.r",
-          "maxDisplacement": 0.0002315139470693483,
+          "maxDisplacement": 0.00023090245953398823,
           "visible": true,
           "corrections": 0,
-          "contactMs": 3.600000023841858,
           "terminalPins": 116
         },
         {
           "name": "Soleus muscle.r",
           "vertices": 3192,
           "distal": "Calcaneus.r",
-          "maxDisplacement": 0.00567803686852828,
+          "maxDisplacement": 0.005678325970806289,
           "visible": true,
-          "corrections": 4,
-          "contactMs": 7.800000011920929,
+          "corrections": 0,
           "terminalPins": 228
         },
         {
           "name": "Soleus muscle.r",
           "vertices": 252,
           "distal": "Calcaneus.r",
-          "maxDisplacement": 0.006246263069096437,
+          "maxDisplacement": 0.006245063093085956,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0.10000002384185791,
           "terminalPins": 0
         },
         {
           "name": "Plantaris muscle.r",
           "vertices": 1103,
           "distal": "Calcaneus.r",
-          "maxDisplacement": 0.0055917009772640715,
+          "maxDisplacement": 0.005590460426872523,
           "visible": true,
-          "corrections": 51,
-          "contactMs": 14.300000011920929,
+          "corrections": 0,
           "terminalPins": 104
         },
         {
           "name": "Plantaris muscle.r",
           "vertices": 1279,
           "distal": "Calcaneus.r",
-          "maxDisplacement": 0.011671681428177903,
+          "maxDisplacement": 0.011672354966449583,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0.9000000059604645,
           "terminalPins": 145
         },
         {
           "name": "Calcaneal tendon.r",
           "vertices": 2193,
           "distal": "Calcaneus.r",
-          "maxDisplacement": 0.011275159368144872,
+          "maxDisplacement": 0.01127517450320014,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0,
           "terminalPins": 241
         },
         {
           "name": "Extensor digitorum longus.r",
           "vertices": 1371,
           "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0.009788689846079722,
+          "maxDisplacement": 0.009787442234340598,
           "visible": true,
-          "corrections": 2,
-          "contactMs": 14.899999976158142,
+          "corrections": 0,
           "terminalPins": 299
         },
         {
           "name": "Extensor digitorum longus.r",
           "vertices": 252,
           "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0.013168412898595296,
+          "maxDisplacement": 0.013168230418572879,
           "visible": true,
           "corrections": 0,
-          "contactMs": 1.2999999821186066,
           "terminalPins": 0
         },
         {
           "name": "Tendon of extensor digitorum longus.r",
           "vertices": 2640,
           "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0.05891705893814153,
+          "maxDisplacement": 0.05891775491870763,
           "visible": true,
           "corrections": 0,
-          "contactMs": 5.699999988079071,
           "terminalPins": 17
         },
         {
           "name": "Extensor hallucis longus.r",
           "vertices": 671,
           "distal": "First metatarsal bone.r",
-          "maxDisplacement": 0.0046439298110021975,
+          "maxDisplacement": 0.004645384668635032,
           "visible": true,
           "corrections": 0,
-          "contactMs": 7.9000000059604645,
           "terminalPins": 132
         },
         {
           "name": "Extensor hallucis longus.r",
           "vertices": 531,
           "distal": "First metatarsal bone.r",
-          "maxDisplacement": 0.04691702499289453,
+          "maxDisplacement": 0.04691709025907935,
           "visible": true,
-          "corrections": 40,
-          "contactMs": 3.5999999940395355,
+          "corrections": 0,
           "terminalPins": 11
         },
         {
           "name": "Flexor digitorum longus.r",
           "vertices": 1475,
           "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0.00735175512745292,
+          "maxDisplacement": 0.007353045908750033,
           "visible": true,
           "corrections": 0,
-          "contactMs": 5.0999999940395355,
           "terminalPins": 156
         },
         {
           "name": "Flexor digitorum longus.r",
           "vertices": 1982,
           "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0.061056517644139933,
+          "maxDisplacement": 0.06105615244236111,
           "visible": true,
-          "corrections": 5,
-          "contactMs": 6.699999988079071,
+          "corrections": 0,
           "terminalPins": 15
         },
         {
           "name": "Flexor hallucis longus.r",
           "vertices": 1896,
           "distal": "First metatarsal bone.r",
-          "maxDisplacement": 0.005265815410171569,
+          "maxDisplacement": 0.005267622462760643,
           "visible": true,
-          "corrections": 21,
-          "contactMs": 12.900000005960464,
+          "corrections": 0,
           "terminalPins": 482
         },
         {
           "name": "Flexor hallucis longus.r",
           "vertices": 1081,
           "distal": "First metatarsal bone.r",
-          "maxDisplacement": 0.05532674161820004,
+          "maxDisplacement": 0.055326819306224816,
           "visible": true,
-          "corrections": 318,
-          "contactMs": 8.099999994039536,
+          "corrections": 0,
           "terminalPins": 31
         }
       ],
@@ -2568,16 +2344,16 @@
           -0.07761422606805961
         ],
         "base": [
-          -0.07983333911696079,
-          0.06057972286371987,
-          -0.08134364638230973
+          -0.07983334231635594,
+          0.060579723273007854,
+          -0.08134364581619173
         ],
         "top": [
-          -0.1151377205300961,
-          0.2476730619931832,
-          -0.07752990315945138
+          -0.11513772064858632,
+          0.24767306299521635,
+          -0.07752990315163717
         ],
-        "maxFreeEdgeError": 6.766380369199743e-9,
+        "maxFreeEdgeError": 6.519046157928143e-9,
         "freeEdges": 11388
       }
     },
@@ -2586,8 +2362,8 @@
       "value": 0,
       "finite": true,
       "terminalError": 1.5515838457795457e-17,
-      "restError": 1.962615573354719e-17,
-      "updateMs": 69.59999999403954,
+      "restError": 0,
+      "updateMs": 38.59999996423721,
       "entries": [
         {
           "name": "Tibialis anterior muscle.r",
@@ -2596,7 +2372,6 @@
           "maxDisplacement": 0,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0,
           "terminalPins": 284
         },
         {
@@ -2606,7 +2381,6 @@
           "maxDisplacement": 0,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0.5999999940395355,
           "terminalPins": 3
         },
         {
@@ -2616,7 +2390,6 @@
           "maxDisplacement": 0,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0,
           "terminalPins": 365
         },
         {
@@ -2625,8 +2398,7 @@
           "distal": "Navicular bone.r",
           "maxDisplacement": 0.0235503688454628,
           "visible": true,
-          "corrections": 453,
-          "contactMs": 14.5,
+          "corrections": 0,
           "terminalPins": 5
         },
         {
@@ -2636,7 +2408,6 @@
           "maxDisplacement": 0,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0,
           "terminalPins": 307
         },
         {
@@ -2645,8 +2416,7 @@
           "distal": "First metatarsal bone.r",
           "maxDisplacement": 0.008843415416777134,
           "visible": true,
-          "corrections": 164,
-          "contactMs": 6.4000000059604645,
+          "corrections": 0,
           "terminalPins": 9
         },
         {
@@ -2656,7 +2426,6 @@
           "maxDisplacement": 0,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0,
           "terminalPins": 287
         },
         {
@@ -2665,8 +2434,7 @@
           "distal": "Fifth metatarsal bone.r",
           "maxDisplacement": 0.0078292281832546,
           "visible": true,
-          "corrections": 208,
-          "contactMs": 4.800000011920929,
+          "corrections": 0,
           "terminalPins": 43
         },
         {
@@ -2676,7 +2444,6 @@
           "maxDisplacement": 0,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0.20000001788139343,
           "terminalPins": 33
         },
         {
@@ -2686,7 +2453,6 @@
           "maxDisplacement": 0,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0.19999998807907104,
           "terminalPins": 18
         },
         {
@@ -2696,7 +2462,6 @@
           "maxDisplacement": 0,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0,
           "terminalPins": 0
         },
         {
@@ -2706,7 +2471,6 @@
           "maxDisplacement": 0,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0,
           "terminalPins": 79
         },
         {
@@ -2716,7 +2480,6 @@
           "maxDisplacement": 0,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0,
           "terminalPins": 0
         },
         {
@@ -2726,7 +2489,6 @@
           "maxDisplacement": 0,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0,
           "terminalPins": 116
         },
         {
@@ -2736,47 +2498,42 @@
           "maxDisplacement": 0,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0,
           "terminalPins": 228
         },
         {
           "name": "Soleus muscle.r",
           "vertices": 252,
           "distal": "Calcaneus.r",
-          "maxDisplacement": 1.3877787807814457e-17,
+          "maxDisplacement": 0,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0,
           "terminalPins": 0
         },
         {
           "name": "Plantaris muscle.r",
           "vertices": 1103,
           "distal": "Calcaneus.r",
-          "maxDisplacement": 1.3877787807814457e-17,
+          "maxDisplacement": 0,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0,
           "terminalPins": 104
         },
         {
           "name": "Plantaris muscle.r",
           "vertices": 1279,
           "distal": "Calcaneus.r",
-          "maxDisplacement": 1.5515838457795457e-17,
+          "maxDisplacement": 0,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0.5,
           "terminalPins": 145
         },
         {
           "name": "Calcaneal tendon.r",
           "vertices": 2193,
           "distal": "Calcaneus.r",
-          "maxDisplacement": 1.962615573354719e-17,
+          "maxDisplacement": 0,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0,
           "terminalPins": 241
         },
         {
@@ -2786,7 +2543,6 @@
           "maxDisplacement": 0,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0,
           "terminalPins": 299
         },
         {
@@ -2796,7 +2552,6 @@
           "maxDisplacement": 0,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0.20000001788139343,
           "terminalPins": 0
         },
         {
@@ -2806,7 +2561,6 @@
           "maxDisplacement": 0,
           "visible": true,
           "corrections": 0,
-          "contactMs": 2.5999999940395355,
           "terminalPins": 17
         },
         {
@@ -2816,7 +2570,6 @@
           "maxDisplacement": 0,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0,
           "terminalPins": 132
         },
         {
@@ -2826,7 +2579,6 @@
           "maxDisplacement": 0,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0.4000000059604645,
           "terminalPins": 11
         },
         {
@@ -2836,7 +2588,6 @@
           "maxDisplacement": 0,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0,
           "terminalPins": 156
         },
         {
@@ -2846,7 +2597,6 @@
           "maxDisplacement": 0,
           "visible": true,
           "corrections": 0,
-          "contactMs": 3.5999999940395355,
           "terminalPins": 15
         },
         {
@@ -2856,7 +2606,6 @@
           "maxDisplacement": 0,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0,
           "terminalPins": 482
         },
         {
@@ -2865,8 +2614,7 @@
           "distal": "First metatarsal bone.r",
           "maxDisplacement": 0.04031038470566273,
           "visible": true,
-          "corrections": 162,
-          "contactMs": 3.199999988079071,
+          "corrections": 0,
           "terminalPins": 31
         }
       ],
@@ -2903,606 +2651,260 @@
       "motion": "compound",
       "value": -15,
       "finite": true,
-      "terminalError": 1.4812859380324419e-8,
-      "restError": 0.05752887583799241,
-      "updateMs": 187.2999999821186,
+      "terminalError": 1.4915690948734605e-8,
+      "restError": 0.057530233616464845,
+      "updateMs": 58.60000002384186,
       "entries": [
         {
           "name": "Tibialis anterior muscle.r",
           "vertices": 1306,
           "distal": "Medial cuneiform bone.r",
-          "maxDisplacement": 0.00048796799990980926,
+          "maxDisplacement": 0.0004889459352276056,
           "visible": true,
           "corrections": 0,
-          "contactMs": 5.199999988079071,
           "terminalPins": 284
         },
         {
           "name": "Tibialis anterior muscle.r",
           "vertices": 472,
           "distal": "Medial cuneiform bone.r",
-          "maxDisplacement": 0.02169249553930601,
+          "maxDisplacement": 0.021692498775873342,
           "visible": true,
           "corrections": 0,
-          "contactMs": 1.2999999821186066,
           "terminalPins": 3
         },
         {
           "name": "Tibialis posterior muscle.r",
           "vertices": 1331,
           "distal": "Navicular bone.r",
-          "maxDisplacement": 0.006058896677754141,
+          "maxDisplacement": 0.006058752803452994,
           "visible": true,
-          "corrections": 3,
-          "contactMs": 9.699999988079071,
+          "corrections": 0,
           "terminalPins": 365
         },
         {
           "name": "Tibialis posterior muscle.r",
           "vertices": 1424,
           "distal": "Navicular bone.r",
-          "maxDisplacement": 0.02881863997894413,
+          "maxDisplacement": 0.029057086783969826,
           "visible": true,
-          "corrections": 408,
-          "contactMs": 11.700000017881393,
+          "corrections": 0,
           "terminalPins": 5
         },
         {
           "name": "Fibularis longus muscle.r",
           "vertices": 1777,
           "distal": "First metatarsal bone.r",
-          "maxDisplacement": 0.0060797361346017,
+          "maxDisplacement": 0.006078946731977817,
           "visible": true,
           "corrections": 0,
-          "contactMs": 7,
           "terminalPins": 307
         },
         {
           "name": "Fibularis longus muscle.r",
           "vertices": 993,
           "distal": "First metatarsal bone.r",
-          "maxDisplacement": 0.021458810043358843,
+          "maxDisplacement": 0.0214588115591883,
           "visible": true,
-          "corrections": 175,
-          "contactMs": 10.799999982118607,
+          "corrections": 0,
           "terminalPins": 9
         },
         {
           "name": "Fibularis brevis muscle.r",
           "vertices": 1130,
           "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0.007464780638478887,
+          "maxDisplacement": 0.007464272808938794,
           "visible": true,
-          "corrections": 40,
-          "contactMs": 9.599999994039536,
+          "corrections": 0,
           "terminalPins": 287
         },
         {
           "name": "Fibularis brevis muscle.r",
           "vertices": 617,
           "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0.02081551927325942,
+          "maxDisplacement": 0.020815523458053455,
           "visible": true,
-          "corrections": 266,
-          "contactMs": 14.199999988079071,
+          "corrections": 0,
           "terminalPins": 43
         },
         {
           "name": "Fibularis tertius muscle.r",
           "vertices": 121,
           "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0.011112555079087278,
+          "maxDisplacement": 0.011112009920170798,
           "visible": true,
-          "corrections": 2,
-          "contactMs": 0.5999999940395355,
+          "corrections": 0,
           "terminalPins": 33
         },
         {
           "name": "Fibularis tertius muscle.r",
           "vertices": 188,
           "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0.025317780482885504,
+          "maxDisplacement": 0.025316451072094664,
           "visible": true,
-          "corrections": 3,
-          "contactMs": 0.699999988079071,
+          "corrections": 0,
           "terminalPins": 18
         },
         {
           "name": "Medial head of gastrocnemius.r",
           "vertices": 2227,
           "distal": "Calcaneus.r",
-          "maxDisplacement": 0.004914010493434757,
+          "maxDisplacement": 0.004913815527626692,
           "visible": true,
-          "corrections": 17,
-          "contactMs": 2.199999988079071,
+          "corrections": 0,
           "terminalPins": 0
         },
         {
           "name": "Medial head of gastrocnemius.r",
           "vertices": 1102,
           "distal": "Calcaneus.r",
-          "maxDisplacement": 0.0002341467127451709,
+          "maxDisplacement": 0.0002355511774445581,
           "visible": true,
           "corrections": 0,
-          "contactMs": 4.5,
           "terminalPins": 79
         },
         {
           "name": "Lateral head of gastrocnemius.r",
           "vertices": 1948,
           "distal": "Calcaneus.r",
-          "maxDisplacement": 0.005716378567768269,
+          "maxDisplacement": 0.005716361047599001,
           "visible": true,
           "corrections": 0,
-          "contactMs": 1.5,
           "terminalPins": 0
         },
         {
           "name": "Lateral head of gastrocnemius.r",
           "vertices": 587,
           "distal": "Calcaneus.r",
-          "maxDisplacement": 0.0003345245567017562,
+          "maxDisplacement": 0.00033535618096527774,
           "visible": true,
           "corrections": 0,
-          "contactMs": 4.300000011920929,
           "terminalPins": 116
         },
         {
           "name": "Soleus muscle.r",
           "vertices": 3192,
           "distal": "Calcaneus.r",
-          "maxDisplacement": 0.006461274144626245,
+          "maxDisplacement": 0.006461670939851895,
           "visible": true,
           "corrections": 0,
-          "contactMs": 7.0999999940395355,
           "terminalPins": 228
         },
         {
           "name": "Soleus muscle.r",
           "vertices": 252,
           "distal": "Calcaneus.r",
-          "maxDisplacement": 0.0067894795404879246,
+          "maxDisplacement": 0.006788749491808048,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0.09999999403953552,
           "terminalPins": 0
         },
         {
           "name": "Plantaris muscle.r",
           "vertices": 1103,
           "distal": "Calcaneus.r",
-          "maxDisplacement": 0.005621327741598829,
+          "maxDisplacement": 0.00562148176355182,
           "visible": true,
-          "corrections": 47,
-          "contactMs": 8.400000005960464,
+          "corrections": 0,
           "terminalPins": 104
         },
         {
           "name": "Plantaris muscle.r",
           "vertices": 1279,
           "distal": "Calcaneus.r",
-          "maxDisplacement": 0.010970103730739252,
+          "maxDisplacement": 0.010970148080794495,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0.4000000059604645,
           "terminalPins": 145
         },
         {
           "name": "Calcaneal tendon.r",
           "vertices": 2193,
           "distal": "Calcaneus.r",
-          "maxDisplacement": 0.010611538513091733,
+          "maxDisplacement": 0.01061154073908838,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0,
           "terminalPins": 241
         },
         {
           "name": "Extensor digitorum longus.r",
           "vertices": 1371,
           "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0.00871691195760972,
+          "maxDisplacement": 0.008716033845643588,
           "visible": true,
-          "corrections": 1,
-          "contactMs": 8.400000005960464,
+          "corrections": 0,
           "terminalPins": 299
         },
         {
           "name": "Extensor digitorum longus.r",
           "vertices": 252,
           "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0.008937467335321327,
+          "maxDisplacement": 0.008937123484343057,
           "visible": true,
-          "corrections": 11,
-          "contactMs": 1.0999999940395355,
+          "corrections": 0,
           "terminalPins": 0
         },
         {
           "name": "Tendon of extensor digitorum longus.r",
           "vertices": 2640,
           "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0.05551340498473929,
+          "maxDisplacement": 0.05551397222131346,
           "visible": true,
           "corrections": 0,
-          "contactMs": 3.600000023841858,
           "terminalPins": 17
         },
         {
           "name": "Extensor hallucis longus.r",
           "vertices": 671,
           "distal": "First metatarsal bone.r",
-          "maxDisplacement": 0.004484932596908935,
+          "maxDisplacement": 0.004486255126297511,
           "visible": true,
           "corrections": 0,
-          "contactMs": 3.899999976158142,
           "terminalPins": 132
         },
         {
           "name": "Extensor hallucis longus.r",
           "vertices": 531,
           "distal": "First metatarsal bone.r",
-          "maxDisplacement": 0.044333282874122616,
+          "maxDisplacement": 0.044333291031275285,
           "visible": true,
-          "corrections": 27,
-          "contactMs": 2.9000000059604645,
+          "corrections": 0,
           "terminalPins": 11
         },
         {
           "name": "Flexor digitorum longus.r",
           "vertices": 1475,
           "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0.0048717530530925975,
+          "maxDisplacement": 0.00487105597384192,
           "visible": true,
-          "corrections": 4,
-          "contactMs": 3.5999999940395355,
+          "corrections": 0,
           "terminalPins": 156
         },
         {
           "name": "Flexor digitorum longus.r",
           "vertices": 1982,
           "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0.057528876459183406,
+          "maxDisplacement": 0.057530233616464845,
           "visible": true,
-          "corrections": 1,
-          "contactMs": 4.9000000059604645,
+          "corrections": 0,
           "terminalPins": 15
         },
         {
           "name": "Flexor hallucis longus.r",
           "vertices": 1896,
           "distal": "First metatarsal bone.r",
-          "maxDisplacement": 0.005226013920961761,
+          "maxDisplacement": 0.005225251990116399,
           "visible": true,
-          "corrections": 15,
-          "contactMs": 11.099999994039536,
+          "corrections": 0,
           "terminalPins": 482
         },
         {
           "name": "Flexor hallucis longus.r",
           "vertices": 1081,
           "distal": "First metatarsal bone.r",
-          "maxDisplacement": 0.05224598528147018,
-          "visible": true,
-          "corrections": 135,
-          "contactMs": 7,
-          "terminalPins": 31
-        }
-      ],
-      "status": "source-preserving teaching deformation; not measured muscle force or validated footprints",
-      "achilles": {
-        "restLength": 0.1904333519395865,
-        "length": 0.19043335193958652,
-        "freeFromY": 0.07324755471944809,
-        "sourceBase": [
-          -0.07060121021726552,
-          0.05824755471944809,
-          -0.08189596460365198
-        ],
-        "sourceTop": [
-          -0.11435713097453117,
-          0.243536376953125,
-          -0.07761422606805961
-        ],
-        "base": [
-          -0.06275669298391899,
-          0.05417511662935502,
-          -0.08040137001888109
-        ],
-        "top": [
-          -0.11281865050516317,
-          0.23789052176259284,
-          -0.07769732548931715
-        ],
-        "maxFreeEdgeError": 6.639037603960868e-9,
-        "freeEdges": 11388
-      }
-    },
-    {
-      "motion": "compound",
-      "value": 20,
-      "finite": true,
-      "terminalError": 1.4521570620431068e-8,
-      "restError": 0.0761737972542284,
-      "updateMs": 189.19999998807907,
-      "entries": [
-        {
-          "name": "Tibialis anterior muscle.r",
-          "vertices": 1306,
-          "distal": "Medial cuneiform bone.r",
-          "maxDisplacement": 0.0008520997168470894,
+          "maxDisplacement": 0.05224599717851901,
           "visible": true,
           "corrections": 0,
-          "contactMs": 6.0999999940395355,
-          "terminalPins": 284
-        },
-        {
-          "name": "Tibialis anterior muscle.r",
-          "vertices": 472,
-          "distal": "Medial cuneiform bone.r",
-          "maxDisplacement": 0.028369043940133364,
-          "visible": true,
-          "corrections": 0,
-          "contactMs": 0.9000000059604645,
-          "terminalPins": 3
-        },
-        {
-          "name": "Tibialis posterior muscle.r",
-          "vertices": 1331,
-          "distal": "Navicular bone.r",
-          "maxDisplacement": 0.008864078868607305,
-          "visible": true,
-          "corrections": 9,
-          "contactMs": 10,
-          "terminalPins": 365
-        },
-        {
-          "name": "Tibialis posterior muscle.r",
-          "vertices": 1424,
-          "distal": "Navicular bone.r",
-          "maxDisplacement": 0.03744909416421908,
-          "visible": true,
-          "corrections": 519,
-          "contactMs": 12.5,
-          "terminalPins": 5
-        },
-        {
-          "name": "Fibularis longus muscle.r",
-          "vertices": 1777,
-          "distal": "First metatarsal bone.r",
-          "maxDisplacement": 0.006738842269052108,
-          "visible": true,
-          "corrections": 0,
-          "contactMs": 7.0999999940395355,
-          "terminalPins": 307
-        },
-        {
-          "name": "Fibularis longus muscle.r",
-          "vertices": 993,
-          "distal": "First metatarsal bone.r",
-          "maxDisplacement": 0.02818946294699175,
-          "visible": true,
-          "corrections": 158,
-          "contactMs": 9.299999982118607,
-          "terminalPins": 9
-        },
-        {
-          "name": "Fibularis brevis muscle.r",
-          "vertices": 1130,
-          "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0.012013986377169274,
-          "visible": true,
-          "corrections": 48,
-          "contactMs": 9.599999994039536,
-          "terminalPins": 287
-        },
-        {
-          "name": "Fibularis brevis muscle.r",
-          "vertices": 617,
-          "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0.027680534923096547,
-          "visible": true,
-          "corrections": 315,
-          "contactMs": 11.199999988079071,
-          "terminalPins": 43
-        },
-        {
-          "name": "Fibularis tertius muscle.r",
-          "vertices": 121,
-          "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0.01125174580912647,
-          "visible": true,
-          "corrections": 4,
-          "contactMs": 0.5999999940395355,
-          "terminalPins": 33
-        },
-        {
-          "name": "Fibularis tertius muscle.r",
-          "vertices": 188,
-          "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0.03361641719709594,
-          "visible": true,
-          "corrections": 0,
-          "contactMs": 0.5,
-          "terminalPins": 18
-        },
-        {
-          "name": "Medial head of gastrocnemius.r",
-          "vertices": 2227,
-          "distal": "Calcaneus.r",
-          "maxDisplacement": 0.003781210010737346,
-          "visible": true,
-          "corrections": 35,
-          "contactMs": 2.5,
-          "terminalPins": 0
-        },
-        {
-          "name": "Medial head of gastrocnemius.r",
-          "vertices": 1102,
-          "distal": "Calcaneus.r",
-          "maxDisplacement": 0.00017762583997662577,
-          "visible": true,
-          "corrections": 0,
-          "contactMs": 4.5999999940395355,
-          "terminalPins": 79
-        },
-        {
-          "name": "Lateral head of gastrocnemius.r",
-          "vertices": 1948,
-          "distal": "Calcaneus.r",
-          "maxDisplacement": 0.004560572420082941,
-          "visible": true,
-          "corrections": 1,
-          "contactMs": 1.9000000059604645,
-          "terminalPins": 0
-        },
-        {
-          "name": "Lateral head of gastrocnemius.r",
-          "vertices": 587,
-          "distal": "Calcaneus.r",
-          "maxDisplacement": 0.0002655790348684338,
-          "visible": true,
-          "corrections": 0,
-          "contactMs": 4.5999999940395355,
-          "terminalPins": 116
-        },
-        {
-          "name": "Soleus muscle.r",
-          "vertices": 3192,
-          "distal": "Calcaneus.r",
-          "maxDisplacement": 0.0068998464194919675,
-          "visible": true,
-          "corrections": 17,
-          "contactMs": 8.300000011920929,
-          "terminalPins": 228
-        },
-        {
-          "name": "Soleus muscle.r",
-          "vertices": 252,
-          "distal": "Calcaneus.r",
-          "maxDisplacement": 0.007680537066569399,
-          "visible": true,
-          "corrections": 0,
-          "contactMs": 0.20000001788139343,
-          "terminalPins": 0
-        },
-        {
-          "name": "Plantaris muscle.r",
-          "vertices": 1103,
-          "distal": "Calcaneus.r",
-          "maxDisplacement": 0.006990140998767565,
-          "visible": true,
-          "corrections": 51,
-          "contactMs": 9.5,
-          "terminalPins": 104
-        },
-        {
-          "name": "Plantaris muscle.r",
-          "vertices": 1279,
-          "distal": "Calcaneus.r",
-          "maxDisplacement": 0.014580248331751094,
-          "visible": true,
-          "corrections": 0,
-          "contactMs": 0.3999999761581421,
-          "terminalPins": 145
-        },
-        {
-          "name": "Calcaneal tendon.r",
-          "vertices": 2193,
-          "distal": "Calcaneus.r",
-          "maxDisplacement": 0.014083625881962682,
-          "visible": true,
-          "corrections": 0,
-          "contactMs": 0,
-          "terminalPins": 241
-        },
-        {
-          "name": "Extensor digitorum longus.r",
-          "vertices": 1371,
-          "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0.012226997619068557,
-          "visible": true,
-          "corrections": 12,
-          "contactMs": 8.600000023841858,
-          "terminalPins": 299
-        },
-        {
-          "name": "Extensor digitorum longus.r",
-          "vertices": 252,
-          "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0.017540252167316264,
-          "visible": true,
-          "corrections": 0,
-          "contactMs": 0.800000011920929,
-          "terminalPins": 0
-        },
-        {
-          "name": "Tendon of extensor digitorum longus.r",
-          "vertices": 2640,
-          "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0.07350484932627795,
-          "visible": true,
-          "corrections": 0,
-          "contactMs": 4.0999999940395355,
-          "terminalPins": 17
-        },
-        {
-          "name": "Extensor hallucis longus.r",
-          "vertices": 671,
-          "distal": "First metatarsal bone.r",
-          "maxDisplacement": 0.0057579457010759364,
-          "visible": true,
-          "corrections": 0,
-          "contactMs": 7.600000023841858,
-          "terminalPins": 132
-        },
-        {
-          "name": "Extensor hallucis longus.r",
-          "vertices": 531,
-          "distal": "First metatarsal bone.r",
-          "maxDisplacement": 0.058512312955388356,
-          "visible": true,
-          "corrections": 39,
-          "contactMs": 4.0999999940395355,
-          "terminalPins": 11
-        },
-        {
-          "name": "Flexor digitorum longus.r",
-          "vertices": 1475,
-          "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0.009489603064784776,
-          "visible": true,
-          "corrections": 0,
-          "contactMs": 5.5,
-          "terminalPins": 156
-        },
-        {
-          "name": "Flexor digitorum longus.r",
-          "vertices": 1982,
-          "distal": "Fifth metatarsal bone.r",
-          "maxDisplacement": 0.07617379796862928,
-          "visible": true,
-          "corrections": 12,
-          "contactMs": 3.7999999821186066,
-          "terminalPins": 15
-        },
-        {
-          "name": "Flexor hallucis longus.r",
-          "vertices": 1896,
-          "distal": "First metatarsal bone.r",
-          "maxDisplacement": 0.006866722398071708,
-          "visible": true,
-          "corrections": 22,
-          "contactMs": 8.400000005960464,
-          "terminalPins": 482
-        },
-        {
-          "name": "Flexor hallucis longus.r",
-          "vertices": 1081,
-          "distal": "First metatarsal bone.r",
-          "maxDisplacement": 0.06900501473816018,
-          "visible": true,
-          "corrections": 317,
-          "contactMs": 5.300000011920929,
           "terminalPins": 31
         }
       ],
@@ -3522,16 +2924,306 @@
           -0.07761422606805961
         ],
         "base": [
-          -0.08219080760104099,
-          0.06080733262199016,
-          -0.08085701986905802
+          -0.06275669262129985,
+          0.054175116383472145,
+          -0.08040136989565909
         ],
         "top": [
-          -0.11520067755913288,
-          0.24832835953264787,
-          -0.07752918533761498
+          -0.11281865040998576,
+          0.23789052144565942,
+          -0.0776973254902002
         ],
-        "maxFreeEdgeError": 6.629895459020485e-9,
+        "maxFreeEdgeError": 6.241490296821084e-9,
+        "freeEdges": 11388
+      }
+    },
+    {
+      "motion": "compound",
+      "value": 20,
+      "finite": true,
+      "terminalError": 1.4837717457424094e-8,
+      "restError": 0.07617335324027573,
+      "updateMs": 40.10000002384186,
+      "entries": [
+        {
+          "name": "Tibialis anterior muscle.r",
+          "vertices": 1306,
+          "distal": "Medial cuneiform bone.r",
+          "maxDisplacement": 0.0008522275352804696,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 284
+        },
+        {
+          "name": "Tibialis anterior muscle.r",
+          "vertices": 472,
+          "distal": "Medial cuneiform bone.r",
+          "maxDisplacement": 0.028369064416183854,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 3
+        },
+        {
+          "name": "Tibialis posterior muscle.r",
+          "vertices": 1331,
+          "distal": "Navicular bone.r",
+          "maxDisplacement": 0.008864096225460518,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 365
+        },
+        {
+          "name": "Tibialis posterior muscle.r",
+          "vertices": 1424,
+          "distal": "Navicular bone.r",
+          "maxDisplacement": 0.037451750898080755,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 5
+        },
+        {
+          "name": "Fibularis longus muscle.r",
+          "vertices": 1777,
+          "distal": "First metatarsal bone.r",
+          "maxDisplacement": 0.006739562234966913,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 307
+        },
+        {
+          "name": "Fibularis longus muscle.r",
+          "vertices": 993,
+          "distal": "First metatarsal bone.r",
+          "maxDisplacement": 0.028189482649845454,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 9
+        },
+        {
+          "name": "Fibularis brevis muscle.r",
+          "vertices": 1130,
+          "distal": "Fifth metatarsal bone.r",
+          "maxDisplacement": 0.012013380062047581,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 287
+        },
+        {
+          "name": "Fibularis brevis muscle.r",
+          "vertices": 617,
+          "distal": "Fifth metatarsal bone.r",
+          "maxDisplacement": 0.027680555309883607,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 43
+        },
+        {
+          "name": "Fibularis tertius muscle.r",
+          "vertices": 121,
+          "distal": "Fifth metatarsal bone.r",
+          "maxDisplacement": 0.011251870618953,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 33
+        },
+        {
+          "name": "Fibularis tertius muscle.r",
+          "vertices": 188,
+          "distal": "Fifth metatarsal bone.r",
+          "maxDisplacement": 0.033616279989031335,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 18
+        },
+        {
+          "name": "Medial head of gastrocnemius.r",
+          "vertices": 2227,
+          "distal": "Calcaneus.r",
+          "maxDisplacement": 0.0037821804769192684,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 0
+        },
+        {
+          "name": "Medial head of gastrocnemius.r",
+          "vertices": 1102,
+          "distal": "Calcaneus.r",
+          "maxDisplacement": 0.00017740514039554057,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 79
+        },
+        {
+          "name": "Lateral head of gastrocnemius.r",
+          "vertices": 1948,
+          "distal": "Calcaneus.r",
+          "maxDisplacement": 0.004559253750217161,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 0
+        },
+        {
+          "name": "Lateral head of gastrocnemius.r",
+          "vertices": 587,
+          "distal": "Calcaneus.r",
+          "maxDisplacement": 0.00026519019373765277,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 116
+        },
+        {
+          "name": "Soleus muscle.r",
+          "vertices": 3192,
+          "distal": "Calcaneus.r",
+          "maxDisplacement": 0.006899180217841958,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 228
+        },
+        {
+          "name": "Soleus muscle.r",
+          "vertices": 252,
+          "distal": "Calcaneus.r",
+          "maxDisplacement": 0.0076819339455183435,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 0
+        },
+        {
+          "name": "Plantaris muscle.r",
+          "vertices": 1103,
+          "distal": "Calcaneus.r",
+          "maxDisplacement": 0.006990604853274608,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 104
+        },
+        {
+          "name": "Plantaris muscle.r",
+          "vertices": 1279,
+          "distal": "Calcaneus.r",
+          "maxDisplacement": 0.014579420732757066,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 145
+        },
+        {
+          "name": "Calcaneal tendon.r",
+          "vertices": 2193,
+          "distal": "Calcaneus.r",
+          "maxDisplacement": 0.014083636027269515,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 241
+        },
+        {
+          "name": "Extensor digitorum longus.r",
+          "vertices": 1371,
+          "distal": "Fifth metatarsal bone.r",
+          "maxDisplacement": 0.012226104271113994,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 299
+        },
+        {
+          "name": "Extensor digitorum longus.r",
+          "vertices": 252,
+          "distal": "Fifth metatarsal bone.r",
+          "maxDisplacement": 0.017539021135760505,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 0
+        },
+        {
+          "name": "Tendon of extensor digitorum longus.r",
+          "vertices": 2640,
+          "distal": "Fifth metatarsal bone.r",
+          "maxDisplacement": 0.07350380778431943,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 17
+        },
+        {
+          "name": "Extensor hallucis longus.r",
+          "vertices": 671,
+          "distal": "First metatarsal bone.r",
+          "maxDisplacement": 0.0057564597641811405,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 132
+        },
+        {
+          "name": "Extensor hallucis longus.r",
+          "vertices": 531,
+          "distal": "First metatarsal bone.r",
+          "maxDisplacement": 0.05851235018917903,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 11
+        },
+        {
+          "name": "Flexor digitorum longus.r",
+          "vertices": 1475,
+          "distal": "Fifth metatarsal bone.r",
+          "maxDisplacement": 0.0094909110549408,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 156
+        },
+        {
+          "name": "Flexor digitorum longus.r",
+          "vertices": 1982,
+          "distal": "Fifth metatarsal bone.r",
+          "maxDisplacement": 0.07617335324027573,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 15
+        },
+        {
+          "name": "Flexor hallucis longus.r",
+          "vertices": 1896,
+          "distal": "First metatarsal bone.r",
+          "maxDisplacement": 0.00686687959227163,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 482
+        },
+        {
+          "name": "Flexor hallucis longus.r",
+          "vertices": 1081,
+          "distal": "First metatarsal bone.r",
+          "maxDisplacement": 0.06900506361066422,
+          "visible": true,
+          "corrections": 0,
+          "terminalPins": 31
+        }
+      ],
+      "status": "source-preserving teaching deformation; not measured muscle force or validated footprints",
+      "achilles": {
+        "restLength": 0.1904333519395865,
+        "length": 0.19043335193958646,
+        "freeFromY": 0.07324755471944809,
+        "sourceBase": [
+          -0.07060121021726552,
+          0.05824755471944809,
+          -0.08189596460365198
+        ],
+        "sourceTop": [
+          -0.11435713097453117,
+          0.243536376953125,
+          -0.07761422606805961
+        ],
+        "base": [
+          -0.08219080967818533,
+          0.06080733275697696,
+          -0.08085701937871674
+        ],
+        "top": [
+          -0.11520067759387886,
+          0.24832836003593434,
+          -0.07752918534147957
+        ],
+        "maxFreeEdgeError": 6.419314128001952e-9,
         "freeEdges": 11388
       }
     },
@@ -3540,8 +3232,8 @@
       "value": 0,
       "finite": true,
       "terminalError": 1.5515838457795457e-17,
-      "restError": 1.962615573354719e-17,
-      "updateMs": 70.2000000178814,
+      "restError": 0,
+      "updateMs": 17.80000001192093,
       "entries": [
         {
           "name": "Tibialis anterior muscle.r",
@@ -3550,7 +3242,6 @@
           "maxDisplacement": 0,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0,
           "terminalPins": 284
         },
         {
@@ -3560,7 +3251,6 @@
           "maxDisplacement": 0,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0.5999999940395355,
           "terminalPins": 3
         },
         {
@@ -3570,7 +3260,6 @@
           "maxDisplacement": 0,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0,
           "terminalPins": 365
         },
         {
@@ -3579,8 +3268,7 @@
           "distal": "Navicular bone.r",
           "maxDisplacement": 0.0235503688454628,
           "visible": true,
-          "corrections": 453,
-          "contactMs": 13.199999988079071,
+          "corrections": 0,
           "terminalPins": 5
         },
         {
@@ -3590,7 +3278,6 @@
           "maxDisplacement": 0,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0,
           "terminalPins": 307
         },
         {
@@ -3599,8 +3286,7 @@
           "distal": "First metatarsal bone.r",
           "maxDisplacement": 0.008843415416777134,
           "visible": true,
-          "corrections": 164,
-          "contactMs": 5,
+          "corrections": 0,
           "terminalPins": 9
         },
         {
@@ -3610,7 +3296,6 @@
           "maxDisplacement": 0,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0,
           "terminalPins": 287
         },
         {
@@ -3619,8 +3304,7 @@
           "distal": "Fifth metatarsal bone.r",
           "maxDisplacement": 0.0078292281832546,
           "visible": true,
-          "corrections": 208,
-          "contactMs": 6.199999988079071,
+          "corrections": 0,
           "terminalPins": 43
         },
         {
@@ -3630,7 +3314,6 @@
           "maxDisplacement": 0,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0.10000002384185791,
           "terminalPins": 33
         },
         {
@@ -3640,7 +3323,6 @@
           "maxDisplacement": 0,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0.19999998807907104,
           "terminalPins": 18
         },
         {
@@ -3650,7 +3332,6 @@
           "maxDisplacement": 0,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0,
           "terminalPins": 0
         },
         {
@@ -3660,7 +3341,6 @@
           "maxDisplacement": 0,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0,
           "terminalPins": 79
         },
         {
@@ -3670,7 +3350,6 @@
           "maxDisplacement": 0,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0,
           "terminalPins": 0
         },
         {
@@ -3680,7 +3359,6 @@
           "maxDisplacement": 0,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0,
           "terminalPins": 116
         },
         {
@@ -3690,47 +3368,42 @@
           "maxDisplacement": 0,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0,
           "terminalPins": 228
         },
         {
           "name": "Soleus muscle.r",
           "vertices": 252,
           "distal": "Calcaneus.r",
-          "maxDisplacement": 1.3877787807814457e-17,
+          "maxDisplacement": 0,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0,
           "terminalPins": 0
         },
         {
           "name": "Plantaris muscle.r",
           "vertices": 1103,
           "distal": "Calcaneus.r",
-          "maxDisplacement": 1.3877787807814457e-17,
+          "maxDisplacement": 0,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0,
           "terminalPins": 104
         },
         {
           "name": "Plantaris muscle.r",
           "vertices": 1279,
           "distal": "Calcaneus.r",
-          "maxDisplacement": 1.5515838457795457e-17,
+          "maxDisplacement": 0,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0.6000000238418579,
           "terminalPins": 145
         },
         {
           "name": "Calcaneal tendon.r",
           "vertices": 2193,
           "distal": "Calcaneus.r",
-          "maxDisplacement": 1.962615573354719e-17,
+          "maxDisplacement": 0,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0,
           "terminalPins": 241
         },
         {
@@ -3740,7 +3413,6 @@
           "maxDisplacement": 0,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0,
           "terminalPins": 299
         },
         {
@@ -3750,7 +3422,6 @@
           "maxDisplacement": 0,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0.20000001788139343,
           "terminalPins": 0
         },
         {
@@ -3760,7 +3431,6 @@
           "maxDisplacement": 0,
           "visible": true,
           "corrections": 0,
-          "contactMs": 3.0999999940395355,
           "terminalPins": 17
         },
         {
@@ -3770,7 +3440,6 @@
           "maxDisplacement": 0,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0,
           "terminalPins": 132
         },
         {
@@ -3780,7 +3449,6 @@
           "maxDisplacement": 0,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0.5,
           "terminalPins": 11
         },
         {
@@ -3790,7 +3458,6 @@
           "maxDisplacement": 0,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0,
           "terminalPins": 156
         },
         {
@@ -3800,7 +3467,6 @@
           "maxDisplacement": 0,
           "visible": true,
           "corrections": 0,
-          "contactMs": 3.699999988079071,
           "terminalPins": 15
         },
         {
@@ -3810,7 +3476,6 @@
           "maxDisplacement": 0,
           "visible": true,
           "corrections": 0,
-          "contactMs": 0,
           "terminalPins": 482
         },
         {
@@ -3819,8 +3484,7 @@
           "distal": "First metatarsal bone.r",
           "maxDisplacement": 0.04031038470566273,
           "visible": true,
-          "corrections": 162,
-          "contactMs": 3.7999999821186066,
+          "corrections": 0,
           "terminalPins": 31
         }
       ],
