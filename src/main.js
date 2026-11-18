@@ -315,12 +315,12 @@ function updateModeUI(){
  $('bodyDisplay').hidden=focus!=='body';$('patellaDisplay').hidden=focus!=='knee';$('hipBoneDisplay').hidden=focus!=='hip';$('patellaVisibility').hidden=focus!=='knee';$('axisVisibility').hidden=focus!=='knee';document.querySelectorAll('.jointDisplay').forEach(el=>el.hidden=focus==='body'||boneReview&&focus==='knee');
  $('retinaculumVisibility').hidden=focus!=='ankle';$('jointConnectiveLabel').textContent='靭帯・半月板 / Ligaments & menisci';$('hipBoneDisplay').hidden=focus!=='hip';$('ligamentList').hidden=false;if(focus==='ankle'){document.querySelectorAll('.jointDisplay').forEach(el=>el.hidden=true);$('patellaDisplay').hidden=false;$('patellaVisibility').hidden=true;$('axisVisibility').hidden=false;$('ligamentList').closest('.jointDisplay').hidden=false;$('jointConnectiveLabel').textContent='靭帯 / Ligaments';$('muscleList').closest('.jointDisplay').hidden=false;}syncJointPresets();
  if(ligamentReview&&focus==='knee')$('ligamentList').closest('.jointDisplay').hidden=false;
- $('ligamentTendency').hidden=boneReview||focus!=='knee';$('axisLabel').title=focus==='ankle'?'One rotation axis for the selected motion. Provisional motion trial.':'Femur: fixed shaft and horizontal condylar reference (dashed). Tibia: three axes sharing one origin (solid). Shaft estimates; FTA is not calibrated.';
+ $('ligamentTendency').hidden=boneReview||focus!=='knee';$('axisLabel').title=focus==='ankle'?'選択した運動の回転軸 / Rotation axis for the selected motion (teaching reference).':'Femur: fixed shaft and horizontal condylar reference (dashed). Tibia: three axes sharing one origin (solid). Shaft estimates; FTA is not calibrated.';
  $('motionSection').hidden=!(moving&&focus!=='body');
  $('playMotion').hidden=!(moving&&focus!=='body');
  $('sectionEyebrow').textContent=moving?'MODE 2':'MODE 1';
  $('sectionTitle').textContent=({body:'Whole Body',hip:'股関節 / Hip',knee:'膝関節 / Knee',ankle:'足関節 / Ankle'})[focus];
- $('stageBadge').textContent=moving?(focus==='ankle'?'Joint Kinesiology · Ankle · Trial':focus==='knee'?(patellaTrial?'Patella arc test · Rejected':coupledMotion?'Joint Kinesiology · Knee':'Fixed axis · Comparison'):'Joint Kinesiology · Hip'):'Anatomy';
+ $('stageBadge').textContent=moving?(focus==='ankle'?'Joint Kinesiology · Ankle':focus==='knee'?(patellaTrial?'Patella arc test · Rejected':coupledMotion?'Joint Kinesiology · Knee':'Fixed axis · Comparison'):'Joint Kinesiology · Hip'):'Anatomy';
 }
 function setMode(m){if(mode===m)return;mode=m;modeTransition=true;
  for(const el of document.querySelectorAll('[data-mode]'))el.classList.toggle('selected',el.dataset.mode===m);

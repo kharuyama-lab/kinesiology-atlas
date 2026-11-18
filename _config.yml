@@ -12,3 +12,7 @@ exclude:
   - playwright.config.js
   - AGENTS.md
   - README.md
+
+  - ankle-review.html
+
+  - ankle-source-review.html

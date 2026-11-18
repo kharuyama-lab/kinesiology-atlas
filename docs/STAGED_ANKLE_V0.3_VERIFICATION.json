@@ -1,0 +1,59 @@
+{
+  "url": "http://127.0.0.1:8081/kinesiology-atlas/",
+  "version": "0.3.0-beta.1",
+  "verifiedAt": "2026-11-18T04:24:12.280Z",
+  "status": "passed",
+  "home": {
+    "focus": "body",
+    "mode": "anatomy"
+  },
+  "samples": [
+    {
+      "focus": "hip",
+      "mode": "kinesiology",
+      "motion": "flex",
+      "value": 30
+    },
+    {
+      "focus": "knee",
+      "mode": "kinesiology",
+      "motion": "flex",
+      "value": 60
+    },
+    {
+      "focus": "ankle",
+      "mode": "kinesiology",
+      "motion": "flex",
+      "value": 10
+    },
+    {
+      "focus": "ankle",
+      "kind": "invert",
+      "value": 10
+    },
+    {
+      "focus": "ankle",
+      "kind": "adduct",
+      "value": 10
+    },
+    {
+      "focus": "ankle",
+      "kind": "compound",
+      "value": 10
+    }
+  ],
+  "assets": [
+    {
+      "url": "http://127.0.0.1:8081/kinesiology-atlas/assets/ankle-motion/positions.bin.gz?v=fb70b1f43d87ea28b250ea96c79f63c8337c522aab3056a410f00958408c8f24",
+      "status": 200,
+      "encoding": "none"
+    },
+    {
+      "url": "http://127.0.0.1:8081/kinesiology-atlas/assets/ankle-motion/normals.bin.gz?v=c33e7b20faccce5b43618b5f0666ca20488b8ab8ae39a4ff96e58dd9dd39e5ef",
+      "status": 200,
+      "encoding": "none"
+    }
+  ],
+  "errors": [],
+  "screenshot": "docs/screenshots/release/staged-ankle-v0.3.png"
+}

@@ -2,7 +2,7 @@
 
 On the Shoulders of Giants. Beyond the Atlas.
 
-学生の学習・授業での教育利用のための3D教材です。v0.2.0-beta.1は、ユーザー確認済みの中間筋走行・操作・表示をFIXした配布版です。モデルの動態は教育用の可視化であり、実測筋力や組織ひずみの計算ではありません。
+学生の学習・授業での教育利用のための3D教材です。v0.3.0-beta.1は、確認済みのHip／KneeにAnkleを追加した配布版です。モデルの動態は教育用の可視化であり、実測筋力や組織ひずみの計算ではありません。
 
 ## 配布と利用方針
 
@@ -12,13 +12,13 @@ On the Shoulders of Giants. Beyond the Atlas.
 
 ## 操作
 
-Mode 1はAnatomy、Mode 2はJoint Kinesiology。FocusはWhole Body / Hip / Knee。モード切替でカメラ・Focus・組織表示を維持し、Whole Bodyは意図的なホーム操作です。組織表示はON / Fade / OFF。Hip/Kneeの一括表示、個別表示、フローティング操作を同期します。Autoで選択した関節運動を往復します。
+Mode 1はAnatomy、Mode 2はJoint Kinesiology。FocusはWhole Body / Hip / Knee / Ankle。モード切替でカメラ・Focus・組織表示を維持し、Whole Bodyは意図的なホーム操作です。組織表示はON / Fade / OFF。Hip/Knee/Ankleの一括表示、個別表示、フローティング操作を同期します。Autoで選択した関節運動を往復します。
 
 ヘッダーは左のパネル列に収め、PCの3D領域は画面上端まで使用します。クレジットは左下のCreditsから別タブで開きます。
 
 ## モデルと通信
 
-使用するモデルはskeletal / joints / muscularの3ファイルのみ。確認済みの上流コミットとSHA-256を[config/model-assets.js](config/model-assets.js)に固定し、読み込み時に検証します。GLBはリポジトリ・配布ZIPに同梱せず外部配信元から取得します。最初の読み込みにはインターネット接続が必要です。Three.jsとDracoは同梱しています。教材自体に広告・アクセス解析・入力情報の送信機能はありません。
+使用するモデルはskeletal / joints / muscularの3ファイルのみ。確認済みの上流コミットとSHA-256を[config/model-assets.js](config/model-assets.js)に固定し、読み込み時に検証します。元GLBは同梱せず外部配信元から取得します。Ankleの運動表示用の派生頂点・法線データはassets/ankle-motionに同梱し、Ankleを選んだときに読み込みます。最初の読み込みにはインターネット接続が必要です。Three.jsとDracoは同梱しています。教材自体に広告・アクセス解析・入力情報の送信機能はありません。
 
 ## ローカル起動
 
