@@ -79,3 +79,6 @@ summary.structureHeading::marker{color:var(--muted);font-size:10px}
 .structureHeading>.detailToggle{padding:0;border:0;background:none;text-align:left;min-height:0;color:inherit;font:inherit;font-size:11px;font-weight:700}
 
 .detailToggle::before{content:"▸";margin-right:5px}.detailToggle[aria-expanded="true"]::before{content:"▾"}
+
+.displayControls>button>span{font-size:11px;line-height:1}.displayControls .displayEnglish{display:block;font-size:9px;line-height:1;white-space:nowrap}
+@media(min-width:741px) and (max-height:850px){.displayControls>button>span{font-size:10px}.displayControls .displayEnglish{font-size:8px}}
