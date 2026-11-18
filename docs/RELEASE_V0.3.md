@@ -23,3 +23,5 @@
 記録は `STAGED_ANKLE_V0.3_VERIFICATION.json`。公開反映後は同じスクリプトの `--published` でHTTPS配信を確認し、`PUBLISHED_ANKLE_V0.3_VERIFICATION.json` に保存する。
 
 従来の `PUBLISHED_SITE_VERIFICATION.json` とその画像は前回リリースの未コミット参照資料として保護し、上書きしない。
+
+公開反映確認済み：2026-11-18。公開コミット `100ae48a41c3ee89516b55f4cdad84ac5d244e6b`。Pagesデプロイ成功、同じHTTPS URLでのブラウザ検証はPASS。公開検証記録と画像はローカルの検証コミットに保管する。
